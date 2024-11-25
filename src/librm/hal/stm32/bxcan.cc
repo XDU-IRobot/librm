@@ -36,6 +36,14 @@
 #include "librm/device/can_device.hpp"
 #include "librm/core/exception.h"
 
+/*
+  * 用于存储回调函数的map
+  * key: HAL库的CAN_HandleTypeDef
+  * value: 回调函数
+  */
+*/
+static std::unordered_map<CAN_HandleTypeDef *, std::function<void()>> fn_cb_map;
+
 /**
  * @brief  把std::function转换为函数指针
  * @param  fn   要转换的函数
@@ -45,9 +53,13 @@
  * 而HAL库要求的回调函数并没有这个this参数。通过std::bind，可以生成一个参数列表里没有this指针的std::function对象，而std::function
  * 并不能直接强转成函数指针。借助这个函数，可以把std::function对象转换成函数指针。然后就可以把这个类内的回调函数传给HAL库了。
  */
-static pCAN_CallbackTypeDef StdFunctionToCallbackFunctionPtr(std::function<void()> fn) {
-  static auto fn_v = std::move(fn);
-  return [](CAN_HandleTypeDef *handle) { fn_v(); };
+static pCAN_CallbackTypeDef StdFunctionToCallbackFunctionPtr(std::function<void()> fn, CAN_HandleTypeDef *hcan) {
+  fn_cb_map[hcan] = std::move(fn);
+  return [](CAN_HandleTypeDef *hcan) {
+    if (fn_cb_map.find(hcan) != fn_cb_map.end()) {
+      fn_cb_map[hcan]();
+    }
+  };
 }
 
 namespace rm::hal::stm32 {
@@ -160,7 +172,7 @@ void BxCan::Begin() {
     ThrowException(Exception::kHALError);  // HAL_CAN_ActivateNotification error
   }
   HAL_CAN_RegisterCallback(this->hcan_, HAL_CAN_RX_FIFO0_MSG_PENDING_CB_ID,
-                           StdFunctionToCallbackFunctionPtr(std::bind(&BxCan::Fifo0MsgPendingCallback, this)));
+                           StdFunctionToCallbackFunctionPtr(std::bind(&BxCan::Fifo0MsgPendingCallback, this), this->hcan_));
 }
 
 /**
