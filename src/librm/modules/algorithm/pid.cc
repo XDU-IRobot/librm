@@ -141,7 +141,7 @@ void RingPID::Update(f32 set, f32 ref) {
   this->fdb_ = ref;
   this->error_[0] = set - ref;
 
-  LoopConstrain(this->error_[0], -this->cycle_ / 2, this->cycle_ / 2);
+  this->error_[0] = LoopConstrain(this->error_[0], -this->cycle_ / 2, this->cycle_ / 2);
 
   switch (this->type_) {
     case PIDType::kPosition:
@@ -182,7 +182,7 @@ void RingPID::Update(f32 set, f32 ref, f32 external_diff) {
   this->fdb_ = ref;
   this->error_[0] = set - ref;
 
-  LoopConstrain(this->error_[0], -this->cycle_ / 2, this->cycle_ / 2);
+  this->error_[0] = LoopConstrain(this->error_[0], -this->cycle_ / 2, this->cycle_ / 2);
 
   switch (this->type_) {
     case PIDType::kPosition:

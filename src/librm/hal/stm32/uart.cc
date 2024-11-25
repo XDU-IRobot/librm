@@ -40,7 +40,7 @@
  * @note  value: 回调函数
  * 解释：键是串口对象指针，值是回调函数，用于实现多个串口的回调函数
  */
-static std::unordered_map<UART_HandleTypeDef*, std::function<void(u16)>> fn_cb_map;
+static std::unordered_map<UART_HandleTypeDef *, std::function<void(u16)>> fn_cb_map;
 
 /**
  * @brief 串口错误回调函数键值对
@@ -49,7 +49,7 @@ static std::unordered_map<UART_HandleTypeDef*, std::function<void(u16)>> fn_cb_m
  * @note  value: 错误回调函数
  * 解释：键是串口对象指针，值是错误回调函数，用于实现多个串口的错误回调函数
  */
-static std::unordered_map<UART_HandleTypeDef*, std::function<void(void)>> fn_error_map;
+static std::unordered_map<UART_HandleTypeDef *, std::function<void(void)>> fn_error_map;
 
 /**
  * @brief  把std::function转换为函数指针
@@ -61,8 +61,8 @@ static std::unordered_map<UART_HandleTypeDef*, std::function<void(void)>> fn_err
  * 并不能直接强转成函数指针。借助这个函数，可以把std::function对象转换成函数指针。然后就可以把这个类内的回调函数传给HAL库了。
  */
 
-static auto StdFunctionToCallbackFunctionPtr(std::function<void(u16)> fn, UART_HandleTypeDef* huart) 
-    -> pUART_RxEventCallbackTypeDef {
+static auto StdFunctionToCallbackFunctionPtr(std::function<void(u16)> fn,
+                                             UART_HandleTypeDef *huart) -> pUART_RxEventCallbackTypeDef {
   fn_cb_map[huart] = std::move(fn);
   return [](UART_HandleTypeDef *handle, u16 rx_len) {
     if (fn_cb_map.find(handle) != fn_cb_map.end()) {
@@ -71,10 +71,10 @@ static auto StdFunctionToCallbackFunctionPtr(std::function<void(u16)> fn, UART_H
   };
 }
 
-static auto StdFunctionToErrorCallbackFunctionPtr(std::function<void(void)> fn, UART_HandleTypeDef* huart)
-    -> pUART_CallbackTypeDef {
+static auto StdFunctionToErrorCallbackFunctionPtr(std::function<void(void)> fn,
+                                                  UART_HandleTypeDef *huart) -> pUART_CallbackTypeDef {
   fn_error_map[huart] = std::move(fn);
-  return [](UART_HandleTypeDef *handle) { 
+  return [](UART_HandleTypeDef *handle) {
     if (fn_error_map.find(handle) != fn_error_map.end()) {
       fn_error_map[handle]();
     }
@@ -111,7 +111,8 @@ void Uart::Begin() {
   }
   // 注册接收完成回调函数
   HAL_UART_RegisterRxEventCallback(
-      this->huart_, StdFunctionToCallbackFunctionPtr(std::bind(&Uart::HalRxCpltCallback, this, std::placeholders::_1), this->huart_));
+      this->huart_,
+      StdFunctionToCallbackFunctionPtr(std::bind(&Uart::HalRxCpltCallback, this, std::placeholders::_1), this->huart_));
 
   // 注册错误回调函数
   HAL_UART_RegisterCallback(
