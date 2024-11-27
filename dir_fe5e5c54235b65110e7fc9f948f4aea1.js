@@ -16,7 +16,7 @@ var dir_fe5e5c54235b65110e7fc9f948f4aea1 =
       [ "accelMeasurementModel", "classrm_1_1modules_1_1algorithm_1_1accelMeasurementModel.html", "classrm_1_1modules_1_1algorithm_1_1accelMeasurementModel" ],
       [ "EkfAhrs", "classrm_1_1modules_1_1algorithm_1_1EkfAhrs.html", "classrm_1_1modules_1_1algorithm_1_1EkfAhrs" ]
     ] ],
-    [ "mahony.cc", "mahony_8cc.html", null ],
+    [ "mahony.cc", "mahony_8cc.html", "mahony_8cc" ],
     [ "mahony.h", "mahony_8h.html", [
       [ "MahonyAhrs", "classrm_1_1modules_1_1algorithm_1_1MahonyAhrs.html", "classrm_1_1modules_1_1algorithm_1_1MahonyAhrs" ]
     ] ]

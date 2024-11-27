@@ -62,7 +62,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('exception_8h_source.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('core_2exception_8h_source.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -85,7 +85,7 @@ $(document).ready(function(){initNavTree('exception_8h_source.html',''); initRes
 <div class="title">exception.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="exception_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="core_2exception_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">  Copyright (c) 2024 XDU-IRobot</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
@@ -110,38 +110,36 @@ $(document).ready(function(){initNavTree('exception_8h_source.html',''); initRes
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifndef LIBRM_CORE_EXCEPTIONS_H</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define LIBRM_CORE_EXCEPTIONS_H</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespacerm.html">   31</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacerm_1_1core_1_1exception.html">rm::core::exception</a> {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305">   36</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305">Exception</a> {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305abe983c3593be176ef3bfaacf4020e8b2">kException</a>,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="hal_2stm32_2exception_8h.html">librm/hal/stm32/exception.h</a>&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespacerm.html">   37</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacerm.html">rm</a> {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305aa2683774212a7155c864c5e106d2852c">kTypeError</a>,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305ac08e5c76dd008caf97d6412d1c944148">kKeyError</a>,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305a9864ae2902cf476e08f9cbe5e734a78f">kHALError</a>,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305ace6b14f493b2461f78b52ffc453dc9fa">kValueError</a>,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="namespacerm_1_1core_1_1exception.html#a1b7a989dd960727aa517f79f274e20ed">   49</a></span>&#160;<a class="code" href="namespacerm_1_1core_1_1exception.html#a1b7a989dd960727aa517f79f274e20ed">__attribute__</a>((weak)) <span class="keywordtype">void</span> ThrowException(<a class="code" href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305">Exception</a> e) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// 在这里处理异常</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="namespacerm.html#a5d5138b47a87a72482d492dc3c8ed2ee">   43</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacerm.html#a5d5138b47a87a72482d492dc3c8ed2ee">Throw</a>(<span class="keyword">const</span> std::exception&amp; e) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#if defined(LIBRM_PLATFORM_LINUX)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordflow">throw</span> e;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#elif defined(LIBRM_PLATFORM_STM32)</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// TODO 裸机不能直接抛异常，但为了防止进一步出错，先把程序停在这里</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}  <span class="comment">// namespace rm::core::exception</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}  <span class="comment">// namespace rm</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="anamespacerm_1_1core_1_1exception_html"><div class="ttname"><a href="namespacerm_1_1core_1_1exception.html">rm::core::exception</a></div><div class="ttdef"><b>Definition:</b> exception.h:31</div></div>
-<div class="ttc" id="anamespacerm_1_1core_1_1exception_html_a1b7a989dd960727aa517f79f274e20ed"><div class="ttname"><a href="namespacerm_1_1core_1_1exception.html#a1b7a989dd960727aa517f79f274e20ed">rm::core::exception::__attribute__</a></div><div class="ttdeci">__attribute__((weak)) void ThrowException(Exception e)</div><div class="ttdoc">抛出异常</div><div class="ttdef"><b>Definition:</b> exception.h:49</div></div>
-<div class="ttc" id="anamespacerm_1_1core_1_1exception_html_a29263bbdb54eb4b9aefea0d40c2fc305"><div class="ttname"><a href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305">rm::core::exception::Exception</a></div><div class="ttdeci">Exception</div><div class="ttdoc">异常类型</div><div class="ttdef"><b>Definition:</b> exception.h:36</div></div>
-<div class="ttc" id="anamespacerm_1_1core_1_1exception_html_a29263bbdb54eb4b9aefea0d40c2fc305a9864ae2902cf476e08f9cbe5e734a78f"><div class="ttname"><a href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305a9864ae2902cf476e08f9cbe5e734a78f">rm::core::exception::Exception::kHALError</a></div><div class="ttdeci">@ kHALError</div></div>
-<div class="ttc" id="anamespacerm_1_1core_1_1exception_html_a29263bbdb54eb4b9aefea0d40c2fc305aa2683774212a7155c864c5e106d2852c"><div class="ttname"><a href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305aa2683774212a7155c864c5e106d2852c">rm::core::exception::Exception::kTypeError</a></div><div class="ttdeci">@ kTypeError</div></div>
-<div class="ttc" id="anamespacerm_1_1core_1_1exception_html_a29263bbdb54eb4b9aefea0d40c2fc305abe983c3593be176ef3bfaacf4020e8b2"><div class="ttname"><a href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305abe983c3593be176ef3bfaacf4020e8b2">rm::core::exception::Exception::kException</a></div><div class="ttdeci">@ kException</div></div>
-<div class="ttc" id="anamespacerm_1_1core_1_1exception_html_a29263bbdb54eb4b9aefea0d40c2fc305ac08e5c76dd008caf97d6412d1c944148"><div class="ttname"><a href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305ac08e5c76dd008caf97d6412d1c944148">rm::core::exception::Exception::kKeyError</a></div><div class="ttdeci">@ kKeyError</div></div>
-<div class="ttc" id="anamespacerm_1_1core_1_1exception_html_a29263bbdb54eb4b9aefea0d40c2fc305ace6b14f493b2461f78b52ffc453dc9fa"><div class="ttname"><a href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305ace6b14f493b2461f78b52ffc453dc9fa">rm::core::exception::Exception::kValueError</a></div><div class="ttdeci">@ kValueError</div></div>
+<div class="ttc" id="ahal_2stm32_2exception_8h_html"><div class="ttname"><a href="hal_2stm32_2exception_8h.html">exception.h</a></div><div class="ttdoc">对STM32 HAL库里异常枚举的封装</div></div>
+<div class="ttc" id="anamespacerm_html"><div class="ttname"><a href="namespacerm.html">rm</a></div><div class="ttdef"><b>Definition:</b> exception.h:37</div></div>
+<div class="ttc" id="anamespacerm_html_a5d5138b47a87a72482d492dc3c8ed2ee"><div class="ttname"><a href="namespacerm.html#a5d5138b47a87a72482d492dc3c8ed2ee">rm::Throw</a></div><div class="ttdeci">void Throw(const std::exception &amp;e)</div><div class="ttdoc">抛出异常</div><div class="ttdef"><b>Definition:</b> exception.h:43</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_fdc7a3afe1ef2b13aa78b4b14f7935a0.html">core</a></li><li class="navelem"><a class="el" href="exception_8h.html">exception.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_fdc7a3afe1ef2b13aa78b4b14f7935a0.html">core</a></li><li class="navelem"><a class="el" href="core_2exception_8h.html">exception.h</a></li>
     <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

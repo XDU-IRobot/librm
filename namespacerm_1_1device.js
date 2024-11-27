@@ -10,6 +10,7 @@ var namespacerm_1_1device =
     [ "DmMotorSettings< DmMotorControlMode::kSpeedPosition >", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeedPosition_01_4.html", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeedPosition_01_4" ],
     [ "DmMotorSettings< DmMotorControlMode::kMit >", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kMit_01_4.html", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kMit_01_4" ],
     [ "DmMotor", "classrm_1_1device_1_1DmMotor.html", "classrm_1_1device_1_1DmMotor" ],
+    [ "UnitreeMotor", "classrm_1_1device_1_1UnitreeMotor.html", "classrm_1_1device_1_1UnitreeMotor" ],
     [ "CanDevice", "classrm_1_1device_1_1CanDevice.html", "classrm_1_1device_1_1CanDevice" ],
     [ "Device", "classrm_1_1device_1_1Device.html", "classrm_1_1device_1_1Device" ],
     [ "DeviceManager", "classrm_1_1device_1_1DeviceManager.html", "classrm_1_1device_1_1DeviceManager" ],

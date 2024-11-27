@@ -51,8 +51,9 @@ var NAVTREE =
     [ "文件", "files.html", [
       [ "文件列表", "files.html", "files_dup" ],
       [ "文件成员", "globals.html", [
-        [ "全部", "globals.html", null ],
-        [ "变量", "globals_vars.html", null ],
+        [ "全部", "globals.html", "globals_dup" ],
+        [ "函数", "globals_func.html", null ],
+        [ "变量", "globals_vars.html", "globals_vars" ],
         [ "类型定义", "globals_type.html", null ],
         [ "宏定义", "globals_defs.html", null ]
       ] ]
@@ -64,9 +65,9 @@ var NAVTREEINDEX =
 [
 "ahrs__interface_8h.html",
 "classrm_1_1device_1_1DR16.html#a1949a050a674fb187cf80109a21c50cd",
-"classrm_1_1modules_1_1algorithm_1_1RingPID.html#ab1cdc9bc523ec3a61ae627111aa41c0f",
-"ist8310__const_8hpp.html#a9c12a82d393665eb2927e3674e442da4",
-"structrm_1_1modules_1_1algorithm_1_1Quaternion.html#aed57680c63e1bf81722d1a76bce9644f"
+"classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html",
+"globals_defs.html",
+"stm32_2spi_8h.html"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';

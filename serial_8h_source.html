@@ -110,23 +110,26 @@ $(document).ready(function(){initNavTree('serial_8h_source.html',''); initResiza
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifndef LIBRM_HAL_UART_H</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define LIBRM_HAL_UART_H</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html">librm/hal/stm32/uart.h</a>&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX)</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="linux_2serial_8h.html">librm/hal/linux/serial.h</a>&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacerm_1_1hal.html">rm::hal</a> {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32) &amp;&amp; defined(HAL_UART_MODULE_ENABLED)</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">using</span> Serial = stm32::Uart;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX)</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">using</span> Serial = linux_::Serial;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}  <span class="comment">// namespace rm::hal</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HAL_UART_H</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="serial__interface_8h.html">librm/hal/serial_interface.h</a>&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="uart_8h.html">librm/hal/stm32/uart.h</a>&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX)</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="linux_2serial_8h.html">librm/hal/linux/serial.h</a>&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacerm_1_1hal.html">rm::hal</a> {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32) &amp;&amp; defined(HAL_UART_MODULE_ENABLED)</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">using</span> Serial = stm32::Uart;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">using</span> Serial = linux_::Serial;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}  <span class="comment">// namespace rm::hal</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HAL_UART_H</span></div>
 <div class="ttc" id="alinux_2serial_8h_html"><div class="ttname"><a href="linux_2serial_8h.html">serial.h</a></div><div class="ttdoc">串口类库</div></div>
-<div class="ttc" id="anamespacerm_1_1hal_html"><div class="ttname"><a href="namespacerm_1_1hal.html">rm::hal</a></div><div class="ttdef"><b>Definition:</b> can.h:38</div></div>
+<div class="ttc" id="anamespacerm_1_1hal_html"><div class="ttname"><a href="namespacerm_1_1hal.html">rm::hal</a></div><div class="ttdef"><b>Definition:</b> can.h:40</div></div>
+<div class="ttc" id="aserial__interface_8h_html"><div class="ttname"><a href="serial__interface_8h.html">serial_interface.h</a></div><div class="ttdoc">串口的接口类</div></div>
 <div class="ttc" id="auart_8h_html"><div class="ttname"><a href="uart_8h.html">uart.h</a></div><div class="ttdoc">UART类库</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

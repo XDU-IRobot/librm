@@ -110,26 +110,29 @@ $(document).ready(function(){initNavTree('gpio_8h_source.html',''); initResizabl
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifndef LIBRM_HAL_GPIO_H</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define LIBRM_HAL_GPIO_H</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="stm32_2gpio_8h.html">librm/hal/stm32/gpio.h</a>&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX)</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// TODO</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacerm_1_1hal.html">rm::hal</a> {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32) &amp;&amp; defined(HAL_GPIO_MODULE_ENABLED)</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">using</span> Pin = stm32::Pin;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX)</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#if defined(LIBRM_PLATFORM_LINUX_RASPI)</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// TODO: WiringPi GPIO wrapper</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX_JETSON)</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// TODO: JetsonGPIO GPIO wrapper</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}  <span class="comment">// namespace rm::hal</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HAL_GPIO_H</span></div>
-<div class="ttc" id="anamespacerm_1_1hal_html"><div class="ttname"><a href="namespacerm_1_1hal.html">rm::hal</a></div><div class="ttdef"><b>Definition:</b> can.h:38</div></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="gpio__interface_8h.html">librm/hal/gpio_interface.h</a>&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="stm32_2gpio_8h.html">librm/hal/stm32/gpio.h</a>&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX)</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// TODO</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacerm_1_1hal.html">rm::hal</a> {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32) &amp;&amp; defined(HAL_GPIO_MODULE_ENABLED)</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">using</span> Pin = stm32::Pin;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#if defined(LIBRM_PLATFORM_LINUX_RASPI)</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// TODO: WiringPi GPIO wrapper</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX_JETSON)</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// TODO: JetsonGPIO GPIO wrapper</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}  <span class="comment">// namespace rm::hal</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HAL_GPIO_H</span></div>
+<div class="ttc" id="agpio__interface_8h_html"><div class="ttname"><a href="gpio__interface_8h.html">gpio_interface.h</a></div><div class="ttdoc">GPIO的接口类</div></div>
+<div class="ttc" id="anamespacerm_1_1hal_html"><div class="ttname"><a href="namespacerm_1_1hal.html">rm::hal</a></div><div class="ttdef"><b>Definition:</b> can.h:40</div></div>
 <div class="ttc" id="astm32_2gpio_8h_html"><div class="ttname"><a href="stm32_2gpio_8h.html">gpio.h</a></div><div class="ttdoc">stm32的GPIO类</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

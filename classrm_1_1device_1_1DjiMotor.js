@@ -10,7 +10,6 @@ var classrm_1_1device_1_1DjiMotor =
     [ "pos_degree", "classrm_1_1device_1_1DjiMotor.html#a0924aa76edcfc6f31e8bd901aba8eb78", null ],
     [ "pos_rad", "classrm_1_1device_1_1DjiMotor.html#ac07e5cd49cee29928699e495d7ac22c8", null ],
     [ "rpm", "classrm_1_1device_1_1DjiMotor.html#a14a1533e1f26afea088da76dd4ce0ca6", null ],
-    [ "SendCommand", "classrm_1_1device_1_1DjiMotor.html#a3569a811053105d7679d78cf25c244ad", null ],
     [ "SetCurrent", "classrm_1_1device_1_1DjiMotor.html#a14852c61bb012c2426acf2bb261d6dd0", null ],
     [ "temperature", "classrm_1_1device_1_1DjiMotor.html#a9989d1a831860e16ae3476359e95b302", null ]
 ];

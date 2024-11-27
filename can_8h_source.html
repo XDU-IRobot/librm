@@ -110,31 +110,34 @@ $(document).ready(function(){initNavTree('can_8h_source.html',''); initResizable
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifndef LIBRM_HAL_CAN_H</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define LIBRM_HAL_CAN_H</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bxcan_8h.html">librm/hal/stm32/bxcan.h</a>&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fdcan_8h.html">librm/hal/stm32/fdcan.h</a>&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX)</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="socketcan_8h.html">librm/hal/linux/socketcan.h</a>&quot;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="namespacerm_1_1hal.html">   38</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacerm_1_1hal.html">rm::hal</a> {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#if defined(HAL_CAN_MODULE_ENABLED)</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">using</span> Can = <a class="code" href="classrm_1_1hal_1_1stm32_1_1BxCan.html">stm32::BxCan</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#elif defined(HAL_FDCAN_MODULE_ENABLED)</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">using</span> Can = stm32::FdCan;  <span class="comment">// TODO: 实现FdCan类</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX)</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">using</span> Can = <a class="code" href="classrm_1_1hal_1_1linux___1_1SocketCan.html">linux_::SocketCan</a>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}  <span class="comment">// namespace rm::hal</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HAL_CAN_H</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="can__interface_8h.html">librm/hal/can_interface.h</a>&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bxcan_8h.html">librm/hal/stm32/bxcan.h</a>&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fdcan_8h.html">librm/hal/stm32/fdcan.h</a>&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX)</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="socketcan_8h.html">librm/hal/linux/socketcan.h</a>&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="namespacerm_1_1hal.html">   40</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacerm_1_1hal.html">rm::hal</a> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#if defined(HAL_CAN_MODULE_ENABLED)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">using</span> Can = <a class="code" href="classrm_1_1hal_1_1stm32_1_1BxCan.html">stm32::BxCan</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#elif defined(HAL_FDCAN_MODULE_ENABLED)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">using</span> Can = stm32::FdCan;  <span class="comment">// TODO: 实现FdCan类</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">using</span> Can = <a class="code" href="classrm_1_1hal_1_1linux___1_1SocketCan.html">linux_::SocketCan</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}  <span class="comment">// namespace rm::hal</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HAL_CAN_H</span></div>
 <div class="ttc" id="abxcan_8h_html"><div class="ttname"><a href="bxcan_8h.html">bxcan.h</a></div><div class="ttdoc">bxCAN类库</div></div>
+<div class="ttc" id="acan__interface_8h_html"><div class="ttname"><a href="can__interface_8h.html">can_interface.h</a></div><div class="ttdoc">CAN的接口类</div></div>
 <div class="ttc" id="aclassrm_1_1hal_1_1linux___1_1SocketCan_html"><div class="ttname"><a href="classrm_1_1hal_1_1linux___1_1SocketCan.html">rm::hal::linux_::SocketCan</a></div><div class="ttdef"><b>Definition:</b> socketcan.h:62</div></div>
 <div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1BxCan_html"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1BxCan.html">rm::hal::stm32::BxCan</a></div><div class="ttdoc">bxCAN类库</div><div class="ttdef"><b>Definition:</b> bxcan.h:46</div></div>
 <div class="ttc" id="afdcan_8h_html"><div class="ttname"><a href="fdcan_8h.html">fdcan.h</a></div><div class="ttdoc">fdCAN类库</div></div>
-<div class="ttc" id="anamespacerm_1_1hal_html"><div class="ttname"><a href="namespacerm_1_1hal.html">rm::hal</a></div><div class="ttdef"><b>Definition:</b> can.h:38</div></div>
+<div class="ttc" id="anamespacerm_1_1hal_html"><div class="ttname"><a href="namespacerm_1_1hal.html">rm::hal</a></div><div class="ttdef"><b>Definition:</b> can.h:40</div></div>
 <div class="ttc" id="asocketcan_8h_html"><div class="ttname"><a href="socketcan_8h.html">socketcan.h</a></div><div class="ttdoc">SocketCAN类库</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

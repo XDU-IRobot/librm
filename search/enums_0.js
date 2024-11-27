@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['bmi088accelrange_1177',['BMI088AccelRange',['../namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039',1,'rm::device']]],
-  ['bmi088gyrorange_1178',['BMI088GyroRange',['../namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bd',1,'rm::device']]],
-  ['bmi088status_1179',['BMI088Status',['../namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdf',1,'rm::device']]]
+  ['bmi088accelrange_1296',['BMI088AccelRange',['../namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039',1,'rm::device']]],
+  ['bmi088gyrorange_1297',['BMI088GyroRange',['../namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bd',1,'rm::device']]],
+  ['bmi088status_1298',['BMI088Status',['../namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdf',1,'rm::device']]]
 ];

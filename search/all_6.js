@@ -1,13 +1,22 @@
 var searchData=
 [
-  ['f_290',['f',['../classrm_1_1modules_1_1algorithm_1_1SystemModel.html#adc13dece2d3c62a4985bb098b5c9b15a',1,'rm::modules::algorithm::SystemModel']]],
-  ['f32_291',['f32',['../typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd',1,'typedefs.h']]],
-  ['f64_292',['f64',['../typedefs_8h.html#a94dab5770726ccbef8c7d026cfbdf8e5',1,'typedefs.h']]],
-  ['fdb_5f_293',['fdb_',['../classrm_1_1modules_1_1algorithm_1_1PID.html#ad2d570341b86a1e22714e975c7d07dd9',1,'rm::modules::algorithm::PID']]],
-  ['fdcan_2ecc_294',['fdcan.cc',['../fdcan_8cc.html',1,'']]],
-  ['fdcan_2eh_295',['fdcan.h',['../fdcan_8h.html',1,'']]],
-  ['floattoint_296',['FloatToInt',['../namespacerm_1_1modules_1_1algorithm_1_1utils.html#ad2e429d98c36dca103e0bdf1bc2f9e4c',1,'rm::modules::algorithm::utils']]],
-  ['forward_297',['Forward',['../classrm_1_1modules_1_1algorithm_1_1ChassisInterface.html#acf431d2e2899c5c9036e2b32782bc92b',1,'rm::modules::algorithm::ChassisInterface::Forward()'],['../classrm_1_1modules_1_1algorithm_1_1MecanumChassis.html#a7b38558738e705ade7cc3bb14e70f5e6',1,'rm::modules::algorithm::MecanumChassis::Forward()'],['../classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a3556a79de474584601c330a8e5a92fdd',1,'rm::modules::algorithm::SteeringChassis::Forward()'],['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a0e93922d1d49633b1fa398f291fcad42',1,'rm::modules::algorithm::QuadOmniChassis::Forward()']]],
-  ['front_5fsteer_5fangle_5f_298',['front_steer_angle_',['../classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#ac76fb857bb3c385b88207856d6be4fda',1,'rm::modules::algorithm::SteeringChassis']]],
-  ['front_5fwheel_5fspeed_5f_299',['front_wheel_speed_',['../classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a01cba12584990f55fd5472d914b42f5b',1,'rm::modules::algorithm::SteeringChassis::front_wheel_speed_()'],['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a9968a722cd7805d8d31fea12af8835a9',1,'rm::modules::algorithm::QuadOmniChassis::front_wheel_speed_()']]]
+  ['f_299',['F',['../unionrm_1_1device_1_1UnitreeMotor_1_1ComData32.html#a4c9a475d1ff91a2edecc4583f8217ea5',1,'rm::device::UnitreeMotor::ComData32']]],
+  ['f_300',['f',['../classrm_1_1modules_1_1algorithm_1_1SystemModel.html#adc13dece2d3c62a4985bb098b5c9b15a',1,'rm::modules::algorithm::SystemModel']]],
+  ['f32_301',['f32',['../typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd',1,'typedefs.h']]],
+  ['f64_302',['f64',['../typedefs_8h.html#a94dab5770726ccbef8c7d026cfbdf8e5',1,'typedefs.h']]],
+  ['f_5facc_303',['f_acc',['../structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html#a2f912139f0c9be44d6ae0617b88e94ce',1,'rm::device::UnitreeMotor::ComDataReceive::f_acc()'],['../unitree__motor_8hpp.html#a85bc54f2c1a5c949cbba7a0b3a1c8a54',1,'f_acc():&#160;unitree_motor.hpp']]],
+  ['f_5ferror_304',['f_error',['../structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html#a152834321795fa02c3bd66ed67bf76f0',1,'rm::device::UnitreeMotor::ComDataReceive::f_error()'],['../unitree__motor_8hpp.html#a8e0efbd5fbeede5abbc652d0778aca79',1,'f_error():&#160;unitree_motor.hpp']]],
+  ['f_5fgyro_305',['f_gyro',['../structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html#af292c6f52356fd4877d737ebabe8503e',1,'rm::device::UnitreeMotor::ComDataReceive::f_gyro()'],['../unitree__motor_8hpp.html#aea959d5e01352bcc80f11a104175e53c',1,'f_gyro():&#160;unitree_motor.hpp']]],
+  ['f_5fmag_306',['f_mag',['../structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html#ad1137f512ab0bad99abd97a5baaeb750',1,'rm::device::UnitreeMotor::ComDataReceive::f_mag()'],['../unitree__motor_8hpp.html#a622d3f4d31ea4413fc819f4237b862d0',1,'f_mag():&#160;unitree_motor.hpp']]],
+  ['f_5ftemp_307',['f_temp',['../structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html#affc17b2050b9f38fdd446dafdfaae39a',1,'rm::device::UnitreeMotor::ComDataReceive::f_temp()'],['../unitree__motor_8hpp.html#a11d936a5f209f2ab662ce70804fec097',1,'f_temp():&#160;unitree_motor.hpp']]],
+  ['fdb_5f_308',['fdb_',['../classrm_1_1modules_1_1algorithm_1_1PID.html#ad2d570341b86a1e22714e975c7d07dd9',1,'rm::modules::algorithm::PID']]],
+  ['fdcan_2ecc_309',['fdcan.cc',['../fdcan_8cc.html',1,'']]],
+  ['fdcan_2eh_310',['fdcan.h',['../fdcan_8h.html',1,'']]],
+  ['feedbackparam_311',['FeedbackParam',['../structrm_1_1device_1_1UnitreeMotor_1_1FeedbackParam.html',1,'rm::device::UnitreeMotor']]],
+  ['floattoint_312',['FloatToInt',['../namespacerm_1_1modules_1_1algorithm_1_1utils.html#ad2e429d98c36dca103e0bdf1bc2f9e4c',1,'rm::modules::algorithm::utils']]],
+  ['force16_313',['force16',['../unitree__motor_8hpp.html#aced986e1f5c0a3846c4f2ea2e158c51d',1,'force16():&#160;unitree_motor.hpp'],['../structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html#ab465eb41abf383f211006395b7105cf5',1,'rm::device::UnitreeMotor::ComDataReceive::force16()']]],
+  ['force8_314',['force8',['../unitree__motor_8hpp.html#abd32a6fdc40eeacad2bdf6ab67d53e25',1,'force8():&#160;unitree_motor.hpp'],['../structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html#a6df2ffe51ad05abd8d26ef24d5604c91',1,'rm::device::UnitreeMotor::ComDataReceive::force8()']]],
+  ['forward_315',['Forward',['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a0e93922d1d49633b1fa398f291fcad42',1,'rm::modules::algorithm::QuadOmniChassis::Forward()'],['../classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a3556a79de474584601c330a8e5a92fdd',1,'rm::modules::algorithm::SteeringChassis::Forward()'],['../classrm_1_1modules_1_1algorithm_1_1MecanumChassis.html#a7b38558738e705ade7cc3bb14e70f5e6',1,'rm::modules::algorithm::MecanumChassis::Forward()'],['../classrm_1_1modules_1_1algorithm_1_1ChassisInterface.html#acf431d2e2899c5c9036e2b32782bc92b',1,'rm::modules::algorithm::ChassisInterface::Forward()']]],
+  ['front_5fsteer_5fangle_5f_316',['front_steer_angle_',['../classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#ac76fb857bb3c385b88207856d6be4fda',1,'rm::modules::algorithm::SteeringChassis']]],
+  ['front_5fwheel_5fspeed_5f_317',['front_wheel_speed_',['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a9968a722cd7805d8d31fea12af8835a9',1,'rm::modules::algorithm::QuadOmniChassis::front_wheel_speed_()'],['../classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a01cba12584990f55fd5472d914b42f5b',1,'rm::modules::algorithm::SteeringChassis::front_wheel_speed_()']]]
 ];

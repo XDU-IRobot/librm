@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>librm: src/librm/core/exception.h 文件参考</title>
+<title>librm: src/librm/hal/stm32/exception.h 文件参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('exception_8h.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('hal_2stm32_2exception_8h.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -82,56 +82,38 @@ $(document).ready(function(){initNavTree('exception_8h.html',''); initResizable(
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">命名空间</a> &#124;
-<a href="#enum-members">枚举</a> &#124;
-<a href="#func-members">函数</a>  </div>
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a>  </div>
   <div class="headertitle">
 <div class="title">exception.h 文件参考</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>异常处理  
+<p>对STM32 HAL库里异常枚举的封装  
 <a href="#details">更多...</a></p>
-
-<p><a href="exception_8h_source.html">浏览源代码.</a></p>
+<div class="textblock"><code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &quot;<a class="el" href="hal_8h_source.html">librm/hal/stm32/hal.h</a>&quot;</code><br />
+</div>
+<p><a href="hal_2stm32_2exception_8h_source.html">浏览源代码.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal__error.html">rm::hal_error</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 命名空间</h2></td></tr>
 <tr class="memitem:namespacerm"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm.html">rm</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacerm_1_1core"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1core.html">rm::core</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacerm_1_1core_1_1exception"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1core_1_1exception.html">rm::core::exception</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-枚举</h2></td></tr>
-<tr class="memitem:a29263bbdb54eb4b9aefea0d40c2fc305"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305">rm::core::exception::Exception</a> { <br />
-&#160;&#160;<a class="el" href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305abe983c3593be176ef3bfaacf4020e8b2">rm::core::exception::kException</a>
-, <a class="el" href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305aa2683774212a7155c864c5e106d2852c">rm::core::exception::kTypeError</a>
-, <a class="el" href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305ac08e5c76dd008caf97d6412d1c944148">rm::core::exception::kKeyError</a>
-, <a class="el" href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305a9864ae2902cf476e08f9cbe5e734a78f">rm::core::exception::kHALError</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305ace6b14f493b2461f78b52ffc453dc9fa">rm::core::exception::kValueError</a>
-<br />
- }</td></tr>
-<tr class="memdesc:a29263bbdb54eb4b9aefea0d40c2fc305"><td class="mdescLeft">&#160;</td><td class="mdescRight">异常类型  <a href="namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305">更多...</a><br /></td></tr>
-<tr class="separator:a29263bbdb54eb4b9aefea0d40c2fc305"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-函数</h2></td></tr>
-<tr class="memitem:a1b7a989dd960727aa517f79f274e20ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1core_1_1exception.html#a1b7a989dd960727aa517f79f274e20ed">rm::core::exception::__attribute__</a> ((weak)) void ThrowException(Exception e)</td></tr>
-<tr class="memdesc:a1b7a989dd960727aa517f79f274e20ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">抛出异常  <a href="namespacerm_1_1core_1_1exception.html#a1b7a989dd960727aa517f79f274e20ed">更多...</a><br /></td></tr>
-<tr class="separator:a1b7a989dd960727aa517f79f274e20ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><p>异常处理 </p>
+<div class="textblock"><p>对STM32 HAL库里异常枚举的封装 </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_fdc7a3afe1ef2b13aa78b4b14f7935a0.html">core</a></li><li class="navelem"><a class="el" href="exception_8h.html">exception.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_12d4920679a1960aa4499f9d88e747a8.html">hal</a></li><li class="navelem"><a class="el" href="dir_873c52db97cd763a6a91f2234950780f.html">stm32</a></li><li class="navelem"><a class="el" href="hal_2stm32_2exception_8h.html">exception.h</a></li>
     <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

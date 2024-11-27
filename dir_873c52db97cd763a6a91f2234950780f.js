@@ -5,6 +5,9 @@ var dir_873c52db97cd763a6a91f2234950780f =
       [ "BxCan", "classrm_1_1hal_1_1stm32_1_1BxCan.html", "classrm_1_1hal_1_1stm32_1_1BxCan" ]
     ] ],
     [ "check_register_callbacks.h", "check__register__callbacks_8h.html", null ],
+    [ "exception.h", "hal_2stm32_2exception_8h.html", [
+      [ "hal_error", "classrm_1_1hal__error.html", "classrm_1_1hal__error" ]
+    ] ],
     [ "fdcan.cc", "fdcan_8cc.html", null ],
     [ "fdcan.h", "fdcan_8h.html", null ],
     [ "gpio.cc", "gpio_8cc.html", null ],

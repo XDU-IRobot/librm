@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['exception_1186',['Exception',['../namespacerm_1_1core_1_1exception.html#a29263bbdb54eb4b9aefea0d40c2fc305',1,'rm::core::exception']]]
+  ['ist8310status_1305',['IST8310Status',['../namespacerm_1_1device.html#ac030a1d78c560386284d254d95259166',1,'rm::device']]]
 ];

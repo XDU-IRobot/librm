@@ -21,6 +21,11 @@ var hierarchy =
       [ "rm::modules::algorithm::QuadOmniChassis", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html", null ],
       [ "rm::modules::algorithm::SteeringChassis", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html", null ]
     ] ],
+    [ "rm::device::UnitreeMotor::ComData32", "unionrm_1_1device_1_1UnitreeMotor_1_1ComData32.html", null ],
+    [ "rm::device::UnitreeMotor::ComDataReceive", "structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html", null ],
+    [ "rm::device::UnitreeMotor::ComDataSend", "structrm_1_1device_1_1UnitreeMotor_1_1ComDataSend.html", null ],
+    [ "rm::device::UnitreeMotor::ComHead", "structrm_1_1device_1_1UnitreeMotor_1_1ComHead.html", null ],
+    [ "rm::device::UnitreeMotor::ControlParam", "structrm_1_1device_1_1UnitreeMotor_1_1ControlParam.html", null ],
     [ "rm::device::Device", "classrm_1_1device_1_1Device.html", null ],
     [ "rm::device::DeviceManager", "classrm_1_1device_1_1DeviceManager.html", null ],
     [ "rm::device::DjiMotorProperties< motor_type >", "structrm_1_1device_1_1DjiMotorProperties.html", null ],
@@ -33,6 +38,10 @@ var hierarchy =
     [ "rm::device::DmMotorSettings< DmMotorControlMode::kSpeedPosition >", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeedPosition_01_4.html", null ],
     [ "rm::device::DR16", "classrm_1_1device_1_1DR16.html", null ],
     [ "rm::modules::algorithm::EulerAngle", "structrm_1_1modules_1_1algorithm_1_1EulerAngle.html", null ],
+    [ "std::exception", null, [
+      [ "rm::hal_error", "classrm_1_1hal__error.html", null ]
+    ] ],
+    [ "rm::device::UnitreeMotor::FeedbackParam", "structrm_1_1device_1_1UnitreeMotor_1_1FeedbackParam.html", null ],
     [ "rm::hal::stm32::I2cDevice", "classrm_1_1hal_1_1stm32_1_1I2cDevice.html", [
       [ "rm::device::IST8310", "classrm_1_1device_1_1IST8310.html", null ]
     ] ],
@@ -51,6 +60,8 @@ var hierarchy =
       [ "rm::hal::stm32::Pin", "classrm_1_1hal_1_1stm32_1_1Pin.html", null ]
     ] ],
     [ "rm::modules::algorithm::Quaternion", "structrm_1_1modules_1_1algorithm_1_1Quaternion.html", null ],
+    [ "rm::device::UnitreeMotor::ReceiveData", "structrm_1_1device_1_1UnitreeMotor_1_1ReceiveData.html", null ],
+    [ "rm::device::UnitreeMotor::SendData", "structrm_1_1device_1_1UnitreeMotor_1_1SendData.html", null ],
     [ "rm::hal::SerialInterface", "classrm_1_1hal_1_1SerialInterface.html", [
       [ "rm::hal::linux_::Serial", "classrm_1_1hal_1_1linux___1_1Serial.html", null ],
       [ "rm::hal::stm32::Uart", "classrm_1_1hal_1_1stm32_1_1Uart.html", null ]
@@ -60,6 +71,7 @@ var hierarchy =
       [ "rm::hal::stm32::Spi", "classrm_1_1hal_1_1stm32_1_1Spi.html", null ]
     ] ],
     [ "rm::core::ThreadPool", "classrm_1_1core_1_1ThreadPool.html", null ],
+    [ "rm::device::UnitreeMotor", "classrm_1_1device_1_1UnitreeMotor.html", null ],
     [ "Kalman::Vector", null, [
       [ "rm::modules::algorithm::Control", "classrm_1_1modules_1_1algorithm_1_1Control.html", null ],
       [ "rm::modules::algorithm::State", "classrm_1_1modules_1_1algorithm_1_1State.html", null ],

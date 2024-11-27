@@ -114,7 +114,7 @@ $(document).ready(function(){initNavTree('librm_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cmsis__rtos_8h.html">librm/core/cmsis_rtos.h</a>&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="thread__pool_8hpp.html">librm/core/thread_pool.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="typedefs_8h.html">librm/core/typedefs.h</a>&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="exception_8h.html">librm/core/exception.h</a>&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_2exception_8h.html">librm/core/exception.h</a>&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="time_8hpp.html">librm/core/time.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/****************/</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
@@ -130,35 +130,36 @@ $(document).ready(function(){initNavTree('librm_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="can__device_8hpp.html">librm/device/can_device.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dji__motor_8hpp.html">librm/device/actuator/dji_motor.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dm__motor_8hpp.html">librm/device/actuator/dm_motor.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dr16_8h.html">librm/device/remote/dr16.h</a>&quot;</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bmi088_8h.html">librm/device/sensor/bmi088.h</a>&quot;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ist8310_8h.html">librm/device/sensor/ist8310.h</a>&quot;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="supercap_8h.html">librm/device/supercap/supercap.h</a>&quot;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/****************/</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/******** MISC MODULES ********/</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mahony_8h.html">librm/modules/algorithm/ahrs/mahony.h</a>&quot;</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ekf_8h.html">librm/modules/algorithm/ahrs/ekf.h</a>&quot;</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chassis__fkik_8h.html">librm/modules/algorithm/chassis_fkik.h</a>&quot;</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="crc_8h.html">librm/modules/algorithm/crc.h</a>&quot;</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pid_8h.html">librm/modules/algorithm/pid.h</a>&quot;</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils_8hpp.html">librm/modules/algorithm/utils.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vofa__plotter_8hpp.html">librm/modules/vofa_plotter.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">/****************/</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HPP</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="unitree__motor_8hpp.html">librm/device/actuator/unitree_motor.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dr16_8h.html">librm/device/remote/dr16.h</a>&quot;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bmi088_8h.html">librm/device/sensor/bmi088.h</a>&quot;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ist8310_8h.html">librm/device/sensor/ist8310.h</a>&quot;</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="supercap_8h.html">librm/device/supercap/supercap.h</a>&quot;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">/****************/</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">/******** MISC MODULES ********/</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mahony_8h.html">librm/modules/algorithm/ahrs/mahony.h</a>&quot;</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ekf_8h.html">librm/modules/algorithm/ahrs/ekf.h</a>&quot;</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chassis__fkik_8h.html">librm/modules/algorithm/chassis_fkik.h</a>&quot;</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="crc_8h.html">librm/modules/algorithm/crc.h</a>&quot;</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pid_8h.html">librm/modules/algorithm/pid.h</a>&quot;</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils_8hpp.html">librm/modules/algorithm/utils.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vofa__plotter_8hpp.html">librm/modules/vofa_plotter.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/****************/</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HPP</span></div>
 <div class="ttc" id="abmi088_8h_html"><div class="ttname"><a href="bmi088_8h.html">bmi088.h</a></div><div class="ttdoc">BMI088传感器类</div></div>
 <div class="ttc" id="acan_8h_html"><div class="ttname"><a href="can_8h.html">can.h</a></div><div class="ttdoc">根据平台宏定义决定Can的具体实现，并且在can_interface.h里提供一个接口类CanInterface实现多态</div></div>
 <div class="ttc" id="acan__device_8hpp_html"><div class="ttname"><a href="can__device_8hpp.html">can_device.hpp</a></div><div class="ttdoc">CAN设备抽象类</div></div>
 <div class="ttc" id="achassis__fkik_8h_html"><div class="ttname"><a href="chassis__fkik_8h.html">chassis_fkik.h</a></div><div class="ttdoc">各种常见底盘构型的正逆运动学解算</div></div>
 <div class="ttc" id="acmsis__rtos_8h_html"><div class="ttname"><a href="cmsis__rtos_8h.html">cmsis_rtos.h</a></div><div class="ttdoc">检测环境里有没有 CMSIS-RTOS</div></div>
+<div class="ttc" id="acore_2exception_8h_html"><div class="ttname"><a href="core_2exception_8h.html">exception.h</a></div><div class="ttdoc">异常处理</div></div>
 <div class="ttc" id="acrc_8h_html"><div class="ttname"><a href="crc_8h.html">crc.h</a></div><div class="ttdoc">crc8/crc16</div></div>
 <div class="ttc" id="adevice_8h_html"><div class="ttname"><a href="device_8h.html">device.h</a></div><div class="ttdoc">设备基类和设备管理器，用于监视设备状态</div></div>
 <div class="ttc" id="adji__motor_8hpp_html"><div class="ttname"><a href="dji__motor_8hpp.html">dji_motor.hpp</a></div><div class="ttdoc">大疆电机类库</div></div>
 <div class="ttc" id="adm__motor_8hpp_html"><div class="ttname"><a href="dm__motor_8hpp.html">dm_motor.hpp</a></div><div class="ttdoc">达妙电机类库</div></div>
 <div class="ttc" id="adr16_8h_html"><div class="ttname"><a href="dr16_8h.html">dr16.h</a></div><div class="ttdoc">DR16接收机</div></div>
 <div class="ttc" id="aekf_8h_html"><div class="ttname"><a href="ekf_8h.html">ekf.h</a></div><div class="ttdoc">EKF姿态解算算法</div></div>
-<div class="ttc" id="aexception_8h_html"><div class="ttname"><a href="exception_8h.html">exception.h</a></div><div class="ttdoc">异常处理</div></div>
 <div class="ttc" id="agpio_8h_html"><div class="ttname"><a href="gpio_8h.html">gpio.h</a></div></div>
 <div class="ttc" id="aist8310_8h_html"><div class="ttname"><a href="ist8310_8h.html">ist8310.h</a></div><div class="ttdoc">IST8310磁力计类</div></div>
 <div class="ttc" id="amahony_8h_html"><div class="ttname"><a href="mahony_8h.html">mahony.h</a></div></div>
@@ -169,6 +170,7 @@ $(document).ready(function(){initNavTree('librm_8hpp_source.html',''); initResiz
 <div class="ttc" id="athread__pool_8hpp_html"><div class="ttname"><a href="thread__pool_8hpp.html">thread_pool.hpp</a></div><div class="ttdoc">https://github.com/progschj/ThreadPool/</div></div>
 <div class="ttc" id="atime_8hpp_html"><div class="ttname"><a href="time_8hpp.html">time.hpp</a></div><div class="ttdoc">时间模块，用来包装不同平台的时间相关功能</div></div>
 <div class="ttc" id="atypedefs_8h_html"><div class="ttname"><a href="typedefs_8h.html">typedefs.h</a></div><div class="ttdoc">全局数据类型定义</div></div>
+<div class="ttc" id="aunitree__motor_8hpp_html"><div class="ttname"><a href="unitree__motor_8hpp.html">unitree_motor.hpp</a></div><div class="ttdoc">宇树电机类库</div></div>
 <div class="ttc" id="autils_8hpp_html"><div class="ttname"><a href="utils_8hpp.html">utils.hpp</a></div><div class="ttdoc">通用工具函数</div></div>
 <div class="ttc" id="avofa__plotter_8hpp_html"><div class="ttname"><a href="vofa__plotter_8hpp.html">vofa_plotter.hpp</a></div><div class="ttdoc">绘图器，用于将变量的值格式化后发给上位机绘图，格式适配vofa的FireWater协议</div></div>
 </div><!-- fragment --></div><!-- contents -->
