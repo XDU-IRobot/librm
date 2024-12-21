@@ -30,7 +30,7 @@
 #include "librm/hal/serial_interface.h"
 #include "librm/modules/algorithm/crc.h"
 
-using namespace rm::device;
+namespace rm::device {
 
 /**
  * @brief 串口接收回调函数键值对
@@ -143,3 +143,5 @@ void UnitreeMotor::SetParam(const ControlParam &ctrl_param) {
 
   std::copy(reinterpret_cast<u8 *>(&send_data_), reinterpret_cast<u8 *>(&send_data_) + sizeof(send_data_), tx_buffer_);
 }
+
+}  // namespace rm::device

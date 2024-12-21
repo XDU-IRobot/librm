@@ -38,6 +38,8 @@
 
 #endif
 
+namespace rm::modules::algorithm {
+
 inline f32 InvSqrt(f32 x) {
 #if defined(LIBRM_PLATFORM_STM32) && __FPU_PRESENT == 0
   // Fast inverse square-root
@@ -54,7 +56,6 @@ inline f32 InvSqrt(f32 x) {
   return 1.f / sqrtf(x);
 #endif
 }
-namespace rm::modules::algorithm {
 
 /**
  * @param sample_freq 采样频率(Hz)，默认值1000Hz
