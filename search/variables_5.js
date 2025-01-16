@@ -9,5 +9,6 @@ var searchData=
   ['fdb_5f_6',['fdb_',['../classrm_1_1modules_1_1algorithm_1_1PID.html#ad2d570341b86a1e22714e975c7d07dd9',1,'rm::modules::algorithm::PID']]],
   ['force16_7',['force16',['../structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html#ab465eb41abf383f211006395b7105cf5',1,'rm::device::UnitreeMotor::ComDataReceive::force16'],['../unitree__motor_8hpp.html#aced986e1f5c0a3846c4f2ea2e158c51d',1,'force16:&#160;unitree_motor.hpp']]],
   ['force8_8',['force8',['../unitree__motor_8hpp.html#abd32a6fdc40eeacad2bdf6ab67d53e25',1,'force8:&#160;unitree_motor.hpp'],['../structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html#a6df2ffe51ad05abd8d26ef24d5604c91',1,'rm::device::UnitreeMotor::ComDataReceive::force8']]],
-  ['front_5fwheel_5fspeed_5f_9',['front_wheel_speed_',['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a732a1ab83f559d1fcb7941088e6f1a99',1,'rm::modules::algorithm::QuadOmniChassis']]]
+  ['forward_5fresult_5f_9',['forward_result_',['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a7adbbfcc9475ddbc51db29cac58f43f2',1,'rm::modules::algorithm::QuadOmniChassis']]],
+  ['front_5fwheel_5fspeed_10',['front_wheel_speed',['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a0c4555606aca12e5a818dd08fd0205b3',1,'rm::modules::algorithm::QuadOmniChassis']]]
 ];

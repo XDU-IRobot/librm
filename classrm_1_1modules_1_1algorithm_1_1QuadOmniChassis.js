@@ -1,14 +1,18 @@
 var classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis =
 [
     [ "QuadOmniChassis", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#adf51f2402645386270d95f3a8afa4593", null ],
-    [ "~QuadOmniChassis", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a70b303ac1fef571afa35465d7c76c7e2", null ],
-    [ "Forward", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#aade2de349d8fb5db9fa782ec016faece", null ],
-    [ "Inverse", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a9f443b3f51e23abd934ef9b11a3de7aa", null ],
-    [ "back_wheel_speed_", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#ae9cd89a6e7a1bf58146af2c16dfa87ba", null ],
-    [ "front_wheel_speed_", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a732a1ab83f559d1fcb7941088e6f1a99", null ],
-    [ "left_wheel_speed_", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#ae89fd7a4e3094dc7d371b2b2c0d33147", null ],
-    [ "right_wheel_speed_", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#aa5d9eb2370c3e28415ca27c26468d0e0", null ],
-    [ "vx_", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a2ed4f2463b8cbf0a60b0ee9e579e16d6", null ],
-    [ "vy_", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#aeda0e476887137cacaf3f29236fd8dd8", null ],
-    [ "wz_", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a48a36de369c15e75eb1cfa8541d916fe", null ]
+    [ "~QuadOmniChassis", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a664a7a3c72f8047350ec800a058fc63f", null ],
+    [ "Forward", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a2914e45dea789ac26249c753a1de20f2", null ],
+    [ "forward_result", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a9c28bfa26589fbeb0ed6fab90de30aef", null ],
+    [ "Inverse", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#aad4158458beec10c371d0dc1d88a5700", null ],
+    [ "inverse_result", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a3145a03e4f3671d626e3e679342f7a72", null ],
+    [ "back_wheel_speed", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a779492af06f4ebad8feeec581cf1f7e6", null ],
+    [ "forward_result_", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a7adbbfcc9475ddbc51db29cac58f43f2", null ],
+    [ "front_wheel_speed", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a0c4555606aca12e5a818dd08fd0205b3", null ],
+    [ "inverse_result_", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a8095cd4f8ab893783ac00eddfd85f779", null ],
+    [ "left_wheel_speed", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#ab4721e184675d5d13b370cf7269a6417", null ],
+    [ "right_wheel_speed", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a39faaa52ff2765495e918eda2a85f6e3", null ],
+    [ "vx", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a4cb79f5effd4d5cfd158b9221747af93", null ],
+    [ "vy", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a1b3818570c7145d04e1ce4f4a7145d82", null ],
+    [ "wz", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#ad582dd3c154c27c37a27269878a7c25d", null ]
 ];

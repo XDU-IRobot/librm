@@ -1,8 +1,7 @@
 var dir_eabaf14e3296d098547794244d58ab73 =
 [
     [ "ahrs", "dir_fe5e5c54235b65110e7fc9f948f4aea1.html", "dir_fe5e5c54235b65110e7fc9f948f4aea1" ],
-    [ "chassis_fkik.cc", "chassis__fkik_8cc.html", null ],
-    [ "chassis_fkik.h", "chassis__fkik_8h.html", "chassis__fkik_8h" ],
+    [ "chassis_fkik.hpp", "chassis__fkik_8hpp.html", "chassis__fkik_8hpp" ],
     [ "crc.cc", "crc_8cc.html", "crc_8cc" ],
     [ "crc.h", "crc_8h.html", "crc_8h" ],
     [ "pid.cc", "pid_8cc.html", null ],

@@ -17,11 +17,6 @@ var hierarchy =
       [ "rm::hal::stm32::BxCan", "classrm_1_1hal_1_1stm32_1_1BxCan.html", null ]
     ] ],
     [ "rm::hal::CanMsg", "structrm_1_1hal_1_1CanMsg.html", null ],
-    [ "rm::modules::algorithm::ChassisInterface", "classrm_1_1modules_1_1algorithm_1_1ChassisInterface.html", [
-      [ "rm::modules::algorithm::MecanumChassis", "classrm_1_1modules_1_1algorithm_1_1MecanumChassis.html", null ],
-      [ "rm::modules::algorithm::QuadOmniChassis", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html", null ],
-      [ "rm::modules::algorithm::SteeringChassis", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html", null ]
-    ] ],
     [ "rm::device::UnitreeMotor::ComData32", "unionrm_1_1device_1_1UnitreeMotor_1_1ComData32.html", null ],
     [ "rm::device::UnitreeMotor::ComDataReceive", "structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html", null ],
     [ "rm::device::UnitreeMotor::ComDataSend", "structrm_1_1device_1_1UnitreeMotor_1_1ComDataSend.html", null ],
@@ -54,6 +49,7 @@ var hierarchy =
     [ "Kalman::LinearizedSystemModel", null, [
       [ "rm::modules::algorithm::SystemModel< CovarianceBase >", "classrm_1_1modules_1_1algorithm_1_1SystemModel.html", null ]
     ] ],
+    [ "rm::modules::algorithm::MecanumChassis", "classrm_1_1modules_1_1algorithm_1_1MecanumChassis.html", null ],
     [ "rm::device::DirectDriveMotor::Parameters", "structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html", null ],
     [ "rm::modules::algorithm::PID", "classrm_1_1modules_1_1algorithm_1_1PID.html", [
       [ "rm::modules::algorithm::RingPID", "classrm_1_1modules_1_1algorithm_1_1RingPID.html", null ]
@@ -61,6 +57,7 @@ var hierarchy =
     [ "rm::hal::PinInterface", "classrm_1_1hal_1_1PinInterface.html", [
       [ "rm::hal::stm32::Pin", "classrm_1_1hal_1_1stm32_1_1Pin.html", null ]
     ] ],
+    [ "rm::modules::algorithm::QuadOmniChassis", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html", null ],
     [ "rm::modules::algorithm::Quaternion", "structrm_1_1modules_1_1algorithm_1_1Quaternion.html", null ],
     [ "rm::device::UnitreeMotor::ReceiveData", "structrm_1_1device_1_1UnitreeMotor_1_1ReceiveData.html", null ],
     [ "rm::device::UnitreeMotor::SendData", "structrm_1_1device_1_1UnitreeMotor_1_1SendData.html", null ],
@@ -72,6 +69,7 @@ var hierarchy =
     [ "rm::hal::SpiInterface", "classrm_1_1hal_1_1SpiInterface.html", [
       [ "rm::hal::stm32::Spi", "classrm_1_1hal_1_1stm32_1_1Spi.html", null ]
     ] ],
+    [ "rm::modules::algorithm::SteeringChassis", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html", null ],
     [ "rm::core::ThreadPool", "classrm_1_1core_1_1ThreadPool.html", null ],
     [ "rm::device::DirectDriveMotor::TxBufferTable", "structrm_1_1device_1_1DirectDriveMotor_1_1TxBufferTable.html", null ],
     [ "rm::device::UnitreeMotor", "classrm_1_1device_1_1UnitreeMotor.html", null ],

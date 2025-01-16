@@ -64,13 +64,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ahrs__interface_8h.html",
-"classrm_1_1device_1_1BMI088.html#a9bba179a63d19f94165abd4af4dec88b",
-"classrm_1_1hal_1_1CanInterface.html#a63b696861b59fe68c26f65d5d6a9e3c4",
-"classrm_1_1modules_1_1algorithm_1_1EkfAhrs.html#a823df28ee8b31c580bcb87021e6c0bf9",
-"dir_88bd29c3a8086e73f60b54e5300eb9e2.html",
-"namespacerm_1_1device.html#a4aa0b0d0cbdc6faf701069ac0210fb3caf73b7a14626c25aa554e2437ea3fc1df",
-"structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#af0ccd77b1413b40615c7dcad70708504",
-"structrm_1_1modules_1_1algorithm_1_1ImuData9Dof.html#a56e31cccdbcfd07edf823da4d21fb819"
+"classrm_1_1device_1_1BMI088.html#aba61add85d32d26d622f84cd632453b4",
+"classrm_1_1hal_1_1CanInterface.html#a6bae71da4ba4ee5bf9f21cc03f602498",
+"classrm_1_1modules_1_1algorithm_1_1EkfAhrs.html#af962fa134f775e3e047537a374e85c02",
+"crc_8h.html#ae87fd42e07b56aebf173706575c133c1",
+"namespacerm_1_1device.html#a4aa0b0d0cbdc6faf701069ac0210fb3ca1121352101e67451e27b8544fdc6575e",
+"structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#ada47a78138a50b0f251619909d835c5e",
+"structrm_1_1modules_1_1algorithm_1_1ImuData6Dof.html#a80c89ac2fe90d20b811339785cce5fbc"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';

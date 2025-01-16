@@ -1,8 +1,10 @@
 var classrm_1_1modules_1_1algorithm_1_1SteeringChassis =
 [
+    [ "SteeringChassis", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#aaec6e585d9e09a276f8401ef39312054", null ],
+    [ "~SteeringChassis", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#ab5766cd2af5195dd5afd300f90093ed9", null ],
     [ "SteeringChassis", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a9e849b761ba7e56ea6a5b913dc074a6e", null ],
-    [ "Forward", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a8c90e02f9fb2e5093f65c166b5b5cf1b", null ],
-    [ "Forward", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#af25f69f5194b6035a27db6fc6f662f36", null ],
+    [ "Forward", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a59ed782f98ae12c36c110109ed9ba6f1", null ],
+    [ "Forward", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a3027988d66a4d52c47c82f6a50d8eda5", null ],
     [ "lf_steer_position", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#ad358392de1de6ec89a36ca67ddf1a772", null ],
     [ "lf_wheel_speed", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a4e2a95dbee07644487652b89a3f667a0", null ],
     [ "lr_steer_position", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a4ee9fc97857657e34060b8236b9c3e67", null ],

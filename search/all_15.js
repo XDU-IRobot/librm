@@ -10,6 +10,6 @@ var searchData=
   ['vofaplotter_7',['vofaplotter',['../classrm_1_1modules_1_1VofaPlotter.html#a57f583a2c6da8b6973b89e494053c2b8',1,'rm::modules::VofaPlotter::VofaPlotter()'],['../classrm_1_1modules_1_1VofaPlotter.html',1,'rm::modules::VofaPlotter']]],
   ['voltage_8',['voltage',['../classrm_1_1device_1_1SuperCap.html#a7e6a3ab10861e12f5bdf5ec1a7b4d09e',1,'rm::device::SuperCap']]],
   ['voltageopenloopaccel_9',['VoltageOpenLoopAccel',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a4339b82838fcf72d0a33d78335d48596',1,'rm::device::DirectDriveMotor::Parameters']]],
-  ['vx_5f_10',['vx_',['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a2ed4f2463b8cbf0a60b0ee9e579e16d6',1,'rm::modules::algorithm::QuadOmniChassis']]],
-  ['vy_5f_11',['vy_',['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#aeda0e476887137cacaf3f29236fd8dd8',1,'rm::modules::algorithm::QuadOmniChassis']]]
+  ['vx_10',['vx',['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a4cb79f5effd4d5cfd158b9221747af93',1,'rm::modules::algorithm::QuadOmniChassis']]],
+  ['vy_11',['vy',['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a1b3818570c7145d04e1ce4f4a7145d82',1,'rm::modules::algorithm::QuadOmniChassis']]]
 ];

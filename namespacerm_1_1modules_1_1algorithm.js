@@ -15,7 +15,6 @@ var namespacerm_1_1modules_1_1algorithm =
     [ "accelMeasurement", "classrm_1_1modules_1_1algorithm_1_1accelMeasurement.html", "classrm_1_1modules_1_1algorithm_1_1accelMeasurement" ],
     [ "accelMeasurementModel", "classrm_1_1modules_1_1algorithm_1_1accelMeasurementModel.html", "classrm_1_1modules_1_1algorithm_1_1accelMeasurementModel" ],
     [ "AhrsInterface", "classrm_1_1modules_1_1algorithm_1_1AhrsInterface.html", "classrm_1_1modules_1_1algorithm_1_1AhrsInterface" ],
-    [ "ChassisInterface", "classrm_1_1modules_1_1algorithm_1_1ChassisInterface.html", "classrm_1_1modules_1_1algorithm_1_1ChassisInterface" ],
     [ "Control", "classrm_1_1modules_1_1algorithm_1_1Control.html", null ],
     [ "EkfAhrs", "classrm_1_1modules_1_1algorithm_1_1EkfAhrs.html", "classrm_1_1modules_1_1algorithm_1_1EkfAhrs" ],
     [ "EulerAngle", "structrm_1_1modules_1_1algorithm_1_1EulerAngle.html", "structrm_1_1modules_1_1algorithm_1_1EulerAngle" ],
