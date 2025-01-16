@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: rm::device::DeviceManager类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -23,8 +23,8 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+ <tr id="projectrow">
+  <td id="projectalign">
    <div id="projectname">librm
    </div>
   </td>
@@ -33,21 +33,22 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.1 -->
+<!-- 制作者 Doxygen 1.9.8 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'搜索','.html');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
   initMenu('',true,false,'search.php','搜索');
   $(document).ready(function() { init_search(); });
 });
-/* @license-end */</script>
+/* @license-end */
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -61,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(document).ready(function(){initNavTree('classrm_1_1device_1_1DeviceManager.html',''); initResizable(); });
 /* @license-end */
 </script>
@@ -75,9 +76,16 @@ $(document).ready(function(){initNavTree('classrm_1_1device_1_1DeviceManager.htm
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
@@ -85,8 +93,7 @@ $(document).ready(function(){initNavTree('classrm_1_1device_1_1DeviceManager.htm
 <a href="#pub-methods">Public 成员函数</a> &#124;
 <a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
 <a href="classrm_1_1device_1_1DeviceManager-members.html">所有成员列表</a>  </div>
-  <div class="headertitle">
-<div class="title">rm::device::DeviceManager类 参考<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
+  <div class="headertitle"><div class="title">rm::device::DeviceManager类 参考<span class="mlabels"><span class="mlabel">final</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -95,19 +102,19 @@ $(document).ready(function(){initNavTree('classrm_1_1device_1_1DeviceManager.htm
 
 <p><code>#include &lt;<a class="el" href="device_8h_source.html">device.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:ae97d52cc4a7f63162871efaf72b9ff89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#ae97d52cc4a7f63162871efaf72b9ff89">RegisterDevice</a> (<a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;device)</td></tr>
+<tr class="memitem:ae97d52cc4a7f63162871efaf72b9ff89" id="r_ae97d52cc4a7f63162871efaf72b9ff89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#ae97d52cc4a7f63162871efaf72b9ff89">RegisterDevice</a> (<a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;device)</td></tr>
 <tr class="separator:ae97d52cc4a7f63162871efaf72b9ff89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a444df6c176bd4bbefffb7ded2fbb5e88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#a444df6c176bd4bbefffb7ded2fbb5e88">UnregisterDevice</a> (<a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;device)</td></tr>
+<tr class="memitem:a444df6c176bd4bbefffb7ded2fbb5e88" id="r_a444df6c176bd4bbefffb7ded2fbb5e88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#a444df6c176bd4bbefffb7ded2fbb5e88">UnregisterDevice</a> (<a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;device)</td></tr>
 <tr class="separator:a444df6c176bd4bbefffb7ded2fbb5e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb1a622ca7f5c5bf458959641507e9e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#abb1a622ca7f5c5bf458959641507e9e3">Update</a> ()</td></tr>
+<tr class="memitem:abb1a622ca7f5c5bf458959641507e9e3" id="r_abb1a622ca7f5c5bf458959641507e9e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#abb1a622ca7f5c5bf458959641507e9e3">Update</a> ()</td></tr>
 <tr class="separator:abb1a622ca7f5c5bf458959641507e9e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 静态 Public 成员函数</h2></td></tr>
-<tr class="memitem:a6a3b5cb6f6a95720e2ae9bae9beaaf65"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classrm_1_1device_1_1DeviceManager.html">DeviceManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#a6a3b5cb6f6a95720e2ae9bae9beaaf65">GetInstance</a> ()</td></tr>
-<tr class="separator:a6a3b5cb6f6a95720e2ae9bae9beaaf65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a523d40ca8293856a52c2b6fdcf743208" id="r_a523d40ca8293856a52c2b6fdcf743208"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classrm_1_1device_1_1DeviceManager.html">DeviceManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#a523d40ca8293856a52c2b6fdcf743208">GetInstance</a> ()</td></tr>
+<tr class="separator:a523d40ca8293856a52c2b6fdcf743208"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>设备管理器，集中更新所有设备的在线状态 </p>
@@ -115,8 +122,8 @@ Public 成员函数</h2></td></tr>
 <dd>
 应当定期不断调用Update()方法，更新所有设备的在线状态 </dd></dl>
 </div><h2 class="groupheader">成员函数说明</h2>
-<a id="a6a3b5cb6f6a95720e2ae9bae9beaaf65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a3b5cb6f6a95720e2ae9bae9beaaf65">&#9670;&nbsp;</a></span>GetInstance()</h2>
+<a id="a523d40ca8293856a52c2b6fdcf743208" name="a523d40ca8293856a52c2b6fdcf743208"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a523d40ca8293856a52c2b6fdcf743208">&#9670;&#160;</a></span>GetInstance()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -125,7 +132,7 @@ Public 成员函数</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classrm_1_1device_1_1DeviceManager.html">DeviceManager</a>&amp; rm::device::DeviceManager::GetInstance </td>
+          <td class="memname">static <a class="el" href="classrm_1_1device_1_1DeviceManager.html">DeviceManager</a> &amp; rm::device::DeviceManager::GetInstance </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -140,8 +147,8 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a id="ae97d52cc4a7f63162871efaf72b9ff89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae97d52cc4a7f63162871efaf72b9ff89">&#9670;&nbsp;</a></span>RegisterDevice()</h2>
+<a id="ae97d52cc4a7f63162871efaf72b9ff89" name="ae97d52cc4a7f63162871efaf72b9ff89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae97d52cc4a7f63162871efaf72b9ff89">&#9670;&#160;</a></span>RegisterDevice()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,8 +165,8 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a id="a444df6c176bd4bbefffb7ded2fbb5e88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a444df6c176bd4bbefffb7ded2fbb5e88">&#9670;&nbsp;</a></span>UnregisterDevice()</h2>
+<a id="a444df6c176bd4bbefffb7ded2fbb5e88" name="a444df6c176bd4bbefffb7ded2fbb5e88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a444df6c176bd4bbefffb7ded2fbb5e88">&#9670;&#160;</a></span>UnregisterDevice()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -176,8 +183,8 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a id="abb1a622ca7f5c5bf458959641507e9e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb1a622ca7f5c5bf458959641507e9e3">&#9670;&nbsp;</a></span>Update()</h2>
+<a id="abb1a622ca7f5c5bf458959641507e9e3" name="abb1a622ca7f5c5bf458959641507e9e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb1a622ca7f5c5bf458959641507e9e3">&#9670;&#160;</a></span>Update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -202,7 +209,7 @@ Public 成员函数</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1device.html">device</a></li><li class="navelem"><a class="el" href="classrm_1_1device_1_1DeviceManager.html">DeviceManager</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

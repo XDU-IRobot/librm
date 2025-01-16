@@ -1,8 +1,8 @@
 var namespacerm_1_1hal_1_1stm32 =
 [
     [ "BxCan", "classrm_1_1hal_1_1stm32_1_1BxCan.html", "classrm_1_1hal_1_1stm32_1_1BxCan" ],
-    [ "Pin", "classrm_1_1hal_1_1stm32_1_1Pin.html", "classrm_1_1hal_1_1stm32_1_1Pin" ],
     [ "I2cDevice", "classrm_1_1hal_1_1stm32_1_1I2cDevice.html", "classrm_1_1hal_1_1stm32_1_1I2cDevice" ],
+    [ "Pin", "classrm_1_1hal_1_1stm32_1_1Pin.html", "classrm_1_1hal_1_1stm32_1_1Pin" ],
     [ "Spi", "classrm_1_1hal_1_1stm32_1_1Spi.html", "classrm_1_1hal_1_1stm32_1_1Spi" ],
     [ "SpiDevice", "classrm_1_1hal_1_1stm32_1_1SpiDevice.html", "classrm_1_1hal_1_1stm32_1_1SpiDevice" ],
     [ "Uart", "classrm_1_1hal_1_1stm32_1_1Uart.html", "classrm_1_1hal_1_1stm32_1_1Uart" ],

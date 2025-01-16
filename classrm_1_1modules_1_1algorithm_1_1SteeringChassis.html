@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: rm::modules::algorithm::SteeringChassis类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -23,8 +23,8 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+ <tr id="projectrow">
+  <td id="projectalign">
    <div id="projectname">librm
    </div>
   </td>
@@ -33,21 +33,22 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.1 -->
+<!-- 制作者 Doxygen 1.9.8 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'搜索','.html');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
   initMenu('',true,false,'search.php','搜索');
   $(document).ready(function() { init_search(); });
 });
-/* @license-end */</script>
+/* @license-end */
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -61,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(document).ready(function(){initNavTree('classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html',''); initResizable(); });
 /* @license-end */
 </script>
@@ -75,9 +76,16 @@ $(document).ready(function(){initNavTree('classrm_1_1modules_1_1algorithm_1_1Ste
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
@@ -85,12 +93,11 @@ $(document).ready(function(){initNavTree('classrm_1_1modules_1_1algorithm_1_1Ste
 <a href="#pub-methods">Public 成员函数</a> &#124;
 <a href="#pub-attribs">Public 属性</a> &#124;
 <a href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis-members.html">所有成员列表</a>  </div>
-  <div class="headertitle">
-<div class="title">rm::modules::algorithm::SteeringChassis类 参考</div>  </div>
+  <div class="headertitle"><div class="title">rm::modules::algorithm::SteeringChassis类 参考</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>舵轮底盘  
+<p>四舵轮底盘  
  <a href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="chassis__fkik_8h_source.html">chassis_fkik.h</a>&gt;</code></p>
@@ -104,50 +111,44 @@ $(document).ready(function(){initNavTree('classrm_1_1modules_1_1algorithm_1_1Ste
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:aaec6e585d9e09a276f8401ef39312054"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#aaec6e585d9e09a276f8401ef39312054">SteeringChassis</a> ()=delete</td></tr>
-<tr class="separator:aaec6e585d9e09a276f8401ef39312054"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01fd852543da59be1a8f89b5b09e1dc4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a01fd852543da59be1a8f89b5b09e1dc4">~SteeringChassis</a> () override=default</td></tr>
-<tr class="separator:a01fd852543da59be1a8f89b5b09e1dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e849b761ba7e56ea6a5b913dc074a6e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a9e849b761ba7e56ea6a5b913dc074a6e">SteeringChassis</a> (<a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> chassis_radius)</td></tr>
+<tr class="memitem:a9e849b761ba7e56ea6a5b913dc074a6e" id="r_a9e849b761ba7e56ea6a5b913dc074a6e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a9e849b761ba7e56ea6a5b913dc074a6e">SteeringChassis</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> chassis_radius)</td></tr>
 <tr class="separator:a9e849b761ba7e56ea6a5b913dc074a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3556a79de474584601c330a8e5a92fdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a3556a79de474584601c330a8e5a92fdd">Forward</a> (<a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> vx, <a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> vy, <a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> wz) override</td></tr>
-<tr class="separator:a3556a79de474584601c330a8e5a92fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c90e02f9fb2e5093f65c166b5b5cf1b" id="r_a8c90e02f9fb2e5093f65c166b5b5cf1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a8c90e02f9fb2e5093f65c166b5b5cf1b">Forward</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> vx, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> vy, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> w)</td></tr>
+<tr class="memdesc:a8c90e02f9fb2e5093f65c166b5b5cf1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">360度四舵轮正运动学  <br /></td></tr>
+<tr class="separator:a8c90e02f9fb2e5093f65c166b5b5cf1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af25f69f5194b6035a27db6fc6f662f36" id="r_af25f69f5194b6035a27db6fc6f662f36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#af25f69f5194b6035a27db6fc6f662f36">Forward</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> vx, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> vy, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> w, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> current_lf_angle, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> current_rf_angle, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> current_lr_angle, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> current_rr_angle)</td></tr>
+<tr class="memdesc:af25f69f5194b6035a27db6fc6f662f36"><td class="mdescLeft">&#160;</td><td class="mdescRight">180度四舵轮正运动学  <br /></td></tr>
+<tr class="separator:af25f69f5194b6035a27db6fc6f662f36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classrm_1_1modules_1_1algorithm_1_1ChassisInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrm_1_1modules_1_1algorithm_1_1ChassisInterface')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classrm_1_1modules_1_1algorithm_1_1ChassisInterface.html">rm::modules::algorithm::ChassisInterface</a></td></tr>
-<tr class="memitem:a8ae6301071f3f3db7c2caacd9ce5ad96 inherit pub_methods_classrm_1_1modules_1_1algorithm_1_1ChassisInterface"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1ChassisInterface.html#a8ae6301071f3f3db7c2caacd9ce5ad96">~ChassisInterface</a> ()=default</td></tr>
+<tr class="memitem:a8ae6301071f3f3db7c2caacd9ce5ad96 inherit pub_methods_classrm_1_1modules_1_1algorithm_1_1ChassisInterface" id="r_a8ae6301071f3f3db7c2caacd9ce5ad96"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1ChassisInterface.html#a8ae6301071f3f3db7c2caacd9ce5ad96">~ChassisInterface</a> ()=default</td></tr>
 <tr class="separator:a8ae6301071f3f3db7c2caacd9ce5ad96 inherit pub_methods_classrm_1_1modules_1_1algorithm_1_1ChassisInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public 属性</h2></td></tr>
-<tr class="memitem:a5e6b271835bf06987d453b6e2ca665c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a5e6b271835bf06987d453b6e2ca665c4">vx_</a> {}</td></tr>
-<tr class="separator:a5e6b271835bf06987d453b6e2ca665c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a588539808356ab3b04c6ee52540633e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a588539808356ab3b04c6ee52540633e8">vy_</a> {}</td></tr>
-<tr class="separator:a588539808356ab3b04c6ee52540633e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22bc46564f404b9950b4c113915cb725"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a22bc46564f404b9950b4c113915cb725">wz_</a> {}</td></tr>
-<tr class="separator:a22bc46564f404b9950b4c113915cb725"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01cba12584990f55fd5472d914b42f5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a01cba12584990f55fd5472d914b42f5b">front_wheel_speed_</a> {}</td></tr>
-<tr class="separator:a01cba12584990f55fd5472d914b42f5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e391a88178f6d03e7585819be7ef545"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a7e391a88178f6d03e7585819be7ef545">back_wheel_speed_</a> {}</td></tr>
-<tr class="separator:a7e391a88178f6d03e7585819be7ef545"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4f28d4ade9c4ba12020f056b28e2cd6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#aa4f28d4ade9c4ba12020f056b28e2cd6">left_wheel_speed_</a> {}</td></tr>
-<tr class="separator:aa4f28d4ade9c4ba12020f056b28e2cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab95e67e290e6dd1e81df8dcc6fdacb92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#ab95e67e290e6dd1e81df8dcc6fdacb92">right_wheel_speed_</a> {}</td></tr>
-<tr class="separator:ab95e67e290e6dd1e81df8dcc6fdacb92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac76fb857bb3c385b88207856d6be4fda"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#ac76fb857bb3c385b88207856d6be4fda">front_steer_angle_</a> {}</td></tr>
-<tr class="separator:ac76fb857bb3c385b88207856d6be4fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07cfa6be842efd17d1003ed9c1569147"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a07cfa6be842efd17d1003ed9c1569147">back_steer_angle_</a> {}</td></tr>
-<tr class="separator:a07cfa6be842efd17d1003ed9c1569147"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe3731066e4078b15867107a82897385"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#afe3731066e4078b15867107a82897385">left_steer_angle_</a> {}</td></tr>
-<tr class="separator:afe3731066e4078b15867107a82897385"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b1afd8d1e5c4f2eefc2ef8f9e681bde"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a5b1afd8d1e5c4f2eefc2ef8f9e681bde">right_steer_angle_</a> {}</td></tr>
-<tr class="separator:a5b1afd8d1e5c4f2eefc2ef8f9e681bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad358392de1de6ec89a36ca67ddf1a772" id="r_ad358392de1de6ec89a36ca67ddf1a772"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#ad358392de1de6ec89a36ca67ddf1a772">lf_steer_position</a></td></tr>
+<tr class="separator:ad358392de1de6ec89a36ca67ddf1a772"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca0906e13628ba05697aa2e62ed92011" id="r_aca0906e13628ba05697aa2e62ed92011"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#aca0906e13628ba05697aa2e62ed92011">rf_steer_position</a></td></tr>
+<tr class="separator:aca0906e13628ba05697aa2e62ed92011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ee9fc97857657e34060b8236b9c3e67" id="r_a4ee9fc97857657e34060b8236b9c3e67"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a4ee9fc97857657e34060b8236b9c3e67">lr_steer_position</a></td></tr>
+<tr class="separator:a4ee9fc97857657e34060b8236b9c3e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cd382c04e22fcb8f7ec150337d092df" id="r_a6cd382c04e22fcb8f7ec150337d092df"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a6cd382c04e22fcb8f7ec150337d092df">rr_steer_position</a></td></tr>
+<tr class="separator:a6cd382c04e22fcb8f7ec150337d092df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e2a95dbee07644487652b89a3f667a0" id="r_a4e2a95dbee07644487652b89a3f667a0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a4e2a95dbee07644487652b89a3f667a0">lf_wheel_speed</a></td></tr>
+<tr class="separator:a4e2a95dbee07644487652b89a3f667a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67d4df3c442b0e7bf62847719e23884e" id="r_a67d4df3c442b0e7bf62847719e23884e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a67d4df3c442b0e7bf62847719e23884e">rf_wheel_speed</a></td></tr>
+<tr class="separator:a67d4df3c442b0e7bf62847719e23884e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9925b51b013c2c5e7d7c3402356ee4b7" id="r_a9925b51b013c2c5e7d7c3402356ee4b7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a9925b51b013c2c5e7d7c3402356ee4b7">lr_wheel_speed</a></td></tr>
+<tr class="separator:a9925b51b013c2c5e7d7c3402356ee4b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e1d95a91d9c850c803266bc39e6869a" id="r_a5e1d95a91d9c850c803266bc39e6869a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a5e1d95a91d9c850c803266bc39e6869a">rr_wheel_speed</a></td></tr>
+<tr class="separator:a5e1d95a91d9c850c803266bc39e6869a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><p>舵轮底盘 </p>
+<div class="textblock"><p>四舵轮底盘 </p>
 </div><h2 class="groupheader">构造及析构函数说明</h2>
-<a id="aaec6e585d9e09a276f8401ef39312054"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaec6e585d9e09a276f8401ef39312054">&#9670;&nbsp;</a></span>SteeringChassis() <span class="overload">[1/2]</span></h2>
+<a id="a9e849b761ba7e56ea6a5b913dc074a6e" name="a9e849b761ba7e56ea6a5b913dc074a6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e849b761ba7e56ea6a5b913dc074a6e">&#9670;&#160;</a></span>SteeringChassis()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,57 +159,7 @@ Public 属性</h2></td></tr>
         <tr>
           <td class="memname">rm::modules::algorithm::SteeringChassis::SteeringChassis </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a01fd852543da59be1a8f89b5b09e1dc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01fd852543da59be1a8f89b5b09e1dc4">&#9670;&nbsp;</a></span>~SteeringChassis()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">rm::modules::algorithm::SteeringChassis::~SteeringChassis </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9e849b761ba7e56ea6a5b913dc074a6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e849b761ba7e56ea6a5b913dc074a6e">&#9670;&nbsp;</a></span>SteeringChassis() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">rm::modules::algorithm::SteeringChassis::SteeringChassis </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
           <td class="paramname"><em>chassis_radius</em></td><td>)</td>
           <td></td>
         </tr>
@@ -229,8 +180,8 @@ Public 属性</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">成员函数说明</h2>
-<a id="a3556a79de474584601c330a8e5a92fdd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3556a79de474584601c330a8e5a92fdd">&#9670;&nbsp;</a></span>Forward()</h2>
+<a id="a8c90e02f9fb2e5093f65c166b5b5cf1b" name="a8c90e02f9fb2e5093f65c166b5b5cf1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c90e02f9fb2e5093f65c166b5b5cf1b">&#9670;&#160;</a></span>Forward() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -241,20 +192,20 @@ Public 属性</h2></td></tr>
         <tr>
           <td class="memname">void rm::modules::algorithm::SteeringChassis::Forward </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
           <td class="paramname"><em>vx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
           <td class="paramname"><em>vy</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a>&#160;</td>
-          <td class="paramname"><em>wz</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>w</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -264,172 +215,205 @@ Public 属性</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>360度四舵轮正运动学 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">vx</td><td>x轴方向的速度 </td></tr>
-    <tr><td class="paramname">vy</td><td>y轴方向的速度 </td></tr>
-    <tr><td class="paramname">wz</td><td>z轴方向的角速度 </td></tr>
+    <tr><td class="paramname">vx</td><td>左右方向速度 </td></tr>
+    <tr><td class="paramname">vy</td><td>前后方向速度 </td></tr>
+    <tr><td class="paramname">wz</td><td>旋转速度，从上向下看顺时针为正 </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>注解</dt><dd>这个函数不考虑当前舵角与目标角度是否大于90度而反转舵，效率较低，如果有条件还是建议用另外一个Forward函数的重载版本 </dd></dl>
 
 <p>实现了 <a class="el" href="classrm_1_1modules_1_1algorithm_1_1ChassisInterface.html#acf431d2e2899c5c9036e2b32782bc92b">rm::modules::algorithm::ChassisInterface</a>.</p>
 
 </div>
 </div>
+<a id="af25f69f5194b6035a27db6fc6f662f36" name="af25f69f5194b6035a27db6fc6f662f36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af25f69f5194b6035a27db6fc6f662f36">&#9670;&#160;</a></span>Forward() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rm::modules::algorithm::SteeringChassis::Forward </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>vx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>vy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>current_lf_angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>current_rf_angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>current_lr_angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>current_rr_angle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>180度四舵轮正运动学 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vx</td><td>左右方向速度 </td></tr>
+    <tr><td class="paramname">vy</td><td>前后方向速度 </td></tr>
+    <tr><td class="paramname">wz</td><td>旋转速度，从上向下看顺时针为正 </td></tr>
+    <tr><td class="paramname">current_lf_angle</td><td>当前的左前舵角度，弧度制，底盘前进方向为0 </td></tr>
+    <tr><td class="paramname">current_rf_angle</td><td>当前的右前舵角度，弧度制，底盘前进方向为0 </td></tr>
+    <tr><td class="paramname">current_lr_angle</td><td>当前的左后舵角度，弧度制，底盘前进方向为0 </td></tr>
+    <tr><td class="paramname">current_rr_angle</td><td>当前的右后舵角度，弧度制，底盘前进方向为0 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">类成员变量说明</h2>
-<a id="a07cfa6be842efd17d1003ed9c1569147"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07cfa6be842efd17d1003ed9c1569147">&#9670;&nbsp;</a></span>back_steer_angle_</h2>
+<a id="ad358392de1de6ec89a36ca67ddf1a772" name="ad358392de1de6ec89a36ca67ddf1a772"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad358392de1de6ec89a36ca67ddf1a772">&#9670;&#160;</a></span>lf_steer_position</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> rm::modules::algorithm::SteeringChassis::back_steer_angle_ {}</td>
+          <td class="memname">double rm::modules::algorithm::SteeringChassis::lf_steer_position</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a7e391a88178f6d03e7585819be7ef545"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e391a88178f6d03e7585819be7ef545">&#9670;&nbsp;</a></span>back_wheel_speed_</h2>
+<a id="a4e2a95dbee07644487652b89a3f667a0" name="a4e2a95dbee07644487652b89a3f667a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e2a95dbee07644487652b89a3f667a0">&#9670;&#160;</a></span>lf_wheel_speed</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> rm::modules::algorithm::SteeringChassis::back_wheel_speed_ {}</td>
+          <td class="memname">double rm::modules::algorithm::SteeringChassis::lf_wheel_speed</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ac76fb857bb3c385b88207856d6be4fda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac76fb857bb3c385b88207856d6be4fda">&#9670;&nbsp;</a></span>front_steer_angle_</h2>
+<a id="a4ee9fc97857657e34060b8236b9c3e67" name="a4ee9fc97857657e34060b8236b9c3e67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ee9fc97857657e34060b8236b9c3e67">&#9670;&#160;</a></span>lr_steer_position</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> rm::modules::algorithm::SteeringChassis::front_steer_angle_ {}</td>
+          <td class="memname">double rm::modules::algorithm::SteeringChassis::lr_steer_position</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a01cba12584990f55fd5472d914b42f5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01cba12584990f55fd5472d914b42f5b">&#9670;&nbsp;</a></span>front_wheel_speed_</h2>
+<a id="a9925b51b013c2c5e7d7c3402356ee4b7" name="a9925b51b013c2c5e7d7c3402356ee4b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9925b51b013c2c5e7d7c3402356ee4b7">&#9670;&#160;</a></span>lr_wheel_speed</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> rm::modules::algorithm::SteeringChassis::front_wheel_speed_ {}</td>
+          <td class="memname">double rm::modules::algorithm::SteeringChassis::lr_wheel_speed</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="afe3731066e4078b15867107a82897385"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe3731066e4078b15867107a82897385">&#9670;&nbsp;</a></span>left_steer_angle_</h2>
+<a id="aca0906e13628ba05697aa2e62ed92011" name="aca0906e13628ba05697aa2e62ed92011"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca0906e13628ba05697aa2e62ed92011">&#9670;&#160;</a></span>rf_steer_position</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> rm::modules::algorithm::SteeringChassis::left_steer_angle_ {}</td>
+          <td class="memname">double rm::modules::algorithm::SteeringChassis::rf_steer_position</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="aa4f28d4ade9c4ba12020f056b28e2cd6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4f28d4ade9c4ba12020f056b28e2cd6">&#9670;&nbsp;</a></span>left_wheel_speed_</h2>
+<a id="a67d4df3c442b0e7bf62847719e23884e" name="a67d4df3c442b0e7bf62847719e23884e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67d4df3c442b0e7bf62847719e23884e">&#9670;&#160;</a></span>rf_wheel_speed</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> rm::modules::algorithm::SteeringChassis::left_wheel_speed_ {}</td>
+          <td class="memname">double rm::modules::algorithm::SteeringChassis::rf_wheel_speed</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a5b1afd8d1e5c4f2eefc2ef8f9e681bde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b1afd8d1e5c4f2eefc2ef8f9e681bde">&#9670;&nbsp;</a></span>right_steer_angle_</h2>
+<a id="a6cd382c04e22fcb8f7ec150337d092df" name="a6cd382c04e22fcb8f7ec150337d092df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd382c04e22fcb8f7ec150337d092df">&#9670;&#160;</a></span>rr_steer_position</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> rm::modules::algorithm::SteeringChassis::right_steer_angle_ {}</td>
+          <td class="memname">double rm::modules::algorithm::SteeringChassis::rr_steer_position</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ab95e67e290e6dd1e81df8dcc6fdacb92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab95e67e290e6dd1e81df8dcc6fdacb92">&#9670;&nbsp;</a></span>right_wheel_speed_</h2>
+<a id="a5e1d95a91d9c850c803266bc39e6869a" name="a5e1d95a91d9c850c803266bc39e6869a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e1d95a91d9c850c803266bc39e6869a">&#9670;&#160;</a></span>rr_wheel_speed</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> rm::modules::algorithm::SteeringChassis::right_wheel_speed_ {}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5e6b271835bf06987d453b6e2ca665c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e6b271835bf06987d453b6e2ca665c4">&#9670;&nbsp;</a></span>vx_</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> rm::modules::algorithm::SteeringChassis::vx_ {}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a588539808356ab3b04c6ee52540633e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a588539808356ab3b04c6ee52540633e8">&#9670;&nbsp;</a></span>vy_</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> rm::modules::algorithm::SteeringChassis::vy_ {}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a22bc46564f404b9950b4c113915cb725"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22bc46564f404b9950b4c113915cb725">&#9670;&nbsp;</a></span>wz_</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> rm::modules::algorithm::SteeringChassis::wz_ {}</td>
+          <td class="memname">double rm::modules::algorithm::SteeringChassis::rr_wheel_speed</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -446,7 +430,7 @@ Public 属性</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1modules.html">modules</a></li><li class="navelem"><a class="el" href="namespacerm_1_1modules_1_1algorithm.html">algorithm</a></li><li class="navelem"><a class="el" href="classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html">SteeringChassis</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

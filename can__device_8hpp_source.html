@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: src/librm/device/can_device.hpp 源文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -23,8 +23,8 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+ <tr id="projectrow">
+  <td id="projectalign">
    <div id="projectname">librm
    </div>
   </td>
@@ -33,22 +33,28 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.1 -->
+<!-- 制作者 Doxygen 1.9.8 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'搜索','.html');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
   initMenu('',true,false,'search.php','搜索');
   $(document).ready(function() { init_search(); });
 });
-/* @license-end */</script>
+/* @license-end */
+</script>
 <div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -61,7 +67,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(document).ready(function(){initNavTree('can__device_8hpp_source.html',''); initResizable(); });
 /* @license-end */
 </script>
@@ -75,86 +81,96 @@ $(document).ready(function(){initNavTree('can__device_8hpp_source.html',''); ini
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="headertitle">
-<div class="title">can_device.hpp</div>  </div>
+  <div class="headertitle"><div class="title">can_device.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="can__device_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">  Copyright (c) 2024 XDU-IRobot</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">  in the Software without restriction, including without limitation the rights</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">  copies of the Software, and to permit persons to whom the Software is</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">  furnished to do so, subject to the following conditions:</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">  The above copyright notice and this permission notice shall be included in all</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">  copies or substantial portions of the Software.</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">  SOFTWARE.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifndef LIBRM_CAN_DEVICE_HPP</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define LIBRM_CAN_DEVICE_HPP</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="can__interface_8h.html">librm/hal/can_interface.h</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacerm_1_1device.html">rm::device</a> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1CanDevice.html">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="classrm_1_1device_1_1CanDevice.html">CanDevice</a> {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1CanDevice.html#a49df5a4d9c756838c26382410d5d72cc">   48</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classrm_1_1device_1_1CanDevice.html#a49df5a4d9c756838c26382410d5d72cc">~CanDevice</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... IdList&gt;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1CanDevice.html#a58bd02230756c0dd4a865284bbbe9650">   55</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classrm_1_1device_1_1CanDevice.html#a58bd02230756c0dd4a865284bbbe9650">CanDevice</a>(<a class="code" href="classrm_1_1hal_1_1CanInterface.html">hal::CanInterface</a> &amp;can, IdList... rx_std_ids) : <a class="code" href="classrm_1_1device_1_1CanDevice.html#ad2f1fe1d83dd5901dce4c469c8c2efb1">can_</a>(&amp;can) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    (can.<a class="code" href="classrm_1_1hal_1_1CanInterface.html#a98f124822a33e7a5b4defecaba5c23f8">RegisterDevice</a>(*<span class="keyword">this</span>, rx_std_ids), ...);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">// 禁止拷贝构造</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1CanDevice.html#a9da5dd225d78bc2f43395a105d848e7f">   60</a></span>&#160;  <a class="code" href="classrm_1_1device_1_1CanDevice.html#a9da5dd225d78bc2f43395a105d848e7f">CanDevice</a>(<span class="keyword">const</span> <a class="code" href="classrm_1_1device_1_1CanDevice.html">CanDevice</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1CanDevice.html#a4eb11819ce205260ff5c54ab7859f6b5">   61</a></span>&#160;  <a class="code" href="classrm_1_1device_1_1CanDevice.html">CanDevice</a> &amp;<a class="code" href="classrm_1_1device_1_1CanDevice.html#a4eb11819ce205260ff5c54ab7859f6b5">operator=</a>(<span class="keyword">const</span> <a class="code" href="classrm_1_1device_1_1CanDevice.html">CanDevice</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1CanDevice.html#a2dae62c4d897404a3e8d9ec28108e5ff">   63</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classrm_1_1device_1_1CanDevice.html#a2dae62c4d897404a3e8d9ec28108e5ff">RxCallback</a>(<span class="keyword">const</span> <a class="code" href="structrm_1_1hal_1_1CanMsg.html">hal::CanMsg</a> *msg) = 0;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1CanDevice.html#ad2f1fe1d83dd5901dce4c469c8c2efb1">   66</a></span>&#160;  <a class="code" href="classrm_1_1hal_1_1CanInterface.html">hal::CanInterface</a> *<a class="code" href="classrm_1_1device_1_1CanDevice.html#ad2f1fe1d83dd5901dce4c469c8c2efb1">can_</a>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}  <span class="comment">// namespace rm::device</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// LIBRM_CAN_DEVICE_HPP</span></div>
+<a href="can__device_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2024 XDU-IRobot</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">  copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"></span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">  copies or substantial portions of the Software.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"></span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef LIBRM_CAN_DEVICE_HPP</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_CAN_DEVICE_HPP</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;<a class="code" href="can__interface_8h.html">librm/hal/can_interface.h</a>&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1device.html">rm::device</a> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="};">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1CanDevice.html">   46</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1device_1_1CanDevice.html">CanDevice</a> {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1CanDevice.html#a49df5a4d9c756838c26382410d5d72cc">   48</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="classrm_1_1device_1_1CanDevice.html#a49df5a4d9c756838c26382410d5d72cc">~CanDevice</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... IdList&gt;</div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1CanDevice.html#a58bd02230756c0dd4a865284bbbe9650">   55</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classrm_1_1device_1_1CanDevice.html#a58bd02230756c0dd4a865284bbbe9650">CanDevice</a>(<a class="code hl_class" href="classrm_1_1hal_1_1CanInterface.html">hal::CanInterface</a> &amp;can, IdList... rx_std_ids) : <a class="code hl_variable" href="classrm_1_1device_1_1CanDevice.html#ad2f1fe1d83dd5901dce4c469c8c2efb1">can_</a>(&amp;can) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    (can.<a class="code hl_function" href="classrm_1_1hal_1_1CanInterface.html#a98f124822a33e7a5b4defecaba5c23f8">RegisterDevice</a>(*<span class="keyword">this</span>, rx_std_ids), ...);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  }</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="comment">// 禁止拷贝构造</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1CanDevice.html#a9da5dd225d78bc2f43395a105d848e7f">   60</a></span>  <a class="code hl_function" href="classrm_1_1device_1_1CanDevice.html#a9da5dd225d78bc2f43395a105d848e7f">CanDevice</a>(<span class="keyword">const</span> <a class="code hl_class" href="classrm_1_1device_1_1CanDevice.html">CanDevice</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1CanDevice.html#aa14fc2c37dd3043688abcce3a0204c97">   61</a></span>  <a class="code hl_class" href="classrm_1_1device_1_1CanDevice.html">CanDevice</a> &amp;<a class="code hl_function" href="classrm_1_1device_1_1CanDevice.html#aa14fc2c37dd3043688abcce3a0204c97">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classrm_1_1device_1_1CanDevice.html">CanDevice</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1CanDevice.html#a2dae62c4d897404a3e8d9ec28108e5ff">   63</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1CanDevice.html#a2dae62c4d897404a3e8d9ec28108e5ff">RxCallback</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrm_1_1hal_1_1CanMsg.html">hal::CanMsg</a> *msg) = 0;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1CanDevice.html#ad2f1fe1d83dd5901dce4c469c8c2efb1">   66</a></span>  <a class="code hl_class" href="classrm_1_1hal_1_1CanInterface.html">hal::CanInterface</a> *<a class="code hl_variable" href="classrm_1_1device_1_1CanDevice.html#ad2f1fe1d83dd5901dce4c469c8c2efb1">can_</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>};</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}  <span class="comment">// namespace rm::device</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_CAN_DEVICE_HPP</span></div>
 <div class="ttc" id="acan__interface_8h_html"><div class="ttname"><a href="can__interface_8h.html">can_interface.h</a></div><div class="ttdoc">CAN的接口类</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1CanDevice_html"><div class="ttname"><a href="classrm_1_1device_1_1CanDevice.html">rm::device::CanDevice</a></div><div class="ttdoc">CAN设备的基类</div><div class="ttdef"><b>Definition:</b> can_device.hpp:46</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1CanDevice_html"><div class="ttname"><a href="classrm_1_1device_1_1CanDevice.html">rm::device::CanDevice</a></div><div class="ttdoc">CAN设备的基类</div><div class="ttdef"><b>Definition</b> can_device.hpp:46</div></div>
 <div class="ttc" id="aclassrm_1_1device_1_1CanDevice_html_a2dae62c4d897404a3e8d9ec28108e5ff"><div class="ttname"><a href="classrm_1_1device_1_1CanDevice.html#a2dae62c4d897404a3e8d9ec28108e5ff">rm::device::CanDevice::RxCallback</a></div><div class="ttdeci">virtual void RxCallback(const hal::CanMsg *msg)=0</div></div>
 <div class="ttc" id="aclassrm_1_1device_1_1CanDevice_html_a49df5a4d9c756838c26382410d5d72cc"><div class="ttname"><a href="classrm_1_1device_1_1CanDevice.html#a49df5a4d9c756838c26382410d5d72cc">rm::device::CanDevice::~CanDevice</a></div><div class="ttdeci">virtual ~CanDevice()=default</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1CanDevice_html_a4eb11819ce205260ff5c54ab7859f6b5"><div class="ttname"><a href="classrm_1_1device_1_1CanDevice.html#a4eb11819ce205260ff5c54ab7859f6b5">rm::device::CanDevice::operator=</a></div><div class="ttdeci">CanDevice &amp; operator=(const CanDevice &amp;)=delete</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1CanDevice_html_a58bd02230756c0dd4a865284bbbe9650"><div class="ttname"><a href="classrm_1_1device_1_1CanDevice.html#a58bd02230756c0dd4a865284bbbe9650">rm::device::CanDevice::CanDevice</a></div><div class="ttdeci">CanDevice(hal::CanInterface &amp;can, IdList... rx_std_ids)</div><div class="ttdef"><b>Definition:</b> can_device.hpp:55</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1CanDevice_html_a58bd02230756c0dd4a865284bbbe9650"><div class="ttname"><a href="classrm_1_1device_1_1CanDevice.html#a58bd02230756c0dd4a865284bbbe9650">rm::device::CanDevice::CanDevice</a></div><div class="ttdeci">CanDevice(hal::CanInterface &amp;can, IdList... rx_std_ids)</div><div class="ttdef"><b>Definition</b> can_device.hpp:55</div></div>
 <div class="ttc" id="aclassrm_1_1device_1_1CanDevice_html_a9da5dd225d78bc2f43395a105d848e7f"><div class="ttname"><a href="classrm_1_1device_1_1CanDevice.html#a9da5dd225d78bc2f43395a105d848e7f">rm::device::CanDevice::CanDevice</a></div><div class="ttdeci">CanDevice(const CanDevice &amp;)=delete</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1CanDevice_html_ad2f1fe1d83dd5901dce4c469c8c2efb1"><div class="ttname"><a href="classrm_1_1device_1_1CanDevice.html#ad2f1fe1d83dd5901dce4c469c8c2efb1">rm::device::CanDevice::can_</a></div><div class="ttdeci">hal::CanInterface * can_</div><div class="ttdef"><b>Definition:</b> can_device.hpp:66</div></div>
-<div class="ttc" id="aclassrm_1_1hal_1_1CanInterface_html"><div class="ttname"><a href="classrm_1_1hal_1_1CanInterface.html">rm::hal::CanInterface</a></div><div class="ttdoc">CAN接口类</div><div class="ttdef"><b>Definition:</b> can_interface.h:57</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1CanDevice_html_aa14fc2c37dd3043688abcce3a0204c97"><div class="ttname"><a href="classrm_1_1device_1_1CanDevice.html#aa14fc2c37dd3043688abcce3a0204c97">rm::device::CanDevice::operator=</a></div><div class="ttdeci">CanDevice &amp; operator=(const CanDevice &amp;)=delete</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1CanDevice_html_ad2f1fe1d83dd5901dce4c469c8c2efb1"><div class="ttname"><a href="classrm_1_1device_1_1CanDevice.html#ad2f1fe1d83dd5901dce4c469c8c2efb1">rm::device::CanDevice::can_</a></div><div class="ttdeci">hal::CanInterface * can_</div><div class="ttdef"><b>Definition</b> can_device.hpp:66</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1CanInterface_html"><div class="ttname"><a href="classrm_1_1hal_1_1CanInterface.html">rm::hal::CanInterface</a></div><div class="ttdoc">CAN接口类</div><div class="ttdef"><b>Definition</b> can_interface.h:57</div></div>
 <div class="ttc" id="aclassrm_1_1hal_1_1CanInterface_html_a98f124822a33e7a5b4defecaba5c23f8"><div class="ttname"><a href="classrm_1_1hal_1_1CanInterface.html#a98f124822a33e7a5b4defecaba5c23f8">rm::hal::CanInterface::RegisterDevice</a></div><div class="ttdeci">virtual void RegisterDevice(device::CanDevice &amp;device, u32 rx_stdid)=0</div><div class="ttdoc">注册CAN设备</div></div>
-<div class="ttc" id="anamespacerm_1_1device_html"><div class="ttname"><a href="namespacerm_1_1device.html">rm::device</a></div><div class="ttdef"><b>Definition:</b> dji_motor.cc:30</div></div>
-<div class="ttc" id="astructrm_1_1hal_1_1CanMsg_html"><div class="ttname"><a href="structrm_1_1hal_1_1CanMsg.html">rm::hal::CanMsg</a></div><div class="ttdef"><b>Definition:</b> can_interface.h:41</div></div>
+<div class="ttc" id="anamespacerm_1_1device_html"><div class="ttname"><a href="namespacerm_1_1device.html">rm::device</a></div><div class="ttdef"><b>Definition</b> directdrive_motor.cc:33</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanMsg_html"><div class="ttname"><a href="structrm_1_1hal_1_1CanMsg.html">rm::hal::CanMsg</a></div><div class="ttdef"><b>Definition</b> can_interface.h:41</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_e8cded2b3f09657169024877e246b3be.html">device</a></li><li class="navelem"><a class="el" href="can__device_8hpp.html">can_device.hpp</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

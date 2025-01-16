@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: src/librm/device/sensor/bmi088.h 源文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -23,8 +23,8 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+ <tr id="projectrow">
+  <td id="projectalign">
    <div id="projectname">librm
    </div>
   </td>
@@ -33,22 +33,28 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.1 -->
+<!-- 制作者 Doxygen 1.9.8 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'搜索','.html');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
   initMenu('',true,false,'search.php','搜索');
   $(document).ready(function() { init_search(); });
 });
-/* @license-end */</script>
+/* @license-end */
+</script>
 <div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -61,7 +67,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(document).ready(function(){initNavTree('bmi088_8h_source.html',''); initResizable(); });
 /* @license-end */
 </script>
@@ -75,140 +81,154 @@ $(document).ready(function(){initNavTree('bmi088_8h_source.html',''); initResiza
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="headertitle">
-<div class="title">bmi088.h</div>  </div>
+  <div class="headertitle"><div class="title">bmi088.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="bmi088_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">  Copyright (c) 2024 XDU-IRobot</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">  in the Software without restriction, including without limitation the rights</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">  copies of the Software, and to permit persons to whom the Software is</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">  furnished to do so, subject to the following conditions:</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">  The above copyright notice and this permission notice shall be included in all</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">  copies or substantial portions of the Software.</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">  SOFTWARE.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#ifndef LIBRM_DEVICE_SENSOR_BMI088_H</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define LIBRM_DEVICE_SENSOR_BMI088_H</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="hal_8h.html">librm/hal/stm32/hal.h</a>&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#if defined(HAL_SPI_MODULE_ENABLED)</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="typedefs_8h.html">librm/core/typedefs.h</a>&quot;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="spi__device_8h.html">librm/hal/stm32/spi_device.h</a>&quot;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacerm_1_1device.html">rm::device</a> {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdf">   43</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdf">BMI088Status</a> : <a class="code" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a> {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfad306b6fdee05fe87455110ddf6501e6c">NO_ERROR</a> = 0x00,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa77440f4fc5ed172e4de3a845ca5d6c81">ACC_PWR_CTRL_ERROR</a> = 0x01,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa38d7efd6b0d2e15d94fe83bcfb307028">ACC_PWR_CONF_ERROR</a> = 0x02,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa11b2b1c21fcc9ac3d0259a6583e8e1d0">ACC_CONF_ERROR</a> = 0x03,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa70dae7e49fc7b064325e3ae1e4543737">ACC_SELF_TEST_ERROR</a> = 0x04,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfaca70c6508394b694402cccc30923858b">ACC_RANGE_ERROR</a> = 0x05,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa7da2c6e52860145ef7576ee8f4f643fd">INT1_IO_CTRL_ERROR</a> = 0x06,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfab4de3774a072da27c00e23227b17d225">INT_MAP_DATA_ERROR</a> = 0x07,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfaae87d1c317ee9236bb2551c041a190e6">GYRO_RANGE_ERROR</a> = 0x08,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa565d6f0240a1e6d0433180fa3c0212d3">GYRO_BANDWIDTH_ERROR</a> = 0x09,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa063d1724ff648c2238337c4d87f8032b">GYRO_LPM1_ERROR</a> = 0x0A,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa4378da19a91d5248cf5957519c1a6c89">GYRO_CTRL_ERROR</a> = 0x0B,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfae4453b61c5b27d44c945331a5145cf6d">GYRO_INT3_INT4_IO_CONF_ERROR</a> = 0x0C,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa13d49a17dd73cc153f81a475a0b30e44">GYRO_INT3_INT4_IO_MAP_ERROR</a> = 0x0D,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfaf1849d80e369979d580c3223029a63ff">SELF_TEST_ACCEL_ERROR</a> = 0x80,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa0eb8a30dc306ed64460e9f3824814fd4">SELF_TEST_GYRO_ERROR</a> = 0x40,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfab37cdaa5ea18c2d6d7a12580b6549589">NO_SENSOR</a> = 0xFF,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bd">   67</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bd">BMI088GyroRange</a> : <a class="code" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a> {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bdaad692ff8bddf88c1ed254c6957d6e111">GYRO_2000</a> = 0u,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bda1ecf82d3c3f01abf08a5d8e183cecfca">GYRO_1000</a> = 1u,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bdad271903778c530d34ac446e4fd6cd10b">GYRO_500</a> = 2u,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bda86a81ccec79651143ce40b6c840ba6de">GYRO_250</a> = 3u,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bda0b4c565251ea6271a1ea79964e7badd9">GYRO_125</a> = 4u,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039">   78</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039">BMI088AccelRange</a> : <a class="code" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a> {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039ad4c08800a9c5023eee15ea1299b199df">ACC_RANGE_3G</a> = 0u,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039a10420b6db4793bac36bde62ecdeddba9">ACC_RANGE_6G</a> = 1u,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039a3db349985ff7dd6f759072e131afa838">ACC_RANGE_12G</a> = 2u,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039affb963dec4b85197cfc60020ca1d84df">ACC_RANGE_24G</a> = 3u,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1BMI088.html">   88</a></span>&#160;<span class="keyword">class </span>[[deprecated]] <a class="code" href="classrm_1_1device_1_1BMI088.html">BMI088</a> {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1BMI088.html#a9bba179a63d19f94165abd4af4dec88b">   90</a></span>&#160;  <a class="code" href="classrm_1_1device_1_1BMI088.html#a9bba179a63d19f94165abd4af4dec88b">BMI088</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1BMI088.html#aba61add85d32d26d622f84cd632453b4">   91</a></span>&#160;  <a class="code" href="classrm_1_1device_1_1BMI088.html#aba61add85d32d26d622f84cd632453b4">~BMI088</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <a class="code" href="classrm_1_1device_1_1BMI088.html">BMI088</a>(SPI_HandleTypeDef &amp;hspi, GPIO_TypeDef *cs1_accel_gpio_port, <a class="code" href="typedefs_8h.html#ace9d960e74685e2cd84b36132dbbf8aa">u16</a> cs1_accel_pin,</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;         GPIO_TypeDef *cs1_gyro_gpio_port, <a class="code" href="typedefs_8h.html#ace9d960e74685e2cd84b36132dbbf8aa">u16</a> cs1_gyro_pin);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="comment">// no copy</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1BMI088.html#af1fb8987359c0246d312240b420a1c2d">   96</a></span>&#160;  <a class="code" href="classrm_1_1device_1_1BMI088.html#af1fb8987359c0246d312240b420a1c2d">BMI088</a>(<span class="keyword">const</span> <a class="code" href="classrm_1_1device_1_1BMI088.html">BMI088</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1BMI088.html#a935f605f41bb01741233f0abedc815cf">   97</a></span>&#160;  <a class="code" href="classrm_1_1device_1_1BMI088.html">BMI088</a> &amp;<a class="code" href="classrm_1_1device_1_1BMI088.html#a935f605f41bb01741233f0abedc815cf">operator=</a>(<span class="keyword">const</span> <a class="code" href="classrm_1_1device_1_1BMI088.html">BMI088</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordtype">void</span> Update();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  [[nodiscard]] <a class="code" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> temperature() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  [[nodiscard]] <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdf">BMI088Status</a> status() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  [[nodiscard]] <a class="code" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> gyro_x() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  [[nodiscard]] <a class="code" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> gyro_y() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  [[nodiscard]] <a class="code" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> gyro_z() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  [[nodiscard]] <a class="code" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> accel_x() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  [[nodiscard]] <a class="code" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> accel_y() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  [[nodiscard]] <a class="code" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> accel_z() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keywordtype">void</span> InitAccelerometer();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordtype">void</span> InitGyroscope();</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="classrm_1_1hal_1_1stm32_1_1SpiDevice.html">hal::stm32::SpiDevice</a> accel_device_;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="classrm_1_1hal_1_1stm32_1_1SpiDevice.html">hal::stm32::SpiDevice</a> gyro_device_;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdf">BMI088Status</a> status_{<a class="code" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfab37cdaa5ea18c2d6d7a12580b6549589">BMI088Status::NO_SENSOR</a>};</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <a class="code" href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bd">BMI088GyroRange</a> gyro_range_{<a class="code" href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bdaad692ff8bddf88c1ed254c6957d6e111">BMI088GyroRange::GYRO_2000</a>};</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <a class="code" href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039">BMI088AccelRange</a> accel_range_{<a class="code" href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039ad4c08800a9c5023eee15ea1299b199df">BMI088AccelRange::ACC_RANGE_3G</a>};</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <a class="code" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> gyro_[3]{0};</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> accel_[3]{0};</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <a class="code" href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a> temperature_{};</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;};</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}  <span class="comment">// namespace rm::device</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// HAL_SPI_MODULE_ENABLED</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// LIBRM_DEVICE_SENSOR_BMI088_H</span></div>
-<div class="ttc" id="aclassrm_1_1device_1_1BMI088_html"><div class="ttname"><a href="classrm_1_1device_1_1BMI088.html">rm::device::BMI088</a></div><div class="ttdoc">BMI088传感器类</div><div class="ttdef"><b>Definition:</b> bmi088.h:88</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1BMI088_html_a935f605f41bb01741233f0abedc815cf"><div class="ttname"><a href="classrm_1_1device_1_1BMI088.html#a935f605f41bb01741233f0abedc815cf">rm::device::BMI088::operator=</a></div><div class="ttdeci">BMI088 &amp; operator=(const BMI088 &amp;)=delete</div></div>
+<a href="bmi088_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2024 XDU-IRobot</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">  copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"></span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">  copies or substantial portions of the Software.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"></span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#ifndef LIBRM_DEVICE_SENSOR_BMI088_H</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#define LIBRM_DEVICE_SENSOR_BMI088_H</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;<a class="code" href="hal_8h.html">librm/hal/stm32/hal.h</a>&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#if defined(HAL_SPI_MODULE_ENABLED)</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="typedefs_8h.html">librm/core/typedefs.h</a>&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;<a class="code" href="spi__device_8h.html">librm/hal/stm32/spi_device.h</a>&quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1device.html">rm::device</a> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdf">   43</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdf">BMI088Status</a> : <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfad306b6fdee05fe87455110ddf6501e6c">NO_ERROR</a> = 0x00,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa77440f4fc5ed172e4de3a845ca5d6c81">ACC_PWR_CTRL_ERROR</a> = 0x01,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa38d7efd6b0d2e15d94fe83bcfb307028">ACC_PWR_CONF_ERROR</a> = 0x02,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa11b2b1c21fcc9ac3d0259a6583e8e1d0">ACC_CONF_ERROR</a> = 0x03,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa70dae7e49fc7b064325e3ae1e4543737">ACC_SELF_TEST_ERROR</a> = 0x04,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfaca70c6508394b694402cccc30923858b">ACC_RANGE_ERROR</a> = 0x05,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa7da2c6e52860145ef7576ee8f4f643fd">INT1_IO_CTRL_ERROR</a> = 0x06,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfab4de3774a072da27c00e23227b17d225">INT_MAP_DATA_ERROR</a> = 0x07,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfaae87d1c317ee9236bb2551c041a190e6">GYRO_RANGE_ERROR</a> = 0x08,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa565d6f0240a1e6d0433180fa3c0212d3">GYRO_BANDWIDTH_ERROR</a> = 0x09,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa063d1724ff648c2238337c4d87f8032b">GYRO_LPM1_ERROR</a> = 0x0A,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa4378da19a91d5248cf5957519c1a6c89">GYRO_CTRL_ERROR</a> = 0x0B,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfae4453b61c5b27d44c945331a5145cf6d">GYRO_INT3_INT4_IO_CONF_ERROR</a> = 0x0C,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa13d49a17dd73cc153f81a475a0b30e44">GYRO_INT3_INT4_IO_MAP_ERROR</a> = 0x0D,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfaf1849d80e369979d580c3223029a63ff">SELF_TEST_ACCEL_ERROR</a> = 0x80,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa0eb8a30dc306ed64460e9f3824814fd4">SELF_TEST_GYRO_ERROR</a> = 0x40,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfab37cdaa5ea18c2d6d7a12580b6549589">NO_SENSOR</a> = 0xFF,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>};</div>
+</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="};">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bd">   67</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bd">BMI088GyroRange</a> : <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bdaad692ff8bddf88c1ed254c6957d6e111">GYRO_2000</a> = 0u,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bda1ecf82d3c3f01abf08a5d8e183cecfca">GYRO_1000</a> = 1u,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bdad271903778c530d34ac446e4fd6cd10b">GYRO_500</a> = 2u,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bda86a81ccec79651143ce40b6c840ba6de">GYRO_250</a> = 3u,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bda0b4c565251ea6271a1ea79964e7badd9">GYRO_125</a> = 4u,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="};">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039">   78</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039">BMI088AccelRange</a> : <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039ad4c08800a9c5023eee15ea1299b199df">ACC_RANGE_3G</a> = 0u,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039a10420b6db4793bac36bde62ecdeddba9">ACC_RANGE_6G</a> = 1u,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039a3db349985ff7dd6f759072e131afa838">ACC_RANGE_12G</a> = 2u,</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <a class="code hl_enumvalue" href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039affb963dec4b85197cfc60020ca1d84df">ACC_RANGE_24G</a> = 3u,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>};</div>
+</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="};">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1BMI088.html">   88</a></span><span class="keyword">class </span>[[deprecated]] <a class="code hl_class" href="classrm_1_1device_1_1BMI088.html">BMI088</a> {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1BMI088.html#a9bba179a63d19f94165abd4af4dec88b">   90</a></span>  <a class="code hl_function" href="classrm_1_1device_1_1BMI088.html#a9bba179a63d19f94165abd4af4dec88b">BMI088</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1BMI088.html#aba61add85d32d26d622f84cd632453b4">   91</a></span>  <a class="code hl_function" href="classrm_1_1device_1_1BMI088.html#aba61add85d32d26d622f84cd632453b4">~BMI088</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <a class="code hl_class" href="classrm_1_1device_1_1BMI088.html">BMI088</a>(SPI_HandleTypeDef &amp;hspi, GPIO_TypeDef *cs1_accel_gpio_port, <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> cs1_accel_pin,</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>         GPIO_TypeDef *cs1_gyro_gpio_port, <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> cs1_gyro_pin);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="comment">// no copy</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1BMI088.html#af1fb8987359c0246d312240b420a1c2d">   96</a></span>  <a class="code hl_function" href="classrm_1_1device_1_1BMI088.html#af1fb8987359c0246d312240b420a1c2d">BMI088</a>(<span class="keyword">const</span> <a class="code hl_class" href="classrm_1_1device_1_1BMI088.html">BMI088</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1BMI088.html#acdd4e732934f5984a53b7302eceb108b">   97</a></span>  <a class="code hl_class" href="classrm_1_1device_1_1BMI088.html">BMI088</a> &amp;<a class="code hl_function" href="classrm_1_1device_1_1BMI088.html#acdd4e732934f5984a53b7302eceb108b">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classrm_1_1device_1_1BMI088.html">BMI088</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keywordtype">void</span> Update();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  [[nodiscard]] <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> temperature() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  [[nodiscard]] <a class="code hl_enumeration" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdf">BMI088Status</a> status() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  [[nodiscard]] <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> gyro_x() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  [[nodiscard]] <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> gyro_y() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  [[nodiscard]] <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> gyro_z() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  [[nodiscard]] <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> accel_x() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  [[nodiscard]] <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> accel_y() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  [[nodiscard]] <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> accel_z() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keywordtype">void</span> InitAccelerometer();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordtype">void</span> InitGyroscope();</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <a class="code hl_class" href="classrm_1_1hal_1_1stm32_1_1SpiDevice.html">hal::stm32::SpiDevice</a> accel_device_;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <a class="code hl_class" href="classrm_1_1hal_1_1stm32_1_1SpiDevice.html">hal::stm32::SpiDevice</a> gyro_device_;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <a class="code hl_enumeration" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdf">BMI088Status</a> status_{BMI088Status::NO_SENSOR};</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <a class="code hl_enumeration" href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bd">BMI088GyroRange</a> gyro_range_{BMI088GyroRange::GYRO_2000};</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  BMI088AccelRange accel_range_{BMI088AccelRange::ACC_RANGE_3G};</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  f32 gyro_[3]{0};</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> accel_[3]{0};</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> temperature_{};</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>};</div>
+</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>}  <span class="comment">// namespace rm::device</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="preprocessor">#endif  </span><span class="comment">// HAL_SPI_MODULE_ENABLED</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_DEVICE_SENSOR_BMI088_H</span></div>
+<div class="ttc" id="aclassrm_1_1device_1_1BMI088_html"><div class="ttname"><a href="classrm_1_1device_1_1BMI088.html">rm::device::BMI088</a></div><div class="ttdoc">BMI088传感器类</div><div class="ttdef"><b>Definition</b> bmi088.h:88</div></div>
 <div class="ttc" id="aclassrm_1_1device_1_1BMI088_html_a9bba179a63d19f94165abd4af4dec88b"><div class="ttname"><a href="classrm_1_1device_1_1BMI088.html#a9bba179a63d19f94165abd4af4dec88b">rm::device::BMI088::BMI088</a></div><div class="ttdeci">BMI088()=delete</div></div>
 <div class="ttc" id="aclassrm_1_1device_1_1BMI088_html_aba61add85d32d26d622f84cd632453b4"><div class="ttname"><a href="classrm_1_1device_1_1BMI088.html#aba61add85d32d26d622f84cd632453b4">rm::device::BMI088::~BMI088</a></div><div class="ttdeci">~BMI088()=default</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1BMI088_html_acdd4e732934f5984a53b7302eceb108b"><div class="ttname"><a href="classrm_1_1device_1_1BMI088.html#acdd4e732934f5984a53b7302eceb108b">rm::device::BMI088::operator=</a></div><div class="ttdeci">BMI088 &amp; operator=(const BMI088 &amp;)=delete</div></div>
 <div class="ttc" id="aclassrm_1_1device_1_1BMI088_html_af1fb8987359c0246d312240b420a1c2d"><div class="ttname"><a href="classrm_1_1device_1_1BMI088.html#af1fb8987359c0246d312240b420a1c2d">rm::device::BMI088::BMI088</a></div><div class="ttdeci">BMI088(const BMI088 &amp;)=delete</div></div>
-<div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1SpiDevice_html"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1SpiDevice.html">rm::hal::stm32::SpiDevice</a></div><div class="ttdoc">SPI设备基类</div><div class="ttdef"><b>Definition:</b> spi_device.h:41</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1SpiDevice_html"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1SpiDevice.html">rm::hal::stm32::SpiDevice</a></div><div class="ttdoc">SPI设备基类</div><div class="ttdef"><b>Definition</b> spi_device.h:41</div></div>
 <div class="ttc" id="ahal_8h_html"><div class="ttname"><a href="hal_8h.html">hal.h</a></div><div class="ttdoc">根据不同STM32型号选择不同的HAL库</div></div>
-<div class="ttc" id="anamespacerm_1_1device_html"><div class="ttname"><a href="namespacerm_1_1device.html">rm::device</a></div><div class="ttdef"><b>Definition:</b> dji_motor.cc:30</div></div>
-<div class="ttc" id="anamespacerm_1_1device_html_a801b856449ebaad3e80430e3f72d7039"><div class="ttname"><a href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039">rm::device::BMI088AccelRange</a></div><div class="ttdeci">BMI088AccelRange</div><div class="ttdoc">BMI088加速度计量程</div><div class="ttdef"><b>Definition:</b> bmi088.h:78</div></div>
+<div class="ttc" id="anamespacerm_1_1device_html"><div class="ttname"><a href="namespacerm_1_1device.html">rm::device</a></div><div class="ttdef"><b>Definition</b> directdrive_motor.cc:33</div></div>
+<div class="ttc" id="anamespacerm_1_1device_html_a801b856449ebaad3e80430e3f72d7039"><div class="ttname"><a href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039">rm::device::BMI088AccelRange</a></div><div class="ttdeci">BMI088AccelRange</div><div class="ttdoc">BMI088加速度计量程</div><div class="ttdef"><b>Definition</b> bmi088.h:78</div></div>
 <div class="ttc" id="anamespacerm_1_1device_html_a801b856449ebaad3e80430e3f72d7039a10420b6db4793bac36bde62ecdeddba9"><div class="ttname"><a href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039a10420b6db4793bac36bde62ecdeddba9">rm::device::BMI088AccelRange::ACC_RANGE_6G</a></div><div class="ttdeci">@ ACC_RANGE_6G</div></div>
 <div class="ttc" id="anamespacerm_1_1device_html_a801b856449ebaad3e80430e3f72d7039a3db349985ff7dd6f759072e131afa838"><div class="ttname"><a href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039a3db349985ff7dd6f759072e131afa838">rm::device::BMI088AccelRange::ACC_RANGE_12G</a></div><div class="ttdeci">@ ACC_RANGE_12G</div></div>
 <div class="ttc" id="anamespacerm_1_1device_html_a801b856449ebaad3e80430e3f72d7039ad4c08800a9c5023eee15ea1299b199df"><div class="ttname"><a href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039ad4c08800a9c5023eee15ea1299b199df">rm::device::BMI088AccelRange::ACC_RANGE_3G</a></div><div class="ttdeci">@ ACC_RANGE_3G</div></div>
 <div class="ttc" id="anamespacerm_1_1device_html_a801b856449ebaad3e80430e3f72d7039affb963dec4b85197cfc60020ca1d84df"><div class="ttname"><a href="namespacerm_1_1device.html#a801b856449ebaad3e80430e3f72d7039affb963dec4b85197cfc60020ca1d84df">rm::device::BMI088AccelRange::ACC_RANGE_24G</a></div><div class="ttdeci">@ ACC_RANGE_24G</div></div>
-<div class="ttc" id="anamespacerm_1_1device_html_a944433672605ce55b326757ce86f9cdf"><div class="ttname"><a href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdf">rm::device::BMI088Status</a></div><div class="ttdeci">BMI088Status</div><div class="ttdoc">BMI088传感器状态</div><div class="ttdef"><b>Definition:</b> bmi088.h:43</div></div>
+<div class="ttc" id="anamespacerm_1_1device_html_a944433672605ce55b326757ce86f9cdf"><div class="ttname"><a href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdf">rm::device::BMI088Status</a></div><div class="ttdeci">BMI088Status</div><div class="ttdoc">BMI088传感器状态</div><div class="ttdef"><b>Definition</b> bmi088.h:43</div></div>
 <div class="ttc" id="anamespacerm_1_1device_html_a944433672605ce55b326757ce86f9cdfa063d1724ff648c2238337c4d87f8032b"><div class="ttname"><a href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa063d1724ff648c2238337c4d87f8032b">rm::device::BMI088Status::GYRO_LPM1_ERROR</a></div><div class="ttdeci">@ GYRO_LPM1_ERROR</div></div>
 <div class="ttc" id="anamespacerm_1_1device_html_a944433672605ce55b326757ce86f9cdfa0eb8a30dc306ed64460e9f3824814fd4"><div class="ttname"><a href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa0eb8a30dc306ed64460e9f3824814fd4">rm::device::BMI088Status::SELF_TEST_GYRO_ERROR</a></div><div class="ttdeci">@ SELF_TEST_GYRO_ERROR</div></div>
 <div class="ttc" id="anamespacerm_1_1device_html_a944433672605ce55b326757ce86f9cdfa11b2b1c21fcc9ac3d0259a6583e8e1d0"><div class="ttname"><a href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa11b2b1c21fcc9ac3d0259a6583e8e1d0">rm::device::BMI088Status::ACC_CONF_ERROR</a></div><div class="ttdeci">@ ACC_CONF_ERROR</div></div>
@@ -226,24 +246,24 @@ $(document).ready(function(){initNavTree('bmi088_8h_source.html',''); initResiza
 <div class="ttc" id="anamespacerm_1_1device_html_a944433672605ce55b326757ce86f9cdfad306b6fdee05fe87455110ddf6501e6c"><div class="ttname"><a href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfad306b6fdee05fe87455110ddf6501e6c">rm::device::BMI088Status::NO_ERROR</a></div><div class="ttdeci">@ NO_ERROR</div></div>
 <div class="ttc" id="anamespacerm_1_1device_html_a944433672605ce55b326757ce86f9cdfae4453b61c5b27d44c945331a5145cf6d"><div class="ttname"><a href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfae4453b61c5b27d44c945331a5145cf6d">rm::device::BMI088Status::GYRO_INT3_INT4_IO_CONF_ERROR</a></div><div class="ttdeci">@ GYRO_INT3_INT4_IO_CONF_ERROR</div></div>
 <div class="ttc" id="anamespacerm_1_1device_html_a944433672605ce55b326757ce86f9cdfaf1849d80e369979d580c3223029a63ff"><div class="ttname"><a href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfaf1849d80e369979d580c3223029a63ff">rm::device::BMI088Status::SELF_TEST_ACCEL_ERROR</a></div><div class="ttdeci">@ SELF_TEST_ACCEL_ERROR</div></div>
-<div class="ttc" id="anamespacerm_1_1device_html_aeec7bc51017d78804c76413da38685bd"><div class="ttname"><a href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bd">rm::device::BMI088GyroRange</a></div><div class="ttdeci">BMI088GyroRange</div><div class="ttdoc">BMI088陀螺仪量程</div><div class="ttdef"><b>Definition:</b> bmi088.h:67</div></div>
+<div class="ttc" id="anamespacerm_1_1device_html_aeec7bc51017d78804c76413da38685bd"><div class="ttname"><a href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bd">rm::device::BMI088GyroRange</a></div><div class="ttdeci">BMI088GyroRange</div><div class="ttdoc">BMI088陀螺仪量程</div><div class="ttdef"><b>Definition</b> bmi088.h:67</div></div>
 <div class="ttc" id="anamespacerm_1_1device_html_aeec7bc51017d78804c76413da38685bda0b4c565251ea6271a1ea79964e7badd9"><div class="ttname"><a href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bda0b4c565251ea6271a1ea79964e7badd9">rm::device::BMI088GyroRange::GYRO_125</a></div><div class="ttdeci">@ GYRO_125</div></div>
 <div class="ttc" id="anamespacerm_1_1device_html_aeec7bc51017d78804c76413da38685bda1ecf82d3c3f01abf08a5d8e183cecfca"><div class="ttname"><a href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bda1ecf82d3c3f01abf08a5d8e183cecfca">rm::device::BMI088GyroRange::GYRO_1000</a></div><div class="ttdeci">@ GYRO_1000</div></div>
 <div class="ttc" id="anamespacerm_1_1device_html_aeec7bc51017d78804c76413da38685bda86a81ccec79651143ce40b6c840ba6de"><div class="ttname"><a href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bda86a81ccec79651143ce40b6c840ba6de">rm::device::BMI088GyroRange::GYRO_250</a></div><div class="ttdeci">@ GYRO_250</div></div>
 <div class="ttc" id="anamespacerm_1_1device_html_aeec7bc51017d78804c76413da38685bdaad692ff8bddf88c1ed254c6957d6e111"><div class="ttname"><a href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bdaad692ff8bddf88c1ed254c6957d6e111">rm::device::BMI088GyroRange::GYRO_2000</a></div><div class="ttdeci">@ GYRO_2000</div></div>
 <div class="ttc" id="anamespacerm_1_1device_html_aeec7bc51017d78804c76413da38685bdad271903778c530d34ac446e4fd6cd10b"><div class="ttname"><a href="namespacerm_1_1device.html#aeec7bc51017d78804c76413da38685bdad271903778c530d34ac446e4fd6cd10b">rm::device::BMI088GyroRange::GYRO_500</a></div><div class="ttdeci">@ GYRO_500</div></div>
+<div class="ttc" id="anamespacerm_html_a287a55f70760f2a0c8cfdacddd9b2d34"><div class="ttname"><a href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">rm::u8</a></div><div class="ttdeci">uint8_t u8</div><div class="ttdef"><b>Definition</b> typedefs.h:43</div></div>
+<div class="ttc" id="anamespacerm_html_a8f3662a01c5fa99494989944ee6c6157"><div class="ttname"><a href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">rm::u16</a></div><div class="ttdeci">uint16_t u16</div><div class="ttdef"><b>Definition</b> typedefs.h:44</div></div>
+<div class="ttc" id="anamespacerm_html_abe438454936420638776f339c29718b1"><div class="ttname"><a href="namespacerm.html#abe438454936420638776f339c29718b1">rm::f32</a></div><div class="ttdeci">float f32</div><div class="ttdef"><b>Definition</b> typedefs.h:52</div></div>
 <div class="ttc" id="aspi__device_8h_html"><div class="ttname"><a href="spi__device_8h.html">spi_device.h</a></div><div class="ttdoc">SPI设备抽象</div></div>
 <div class="ttc" id="atypedefs_8h_html"><div class="ttname"><a href="typedefs_8h.html">typedefs.h</a></div><div class="ttdoc">全局数据类型定义</div></div>
-<div class="ttc" id="atypedefs_8h_html_a5f6906312a689f27d70e9d086649d3fd"><div class="ttname"><a href="typedefs_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a></div><div class="ttdeci">float f32</div><div class="ttdef"><b>Definition:</b> typedefs.h:50</div></div>
-<div class="ttc" id="atypedefs_8h_html_a92c50087ca0e64fa93fc59402c55f8ca"><div class="ttname"><a href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></div><div class="ttdeci">uint8_t u8</div><div class="ttdef"><b>Definition:</b> typedefs.h:41</div></div>
-<div class="ttc" id="atypedefs_8h_html_ace9d960e74685e2cd84b36132dbbf8aa"><div class="ttname"><a href="typedefs_8h.html#ace9d960e74685e2cd84b36132dbbf8aa">u16</a></div><div class="ttdeci">uint16_t u16</div><div class="ttdef"><b>Definition:</b> typedefs.h:42</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_e8cded2b3f09657169024877e246b3be.html">device</a></li><li class="navelem"><a class="el" href="dir_9fcfdcb111b6ce4c5fa85a7697dddfab.html">sensor</a></li><li class="navelem"><a class="el" href="bmi088_8h.html">bmi088.h</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

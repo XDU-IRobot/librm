@@ -1,18 +1,14 @@
 var classrm_1_1modules_1_1algorithm_1_1SteeringChassis =
 [
-    [ "SteeringChassis", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#aaec6e585d9e09a276f8401ef39312054", null ],
-    [ "~SteeringChassis", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a01fd852543da59be1a8f89b5b09e1dc4", null ],
     [ "SteeringChassis", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a9e849b761ba7e56ea6a5b913dc074a6e", null ],
-    [ "Forward", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a3556a79de474584601c330a8e5a92fdd", null ],
-    [ "back_steer_angle_", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a07cfa6be842efd17d1003ed9c1569147", null ],
-    [ "back_wheel_speed_", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a7e391a88178f6d03e7585819be7ef545", null ],
-    [ "front_steer_angle_", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#ac76fb857bb3c385b88207856d6be4fda", null ],
-    [ "front_wheel_speed_", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a01cba12584990f55fd5472d914b42f5b", null ],
-    [ "left_steer_angle_", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#afe3731066e4078b15867107a82897385", null ],
-    [ "left_wheel_speed_", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#aa4f28d4ade9c4ba12020f056b28e2cd6", null ],
-    [ "right_steer_angle_", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a5b1afd8d1e5c4f2eefc2ef8f9e681bde", null ],
-    [ "right_wheel_speed_", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#ab95e67e290e6dd1e81df8dcc6fdacb92", null ],
-    [ "vx_", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a5e6b271835bf06987d453b6e2ca665c4", null ],
-    [ "vy_", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a588539808356ab3b04c6ee52540633e8", null ],
-    [ "wz_", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a22bc46564f404b9950b4c113915cb725", null ]
+    [ "Forward", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a8c90e02f9fb2e5093f65c166b5b5cf1b", null ],
+    [ "Forward", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#af25f69f5194b6035a27db6fc6f662f36", null ],
+    [ "lf_steer_position", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#ad358392de1de6ec89a36ca67ddf1a772", null ],
+    [ "lf_wheel_speed", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a4e2a95dbee07644487652b89a3f667a0", null ],
+    [ "lr_steer_position", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a4ee9fc97857657e34060b8236b9c3e67", null ],
+    [ "lr_wheel_speed", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a9925b51b013c2c5e7d7c3402356ee4b7", null ],
+    [ "rf_steer_position", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#aca0906e13628ba05697aa2e62ed92011", null ],
+    [ "rf_wheel_speed", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a67d4df3c442b0e7bf62847719e23884e", null ],
+    [ "rr_steer_position", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a6cd382c04e22fcb8f7ec150337d092df", null ],
+    [ "rr_wheel_speed", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a5e1d95a91d9c850c803266bc39e6869a", null ]
 ];

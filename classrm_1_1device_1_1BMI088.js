@@ -10,7 +10,7 @@ var classrm_1_1device_1_1BMI088 =
     [ "gyro_x", "classrm_1_1device_1_1BMI088.html#a8faa7bd243b85f0fc23e74aab3d30007", null ],
     [ "gyro_y", "classrm_1_1device_1_1BMI088.html#a55f23ccea571fd08d3aad172dad6107b", null ],
     [ "gyro_z", "classrm_1_1device_1_1BMI088.html#aefcbef23954396adc47d42f50d754d94", null ],
-    [ "operator=", "classrm_1_1device_1_1BMI088.html#a935f605f41bb01741233f0abedc815cf", null ],
+    [ "operator=", "classrm_1_1device_1_1BMI088.html#acdd4e732934f5984a53b7302eceb108b", null ],
     [ "status", "classrm_1_1device_1_1BMI088.html#a54e19ac2fa05407f3c35bbd5e7a31218", null ],
     [ "temperature", "classrm_1_1device_1_1BMI088.html#a48c328f1dbda50ae439693f2aefa4c4b", null ],
     [ "Update", "classrm_1_1device_1_1BMI088.html#a92fa63a89a51460b4d692258956865f4", null ]

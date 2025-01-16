@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: rm::hal::stm32::Uart类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -23,8 +23,8 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+ <tr id="projectrow">
+  <td id="projectalign">
    <div id="projectname">librm
    </div>
   </td>
@@ -33,21 +33,22 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.1 -->
+<!-- 制作者 Doxygen 1.9.8 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'搜索','.html');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
   initMenu('',true,false,'search.php','搜索');
   $(document).ready(function() { init_search(); });
 });
-/* @license-end */</script>
+/* @license-end */
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -61,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(document).ready(function(){initNavTree('classrm_1_1hal_1_1stm32_1_1Uart.html',''); initResizable(); });
 /* @license-end */
 </script>
@@ -75,17 +76,23 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1stm32_1_1Uart.html',
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public 成员函数</a> &#124;
 <a href="classrm_1_1hal_1_1stm32_1_1Uart-members.html">所有成员列表</a>  </div>
-  <div class="headertitle">
-<div class="title">rm::hal::stm32::Uart类 参考</div>  </div>
+  <div class="headertitle"><div class="title">rm::hal::stm32::Uart类 参考</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -103,30 +110,30 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1stm32_1_1Uart.html',
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a9afc14515c45a7e1ec287787218887ce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a9afc14515c45a7e1ec287787218887ce">Uart</a> (UART_HandleTypeDef &amp;huart, <a class="el" href="typedefs_8h.html#a5148c9c1252e19e12def2814f71690e3">usize</a> rx_buffer_size, <a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6c">UartMode</a> tx_mode=<a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6ca07fa7a19aa722c635a15e94cb7f50416">UartMode::kNormal</a>, <a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6c">UartMode</a> rx_mode=<a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6ca07fa7a19aa722c635a15e94cb7f50416">UartMode::kNormal</a>)</td></tr>
+<tr class="memitem:a9afc14515c45a7e1ec287787218887ce" id="r_a9afc14515c45a7e1ec287787218887ce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a9afc14515c45a7e1ec287787218887ce">Uart</a> (UART_HandleTypeDef &amp;huart, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> rx_buffer_size, <a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6c">UartMode</a> tx_mode=<a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6ca07fa7a19aa722c635a15e94cb7f50416">UartMode::kNormal</a>, <a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6c">UartMode</a> rx_mode=<a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6ca07fa7a19aa722c635a15e94cb7f50416">UartMode::kNormal</a>)</td></tr>
 <tr class="separator:a9afc14515c45a7e1ec287787218887ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8afba8aefbe343327ff65e2a0149364a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a8afba8aefbe343327ff65e2a0149364a">Begin</a> () override</td></tr>
-<tr class="memdesc:a8afba8aefbe343327ff65e2a0149364a"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化UART  <a href="classrm_1_1hal_1_1stm32_1_1Uart.html#a8afba8aefbe343327ff65e2a0149364a">更多...</a><br /></td></tr>
+<tr class="memitem:a8afba8aefbe343327ff65e2a0149364a" id="r_a8afba8aefbe343327ff65e2a0149364a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a8afba8aefbe343327ff65e2a0149364a">Begin</a> () override</td></tr>
+<tr class="memdesc:a8afba8aefbe343327ff65e2a0149364a"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化UART  <br /></td></tr>
 <tr class="separator:a8afba8aefbe343327ff65e2a0149364a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0ed3e4099c6009eae37508cf28420d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#ac0ed3e4099c6009eae37508cf28420d1">Write</a> (const <a class="el" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a> *<a class="el" href="unitree__motor_8hpp.html#a7ea4cf5640b96ae38ed53527f508183a">data</a>, <a class="el" href="typedefs_8h.html#a5148c9c1252e19e12def2814f71690e3">usize</a> size) override</td></tr>
-<tr class="memdesc:ac0ed3e4099c6009eae37508cf28420d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">发送数据  <a href="classrm_1_1hal_1_1stm32_1_1Uart.html#ac0ed3e4099c6009eae37508cf28420d1">更多...</a><br /></td></tr>
+<tr class="memitem:ac0ed3e4099c6009eae37508cf28420d1" id="r_ac0ed3e4099c6009eae37508cf28420d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#ac0ed3e4099c6009eae37508cf28420d1">Write</a> (const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *<a class="el" href="unitree__motor_8hpp.html#a7ea4cf5640b96ae38ed53527f508183a">data</a>, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size) override</td></tr>
+<tr class="memdesc:ac0ed3e4099c6009eae37508cf28420d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">发送数据  <br /></td></tr>
 <tr class="separator:ac0ed3e4099c6009eae37508cf28420d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7742c67f1918c7ba007ab7e83986c953"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a7742c67f1918c7ba007ab7e83986c953">AttachRxCallback</a> (<a class="el" href="namespacerm_1_1hal.html#ab6c25fb295d0b957ffb1181fa48b787c">SerialRxCallbackFunction</a> &amp;callback) override</td></tr>
-<tr class="memdesc:a7742c67f1918c7ba007ab7e83986c953"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册用户定义的接收完成回调函数  <a href="classrm_1_1hal_1_1stm32_1_1Uart.html#a7742c67f1918c7ba007ab7e83986c953">更多...</a><br /></td></tr>
+<tr class="memitem:a7742c67f1918c7ba007ab7e83986c953" id="r_a7742c67f1918c7ba007ab7e83986c953"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a7742c67f1918c7ba007ab7e83986c953">AttachRxCallback</a> (<a class="el" href="namespacerm_1_1hal.html#ab6c25fb295d0b957ffb1181fa48b787c">SerialRxCallbackFunction</a> &amp;callback) override</td></tr>
+<tr class="memdesc:a7742c67f1918c7ba007ab7e83986c953"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册用户定义的接收完成回调函数  <br /></td></tr>
 <tr class="separator:a7742c67f1918c7ba007ab7e83986c953"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa6fdca9b4ddf3b6b039bfb0bd111f6f"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#afa6fdca9b4ddf3b6b039bfb0bd111f6f">rx_buffer</a> () const override</td></tr>
+<tr class="memitem:afa6fdca9b4ddf3b6b039bfb0bd111f6f" id="r_afa6fdca9b4ddf3b6b039bfb0bd111f6f"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#afa6fdca9b4ddf3b6b039bfb0bd111f6f">rx_buffer</a> () const override</td></tr>
 <tr class="separator:afa6fdca9b4ddf3b6b039bfb0bd111f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classrm_1_1hal_1_1SerialInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrm_1_1hal_1_1SerialInterface')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classrm_1_1hal_1_1SerialInterface.html">rm::hal::SerialInterface</a></td></tr>
-<tr class="memitem:a67c00fc0181c2889d69f81996a961fe0 inherit pub_methods_classrm_1_1hal_1_1SerialInterface"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SerialInterface.html#a67c00fc0181c2889d69f81996a961fe0">~SerialInterface</a> ()=default</td></tr>
+<tr class="memitem:a67c00fc0181c2889d69f81996a961fe0 inherit pub_methods_classrm_1_1hal_1_1SerialInterface" id="r_a67c00fc0181c2889d69f81996a961fe0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SerialInterface.html#a67c00fc0181c2889d69f81996a961fe0">~SerialInterface</a> ()=default</td></tr>
 <tr class="separator:a67c00fc0181c2889d69f81996a961fe0 inherit pub_methods_classrm_1_1hal_1_1SerialInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>UART类 </p>
 </div><h2 class="groupheader">构造及析构函数说明</h2>
-<a id="a9afc14515c45a7e1ec287787218887ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9afc14515c45a7e1ec287787218887ce">&#9670;&nbsp;</a></span>Uart()</h2>
+<a id="a9afc14515c45a7e1ec287787218887ce" name="a9afc14515c45a7e1ec287787218887ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9afc14515c45a7e1ec287787218887ce">&#9670;&#160;</a></span>Uart()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,7 +147,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedefs_8h.html#a5148c9c1252e19e12def2814f71690e3">usize</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td>
           <td class="paramname"><em>rx_buffer_size</em>, </td>
         </tr>
         <tr>
@@ -175,8 +182,8 @@ Public 成员函数</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">成员函数说明</h2>
-<a id="a7742c67f1918c7ba007ab7e83986c953"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7742c67f1918c7ba007ab7e83986c953">&#9670;&nbsp;</a></span>AttachRxCallback()</h2>
+<a id="a7742c67f1918c7ba007ab7e83986c953" name="a7742c67f1918c7ba007ab7e83986c953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7742c67f1918c7ba007ab7e83986c953">&#9670;&#160;</a></span>AttachRxCallback()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -211,8 +218,8 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a id="a8afba8aefbe343327ff65e2a0149364a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8afba8aefbe343327ff65e2a0149364a">&#9670;&nbsp;</a></span>Begin()</h2>
+<a id="a8afba8aefbe343327ff65e2a0149364a" name="a8afba8aefbe343327ff65e2a0149364a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8afba8aefbe343327ff65e2a0149364a">&#9670;&#160;</a></span>Begin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -240,8 +247,8 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a id="afa6fdca9b4ddf3b6b039bfb0bd111f6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa6fdca9b4ddf3b6b039bfb0bd111f6f">&#9670;&nbsp;</a></span>rx_buffer()</h2>
+<a id="afa6fdca9b4ddf3b6b039bfb0bd111f6f" name="afa6fdca9b4ddf3b6b039bfb0bd111f6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa6fdca9b4ddf3b6b039bfb0bd111f6f">&#9670;&#160;</a></span>rx_buffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -250,7 +257,7 @@ Public 成员函数</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt; <a class="el" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a> &gt; &amp; rm::hal::stm32::Uart::rx_buffer </td>
+          <td class="memname">const std::vector&lt; <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> &gt; &amp; rm::hal::stm32::Uart::rx_buffer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -264,12 +271,12 @@ Public 成员函数</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>返回</dt><dd>接收缓冲区 </dd></dl>
 
-<p>实现了 <a class="el" href="classrm_1_1hal_1_1SerialInterface.html#ae2ae3383442c1248022a8bced49fd8a4">rm::hal::SerialInterface</a>.</p>
+<p>实现了 <a class="el" href="classrm_1_1hal_1_1SerialInterface.html#a59801589f9ebc7068336b8376c6a074d">rm::hal::SerialInterface</a>.</p>
 
 </div>
 </div>
-<a id="ac0ed3e4099c6009eae37508cf28420d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0ed3e4099c6009eae37508cf28420d1">&#9670;&nbsp;</a></span>Write()</h2>
+<a id="ac0ed3e4099c6009eae37508cf28420d1" name="ac0ed3e4099c6009eae37508cf28420d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0ed3e4099c6009eae37508cf28420d1">&#9670;&#160;</a></span>Write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -280,13 +287,13 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::hal::stm32::Uart::Write </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *&#160;</td>
           <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedefs_8h.html#a5148c9c1252e19e12def2814f71690e3">usize</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td>
           <td class="paramname"><em>size</em>&#160;</td>
         </tr>
         <tr>
@@ -325,7 +332,7 @@ Public 成员函数</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1hal.html">hal</a></li><li class="navelem"><a class="el" href="namespacerm_1_1hal_1_1stm32.html">stm32</a></li><li class="navelem"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html">Uart</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

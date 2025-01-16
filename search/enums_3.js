@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ist8310status_1305',['IST8310Status',['../namespacerm_1_1device.html#ac030a1d78c560386284d254d95259166',1,'rm::device']]]
+  ['errorcode_0',['ErrorCode',['../classrm_1_1device_1_1DirectDriveMotor.html#a2a0aff57c5d901626e72ccd9b3de81e0',1,'rm::device::DirectDriveMotor']]]
 ];

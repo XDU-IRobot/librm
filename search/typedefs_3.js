@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['i16_1281',['i16',['../typedefs_8h.html#ad309dbcaeea13aa602d686964156ea0b',1,'typedefs.h']]],
-  ['i32_1282',['i32',['../typedefs_8h.html#a48d6cd8e4135fb2ff7e7f2dac84089ec',1,'typedefs.h']]],
-  ['i64_1283',['i64',['../typedefs_8h.html#a85cb35fbe5bf2961d7ad5f26814a91a2',1,'typedefs.h']]],
-  ['i8_1284',['i8',['../typedefs_8h.html#ae3702327b5f47e83b431e22b33da7b58',1,'typedefs.h']]]
+  ['f32_0',['f32',['../namespacerm.html#abe438454936420638776f339c29718b1',1,'rm']]],
+  ['f64_1',['f64',['../namespacerm.html#a9fea0b33753053edbc024452364b2e92',1,'rm']]],
+  ['firstspeedloopkd_2',['FirstSpeedLoopKd',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#ac6b2aa016f1506cdd705969d9c4c963b',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['firstspeedloopki_3',['FirstSpeedLoopKi',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a1df19d9790a44042c22c29fa2ea65486',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['firstspeedloopkp_4',['FirstSpeedLoopKp',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#adbb3b050475661fcc81540a436727e23',1,'rm::device::DirectDriveMotor::Parameters']]]
 ];

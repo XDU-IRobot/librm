@@ -1,6 +1,6 @@
 var bmi088_8h =
 [
-    [ "BMI088", "classrm_1_1device_1_1BMI088.html", "classrm_1_1device_1_1BMI088" ],
+    [ "rm::device::BMI088", "classrm_1_1device_1_1BMI088.html", "classrm_1_1device_1_1BMI088" ],
     [ "BMI088AccelRange", "bmi088_8h.html#a801b856449ebaad3e80430e3f72d7039", [
       [ "ACC_RANGE_3G", "bmi088_8h.html#a801b856449ebaad3e80430e3f72d7039ad4c08800a9c5023eee15ea1299b199df", null ],
       [ "ACC_RANGE_6G", "bmi088_8h.html#a801b856449ebaad3e80430e3f72d7039a10420b6db4793bac36bde62ecdeddba9", null ],

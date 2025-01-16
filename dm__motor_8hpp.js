@@ -1,10 +1,10 @@
 var dm__motor_8hpp =
 [
-    [ "DmMotorSettings", "structrm_1_1device_1_1DmMotorSettings.html", null ],
-    [ "DmMotorSettings< DmMotorControlMode::kSpeed >", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeed_01_4.html", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeed_01_4" ],
-    [ "DmMotorSettings< DmMotorControlMode::kSpeedPosition >", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeedPosition_01_4.html", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeedPosition_01_4" ],
-    [ "DmMotorSettings< DmMotorControlMode::kMit >", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kMit_01_4.html", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kMit_01_4" ],
-    [ "DmMotor", "classrm_1_1device_1_1DmMotor.html", "classrm_1_1device_1_1DmMotor" ],
+    [ "rm::device::DmMotorSettings< control_mode >", "structrm_1_1device_1_1DmMotorSettings.html", null ],
+    [ "rm::device::DmMotorSettings< DmMotorControlMode::kSpeed >", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeed_01_4.html", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeed_01_4" ],
+    [ "rm::device::DmMotorSettings< DmMotorControlMode::kSpeedPosition >", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeedPosition_01_4.html", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeedPosition_01_4" ],
+    [ "rm::device::DmMotorSettings< DmMotorControlMode::kMit >", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kMit_01_4.html", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kMit_01_4" ],
+    [ "rm::device::DmMotor< control_mode >", "classrm_1_1device_1_1DmMotor.html", "classrm_1_1device_1_1DmMotor" ],
     [ "DmMotorControlMode", "dm__motor_8hpp.html#a09c7ea6c3cbe688e5936931e1665b94e", [
       [ "kMit", "dm__motor_8hpp.html#a09c7ea6c3cbe688e5936931e1665b94ea671bf1301da9c5f5da9a08002e6f89c4", null ],
       [ "kSpeedPosition", "dm__motor_8hpp.html#a09c7ea6c3cbe688e5936931e1665b94eac423473711521422b9f206b311bca100", null ],

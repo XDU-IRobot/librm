@@ -5,13 +5,9 @@ var dir_12d4920679a1960aa4499f9d88e747a8 =
     [ "can.h", "can_8h.html", null ],
     [ "can_interface.h", "can__interface_8h.html", "can__interface_8h" ],
     [ "gpio.h", "gpio_8h.html", null ],
-    [ "gpio_interface.h", "gpio__interface_8h.html", [
-      [ "PinInterface", "classrm_1_1hal_1_1PinInterface.html", "classrm_1_1hal_1_1PinInterface" ]
-    ] ],
+    [ "gpio_interface.h", "gpio__interface_8h.html", "gpio__interface_8h" ],
     [ "serial.h", "serial_8h.html", null ],
     [ "serial_interface.h", "serial__interface_8h.html", "serial__interface_8h" ],
     [ "spi.h", "spi_8h.html", null ],
-    [ "spi_interface.h", "spi__interface_8h.html", [
-      [ "SpiInterface", "classrm_1_1hal_1_1SpiInterface.html", "classrm_1_1hal_1_1SpiInterface" ]
-    ] ]
+    [ "spi_interface.h", "spi__interface_8h.html", "spi__interface_8h" ]
 ];

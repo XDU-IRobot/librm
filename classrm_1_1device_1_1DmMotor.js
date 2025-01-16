@@ -6,7 +6,7 @@ var classrm_1_1device_1_1DmMotor =
     [ "DmMotor", "classrm_1_1device_1_1DmMotor.html#a3aac4e07396774664ec6d17084fd0dab", null ],
     [ "coil_temperature", "classrm_1_1device_1_1DmMotor.html#a9ed359a1b53023204a6ac3c40b6fc180", null ],
     [ "mos_temperature", "classrm_1_1device_1_1DmMotor.html#a0749dcfef7ef261879221af2cc74e039", null ],
-    [ "operator=", "classrm_1_1device_1_1DmMotor.html#a62df6cbd347853244ea0973b230456df", null ],
+    [ "operator=", "classrm_1_1device_1_1DmMotor.html#a706c057d73cfda04d0ae58c95ffce7da", null ],
     [ "pos", "classrm_1_1device_1_1DmMotor.html#a50570b2c73d1f780cc4ba4d341d5387d", null ],
     [ "SendInstruction", "classrm_1_1device_1_1DmMotor.html#a13b7808f826582a4a2089fad296873c9", null ],
     [ "SetPosition", "classrm_1_1device_1_1DmMotor.html#a2c4648a04f76ce9b3a95a3871928cf22", null ],

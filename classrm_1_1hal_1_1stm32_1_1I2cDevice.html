@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: rm::hal::stm32::I2cDevice类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -23,8 +23,8 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+ <tr id="projectrow">
+  <td id="projectalign">
    <div id="projectname">librm
    </div>
   </td>
@@ -33,21 +33,22 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.1 -->
+<!-- 制作者 Doxygen 1.9.8 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'搜索','.html');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
   initMenu('',true,false,'search.php','搜索');
   $(document).ready(function() { init_search(); });
 });
-/* @license-end */</script>
+/* @license-end */
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -61,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(document).ready(function(){initNavTree('classrm_1_1hal_1_1stm32_1_1I2cDevice.html',''); initResizable(); });
 /* @license-end */
 </script>
@@ -75,9 +76,16 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1stm32_1_1I2cDevice.h
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
@@ -85,8 +93,7 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1stm32_1_1I2cDevice.h
 <a href="#pub-methods">Public 成员函数</a> &#124;
 <a href="#pro-attribs">Protected 属性</a> &#124;
 <a href="classrm_1_1hal_1_1stm32_1_1I2cDevice-members.html">所有成员列表</a>  </div>
-  <div class="headertitle">
-<div class="title">rm::hal::stm32::I2cDevice类 参考</div>  </div>
+  <div class="headertitle"><div class="title">rm::hal::stm32::I2cDevice类 参考</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -104,38 +111,38 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1stm32_1_1I2cDevice.h
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a33f55aca7de345bb7f2decc7c6b7e715"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#a33f55aca7de345bb7f2decc7c6b7e715">I2cDevice</a> (I2C_HandleTypeDef &amp;hi2c, <a class="el" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a> addr)</td></tr>
+<tr class="memitem:a33f55aca7de345bb7f2decc7c6b7e715" id="r_a33f55aca7de345bb7f2decc7c6b7e715"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#a33f55aca7de345bb7f2decc7c6b7e715">I2cDevice</a> (I2C_HandleTypeDef &amp;hi2c, <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> addr)</td></tr>
 <tr class="separator:a33f55aca7de345bb7f2decc7c6b7e715"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af87a3d3066d6c9416b54a597e3f9c5cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#af87a3d3066d6c9416b54a597e3f9c5cd">I2cDevice</a> ()=delete</td></tr>
+<tr class="memitem:af87a3d3066d6c9416b54a597e3f9c5cd" id="r_af87a3d3066d6c9416b54a597e3f9c5cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#af87a3d3066d6c9416b54a597e3f9c5cd">I2cDevice</a> ()=delete</td></tr>
 <tr class="separator:af87a3d3066d6c9416b54a597e3f9c5cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb24e78c9bbf73eebf48b400f70c7e72"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#afb24e78c9bbf73eebf48b400f70c7e72">~I2cDevice</a> ()=default</td></tr>
+<tr class="memitem:afb24e78c9bbf73eebf48b400f70c7e72" id="r_afb24e78c9bbf73eebf48b400f70c7e72"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#afb24e78c9bbf73eebf48b400f70c7e72">~I2cDevice</a> ()=default</td></tr>
 <tr class="separator:afb24e78c9bbf73eebf48b400f70c7e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0192e62e3727a701cfbfa4b8647077e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#a0192e62e3727a701cfbfa4b8647077e3">Write</a> (<a class="el" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a> reg, <a class="el" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a> *<a class="el" href="unitree__motor_8hpp.html#a7ea4cf5640b96ae38ed53527f508183a">data</a>, uint16_t size)</td></tr>
-<tr class="memdesc:a0192e62e3727a701cfbfa4b8647077e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">写数据  <a href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#a0192e62e3727a701cfbfa4b8647077e3">更多...</a><br /></td></tr>
+<tr class="memitem:a0192e62e3727a701cfbfa4b8647077e3" id="r_a0192e62e3727a701cfbfa4b8647077e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#a0192e62e3727a701cfbfa4b8647077e3">Write</a> (<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> reg, <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *<a class="el" href="unitree__motor_8hpp.html#a7ea4cf5640b96ae38ed53527f508183a">data</a>, uint16_t size)</td></tr>
+<tr class="memdesc:a0192e62e3727a701cfbfa4b8647077e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">写数据  <br /></td></tr>
 <tr class="separator:a0192e62e3727a701cfbfa4b8647077e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a194d7f8197ec29830d67afa8fc1b3fb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#a194d7f8197ec29830d67afa8fc1b3fb2">Read</a> (<a class="el" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a> reg, uint16_t size)</td></tr>
-<tr class="memdesc:a194d7f8197ec29830d67afa8fc1b3fb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">读数据  <a href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#a194d7f8197ec29830d67afa8fc1b3fb2">更多...</a><br /></td></tr>
+<tr class="memitem:a194d7f8197ec29830d67afa8fc1b3fb2" id="r_a194d7f8197ec29830d67afa8fc1b3fb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#a194d7f8197ec29830d67afa8fc1b3fb2">Read</a> (<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> reg, uint16_t size)</td></tr>
+<tr class="memdesc:a194d7f8197ec29830d67afa8fc1b3fb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">读数据  <br /></td></tr>
 <tr class="separator:a194d7f8197ec29830d67afa8fc1b3fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcd7c95623affc218d8c991a0fb49d55"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#abcd7c95623affc218d8c991a0fb49d55">buffer</a> () const</td></tr>
-<tr class="memdesc:abcd7c95623affc218d8c991a0fb49d55"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取缓冲区指针  <a href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#abcd7c95623affc218d8c991a0fb49d55">更多...</a><br /></td></tr>
+<tr class="memitem:abcd7c95623affc218d8c991a0fb49d55" id="r_abcd7c95623affc218d8c991a0fb49d55"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#abcd7c95623affc218d8c991a0fb49d55">buffer</a> () const</td></tr>
+<tr class="memdesc:abcd7c95623affc218d8c991a0fb49d55"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取缓冲区指针  <br /></td></tr>
 <tr class="separator:abcd7c95623affc218d8c991a0fb49d55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected 属性</h2></td></tr>
-<tr class="memitem:ac50836f2f5117151a6919004e5136e73"><td class="memItemLeft" align="right" valign="top">I2C_HandleTypeDef *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#ac50836f2f5117151a6919004e5136e73">hi2c_</a></td></tr>
+<tr class="memitem:ac50836f2f5117151a6919004e5136e73" id="r_ac50836f2f5117151a6919004e5136e73"><td class="memItemLeft" align="right" valign="top">I2C_HandleTypeDef *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#ac50836f2f5117151a6919004e5136e73">hi2c_</a></td></tr>
 <tr class="separator:ac50836f2f5117151a6919004e5136e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a61685a962408300435d847a9cd95de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#a4a61685a962408300435d847a9cd95de">addr_</a></td></tr>
+<tr class="memitem:a4a61685a962408300435d847a9cd95de" id="r_a4a61685a962408300435d847a9cd95de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#a4a61685a962408300435d847a9cd95de">addr_</a></td></tr>
 <tr class="separator:a4a61685a962408300435d847a9cd95de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe833a73e76e936b49dc0e0b725c4856"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#afe833a73e76e936b49dc0e0b725c4856">buffer_</a> [8] {0}</td></tr>
+<tr class="memitem:afe833a73e76e936b49dc0e0b725c4856" id="r_afe833a73e76e936b49dc0e0b725c4856"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html#afe833a73e76e936b49dc0e0b725c4856">buffer_</a> [8] {0}</td></tr>
 <tr class="separator:afe833a73e76e936b49dc0e0b725c4856"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>I2C设备 </p>
 </div><h2 class="groupheader">构造及析构函数说明</h2>
-<a id="a33f55aca7de345bb7f2decc7c6b7e715"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33f55aca7de345bb7f2decc7c6b7e715">&#9670;&nbsp;</a></span>I2cDevice() <span class="overload">[1/2]</span></h2>
+<a id="a33f55aca7de345bb7f2decc7c6b7e715" name="a33f55aca7de345bb7f2decc7c6b7e715"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33f55aca7de345bb7f2decc7c6b7e715">&#9670;&#160;</a></span>I2cDevice() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -149,7 +156,7 @@ Protected 属性</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
           <td class="paramname"><em>addr</em>&#160;</td>
         </tr>
         <tr>
@@ -169,8 +176,8 @@ Protected 属性</h2></td></tr>
 
 </div>
 </div>
-<a id="af87a3d3066d6c9416b54a597e3f9c5cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af87a3d3066d6c9416b54a597e3f9c5cd">&#9670;&nbsp;</a></span>I2cDevice() <span class="overload">[2/2]</span></h2>
+<a id="af87a3d3066d6c9416b54a597e3f9c5cd" name="af87a3d3066d6c9416b54a597e3f9c5cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af87a3d3066d6c9416b54a597e3f9c5cd">&#9670;&#160;</a></span>I2cDevice() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,8 +201,8 @@ Protected 属性</h2></td></tr>
 
 </div>
 </div>
-<a id="afb24e78c9bbf73eebf48b400f70c7e72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb24e78c9bbf73eebf48b400f70c7e72">&#9670;&nbsp;</a></span>~I2cDevice()</h2>
+<a id="afb24e78c9bbf73eebf48b400f70c7e72" name="afb24e78c9bbf73eebf48b400f70c7e72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb24e78c9bbf73eebf48b400f70c7e72">&#9670;&#160;</a></span>~I2cDevice()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -220,14 +227,14 @@ Protected 属性</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">成员函数说明</h2>
-<a id="abcd7c95623affc218d8c991a0fb49d55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcd7c95623affc218d8c991a0fb49d55">&#9670;&nbsp;</a></span>buffer()</h2>
+<a id="abcd7c95623affc218d8c991a0fb49d55" name="abcd7c95623affc218d8c991a0fb49d55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcd7c95623affc218d8c991a0fb49d55">&#9670;&#160;</a></span>buffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a> * rm::hal::stm32::I2cDevice::buffer </td>
+          <td class="memname">const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> * rm::hal::stm32::I2cDevice::buffer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -240,8 +247,8 @@ Protected 属性</h2></td></tr>
 
 </div>
 </div>
-<a id="a194d7f8197ec29830d67afa8fc1b3fb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a194d7f8197ec29830d67afa8fc1b3fb2">&#9670;&nbsp;</a></span>Read()</h2>
+<a id="a194d7f8197ec29830d67afa8fc1b3fb2" name="a194d7f8197ec29830d67afa8fc1b3fb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a194d7f8197ec29830d67afa8fc1b3fb2">&#9670;&#160;</a></span>Read()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,7 +256,7 @@ Protected 属性</h2></td></tr>
         <tr>
           <td class="memname">void rm::hal::stm32::I2cDevice::Read </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
           <td class="paramname"><em>reg</em>, </td>
         </tr>
         <tr>
@@ -277,8 +284,8 @@ Protected 属性</h2></td></tr>
 
 </div>
 </div>
-<a id="a0192e62e3727a701cfbfa4b8647077e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0192e62e3727a701cfbfa4b8647077e3">&#9670;&nbsp;</a></span>Write()</h2>
+<a id="a0192e62e3727a701cfbfa4b8647077e3" name="a0192e62e3727a701cfbfa4b8647077e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0192e62e3727a701cfbfa4b8647077e3">&#9670;&#160;</a></span>Write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -286,13 +293,13 @@ Protected 属性</h2></td></tr>
         <tr>
           <td class="memname">void rm::hal::stm32::I2cDevice::Write </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
           <td class="paramname"><em>reg</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *&#160;</td>
           <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
@@ -322,8 +329,8 @@ Protected 属性</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">类成员变量说明</h2>
-<a id="a4a61685a962408300435d847a9cd95de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a61685a962408300435d847a9cd95de">&#9670;&nbsp;</a></span>addr_</h2>
+<a id="a4a61685a962408300435d847a9cd95de" name="a4a61685a962408300435d847a9cd95de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a61685a962408300435d847a9cd95de">&#9670;&#160;</a></span>addr_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -332,7 +339,7 @@ Protected 属性</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a> rm::hal::stm32::I2cDevice::addr_</td>
+          <td class="memname"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> rm::hal::stm32::I2cDevice::addr_</td>
         </tr>
       </table>
   </td>
@@ -344,8 +351,8 @@ Protected 属性</h2></td></tr>
 
 </div>
 </div>
-<a id="afe833a73e76e936b49dc0e0b725c4856"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe833a73e76e936b49dc0e0b725c4856">&#9670;&nbsp;</a></span>buffer_</h2>
+<a id="afe833a73e76e936b49dc0e0b725c4856" name="afe833a73e76e936b49dc0e0b725c4856"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe833a73e76e936b49dc0e0b725c4856">&#9670;&#160;</a></span>buffer_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -354,7 +361,7 @@ Protected 属性</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedefs_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a> rm::hal::stm32::I2cDevice::buffer_[8] {0}</td>
+          <td class="memname"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> rm::hal::stm32::I2cDevice::buffer_[8] {0}</td>
         </tr>
       </table>
   </td>
@@ -366,8 +373,8 @@ Protected 属性</h2></td></tr>
 
 </div>
 </div>
-<a id="ac50836f2f5117151a6919004e5136e73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac50836f2f5117151a6919004e5136e73">&#9670;&nbsp;</a></span>hi2c_</h2>
+<a id="ac50836f2f5117151a6919004e5136e73" name="ac50836f2f5117151a6919004e5136e73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac50836f2f5117151a6919004e5136e73">&#9670;&#160;</a></span>hi2c_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -398,7 +405,7 @@ Protected 属性</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1hal.html">hal</a></li><li class="navelem"><a class="el" href="namespacerm_1_1hal_1_1stm32.html">stm32</a></li><li class="navelem"><a class="el" href="classrm_1_1hal_1_1stm32_1_1I2cDevice.html">I2cDevice</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

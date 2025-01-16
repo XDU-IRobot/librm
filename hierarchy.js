@@ -7,6 +7,7 @@ var hierarchy =
     [ "rm::hal::linux_::AsyncCanDevice", "structrm_1_1hal_1_1linux___1_1AsyncCanDevice.html", null ],
     [ "rm::device::BMI088", "classrm_1_1device_1_1BMI088.html", null ],
     [ "rm::device::CanDevice", "classrm_1_1device_1_1CanDevice.html", [
+      [ "rm::device::DirectDriveMotor", "classrm_1_1device_1_1DirectDriveMotor.html", null ],
       [ "rm::device::DjiMotor< motor_type >", "classrm_1_1device_1_1DjiMotor.html", null ],
       [ "rm::device::DmMotor< control_mode >", "classrm_1_1device_1_1DmMotor.html", null ],
       [ "rm::device::SuperCap", "classrm_1_1device_1_1SuperCap.html", null ]
@@ -53,6 +54,7 @@ var hierarchy =
     [ "Kalman::LinearizedSystemModel", null, [
       [ "rm::modules::algorithm::SystemModel< CovarianceBase >", "classrm_1_1modules_1_1algorithm_1_1SystemModel.html", null ]
     ] ],
+    [ "rm::device::DirectDriveMotor::Parameters", "structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html", null ],
     [ "rm::modules::algorithm::PID", "classrm_1_1modules_1_1algorithm_1_1PID.html", [
       [ "rm::modules::algorithm::RingPID", "classrm_1_1modules_1_1algorithm_1_1RingPID.html", null ]
     ] ],
@@ -71,6 +73,7 @@ var hierarchy =
       [ "rm::hal::stm32::Spi", "classrm_1_1hal_1_1stm32_1_1Spi.html", null ]
     ] ],
     [ "rm::core::ThreadPool", "classrm_1_1core_1_1ThreadPool.html", null ],
+    [ "rm::device::DirectDriveMotor::TxBufferTable", "structrm_1_1device_1_1DirectDriveMotor_1_1TxBufferTable.html", null ],
     [ "rm::device::UnitreeMotor", "classrm_1_1device_1_1UnitreeMotor.html", null ],
     [ "Kalman::Vector", null, [
       [ "rm::modules::algorithm::Control", "classrm_1_1modules_1_1algorithm_1_1Control.html", null ],

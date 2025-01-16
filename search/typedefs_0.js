@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['c_1277',['C',['../classrm_1_1modules_1_1algorithm_1_1SystemModel.html#ad7c18ee70c4539cb3cad29e32f9179fa',1,'rm::modules::algorithm::SystemModel']]]
+  ['absolutezero_0',['AbsoluteZero',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a885a340208029b6ec075f0f8375147be',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['adcbaselineerrortolerance_1',['AdcBaselineErrorTolerance',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#aac80a01d65ec3c0d760b86d76abd9d74',1,'rm::device::DirectDriveMotor::Parameters']]]
 ];

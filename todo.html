@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: 待办事项列表</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -23,8 +23,8 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+ <tr id="projectrow">
+  <td id="projectalign">
    <div id="projectname">librm
    </div>
   </td>
@@ -33,21 +33,22 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.1 -->
+<!-- 制作者 Doxygen 1.9.8 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'搜索','.html');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
   initMenu('',true,false,'search.php','搜索');
   $(document).ready(function() { init_search(); });
 });
-/* @license-end */</script>
+/* @license-end */
+</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
@@ -61,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(document).ready(function(){initNavTree('todo.html',''); initResizable(); });
 /* @license-end */
 </script>
@@ -75,43 +76,68 @@ $(document).ready(function(){initNavTree('todo.html',''); initResizable(); });
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
 </div>
 
-<div class="PageDoc"><div class="header">
-  <div class="headertitle">
-<div class="title">待办事项列表 </div>  </div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">待办事项列表</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><dl class="reflist">
 <dt>文件 <a class="el" href="bmi088_8cc.html">bmi088.cc</a>  </dt>
-<dd><a class="anchor" id="_todo000004"></a>DMA传输+硬件片选(maybe)  </dd>
+<dd><a class="anchor" id="_todo000007"></a>DMA传输+硬件片选(maybe)  </dd>
 <dt>文件 <a class="el" href="bmi088_8h.html">bmi088.h</a>  </dt>
-<dd><a class="anchor" id="_todo000005"></a>DMA传输+硬件片选(maybe)  </dd>
+<dd><a class="anchor" id="_todo000008"></a>DMA传输+硬件片选(maybe)  </dd>
 <dt>文件 <a class="el" href="device_8cc.html">device.cc</a>  </dt>
-<dd><a class="anchor" id="_todo000002"></a>see <a class="el" href="device_8h.html" title="设备基类和设备管理器，用于监视设备状态">device/device.h</a>  </dd>
+<dd><a class="anchor" id="_todo000005"></a>see <a class="el" href="device_8h.html" title="设备基类和设备管理器，用于监视设备状态">device/device.h</a>  </dd>
 <dt>文件 <a class="el" href="device_8h.html">device.h</a>  </dt>
-<dd><a class="anchor" id="_todo000003"></a>考虑到判断设备在线需要一个参照时间，所以需要先做一个时间模块提供全局时间参照  </dd>
+<dd><a class="anchor" id="_todo000006"></a>考虑到判断设备在线需要一个参照时间，所以需要先做一个时间模块提供全局时间参照  </dd>
+<dt>文件 <a class="el" href="directdrive__motor_8cc.html">directdrive_motor.cc</a>  </dt>
+<dd><p class="startdd"><a class="anchor" id="_todo000001"></a>这个驱动是用p1010b_111写的，其他型号的本末电机没有测试过 </p>
+<p class="interdd"></p>
+<p class="interdd">rs485模式 </p>
+<p class="interdd"></p>
+<p class="enddd">还有一些杂七杂八的什么主动查询、设置反馈方式都没写，暂时用不上  </p>
+</dd>
+<dt>文件 <a class="el" href="directdrive__motor_8hpp.html">directdrive_motor.hpp</a>  </dt>
+<dd><p class="startdd"><a class="anchor" id="_todo000002"></a>这个驱动是用p1010b_111写的，其他型号的本末电机没有测试过 </p>
+<p class="interdd"></p>
+<p class="interdd">rs485模式 </p>
+<p class="interdd"></p>
+<p class="enddd">还有一些杂七杂八的什么主动查询、设置反馈方式都没写，暂时用不上  </p>
+</dd>
 <dt>文件 <a class="el" href="fdcan_8cc.html">fdcan.cc</a>  </dt>
-<dd><a class="anchor" id="_todo000008"></a>部分完成  </dd>
+<dd><a class="anchor" id="_todo000011"></a>部分完成  </dd>
 <dt>文件 <a class="el" href="fdcan_8h.html">fdcan.h</a>  </dt>
-<dd><a class="anchor" id="_todo000009"></a>部分完成  </dd>
+<dd><a class="anchor" id="_todo000012"></a>部分完成  </dd>
 <dt>文件 <a class="el" href="i2c__device_8cc.html">i2c_device.cc</a>  </dt>
-<dd><a class="anchor" id="_todo000010"></a>实现不够通用，有改进空间  </dd>
-<dt>文件 <a class="el" href="i2c__device_8h.html">i2c_device.h</a>  </dt>
-<dd><a class="anchor" id="_todo000011"></a>实现不够通用，有改进空间  </dd>
-<dt>文件 <a class="el" href="socketcan_8cc.html">socketcan.cc</a>  </dt>
-<dd><a class="anchor" id="_todo000006"></a>实现tx消息队列  </dd>
-<dt>文件 <a class="el" href="socketcan_8h.html">socketcan.h</a>  </dt>
-<dd><a class="anchor" id="_todo000007"></a>实现tx消息队列  </dd>
-<dt>文件 <a class="el" href="spi__device_8cc.html">spi_device.cc</a>  </dt>
-<dd><a class="anchor" id="_todo000012"></a>实现不够通用，有改进空间  </dd>
-<dt>文件 <a class="el" href="spi__device_8h.html">spi_device.h</a>  </dt>
 <dd><a class="anchor" id="_todo000013"></a>实现不够通用，有改进空间  </dd>
+<dt>文件 <a class="el" href="i2c__device_8h.html">i2c_device.h</a>  </dt>
+<dd><a class="anchor" id="_todo000014"></a>实现不够通用，有改进空间  </dd>
+<dt>成员 <a class="el" href="classrm_1_1device_1_1DirectDriveMotor.html#a27ea91fbf87f936f23f8ca80707fd8b9">rm::device::DirectDriveMotor::GetParameter</a>  ()</dt>
+<dd><p class="startdd"><a class="anchor" id="_todo000003"></a>暂时没有实现，框架缺少一个统一的异步处理interface来等待参数返回 </p>
+<p class="interdd"></p>
+<p class="enddd">要么给cmsis rtos实现posix，要么在std::future和cmsis rtos上面再写一个future  </p>
+</dd>
+<dt>文件 <a class="el" href="socketcan_8cc.html">socketcan.cc</a>  </dt>
+<dd><a class="anchor" id="_todo000009"></a>实现tx消息队列  </dd>
+<dt>文件 <a class="el" href="socketcan_8h.html">socketcan.h</a>  </dt>
+<dd><a class="anchor" id="_todo000010"></a>实现tx消息队列  </dd>
+<dt>文件 <a class="el" href="spi__device_8cc.html">spi_device.cc</a>  </dt>
+<dd><a class="anchor" id="_todo000015"></a>实现不够通用，有改进空间  </dd>
+<dt>文件 <a class="el" href="spi__device_8h.html">spi_device.h</a>  </dt>
+<dd><a class="anchor" id="_todo000016"></a>实现不够通用，有改进空间  </dd>
 <dt>文件 <a class="el" href="unitree__motor_8hpp.html">unitree_motor.hpp</a>  </dt>
-<dd><a class="anchor" id="_todo000001"></a>补充注释 </dd>
+<dd><a class="anchor" id="_todo000004"></a>补充注释 </dd>
 </dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
@@ -119,7 +145,7 @@ $(document).ready(function(){initNavTree('todo.html',''); initResizable(); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

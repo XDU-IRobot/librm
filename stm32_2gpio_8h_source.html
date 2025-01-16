@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: src/librm/hal/stm32/gpio.h 源文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -23,8 +23,8 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+ <tr id="projectrow">
+  <td id="projectalign">
    <div id="projectname">librm
    </div>
   </td>
@@ -33,22 +33,28 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.1 -->
+<!-- 制作者 Doxygen 1.9.8 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'搜索','.html');
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
   initMenu('',true,false,'search.php','搜索');
   $(document).ready(function() { init_search(); });
 });
-/* @license-end */</script>
+/* @license-end */
+</script>
 <div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -61,7 +67,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(document).ready(function(){initNavTree('stm32_2gpio_8h_source.html',''); initResizable(); });
 /* @license-end */
 </script>
@@ -75,87 +81,95 @@ $(document).ready(function(){initNavTree('stm32_2gpio_8h_source.html',''); initR
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="header">
-  <div class="headertitle">
-<div class="title">gpio.h</div>  </div>
+  <div class="headertitle"><div class="title">gpio.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="stm32_2gpio_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">  Copyright (c) 2024 XDU-IRobot</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">  in the Software without restriction, including without limitation the rights</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">  copies of the Software, and to permit persons to whom the Software is</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">  furnished to do so, subject to the following conditions:</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">  The above copyright notice and this permission notice shall be included in all</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">  copies or substantial portions of the Software.</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">  SOFTWARE.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifndef LIBRM_HAL_STM32_GPIO_H</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define LIBRM_HAL_STM32_GPIO_H</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="hal_8h.html">librm/hal/stm32/hal.h</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#if defined(HAL_GPIO_MODULE_ENABLED)</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="typedefs_8h.html">librm/core/typedefs.h</a>&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="gpio__interface_8h.html">librm/hal/gpio_interface.h</a>&quot;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacerm_1_1hal_1_1stm32.html">rm::hal::stm32</a> {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1stm32_1_1Pin.html">   42</a></span>&#160;<span class="keyword">class </span><a class="code" href="classrm_1_1hal_1_1stm32_1_1Pin.html">Pin</a> final : <span class="keyword">public</span> <a class="code" href="classrm_1_1hal_1_1PinInterface.html">PinInterface</a> {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="classrm_1_1hal_1_1stm32_1_1Pin.html#a363f8c0bc476e1632eaed4e984d960cd">Pin</a>(GPIO_TypeDef &amp;port, <a class="code" href="typedefs_8h.html#ace9d960e74685e2cd84b36132dbbf8aa">u16</a> pin);</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1stm32_1_1Pin.html#a363f8c0bc476e1632eaed4e984d960cd">   45</a></span>&#160;  <a class="code" href="classrm_1_1hal_1_1stm32_1_1Pin.html#a363f8c0bc476e1632eaed4e984d960cd">Pin</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1stm32_1_1Pin.html#a7f2b712f6885b231c73c1024167f986b">   46</a></span>&#160;  <a class="code" href="classrm_1_1hal_1_1stm32_1_1Pin.html#a7f2b712f6885b231c73c1024167f986b">~Pin</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classrm_1_1hal_1_1stm32_1_1Pin.html#af94b9bd0094e07680cb54543b8969e80">Write</a>(<span class="keywordtype">bool</span> state) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  [[nodiscard]] <span class="keywordtype">bool</span> <a class="code" href="classrm_1_1hal_1_1stm32_1_1Pin.html#a83acbab0b7b303de0a9fb74458de248b">Read</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1stm32_1_1Pin.html#a0aa4b84ff3e3a0547e6dec9e7f1c94b3">   52</a></span>&#160;  GPIO_TypeDef *<a class="code" href="classrm_1_1hal_1_1stm32_1_1Pin.html#a0aa4b84ff3e3a0547e6dec9e7f1c94b3">port_</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1stm32_1_1Pin.html#acf53565b24440fbb14356ea773ff6db4">   53</a></span>&#160;  <a class="code" href="typedefs_8h.html#ace9d960e74685e2cd84b36132dbbf8aa">u16</a> <a class="code" href="classrm_1_1hal_1_1stm32_1_1Pin.html#acf53565b24440fbb14356ea773ff6db4">pin_</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}  <span class="comment">// namespace rm::hal::stm32</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HAL_STM32_GPIO_H</span></div>
-<div class="ttc" id="aclassrm_1_1hal_1_1PinInterface_html"><div class="ttname"><a href="classrm_1_1hal_1_1PinInterface.html">rm::hal::PinInterface</a></div><div class="ttdoc">GPIO引脚接口类</div><div class="ttdef"><b>Definition:</b> gpio_interface.h:36</div></div>
-<div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1Pin_html"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1Pin.html">rm::hal::stm32::Pin</a></div><div class="ttdoc">GPIO引脚类</div><div class="ttdef"><b>Definition:</b> gpio.h:42</div></div>
-<div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1Pin_html_a0aa4b84ff3e3a0547e6dec9e7f1c94b3"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1Pin.html#a0aa4b84ff3e3a0547e6dec9e7f1c94b3">rm::hal::stm32::Pin::port_</a></div><div class="ttdeci">GPIO_TypeDef * port_</div><div class="ttdef"><b>Definition:</b> gpio.h:52</div></div>
+<a href="stm32_2gpio_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2024 XDU-IRobot</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">  copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"></span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">  copies or substantial portions of the Software.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"></span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef LIBRM_HAL_STM32_GPIO_H</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_HAL_STM32_GPIO_H</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;<a class="code" href="hal_8h.html">librm/hal/stm32/hal.h</a>&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#if defined(HAL_GPIO_MODULE_ENABLED)</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;<a class="code" href="typedefs_8h.html">librm/core/typedefs.h</a>&quot;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="gpio__interface_8h.html">librm/hal/gpio_interface.h</a>&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1hal_1_1stm32.html">rm::hal::stm32</a> {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1stm32_1_1Pin.html">   42</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1hal_1_1stm32_1_1Pin.html">Pin</a> final : <span class="keyword">public</span> <a class="code hl_class" href="classrm_1_1hal_1_1PinInterface.html">PinInterface</a> {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <a class="code hl_function" href="classrm_1_1hal_1_1stm32_1_1Pin.html#a363f8c0bc476e1632eaed4e984d960cd">Pin</a>(GPIO_TypeDef &amp;port, <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> pin);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1stm32_1_1Pin.html#a363f8c0bc476e1632eaed4e984d960cd">   45</a></span>  <a class="code hl_function" href="classrm_1_1hal_1_1stm32_1_1Pin.html#a363f8c0bc476e1632eaed4e984d960cd">Pin</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1stm32_1_1Pin.html#a7f2b712f6885b231c73c1024167f986b">   46</a></span>  <a class="code hl_function" href="classrm_1_1hal_1_1stm32_1_1Pin.html#a7f2b712f6885b231c73c1024167f986b">~Pin</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1hal_1_1stm32_1_1Pin.html#af94b9bd0094e07680cb54543b8969e80">Write</a>(<span class="keywordtype">bool</span> state) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classrm_1_1hal_1_1stm32_1_1Pin.html#a83acbab0b7b303de0a9fb74458de248b">Read</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1stm32_1_1Pin.html#a0aa4b84ff3e3a0547e6dec9e7f1c94b3">   52</a></span>  GPIO_TypeDef *<a class="code hl_variable" href="classrm_1_1hal_1_1stm32_1_1Pin.html#a0aa4b84ff3e3a0547e6dec9e7f1c94b3">port_</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1stm32_1_1Pin.html#acf53565b24440fbb14356ea773ff6db4">   53</a></span>  <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a class="code hl_variable" href="classrm_1_1hal_1_1stm32_1_1Pin.html#acf53565b24440fbb14356ea773ff6db4">pin_</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
+</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}  <span class="comment">// namespace rm::hal::stm32</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HAL_STM32_GPIO_H</span></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1PinInterface_html"><div class="ttname"><a href="classrm_1_1hal_1_1PinInterface.html">rm::hal::PinInterface</a></div><div class="ttdoc">GPIO引脚接口类</div><div class="ttdef"><b>Definition</b> gpio_interface.h:36</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1Pin_html"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1Pin.html">rm::hal::stm32::Pin</a></div><div class="ttdoc">GPIO引脚类</div><div class="ttdef"><b>Definition</b> gpio.h:42</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1Pin_html_a0aa4b84ff3e3a0547e6dec9e7f1c94b3"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1Pin.html#a0aa4b84ff3e3a0547e6dec9e7f1c94b3">rm::hal::stm32::Pin::port_</a></div><div class="ttdeci">GPIO_TypeDef * port_</div><div class="ttdef"><b>Definition</b> gpio.h:52</div></div>
 <div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1Pin_html_a363f8c0bc476e1632eaed4e984d960cd"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1Pin.html#a363f8c0bc476e1632eaed4e984d960cd">rm::hal::stm32::Pin::Pin</a></div><div class="ttdeci">Pin()=delete</div></div>
 <div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1Pin_html_a7f2b712f6885b231c73c1024167f986b"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1Pin.html#a7f2b712f6885b231c73c1024167f986b">rm::hal::stm32::Pin::~Pin</a></div><div class="ttdeci">~Pin() override=default</div></div>
-<div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1Pin_html_a83acbab0b7b303de0a9fb74458de248b"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1Pin.html#a83acbab0b7b303de0a9fb74458de248b">rm::hal::stm32::Pin::Read</a></div><div class="ttdeci">bool Read() const override</div><div class="ttdef"><b>Definition:</b> gpio.cc:52</div></div>
-<div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1Pin_html_acf53565b24440fbb14356ea773ff6db4"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1Pin.html#acf53565b24440fbb14356ea773ff6db4">rm::hal::stm32::Pin::pin_</a></div><div class="ttdeci">u16 pin_</div><div class="ttdef"><b>Definition:</b> gpio.h:53</div></div>
-<div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1Pin_html_af94b9bd0094e07680cb54543b8969e80"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1Pin.html#af94b9bd0094e07680cb54543b8969e80">rm::hal::stm32::Pin::Write</a></div><div class="ttdeci">void Write(bool state) override</div><div class="ttdef"><b>Definition:</b> gpio.cc:47</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1Pin_html_a83acbab0b7b303de0a9fb74458de248b"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1Pin.html#a83acbab0b7b303de0a9fb74458de248b">rm::hal::stm32::Pin::Read</a></div><div class="ttdeci">bool Read() const override</div><div class="ttdef"><b>Definition</b> gpio.cc:52</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1Pin_html_acf53565b24440fbb14356ea773ff6db4"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1Pin.html#acf53565b24440fbb14356ea773ff6db4">rm::hal::stm32::Pin::pin_</a></div><div class="ttdeci">u16 pin_</div><div class="ttdef"><b>Definition</b> gpio.h:53</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1Pin_html_af94b9bd0094e07680cb54543b8969e80"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1Pin.html#af94b9bd0094e07680cb54543b8969e80">rm::hal::stm32::Pin::Write</a></div><div class="ttdeci">void Write(bool state) override</div><div class="ttdef"><b>Definition</b> gpio.cc:47</div></div>
 <div class="ttc" id="agpio__interface_8h_html"><div class="ttname"><a href="gpio__interface_8h.html">gpio_interface.h</a></div><div class="ttdoc">GPIO的接口类</div></div>
 <div class="ttc" id="ahal_8h_html"><div class="ttname"><a href="hal_8h.html">hal.h</a></div><div class="ttdoc">根据不同STM32型号选择不同的HAL库</div></div>
-<div class="ttc" id="anamespacerm_1_1hal_1_1stm32_html"><div class="ttname"><a href="namespacerm_1_1hal_1_1stm32.html">rm::hal::stm32</a></div><div class="ttdef"><b>Definition:</b> bxcan.cc:55</div></div>
+<div class="ttc" id="anamespacerm_1_1hal_1_1stm32_html"><div class="ttname"><a href="namespacerm_1_1hal_1_1stm32.html">rm::hal::stm32</a></div><div class="ttdef"><b>Definition</b> bxcan.cc:56</div></div>
+<div class="ttc" id="anamespacerm_html_a8f3662a01c5fa99494989944ee6c6157"><div class="ttname"><a href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">rm::u16</a></div><div class="ttdeci">uint16_t u16</div><div class="ttdef"><b>Definition</b> typedefs.h:44</div></div>
 <div class="ttc" id="atypedefs_8h_html"><div class="ttname"><a href="typedefs_8h.html">typedefs.h</a></div><div class="ttdoc">全局数据类型定义</div></div>
-<div class="ttc" id="atypedefs_8h_html_ace9d960e74685e2cd84b36132dbbf8aa"><div class="ttname"><a href="typedefs_8h.html#ace9d960e74685e2cd84b36132dbbf8aa">u16</a></div><div class="ttdeci">uint16_t u16</div><div class="ttdef"><b>Definition:</b> typedefs.h:42</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_12d4920679a1960aa4499f9d88e747a8.html">hal</a></li><li class="navelem"><a class="el" href="dir_873c52db97cd763a6a91f2234950780f.html">stm32</a></li><li class="navelem"><a class="el" href="stm32_2gpio_8h.html">gpio.h</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

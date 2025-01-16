@@ -1,6 +1,6 @@
 var dr16_8h =
 [
-    [ "DR16", "classrm_1_1device_1_1DR16.html", "classrm_1_1device_1_1DR16" ],
+    [ "rm::device::DR16", "classrm_1_1device_1_1DR16.html", "classrm_1_1device_1_1DR16" ],
     [ "RcKey", "dr16_8h.html#a4aa0b0d0cbdc6faf701069ac0210fb3c", [
       [ "kW", "dr16_8h.html#a4aa0b0d0cbdc6faf701069ac0210fb3ca27963ec968c1e151c78a1d7c8a97b178", null ],
       [ "kS", "dr16_8h.html#a4aa0b0d0cbdc6faf701069ac0210fb3cac65dfb11fc5387999d90b7a3e1b70653", null ],

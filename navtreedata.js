@@ -45,6 +45,8 @@ var NAVTREE =
         [ "函数", "functions_func.html", "functions_func" ],
         [ "变量", "functions_vars.html", null ],
         [ "类型定义", "functions_type.html", null ],
+        [ "枚举", "functions_enum.html", null ],
+        [ "枚举值", "functions_eval.html", null ],
         [ "相关函数", "functions_rela.html", null ]
       ] ]
     ] ],
@@ -52,9 +54,7 @@ var NAVTREE =
       [ "文件列表", "files.html", "files_dup" ],
       [ "文件成员", "globals.html", [
         [ "全部", "globals.html", "globals_dup" ],
-        [ "函数", "globals_func.html", null ],
         [ "变量", "globals_vars.html", "globals_vars" ],
-        [ "类型定义", "globals_type.html", null ],
         [ "宏定义", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -64,10 +64,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ahrs__interface_8h.html",
-"classrm_1_1device_1_1DR16.html#a1949a050a674fb187cf80109a21c50cd",
-"classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html",
-"globals_defs.html",
-"stm32_2spi_8h.html"
+"classrm_1_1device_1_1BMI088.html#a9bba179a63d19f94165abd4af4dec88b",
+"classrm_1_1hal_1_1CanInterface.html#a63b696861b59fe68c26f65d5d6a9e3c4",
+"classrm_1_1modules_1_1algorithm_1_1EkfAhrs.html#a823df28ee8b31c580bcb87021e6c0bf9",
+"dir_88bd29c3a8086e73f60b54e5300eb9e2.html",
+"namespacerm_1_1device.html#a4aa0b0d0cbdc6faf701069ac0210fb3caf73b7a14626c25aa554e2437ea3fc1df",
+"structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#af0ccd77b1413b40615c7dcad70708504",
+"structrm_1_1modules_1_1algorithm_1_1ImuData9Dof.html#a56e31cccdbcfd07edf823da4d21fb819"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';
