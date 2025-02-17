@@ -1,5 +1,15 @@
 var NAVTREEINDEX6 =
 {
+"protocol_8hpp.html#a097a9fa7f69d2f1da75170c9c3bc2137":[3,0,0,0,1,1,0,2],
+"protocol_8hpp.html#a097a9fa7f69d2f1da75170c9c3bc2137a73c38af9bce570ddd6d0f4a4322d66db":[3,0,0,0,1,1,0,2,0],
+"protocol_8hpp.html#a446a65e64cf80e3dde0a69feb01d203a":[3,0,0,0,1,1,0,4],
+"protocol_8hpp.html#a4d0125fb13f830b17bbd70105bc15af3":[3,0,0,0,1,1,0,3],
+"protocol_8hpp.html#a5e6c6d20806adea8e5b4f09b2f90de7d":[3,0,0,0,1,1,0,7],
+"protocol_8hpp.html#a97c1a75e3ee9444fe965f54e81120149":[3,0,0,0,1,1,0,5],
+"protocol_8hpp.html#ac14725632152fe09f59869931175d64d":[3,0,0,0,1,1,0,6],
+"protocol_8hpp.html#ae24d9b479465a3d5c22eaa6ac48e5744":[3,0,0,0,1,1,0,8],
+"protocol_8hpp.html#ae78b737085e20d95c002b0bcb5cdbc65":[3,0,0,0,1,1,0,9],
+"protocol_8hpp_source.html":[3,0,0,0,1,1,0],
 "protocol__v170_8hpp.html":[3,0,0,0,1,1,1],
 "protocol__v170_8hpp_source.html":[3,0,0,0,1,1,1],
 "referee_8hpp.html":[3,0,0,0,1,1,2],
@@ -239,15 +249,5 @@ var NAVTREEINDEX6 =
 "structrm_1_1device_1_1Go8010Motor_1_1RIS__Comd.html#aa16eab7b98efef6ac1af2cec562cf15d":[1,0,0,1,16,4,4],
 "structrm_1_1device_1_1Go8010Motor_1_1RIS__Comd.html#aee2b2b4e610b5402142c1949427f5fb5":[2,0,0,1,16,4,2],
 "structrm_1_1device_1_1Go8010Motor_1_1RIS__Comd.html#aee2b2b4e610b5402142c1949427f5fb5":[1,0,0,1,16,4,2],
-"structrm_1_1device_1_1Go8010Motor_1_1RIS__Fbk.html":[1,0,0,1,16,5],
-"structrm_1_1device_1_1Go8010Motor_1_1RIS__Fbk.html":[2,0,0,1,16,5],
-"structrm_1_1device_1_1Go8010Motor_1_1RIS__Fbk.html#a030c00cbea34fbd257ba29a85deeec92":[2,0,0,1,16,5,2],
-"structrm_1_1device_1_1Go8010Motor_1_1RIS__Fbk.html#a030c00cbea34fbd257ba29a85deeec92":[1,0,0,1,16,5,2],
-"structrm_1_1device_1_1Go8010Motor_1_1RIS__Fbk.html#a3970e732557e97c35b59d18e2152cd89":[2,0,0,1,16,5,1],
-"structrm_1_1device_1_1Go8010Motor_1_1RIS__Fbk.html#a3970e732557e97c35b59d18e2152cd89":[1,0,0,1,16,5,1],
-"structrm_1_1device_1_1Go8010Motor_1_1RIS__Fbk.html#a5643bf98327c78acf298557fed058570":[1,0,0,1,16,5,5],
-"structrm_1_1device_1_1Go8010Motor_1_1RIS__Fbk.html#a5643bf98327c78acf298557fed058570":[2,0,0,1,16,5,5],
-"structrm_1_1device_1_1Go8010Motor_1_1RIS__Fbk.html#a856e96a20d7b8195ba6716a3816d267a":[2,0,0,1,16,5,4],
-"structrm_1_1device_1_1Go8010Motor_1_1RIS__Fbk.html#a856e96a20d7b8195ba6716a3816d267a":[1,0,0,1,16,5,4],
-"structrm_1_1device_1_1Go8010Motor_1_1RIS__Fbk.html#a894b3686cb518b0bbd9c3f8c02a2a414":[1,0,0,1,16,5,6]
+"structrm_1_1device_1_1Go8010Motor_1_1RIS__Fbk.html":[1,0,0,1,16,5]
 };

@@ -65,14 +65,14 @@ var NAVTREEINDEX =
 [
 "ahrs__interface_8h.html",
 "classrm_1_1device_1_1BMI088.html#aba61add85d32d26d622f84cd632453b4",
-"classrm_1_1device_1_1UnitreeMotor.html#a6afae145e5d1f10efb4574c43ee0d5d4",
-"classrm_1_1modules_1_1algorithm_1_1AhrsInterface.html",
-"classrm_1_1modules_1_1algorithm_1_1accelMeasurement.html#a8419463a90ae2893c49a619f6cd7c292",
-"globals_vars_b.html",
-"protocol__v170_8hpp.html",
-"structrm_1_1device_1_1Go8010Motor_1_1RIS__Fbk.html#a894b3686cb518b0bbd9c3f8c02a2a414",
-"structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#ace23e158df74374e88e7fac5756cb0ef",
-"time_8hpp.html"
+"classrm_1_1device_1_1SuperCap.html#ad1045518c98cd732608c18df9902922c",
+"classrm_1_1modules_1_1VofaPlotter.html#a57f583a2c6da8b6973b89e494053c2b8",
+"classrm_1_1modules_1_1algorithm_1_1SystemModel.html#adc13dece2d3c62a4985bb098b5c9b15a",
+"globals_k.html",
+"protocol_8hpp.html#a097a9fa7f69d2f1da75170c9c3bc2137",
+"structrm_1_1device_1_1Go8010Motor_1_1RIS__Fbk.html",
+"structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#ac7b127298d6e425a0dcf343dc902b112",
+"supercap_8h.html"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';

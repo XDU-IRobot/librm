@@ -220,7 +220,7 @@ $(document).ready(function(){initNavTree('dm__motor_8hpp_source.html',''); initR
 <div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1DmMotor.html#a3265b87ab4b5a2bc13cababb1065e19d">  151</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1DmMotor.html#a3265b87ab4b5a2bc13cababb1065e19d">SetPosition</a>(<a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> position_rad, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> max_speed_rad_per_sec, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> accel_torque_nm, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="unitree__motor_8hpp.html#a6e6ef3c3e462de6af7ec88300b717944">kp</a>, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="unitree__motor_8hpp.html#adb4256549943047fac1ad204d895b1f6">kd</a>) {</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordflow">if</span> (this-&gt;reversed_) {</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>      position_rad = this-&gt;settings_.p_max - position_rad;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>      position_rad = 0 - position_rad;</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    }</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> pos_tmp =</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <a class="code hl_function" href="namespacerm_1_1modules_1_1algorithm_1_1utils.html#ad2e429d98c36dca103e0bdf1bc2f9e4c">modules::algorithm::utils::FloatToInt</a>(position_rad, -this-&gt;settings_.p_max, this-&gt;settings_.p_max, 16);</div>
@@ -250,7 +250,7 @@ $(document).ready(function(){initNavTree('dm__motor_8hpp_source.html',''); initR
 <div class="foldopen" id="foldopen00185" data-start="{" data-end="}">
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1DmMotor.html#a2c4648a04f76ce9b3a95a3871928cf22">  185</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1DmMotor.html#a2c4648a04f76ce9b3a95a3871928cf22">SetPosition</a>(<a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> position_rad, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> max_speed_rad_per_sec) {</div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="keywordflow">if</span> (this-&gt;reversed_) {</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>      position_rad = this-&gt;settings_.p_max - position_rad;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>      position_rad = 0 - position_rad;</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    }</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    memcpy(this-&gt;tx_buffer_, &amp;position_rad, 4);</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    memcpy(this-&gt;tx_buffer_ + 4, &amp;max_speed_rad_per_sec, 4);</div>
@@ -298,7 +298,7 @@ $(document).ready(function(){initNavTree('dm__motor_8hpp_source.html',''); initR
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    this-&gt;mos_temperature_ = msg-&gt;data[6];</div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    this-&gt;coil_temperature_ = msg-&gt;data[7];</div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <span class="keywordflow">if</span> (this-&gt;reversed_) {</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>      this-&gt;position_ = this-&gt;settings_.p_max - this-&gt;position_;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>      this-&gt;position_ = 0 - this-&gt;position_;</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>      this-&gt;speed_ = -this-&gt;speed_;</div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>      this-&gt;torque_ = -this-&gt;torque_;</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    }</div>
