@@ -21,7 +21,13 @@ var annotated_dup =
         [ "DmMotorSettings< DmMotorControlMode::kSpeed >", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeed_01_4.html", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeed_01_4" ],
         [ "DmMotorSettings< DmMotorControlMode::kSpeedPosition >", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeedPosition_01_4.html", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeedPosition_01_4" ],
         [ "DR16", "classrm_1_1device_1_1DR16.html", "classrm_1_1device_1_1DR16" ],
+        [ "Go8010Motor", "classrm_1_1device_1_1Go8010Motor.html", "classrm_1_1device_1_1Go8010Motor" ],
         [ "IST8310", "classrm_1_1device_1_1IST8310.html", "classrm_1_1device_1_1IST8310" ],
+        [ "Referee", "classrm_1_1device_1_1Referee.html", "classrm_1_1device_1_1Referee" ],
+        [ "RefereeCmdId", "structrm_1_1device_1_1RefereeCmdId.html", null ],
+        [ "RefereeCmdId< RefereeRevision::kV170 >", "structrm_1_1device_1_1RefereeCmdId_3_01RefereeRevision_1_1kV170_01_4.html", null ],
+        [ "RefereeProtocol", "structrm_1_1device_1_1RefereeProtocol.html", null ],
+        [ "RefereeProtocol< RefereeRevision::kV170 >", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4" ],
         [ "SuperCap", "classrm_1_1device_1_1SuperCap.html", "classrm_1_1device_1_1SuperCap" ],
         [ "UnitreeMotor", "classrm_1_1device_1_1UnitreeMotor.html", "classrm_1_1device_1_1UnitreeMotor" ]
       ] ],

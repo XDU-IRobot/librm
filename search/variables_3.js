@@ -1,8 +1,13 @@
 var searchData=
 [
-  ['d_5fbuf_5f_0',['d_buf_',['../classrm_1_1modules_1_1algorithm_1_1PID.html#a65ddb01cf94f2533a5e8614cce3de4e2',1,'rm::modules::algorithm::PID']]],
-  ['d_5fout_5f_1',['d_out_',['../classrm_1_1modules_1_1algorithm_1_1PID.html#a8ba36ccb7478adb48ace2f06752dd5dc',1,'rm::modules::algorithm::PID']]],
-  ['data_2',['data',['../structrm_1_1device_1_1UnitreeMotor_1_1SendData.html#af0095072f37c180ab6328a78f383416d',1,'rm::device::UnitreeMotor::SendData::data'],['../structrm_1_1device_1_1UnitreeMotor_1_1ReceiveData.html#ae86d695a1edbdf4c30a04ad8faee0549',1,'rm::device::UnitreeMotor::ReceiveData::data'],['../structrm_1_1hal_1_1CanMsg.html#a8bbbfbe894325af4b9b54b6b5630bf3f',1,'rm::hal::CanMsg::data'],['../unitree__motor_8hpp.html#a7ea4cf5640b96ae38ed53527f508183a',1,'data:&#160;unitree_motor.hpp']]],
-  ['dev_3',['dev',['../structrm_1_1hal_1_1linux___1_1AsyncCanDevice.html#aa35bab5a30c29967a680ca8fb1623d6c',1,'rm::hal::linux_::AsyncCanDevice']]],
-  ['dlc_4',['dlc',['../structrm_1_1hal_1_1CanMsg.html#ad865a48e09de7dfc46260673ed18dd81',1,'rm::hal::CanMsg']]]
+  ['d_5fbuf_5f_0',['d_buf_',['../classrm_1_1modules_1_1algorithm_1_1PID.html#a59c76ce6ccd568de376c3c0b161fd458',1,'rm::modules::algorithm::PID']]],
+  ['d_5fout_5f_1',['d_out_',['../classrm_1_1modules_1_1algorithm_1_1PID.html#a72facb9299d347afd33f7e07cc0e8a81',1,'rm::modules::algorithm::PID']]],
+  ['dart_5fclient_5fcmd_2',['dart_client_cmd',['../structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#a22aa6da25acb7f9ae63cc999f1065573',1,'rm::device::RefereeProtocol&lt; RefereeRevision::kV170 &gt;']]],
+  ['dart_5finfo_3',['dart_info',['../structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#a0b26f370558f7e5b5a501d4205663031',1,'rm::device::RefereeProtocol&lt; RefereeRevision::kV170 &gt;::dart_info'],['../structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#a0a173bff1200789e92f4f68f963b427e',1,'rm::device::RefereeProtocol&lt; RefereeRevision::kV170 &gt;::dart_info']]],
+  ['dart_5flaunch_5fopening_5fstatus_4',['dart_launch_opening_status',['../structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#a6d566eb289e8dda1d2f385fb37cd29b8',1,'rm::device::RefereeProtocol&lt; RefereeRevision::kV170 &gt;']]],
+  ['dart_5fremaining_5ftime_5',['dart_remaining_time',['../structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#a9c3e631b27725ca0031886d6f336b852',1,'rm::device::RefereeProtocol&lt; RefereeRevision::kV170 &gt;']]],
+  ['data_6',['data',['../structrm_1_1device_1_1UnitreeMotor_1_1SendData.html#af0095072f37c180ab6328a78f383416d',1,'rm::device::UnitreeMotor::SendData::data'],['../structrm_1_1device_1_1UnitreeMotor_1_1ReceiveData.html#ae86d695a1edbdf4c30a04ad8faee0549',1,'rm::device::UnitreeMotor::ReceiveData::data'],['../structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#a210dcc081a6ab4cc7c49bb13042512e3',1,'rm::device::RefereeProtocol&lt; RefereeRevision::kV170 &gt;::data'],['../structrm_1_1hal_1_1CanMsg.html#a8bbbfbe894325af4b9b54b6b5630bf3f',1,'rm::hal::CanMsg::data'],['../unitree__motor_8hpp.html#a7ea4cf5640b96ae38ed53527f508183a',1,'data:&#160;unitree_motor.hpp']]],
+  ['defence_5fbuff_7',['defence_buff',['../structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#ab855520675874052cf688fc650d3ab66',1,'rm::device::RefereeProtocol&lt; RefereeRevision::kV170 &gt;']]],
+  ['dev_8',['dev',['../structrm_1_1hal_1_1linux___1_1AsyncCanDevice.html#aa35bab5a30c29967a680ca8fb1623d6c',1,'rm::hal::linux_::AsyncCanDevice']]],
+  ['dlc_9',['dlc',['../structrm_1_1hal_1_1CanMsg.html#ad865a48e09de7dfc46260673ed18dd81',1,'rm::hal::CanMsg']]]
 ];

@@ -8,5 +8,6 @@ var searchData=
   ['comdatasend_5',['ComDataSend',['../structrm_1_1device_1_1UnitreeMotor_1_1ComDataSend.html',1,'rm::device::UnitreeMotor']]],
   ['comhead_6',['ComHead',['../structrm_1_1device_1_1UnitreeMotor_1_1ComHead.html',1,'rm::device::UnitreeMotor']]],
   ['control_7',['Control',['../classrm_1_1modules_1_1algorithm_1_1Control.html',1,'rm::modules::algorithm']]],
-  ['controlparam_8',['ControlParam',['../structrm_1_1device_1_1UnitreeMotor_1_1ControlParam.html',1,'rm::device::UnitreeMotor']]]
+  ['controldata_8',['ControlData',['../structrm_1_1device_1_1Go8010Motor_1_1ControlData.html',1,'rm::device::Go8010Motor']]],
+  ['controlparam_9',['controlparam',['../structrm_1_1device_1_1Go8010Motor_1_1ControlParam.html',1,'rm::device::Go8010Motor::ControlParam'],['../structrm_1_1device_1_1UnitreeMotor_1_1ControlParam.html',1,'rm::device::UnitreeMotor::ControlParam']]]
 ];

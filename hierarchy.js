@@ -21,6 +21,8 @@ var hierarchy =
     [ "rm::device::UnitreeMotor::ComDataReceive", "structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html", null ],
     [ "rm::device::UnitreeMotor::ComDataSend", "structrm_1_1device_1_1UnitreeMotor_1_1ComDataSend.html", null ],
     [ "rm::device::UnitreeMotor::ComHead", "structrm_1_1device_1_1UnitreeMotor_1_1ComHead.html", null ],
+    [ "rm::device::Go8010Motor::ControlData", "structrm_1_1device_1_1Go8010Motor_1_1ControlData.html", null ],
+    [ "rm::device::Go8010Motor::ControlParam", "structrm_1_1device_1_1Go8010Motor_1_1ControlParam.html", null ],
     [ "rm::device::UnitreeMotor::ControlParam", "structrm_1_1device_1_1UnitreeMotor_1_1ControlParam.html", null ],
     [ "rm::device::Device", "classrm_1_1device_1_1Device.html", null ],
     [ "rm::device::DeviceManager", "classrm_1_1device_1_1DeviceManager.html", null ],
@@ -38,6 +40,7 @@ var hierarchy =
       [ "rm::hal_error", "classrm_1_1hal__error.html", null ]
     ] ],
     [ "rm::device::UnitreeMotor::FeedbackParam", "structrm_1_1device_1_1UnitreeMotor_1_1FeedbackParam.html", null ],
+    [ "rm::device::Go8010Motor", "classrm_1_1device_1_1Go8010Motor.html", null ],
     [ "rm::hal::stm32::I2cDevice", "classrm_1_1hal_1_1stm32_1_1I2cDevice.html", [
       [ "rm::device::IST8310", "classrm_1_1device_1_1IST8310.html", null ]
     ] ],
@@ -50,16 +53,27 @@ var hierarchy =
       [ "rm::modules::algorithm::SystemModel< CovarianceBase >", "classrm_1_1modules_1_1algorithm_1_1SystemModel.html", null ]
     ] ],
     [ "rm::modules::algorithm::MecanumChassis", "classrm_1_1modules_1_1algorithm_1_1MecanumChassis.html", null ],
+    [ "rm::device::Go8010Motor::MotorData", "structrm_1_1device_1_1Go8010Motor_1_1MotorData.html", null ],
     [ "rm::device::DirectDriveMotor::Parameters", "structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html", null ],
-    [ "rm::modules::algorithm::PID", "classrm_1_1modules_1_1algorithm_1_1PID.html", [
-      [ "rm::modules::algorithm::RingPID", "classrm_1_1modules_1_1algorithm_1_1RingPID.html", null ]
+    [ "rm::modules::algorithm::PID< type >", "classrm_1_1modules_1_1algorithm_1_1PID.html", [
+      [ "rm::modules::algorithm::RingPID< type >", "classrm_1_1modules_1_1algorithm_1_1RingPID.html", null ]
     ] ],
     [ "rm::hal::PinInterface", "classrm_1_1hal_1_1PinInterface.html", [
       [ "rm::hal::stm32::Pin", "classrm_1_1hal_1_1stm32_1_1Pin.html", null ]
     ] ],
     [ "rm::modules::algorithm::QuadOmniChassis", "classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html", null ],
     [ "rm::modules::algorithm::Quaternion", "structrm_1_1modules_1_1algorithm_1_1Quaternion.html", null ],
+    [ "rm::device::Go8010Motor::ReceiveData", "structrm_1_1device_1_1Go8010Motor_1_1ReceiveData.html", null ],
     [ "rm::device::UnitreeMotor::ReceiveData", "structrm_1_1device_1_1UnitreeMotor_1_1ReceiveData.html", null ],
+    [ "rm::device::Referee< revision >", "classrm_1_1device_1_1Referee.html", null ],
+    [ "rm::device::RefereeCmdId< revision >", "structrm_1_1device_1_1RefereeCmdId.html", null ],
+    [ "rm::device::RefereeCmdId< RefereeRevision::kV170 >", "structrm_1_1device_1_1RefereeCmdId_3_01RefereeRevision_1_1kV170_01_4.html", null ],
+    [ "rm::device::RefereeProtocol< revision >", "structrm_1_1device_1_1RefereeProtocol.html", null ],
+    [ "rm::device::RefereeProtocol< RefereeRevision::kV170 >", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html", null ],
+    [ "rm::device::Go8010Motor::RIS_Comd", "structrm_1_1device_1_1Go8010Motor_1_1RIS__Comd.html", null ],
+    [ "rm::device::Go8010Motor::RIS_Fbk", "structrm_1_1device_1_1Go8010Motor_1_1RIS__Fbk.html", null ],
+    [ "rm::device::Go8010Motor::RIS_Mode", "structrm_1_1device_1_1Go8010Motor_1_1RIS__Mode.html", null ],
+    [ "rm::device::Go8010Motor::SendData", "structrm_1_1device_1_1Go8010Motor_1_1SendData.html", null ],
     [ "rm::device::UnitreeMotor::SendData", "structrm_1_1device_1_1UnitreeMotor_1_1SendData.html", null ],
     [ "rm::hal::SerialInterface", "classrm_1_1hal_1_1SerialInterface.html", [
       [ "rm::hal::linux_::Serial", "classrm_1_1hal_1_1linux___1_1Serial.html", null ],

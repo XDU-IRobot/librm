@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hal_5ferror_0',['hal_error',['../classrm_1_1hal__error.html',1,'rm']]]
+  ['go8010motor_0',['Go8010Motor',['../classrm_1_1device_1_1Go8010Motor.html',1,'rm::device']]]
 ];

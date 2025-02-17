@@ -1,7 +1,7 @@
 var searchData=
 [
   ['sendcommand_0',['sendcommand',['../classrm_1_1device_1_1DjiMotor.html#a9fe272a3daade97eb5ee45b794fc58cc',1,'rm::device::DjiMotor::SendCommand()'],['../classrm_1_1device_1_1DirectDriveMotor.html#a3821bd567d37a4e1fd3ef57a35bd9662',1,'rm::device::DirectDriveMotor::SendCommand()']]],
-  ['sendcommend_1',['SendCommend',['../classrm_1_1device_1_1UnitreeMotor.html#a7ab4c3bbd71861f19b5d6a2a3e2a2dac',1,'rm::device::UnitreeMotor']]],
+  ['sendcommend_1',['sendcommend',['../classrm_1_1device_1_1Go8010Motor.html#ab8aa0ac2395d58d617b6bedc3588cbae',1,'rm::device::Go8010Motor::SendCommend()'],['../classrm_1_1device_1_1UnitreeMotor.html#a7ab4c3bbd71861f19b5d6a2a3e2a2dac',1,'rm::device::UnitreeMotor::SendCommend()']]],
   ['sendinstruction_2',['SendInstruction',['../classrm_1_1device_1_1DmMotor.html#a13b7808f826582a4a2089fad296873c9',1,'rm::device::DmMotor']]],
   ['serial_3',['serial',['../classrm_1_1hal_1_1linux___1_1Serial.html#a1ecc958b107398b839d2d4220c12e539',1,'rm::hal::linux_::Serial::Serial()=delete'],['../classrm_1_1hal_1_1linux___1_1Serial.html#a22c0bdf90f073f944108170f19596919',1,'rm::hal::linux_::Serial::Serial(const char *dev, usize baud, usize rx_buffer_size, std::chrono::milliseconds timeout)']]],
   ['set_4',['set',['../classrm_1_1device_1_1DirectDriveMotor.html#aca70bc6ae3fabac57af2201c3d38163d',1,'rm::device::DirectDriveMotor::Set(f32 control_value)'],['../classrm_1_1device_1_1DirectDriveMotor.html#a001653007c4ee8671663e57012293933',1,'rm::device::DirectDriveMotor::Set(f32 control_value, Mode mode)']]],
@@ -10,7 +10,7 @@ var searchData=
   ['setparameter_7',['SetParameter',['../classrm_1_1device_1_1DirectDriveMotor.html#a5688e76419fd654c56057988096442ca',1,'rm::device::DirectDriveMotor']]],
   ['setposition_8',['setposition',['../classrm_1_1device_1_1DmMotor.html#a3265b87ab4b5a2bc13cababb1065e19d',1,'rm::device::DmMotor::SetPosition(f32 position_rad, f32 max_speed_rad_per_sec, f32 accel_torque_nm, f32 kp, f32 kd)'],['../classrm_1_1device_1_1DmMotor.html#a2c4648a04f76ce9b3a95a3871928cf22',1,'rm::device::DmMotor::SetPosition(f32 position_rad, f32 max_speed_rad_per_sec)']]],
   ['setspeed_9',['SetSpeed',['../classrm_1_1device_1_1DmMotor.html#a56691e7ae71d70ba1fd6196a195e23a3',1,'rm::device::DmMotor']]],
-  ['settau_10',['SetTau',['../classrm_1_1device_1_1UnitreeMotor.html#a02d32fe8683f81bedce874c9228d0f3c',1,'rm::device::UnitreeMotor']]],
+  ['settau_10',['settau',['../classrm_1_1device_1_1Go8010Motor.html#a4faf7babb42fed798f1e4949c4f6612b',1,'rm::device::Go8010Motor::SetTau()'],['../classrm_1_1device_1_1UnitreeMotor.html#a02d32fe8683f81bedce874c9228d0f3c',1,'rm::device::UnitreeMotor::SetTau()']]],
   ['sign_11',['sign',['../namespacerm_1_1modules_1_1algorithm_1_1utils.html#ae8594f4515ca35014a515c7556f0a7d2',1,'rm::modules::algorithm::utils']]],
   ['single_5fbyte_5fbuffer_12',['single_byte_buffer',['../classrm_1_1hal_1_1stm32_1_1SpiDevice.html#aeab0ae19f993540ef9b95ac1dd211727',1,'rm::hal::stm32::SpiDevice']]],
   ['sleep_13',['Sleep',['../namespacerm_1_1core_1_1time.html#a8a1075a598c146c485b38d2739025d7e',1,'rm::core::time']]],

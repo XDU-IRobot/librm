@@ -43,7 +43,7 @@ var NAVTREE =
       [ "类成员", "functions.html", [
         [ "全部", "functions.html", "functions_dup" ],
         [ "函数", "functions_func.html", "functions_func" ],
-        [ "变量", "functions_vars.html", null ],
+        [ "变量", "functions_vars.html", "functions_vars" ],
         [ "类型定义", "functions_type.html", null ],
         [ "枚举", "functions_enum.html", null ],
         [ "枚举值", "functions_eval.html", null ],
@@ -65,12 +65,14 @@ var NAVTREEINDEX =
 [
 "ahrs__interface_8h.html",
 "classrm_1_1device_1_1BMI088.html#aba61add85d32d26d622f84cd632453b4",
-"classrm_1_1hal_1_1CanInterface.html#a6bae71da4ba4ee5bf9f21cc03f602498",
-"classrm_1_1modules_1_1algorithm_1_1EkfAhrs.html#af962fa134f775e3e047537a374e85c02",
-"crc_8h.html#ae87fd42e07b56aebf173706575c133c1",
-"namespacerm_1_1device.html#a4aa0b0d0cbdc6faf701069ac0210fb3ca1121352101e67451e27b8544fdc6575e",
-"structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#ada47a78138a50b0f251619909d835c5e",
-"structrm_1_1modules_1_1algorithm_1_1ImuData6Dof.html#a80c89ac2fe90d20b811339785cce5fbc"
+"classrm_1_1device_1_1UnitreeMotor.html#a6afae145e5d1f10efb4574c43ee0d5d4",
+"classrm_1_1modules_1_1algorithm_1_1AhrsInterface.html",
+"classrm_1_1modules_1_1algorithm_1_1accelMeasurement.html#a8419463a90ae2893c49a619f6cd7c292",
+"globals_vars_b.html",
+"protocol__v170_8hpp.html",
+"structrm_1_1device_1_1Go8010Motor_1_1RIS__Fbk.html#a894b3686cb518b0bbd9c3f8c02a2a414",
+"structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#ace23e158df74374e88e7fac5756cb0ef",
+"time_8hpp.html"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';
