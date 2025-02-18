@@ -20,8 +20,10 @@ var namespacerm_1_1device =
     [ "IST8310", "classrm_1_1device_1_1IST8310.html", "classrm_1_1device_1_1IST8310" ],
     [ "Referee", "classrm_1_1device_1_1Referee.html", "classrm_1_1device_1_1Referee" ],
     [ "RefereeCmdId", "structrm_1_1device_1_1RefereeCmdId.html", null ],
+    [ "RefereeCmdId< RefereeRevision::kV164 >", "structrm_1_1device_1_1RefereeCmdId_3_01RefereeRevision_1_1kV164_01_4.html", null ],
     [ "RefereeCmdId< RefereeRevision::kV170 >", "structrm_1_1device_1_1RefereeCmdId_3_01RefereeRevision_1_1kV170_01_4.html", null ],
     [ "RefereeProtocol", "structrm_1_1device_1_1RefereeProtocol.html", null ],
+    [ "RefereeProtocol< RefereeRevision::kV164 >", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4.html", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4" ],
     [ "RefereeProtocol< RefereeRevision::kV170 >", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4" ],
     [ "SuperCap", "classrm_1_1device_1_1SuperCap.html", "classrm_1_1device_1_1SuperCap" ],
     [ "UnitreeMotor", "classrm_1_1device_1_1UnitreeMotor.html", "classrm_1_1device_1_1UnitreeMotor" ],
@@ -123,6 +125,7 @@ var namespacerm_1_1device =
       [ "kMid", "namespacerm_1_1device.html#ab75124728a7c060daea11bcfc5677bd8a46d517fe446a90c5afd2e1f8e7def864", null ]
     ] ],
     [ "RefereeRevision", "namespacerm_1_1device.html#a097a9fa7f69d2f1da75170c9c3bc2137", [
+      [ "kV164", "namespacerm_1_1device.html#a097a9fa7f69d2f1da75170c9c3bc2137a7cd06295085975805e35f1d05cfbe21c", null ],
       [ "kV170", "namespacerm_1_1device.html#a097a9fa7f69d2f1da75170c9c3bc2137a73c38af9bce570ddd6d0f4a4322d66db", null ]
     ] ],
     [ "SuperCapError", "namespacerm_1_1device.html#a520cae32c0d3c11485bf66d736ae2b23", [

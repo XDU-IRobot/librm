@@ -11,7 +11,7 @@ var searchData=
   ['vofaplotter_8',['vofaplotter',['../classrm_1_1modules_1_1VofaPlotter.html#a57f583a2c6da8b6973b89e494053c2b8',1,'rm::modules::VofaPlotter::VofaPlotter()'],['../classrm_1_1modules_1_1VofaPlotter.html',1,'rm::modules::VofaPlotter']]],
   ['voltage_9',['voltage',['../classrm_1_1device_1_1SuperCap.html#a7e6a3ab10861e12f5bdf5ec1a7b4d09e',1,'rm::device::SuperCap']]],
   ['voltageopenloopaccel_10',['VoltageOpenLoopAccel',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a4339b82838fcf72d0a33d78335d48596',1,'rm::device::DirectDriveMotor::Parameters']]],
-  ['vulnerability_5fbuff_11',['vulnerability_buff',['../structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#abb36aa9adac372ee18e1517e2cfb2a06',1,'rm::device::RefereeProtocol&lt; RefereeRevision::kV170 &gt;']]],
+  ['vulnerability_5fbuff_11',['vulnerability_buff',['../structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4.html#ae86b0a17de89c6b43575b19f4c8a0134',1,'rm::device::RefereeProtocol&lt; RefereeRevision::kV164 &gt;::vulnerability_buff'],['../structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#abb36aa9adac372ee18e1517e2cfb2a06',1,'rm::device::RefereeProtocol&lt; RefereeRevision::kV170 &gt;::vulnerability_buff']]],
   ['vx_12',['vx',['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a4cb79f5effd4d5cfd158b9221747af93',1,'rm::modules::algorithm::QuadOmniChassis']]],
   ['vy_13',['vy',['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a1b3818570c7145d04e1ce4f4a7145d82',1,'rm::modules::algorithm::QuadOmniChassis']]]
 ];

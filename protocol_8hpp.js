@@ -3,6 +3,7 @@ var protocol_8hpp =
     [ "rm::device::RefereeCmdId< revision >", "structrm_1_1device_1_1RefereeCmdId.html", null ],
     [ "rm::device::RefereeProtocol< revision >", "structrm_1_1device_1_1RefereeProtocol.html", null ],
     [ "RefereeRevision", "protocol_8hpp.html#a097a9fa7f69d2f1da75170c9c3bc2137", [
+      [ "kV164", "protocol_8hpp.html#a097a9fa7f69d2f1da75170c9c3bc2137a7cd06295085975805e35f1d05cfbe21c", null ],
       [ "kV170", "protocol_8hpp.html#a097a9fa7f69d2f1da75170c9c3bc2137a73c38af9bce570ddd6d0f4a4322d66db", null ]
     ] ],
     [ "kRefProtocolAllMetadataLen", "protocol_8hpp.html#a4d0125fb13f830b17bbd70105bc15af3", null ],

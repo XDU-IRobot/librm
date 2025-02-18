@@ -25,8 +25,10 @@ var annotated_dup =
         [ "IST8310", "classrm_1_1device_1_1IST8310.html", "classrm_1_1device_1_1IST8310" ],
         [ "Referee", "classrm_1_1device_1_1Referee.html", "classrm_1_1device_1_1Referee" ],
         [ "RefereeCmdId", "structrm_1_1device_1_1RefereeCmdId.html", null ],
+        [ "RefereeCmdId< RefereeRevision::kV164 >", "structrm_1_1device_1_1RefereeCmdId_3_01RefereeRevision_1_1kV164_01_4.html", null ],
         [ "RefereeCmdId< RefereeRevision::kV170 >", "structrm_1_1device_1_1RefereeCmdId_3_01RefereeRevision_1_1kV170_01_4.html", null ],
         [ "RefereeProtocol", "structrm_1_1device_1_1RefereeProtocol.html", null ],
+        [ "RefereeProtocol< RefereeRevision::kV164 >", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4.html", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4" ],
         [ "RefereeProtocol< RefereeRevision::kV170 >", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4" ],
         [ "SuperCap", "classrm_1_1device_1_1SuperCap.html", "classrm_1_1device_1_1SuperCap" ],
         [ "UnitreeMotor", "classrm_1_1device_1_1UnitreeMotor.html", "classrm_1_1device_1_1UnitreeMotor" ]

@@ -35,7 +35,7 @@ var namespacerm_1_1modules_1_1algorithm =
     ] ],
     [ "Crc16", "namespacerm_1_1modules_1_1algorithm.html#a9c7b15cf64cbb435a2ec3cbcd2cf691b", null ],
     [ "Crc16", "namespacerm_1_1modules_1_1algorithm.html#a3ab83825b85cb694bab2b321303dbb9c", null ],
-    [ "Crc16", "namespacerm_1_1modules_1_1algorithm.html#ae00ec47e5168ad5286c7165bab38bb7c", null ],
+    [ "Crc16", "namespacerm_1_1modules_1_1algorithm.html#aa6b1ad07d54b9256819129a1fc20c235", null ],
     [ "Crc32", "namespacerm_1_1modules_1_1algorithm.html#ac3eabf97e07e249f112970a49d7c1175", null ],
     [ "Crc32", "namespacerm_1_1modules_1_1algorithm.html#a1f84799ebbf99cbf812fed318d3bc174", null ],
     [ "Crc32", "namespacerm_1_1modules_1_1algorithm.html#aa2a14f0afdf513233b563eda093ef017", null ],

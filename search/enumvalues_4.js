@@ -49,9 +49,10 @@ var searchData=
   ['kunknown_46',['kunknown',['../namespacerm_1_1device.html#aabf51ce4f3e3ad477db1e7f4af4ff9d7a25c2dc47991b3df171ed5192bcf70390',1,'rm::device::kUnknown'],['../namespacerm_1_1device.html#ab75124728a7c060daea11bcfc5677bd8a25c2dc47991b3df171ed5192bcf70390',1,'rm::device::kUnknown']]],
   ['kup_47',['kUp',['../namespacerm_1_1device.html#ab75124728a7c060daea11bcfc5677bd8a8a9e8c8811f2a710615e133456229ee5',1,'rm::device']]],
   ['kv_48',['kV',['../namespacerm_1_1device.html#a4aa0b0d0cbdc6faf701069ac0210fb3ca63b39853c60d1092c257c1ab898bad0a',1,'rm::device']]],
-  ['kv170_49',['kV170',['../namespacerm_1_1device.html#a097a9fa7f69d2f1da75170c9c3bc2137a73c38af9bce570ddd6d0f4a4322d66db',1,'rm::device']]],
-  ['kw_50',['kW',['../namespacerm_1_1device.html#a4aa0b0d0cbdc6faf701069ac0210fb3ca27963ec968c1e151c78a1d7c8a97b178',1,'rm::device']]],
-  ['kweakmagneticfield_51',['kWeakMagneticField',['../classrm_1_1device_1_1DirectDriveMotor.html#a2a0aff57c5d901626e72ccd9b3de81e0acd623742de97be006c02e2a04732d116',1,'rm::device::DirectDriveMotor']]],
-  ['kx_52',['kX',['../namespacerm_1_1device.html#a4aa0b0d0cbdc6faf701069ac0210fb3ca0ac0dd65e82e143ab04d378a0133bf9e',1,'rm::device']]],
-  ['kz_53',['kZ',['../namespacerm_1_1device.html#a4aa0b0d0cbdc6faf701069ac0210fb3caca4d7439951bc76061bedb523255ff3d',1,'rm::device']]]
+  ['kv164_49',['kV164',['../namespacerm_1_1device.html#a097a9fa7f69d2f1da75170c9c3bc2137a7cd06295085975805e35f1d05cfbe21c',1,'rm::device']]],
+  ['kv170_50',['kV170',['../namespacerm_1_1device.html#a097a9fa7f69d2f1da75170c9c3bc2137a73c38af9bce570ddd6d0f4a4322d66db',1,'rm::device']]],
+  ['kw_51',['kW',['../namespacerm_1_1device.html#a4aa0b0d0cbdc6faf701069ac0210fb3ca27963ec968c1e151c78a1d7c8a97b178',1,'rm::device']]],
+  ['kweakmagneticfield_52',['kWeakMagneticField',['../classrm_1_1device_1_1DirectDriveMotor.html#a2a0aff57c5d901626e72ccd9b3de81e0acd623742de97be006c02e2a04732d116',1,'rm::device::DirectDriveMotor']]],
+  ['kx_53',['kX',['../namespacerm_1_1device.html#a4aa0b0d0cbdc6faf701069ac0210fb3ca0ac0dd65e82e143ab04d378a0133bf9e',1,'rm::device']]],
+  ['kz_54',['kZ',['../namespacerm_1_1device.html#a4aa0b0d0cbdc6faf701069ac0210fb3caca4d7439951bc76061bedb523255ff3d',1,'rm::device']]]
 ];
