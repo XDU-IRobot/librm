@@ -30,49 +30,52 @@
 
 #include <cstring>
 
-#include <iostream>
+#include "librm/core/exception.h"
 
 namespace rm::hal::linux_ {
 
 /**
  * @param dev CAN设备名，使用ifconfig -a查看
  */
-SocketCan::SocketCan(const char *dev) : dev_(dev) {
-  // 创建线程池
-  this->thread_pool_ = std::make_unique<core::ThreadPool>(SocketCan::kMaxThreads);
-}
+SocketCan::SocketCan(const char *dev) : netdev_(dev) {}
 
-SocketCan::~SocketCan() { this->Stop(); }
+SocketCan::~SocketCan() {
+  recv_thread_running_ = false;
+  Stop();
+}
 
 /**
  * @brief 初始化SocketCan
  */
 void SocketCan::Begin() {
-  this->socket_fd_ = socket(PF_CAN, SOCK_RAW, CAN_RAW);
+  socket_fd_ = socket(PF_CAN, SOCK_RAW, CAN_RAW);
 
-  if (this->socket_fd_ < 0) {
-    throw std::runtime_error(this->dev_ + " open error");
+  if (socket_fd_ < 0) {
+    rm::Throw(std::runtime_error(netdev_ + " open error"));
   }
 
   // 配置 Socket CAN 为阻塞IO
-  int flags = fcntl(this->socket_fd_, F_GETFL, 0);
-  fcntl(this->socket_fd_, F_SETFL, flags | (~O_NONBLOCK));
+  int flags = ::fcntl(socket_fd_, F_GETFL, 0);
+  ::fcntl(socket_fd_, F_SETFL, flags | (~O_NONBLOCK));
 
   // 指定can设备
-  strcpy(this->interface_request_.ifr_name, this->dev_.c_str());
+  std::strcpy(interface_request_.ifr_name, netdev_.c_str());
 
-  ioctl(this->socket_fd_, SIOCGIFINDEX, &this->interface_request_);
-  this->addr_.can_family = AF_CAN;
-  this->addr_.can_ifindex = this->interface_request_.ifr_ifindex;
+  ::ioctl(socket_fd_, SIOCGIFINDEX, &interface_request_);
+  addr_.can_family = AF_CAN;
+  addr_.can_ifindex = interface_request_.ifr_ifindex;
 
   // 配置过滤器，接收所有数据帧
-  this->SetFilter(0, 0);
+  SetFilter(0, 0);
 
   // 将套接字与can设备绑定
-  bind(this->socket_fd_, (struct sockaddr *)&this->addr_, sizeof(this->addr_));
+  if (::bind(socket_fd_, (struct sockaddr *)&addr_, sizeof(addr_)) < 0) {
+    rm::Throw(std::runtime_error(netdev_ + " bind error"));
+  }
 
   // 启动接收线程
-  this->thread_pool_->enqueue([this]() { this->RecvThread(); });
+  recv_thread_running_ = true;
+  recv_thread_ = std::thread(&SocketCan::RecvThread, this);
 }
 
 /**
@@ -80,9 +83,9 @@ void SocketCan::Begin() {
  * @param mask 过滤器掩码
  */
 void SocketCan::SetFilter(u16 id, u16 mask) {
-  this->filter_.can_id = id;
-  this->filter_.can_mask = mask;
-  setsockopt(this->socket_fd_, SOL_CAN_RAW, CAN_RAW_FILTER, &this->filter_, sizeof(this->filter_));
+  filter_.can_id = id;
+  filter_.can_mask = mask;
+  ::setsockopt(socket_fd_, SOL_CAN_RAW, CAN_RAW_FILTER, &filter_, sizeof(filter_));
 }
 
 /**
@@ -92,12 +95,15 @@ void SocketCan::SetFilter(u16 id, u16 mask) {
  * @param size 数据长度/DLC
  */
 void SocketCan::Write(u16 id, const u8 *data, usize size) {
-  struct ::can_frame frame;
-  frame.can_id = id;
-  frame.can_dlc = size;
-  std::copy(data, data + size, frame.data);
-  while (write(this->socket_fd_, &frame, sizeof(frame)) == -1) {
-    // 如果写入失败，就一直重试
+  const auto frame = [id, data, size] {
+    struct ::can_frame frame;
+    frame.can_id = id;
+    frame.can_dlc = size;
+    std::copy(data, data + size, frame.data);
+    return frame;
+  }();
+  while (::write(socket_fd_, &frame, sizeof(frame)) == -1) {
+    // 如果写入失败，就一直重试，失败超过20次就抛出异常
   }
 }
 
@@ -113,7 +119,7 @@ void SocketCan::Enqueue(u16 id, const u8 *data, usize size, CanTxPriority priori
  * @brief 停止CAN外设
  */
 void SocketCan::Stop() {
-  close(this->socket_fd_);  // 关闭套接字
+  ::close(socket_fd_);  // 关闭套接字
 }
 
 /**
@@ -121,53 +127,27 @@ void SocketCan::Stop() {
  */
 void SocketCan::RecvThread() {
   struct ::can_frame frame;
-  for (;;) {
-    if (read(this->socket_fd_, &frame, sizeof(frame)) <= 0) {
+  while (recv_thread_running_) {
+    if (read(socket_fd_, &frame, sizeof(frame)) <= 0) {
       continue;
     }
-    // 如果接收成功，就异步调用RxCallbackCallWorker处理后续逻辑；之后立刻返回再次接收，防止漏收或延迟
-    this->thread_pool_->enqueue(
-        [this, frame]() { this->RxCallbackCallWorker(std::move(std::make_unique<struct can_frame>(frame))); });
-  }
-}
-
-/**
- * @brief 发送线程，循环按优先级发送消息队列里的报文
- */
-void SocketCan::SendThread() {
-  // TODO: tx消息队列
-}
-
-/**
- * @brief worker线程，异步调用设备的Rx回调函数
- * @note  调用者为RecvThread
- */
-void SocketCan::RxCallbackCallWorker(std::unique_ptr<struct ::can_frame> msg) {
-  // 根据报文ID找到对应的设备，如果找到了的话就调用它的rx回调函数
-  auto receipient_device = this->device_list_.find(msg->can_id);
-  if (receipient_device != this->device_list_.end()) {
-    // 封包
-    CanMsg msg_packet;
-    msg_packet.rx_std_id = msg->can_id;
-    msg_packet.dlc = msg->can_dlc;
-    std::copy(msg->data, msg->data + msg->can_dlc, msg_packet.data.begin());
-
-    // 给这个设备加锁，然后调用它的回调函数
-    {
-      std::lock_guard<std::mutex> lock(receipient_device->second->mutex);
-      receipient_device->second->dev->RxCallback(&msg_packet);
+    // 根据报文ID找到对应的设备，如果没有设备订阅这个ID的报文，就丢弃这个报文
+    auto receipient_devices = GetDeviceListByRxStdid(frame.can_id);
+    if (receipient_devices.empty()) {
+      continue;
+    }
+    // 封包，依次调用订阅者设备的回调函数
+    const auto msg_packet = [&frame] {
+      CanMsg msg_packet;
+      msg_packet.rx_std_id = frame.can_id;
+      msg_packet.dlc = frame.can_dlc;
+      std::copy(frame.data, frame.data + frame.can_dlc, msg_packet.data.begin());
+      return msg_packet;
+    }();
+    for (auto &device : receipient_devices) {
+      device->RxCallback(&msg_packet);
     }
   }
-}
-
-/**
- * @brief 注册CAN设备
- * @param device 设备对象
- * @param rx_stdid 这个设备的rx消息标准帧id
- */
-void SocketCan::RegisterDevice(device::CanDevice &device, u32 rx_stdid) {
-  // TODO: 冲突检查，如果已经有这个ID的设备了就抛出异常
-  this->device_list_[rx_stdid] = new AsyncCanDevice(device);
 }
 
 }  // namespace rm::hal::linux_

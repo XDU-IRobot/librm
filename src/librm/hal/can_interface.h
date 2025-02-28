@@ -31,6 +31,9 @@
 #include "librm/core/typedefs.h"
 
 #include <array>
+#include <limits>
+#include <unordered_map>
+#include <vector>
 
 namespace rm::device {
 class CanDevice;
@@ -104,7 +107,48 @@ class CanInterface {
    * @brief 注册CAN设备
    * @param device 设备对象
    */
-  virtual void RegisterDevice(device::CanDevice &device, u32 rx_stdid) = 0;
+  void RegisterDevice(device::CanDevice &device, u16 rx_stdid) {
+    // 不允许同一个设备在同一个ID下注册多次
+    const auto target_device_array = rx_std_id_to_device_object_array_map_.find(rx_stdid);
+    if (target_device_array != rx_std_id_to_device_object_array_map_.end()) {
+      for (const auto &registered_device : rx_std_id_to_device_object_array_map_[rx_stdid]) {
+        if (&device == registered_device) {
+          return;
+        }
+      }
+    }
+
+    if (target_device_array == rx_std_id_to_device_object_array_map_.end()) {
+      rx_std_id_to_device_object_array_map_[rx_stdid] = std::vector<device::CanDevice *>{};
+    }
+    rx_std_id_to_device_object_array_map_[rx_stdid].push_back(&device);
+  }
+
+  /**
+   * @brief 取消注册CAN设备
+   */
+  void UnregisterDevice(device::CanDevice &device) {
+    for (auto &[rx_stdid, device_array] : rx_std_id_to_device_object_array_map_) {
+      for (auto it = device_array.begin(); it != device_array.end(); ++it) {
+        if (*it == &device) {
+          device_array.erase(it);
+          return;
+        }
+      }
+    }
+  }
+
+  const std::vector<device::CanDevice *> &GetDeviceListByRxStdid(u16 rx_stdid) const {
+    const auto target_device_array = rx_std_id_to_device_object_array_map_.find(rx_stdid);
+    if (target_device_array != rx_std_id_to_device_object_array_map_.end()) {
+      return target_device_array->second;
+    }
+    return empty_device_list_;
+  }
+
+ private:
+  std::vector<device::CanDevice *> empty_device_list_{};  ///< 用于在GetDeviceList中返回空列表
+  std::unordered_map<u16, std::vector<device::CanDevice *>> rx_std_id_to_device_object_array_map_{};
 };
 
 }  // namespace rm::hal
