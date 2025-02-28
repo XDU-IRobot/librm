@@ -41,34 +41,25 @@
 
 namespace rm::hal::stm32 {
 
-class FdCan : public CanInterface {
+class FdCan : public CanInterface, public CanDeviceRegistry {
  public:
   explicit FdCan(FDCAN_HandleTypeDef &hfdcan);
 
   FdCan() = default;
-
   ~FdCan() override = default;
 
   // 禁止拷贝构造
   FdCan(const FdCan &) = delete;
-
   FdCan &operator=(const FdCan &) = delete;
 
   void SetFilter(u16 id, u16 mask) override;
-
   void Write(u16 id, const u8 *data, usize size) override;
-
   void Write() override;
-
   void Enqueue(u16 id, const u8 *data, usize size, CanTxPriority priority) override;
-
   void Begin() override;
-
   void Stop() override;
 
  private:
-  void RegisterDevice(device::CanDevice &device, u32 rx_stdid) override;
-
   void Fifo0MsgPendingCallback();
 
   u32 tx_mailbox_{0};
@@ -80,17 +71,16 @@ class FdCan : public CanInterface {
   };
   FDCAN_HandleTypeDef *hfdcan_{nullptr};
   FDCAN_TxHeaderTypeDef hal_tx_header_ = {
-      .Identifier = 0,
-      .IdType = FDCAN_STANDARD_ID,
-      .TxFrameType = FDCAN_DATA_FRAME,
-      .DataLength = FDCAN_DLC_BYTES_0,
-      .ErrorStateIndicator = FDCAN_ESI_PASSIVE,
-      .BitRateSwitch = FDCAN_BRS_OFF,
-      .FDFormat = FDCAN_CLASSIC_CAN,
-      .TxEventFifoControl = FDCAN_STORE_TX_EVENTS,
-      .MessageMarker = 0,
+      0,
+      FDCAN_STANDARD_ID,
+      FDCAN_DATA_FRAME,
+      FDCAN_DLC_BYTES_0,
+      FDCAN_ESI_PASSIVE,
+      FDCAN_BRS_OFF,
+      FDCAN_CLASSIC_CAN,
+      FDCAN_STORE_TX_EVENTS,
+      0,
   };
-  std::unordered_map<u16, device::CanDevice *> device_list_{};  // <rx_stdid, device>
 
   /**
    * @brief 消息队列最大长度
