@@ -43,7 +43,7 @@ namespace rm::hal {
 
 struct CanMsg {
   std::array<u8, 8> data;
-  u32 rx_std_id;
+  u16 rx_std_id;
   u32 dlc;
 };
 

@@ -43,7 +43,7 @@ namespace rm::hal::stm32 {
 /**
  * @brief bxCAN类库
  */
-class BxCan final : public CanInterface {
+class BxCan final : public CanInterface, public CanDeviceRegistry {
  public:
   explicit BxCan(CAN_HandleTypeDef &hcan);
   BxCan() = default;
@@ -61,7 +61,6 @@ class BxCan final : public CanInterface {
   void Stop() override;
 
  private:
-  void RegisterDevice(device::CanDevice &device, u32 rx_stdid) override;
   void Fifo0MsgPendingCallback();
 
   u32 tx_mailbox_{0};
@@ -73,14 +72,8 @@ class BxCan final : public CanInterface {
   };  // <priority, queue>
   CAN_HandleTypeDef *hcan_{nullptr};
   CAN_TxHeaderTypeDef hal_tx_header_ = {
-      .StdId = 0,
-      .ExtId = 0,
-      .IDE = CAN_ID_STD,
-      .RTR = CAN_RTR_DATA,
-      .DLC = 0,
-      .TransmitGlobalTime = DISABLE,
+      0, 0, CAN_ID_STD, CAN_RTR_DATA, 0, DISABLE,
   };
-  std::unordered_map<u16, device::CanDevice *> device_list_{};  // <rx_stdid, device>
 
   /**
    * @brief 消息队列最大长度

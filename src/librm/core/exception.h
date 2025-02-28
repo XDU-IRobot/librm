@@ -40,12 +40,15 @@ namespace rm {
  * @brief 抛出异常
  * @param e 异常类型
  */
-inline void Throw(const std::exception& e) {
+inline void Throw(__attribute__((__unused__)) const std::exception& e) {
 #if defined(LIBRM_PLATFORM_LINUX)
   throw e;
 #elif defined(LIBRM_PLATFORM_STM32)
-  // TODO 裸机不能直接抛异常，但为了防止进一步出错，先把程序停在这里
+  /**
+   * @note 如果进到了这里，调试查看函数调用栈，找到抛出异常的地方，然后把异常处理掉。
+   */
   while (true) {
+    // stm32编译时一般会带-fno-exceptions参数，不能抛异常。所以不管是什么异常，都不处理，直接死机。
   }
 #endif
 }

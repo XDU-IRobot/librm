@@ -37,12 +37,15 @@ All-in-one、跨平台Robomaster嵌入式软件开发框架，为多种硬件平
 
 方法同上，但需要注意：
 
-- librm的STM32部分基于HAL库开发，且依赖STM32CubeMX生成的CMake工程。请确保工程中存在CubeMX自动生成的`stm32cubemx` CMake
-target。
+- librm的STM32部分基于HAL库开发，且依赖STM32CubeMX生成的CMake工程。请确保在CMakeLists.txt中调用`add_subdirectory`
+  之前，工程中已经存在CubeMX自动生成的`stm32cubemx` CMake target。
 
-- librm的STM32外设封装依赖HAL库提供的Register Callback功能，请自己手动修改HAL库配置，或者在CubeMX里设置，启用要使用的外设的Register Callback：
+- librm的STM32外设封装依赖HAL库提供的Register Callback功能，请自己手动修改HAL库配置，或者在CubeMX里设置，启用要使用的外设的Register
+  Callback：
 
-    ![](https://github.com/user-attachments/assets/9f8c54ea-b56e-4ca6-bb5e-35744b5b5f54)
+  ![](https://github.com/user-attachments/assets/9f8c54ea-b56e-4ca6-bb5e-35744b5b5f54)
+
+- librm的部分模块依赖C++的RTTI机制，编译时请不要带`-fno-rtti`参数。
 
 ## API文档
 
