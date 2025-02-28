@@ -123,6 +123,7 @@ template <DmMotorControlMode control_mode>
 class DmMotor final : public CanDevice {
  public:
   DmMotor() = delete;
+  DmMotor(DmMotor &&other) noexcept = default;
   ~DmMotor() override = default;
 
   /**
