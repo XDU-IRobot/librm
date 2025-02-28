@@ -165,8 +165,9 @@ void FdCan::Enqueue(u16 id, const u8 *data, usize size, CanTxPriority priority) 
     this->tx_queue_[priority].clear();
   }
   auto msg = std::make_shared<CanMsg>(CanMsg{
-      .rx_std_id = id,
-      .dlc = size,
+      {},
+      id,
+      size,
   });
   std::copy_n(data, size, msg->data.begin());
 
@@ -211,24 +212,15 @@ void FdCan::Stop() {
 void FdCan::Fifo0MsgPendingCallback() {
   static FDCAN_RxHeaderTypeDef rx_header;
   HAL_FDCAN_GetRxMessage(this->hfdcan_, FDCAN_RX_FIFO0, &rx_header, this->rx_buffer_.data.data());
-  if (this->device_list_.find(rx_header.Identifier) == this->device_list_.end()) {
+  auto &device_list_ = GetDeviceListByRxStdid(rx_header.Identifier);
+  if (device_list_.empty()) {
     return;
   }
   this->rx_buffer_.rx_std_id = rx_header.Identifier;
   this->rx_buffer_.dlc = rx_header.DataLength;
-  this->device_list_[rx_header.Identifier]->RxCallback(&this->rx_buffer_);
-}
-
-/**
- * @brief 注册一个CAN设备
- * @param device    设备对象
- * @param rx_stdid  设备想要接收的的rx消息标准帧id
- */
-void FdCan::RegisterDevice(device::CanDevice &device, u32 rx_stdid) {
-  if (this->device_list_.find(rx_stdid) != this->device_list_.end()) {
-    Throw(std::runtime_error("Device already registered"));
+  for (auto &device : device_list_) {
+    device->RxCallback(&rx_buffer_);
   }
-  this->device_list_[rx_stdid] = &device;
 }
 
 }  // namespace rm::hal::stm32
