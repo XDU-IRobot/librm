@@ -52,6 +52,7 @@ enum class SuperCapError : u16 {
 class SuperCap final : public CanDevice {
  public:
   explicit SuperCap(hal::CanInterface &can);
+  SuperCap(SuperCap &&other) noexcept = default;
   SuperCap() = delete;
   ~SuperCap() override = default;
 

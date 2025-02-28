@@ -97,6 +97,7 @@ template <DjiMotorType motor_type = DjiMotorType::Default>
 class DjiMotor final : public CanDevice {
  public:
   DjiMotor() = delete;
+  DjiMotor(DjiMotor &&) noexcept = default;
   ~DjiMotor() override = default;
   DjiMotor(hal::CanInterface &can, u16 id, bool reversed = false);
 

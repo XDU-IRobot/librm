@@ -48,6 +48,8 @@ class DirectDriveMotor : public CanDevice {
   DirectDriveMotor(hal::CanInterface &can, usize id)
       : CanDevice(can, 0x50 + id, 0x60 + id, 0x70 + id, 0x80 + id, 0x90 + id, 0xa0 + id, 0xb0 + id), id_(id) {}
 
+  DirectDriveMotor(DirectDriveMotor &&) noexcept = default;
+
  private:
   template <typename ParamType, usize OpCode>
   struct Parameter {
