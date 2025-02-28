@@ -33,7 +33,7 @@
 #include <deque>
 #include <memory>
 #include <unordered_map>
-#include <mutex>
+#include <thread>
 
 #include <fcntl.h>
 #include <linux/can.h>
@@ -45,19 +45,8 @@
 
 #include "librm/device/can_device.hpp"
 #include "librm/hal/can_interface.h"
-#include "librm/core/thread_pool.hpp"
 
 namespace rm::hal::linux_ {
-
-/**
- * @brief CAN设备回调锁
- * @note  SocketCan类会异步地调用不同设备的RxCallback函数，为了保证线程安全，需要分别给每个设备加锁
- */
-struct AsyncCanDevice {
-  AsyncCanDevice(device::CanDevice &dev) : dev(&dev) {}
-  std::mutex mutex;
-  device::CanDevice *dev;
-};
 
 class SocketCan : public hal::CanInterface {
  public:
@@ -78,24 +67,21 @@ class SocketCan : public hal::CanInterface {
 
  private:
   void RecvThread();
-  void SendThread();
-  void RxCallbackCallWorker(std::unique_ptr<struct ::can_frame> msg);
-  void RegisterDevice(device::CanDevice &device, u32 rx_stdid) override;
 
   int socket_fd_;
   struct ::sockaddr_can addr_;
   struct ::ifreq interface_request_;
   struct ::can_filter filter_;
   struct ::can_frame tx_buf_;
-  std::string dev_;
+  std::string netdev_;
   CanMsg rx_buffer_{};
-  std::unique_ptr<core::ThreadPool> thread_pool_{};  // 线程池，用于异步调用设备的回调函数
+  std::thread recv_thread_{};
+  bool recv_thread_running_{false};
   std::unordered_map<CanTxPriority, std::deque<std::shared_ptr<CanMsg>>> tx_queue_{
       {CanTxPriority::kHigh, {}},
       {CanTxPriority::kNormal, {}},
       {CanTxPriority::kLow, {}},
   };  // <priority, queue>
-  std::unordered_map<u16, AsyncCanDevice *> device_list_{};  // <rx_stdid, device+lock>
 
   /**
    * @brief 消息队列最大长度
@@ -103,12 +89,6 @@ class SocketCan : public hal::CanInterface {
    * @note  触发清空队列的动作意味着插入消息的速度大于发送消息的速度，应该减少发送消息的数量
    */
   static constexpr usize kQueueMaxSize = 100;
-
-  /**
-   * @brief 最大线程数
-   * @note  用于创建线程池
-   */
-  static constexpr usize kMaxThreads = 20;
 };
 
 }  // namespace rm::hal::linux_

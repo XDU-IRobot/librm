@@ -133,10 +133,6 @@ class DmMotor final : public CanDevice {
   DmMotor(hal::CanInterface &can, DmMotorSettings<control_mode> settings, bool reversed = false)
       : CanDevice(can, settings.master_id), settings_(settings), reversed_(reversed) {}
 
-  // 禁止拷贝构造
-  DmMotor(const DmMotor &) = delete;
-  DmMotor &operator=(const DmMotor &) = delete;
-
   /**
    * @brief  MIT模式的控制函数
    * @tparam mode                   控制模式

@@ -100,10 +100,6 @@ class DjiMotor final : public CanDevice {
   ~DjiMotor() override = default;
   DjiMotor(hal::CanInterface &can, u16 id, bool reversed = false);
 
-  // 禁止拷贝构造
-  DjiMotor(const DjiMotor &) = delete;
-  DjiMotor &operator=(const DjiMotor &) = delete;
-
   void SetCurrent(i16 current);
   static void SendCommand();
 
