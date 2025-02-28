@@ -209,7 +209,9 @@ void BxCan::Fifo0MsgPendingCallback() {
   }
   rx_buffer_.rx_std_id = rx_header.StdId;
   rx_buffer_.dlc = rx_header.DLC;
-  device_list_[rx_header.StdId]->RxCallback(&rx_buffer_);
+  for (auto &device : device_list_) {
+    device->RxCallback(&rx_buffer_);
+  }
 }
 
 }  // namespace rm::hal::stm32
