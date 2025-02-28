@@ -40,7 +40,10 @@ namespace rm::hal::linux_ {
 SocketCan::SocketCan(const char *dev) : netdev_(dev) {}
 
 SocketCan::~SocketCan() {
-  recv_thread_running_ = false;
+  recv_thread_running_.store(false);
+  if (recv_thread_.joinable()) {
+    recv_thread_.join();
+  }
   Stop();
 }
 
@@ -48,15 +51,33 @@ SocketCan::~SocketCan() {
  * @brief 初始化SocketCan
  */
 void SocketCan::Begin() {
-  socket_fd_ = socket(PF_CAN, SOCK_RAW, CAN_RAW);
+  socket_fd_ = ::socket(PF_CAN, SOCK_RAW, CAN_RAW);
 
   if (socket_fd_ < 0) {
     rm::Throw(std::runtime_error(netdev_ + " open error"));
   }
 
+  // 获取对应CAN netdev的标志并检查网络是否为UP状态
+  struct ifreq ifr;
+  std::strcpy(ifr.ifr_name, netdev_.c_str());
+  if (::ioctl(socket_fd_, SIOCGIFFLAGS, &ifr) < 0) {
+    rm::Throw(std::runtime_error(netdev_ + " ioctl error"));
+  }
+  if (!(ifr.ifr_flags & IFF_UP)) {
+    rm::Throw(std::runtime_error(netdev_ + " is not up"));
+  }
+
   // 配置 Socket CAN 为阻塞IO
   int flags = ::fcntl(socket_fd_, F_GETFL, 0);
   ::fcntl(socket_fd_, F_SETFL, flags | (~O_NONBLOCK));
+
+  // 设置接收超时时间
+  struct timeval timeout;
+  timeout.tv_sec = 1;  // 超时时间为1s
+  timeout.tv_usec = 0;
+  if (::setsockopt(socket_fd_, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout)) < 0) {
+    rm::Throw(std::runtime_error(netdev_ + " setsockopt error"));
+  }
 
   // 指定can设备
   std::strcpy(interface_request_.ifr_name, netdev_.c_str());
@@ -74,7 +95,7 @@ void SocketCan::Begin() {
   }
 
   // 启动接收线程
-  recv_thread_running_ = true;
+  recv_thread_running_.store(true);
   recv_thread_ = std::thread(&SocketCan::RecvThread, this);
 }
 
@@ -127,9 +148,13 @@ void SocketCan::Stop() {
  */
 void SocketCan::RecvThread() {
   struct ::can_frame frame;
-  while (recv_thread_running_) {
-    if (read(socket_fd_, &frame, sizeof(frame)) <= 0) {
-      continue;
+  while (recv_thread_running_.load()) {
+    if ((::read(socket_fd_, &frame, sizeof(frame))) <= 0) {
+      if (recv_thread_running_.load() == false) {
+        break;
+      } else {
+        continue;
+      }
     }
     // 根据报文ID找到对应的设备，如果没有设备订阅这个ID的报文，就丢弃这个报文
     auto receipient_devices = GetDeviceListByRxStdid(frame.can_id);
