@@ -58,8 +58,6 @@ enum class CanTxPriority {
  * @note  借助CanDeviceBase类使用观察者模式实现回调机制
  */
 class CanInterface {
-  friend class device::CanDevice;
-
  public:
   virtual ~CanInterface() = default;
 
@@ -101,6 +99,14 @@ class CanInterface {
    * @brief 停止CAN外设
    */
   virtual void Stop() = 0;
+};
+
+/**
+ * @brief CAN设备注册表，观察者模式中“订阅”机制的实现
+ */
+
+class CanDeviceRegistry {
+  friend class device::CanDevice;
 
  protected:
   /**
@@ -132,7 +138,7 @@ class CanInterface {
       for (auto it = device_array.begin(); it != device_array.end(); ++it) {
         if (*it == &device) {
           device_array.erase(it);
-          return;
+          break;  // 一个设备只能在一个ID下注册一次，所以找到就可以退出这一层循环了
         }
       }
     }

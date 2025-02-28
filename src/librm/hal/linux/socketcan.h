@@ -34,6 +34,7 @@
 #include <memory>
 #include <unordered_map>
 #include <thread>
+#include <atomic>
 
 #include <fcntl.h>
 #include <linux/can.h>
@@ -48,7 +49,7 @@
 
 namespace rm::hal::linux_ {
 
-class SocketCan : public hal::CanInterface {
+class SocketCan : public hal::CanInterface, public hal::CanDeviceRegistry {
  public:
   explicit SocketCan(const char *dev);
   SocketCan() = default;
@@ -76,7 +77,7 @@ class SocketCan : public hal::CanInterface {
   std::string netdev_;
   CanMsg rx_buffer_{};
   std::thread recv_thread_{};
-  bool recv_thread_running_{false};
+  std::atomic_bool recv_thread_running_{false};
   std::unordered_map<CanTxPriority, std::deque<std::shared_ptr<CanMsg>>> tx_queue_{
       {CanTxPriority::kHigh, {}},
       {CanTxPriority::kNormal, {}},
