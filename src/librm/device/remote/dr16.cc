@@ -74,6 +74,8 @@ void DR16::RxCallback(const std::vector<u8> &data, u16 rx_len) {
   this->axes_[2] -= 1024;
   this->axes_[3] -= 1024;
   this->axes_[4] -= 1024;
+
+  this->dial_key_ = ((this->axes_[4] > 400) << 1) | ((this->axes_[4] < -400) << 0);
 }
 
 i16 DR16::left_x() const { return this->axes_[2]; }
@@ -89,5 +91,52 @@ i16 DR16::mouse_z() const { return this->mouse_[2]; }
 bool DR16::mouse_button_left() const { return this->mouse_button_[0]; }
 bool DR16::mouse_button_right() const { return this->mouse_button_[1]; }
 bool DR16::key(RcKey key) const { return (this->keyboard_key_ & static_cast<u16>(key)); }
+bool DR16::dial_key(RcDialKey key) const { return dial_key_ & static_cast<u8>(key); }
+
+/**
+ * @brief 检测按键是否按下
+ * @param key 按键
+ * @return true 按下
+ * @return false 未按下
+ * @note 检测一次按下，持续按下仅返回一次true，可用于单次检测，如点按切换模式
+ * @warning 本函数会修改keyboard_key_oncetest_辅助数组，用于判断是否是一次按下，在一个任务执行一次中多次调用仅在第一次调用时返回true。
+ * @warning 若要用一次按键做多个模式切换，请用标志位保存函数调用结果，或在一次任务片仅调用一次，而不是在一次任务片中多次调用本函数。
+ */
+bool DR16::key_once(RcKey key){
+  if (this->keyboard_key_ & static_cast<u16>(key)) {
+    if (!(this->keyboard_key_oncetest_ & static_cast<u16>(key))) {
+      this->keyboard_key_oncetest_ |= static_cast<u16>(key);
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    this->keyboard_key_oncetest_ &= ~static_cast<u16>(key);
+    return false;
+  }
+}
+
+/**
+ * @brief 检测dial按键是否按下
+ * @param key dial虚拟按键
+ * @return true 按下
+ * @return false 未按下
+ * @note 检测一次按下，持续按下仅返回一次true，可用于单次检测，如点按切换模式
+ * @warning 本函数会修改dial_key_oncetest_辅助数组，用于判断是否是一次按下，在一个任务执行一次中多次调用仅在第一次调用时返回true。
+ * @warning 若要用一次按键做多个模式切换，请用标志位保存函数调用结果，或在一次任务片仅调用一次，而不是在一次任务片中多次调用本函数。
+ */
+  bool DR16::dial_key_once(RcDialKey key) {
+    if (this->dial_key_ & static_cast<u8>(key)) {
+      if (!(this->dial_key_oncetest_ & static_cast<u8>(key))) {
+        this->dial_key_oncetest_ |= static_cast<u8>(key);
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      this->dial_key_oncetest_ &= ~static_cast<u8>(key);
+      return false;
+    }
+  }
 
 }  // namespace rm::device

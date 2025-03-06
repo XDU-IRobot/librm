@@ -46,6 +46,15 @@ enum class RcSwitchState : usize {
 };
 
 /**
+ * @brief Dial虚拟成按键
+ * @note 按键要拨到一定程度才会判定为按下
+ */
+enum class RcDialKey : usize {
+  kUp = 1u << 0,
+  kDown = 1u << 1,
+};
+
+/**
  * @brief 键盘按键
  */
 enum class RcKey : u16 {
@@ -91,15 +100,21 @@ class DR16 {
   [[nodiscard]] bool mouse_button_left() const;
   [[nodiscard]] bool mouse_button_right() const;
   [[nodiscard]] bool key(RcKey key) const;
+  [[nodiscard]] bool key_once(RcKey key);
+  [[nodiscard]] bool dial_key(RcDialKey key) const;
+  [[nodiscard]] bool dial_key_once(RcDialKey key);
 
  private:
   hal::SerialInterface *serial_;
 
-  i16 axes_[5]{0};   // [0]: right_x, [1]: right_y, [2]: left_x, [3]: left_y, [4]: dial; 取值范围:-660~660;
-  i16 mouse_[3]{0};  // [0]: x, [1]: y, [2]: z; 取值范围:-32768~32767;
-  bool mouse_button_[2]{false};                         // [0]: left, [1]: right
+  i16 axes_[5]{0};               // [0]: right_x, [1]: right_y, [2]: left_x, [3]: left_y, [4]: dial; 取值范围:-660~660;
+  i16 mouse_[3]{0};              // [0]: x, [1]: y, [2]: z; 取值范围:-32768~32767;
+  bool mouse_button_[2]{false};  // [0]: left, [1]: right
   RcSwitchState switches_[2]{RcSwitchState::kUnknown};  // [0]: right, [1]: left
-  u16 keyboard_key_;                                    // 每一位代表一个键，0为未按下，1为按下
+  u16 keyboard_key_{0};                                 // 每一位代表一个键，0为未按下，1为按下
+  u16 keyboard_key_oncetest_{0};                        // 检测一次按下的辅助数组
+  u8 dial_key_{0};                                      // 每一位代表一个键，0为未按下，1为按下
+  u8 dial_key_oncetest_{0};                             // 检测一次按下的辅助数组
 };
 
 }  // namespace rm::device
