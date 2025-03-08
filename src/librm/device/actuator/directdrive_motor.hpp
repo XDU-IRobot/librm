@@ -46,7 +46,11 @@ namespace rm::device {
 class DirectDriveMotor : public CanDevice {
  public:
   DirectDriveMotor(hal::CanInterface &can, usize id)
-      : CanDevice(can, 0x50 + id, 0x60 + id, 0x70 + id, 0x80 + id, 0x90 + id, 0xa0 + id, 0xb0 + id), id_(id) {}
+      : CanDevice(can, 0x50 + id, 0x60 + id, 0x70 + id, 0x80 + id, 0x90 + id, 0xa0 + id, 0xb0 + id), id_(id) {
+    if (tx_buffer_table_.find(&can) == tx_buffer_table_.end()) {
+      tx_buffer_table_.try_emplace(&can, TxBufferTable{});
+    }
+  }
 
   DirectDriveMotor(DirectDriveMotor &&) noexcept = default;
 
