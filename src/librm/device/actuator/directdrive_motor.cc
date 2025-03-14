@@ -30,16 +30,27 @@
 
 #include "directdrive_motor.hpp"
 
+#include <algorithm>
+
+#include "librm/core/time.hpp"
+
 namespace rm::device {
 
 std::unordered_map<hal::CanInterface *, DirectDriveMotor::TxBufferTable> DirectDriveMotor::tx_buffer_table_{};
 
+/**
+ * @brief 电机反馈处理回调函数
+ */
 void DirectDriveMotor::RxCallback(const hal::CanMsg *msg) {
   if (msg->rx_std_id == 0x50 + id_) {
-    feedback_.rpm = static_cast<f32>((msg->data[0] << 8) | msg->data[1]) / 10.f;
-    feedback_.iq = static_cast<f32>((msg->data[2] << 8) | msg->data[3]) / 100.f;
+    const u16 iq_temp = (msg->data[2] << 8) | msg->data[3];
+    const u16 rpm_temp = (msg->data[0] << 8) | msg->data[1];
+    feedback_.rpm = (*reinterpret_cast<const i16 *>(&rpm_temp)) / 10.f;
+    feedback_.iq = (*reinterpret_cast<const i16 *>(&iq_temp)) / 100.f;
     feedback_.encoder = (msg->data[4] << 8) | msg->data[5];
     feedback_.master_voltage = static_cast<f32>((msg->data[6] << 8) | msg->data[7]) / 10.f;
+
+    // TODO
   } else if (msg->rx_std_id == 0x60 + id_) {
   } else if (msg->rx_std_id == 0x70 + id_) {
   } else if (msg->rx_std_id == 0x80 + id_) {
@@ -49,16 +60,37 @@ void DirectDriveMotor::RxCallback(const hal::CanMsg *msg) {
   }
 }
 
+/**
+ * @brief 向所有电机发送一次当前的控制指令，让它反馈一次数据
+ */
+void DirectDriveMotor::Heartbeat() {
+  for (auto &[can, buffer] : tx_buffer_table_) {
+    can->Write(TxCommandId::kDrive1234, buffer.command_data, 8);
+    can->Write(TxCommandId::kDrive5678, &buffer.command_data[8], 8);
+  }
+}
+
+/**
+ * @brief 使能/失能电机
+ * @param enable 使能/失能
+ */
 void DirectDriveMotor::Enable(bool enable) {
-  tx_buffer_table_.at(can_).mode_control_data[id_] = enable ? 0x02 : 0x01;
+  tx_buffer_table_.at(can_).mode_control_data[id_ - 1] = enable ? 0x02 : 0x01;
   can_->Write(TxCommandId::kModeControl, tx_buffer_table_.at(can_).mode_control_data, 8);
 }
 
+/**
+ * @brief 重置某条CAN总线上的所有电机
+ * @param can CAN总线
+ */
 void DirectDriveMotor::ResetAllOn(hal::CanInterface &can) {
   const u8 tx_buf[8]{0x1u, 0, 0, 0, 0, 0, 0, 0};
   can.Write(TxCommandId::kSoftwareReset, tx_buf, 8);
 }
 
+/**
+ * @brief 重置所有电机
+ */
 void DirectDriveMotor::ResetAll() {
   const u8 tx_buf[8]{0x1u, 0, 0, 0, 0, 0, 0, 0};
   for (auto &[can, _] : tx_buffer_table_) {
@@ -66,6 +98,9 @@ void DirectDriveMotor::ResetAll() {
   }
 }
 
+/**
+ * @brief 发送控制指令，和DJI的电机一样，调用Set函数后需要调用这个函数才能真正发送指令
+ */
 void DirectDriveMotor::SendCommand() {
   for (auto &[can, buffer] : tx_buffer_table_) {
     if (buffer.command_data_updated_flag_1234) {
@@ -79,29 +114,39 @@ void DirectDriveMotor::SendCommand() {
   }
 }
 
+/**
+ * @brief 设置电机控制指令
+ * @param control_value 控制值，单位根据电机模式而定(V, A, rpm, 圈)
+ */
 void DirectDriveMotor::Set(f32 control_value) {
   i16 control_value_int;
   if (current_mode_ == Mode::kUnknown) {
+    using namespace std::chrono_literals;
+    Enable(false);
+    rm::core::time::Sleep(2ms);
     SetParameter(Parameters::Mode(Mode::kCurrent));
+    rm::core::time::Sleep(2ms);
+    Enable(true);
+    current_mode_ = Mode::kCurrent;
   }
   switch (current_mode_) {
     case Mode::kVoltageOpenloop: {
-      control_value = modules::algorithm::utils::absConstrain(control_value, 24.f);
+      control_value = std::clamp(control_value, -24.f, 24.f);
       control_value_int = control_value * 100;
       break;
     }
     case Mode::kCurrent: {
-      control_value = modules::algorithm::utils::absConstrain(control_value, 75.f);
+      control_value = std::clamp(control_value, -75.f, 75.f);
       control_value_int = control_value * 100;
       break;
     }
     case Mode::kSpeed: {
-      control_value = modules::algorithm::utils::absConstrain(control_value, 160.f);
+      control_value = std::clamp(control_value, -160.f, 160.f);
       control_value_int = control_value * 10;
       break;
     }
     case Mode::kPosition: {
-      control_value = modules::algorithm::utils::absConstrain(control_value, 50.f);
+      control_value = std::clamp(control_value, -50.f, 50.f);
       control_value_int = control_value * 100;
       break;
     }
@@ -117,9 +162,22 @@ void DirectDriveMotor::Set(f32 control_value) {
   }
 }
 
+/**
+ * @brief   切换到指定的控制模式，并设置控制值
+ *
+ * @warning 电机在切换模式时会失能一小段时间，务必注意
+ *
+ * @param   control_value 控制值
+ * @param   mode          控制模式
+ */
 void DirectDriveMotor::Set(f32 control_value, Mode mode) {
   if (current_mode_ != mode) {
+    using namespace std::chrono_literals;
+    Enable(false);
+    rm::core::time::Sleep(2ms);
     SetParameter(Parameters::Mode(mode));
+    rm::core::time::Sleep(2ms);
+    Enable(true);
   }
   current_mode_ = mode;
   Set(control_value);
