@@ -146,9 +146,6 @@ class DmMotor final : public CanDevice {
   template <DmMotorControlMode mode = control_mode,
             typename std::enable_if_t<mode == DmMotorControlMode::kMit, int> = 0>
   void SetPosition(f32 position_rad, f32 max_speed_rad_per_sec, f32 accel_torque_nm, f32 kp, f32 kd) {
-    if (this->reversed_) {
-      position_rad = 0 - position_rad;
-    }
     u16 pos_tmp =
         modules::algorithm::utils::FloatToInt(position_rad, -this->settings_.p_max, this->settings_.p_max, 16);
     u16 vel_tmp =
