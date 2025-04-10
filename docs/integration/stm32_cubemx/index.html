@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.7.0">
 <title data-rh="true">STM32CubeMX | Under construction 🚧</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://librm.xduirobot.cc/docs/integration/stm32_cubemx"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="STM32CubeMX | Under construction 🚧"><meta data-rh="true" name="description" content="由于调用 HAL 库的方式有待改进，目前，librm 仅支持以下芯片："><meta data-rh="true" property="og:description" content="由于调用 HAL 库的方式有待改进，目前，librm 仅支持以下芯片："><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://librm.xduirobot.cc/docs/integration/stm32_cubemx"><link data-rh="true" rel="alternate" href="https://librm.xduirobot.cc/docs/integration/stm32_cubemx" hreflang="en"><link data-rh="true" rel="alternate" href="https://librm.xduirobot.cc/docs/integration/stm32_cubemx" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.480b0040.css">
-<script src="/assets/js/runtime~main.db83214a.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.1d4bff54.js" defer="defer"></script>
 <script src="/assets/js/main.38f5f093.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -22,9 +22,9 @@
 <iframe src="//player.bilibili.com/player.html?isOutside=true&amp;aid=113190876742563&amp;bvid=BV1YosheaEbs&amp;cid=25980767907&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:100%;height:500px;margin:0 auto;display:block"></iframe>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="生成代码">生成代码<a href="#生成代码" class="hash-link" aria-label="Direct link to 生成代码" title="Direct link to 生成代码">​</a></h2>
 <p>在 CubeMX 的 Project Settings 中，选择生成 <code>CMake</code>项目：</p>
-<p><img decoding="async" loading="lazy" src="data:image/png;base64,dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6OWQxOTRjMDQ2MWQxMzA3OGJhYjYyZGNjYzU2NGZlZTFiZGM0ZDg5YWFhMDVmOGJlOWU2YTQyOGQyNDQ0NGEwYwpzaXplIDYxNDIzNQo=" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/select_cmake-408da2d9d3ad74f7b3d5175ebfe39157.png" width="2744" height="1800" class="img_ev3q"></p>
 <p>在 Project Manager -&gt; Advanced Settings 页面右侧启用 CAN、SPI、I2C、UART、USART 的 Register Callback 功能：</p>
-<p><img decoding="async" loading="lazy" src="data:image/png;base64,dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MWEyMjRmYWZjODQzNTIyMzZhZDAyODQyMGFiYjUyMDUxZjYwMzQ4NDQwOTk1OWJkZGUzYjIyNjViZmE1NTE3OApzaXplIDg2NTIwNQo=" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/register_callback-239ea4bf3f78142ae0d401d117fecbe5.png" width="2744" height="1800" class="img_ev3q"></p>
 <p>最后点击 Generate Code 按钮生成代码即可。</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="下载-librm">下载 librm<a href="#下载-librm" class="hash-link" aria-label="Direct link to 下载 librm" title="Direct link to 下载 librm">​</a></h2>
 <p>从 Github 上 clone librm：</p>
