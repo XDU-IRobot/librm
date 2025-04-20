@@ -53,6 +53,7 @@
 #include "librm/device/actuator/go8010_motor.hpp"
 #include "librm/device/referee/referee.hpp"
 #include "librm/device/remote/dr16.h"
+#include "librm/device/remote/vt03.hpp"
 #include "librm/device/sensor/bmi088.h"
 #include "librm/device/sensor/ist8310.h"
 #include "librm/device/supercap/supercap.h"
@@ -64,6 +65,7 @@
 #include "librm/modules/algorithm/chassis_fkik.hpp"
 #include "librm/modules/algorithm/crc.h"
 #include "librm/modules/algorithm/pid.hpp"
+#include "librm/modules/algorithm/threshold_trigger.hpp"
 #include "librm/modules/algorithm/utils.hpp"
 #include "librm/modules/vofa_plotter.hpp"
 /****************/

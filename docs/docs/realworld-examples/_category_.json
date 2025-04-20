@@ -1,0 +1,8 @@
+{
+  "label": "使用案例",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "以我们历年在机器人上实际部署的代码为案例，展示使用librm的最佳实践。"
+  }
+}

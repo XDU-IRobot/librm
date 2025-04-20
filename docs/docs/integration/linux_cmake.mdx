@@ -1,0 +1,39 @@
+# Linux (CMake)
+
+## 安装依赖
+
+安装 boost::asio：
+
+```bash
+sudo apt-get update
+sudo apt-get install -y libboost-system-dev
+```
+
+## 下载 librm
+
+从 Github 上 clone librm：
+
+```bash
+git clone --recursive https://github.com/XDU-IRobot/librm.git
+```
+
+:::warning
+我们在开发时大量使用了 git submodule 来存储第三方库，在 Clone 时，一定一定记得要加 `--recursive` 参数！
+
+另外，也不要直接下载 zip 包，因为 zip 包里没有 submodule 的内容。
+:::
+
+clone 后会得到一个名为 `librm` 的文件夹，把它移到你的项目目录下。
+
+## 配置 CMakeLists.txt
+
+在你的项目的`CMakeLists.txt` 中添加以下内容：
+
+```cmake
+add_subdirectory(librm)
+target_link_libraries(<你的程序对应的target> PUBLIC rm)
+```
+
+## 开始使用
+
+之后，在你的项目代码里 `#include <librm.hpp>` 即可开始使用 librm。

@@ -1,0 +1,47 @@
+# 阈值触发
+
+本例程演示如何用 `ThresholdTrigger` 类在某个变量穿过上下阈值时触发回调函数。
+
+构造`ThresholdTrigger`对象时，将变量作为第一个参数传入，如果是非布尔类型，还需要传入一对阈值作为第二和第三个参数。然后，用 `OnRising` 和 `OnFalling` 方法注册上升沿和下降沿的回调函数。
+
+在主循环中调用`ThresholdTrigger` 类的`Update()`方法，它会检测变量的变化情况，如果达到阈值则触发回调函数。
+
+:::tip
+对于自定义类型，只要实现了 `<` 和 `>` 比较运算符，就可以使用 `ThresholdTrigger`。
+:::
+
+## 代码
+
+```cpp
+#include <librm.hpp>
+
+#include <iostream>
+
+int main() {
+  bool var;
+  auto tt = rm::modules::algorithm::ThresholdTrigger<bool>(var)
+                .OnRising([]() { std::cout << "Rising edge\n"; })
+                .OnFalling([]() { std::cout << "Falling edge\n"; });
+
+  for (;;) {
+    tt.Update();
+  }
+}
+```
+
+```cpp
+#include <librm.hpp>
+
+#include <iostream>
+
+int main() {
+  int var;
+  auto tt = rm::modules::algorithm::ThresholdTrigger<int>(var, 10, 20)
+                .OnRising([]() { std::cout << "Rising edge\n"; })
+                .OnFalling([]() { std::cout << "Falling edge\n"; });
+
+  for (;;) {
+    tt.Update();
+  }
+}
+```

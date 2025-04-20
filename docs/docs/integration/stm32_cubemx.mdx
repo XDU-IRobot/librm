@@ -1,0 +1,121 @@
+# STM32CubeMX
+
+:::note
+由于调用 HAL 库的方式有待改进，目前，librm 仅支持以下芯片：
+
+- STM32F407xx
+- STM32H723xx
+- STM32L412xx
+- STM32F427xx
+
+如果你需要在其他芯片上使用 librm，请联系我们或者提交 issue，我们会尽快添加支持。
+:::
+
+## 配置编译环境
+
+librm 只支持在 CubeMX 生成的 CMake 工程中编译使用。 **如果你使用 Keil、IAR 等其他 IDE 开发 STM32，则不能使用 librm。** 在进行下一步之前，请按网上的教程配置好 CMake 和编译器。我们推荐使用 gcc-arm-none-eabi。
+
+如果不熟悉配置过程，请参考我们录制的环境配置教程：
+
+:::note
+仅 Windows，Linux 和 macOS 后续更新
+:::
+
+<iframe
+  src="//player.bilibili.com/player.html?isOutside=true&aid=113190876742563&bvid=BV1YosheaEbs&cid=25980767907&p=1"
+  scrolling="no"
+  border="0"
+  frameborder="no"
+  framespacing="0"
+  allowfullscreen="true"
+  style={{ width: "100%", height: "500px", margin: "0 auto", display: "block" }}
+></iframe>
+
+## 生成代码
+
+在 CubeMX 的 Project Settings 中，选择生成 `CMake`项目：
+
+![](assets/select_cmake.png)
+
+在 Project Manager -> Advanced Settings 页面右侧启用 CAN、SPI、I2C、UART、USART 的 Register Callback 功能：
+
+![](assets/register_callback.png)
+
+最后点击 Generate Code 按钮生成代码即可。
+
+## 下载 librm
+
+从 Github 上 clone librm：
+
+```bash
+git clone --recursive https://github.com/XDU-IRobot/librm.git
+```
+
+:::warning
+我们在开发时大量使用了 git submodule 来存储第三方库，在 Clone 时，一定一定记得要加 `--recursive` 参数！
+
+另外，也不要直接下载 zip 包，因为 zip 包里没有 submodule 的内容。
+:::
+
+clone 后会得到一个名为 `librm` 的文件夹，把它移到刚刚生成的项目目录下。
+
+## 配置 CMakeLists.txt
+
+生成代码后，工程根目录中会出现一个内容类似以下的 CMakeLists.txt 文件：
+
+```cmake
+cmake_minimum_required(VERSION 3.22)
+
+#
+# This file is generated only once,
+# and is not re-generated if converter is called multiple times.
+#
+# User is free to modify the file as much as necessary
+#
+
+# Setup compiler settings
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_C_EXTENSIONS ON)
+
+
+### ...
+
+
+# Add linked libraries
+target_link_libraries(${CMAKE_PROJECT_NAME}
+    stm32cubemx
+
+    # Add user defined libraries
+)
+
+```
+
+找到文件中的这一行：
+
+```cmake
+add_subdirectory(cmake/stm32cubemx)
+```
+
+在这一行的下一行，添加：
+
+```cmake
+add_subdirectory(librm)
+```
+
+然后，再找到这一块代码：
+
+```cmake
+# Add linked libraries
+target_link_libraries(${CMAKE_PROJECT_NAME}
+    stm32cubemx
+
+    # Add user defined libraries
+)
+```
+
+在 `# Add user defined libraries` 之后另起一行，添加`rm`。
+
+## 开始使用
+
+之后，在你的项目代码里 `#include <librm.hpp>` 即可开始使用 librm。

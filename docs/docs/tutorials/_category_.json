@@ -1,0 +1,8 @@
+{
+  "label": "教程",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "快速上手使用librm的各个模块。"
+  }
+}

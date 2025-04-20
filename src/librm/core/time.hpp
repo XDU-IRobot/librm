@@ -62,27 +62,18 @@ inline void SleepMs(u32 ms) {
  * @param us 延时时间，单位为微秒
  */
 inline void SleepUs(u32 us) {
-  u32 ticks = 0;
-  u32 t_old = 0;
-  u32 t_now = 0;
-  u32 t_cnt = 0;
-  u32 reload = 0;
-  reload = SysTick->LOAD;
-  ticks = us * HAL_RCC_GetHCLKFreq() / 1000000;
-  t_old = SysTick->VAL;
-  while (true) {
-    t_now = SysTick->VAL;
-    if (t_now != t_old) {
-      if (t_now < t_old) {
-        t_cnt += t_old - t_now;
-      } else {
-        t_cnt += reload - t_now + t_old;
-      }
-      t_old = t_now;
-      if (t_cnt >= ticks) {
-        break;
-      }
-    }
+  if (!(CoreDebug->DEMCR & CoreDebug_DEMCR_TRCENA_Msk)) {
+    CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+  }
+  if (!(DWT->CTRL & DWT_CTRL_CYCCNTENA_Msk)) {
+    DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+  }
+
+  u32 start = DWT->CYCCNT;
+  u32 ticks = us * (HAL_RCC_GetSysClockFreq() / 1000000);
+
+  while ((DWT->CYCCNT - start) < ticks) {
+    ;
   }
 }
 #endif

@@ -1,7 +1,5 @@
 # 编写一个 CAN 总线设备
 
-## 简介
-
 本例程演示如何利用 librm 中的 CAN 总线设备框架实现一个通过 CAN 总线接收数据的设备。
 
 librm 对 CAN 总线和设备的封装使用[观察者模式](https://refactoringguru.cn/design-patterns/observer)，如果不熟悉这种设计模式，建议先自行了解一下。
@@ -25,7 +23,7 @@ CAN 设备向 CAN 总线类"注册"自己，并且告知自己要接收哪些 ID
 
 ## 代码
 
-```c++
+```cpp
 #include "librm.hpp"
 
 #include <iostream>

@@ -1,0 +1,28 @@
+# 接收 VT03 图传链路的遥控器数据
+
+本例程演示如何接收 VT03 图传链路的遥控器数据。
+
+## 代码
+
+```cpp
+#include <librm.hpp>
+
+// 从串口接收到的数据流
+const unsigned char mock_data[10] = {0xa5, 0x05, 0x00, 0x00, 0x00,
+                                     0x01, 0x00, 0x00, 0x00, 0x00}; // ...
+
+int main() {
+  rm::device::VT03 remote;
+
+  // 把接收到的数据一个字节一个字节地扔进VT03对象即可
+  for (const auto &data : mock_data) {
+    remote << data;
+  }
+
+  // 通过VT03对象的data()方法获取数据
+  remote.data().left_x;
+  remote.data().left_y;
+  // ...
+  return 0;
+}
+```
