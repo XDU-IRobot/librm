@@ -1,7 +1,7 @@
 # librm
 
 [![build](https://github.com/IRobot-EC-2024/irobotEC/actions/workflows/build.yml/badge.svg)](https://github.com/IRobot-EC-2024/irobotEC/actions/workflows/build.yml)
-[![docs](https://github.com/IRobot-EC-2024/irobotEC/actions/workflows/doxygen-gh-pages.yml/badge.svg)](https://github.com/IRobot-EC-2024/irobotEC/actions/workflows/doxygen-gh-pages.yml)
+[![Deploy docs](https://github.com/XDU-IRobot/librm/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/XDU-IRobot/librm/actions/workflows/deploy-docs.yml)
 [![CodeFactor](https://www.codefactor.io/repository/github/irobot-ec-2024/irobotec/badge/develop)](https://www.codefactor.io/repository/github/irobot-ec-2024/irobotec/overview/develop)
 
 All-in-one、跨平台 Robomaster 嵌入式软件开发框架，为多种硬件平台提供统一的外设 API、设备驱动和算法库。电控组需要的一切都在这里。
