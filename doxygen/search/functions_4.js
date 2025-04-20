@@ -1,7 +1,7 @@
 var searchData=
 [
   ['d_5fout_0',['d_out',['../classrm_1_1modules_1_1algorithm_1_1PID.html#af164f4cd05ac2597e52607a8bbd5f308',1,'rm::modules::algorithm::PID']]],
-  ['data_1',['data',['../classrm_1_1device_1_1Referee.html#a4c1bf654d72f57a945d7f47afcbb54a3',1,'rm::device::Referee']]],
+  ['data_1',['data',['../classrm_1_1device_1_1Referee.html#a4c1bf654d72f57a945d7f47afcbb54a3',1,'rm::device::Referee::data()'],['../classrm_1_1device_1_1VT03.html#a0e908ef087a56537c1a198d8f501be2e',1,'rm::device::VT03::data()']]],
   ['deadline_2',['Deadline',['../namespacerm_1_1modules_1_1algorithm_1_1utils.html#a763fa5e85bf60b55ee4564e63a9e3ee9',1,'rm::modules::algorithm::utils']]],
   ['degtorad_3',['DegToRad',['../namespacerm_1_1modules_1_1algorithm_1_1utils.html#aca5ebfeac5ff3918136424930db02929',1,'rm::modules::algorithm::utils']]],
   ['device_4',['Device',['../classrm_1_1device_1_1Device.html#a7cfac1f099daba6efea2fc462a5fa7c2',1,'rm::device::Device']]],

@@ -31,7 +31,8 @@ var annotated_dup =
         [ "RefereeProtocol< RefereeRevision::kV164 >", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4.html", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4" ],
         [ "RefereeProtocol< RefereeRevision::kV170 >", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4" ],
         [ "SuperCap", "classrm_1_1device_1_1SuperCap.html", "classrm_1_1device_1_1SuperCap" ],
-        [ "UnitreeMotor", "classrm_1_1device_1_1UnitreeMotor.html", "classrm_1_1device_1_1UnitreeMotor" ]
+        [ "UnitreeMotor", "classrm_1_1device_1_1UnitreeMotor.html", "classrm_1_1device_1_1UnitreeMotor" ],
+        [ "VT03", "classrm_1_1device_1_1VT03.html", "classrm_1_1device_1_1VT03" ]
       ] ],
       [ "hal", "namespacerm_1_1hal.html", [
         [ "linux_", "namespacerm_1_1hal_1_1linux__.html", [

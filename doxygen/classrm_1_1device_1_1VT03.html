@@ -1,0 +1,583 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: rm::device::VT03类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classrm_1_1device_1_1VT03.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classrm_1_1device_1_1VT03-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">rm::device::VT03类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>VT03图传发送端的遥控器数据解析器  
+ <a href="classrm_1_1device_1_1VT03.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="vt03_8hpp_source.html">vt03.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a808fdce243f40b7297501d3da15cfb75" id="r_a808fdce243f40b7297501d3da15cfb75"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1VT03.html#a808fdce243f40b7297501d3da15cfb75">SwitchPosition</a> : usize { <a class="el" href="classrm_1_1device_1_1VT03.html#a808fdce243f40b7297501d3da15cfb75a0d61f8370cad1d412f80b84d143e1257">C</a> = 0
+, <a class="el" href="classrm_1_1device_1_1VT03.html#a808fdce243f40b7297501d3da15cfb75a8d9c307cb7f3c4a32822a51922d1ceaa">N</a> = 1
+, <a class="el" href="classrm_1_1device_1_1VT03.html#a808fdce243f40b7297501d3da15cfb75a5dbc98dcc983a70728bd082d1a47546e">S</a> = 2
+ }</td></tr>
+<tr class="memdesc:a808fdce243f40b7297501d3da15cfb75"><td class="mdescLeft">&#160;</td><td class="mdescRight">档位切换开关位置  <a href="classrm_1_1device_1_1VT03.html#a808fdce243f40b7297501d3da15cfb75">更多...</a><br /></td></tr>
+<tr class="separator:a808fdce243f40b7297501d3da15cfb75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb2be5c02d37ad983aff694b1b41588e" id="r_aeb2be5c02d37ad983aff694b1b41588e"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588e">KeyboardKey</a> : u16 { <br />
+&#160;&#160;<a class="el" href="classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea27963ec968c1e151c78a1d7c8a97b178">kW</a> = 1u &lt;&lt; 0
+, <a class="el" href="classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eac65dfb11fc5387999d90b7a3e1b70653">kS</a> = 1u &lt;&lt; 1
+, <a class="el" href="classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea30f767aa191cd5d261e767fd78393607">kA</a> = 1u &lt;&lt; 2
+, <a class="el" href="classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea64fa0b7138d2992f2e7daa5080eb5ed0">kD</a> = 1u &lt;&lt; 3
+, <br />
+&#160;&#160;<a class="el" href="classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eaa754a0f863e3fadd8098162c48468399">kShift</a> = 1u &lt;&lt; 4
+, <a class="el" href="classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eadcffe669929b11331740fc64036dc697">kCtrl</a> = 1u &lt;&lt; 5
+, <a class="el" href="classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea1121352101e67451e27b8544fdc6575e">kQ</a> = 1u &lt;&lt; 6
+, <a class="el" href="classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eaa7db8559fb81d9b4a5b7cb3439f2f401">kE</a> = 1u &lt;&lt; 7
+, <br />
+&#160;&#160;<a class="el" href="classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eade41bdfe82600cdcf4e4ac08a10c7889">kR</a> = 1u &lt;&lt; 8
+, <a class="el" href="classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea2e4b5626d52f8ce6e31680b40f2c9778">kF</a> = 1u &lt;&lt; 9
+, <a class="el" href="classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea091eb6206c7543b67256e7dc4bf2dc48">kG</a> = 1u &lt;&lt; 10
+, <a class="el" href="classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eaca4d7439951bc76061bedb523255ff3d">kZ</a> = 1u &lt;&lt; 11
+, <br />
+&#160;&#160;<a class="el" href="classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea0ac0dd65e82e143ab04d378a0133bf9e">kX</a> = 1u &lt;&lt; 12
+, <a class="el" href="classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eaf73b7a14626c25aa554e2437ea3fc1df">kC</a> = 1u &lt;&lt; 13
+, <a class="el" href="classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea63b39853c60d1092c257c1ab898bad0a">kV</a> = 1u &lt;&lt; 14
+, <a class="el" href="classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea3e56c011b37f0bc78fb9eb175c1181c6">kB</a> = 1u &lt;&lt; 15
+<br />
+ }</td></tr>
+<tr class="memdesc:aeb2be5c02d37ad983aff694b1b41588e"><td class="mdescLeft">&#160;</td><td class="mdescRight">键盘按键  <a href="classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588e">更多...</a><br /></td></tr>
+<tr class="separator:aeb2be5c02d37ad983aff694b1b41588e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a71d8ecd81d349a07ff11b788037312af" id="r_a71d8ecd81d349a07ff11b788037312af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1VT03.html#a71d8ecd81d349a07ff11b788037312af">VT03</a> ()=default</td></tr>
+<tr class="separator:a71d8ecd81d349a07ff11b788037312af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6646c977afbbbe0ed6a33c6162dbe24f" id="r_a6646c977afbbbe0ed6a33c6162dbe24f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1VT03.html#a6646c977afbbbe0ed6a33c6162dbe24f">operator&lt;&lt;</a> (<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> <a class="el" href="classrm_1_1device_1_1VT03.html#a0e908ef087a56537c1a198d8f501be2e">data</a>)</td></tr>
+<tr class="separator:a6646c977afbbbe0ed6a33c6162dbe24f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e908ef087a56537c1a198d8f501be2e" id="r_a0e908ef087a56537c1a198d8f501be2e"><td class="memItemLeft" align="right" valign="top">const auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1VT03.html#a0e908ef087a56537c1a198d8f501be2e">data</a> () const</td></tr>
+<tr class="separator:a0e908ef087a56537c1a198d8f501be2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>VT03图传发送端的遥控器数据解析器 </p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="aeb2be5c02d37ad983aff694b1b41588e" name="aeb2be5c02d37ad983aff694b1b41588e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb2be5c02d37ad983aff694b1b41588e">&#9670;&#160;</a></span>KeyboardKey</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588e">rm::device::VT03::KeyboardKey</a> : <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>键盘按键 </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="aeb2be5c02d37ad983aff694b1b41588ea27963ec968c1e151c78a1d7c8a97b178" name="aeb2be5c02d37ad983aff694b1b41588ea27963ec968c1e151c78a1d7c8a97b178"></a>kW&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb2be5c02d37ad983aff694b1b41588eac65dfb11fc5387999d90b7a3e1b70653" name="aeb2be5c02d37ad983aff694b1b41588eac65dfb11fc5387999d90b7a3e1b70653"></a>kS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb2be5c02d37ad983aff694b1b41588ea30f767aa191cd5d261e767fd78393607" name="aeb2be5c02d37ad983aff694b1b41588ea30f767aa191cd5d261e767fd78393607"></a>kA&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb2be5c02d37ad983aff694b1b41588ea64fa0b7138d2992f2e7daa5080eb5ed0" name="aeb2be5c02d37ad983aff694b1b41588ea64fa0b7138d2992f2e7daa5080eb5ed0"></a>kD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb2be5c02d37ad983aff694b1b41588eaa754a0f863e3fadd8098162c48468399" name="aeb2be5c02d37ad983aff694b1b41588eaa754a0f863e3fadd8098162c48468399"></a>kShift&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb2be5c02d37ad983aff694b1b41588eadcffe669929b11331740fc64036dc697" name="aeb2be5c02d37ad983aff694b1b41588eadcffe669929b11331740fc64036dc697"></a>kCtrl&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb2be5c02d37ad983aff694b1b41588ea1121352101e67451e27b8544fdc6575e" name="aeb2be5c02d37ad983aff694b1b41588ea1121352101e67451e27b8544fdc6575e"></a>kQ&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb2be5c02d37ad983aff694b1b41588eaa7db8559fb81d9b4a5b7cb3439f2f401" name="aeb2be5c02d37ad983aff694b1b41588eaa7db8559fb81d9b4a5b7cb3439f2f401"></a>kE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb2be5c02d37ad983aff694b1b41588eade41bdfe82600cdcf4e4ac08a10c7889" name="aeb2be5c02d37ad983aff694b1b41588eade41bdfe82600cdcf4e4ac08a10c7889"></a>kR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb2be5c02d37ad983aff694b1b41588ea2e4b5626d52f8ce6e31680b40f2c9778" name="aeb2be5c02d37ad983aff694b1b41588ea2e4b5626d52f8ce6e31680b40f2c9778"></a>kF&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb2be5c02d37ad983aff694b1b41588ea091eb6206c7543b67256e7dc4bf2dc48" name="aeb2be5c02d37ad983aff694b1b41588ea091eb6206c7543b67256e7dc4bf2dc48"></a>kG&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb2be5c02d37ad983aff694b1b41588eaca4d7439951bc76061bedb523255ff3d" name="aeb2be5c02d37ad983aff694b1b41588eaca4d7439951bc76061bedb523255ff3d"></a>kZ&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb2be5c02d37ad983aff694b1b41588ea0ac0dd65e82e143ab04d378a0133bf9e" name="aeb2be5c02d37ad983aff694b1b41588ea0ac0dd65e82e143ab04d378a0133bf9e"></a>kX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb2be5c02d37ad983aff694b1b41588eaf73b7a14626c25aa554e2437ea3fc1df" name="aeb2be5c02d37ad983aff694b1b41588eaf73b7a14626c25aa554e2437ea3fc1df"></a>kC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb2be5c02d37ad983aff694b1b41588ea63b39853c60d1092c257c1ab898bad0a" name="aeb2be5c02d37ad983aff694b1b41588ea63b39853c60d1092c257c1ab898bad0a"></a>kV&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb2be5c02d37ad983aff694b1b41588ea3e56c011b37f0bc78fb9eb175c1181c6" name="aeb2be5c02d37ad983aff694b1b41588ea3e56c011b37f0bc78fb9eb175c1181c6"></a>kB&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a808fdce243f40b7297501d3da15cfb75" name="a808fdce243f40b7297501d3da15cfb75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a808fdce243f40b7297501d3da15cfb75">&#9670;&#160;</a></span>SwitchPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="classrm_1_1device_1_1VT03.html#a808fdce243f40b7297501d3da15cfb75">rm::device::VT03::SwitchPosition</a> : <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>档位切换开关位置 </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a808fdce243f40b7297501d3da15cfb75a0d61f8370cad1d412f80b84d143e1257" name="a808fdce243f40b7297501d3da15cfb75a0d61f8370cad1d412f80b84d143e1257"></a>C&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a808fdce243f40b7297501d3da15cfb75a8d9c307cb7f3c4a32822a51922d1ceaa" name="a808fdce243f40b7297501d3da15cfb75a8d9c307cb7f3c4a32822a51922d1ceaa"></a>N&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a808fdce243f40b7297501d3da15cfb75a5dbc98dcc983a70728bd082d1a47546e" name="a808fdce243f40b7297501d3da15cfb75a5dbc98dcc983a70728bd082d1a47546e"></a>S&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a71d8ecd81d349a07ff11b788037312af" name="a71d8ecd81d349a07ff11b788037312af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71d8ecd81d349a07ff11b788037312af">&#9670;&#160;</a></span>VT03()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rm::device::VT03::VT03 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a0e908ef087a56537c1a198d8f501be2e" name="a0e908ef087a56537c1a198d8f501be2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e908ef087a56537c1a198d8f501be2e">&#9670;&#160;</a></span>data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto &amp; rm::device::VT03::data </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6646c977afbbbe0ed6a33c6162dbe24f" name="a6646c977afbbbe0ed6a33c6162dbe24f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6646c977afbbbe0ed6a33c6162dbe24f">&#9670;&#160;</a></span>operator&lt;&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rm::device::VT03::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ad5296e0681abaa4b4061ec9c7ceeed85" name="ad5296e0681abaa4b4061ec9c7ceeed85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5296e0681abaa4b4061ec9c7ceeed85">&#9670;&#160;</a></span>dial</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::device::VT03::dial</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>拨轮位置，归一化到[-1, 1]，左负右正 </p>
+
+</div>
+</div>
+<a id="a0715d1976b251e20cdc6f3814c1bbc0d" name="a0715d1976b251e20cdc6f3814c1bbc0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0715d1976b251e20cdc6f3814c1bbc0d">&#9670;&#160;</a></span>keyboard_key</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> rm::device::VT03::keyboard_key</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>键盘按键，每一位代表一个键，0为未按下，1为按下，bit定义见VT03::KeyboardKey </p>
+
+</div>
+</div>
+<a id="a3b82fd5fd8566c5b7b1b5ec201d8ad1d" name="a3b82fd5fd8566c5b7b1b5ec201d8ad1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b82fd5fd8566c5b7b1b5ec201d8ad1d">&#9670;&#160;</a></span>left_button</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rm::device::VT03::left_button</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>左边的按钮 </p>
+
+</div>
+</div>
+<a id="a28f621b669ef7dfa934b44c114cf90e7" name="a28f621b669ef7dfa934b44c114cf90e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28f621b669ef7dfa934b44c114cf90e7">&#9670;&#160;</a></span>left_x</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::device::VT03::left_x</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>左摇杆水平方向位置，归一化到[-1, 1]，左负右正 </p>
+
+</div>
+</div>
+<a id="a143ceace30d447112b06a9aae3ff1db2" name="a143ceace30d447112b06a9aae3ff1db2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a143ceace30d447112b06a9aae3ff1db2">&#9670;&#160;</a></span>left_y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::device::VT03::left_y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae79d92e57b52a4847a8913b5fb80408f" name="ae79d92e57b52a4847a8913b5fb80408f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae79d92e57b52a4847a8913b5fb80408f">&#9670;&#160;</a></span>mouse_button_left</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rm::device::VT03::mouse_button_left</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>鼠标左键 </p>
+
+</div>
+</div>
+<a id="ada639db64d8d1cd0f6598d313ee8fff8" name="ada639db64d8d1cd0f6598d313ee8fff8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada639db64d8d1cd0f6598d313ee8fff8">&#9670;&#160;</a></span>mouse_button_middle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rm::device::VT03::mouse_button_middle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>鼠标中键 </p>
+
+</div>
+</div>
+<a id="a6635bb583f6a48f3ed78cf57a90a75d0" name="a6635bb583f6a48f3ed78cf57a90a75d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6635bb583f6a48f3ed78cf57a90a75d0">&#9670;&#160;</a></span>mouse_button_right</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rm::device::VT03::mouse_button_right</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>鼠标右键 </p>
+
+</div>
+</div>
+<a id="ab9b5a9ef96db1e5b8305e1ae854525f8" name="ab9b5a9ef96db1e5b8305e1ae854525f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9b5a9ef96db1e5b8305e1ae854525f8">&#9670;&#160;</a></span>mouse_x</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#ab0024293c4410554bd98c9bb792c8afb">i16</a> rm::device::VT03::mouse_x</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>鼠标左右移动速度，范围[-32768, 32767]，左负右正 </p>
+
+</div>
+</div>
+<a id="af7eab377536c472b99bb103fbffb5715" name="af7eab377536c472b99bb103fbffb5715"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7eab377536c472b99bb103fbffb5715">&#9670;&#160;</a></span>mouse_y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#ab0024293c4410554bd98c9bb792c8afb">i16</a> rm::device::VT03::mouse_y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>鼠标前后移动速度，范围[-32768, 32767]，左负右正 </p>
+
+</div>
+</div>
+<a id="a150dc5ad7d669d13b3cd702a865b447c" name="a150dc5ad7d669d13b3cd702a865b447c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a150dc5ad7d669d13b3cd702a865b447c">&#9670;&#160;</a></span>mouse_z</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#ab0024293c4410554bd98c9bb792c8afb">i16</a> rm::device::VT03::mouse_z</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>鼠标滚轮滚动速度，范围[-32768, 32767]，左负右正 </p>
+
+</div>
+</div>
+<a id="aae2b9cf104695dfd95a8d3a945b37dc7" name="aae2b9cf104695dfd95a8d3a945b37dc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae2b9cf104695dfd95a8d3a945b37dc7">&#9670;&#160;</a></span>pause_button</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rm::device::VT03::pause_button</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>暂停键 </p>
+
+</div>
+</div>
+<a id="a4428909391da8b23c83031b42bbd11a2" name="a4428909391da8b23c83031b42bbd11a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4428909391da8b23c83031b42bbd11a2">&#9670;&#160;</a></span>right_button</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rm::device::VT03::right_button</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>右边的按钮 </p>
+
+</div>
+</div>
+<a id="a11b4f20fcf7bce0cef8c096bbd3015bf" name="a11b4f20fcf7bce0cef8c096bbd3015bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11b4f20fcf7bce0cef8c096bbd3015bf">&#9670;&#160;</a></span>right_x</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::device::VT03::right_x</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>右摇杆水平方向位置，归一化到[-1, 1]，左负右正 </p>
+
+</div>
+</div>
+<a id="a26c15a4246ae1603c1ffdb60b1b709cf" name="a26c15a4246ae1603c1ffdb60b1b709cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26c15a4246ae1603c1ffdb60b1b709cf">&#9670;&#160;</a></span>right_y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::device::VT03::right_y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>右摇杆垂直方向位置，归一化到[-1, 1]，左负右正 </p>
+
+</div>
+</div>
+<a id="a53065445aec1c6640d9bb020281e423e" name="a53065445aec1c6640d9bb020281e423e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53065445aec1c6640d9bb020281e423e">&#9670;&#160;</a></span>switch_position</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrm_1_1device_1_1VT03.html#a808fdce243f40b7297501d3da15cfb75">SwitchPosition</a> rm::device::VT03::switch_position</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>档位切换开关位置 </p>
+
+</div>
+</div>
+<a id="a6c81ebd88297393f3ce5a48d410f55d7" name="a6c81ebd88297393f3ce5a48d410f55d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c81ebd88297393f3ce5a48d410f55d7">&#9670;&#160;</a></span>trigger</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rm::device::VT03::trigger</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>扳机键 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/librm/device/remote/<a class="el" href="vt03_8hpp_source.html">vt03.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1device.html">device</a></li><li class="navelem"><a class="el" href="classrm_1_1device_1_1VT03.html">VT03</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

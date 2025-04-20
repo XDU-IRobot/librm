@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['f_0',['f',['../classrm_1_1modules_1_1algorithm_1_1SystemModel.html#adc13dece2d3c62a4985bb098b5c9b15a',1,'rm::modules::algorithm::SystemModel::f()'],['../unionrm_1_1device_1_1UnitreeMotor_1_1ComData32.html#a4c9a475d1ff91a2edecc4583f8217ea5',1,'rm::device::UnitreeMotor::ComData32::F']]],
+  ['f_0',['f',['../unionrm_1_1device_1_1UnitreeMotor_1_1ComData32.html#a4c9a475d1ff91a2edecc4583f8217ea5',1,'rm::device::UnitreeMotor::ComData32::F'],['../classrm_1_1modules_1_1algorithm_1_1SystemModel.html#adc13dece2d3c62a4985bb098b5c9b15a',1,'rm::modules::algorithm::SystemModel::f()']]],
   ['f32_1',['f32',['../namespacerm.html#abe438454936420638776f339c29718b1',1,'rm']]],
   ['f64_2',['f64',['../namespacerm.html#a9fea0b33753053edbc024452364b2e92',1,'rm']]],
   ['f_5facc_3',['f_acc',['../structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html#a2f912139f0c9be44d6ae0617b88e94ce',1,'rm::device::UnitreeMotor::ComDataReceive::f_acc'],['../unitree__motor_8hpp.html#a85bc54f2c1a5c949cbba7a0b3a1c8a54',1,'f_acc:&#160;unitree_motor.hpp']]],
@@ -22,6 +22,6 @@ var searchData=
   ['force8_19',['force8',['../unitree__motor_8hpp.html#abd32a6fdc40eeacad2bdf6ab67d53e25',1,'force8:&#160;unitree_motor.hpp'],['../structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html#a6df2ffe51ad05abd8d26ef24d5604c91',1,'rm::device::UnitreeMotor::ComDataReceive::force8']]],
   ['forward_20',['forward',['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a2914e45dea789ac26249c753a1de20f2',1,'rm::modules::algorithm::QuadOmniChassis::Forward()'],['../classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a3027988d66a4d52c47c82f6a50d8eda5',1,'rm::modules::algorithm::SteeringChassis::Forward(f32 vx, f32 vy, f32 w, f32 current_lf_angle, f32 current_rf_angle, f32 current_lr_angle, f32 current_rr_angle)'],['../classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a59ed782f98ae12c36c110109ed9ba6f1',1,'rm::modules::algorithm::SteeringChassis::Forward(f32 vx, f32 vy, f32 w)'],['../classrm_1_1modules_1_1algorithm_1_1MecanumChassis.html#a1bfcde444128cf3c19e6010d7212589d',1,'rm::modules::algorithm::MecanumChassis::Forward()']]],
   ['forward_5fresult_21',['forward_result',['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a9c28bfa26589fbeb0ed6fab90de30aef',1,'rm::modules::algorithm::QuadOmniChassis::forward_result()'],['../classrm_1_1modules_1_1algorithm_1_1MecanumChassis.html#a83820c7f53bc636b7318f471ee6ef5a4',1,'rm::modules::algorithm::MecanumChassis::forward_result()']]],
-  ['forward_5fresult_5f_22',['forward_result_',['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a3f258833bb7bc351c303adf2b708cddc',1,'rm::modules::algorithm::QuadOmniChassis']]],
+  ['forward_5fresult_5f_22',['forward_result_',['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#ad19df7a5c7e5bca557a6f35c015964e8',1,'rm::modules::algorithm::QuadOmniChassis']]],
   ['front_5fwheel_5fspeed_23',['front_wheel_speed',['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a0c4555606aca12e5a818dd08fd0205b3',1,'rm::modules::algorithm::QuadOmniChassis']]]
 ];

@@ -27,6 +27,7 @@ var namespacerm_1_1device =
     [ "RefereeProtocol< RefereeRevision::kV170 >", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4" ],
     [ "SuperCap", "classrm_1_1device_1_1SuperCap.html", "classrm_1_1device_1_1SuperCap" ],
     [ "UnitreeMotor", "classrm_1_1device_1_1UnitreeMotor.html", "classrm_1_1device_1_1UnitreeMotor" ],
+    [ "VT03", "classrm_1_1device_1_1VT03.html", "classrm_1_1device_1_1VT03" ],
     [ "GM6020", "namespacerm_1_1device.html#a7596f33b44756a54da20dd7205da8832", null ],
     [ "M2006", "namespacerm_1_1device.html#acf91c24f686ca4f58d88b4a2c8c81acd", null ],
     [ "M3508", "namespacerm_1_1device.html#a5b66ef73417ff0bd6e44f46e821c0942", null ],

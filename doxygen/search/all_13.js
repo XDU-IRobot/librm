@@ -17,7 +17,8 @@ var searchData=
   ['throw_14',['Throw',['../namespacerm.html#a5d5138b47a87a72482d492dc3c8ed2ee',1,'rm']]],
   ['time_2ehpp_15',['time.hpp',['../time_8hpp.html',1,'']]],
   ['time_5fremain_16',['time_remain',['../structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4.html#a9454d3f5e4ba45df117346160ce87d67',1,'rm::device::RefereeProtocol&lt; RefereeRevision::kV164 &gt;']]],
-  ['tx_5fbuf_5f_17',['tx_buf_',['../structrm_1_1device_1_1DjiMotorProperties_3_01DjiMotorType_1_1GM6020_01_4.html#a4e33dbce63954d6b9b6e712638307705',1,'rm::device::DjiMotorProperties&lt; DjiMotorType::GM6020 &gt;::tx_buf_'],['../structrm_1_1device_1_1DjiMotorProperties_3_01DjiMotorType_1_1M3508_01_4.html#a13198df7b189a5297e9741a991f076e3',1,'rm::device::DjiMotorProperties&lt; DjiMotorType::M3508 &gt;::tx_buf_'],['../structrm_1_1device_1_1DjiMotorProperties_3_01DjiMotorType_1_1M2006_01_4.html#acea3cc24990ba03148848667168d917d',1,'rm::device::DjiMotorProperties&lt; DjiMotorType::M2006 &gt;::tx_buf_']]],
-  ['txbuffertable_18',['TxBufferTable',['../structrm_1_1device_1_1DirectDriveMotor_1_1TxBufferTable.html',1,'rm::device::DirectDriveMotor']]],
-  ['typedefs_2eh_19',['typedefs.h',['../typedefs_8h.html',1,'']]]
+  ['trigger_17',['trigger',['../classrm_1_1device_1_1VT03.html#a6c81ebd88297393f3ce5a48d410f55d7',1,'rm::device::VT03']]],
+  ['tx_5fbuf_5f_18',['tx_buf_',['../structrm_1_1device_1_1DjiMotorProperties_3_01DjiMotorType_1_1GM6020_01_4.html#a4e33dbce63954d6b9b6e712638307705',1,'rm::device::DjiMotorProperties&lt; DjiMotorType::GM6020 &gt;::tx_buf_'],['../structrm_1_1device_1_1DjiMotorProperties_3_01DjiMotorType_1_1M3508_01_4.html#a13198df7b189a5297e9741a991f076e3',1,'rm::device::DjiMotorProperties&lt; DjiMotorType::M3508 &gt;::tx_buf_'],['../structrm_1_1device_1_1DjiMotorProperties_3_01DjiMotorType_1_1M2006_01_4.html#acea3cc24990ba03148848667168d917d',1,'rm::device::DjiMotorProperties&lt; DjiMotorType::M2006 &gt;::tx_buf_']]],
+  ['txbuffertable_19',['TxBufferTable',['../structrm_1_1device_1_1DirectDriveMotor_1_1TxBufferTable.html',1,'rm::device::DirectDriveMotor']]],
+  ['typedefs_2eh_20',['typedefs.h',['../typedefs_8h.html',1,'']]]
 ];

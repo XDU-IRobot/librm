@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['self_5ftest_5faccel_5ferror_0',['SELF_TEST_ACCEL_ERROR',['../namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfaf1849d80e369979d580c3223029a63ff',1,'rm::device']]],
-  ['self_5ftest_5fgyro_5ferror_1',['SELF_TEST_GYRO_ERROR',['../namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfa0eb8a30dc306ed64460e9f3824814fd4',1,'rm::device']]],
-  ['sensor_5ferror_2',['SENSOR_ERROR',['../namespacerm_1_1device.html#ac030a1d78c560386284d254d95259166a3993b9fcdbf9ec59e873519a4d02fe2f',1,'rm::device']]]
+  ['n_0',['N',['../classrm_1_1device_1_1VT03.html#a808fdce243f40b7297501d3da15cfb75a8d9c307cb7f3c4a32822a51922d1ceaa',1,'rm::device::VT03']]],
+  ['no_5ferror_1',['no_error',['../namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfad306b6fdee05fe87455110ddf6501e6c',1,'rm::device::NO_ERROR'],['../namespacerm_1_1device.html#ac030a1d78c560386284d254d95259166ad306b6fdee05fe87455110ddf6501e6c',1,'rm::device::NO_ERROR']]],
+  ['no_5fsensor_2',['no_sensor',['../namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdfab37cdaa5ea18c2d6d7a12580b6549589',1,'rm::device::NO_SENSOR'],['../namespacerm_1_1device.html#ac030a1d78c560386284d254d95259166ab37cdaa5ea18c2d6d7a12580b6549589',1,'rm::device::NO_SENSOR']]]
 ];

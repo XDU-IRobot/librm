@@ -1,0 +1,46 @@
+var classrm_1_1device_1_1VT03 =
+[
+    [ "KeyboardKey", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588e", [
+      [ "kW", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea27963ec968c1e151c78a1d7c8a97b178", null ],
+      [ "kS", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eac65dfb11fc5387999d90b7a3e1b70653", null ],
+      [ "kA", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea30f767aa191cd5d261e767fd78393607", null ],
+      [ "kD", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea64fa0b7138d2992f2e7daa5080eb5ed0", null ],
+      [ "kShift", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eaa754a0f863e3fadd8098162c48468399", null ],
+      [ "kCtrl", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eadcffe669929b11331740fc64036dc697", null ],
+      [ "kQ", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea1121352101e67451e27b8544fdc6575e", null ],
+      [ "kE", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eaa7db8559fb81d9b4a5b7cb3439f2f401", null ],
+      [ "kR", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eade41bdfe82600cdcf4e4ac08a10c7889", null ],
+      [ "kF", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea2e4b5626d52f8ce6e31680b40f2c9778", null ],
+      [ "kG", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea091eb6206c7543b67256e7dc4bf2dc48", null ],
+      [ "kZ", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eaca4d7439951bc76061bedb523255ff3d", null ],
+      [ "kX", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea0ac0dd65e82e143ab04d378a0133bf9e", null ],
+      [ "kC", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eaf73b7a14626c25aa554e2437ea3fc1df", null ],
+      [ "kV", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea63b39853c60d1092c257c1ab898bad0a", null ],
+      [ "kB", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea3e56c011b37f0bc78fb9eb175c1181c6", null ]
+    ] ],
+    [ "SwitchPosition", "classrm_1_1device_1_1VT03.html#a808fdce243f40b7297501d3da15cfb75", [
+      [ "C", "classrm_1_1device_1_1VT03.html#a808fdce243f40b7297501d3da15cfb75a0d61f8370cad1d412f80b84d143e1257", null ],
+      [ "N", "classrm_1_1device_1_1VT03.html#a808fdce243f40b7297501d3da15cfb75a8d9c307cb7f3c4a32822a51922d1ceaa", null ],
+      [ "S", "classrm_1_1device_1_1VT03.html#a808fdce243f40b7297501d3da15cfb75a5dbc98dcc983a70728bd082d1a47546e", null ]
+    ] ],
+    [ "VT03", "classrm_1_1device_1_1VT03.html#a71d8ecd81d349a07ff11b788037312af", null ],
+    [ "data", "classrm_1_1device_1_1VT03.html#a0e908ef087a56537c1a198d8f501be2e", null ],
+    [ "operator<<", "classrm_1_1device_1_1VT03.html#a6646c977afbbbe0ed6a33c6162dbe24f", null ],
+    [ "dial", "classrm_1_1device_1_1VT03.html#ad5296e0681abaa4b4061ec9c7ceeed85", null ],
+    [ "keyboard_key", "classrm_1_1device_1_1VT03.html#a0715d1976b251e20cdc6f3814c1bbc0d", null ],
+    [ "left_button", "classrm_1_1device_1_1VT03.html#a3b82fd5fd8566c5b7b1b5ec201d8ad1d", null ],
+    [ "left_x", "classrm_1_1device_1_1VT03.html#a28f621b669ef7dfa934b44c114cf90e7", null ],
+    [ "left_y", "classrm_1_1device_1_1VT03.html#a143ceace30d447112b06a9aae3ff1db2", null ],
+    [ "mouse_button_left", "classrm_1_1device_1_1VT03.html#ae79d92e57b52a4847a8913b5fb80408f", null ],
+    [ "mouse_button_middle", "classrm_1_1device_1_1VT03.html#ada639db64d8d1cd0f6598d313ee8fff8", null ],
+    [ "mouse_button_right", "classrm_1_1device_1_1VT03.html#a6635bb583f6a48f3ed78cf57a90a75d0", null ],
+    [ "mouse_x", "classrm_1_1device_1_1VT03.html#ab9b5a9ef96db1e5b8305e1ae854525f8", null ],
+    [ "mouse_y", "classrm_1_1device_1_1VT03.html#af7eab377536c472b99bb103fbffb5715", null ],
+    [ "mouse_z", "classrm_1_1device_1_1VT03.html#a150dc5ad7d669d13b3cd702a865b447c", null ],
+    [ "pause_button", "classrm_1_1device_1_1VT03.html#aae2b9cf104695dfd95a8d3a945b37dc7", null ],
+    [ "right_button", "classrm_1_1device_1_1VT03.html#a4428909391da8b23c83031b42bbd11a2", null ],
+    [ "right_x", "classrm_1_1device_1_1VT03.html#a11b4f20fcf7bce0cef8c096bbd3015bf", null ],
+    [ "right_y", "classrm_1_1device_1_1VT03.html#a26c15a4246ae1603c1ffdb60b1b709cf", null ],
+    [ "switch_position", "classrm_1_1device_1_1VT03.html#a53065445aec1c6640d9bb020281e423e", null ],
+    [ "trigger", "classrm_1_1device_1_1VT03.html#a6c81ebd88297393f3ce5a48d410f55d7", null ]
+];
