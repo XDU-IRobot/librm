@@ -136,6 +136,8 @@ class VT03 {
           data_.mouse_z = raw_payload_data_.mouse_z;
           data_.mouse_button_left = raw_payload_data_.mouse_left;
           data_.mouse_button_right = raw_payload_data_.mouse_right;
+          data_.mouse_button_middle = raw_payload_data_.mouse_middle;
+          data_.keyboard_key = raw_payload_data_.key;
         }  // else drop this packet
         break;
       }
