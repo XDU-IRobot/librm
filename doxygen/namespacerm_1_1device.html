@@ -175,6 +175,8 @@ $(document).ready(function(){initNavTree('namespacerm_1_1device.html',''); initR
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1VT03.html">VT03</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">VT03图传发送端的遥控器数据解析器  <a href="classrm_1_1device_1_1VT03.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1ZdtStepper.html">ZdtStepper</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 类型定义</h2></td></tr>
@@ -329,6 +331,8 @@ $(document).ready(function(){initNavTree('namespacerm_1_1device.html',''); initR
 变量</h2></td></tr>
 <tr class="memitem:afbf7966ba623ba1c9e33e0cbb96c63e8" id="r_afbf7966ba623ba1c9e33e0cbb96c63e8"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacerm.html#ab0024293c4410554bd98c9bb792c8afb">i16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#afbf7966ba623ba1c9e33e0cbb96c63e8">kDjiMotorMaxEncoder</a> = 8191</td></tr>
 <tr class="separator:afbf7966ba623ba1c9e33e0cbb96c63e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac08ce60f45a779194f2ad543a544d38b" id="r_ac08ce60f45a779194f2ad543a544d38b"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="classrm_1_1hal_1_1SerialInterface.html">rm::hal::SerialInterface</a> *, std::unordered_map&lt; <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">rm::u8</a>, std::function&lt; void(const std::vector&lt; <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">rm::u8</a> &gt; &amp;, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">rm::u16</a>)&gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#ac08ce60f45a779194f2ad543a544d38b">rx_callback_map_emotor</a></td></tr>
+<tr class="separator:ac08ce60f45a779194f2ad543a544d38b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae24d9b479465a3d5c22eaa6ac48e5744" id="r_ae24d9b479465a3d5c22eaa6ac48e5744"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#ae24d9b479465a3d5c22eaa6ac48e5744">kRefProtocolHeaderSof</a> = 0xa5</td></tr>
 <tr class="separator:ae24d9b479465a3d5c22eaa6ac48e5744"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac14725632152fe09f59869931175d64d" id="r_ac14725632152fe09f59869931175d64d"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#ac14725632152fe09f59869931175d64d">kRefProtocolFrameMaxLen</a> = 128</td></tr>
@@ -975,6 +979,20 @@ template&lt;<a class="el" href="namespacerm_1_1device.html#a097a9fa7f69d2f1da751
 </div><div class="memdoc">
 
 <p>裁判系统协议内存映射，记录了每个操作码对应的数据结构在 <a class="el" href="structrm_1_1device_1_1RefereeProtocol.html" title="裁判系统协议数据结构">RefereeProtocol</a> 中的偏移量 </p>
+
+</div>
+</div>
+<a id="ac08ce60f45a779194f2ad543a544d38b" name="ac08ce60f45a779194f2ad543a544d38b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac08ce60f45a779194f2ad543a544d38b">&#9670;&#160;</a></span>rx_callback_map_emotor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;<a class="el" href="classrm_1_1hal_1_1SerialInterface.html">rm::hal::SerialInterface</a> *, std::unordered_map&lt;<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">rm::u8</a>, std::function&lt;void(const std::vector&lt;<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">rm::u8</a>&gt; &amp;, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">rm::u16</a>)&gt; &gt; &gt; rm::device::rx_callback_map_emotor</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

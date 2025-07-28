@@ -8,5 +8,7 @@ var dir_a5828826e2414dc98d48f4718a622200 =
     [ "go8010_motor.cc", "go8010__motor_8cc.html", "go8010__motor_8cc" ],
     [ "go8010_motor.hpp", "go8010__motor_8hpp.html", "go8010__motor_8hpp" ],
     [ "unitree_motor.cc", "unitree__motor_8cc.html", "unitree__motor_8cc" ],
-    [ "unitree_motor.hpp", "unitree__motor_8hpp.html", "unitree__motor_8hpp" ]
+    [ "unitree_motor.hpp", "unitree__motor_8hpp.html", "unitree__motor_8hpp" ],
+    [ "zdt_stepper.cc", "zdt__stepper_8cc.html", "zdt__stepper_8cc" ],
+    [ "zdt_stepper.hpp", "zdt__stepper_8hpp.html", "zdt__stepper_8hpp" ]
 ];

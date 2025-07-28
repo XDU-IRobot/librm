@@ -1,0 +1,485 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: rm::device::ZdtStepper类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classrm_1_1device_1_1ZdtStepper.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classrm_1_1device_1_1ZdtStepper-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">rm::device::ZdtStepper类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="zdt__stepper_8hpp_source.html">zdt_stepper.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:abbf16e8121dd4e9735add43a1a428ec6" id="r_abbf16e8121dd4e9735add43a1a428ec6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1ZdtStepper.html#abbf16e8121dd4e9735add43a1a428ec6">ZdtStepper</a> (<a class="el" href="classrm_1_1hal_1_1SerialInterface.html">hal::SerialInterface</a> &amp;serial, <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> motor_id=0)</td></tr>
+<tr class="separator:abbf16e8121dd4e9735add43a1a428ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c7b26483b80aea71bcd58bd5465bffb" id="r_a1c7b26483b80aea71bcd58bd5465bffb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1ZdtStepper.html#a1c7b26483b80aea71bcd58bd5465bffb">~ZdtStepper</a> ()=default</td></tr>
+<tr class="separator:a1c7b26483b80aea71bcd58bd5465bffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a785f0cb3dddbd2244b40f58bc2cb9323" id="r_a785f0cb3dddbd2244b40f58bc2cb9323"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1ZdtStepper.html#a785f0cb3dddbd2244b40f58bc2cb9323">MotorVelCtrl</a> (<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> addr, <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> dir, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a class="el" href="classrm_1_1device_1_1ZdtStepper.html#a2b0c49a17c047ed0508324a77bf4bbdc">vel</a>, <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> <a class="el" href="unitree__motor_8hpp.html#ad1061d5d4b4250cd202ab3dcb7c29ea3">acc</a>, bool snF)</td></tr>
+<tr class="memdesc:a785f0cb3dddbd2244b40f58bc2cb9323"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度模式  <br /></td></tr>
+<tr class="separator:a785f0cb3dddbd2244b40f58bc2cb9323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab232a67b96e5e64f22f98c7f5cd018d8" id="r_ab232a67b96e5e64f22f98c7f5cd018d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1ZdtStepper.html#ab232a67b96e5e64f22f98c7f5cd018d8">MotorPosCtrl</a> (<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> addr, <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> dir, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a class="el" href="classrm_1_1device_1_1ZdtStepper.html#a2b0c49a17c047ed0508324a77bf4bbdc">vel</a>, <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> <a class="el" href="unitree__motor_8hpp.html#ad1061d5d4b4250cd202ab3dcb7c29ea3">acc</a>, <a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> clk, bool raF, bool snF)</td></tr>
+<tr class="memdesc:ab232a67b96e5e64f22f98c7f5cd018d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置模式  <br /></td></tr>
+<tr class="separator:ab232a67b96e5e64f22f98c7f5cd018d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc30c83b1e51e507cb26535a30a7558b" id="r_abc30c83b1e51e507cb26535a30a7558b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1ZdtStepper.html#abc30c83b1e51e507cb26535a30a7558b">MotorSyncCtrl</a> (<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> addr)</td></tr>
+<tr class="memdesc:abc30c83b1e51e507cb26535a30a7558b"><td class="mdescLeft">&#160;</td><td class="mdescRight">多机同步运动  <br /></td></tr>
+<tr class="separator:abc30c83b1e51e507cb26535a30a7558b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6546c76676fbc1fbf41af4ac97cb547f" id="r_a6546c76676fbc1fbf41af4ac97cb547f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1ZdtStepper.html#a6546c76676fbc1fbf41af4ac97cb547f">ReadPos</a> (<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> addr)</td></tr>
+<tr class="memdesc:a6546c76676fbc1fbf41af4ac97cb547f"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取电机位置  <br /></td></tr>
+<tr class="separator:a6546c76676fbc1fbf41af4ac97cb547f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08513f2f9ca9a44d45f23852acdc1d5a" id="r_a08513f2f9ca9a44d45f23852acdc1d5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1ZdtStepper.html#a08513f2f9ca9a44d45f23852acdc1d5a">ReadVel</a> (<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> addr)</td></tr>
+<tr class="memdesc:a08513f2f9ca9a44d45f23852acdc1d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取电机速度  <br /></td></tr>
+<tr class="separator:a08513f2f9ca9a44d45f23852acdc1d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a769f1a0e22c9aff167e12358033e3b7d" id="r_a769f1a0e22c9aff167e12358033e3b7d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1ZdtStepper.html#a769f1a0e22c9aff167e12358033e3b7d">feedback</a> ()</td></tr>
+<tr class="memdesc:a769f1a0e22c9aff167e12358033e3b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取电机状态  <br /></td></tr>
+<tr class="separator:a769f1a0e22c9aff167e12358033e3b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="abbf16e8121dd4e9735add43a1a428ec6" name="abbf16e8121dd4e9735add43a1a428ec6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbf16e8121dd4e9735add43a1a428ec6">&#9670;&#160;</a></span>ZdtStepper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rm::device::ZdtStepper::ZdtStepper </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrm_1_1hal_1_1SerialInterface.html">hal::SerialInterface</a> &amp;&#160;</td>
+          <td class="paramname"><em>serial</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
+          <td class="paramname"><em>motor_id</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1c7b26483b80aea71bcd58bd5465bffb" name="a1c7b26483b80aea71bcd58bd5465bffb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c7b26483b80aea71bcd58bd5465bffb">&#9670;&#160;</a></span>~ZdtStepper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rm::device::ZdtStepper::~ZdtStepper </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a769f1a0e22c9aff167e12358033e3b7d" name="a769f1a0e22c9aff167e12358033e3b7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a769f1a0e22c9aff167e12358033e3b7d">&#9670;&#160;</a></span>feedback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto rm::device::ZdtStepper::feedback </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取电机状态 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>：电机地址 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab232a67b96e5e64f22f98c7f5cd018d8" name="ab232a67b96e5e64f22f98c7f5cd018d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab232a67b96e5e64f22f98c7f5cd018d8">&#9670;&#160;</a></span>MotorPosCtrl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rm::device::ZdtStepper::MotorPosCtrl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
+          <td class="paramname"><em>dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
+          <td class="paramname"><em>vel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
+          <td class="paramname"><em>acc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td>
+          <td class="paramname"><em>clk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>raF</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>snF</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>位置模式 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr：电机地址</td><td></td></tr>
+    <tr><td class="paramname">dir</td><td>：方向 ，0为CW，其余值为CCW </td></tr>
+    <tr><td class="paramname">vel</td><td>：速度(RPM) ，范围0 - 5000RPM </td></tr>
+    <tr><td class="paramname">acc</td><td>：加速度 ，范围0 - 255，注意：0是直接启动 </td></tr>
+    <tr><td class="paramname">clk</td><td>：脉冲数 ，范围0- (2^32 - 1)个 </td></tr>
+    <tr><td class="paramname">raF</td><td>：相位/绝对标志，false为相对运动，true为绝对值运动 </td></tr>
+    <tr><td class="paramname">snF</td><td>：多机同步标志 ，false为不启用，true为启用 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">地址</td><td>+ 功能码 + 命令状态 + 校验字节 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abc30c83b1e51e507cb26535a30a7558b" name="abc30c83b1e51e507cb26535a30a7558b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc30c83b1e51e507cb26535a30a7558b">&#9670;&#160;</a></span>MotorSyncCtrl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rm::device::ZdtStepper::MotorSyncCtrl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
+          <td class="paramname"><em>addr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>多机同步运动 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>：电机地址 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">地址</td><td>+ 功能码 + 命令状态 + 校验字节 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a785f0cb3dddbd2244b40f58bc2cb9323" name="a785f0cb3dddbd2244b40f58bc2cb9323"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a785f0cb3dddbd2244b40f58bc2cb9323">&#9670;&#160;</a></span>MotorVelCtrl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rm::device::ZdtStepper::MotorVelCtrl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
+          <td class="paramname"><em>dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
+          <td class="paramname"><em>vel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
+          <td class="paramname"><em>acc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>snF</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>速度模式 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr：电机地址</td><td></td></tr>
+    <tr><td class="paramname">dir</td><td>：方向 ，0为CW，其余值为CCW </td></tr>
+    <tr><td class="paramname">vel</td><td>：速度 ，范围0 - 5000RPM </td></tr>
+    <tr><td class="paramname">acc</td><td>：加速度 ，范围0 - 255，注意：0是直接启动 </td></tr>
+    <tr><td class="paramname">snF</td><td>：多机同步标志，false为不启用，true为启用 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">地址</td><td>+ 功能码 + 命令状态 + 校验字节 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6546c76676fbc1fbf41af4ac97cb547f" name="a6546c76676fbc1fbf41af4ac97cb547f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6546c76676fbc1fbf41af4ac97cb547f">&#9670;&#160;</a></span>ReadPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rm::device::ZdtStepper::ReadPos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
+          <td class="paramname"><em>addr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>读取电机位置 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>：电机地址 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a08513f2f9ca9a44d45f23852acdc1d5a" name="a08513f2f9ca9a44d45f23852acdc1d5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08513f2f9ca9a44d45f23852acdc1d5a">&#9670;&#160;</a></span>ReadVel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rm::device::ZdtStepper::ReadVel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
+          <td class="paramname"><em>addr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>读取电机速度 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>：电机地址 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="afda941f79b5e972550fe55217ed24e87" name="afda941f79b5e972550fe55217ed24e87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afda941f79b5e972550fe55217ed24e87">&#9670;&#160;</a></span>pos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::device::ZdtStepper::pos {0.0f}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2b0c49a17c047ed0508324a77bf4bbdc" name="a2b0c49a17c047ed0508324a77bf4bbdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b0c49a17c047ed0508324a77bf4bbdc">&#9670;&#160;</a></span>vel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::device::ZdtStepper::vel {0.0f}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/librm/device/actuator/<a class="el" href="zdt__stepper_8hpp_source.html">zdt_stepper.hpp</a></li>
+<li>src/librm/device/actuator/<a class="el" href="zdt__stepper_8cc.html">zdt_stepper.cc</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1device.html">device</a></li><li class="navelem"><a class="el" href="classrm_1_1device_1_1ZdtStepper.html">ZdtStepper</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

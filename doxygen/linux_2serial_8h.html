@@ -100,18 +100,16 @@ $(document).ready(function(){initNavTree('linux_2serial_8h.html',''); initResiza
 
 <p>串口类库  
 <a href="#details">更多...</a></p>
-<div class="textblock"><code>#include &lt;string&gt;</code><br />
-<code>#include &lt;chrono&gt;</code><br />
-<code>#include &lt;mutex&gt;</code><br />
-<code>#include &quot;serial/serial.h&quot;</code><br />
+<div class="textblock"><code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;boost/asio.hpp&gt;</code><br />
 <code>#include &quot;<a class="el" href="serial__interface_8h_source.html">librm/hal/serial_interface.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="thread__pool_8hpp_source.html">librm/core/thread_pool.hpp</a>&quot;</code><br />
 </div>
 <p><a href="linux_2serial_8h_source.html">浏览源代码.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 类</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1linux___1_1Serial.html">rm::hal::linux_::Serial</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">基于boost::asio::serial_port的串口二次封装  <a href="classrm_1_1hal_1_1linux___1_1Serial.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>

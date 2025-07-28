@@ -28,6 +28,7 @@ var namespacerm_1_1device =
     [ "SuperCap", "classrm_1_1device_1_1SuperCap.html", "classrm_1_1device_1_1SuperCap" ],
     [ "UnitreeMotor", "classrm_1_1device_1_1UnitreeMotor.html", "classrm_1_1device_1_1UnitreeMotor" ],
     [ "VT03", "classrm_1_1device_1_1VT03.html", "classrm_1_1device_1_1VT03" ],
+    [ "ZdtStepper", "classrm_1_1device_1_1ZdtStepper.html", "classrm_1_1device_1_1ZdtStepper" ],
     [ "GM6020", "namespacerm_1_1device.html#a7596f33b44756a54da20dd7205da8832", null ],
     [ "M2006", "namespacerm_1_1device.html#acf91c24f686ca4f58d88b4a2c8c81acd", null ],
     [ "M3508", "namespacerm_1_1device.html#a5b66ef73417ff0bd6e44f46e821c0942", null ],
@@ -143,5 +144,6 @@ var namespacerm_1_1device =
     [ "kRefProtocolFrameMaxLen", "namespacerm_1_1device.html#ac14725632152fe09f59869931175d64d", null ],
     [ "kRefProtocolHeaderLen", "namespacerm_1_1device.html#a5e6c6d20806adea8e5b4f09b2f90de7d", null ],
     [ "kRefProtocolHeaderSof", "namespacerm_1_1device.html#ae24d9b479465a3d5c22eaa6ac48e5744", null ],
-    [ "referee_protocol_memory_map", "namespacerm_1_1device.html#ae78b737085e20d95c002b0bcb5cdbc65", null ]
+    [ "referee_protocol_memory_map", "namespacerm_1_1device.html#ae78b737085e20d95c002b0bcb5cdbc65", null ],
+    [ "rx_callback_map_emotor", "namespacerm_1_1device.html#ac08ce60f45a779194f2ad543a544d38b", null ]
 ];

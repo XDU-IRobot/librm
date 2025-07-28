@@ -96,5 +96,6 @@ var hierarchy =
       [ "rm::modules::algorithm::accelMeasurement", "classrm_1_1modules_1_1algorithm_1_1accelMeasurement.html", null ]
     ] ],
     [ "rm::modules::VofaPlotter", "classrm_1_1modules_1_1VofaPlotter.html", null ],
-    [ "rm::device::VT03", "classrm_1_1device_1_1VT03.html", null ]
+    [ "rm::device::VT03", "classrm_1_1device_1_1VT03.html", null ],
+    [ "rm::device::ZdtStepper", "classrm_1_1device_1_1ZdtStepper.html", null ]
 ];
