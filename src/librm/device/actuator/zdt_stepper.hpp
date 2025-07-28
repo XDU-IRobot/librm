@@ -10,7 +10,7 @@ using namespace rm;
 namespace rm::device {
 
 class ZdtStepper {
-  public:
+ public:
   ZdtStepper(hal::SerialInterface &serial, u8 motor_id = 0);
   ~ZdtStepper() = default;
 
@@ -27,17 +27,17 @@ class ZdtStepper {
   [[nodiscard]] f32 vel() { return this->motor_vel_; }
   [[nodiscard]] f32 pos() { return this->motor_pos_; }
 
-  private:
-    hal::SerialInterface *serial_;
-    u32 pos_{0};
-    u16 vel_{0};
+ private:
+  hal::SerialInterface *serial_;
+  u32 pos_{0};
+  u16 vel_{0};
 
-    f32 motor_pos_{0.0f};
-    f32 motor_vel_{0.0f};
+  f32 motor_pos_{0.0f};
+  f32 motor_vel_{0.0f};
 
-    u8 motor_id_{0};
+  u8 motor_id_{0};
 };
 
-}
+}  // namespace rm::device
 
 #endif
