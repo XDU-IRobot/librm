@@ -46,8 +46,8 @@ Serial::~Serial() {
 
 Serial::Serial(Serial &&other)
     : serial_port_{std::move(other.serial_port_)},
-      rx_callback_{std::move(other.rx_callback_)}, rx_thread_{std::move(
-                                                       other.rx_thread_)},
+      rx_callback_{std::move(other.rx_callback_)},
+      rx_thread_{std::move(other.rx_thread_)},
       rx_thread_running_{other.rx_thread_running_.load()},
       rx_buffer_{std::move(other.rx_buffer_)} {}
 
