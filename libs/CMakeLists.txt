@@ -17,6 +17,9 @@ add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/kalman)
 # eigen - https://eigen.tuxfamily.org
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/eigen)
 
+# etl - https://github.com/ETLCPP/etl
+add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/etl)
+
 # pack up all third party libraries to a single target
 add_library(third_party INTERFACE)
 if(LIBRM_PLATFORM STREQUAL "LINUX")

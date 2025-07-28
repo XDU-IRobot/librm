@@ -3,3 +3,6 @@
 	url = https://github.com/SF4cl/kalman.git
 [submodule "libs/kalman/"]
 	branch = master
+[submodule "libs/etl"]
+	path = libs/etl
+	url = https://github.com/ETLCPP/etl.git
