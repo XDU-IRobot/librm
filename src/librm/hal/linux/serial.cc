@@ -44,6 +44,24 @@ Serial::~Serial() {
   }
 }
 
+Serial::Serial(Serial &&other)
+    : serial_port_{std::move(other.serial_port_)},
+      rx_callback_{std::move(other.rx_callback_)}, rx_thread_{std::move(
+                                                       other.rx_thread_)},
+      rx_thread_running_{other.rx_thread_running_.load()},
+      rx_buffer_{std::move(other.rx_buffer_)} {}
+
+Serial &Serial::operator=(Serial &&other) {
+  if (this != &other) {
+    serial_port_ = std::move(other.serial_port_);
+    rx_callback_ = std::move(other.rx_callback_);
+    rx_thread_ = std::move(other.rx_thread_);
+    rx_thread_running_.store(other.rx_thread_running_.load());
+    rx_buffer_ = std::move(other.rx_buffer_);
+  }
+  return *this;
+}
+
 void Serial::Begin() {
   if (!serial_port_.is_open()) {
     Throw(std::runtime_error("boost::asio::serial_port object is not opened"));

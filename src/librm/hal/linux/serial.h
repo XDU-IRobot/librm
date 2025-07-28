@@ -30,7 +30,7 @@
 
 #include <thread>
 
-#include "boost/asio.hpp"
+#include <boost/asio.hpp>
 
 #include "librm/hal/serial_interface.h"
 
@@ -43,6 +43,14 @@ class Serial : public hal::SerialInterface {
  public:
   Serial() = delete;
   ~Serial() override;
+
+  // 禁止复制构造
+  Serial(const Serial &) = delete;
+  Serial &operator=(const Serial &) = delete;
+
+  // 移动构造
+  Serial(Serial &&other);
+  Serial &operator=(Serial &&other);
 
   /**
    * @note
