@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 3.13)
 
-if (NOT LIBRM_PLATFORM STREQUAL "STM32")
-    # serial - https://github.com/wjwwood/serial - https://github.com/lunarifish/serial
-    add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/serial)
-endif ()
+if(NOT LIBRM_PLATFORM STREQUAL "STM32")
+    # boost::asio
+    find_package(Boost REQUIRED COMPONENTS system)
+    # pthread
+    find_package(Threads REQUIRED)
+endif()
 
 # kalman - https://github.com/mherb/kalman -  https://github.com/SF4cl/kalman.git
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/kalman)
@@ -17,11 +19,11 @@ target_include_directories(eternal INTERFACE ${CMAKE_CURRENT_LIST_DIR}/eternal/i
 
 # pack up all third party libraries to a single target
 add_library(third_party INTERFACE)
-if (LIBRM_PLATFORM STREQUAL "LINUX")
-    target_link_libraries(third_party INTERFACE serial)
-endif ()
+if(LIBRM_PLATFORM STREQUAL "LINUX")
+    target_link_libraries(third_party INTERFACE Boost::system Threads::Threads)
+endif()
 
-if (LIBRM_PLATFORM_LINUX_TYPE STREQUAL "RASPI")
+if(LIBRM_PLATFORM_LINUX_TYPE STREQUAL "RASPI")
     find_library(WIRINGPI_LIBRARIES NAMES wiringPi)
     target_link_libraries(third_party INTERFACE ${WIRINGPI_LIBRARIES})
 endif()

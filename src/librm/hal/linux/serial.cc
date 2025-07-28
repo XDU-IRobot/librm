@@ -27,50 +27,68 @@
 
 #include "serial.h"
 
-#include <functional>
+#include "librm/core/exception.h"
 
 namespace rm::hal::linux_ {
 
-Serial::Serial(const char *dev, usize baud, usize rx_buffer_size, std::chrono::milliseconds timeout)
-    : dev_(dev),
-      serial_(dev, baud, serial::Timeout::simpleTimeout(timeout.count())),
-      rx_buf_{std::vector<u8>(rx_buffer_size), std::vector<u8>(rx_buffer_size)},
-      thread_pool_(std::make_unique<core::ThreadPool>(Serial::kMaxThreads)) {
-  if (!this->serial_.isOpen()) {
-    throw std::runtime_error("Failed to open serial port");
+Serial::Serial(boost::asio::serial_port &&serial_port, usize rx_buffer_size)
+    : serial_port_{std::move(serial_port)}, rx_buffer_{std::vector<u8>(
+                                                rx_buffer_size)} {}
+
+Serial::~Serial() {
+  rx_thread_running_.store(false);
+  if (rx_thread_.joinable()) {
+    rx_thread_.join();
+  }
+  if (serial_port_.is_open()) {
+    serial_port_.close();
   }
 }
 
-Serial::~Serial() { this->serial_.close(); }
+void Serial::Begin() {
+  if (!serial_port_.is_open()) {
+    Throw(std::runtime_error("boost::asio::serial_port object is not opened"));
+    return;
+  }
+  if (rx_thread_.joinable()) {
+    // 已经Begin过了
+    return;
+  }
 
-void Serial::Begin() { this->thread_pool_->enqueue(std::bind(&Serial::RecvThread, this)); }
+  rx_thread_running_.store(true);
+  rx_thread_ = std::thread{[this] {
+    while (serial_port_.is_open() && rx_thread_running_.load()) {
+      const usize bytes_read =
+          serial_port_.read_some(boost::asio::buffer(rx_buffer_));
+      if (bytes_read == 0) {
+        continue;
+      }
+      if (rx_callback_) {
+        rx_callback_(rx_buffer_, bytes_read);
+      }
+    }
+  }};
+}
 
 void Serial::Write(const u8 *data, usize size) {
-  this->serial_.write(data, size);
-  this->serial_.flush();
-}
-
-void Serial::AttachRxCallback(SerialRxCallbackFunction &callback) { this->rx_callback_ = &callback; }
-
-[[nodiscard]] const std::vector<u8> &Serial::rx_buffer() const { return this->rx_buf_[this->buffer_selector_]; }
-
-void Serial::RecvThread() {
-  for (;;) {
-    auto bytes_read =
-        this->serial_.read(this->rx_buf_[this->buffer_selector_], this->rx_buf_[this->buffer_selector_].size());
-    if (bytes_read == 0) {
-      continue;
-    }
-    this->buffer_selector_ = !this->buffer_selector_;  // 切换缓冲区
-
-    // 异步调用接收完成回调函数
-    if (this->rx_callback_ != nullptr) {
-      this->thread_pool_->enqueue([this, bytes_read]() {
-        std::lock_guard<std::mutex> lock(this->callback_mutex_);
-        (*this->rx_callback_)(this->rx_buf_[this->buffer_selector_], bytes_read);
-      });
-    }
+  if (!serial_port_.is_open()) {
+    Throw(std::runtime_error("boost::asio::serial_port object is not opened"));
+    return;
+  }
+  try {
+    serial_port_.write_some(boost::asio::buffer(data, size));
+  } catch (const std::exception &e) {
+    Throw(std::runtime_error("Failed to write to serial port: " +
+                             std::string(e.what())));
   }
 }
 
-}  // namespace rm::hal::linux_
+void Serial::AttachRxCallback(SerialRxCallbackFunction &callback) {
+  rx_callback_ = callback;
+}
+
+[[nodiscard]] const std::vector<u8> &Serial::rx_buffer() const {
+  return rx_buffer_;
+}
+
+} // namespace rm::hal::linux_

@@ -1,6 +1,3 @@
-[submodule "libs/serial"]
-	path = libs/serial
-	url = https://github.com/lunarifish/serial.git
 [submodule "libs/kalman"]
 	path = libs/kalman
 	url = https://github.com/SF4cl/kalman.git
