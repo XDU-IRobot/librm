@@ -1,3 +1,29 @@
+/*
+  Copyright (c) 2024 XDU-IRobot
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+*/
+
+/**
+ * @file  librm/device/actuator/zdt_stepper.cc
+ * @brief 张大头闭环步进驱动（Emm_V5.0）
+ */
 
 #include "zdt_stepper.hpp"
 
@@ -7,12 +33,10 @@ std::unordered_map<rm::hal::SerialInterface *,
                    std::unordered_map<rm::u8, std::function<void(const std::vector<rm::u8> &, rm::u16)>>>
     rx_callback_map_emotor;
 
-ZdtStepper::ZdtStepper(hal::SerialInterface &serial, u8 motor_id) : serial_(&serial) {
+ZdtStepper::ZdtStepper(hal::SerialInterface &serial, u8 motor_id) : serial_{&serial}, motor_id_{motor_id} {
   rx_callback_map_emotor[&serial][motor_id] =
       std::bind(&ZdtStepper::RxCallback, this, std::placeholders::_1, std::placeholders::_2);
   serial_->AttachRxCallback(rx_callback_map_emotor[&serial][motor_id]);
-
-  motor_id_ = motor_id;
 }
 
 void ZdtStepper::MotorVelCtrl(u8 addr, u8 dir, u16 vel, u8 acc, bool snF) {
@@ -93,17 +117,19 @@ void ZdtStepper::ReadVel(u8 addr) {
 
 void ZdtStepper::RxCallback(const std::vector<rm::u8> &data, rm::u16 rx_len) {
   if (data[0] == motor_id_ && data[1] == 0x36 && rx_len == 8) {
-    pos_ = static_cast<uint32_t>((static_cast<uint32_t>(data[3]) << 24) | (static_cast<uint32_t>(data[4]) << 16) |
-                                 (static_cast<uint32_t>(data[5]) << 8) | (static_cast<uint32_t>(data[6]) << 0));
-    motor_pos_ = (float)pos_ * 360.0f / 65536.0f;
+    const u32 pos_raw =
+        static_cast<uint32_t>((static_cast<uint32_t>(data[3]) << 24) | (static_cast<uint32_t>(data[4]) << 16) |
+                              (static_cast<uint32_t>(data[5]) << 8) | (static_cast<uint32_t>(data[6]) << 0));
+    feedback_.pos = (float)pos_raw * 360.0f / 65536.0f;
     if (data[2]) {
-      motor_pos_ = -motor_pos_;
+      feedback_.pos = -feedback_.pos;
     }
   } else if (data[0] == motor_id_ && data[1] == 0x35 && rx_len == 6) {
-    vel_ = static_cast<uint16_t>((static_cast<uint16_t>(data[3]) << 8) | (static_cast<uint16_t>(data[4]) << 0));
-    motor_vel_ = vel_;
+    const u16 vel_raw =
+        static_cast<uint16_t>((static_cast<uint16_t>(data[3]) << 8) | (static_cast<uint16_t>(data[4]) << 0));
+    feedback_.vel = vel_raw;
     if (data[2]) {
-      motor_vel_ = -motor_vel_;
+      feedback_.vel = -feedback_.vel;
     }
   }
 }
