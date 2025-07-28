@@ -79,5 +79,10 @@ jobs:
           path: '.'
           submodules: 'recursive'
 
+      - name: Install dependencies
+        run: |
+          apt update
+          apt install -y libboost-all-dev
+
       - name: Build
         run: cmake . -Bbuild -DCMAKE_BUILD_TYPE=$BUILD_TYPE && cmake --build build -j
