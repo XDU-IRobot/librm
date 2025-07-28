@@ -40,7 +40,7 @@ namespace rm::hal::linux_ {
  * @brief 基于boost::asio::serial_port的串口二次封装
  */
 class Serial : public hal::SerialInterface {
-public:
+ public:
   Serial() = delete;
   ~Serial() override;
 
@@ -51,8 +51,7 @@ public:
    * @param boost_serial_port_object  boost::asio::serial_port对象的右值引用
    * @param rx_buffer_size            接收缓冲区大小
    */
-  Serial(boost::asio::serial_port &&boost_serial_port_object,
-         usize rx_buffer_size);
+  Serial(boost::asio::serial_port &&boost_serial_port_object, usize rx_buffer_size);
 
   /**
    * @brief 打开串口，开始接收
@@ -80,15 +79,15 @@ public:
    */
   auto &boost_serial_port_object() { return serial_port_; }
 
-private:
-  boost::asio::serial_port serial_port_; ///< 接管的boost::asio::serial_port对象
-  SerialRxCallbackFunction rx_callback_{nullptr}; ///< 接收完成回调函数
-  std::thread rx_thread_{};                       ///< 接收线程
+ private:
+  boost::asio::serial_port serial_port_;           ///< 接管的boost::asio::serial_port对象
+  SerialRxCallbackFunction rx_callback_{nullptr};  ///< 接收完成回调函数
+  std::thread rx_thread_{};                        ///< 接收线程
   std::atomic<bool> rx_thread_running_{
-      false}; ///< 控制接收线程是否运行，Serial对象析构时会将其设置为false，从而结束接收线程
-  std::vector<u8> rx_buffer_; ///< 接收缓冲区
+      false};  ///< 控制接收线程是否运行，Serial对象析构时会将其设置为false，从而结束接收线程
+  std::vector<u8> rx_buffer_;  ///< 接收缓冲区
 };
 
-} // namespace rm::hal::linux_
+}  // namespace rm::hal::linux_
 
 #endif

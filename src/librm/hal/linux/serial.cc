@@ -32,8 +32,7 @@
 namespace rm::hal::linux_ {
 
 Serial::Serial(boost::asio::serial_port &&serial_port, usize rx_buffer_size)
-    : serial_port_{std::move(serial_port)}, rx_buffer_{std::vector<u8>(
-                                                rx_buffer_size)} {}
+    : serial_port_{std::move(serial_port)}, rx_buffer_{std::vector<u8>(rx_buffer_size)} {}
 
 Serial::~Serial() {
   rx_thread_running_.store(false);
@@ -58,8 +57,7 @@ void Serial::Begin() {
   rx_thread_running_.store(true);
   rx_thread_ = std::thread{[this] {
     while (serial_port_.is_open() && rx_thread_running_.load()) {
-      const usize bytes_read =
-          serial_port_.read_some(boost::asio::buffer(rx_buffer_));
+      const usize bytes_read = serial_port_.read_some(boost::asio::buffer(rx_buffer_));
       if (bytes_read == 0) {
         continue;
       }
@@ -78,17 +76,12 @@ void Serial::Write(const u8 *data, usize size) {
   try {
     serial_port_.write_some(boost::asio::buffer(data, size));
   } catch (const std::exception &e) {
-    Throw(std::runtime_error("Failed to write to serial port: " +
-                             std::string(e.what())));
+    Throw(std::runtime_error("Failed to write to serial port: " + std::string(e.what())));
   }
 }
 
-void Serial::AttachRxCallback(SerialRxCallbackFunction &callback) {
-  rx_callback_ = callback;
-}
+void Serial::AttachRxCallback(SerialRxCallbackFunction &callback) { rx_callback_ = callback; }
 
-[[nodiscard]] const std::vector<u8> &Serial::rx_buffer() const {
-  return rx_buffer_;
-}
+[[nodiscard]] const std::vector<u8> &Serial::rx_buffer() const { return rx_buffer_; }
 
-} // namespace rm::hal::linux_
+}  // namespace rm::hal::linux_
