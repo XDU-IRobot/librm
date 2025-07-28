@@ -1,8 +1,5 @@
 [submodule "libs/kalman"]
 	path = libs/kalman
 	url = https://github.com/SF4cl/kalman.git
-[submodule "libs/eternal"]
-	path = libs/eternal
-	url = https://github.com/mapbox/eternal.git
 [submodule "libs/kalman/"]
 	branch = master

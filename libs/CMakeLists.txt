@@ -17,10 +17,6 @@ add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/kalman)
 # eigen - https://eigen.tuxfamily.org
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/eigen)
 
-# eternal - https://github.com/mapbox/eternal
-add_library(eternal INTERFACE)
-target_include_directories(eternal INTERFACE ${CMAKE_CURRENT_LIST_DIR}/eternal/include)
-
 # pack up all third party libraries to a single target
 add_library(third_party INTERFACE)
 if(LIBRM_PLATFORM STREQUAL "LINUX")
