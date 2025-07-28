@@ -34,6 +34,9 @@
 #elif defined(STM32H723xx) && __has_include("stm32h723xx.h") && __has_include("stm32h7xx_hal.h")
 #include "stm32h723xx.h"
 #include "stm32h7xx_hal.h"
+#elif defined(STM32H743xx) && __has_include("stm32h743xx.h") && __has_include("stm32h7xx_hal.h")
+#include "stm32h743xx.h"
+#include "stm32h7xx_hal.h"
 #elif defined(STM32L412xx) && __has_include("stm32l412xx.h") && __has_include("stm32l4xx_hal.h")
 #include "stm32l412xx.h"
 #include "stm32l4xx_hal.h"
