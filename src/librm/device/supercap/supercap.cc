@@ -89,8 +89,7 @@ void SuperCap::UpdateSettings(i16 power_limit, i16 output_limit, i16 input_limit
   this->tx_buf_[4] = input_limit >> 8;
   this->tx_buf_[5] = input_limit;
   this->tx_buf_[6] = 0u;
-  this->tx_buf_[7] |= power_switch;
-  this->tx_buf_[7] |= enable_log << 1;
+  this->tx_buf_[7] = power_switch | (enable_log << 1);
   this->can_->Write(0x2f, this->tx_buf_, 8);
 }
 
