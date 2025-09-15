@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>librm: src/librm/hal/raspi/wiringpi_init.hpp 源文件</title>
+<title>librm: src/librm/modules/algorithm/float16.hpp 源文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,7 +70,7 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('wiringpi__init_8hpp_source.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('float16_8hpp_source.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -96,10 +96,10 @@ $(document).ready(function(){initNavTree('wiringpi__init_8hpp_source.html',''); 
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">wiringpi_init.hpp</div></div>
+  <div class="headertitle"><div class="title">float16.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="wiringpi__init_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<a href="float16_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2025 XDU-IRobot</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
@@ -121,26 +121,31 @@ $(document).ready(function(){initNavTree('wiringpi__init_8hpp_source.html',''); 
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef LIBRM_HAL_RASPI_WIRINGPI_INIT_HPP</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_HAL_RASPI_WIRINGPI_INIT_HPP</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef LIBRM_MODULES_ALGORITHM_FLOAT16_HPP</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_MODULES_ALGORITHM_FLOAT16_HPP</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_LINUX_RASPI)</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">namespace </span>rm::hal::raspi {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1modules_1_1algorithm.html">rm::modules::algorithm</a> {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keywordtype">void</span> InitWiringPi();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="namespacerm_1_1modules_1_1algorithm.html#a2f002fb1c540189c2ec694b9c9cda697">   35</a></span><span class="keyword">typedef</span> uint16_t <a class="code hl_typedef" href="namespacerm_1_1modules_1_1algorithm.html#a2f002fb1c540189c2ec694b9c9cda697">f16</a>;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}  <span class="comment">// namespace rm::hal::raspi</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HAL_RASPI_WIRINGPI_INIT_HPP</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keywordtype">float</span> <a class="code hl_function" href="namespacerm_1_1modules_1_1algorithm.html#ac1ff1e8c3f68a79c253fe139e6533ebd">F16ToF32</a>(<a class="code hl_typedef" href="namespacerm_1_1modules_1_1algorithm.html#a2f002fb1c540189c2ec694b9c9cda697">f16</a> i);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><a class="code hl_typedef" href="namespacerm_1_1modules_1_1algorithm.html#a2f002fb1c540189c2ec694b9c9cda697">f16</a> <a class="code hl_function" href="namespacerm_1_1modules_1_1algorithm.html#a1dc72a39f4842241baeb1bf74840912e">F32ToF16</a>(<span class="keywordtype">float</span> value);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}  <span class="comment">// namespace rm::modules::algorithm</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_MODULES_ALGORITHM_FLOAT16_HPP</span></div>
+<div class="ttc" id="anamespacerm_1_1modules_1_1algorithm_html"><div class="ttname"><a href="namespacerm_1_1modules_1_1algorithm.html">rm::modules::algorithm</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.h:33</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_1_1algorithm_html_a1dc72a39f4842241baeb1bf74840912e"><div class="ttname"><a href="namespacerm_1_1modules_1_1algorithm.html#a1dc72a39f4842241baeb1bf74840912e">rm::modules::algorithm::F32ToF16</a></div><div class="ttdeci">f16 F32ToF16(float value)</div><div class="ttdef"><b>Definition</b> float16.cc:140</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_1_1algorithm_html_a2f002fb1c540189c2ec694b9c9cda697"><div class="ttname"><a href="namespacerm_1_1modules_1_1algorithm.html#a2f002fb1c540189c2ec694b9c9cda697">rm::modules::algorithm::f16</a></div><div class="ttdeci">uint16_t f16</div><div class="ttdef"><b>Definition</b> float16.hpp:35</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_1_1algorithm_html_ac1ff1e8c3f68a79c253fe139e6533ebd"><div class="ttname"><a href="namespacerm_1_1modules_1_1algorithm.html#ac1ff1e8c3f68a79c253fe139e6533ebd">rm::modules::algorithm::F16ToF32</a></div><div class="ttdeci">float F16ToF32(f16 i)</div><div class="ttdef"><b>Definition</b> float16.cc:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_12d4920679a1960aa4499f9d88e747a8.html">hal</a></li><li class="navelem"><a class="el" href="dir_b08a8a6b4a4de76d8ca4a1f4a79aea92.html">raspi</a></li><li class="navelem"><a class="el" href="wiringpi__init_8hpp.html">wiringpi_init.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_9bd6aa59caad6cbef13c0eefdd946af0.html">modules</a></li><li class="navelem"><a class="el" href="dir_eabaf14e3296d098547794244d58ab73.html">algorithm</a></li><li class="navelem"><a class="el" href="float16_8hpp.html">float16.hpp</a></li>
     <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

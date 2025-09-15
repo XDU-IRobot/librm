@@ -30,6 +30,7 @@ var namespacerm_1_1modules_1_1algorithm =
     [ "SteeringChassis", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html", "classrm_1_1modules_1_1algorithm_1_1SteeringChassis" ],
     [ "SystemModel", "classrm_1_1modules_1_1algorithm_1_1SystemModel.html", "classrm_1_1modules_1_1algorithm_1_1SystemModel" ],
     [ "ThresholdTrigger", "classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html", "classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger" ],
+    [ "f16", "namespacerm_1_1modules_1_1algorithm.html#a2f002fb1c540189c2ec694b9c9cda697", null ],
     [ "PIDType", "namespacerm_1_1modules_1_1algorithm.html#a6bcd5a3d2daed8d3f96172b9bcc1f662", [
       [ "kPosition", "namespacerm_1_1modules_1_1algorithm.html#a6bcd5a3d2daed8d3f96172b9bcc1f662aea78f90b3c3afd64e139a391d6fdd88a", null ],
       [ "kDelta", "namespacerm_1_1modules_1_1algorithm.html#a6bcd5a3d2daed8d3f96172b9bcc1f662ac65e995e8c320e4c9a7df020723a6821", null ]
@@ -46,6 +47,8 @@ var namespacerm_1_1modules_1_1algorithm =
     [ "CrcCcitt", "namespacerm_1_1modules_1_1algorithm.html#ae87fd42e07b56aebf173706575c133c1", null ],
     [ "CrcCcitt", "namespacerm_1_1modules_1_1algorithm.html#a47c3c985142cf1358ff35fa0dd64902f", null ],
     [ "CrcCcitt", "namespacerm_1_1modules_1_1algorithm.html#ac8b0b4b101881e319596fd09b8e2f1fd", null ],
+    [ "F16ToF32", "namespacerm_1_1modules_1_1algorithm.html#ac1ff1e8c3f68a79c253fe139e6533ebd", null ],
+    [ "F32ToF16", "namespacerm_1_1modules_1_1algorithm.html#a1dc72a39f4842241baeb1bf74840912e", null ],
     [ "InvSqrt", "namespacerm_1_1modules_1_1algorithm.html#a9d4b5b00a44f29a082ff4ad27d362b4e", null ],
     [ "CRC16_INIT", "namespacerm_1_1modules_1_1algorithm.html#ab56a5ae93d5ac6bf6fff3facf3ec8cd2", null ],
     [ "CRC16_TABLE", "namespacerm_1_1modules_1_1algorithm.html#a4a68d57100edf04ef4942ab3feb132dd", null ],

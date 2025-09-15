@@ -4,6 +4,8 @@ var dir_eabaf14e3296d098547794244d58ab73 =
     [ "chassis_fkik.hpp", "chassis__fkik_8hpp.html", "chassis__fkik_8hpp" ],
     [ "crc.cc", "crc_8cc.html", "crc_8cc" ],
     [ "crc.h", "crc_8h.html", "crc_8h" ],
+    [ "float16.cc", "float16_8cc.html", "float16_8cc" ],
+    [ "float16.hpp", "float16_8hpp.html", "float16_8hpp" ],
     [ "pid.hpp", "pid_8hpp.html", "pid_8hpp" ],
     [ "threshold_trigger.hpp", "threshold__trigger_8hpp.html", "threshold__trigger_8hpp" ],
     [ "utils.cc", "utils_8cc.html", "utils_8cc" ],
