@@ -31,7 +31,7 @@ if(LIBRM_PLATFORM_LINUX_TYPE STREQUAL "RASPI")
     target_link_libraries(third_party INTERFACE ${WIRINGPI_LIBRARIES})
 endif()
 
-target_link_libraries(third_party INTERFACE Kalman eigen)
+target_link_libraries(third_party INTERFACE Kalman eigen etl::etl)
 
 unset(BUILD_TESTS)
 unset(BUILD_EXHAUSTIVE_TESTS)

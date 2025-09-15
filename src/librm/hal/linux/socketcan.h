@@ -49,7 +49,7 @@
 
 namespace rm::hal::linux_ {
 
-class SocketCan : public hal::CanInterface, public hal::CanDeviceRegistry {
+class SocketCan : public hal::CanInterface {
  public:
   explicit SocketCan(const char *dev);
   SocketCan() = default;

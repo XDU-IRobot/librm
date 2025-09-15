@@ -41,7 +41,7 @@
 
 namespace rm::hal::stm32 {
 
-class FdCan : public CanInterface, public CanDeviceRegistry {
+class FdCan : public CanInterface {
  public:
   explicit FdCan(FDCAN_HandleTypeDef &hfdcan);
 

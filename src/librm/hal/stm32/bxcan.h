@@ -43,7 +43,7 @@ namespace rm::hal::stm32 {
 /**
  * @brief bxCAN类库
  */
-class BxCan final : public CanInterface, public CanDeviceRegistry {
+class BxCan final : public CanInterface {
  public:
   explicit BxCan(CAN_HandleTypeDef &hcan);
   BxCan() = default;

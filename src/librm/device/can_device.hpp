@@ -53,7 +53,7 @@ class CanDevice {
    */
   template <typename... IdList>
   explicit CanDevice(hal::CanInterface &can, IdList... rx_std_ids) : can_(&can) {
-    (dynamic_cast<hal::CanDeviceRegistry *>(&can)->RegisterDevice(*this, rx_std_ids), ...);
+    (can.RegisterDevice(*this, rx_std_ids), ...);
     (rx_std_ids_.push_back(rx_std_ids), ...);
   }
 
@@ -62,7 +62,7 @@ class CanDevice {
    */
   virtual ~CanDevice() {
     // 析构时，把这个设备对象从CAN总线的注册列表中移除
-    dynamic_cast<hal::CanDeviceRegistry *>(can_)->UnregisterDevice(*this);
+    can_->UnregisterDevice(*this);
   }
 
   /**
@@ -73,7 +73,7 @@ class CanDevice {
     rx_std_ids_ = old.rx_std_ids_;
     // 设备对象复制之后，把新对象注册给CAN总线
     for (const auto id : old.rx_std_ids_) {
-      dynamic_cast<hal::CanDeviceRegistry *>(can_)->RegisterDevice(*this, id);
+      can_->RegisterDevice(*this, id);
     }
   }
   /**
@@ -85,7 +85,7 @@ class CanDevice {
     rx_std_ids_ = old.rx_std_ids_;
     // 设备对象复制之后，把新对象注册给CAN总线
     for (const auto id : old.rx_std_ids_) {
-      dynamic_cast<hal::CanDeviceRegistry *>(can_)->RegisterDevice(*this, id);
+      can_->RegisterDevice(*this, id);
     }
     return *this;
   }
@@ -97,9 +97,9 @@ class CanDevice {
     can_ = old.can_;
     rx_std_ids_ = std::move(old.rx_std_ids_);
     // 把被移动的设备对象从CAN总线的注册列表中移除，然后把新对象注册给CAN总线
-    dynamic_cast<hal::CanDeviceRegistry *>(can_)->UnregisterDevice(old);
+    can_->UnregisterDevice(old);
     for (const auto &id : rx_std_ids_) {
-      dynamic_cast<hal::CanDeviceRegistry *>(can_)->RegisterDevice(*this, id);
+      can_->RegisterDevice(*this, id);
     }
   }
 
@@ -110,9 +110,9 @@ class CanDevice {
     can_ = old.can_;
     rx_std_ids_ = std::move(old.rx_std_ids_);
     // 同上
-    dynamic_cast<hal::CanDeviceRegistry *>(can_)->UnregisterDevice(old);
+    can_->UnregisterDevice(old);
     for (const auto &id : rx_std_ids_) {
-      dynamic_cast<hal::CanDeviceRegistry *>(can_)->RegisterDevice(*this, id);
+      can_->RegisterDevice(*this, id);
     }
     return *this;
   }
