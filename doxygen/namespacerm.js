@@ -16,5 +16,5 @@ var namespacerm =
     [ "u64", "namespacerm.html#a0863ccbdab2c54f662053f0496ed09f4", null ],
     [ "u8", "namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34", null ],
     [ "usize", "namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630", null ],
-    [ "Throw", "namespacerm.html#a5d5138b47a87a72482d492dc3c8ed2ee", null ]
+    [ "Throw", "namespacerm.html#af69326a719d5dfef55cdbe321f815a44", null ]
 ];

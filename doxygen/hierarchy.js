@@ -4,7 +4,6 @@ var hierarchy =
       [ "rm::modules::algorithm::EkfAhrs", "classrm_1_1modules_1_1algorithm_1_1EkfAhrs.html", null ],
       [ "rm::modules::algorithm::MahonyAhrs", "classrm_1_1modules_1_1algorithm_1_1MahonyAhrs.html", null ]
     ] ],
-    [ "rm::hal::linux_::AsyncCanDevice", "structrm_1_1hal_1_1linux___1_1AsyncCanDevice.html", null ],
     [ "rm::device::BMI088", "classrm_1_1device_1_1BMI088.html", null ],
     [ "rm::device::CanDevice", "classrm_1_1device_1_1CanDevice.html", [
       [ "rm::device::DirectDriveMotor", "classrm_1_1device_1_1DirectDriveMotor.html", null ],

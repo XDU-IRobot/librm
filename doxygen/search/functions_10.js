@@ -9,7 +9,7 @@ var searchData=
   ['readwritebyte_6',['ReadWriteByte',['../classrm_1_1hal_1_1stm32_1_1SpiDevice.html#a35fc0144cb3e7b3e42798da782ef53f6',1,'rm::hal::stm32::SpiDevice']]],
   ['readwritebytes_7',['ReadWriteBytes',['../classrm_1_1hal_1_1stm32_1_1SpiDevice.html#ac8b7a700d39c4b30f200565c103f761e',1,'rm::hal::stm32::SpiDevice']]],
   ['referee_8',['Referee',['../classrm_1_1device_1_1Referee.html#af9bb3f3aa18272c3e0054813256d8211',1,'rm::device::Referee']]],
-  ['registerdevice_9',['registerdevice',['../classrm_1_1device_1_1DeviceManager.html#ae97d52cc4a7f63162871efaf72b9ff89',1,'rm::device::DeviceManager::RegisterDevice()'],['../classrm_1_1hal_1_1CanInterface.html#a98f124822a33e7a5b4defecaba5c23f8',1,'rm::hal::CanInterface::RegisterDevice()']]],
+  ['registerdevice_9',['registerdevice',['../classrm_1_1device_1_1DeviceManager.html#ae97d52cc4a7f63162871efaf72b9ff89',1,'rm::device::DeviceManager::RegisterDevice()'],['../classrm_1_1hal_1_1CanInterface.html#a16f68916418f5917db4dcfedf39839dc',1,'rm::hal::CanInterface::RegisterDevice()']]],
   ['removevariable_10',['RemoveVariable',['../classrm_1_1modules_1_1VofaPlotter.html#af7de133159997fe346257203860fbe56',1,'rm::modules::VofaPlotter']]],
   ['reset_11',['Reset',['../classrm_1_1device_1_1IST8310.html#aee29c0477b0674691d44ed4799611456',1,'rm::device::IST8310']]],
   ['resetall_12',['ResetAll',['../classrm_1_1device_1_1DirectDriveMotor.html#ab0fac035095fae877af43914e25c97db',1,'rm::device::DirectDriveMotor']]],

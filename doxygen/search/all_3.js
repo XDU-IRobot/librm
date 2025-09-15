@@ -7,7 +7,7 @@ var searchData=
   ['can_5fdevice_2ehpp_4',['can_device.hpp',['../can__device_8hpp.html',1,'']]],
   ['can_5finterface_2eh_5',['can_interface.h',['../can__interface_8h.html',1,'']]],
   ['canbitrate_6',['CanBitrate',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#aa96ae70d38493a365de2a35634f615ab',1,'rm::device::DirectDriveMotor::Parameters']]],
-  ['candevice_7',['candevice',['../classrm_1_1device_1_1CanDevice.html',1,'rm::device::CanDevice'],['../classrm_1_1device_1_1CanDevice.html#a9da5dd225d78bc2f43395a105d848e7f',1,'rm::device::CanDevice::CanDevice(const CanDevice &amp;)=delete'],['../classrm_1_1device_1_1CanDevice.html#a58bd02230756c0dd4a865284bbbe9650',1,'rm::device::CanDevice::CanDevice(hal::CanInterface &amp;can, IdList... rx_std_ids)']]],
+  ['candevice_7',['candevice',['../classrm_1_1device_1_1CanDevice.html',1,'rm::device::CanDevice'],['../classrm_1_1device_1_1CanDevice.html#a36d6ae9cef44199571d51b61e2ac7b6b',1,'rm::device::CanDevice::CanDevice(CanDevice &amp;&amp;old)'],['../classrm_1_1device_1_1CanDevice.html#a950120e0c8d3317e7f722b0ac7618d13',1,'rm::device::CanDevice::CanDevice(const CanDevice &amp;old)'],['../classrm_1_1device_1_1CanDevice.html#a58bd02230756c0dd4a865284bbbe9650',1,'rm::device::CanDevice::CanDevice(hal::CanInterface &amp;can, IdList... rx_std_ids)']]],
   ['caninterface_8',['CanInterface',['../classrm_1_1hal_1_1CanInterface.html',1,'rm::hal']]],
   ['canmsg_9',['CanMsg',['../structrm_1_1hal_1_1CanMsg.html',1,'rm::hal']]],
   ['cantxpriority_10',['CanTxPriority',['../namespacerm_1_1hal.html#ad9ce02a3d77a1b56213e665171676a18',1,'rm::hal']]],

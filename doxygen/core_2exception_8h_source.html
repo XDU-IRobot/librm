@@ -134,24 +134,24 @@ $(document).ready(function(){initNavTree('core_2exception_8h_source.html',''); i
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="namespacerm.html">   37</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm.html">rm</a> {</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="namespacerm.html#a5d5138b47a87a72482d492dc3c8ed2ee">   43</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacerm.html#a5d5138b47a87a72482d492dc3c8ed2ee">Throw</a>(<span class="keyword">const</span> std::exception&amp; e) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="namespacerm.html#af69326a719d5dfef55cdbe321f815a44">   43</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacerm.html#af69326a719d5dfef55cdbe321f815a44">Throw</a>(__attribute__((__unused__)) <span class="keyword">const</span> std::exception&amp; e) {</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_LINUX)</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordflow">throw</span> e;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#elif defined(LIBRM_PLATFORM_STM32)</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="comment">// TODO 裸机不能直接抛异常，但为了防止进一步出错，先把程序停在这里</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">// stm32编译时一般会带-fno-exceptions参数，不能抛异常。所以不管是什么异常，都不处理，直接死机。</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
 </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}  <span class="comment">// namespace rm</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}  <span class="comment">// namespace rm</span></div>
 </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="ahal_2stm32_2exception_8h_html"><div class="ttname"><a href="hal_2stm32_2exception_8h.html">exception.h</a></div><div class="ttdoc">对STM32 HAL库里异常枚举的封装</div></div>
 <div class="ttc" id="anamespacerm_html"><div class="ttname"><a href="namespacerm.html">rm</a></div><div class="ttdef"><b>Definition</b> exception.h:37</div></div>
-<div class="ttc" id="anamespacerm_html_a5d5138b47a87a72482d492dc3c8ed2ee"><div class="ttname"><a href="namespacerm.html#a5d5138b47a87a72482d492dc3c8ed2ee">rm::Throw</a></div><div class="ttdeci">void Throw(const std::exception &amp;e)</div><div class="ttdoc">抛出异常</div><div class="ttdef"><b>Definition</b> exception.h:43</div></div>
+<div class="ttc" id="anamespacerm_html_af69326a719d5dfef55cdbe321f815a44"><div class="ttname"><a href="namespacerm.html#af69326a719d5dfef55cdbe321f815a44">rm::Throw</a></div><div class="ttdeci">void Throw(__attribute__((__unused__)) const std::exception &amp;e)</div><div class="ttdoc">抛出异常</div><div class="ttdef"><b>Definition</b> exception.h:43</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

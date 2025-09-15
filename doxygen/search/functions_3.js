@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['candevice_0',['candevice',['../classrm_1_1device_1_1CanDevice.html#a9da5dd225d78bc2f43395a105d848e7f',1,'rm::device::CanDevice::CanDevice(const CanDevice &amp;)=delete'],['../classrm_1_1device_1_1CanDevice.html#a58bd02230756c0dd4a865284bbbe9650',1,'rm::device::CanDevice::CanDevice(hal::CanInterface &amp;can, IdList... rx_std_ids)']]],
+  ['candevice_0',['candevice',['../classrm_1_1device_1_1CanDevice.html#a950120e0c8d3317e7f722b0ac7618d13',1,'rm::device::CanDevice::CanDevice(const CanDevice &amp;old)'],['../classrm_1_1device_1_1CanDevice.html#a36d6ae9cef44199571d51b61e2ac7b6b',1,'rm::device::CanDevice::CanDevice(CanDevice &amp;&amp;old)'],['../classrm_1_1device_1_1CanDevice.html#a58bd02230756c0dd4a865284bbbe9650',1,'rm::device::CanDevice::CanDevice(hal::CanInterface &amp;can, IdList... rx_std_ids)']]],
   ['clear_1',['Clear',['../classrm_1_1modules_1_1algorithm_1_1PID.html#ab6097a5b50019a8b34b11576bad24f9f',1,'rm::modules::algorithm::PID']]],
   ['coil_5ftemperature_2',['coil_temperature',['../classrm_1_1device_1_1DmMotor.html#a9ed359a1b53023204a6ac3c40b6fc180',1,'rm::device::DmMotor']]],
   ['constrain_3',['Constrain',['../namespacerm_1_1modules_1_1algorithm_1_1utils.html#a609ed2b1ae781845d848cb1228e89600',1,'rm::modules::algorithm::utils']]],

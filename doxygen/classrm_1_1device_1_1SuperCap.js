@@ -1,6 +1,7 @@
 var classrm_1_1device_1_1SuperCap =
 [
     [ "SuperCap", "classrm_1_1device_1_1SuperCap.html#a38b231ca8b0fcce32d0070b56898bf27", null ],
+    [ "SuperCap", "classrm_1_1device_1_1SuperCap.html#ace9b8994463b2d273c0e7e34bf9c4d75", null ],
     [ "SuperCap", "classrm_1_1device_1_1SuperCap.html#a88a903f0da52b415d0fc516dc7574e9c", null ],
     [ "~SuperCap", "classrm_1_1device_1_1SuperCap.html#aca3a762d601d49264a8aea928cf09cc5", null ],
     [ "current", "classrm_1_1device_1_1SuperCap.html#a78d2bb44a2679131e3a48ca37caa12c7", null ],

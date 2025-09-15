@@ -6,6 +6,7 @@ var classrm_1_1modules_1_1algorithm_1_1PID =
     [ "Clear", "classrm_1_1modules_1_1algorithm_1_1PID.html#ab6097a5b50019a8b34b11576bad24f9f", null ],
     [ "d_out", "classrm_1_1modules_1_1algorithm_1_1PID.html#af164f4cd05ac2597e52607a8bbd5f308", null ],
     [ "i_out", "classrm_1_1modules_1_1algorithm_1_1PID.html#ad359182443a4952400f57ca5d60f1a81", null ],
+    [ "last_error", "classrm_1_1modules_1_1algorithm_1_1PID.html#a160a16b03349921485eb0df219b6194b", null ],
     [ "p_out", "classrm_1_1modules_1_1algorithm_1_1PID.html#a0d6cfdceb2272ed6f7ad95d6b5e5c21b", null ],
     [ "Update", "classrm_1_1modules_1_1algorithm_1_1PID.html#a4c08ae671ae424d5c44c4d2946e9081c", null ],
     [ "Update", "classrm_1_1modules_1_1algorithm_1_1PID.html#a574c287c71910386fab0f880dbd5b611", null ],
