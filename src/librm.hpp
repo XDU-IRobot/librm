@@ -65,6 +65,7 @@
 #include "librm/modules/algorithm/ahrs/ekf.h"
 #include "librm/modules/algorithm/chassis_fkik.hpp"
 #include "librm/modules/algorithm/crc.h"
+#include "librm/modules/algorithm/float16.hpp"
 #include "librm/modules/algorithm/pid.hpp"
 #include "librm/modules/algorithm/threshold_trigger.hpp"
 #include "librm/modules/algorithm/utils.hpp"

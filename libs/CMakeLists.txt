@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.13)
 
+set(BUILD_TESTS OFF)
+set(BUILD_EXHAUSTIVE_TESTS OFF)
+set(BUILD_EXAMPLES OFF)
+
 if(NOT LIBRM_PLATFORM STREQUAL "STM32")
     # boost::asio
     find_package(Boost REQUIRED COMPONENTS system)
@@ -29,3 +33,7 @@ if(LIBRM_PLATFORM_LINUX_TYPE STREQUAL "RASPI")
 endif()
 
 target_link_libraries(third_party INTERFACE Kalman eigen eternal)
+
+unset(BUILD_TESTS)
+unset(BUILD_EXHAUSTIVE_TESTS)
+unset(BUILD_EXAMPLES)

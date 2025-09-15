@@ -28,8 +28,6 @@
 #ifndef LIBRM_MODULES_ALGORITHM_CHASSIS_FKIK_HPP
 #define LIBRM_MODULES_ALGORITHM_CHASSIS_FKIK_HPP
 
-#include <initializer_list>
-
 #include <cmath>
 #include <initializer_list>
 
