@@ -33,7 +33,11 @@ add_subdirectory(libs)
 target_link_libraries(${PROJECT_NAME} PUBLIC third_party)
 
 if (${LIBRM_PLATFORM} STREQUAL "STM32")
-    target_link_libraries(${PROJECT_NAME} PRIVATE stm32cubemx)
+    target_link_libraries(${PROJECT_NAME} PRIVATE STM32_Drivers)
+    if (${LIBRM_FREERTOS_AVAILABLE})
+        target_compile_definitions(${PROJECT_NAME} PUBLIC -DLIBRM_FREERTOS_AVAILABLE)
+        target_link_libraries(${PROJECT_NAME} PRIVATE FreeRTOS)
+    endif ()
 endif ()
 
 target_compile_definitions(${PROJECT_NAME} PUBLIC -DLIBRM_PLATFORM_${LIBRM_PLATFORM})

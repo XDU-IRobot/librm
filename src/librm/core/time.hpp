@@ -32,7 +32,6 @@
 #include <thread>
 
 #if defined(LIBRM_PLATFORM_STM32)
-#include "librm/core/cmsis_rtos.hpp"
 #include "librm/hal/stm32/hal.hpp"
 #endif
 #include "librm/core/typedefs.hpp"
@@ -46,7 +45,7 @@ namespace rm {
  * @param ms 延时时间，单位为毫秒
  */
 inline void SleepMs(u32 ms) {
-#ifdef LIBRM_USE_CMSIS_RTOS
+#ifdef LIBRM_FREERTOS_AVAILABLE
   if (__get_IPSR()) {  // 检测当前是否在中断里，如果在中断里则调用HAL_Delay，否则调用osDelay
     HAL_Delay(ms);
   } else {

@@ -34,7 +34,7 @@ if (DEFINED LIBRM_PLATFORM)                                         # 如果用�
                 "[librm]: Available platforms: ${LIBRM_AVAIABLE_PLATFORMS}")
     endif ()
 else ()                                                             # 就尝试自动检测平台
-    if (${CMAKE_CROSSCOMPILING} AND TARGET stm32cubemx)             # 启用了交叉编译，且存在stm32cubemx target
+    if (TARGET STM32_Drivers)                                       # 存在cubemx生成的STM32_Drivers target
         set(LIBRM_PLATFORM "STM32")                                 # 那么就认为是STM32平台
     elseif (${CMAKE_SYSTEM_NAME} MATCHES "Linux")                   # 如果是在Linux上编译
         set(LIBRM_PLATFORM "LINUX")                                 # 那就认为是Linux平台
@@ -53,6 +53,15 @@ if (NOT DEFINED LIBRM_PLATFORM)
 endif ()
 
 message(STATUS "[librm]: Platform: ${LIBRM_PLATFORM}")
+
+# 如果顺利判断出平台是STM32，就进一步检测有没有FreeRTOS
+set(LIBRM_FREERTOS_AVAILABLE false)
+if (${LIBRM_PLATFORM} STREQUAL "STM32")
+    if (TARGET FreeRTOS)
+        message(STATUS "[librm]: Found FreeRTOS")
+        set(LIBRM_FREERTOS_AVAILABLE true)
+    endif ()
+endif ()
 
 # 如果顺利判断出平台是Linux，就根据找到的package进一步判断是哪一种嵌入式Linux
 if (${LIBRM_PLATFORM} STREQUAL "LINUX")
