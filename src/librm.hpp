@@ -41,6 +41,7 @@
 #include "librm/hal/gpio.h"
 #include "librm/hal/serial.h"
 #include "librm/hal/spi.h"
+#include "librm/hal/timer.hpp"
 /****************/
 
 /******** DEVICE ********/
