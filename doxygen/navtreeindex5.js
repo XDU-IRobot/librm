@@ -1,7 +1,5 @@
 var NAVTREEINDEX5 =
 {
-"dm__motor_8hpp.html":[3,0,0,0,1,0,4],
-"dm__motor_8hpp.html#a09c7ea6c3cbe688e5936931e1665b94e":[3,0,0,0,1,0,4,5],
 "dm__motor_8hpp.html#a09c7ea6c3cbe688e5936931e1665b94ea22f7e05f35e7f25d5f24304feb24bee8":[3,0,0,0,1,0,4,5,2],
 "dm__motor_8hpp.html#a09c7ea6c3cbe688e5936931e1665b94ea671bf1301da9c5f5da9a08002e6f89c4":[3,0,0,0,1,0,4,5,0],
 "dm__motor_8hpp.html#a09c7ea6c3cbe688e5936931e1665b94eac423473711521422b9f206b311bca100":[3,0,0,0,1,0,4,5,1],
@@ -61,8 +59,8 @@ var NAVTREEINDEX5 =
 "float16_8hpp.html#a2f002fb1c540189c2ec694b9c9cda697":[3,0,0,0,3,0,5,0],
 "float16_8hpp.html#ac1ff1e8c3f68a79c253fe139e6533ebd":[3,0,0,0,3,0,5,1],
 "float16_8hpp_source.html":[3,0,0,0,3,0,5],
-"functions.html":[2,3,0,0],
 "functions.html":[2,3,0],
+"functions.html":[2,3,0,0],
 "functions_a.html":[2,3,0,1],
 "functions_b.html":[2,3,0,2],
 "functions_c.html":[2,3,0,3],
@@ -71,8 +69,8 @@ var NAVTREEINDEX5 =
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,6],
-"functions_func.html":[2,3,1],
 "functions_func.html":[2,3,1,0],
+"functions_func.html":[2,3,1],
 "functions_func_a.html":[2,3,1,1],
 "functions_func_b.html":[2,3,1,2],
 "functions_func_c.html":[2,3,1,3],
@@ -113,8 +111,8 @@ var NAVTREEINDEX5 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2,0],
 "functions_vars.html":[2,3,2],
+"functions_vars.html":[2,3,2,0],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -249,5 +247,7 @@ var NAVTREEINDEX5 =
 "namespacerm_1_1device.html#a097a9fa7f69d2f1da75170c9c3bc2137a73c38af9bce570ddd6d0f4a4322d66db":[1,0,0,1,43,1],
 "namespacerm_1_1device.html#a097a9fa7f69d2f1da75170c9c3bc2137a7cd06295085975805e35f1d05cfbe21c":[1,0,0,1,43,0],
 "namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e":[1,0,0,1,37],
-"namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea22f7e05f35e7f25d5f24304feb24bee8":[1,0,0,1,37,2]
+"namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea22f7e05f35e7f25d5f24304feb24bee8":[1,0,0,1,37,2],
+"namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea671bf1301da9c5f5da9a08002e6f89c4":[1,0,0,1,37,0],
+"namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94eac423473711521422b9f206b311bca100":[1,0,0,1,37,1]
 };

@@ -128,67 +128,65 @@ $(document).ready(function(){initNavTree('time_8hpp_source.html',''); initResiza
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;thread&gt;</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="cmsis__rtos_8h.html">librm/core/cmsis_rtos.h</a>&quot;</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;<a class="code" href="hal_8h.html">librm/hal/stm32/hal.h</a>&quot;</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;<a class="code" href="typedefs_8h.html">librm/core/typedefs.h</a>&quot;</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespacerm_1_1core_1_1time.html">   40</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1core_1_1time.html">rm::core::time</a> {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">// STM32平台的延时比较复杂，所以专门实现两个函数</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">inline</span> <span class="keywordtype">void</span> SleepMs(<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> ms) {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#ifdef LIBRM_USE_CMSIS_RTOS</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordflow">if</span> (__get_IPSR()) {  <span class="comment">// 检测当前是否在中断里，如果在中断里则调用HAL_Delay，否则调用osDelay</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    HAL_Delay(ms);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    osDelay(ms);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  }</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  HAL_Delay(ms);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">inline</span> <span class="keywordtype">void</span> SleepUs(<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> us) {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordflow">if</span> (!(CoreDebug-&gt;DEMCR &amp; CoreDebug_DEMCR_TRCENA_Msk)) {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    CoreDebug-&gt;DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordflow">if</span> (!(DWT-&gt;CTRL &amp; DWT_CTRL_CYCCNTENA_Msk)) {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    DWT-&gt;CTRL |= DWT_CTRL_CYCCNTENA_Msk;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  }</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> start = DWT-&gt;CYCCNT;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> ticks = us * (HAL_RCC_GetSysClockFreq() / 1000000);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keywordflow">while</span> ((DWT-&gt;CYCCNT - start) &lt; ticks) {</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    ;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
-<div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="namespacerm_1_1core_1_1time.html#a8a1075a598c146c485b38d2739025d7e">   85</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacerm_1_1core_1_1time.html#a8a1075a598c146c485b38d2739025d7e">Sleep</a>(<span class="keyword">const</span> std::chrono::duration&lt;Rep, Period&gt; &amp;duration) {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordflow">if</span> (duration &lt; std::chrono::milliseconds(1)) {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    SleepUs(std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(duration).count());</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    SleepMs(std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(duration).count());</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  }</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  std::this_thread::sleep_for(duration);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="hal_8h.html">librm/hal/stm32/hal.h</a>&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="typedefs_8h.html">librm/core/typedefs.h</a>&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="namespacerm_1_1core_1_1time.html">   39</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1core_1_1time.html">rm::core::time</a> {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">// STM32平台的延时比较复杂，所以专门实现两个函数</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">inline</span> <span class="keywordtype">void</span> SleepMs(<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> ms) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#ifdef LIBRM_FREERTOS_AVAILABLE</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordflow">if</span> (__get_IPSR()) {  <span class="comment">// 检测当前是否在中断里，如果在中断里则调用HAL_Delay，否则调用osDelay</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    HAL_Delay(ms);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    osDelay(ms);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  HAL_Delay(ms);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">inline</span> <span class="keywordtype">void</span> SleepUs(<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> us) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keywordflow">if</span> (!(CoreDebug-&gt;DEMCR &amp; CoreDebug_DEMCR_TRCENA_Msk)) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    CoreDebug-&gt;DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keywordflow">if</span> (!(DWT-&gt;CTRL &amp; DWT_CTRL_CYCCNTENA_Msk)) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    DWT-&gt;CTRL |= DWT_CTRL_CYCCNTENA_Msk;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> start = DWT-&gt;CYCCNT;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> ticks = us * (HAL_RCC_GetSysClockFreq() / 1000000);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keywordflow">while</span> ((DWT-&gt;CYCCNT - start) &lt; ticks) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    ;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="namespacerm_1_1core_1_1time.html#a8a1075a598c146c485b38d2739025d7e">   84</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacerm_1_1core_1_1time.html#a8a1075a598c146c485b38d2739025d7e">Sleep</a>(<span class="keyword">const</span> std::chrono::duration&lt;Rep, Period&gt; &amp;duration) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keywordflow">if</span> (duration &lt; std::chrono::milliseconds(1)) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    SleepUs(std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(duration).count());</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    SleepMs(std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(duration).count());</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  std::this_thread::sleep_for(duration);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
 </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}  <span class="comment">// namespace rm::core::time</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}  <span class="comment">// namespace rm::core::time</span></div>
 </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_CORE_TIME_HPP</span></div>
-<div class="ttc" id="acmsis__rtos_8h_html"><div class="ttname"><a href="cmsis__rtos_8h.html">cmsis_rtos.h</a></div><div class="ttdoc">检测环境里有没有 CMSIS-RTOS</div></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_CORE_TIME_HPP</span></div>
 <div class="ttc" id="ahal_8h_html"><div class="ttname"><a href="hal_8h.html">hal.h</a></div><div class="ttdoc">根据不同STM32型号选择不同的HAL库</div></div>
-<div class="ttc" id="anamespacerm_1_1core_1_1time_html"><div class="ttname"><a href="namespacerm_1_1core_1_1time.html">rm::core::time</a></div><div class="ttdef"><b>Definition</b> time.hpp:40</div></div>
-<div class="ttc" id="anamespacerm_1_1core_1_1time_html_a8a1075a598c146c485b38d2739025d7e"><div class="ttname"><a href="namespacerm_1_1core_1_1time.html#a8a1075a598c146c485b38d2739025d7e">rm::core::time::Sleep</a></div><div class="ttdeci">void Sleep(const std::chrono::duration&lt; Rep, Period &gt; &amp;duration)</div><div class="ttdef"><b>Definition</b> time.hpp:85</div></div>
+<div class="ttc" id="anamespacerm_1_1core_1_1time_html"><div class="ttname"><a href="namespacerm_1_1core_1_1time.html">rm::core::time</a></div><div class="ttdef"><b>Definition</b> time.hpp:39</div></div>
+<div class="ttc" id="anamespacerm_1_1core_1_1time_html_a8a1075a598c146c485b38d2739025d7e"><div class="ttname"><a href="namespacerm_1_1core_1_1time.html#a8a1075a598c146c485b38d2739025d7e">rm::core::time::Sleep</a></div><div class="ttdeci">void Sleep(const std::chrono::duration&lt; Rep, Period &gt; &amp;duration)</div><div class="ttdef"><b>Definition</b> time.hpp:84</div></div>
 <div class="ttc" id="anamespacerm_html_aae5bb39b0da6b1cf1b7ed1c03342ec66"><div class="ttname"><a href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">rm::u32</a></div><div class="ttdeci">uint32_t u32</div><div class="ttdef"><b>Definition</b> typedefs.h:45</div></div>
 <div class="ttc" id="atypedefs_8h_html"><div class="ttname"><a href="typedefs_8h.html">typedefs.h</a></div><div class="ttdoc">全局数据类型定义</div></div>
 </div><!-- fragment --></div><!-- contents -->
