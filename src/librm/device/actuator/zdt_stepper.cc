@@ -39,28 +39,28 @@ ZdtStepper::ZdtStepper(hal::SerialInterface &serial, u8 motor_id) : serial_{&ser
   serial_->AttachRxCallback(rx_callback_map_emotor[&serial][motor_id]);
 }
 
-void ZdtStepper::MotorVelCtrl(u8 addr, u8 dir, u16 vel, u8 acc, bool snF) {
+void ZdtStepper::MotorVelCtrl(u8 dir, u16 vel, u8 acc, bool sync_flag) {
   static uint8_t cmd[8] = {0};
 
   // 装载命令
-  cmd[0] = addr;                 // 地址
+  cmd[0] = motor_id_;            // 地址
   cmd[1] = 0xF6;                 // 功能码
   cmd[2] = dir;                  // 方向
   cmd[3] = (uint8_t)(vel >> 8);  // 速度(RPM)高8位字节
   cmd[4] = (uint8_t)(vel >> 0);  // 速度(RPM)低8位字节
   cmd[5] = acc;                  // 加速度，注意：0是直接启动
-  cmd[6] = snF;                  // 多机同步运动标志
+  cmd[6] = sync_flag;            // 多机同步运动标志
   cmd[7] = 0x6B;                 // 校验字节
 
   // 发送命令
   serial_->Write(cmd, 8);
 }
 
-void ZdtStepper::MotorPosCtrl(u8 addr, u8 dir, u16 vel, u8 acc, u32 clk, bool raF, bool snF) {
+void ZdtStepper::MotorPosCtrl(u8 dir, u16 vel, u8 acc, u32 clk, bool absolute, bool sync) {
   static uint8_t cmd[13] = {0};
 
   // 装载命令
-  cmd[0] = addr;                  // 地址
+  cmd[0] = motor_id_;             // 地址
   cmd[1] = 0xFD;                  // 功能码
   cmd[2] = dir;                   // 方向
   cmd[3] = (uint8_t)(vel >> 8);   // 速度(RPM)高8位字节
@@ -70,32 +70,32 @@ void ZdtStepper::MotorPosCtrl(u8 addr, u8 dir, u16 vel, u8 acc, u32 clk, bool ra
   cmd[7] = (uint8_t)(clk >> 16);  // 脉冲数(bit16 - bit23)
   cmd[8] = (uint8_t)(clk >> 8);   // 脉冲数(bit8  - bit15)
   cmd[9] = (uint8_t)(clk >> 0);   // 脉冲数(bit0  - bit7 )
-  cmd[10] = raF;                  // 相位/绝对标志，false为相对运动，true为绝对值运动
-  cmd[11] = snF;                  // 多机同步运动标志，false为不启用，true为启用
+  cmd[10] = absolute;             // 相位/绝对标志，false为相对运动，true为绝对值运动
+  cmd[11] = sync;                 // 多机同步运动标志，false为不启用，true为启用
   cmd[12] = 0x6B;                 // 校验字节
 
   // 发送命令
   serial_->Write(cmd, 13);
 }
 
-void ZdtStepper::MotorSyncCtrl(u8 addr) {
+void ZdtStepper::MotorSyncCtrl() {
   static uint8_t cmd[4] = {0};
 
   // 装载命令
-  cmd[0] = addr;  // 地址
-  cmd[1] = 0xFF;  // 功能码
-  cmd[2] = 0x66;  // 辅助码
-  cmd[3] = 0x6B;  // 校验字节
+  cmd[0] = motor_id_;  // 地址
+  cmd[1] = 0xFF;       // 功能码
+  cmd[2] = 0x66;       // 辅助码
+  cmd[3] = 0x6B;       // 校验字节
 
   // 发送命令
   serial_->Write(cmd, 4);
 }
 
-void ZdtStepper::ReadPos(u8 addr) {
+void ZdtStepper::ReadPos() {
   static uint8_t cmd[3] = {0};
 
   // 装载命令
-  cmd[0] = addr;
+  cmd[0] = motor_id_;
   cmd[1] = 0x36;
   cmd[2] = 0x6B;
 
@@ -103,11 +103,11 @@ void ZdtStepper::ReadPos(u8 addr) {
   serial_->Write(cmd, 3);
 }
 
-void ZdtStepper::ReadVel(u8 addr) {
+void ZdtStepper::ReadVel() {
   static uint8_t cmd[3] = {0};
 
   // 装载命令
-  cmd[0] = addr;
+  cmd[0] = motor_id_;
   cmd[1] = 0x35;
   cmd[2] = 0x6B;
 
