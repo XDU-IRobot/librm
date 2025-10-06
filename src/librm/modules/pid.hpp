@@ -82,12 +82,12 @@ class PID {
   f32 max_out() const;
   f32 max_iout() const;
   f32 set() const;
-  const f32* ref() const;
+  const f32 *ref() const;
   f32 out() const;
   f32 p_out() const;
   f32 i_out() const;
-  const f32* d_out() const;
-  const f32* error() const;
+  const f32 *d_out() const;
+  const f32 *error() const;
   f32 dt() const;
   f32 trapezoid() const;
   f32 diff_lpf_alpha() const;
