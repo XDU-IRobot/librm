@@ -28,9 +28,9 @@
 #include "go8010_motor.hpp"
 #include <cstdint>
 
-#include "librm/core/typedefs.h"
-#include "librm/hal/serial_interface.h"
-#include "librm/modules/algorithm/crc.h"
+#include "librm/core/typedefs.hpp"
+#include "librm/hal/serial_interface.hpp"
+#include "librm/modules/algorithm/crc.hpp"
 
 /**
  * @brief 串口接收回调函数键值对

@@ -25,12 +25,12 @@
  * @brief Mahony姿态解算算法
  */
 
-#include "mahony.h"
+#include "mahony.hpp"
 
 #include "librm/modules/algorithm/utils.hpp"
 
 #if defined(LIBRM_PLATFORM_STM32)
-#include "librm/hal/stm32/hal.h"
+#include "librm/hal/stm32/hal.hpp"
 
 #if !defined(__FPU_PRESENT)
 #define __FPU_PRESENT 1  // fallback to use sqrtf if we can't determine if FPU is present

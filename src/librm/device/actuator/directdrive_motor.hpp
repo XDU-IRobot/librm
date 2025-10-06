@@ -36,9 +36,9 @@
 #include <cstring>
 #include <chrono>
 
-#include "librm/core/typedefs.h"
+#include "librm/core/typedefs.hpp"
 #include "librm/device/can_device.hpp"
-#include "librm/hal/can_interface.h"
+#include "librm/hal/can_interface.hpp"
 #include "librm/modules/algorithm/utils.hpp"
 
 namespace rm::device {

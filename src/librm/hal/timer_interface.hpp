@@ -22,18 +22,18 @@
 */
 
 /**
- * @file    librm/hal/timer_interface.h
+ * @file    librm/hal/timer_interface.hpp
  * @brief   定时器的接口类
  */
 
-#ifndef LIBRM_HAL_TIMER_INTERFACE_H
-#define LIBRM_HAL_TIMER_INTERFACE_H
+#ifndef LIBRM_HAL_TIMER_INTERFACE_HPP
+#define LIBRM_HAL_TIMER_INTERFACE_HPP
 
 #include <chrono>
 
 #include <etl/delegate.h>
 
-#include "librm/core/typedefs.h"
+#include "librm/core/typedefs.hpp"
 
 namespace rm::hal {
 
@@ -75,4 +75,4 @@ class TimerInterface {
 
 }  // namespace rm::hal
 
-#endif  // LIBRM_HAL_TIMER_INTERFACE_H
+#endif  // LIBRM_HAL_TIMER_INTERFACE_HPP

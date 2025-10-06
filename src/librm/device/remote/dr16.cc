@@ -25,7 +25,7 @@
  * @brief DR16接收机
  */
 
-#include "dr16.h"
+#include "dr16.hpp"
 
 namespace rm::device {
 

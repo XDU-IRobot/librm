@@ -30,7 +30,7 @@
 #include <algorithm>
 #include <cstring>
 
-#include "librm/core/typedefs.h"
+#include "librm/core/typedefs.hpp"
 
 namespace rm::modules::algorithm {
 

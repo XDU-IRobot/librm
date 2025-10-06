@@ -28,8 +28,8 @@
 #ifndef LIBRM_DEVICE_ACTUATOR_ZDT_STEPPER_HPP
 #define LIBRM_DEVICE_ACTUATOR_ZDT_STEPPER_HPP
 
-#include "librm/core/typedefs.h"
-#include "librm/hal/serial_interface.h"
+#include "librm/core/typedefs.hpp"
+#include "librm/hal/serial_interface.hpp"
 
 using namespace rm;
 

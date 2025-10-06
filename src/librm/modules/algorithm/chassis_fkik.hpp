@@ -31,7 +31,7 @@
 #include <cmath>
 #include <initializer_list>
 
-#include "librm/core/typedefs.h"
+#include "librm/core/typedefs.hpp"
 #include "librm/modules/algorithm/utils.hpp"
 
 namespace rm::modules::algorithm {

@@ -25,12 +25,12 @@
  * @brief   IST8310有关常量
  */
 
-#ifndef LIBRM_DEVICE_SENSOR_IST8310_CONST_H
-#define LIBRM_DEVICE_SENSOR_IST8310_CONST_H
+#ifndef LIBRM_DEVICE_SENSOR_IST8310_CONST_HPP
+#define LIBRM_DEVICE_SENSOR_IST8310_CONST_HPP
 
 #include <chrono>
 
-#include "librm/core/typedefs.h"
+#include "librm/core/typedefs.hpp"
 
 using namespace std::chrono_literals;
 
@@ -47,4 +47,4 @@ constexpr u8 IST8310_DATA_OUT_X_L = 0x03;
 
 constexpr f32 IST8310_SENSITIVITY = 0.3f;  // 原始数据到单位ut的换算系数
 
-#endif  // LIBRM_DEVICE_SENSOR_IST8310_CONST_H
+#endif  // LIBRM_DEVICE_SENSOR_IST8310_CONST_HPP

@@ -32,10 +32,10 @@
 #include <thread>
 
 #if defined(LIBRM_PLATFORM_STM32)
-#include "librm/core/cmsis_rtos.h"
-#include "librm/hal/stm32/hal.h"
+#include "librm/core/cmsis_rtos.hpp"
+#include "librm/hal/stm32/hal.hpp"
 #endif
-#include "librm/core/typedefs.h"
+#include "librm/core/typedefs.hpp"
 
 namespace rm::core::time {
 

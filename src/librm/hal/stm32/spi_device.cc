@@ -26,10 +26,10 @@
  * @todo  实现不够通用，有改进空间
  */
 
-#include "librm/hal/stm32/hal.h"
+#include "librm/hal/stm32/hal.hpp"
 #if defined(HAL_SPI_MODULE_ENABLED) && defined(HAL_GPIO_MODULE_ENABLED)
 
-#include "spi_device.h"
+#include "spi_device.hpp"
 
 namespace rm::hal::stm32 {
 /**

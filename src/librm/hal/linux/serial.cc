@@ -25,9 +25,9 @@
  * @brief 串口类库
  */
 
-#include "serial.h"
+#include "serial.hpp"
 
-#include "librm/core/exception.h"
+#include "librm/core/exception.hpp"
 
 namespace rm::hal::linux_ {
 

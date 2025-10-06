@@ -34,7 +34,7 @@
 
 #include <array>
 
-#include "librm/modules/algorithm/crc.h"
+#include "librm/modules/algorithm/crc.hpp"
 
 namespace rm::device {
 

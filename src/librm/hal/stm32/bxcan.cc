@@ -25,19 +25,19 @@
  * @brief bxCAN类库
  */
 
-#include "librm/hal/stm32/hal.h"
+#include "librm/hal/stm32/hal.hpp"
 
 #if defined(HAL_CAN_MODULE_ENABLED)
-#include "librm/hal/stm32/check_register_callbacks.h"
+#include "librm/hal/stm32/check_register_callbacks.hpp"
 
-#include "bxcan.h"
+#include "bxcan.hpp"
 
 #include <functional>
 #include <stdexcept>
 #include <algorithm>
 
 #include "librm/device/can_device.hpp"
-#include "librm/core/exception.h"
+#include "librm/core/exception.hpp"
 
 /**
  * 用于存储回调函数的map

@@ -25,10 +25,10 @@
  * @brief SPI类库
  */
 
-#include "librm/hal/stm32/hal.h"
+#include "librm/hal/stm32/hal.hpp"
 #if defined(HAL_SPI_MODULE_ENABLED)
 
-#include "spi.h"
+#include "spi.hpp"
 
 namespace rm::hal::stm32 {
 

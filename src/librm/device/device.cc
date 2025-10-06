@@ -26,7 +26,7 @@
  * @todo  see device/device.h
  */
 
-#include "device.h"
+#include "device.hpp"
 
 namespace rm::device {
 

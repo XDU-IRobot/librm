@@ -26,10 +26,10 @@
  * @todo    DMA传输+硬件片选(maybe)
  */
 
-#include "librm/hal/stm32/hal.h"
+#include "librm/hal/stm32/hal.hpp"
 #if defined(HAL_SPI_MODULE_ENABLED)
 
-#include "bmi088.h"
+#include "bmi088.hpp"
 
 #include <vector>
 

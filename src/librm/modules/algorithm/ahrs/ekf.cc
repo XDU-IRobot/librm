@@ -25,9 +25,9 @@
  * @brief EKF姿态解算算法
  */
 
-#include "ekf.h"
+#include "ekf.hpp"
 
-#include "librm/modules/algorithm/ahrs/ahrs_interface.h"
+#include "librm/modules/algorithm/ahrs/ahrs_interface.hpp"
 #include "librm/modules/algorithm/utils.hpp"
 
 namespace rm::modules::algorithm {

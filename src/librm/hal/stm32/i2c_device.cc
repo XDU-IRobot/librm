@@ -26,10 +26,10 @@
  * @todo  实现不够通用，有改进空间
  */
 
-#include "librm/hal/stm32/hal.h"
+#include "librm/hal/stm32/hal.hpp"
 #if defined(HAL_I2C_MODULE_ENABLED)
 
-#include "i2c_device.h"
+#include "i2c_device.hpp"
 
 namespace rm::hal::stm32 {
 

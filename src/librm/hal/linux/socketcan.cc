@@ -26,11 +26,11 @@
  * @todo  实现tx消息队列
  */
 
-#include "socketcan.h"
+#include "socketcan.hpp"
 
 #include <cstring>
 
-#include "librm/core/exception.h"
+#include "librm/core/exception.hpp"
 
 namespace rm::hal::linux_ {
 

@@ -25,7 +25,7 @@
  * @brief 超级电容
  */
 
-#include "supercap.h"
+#include "supercap.hpp"
 
 #include <cstring>
 

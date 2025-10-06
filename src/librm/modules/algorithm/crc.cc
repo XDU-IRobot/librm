@@ -25,7 +25,7 @@
  * @brief crc8/crc16/crc32/crc_ccitt
  */
 
-#include "crc.h"
+#include "crc.hpp"
 
 #include <string_view>
 

@@ -30,7 +30,7 @@
 
 #include <vector>
 
-#include "librm/hal/can_interface.h"
+#include "librm/hal/can_interface.hpp"
 
 namespace rm::device {
 

@@ -30,9 +30,9 @@
 #define LIBRM_DEVICE_ACTUATOR_GO8010_MOTOR_HPP
 
 #include "librm/device/actuator/unitree_motor.hpp"
-#include "librm/hal/serial.h"
-#include "librm/core/typedefs.h"
-#include "librm/hal/serial_interface.h"
+#include "librm/hal/serial.hpp"
+#include "librm/core/typedefs.hpp"
+#include "librm/hal/serial_interface.hpp"
 
 namespace rm::device {
 

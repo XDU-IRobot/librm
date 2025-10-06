@@ -29,23 +29,23 @@
 #define LIBRM_HPP
 
 /******** CORE ********/
-#include "librm/core/cmsis_rtos.h"
+#include "librm/core/cmsis_rtos.hpp"
 #include "librm/core/thread_pool.hpp"
-#include "librm/core/typedefs.h"
-#include "librm/core/exception.h"
+#include "librm/core/typedefs.hpp"
+#include "librm/core/exception.hpp"
 #include "librm/core/time.hpp"
 /****************/
 
 /******** HAL ********/
-#include "librm/hal/can.h"
-#include "librm/hal/gpio.h"
-#include "librm/hal/serial.h"
-#include "librm/hal/spi.h"
+#include "librm/hal/can.hpp"
+#include "librm/hal/gpio.hpp"
+#include "librm/hal/serial.hpp"
+#include "librm/hal/spi.hpp"
 #include "librm/hal/timer.hpp"
 /****************/
 
 /******** DEVICE ********/
-#include "librm/device/device.h"
+#include "librm/device/device.hpp"
 #include "librm/device/can_device.hpp"
 #include "librm/device/actuator/directdrive_motor.hpp"
 #include "librm/device/actuator/dji_motor.hpp"
@@ -54,18 +54,18 @@
 #include "librm/device/actuator/go8010_motor.hpp"
 #include "librm/device/actuator/zdt_stepper.hpp"
 #include "librm/device/referee/referee.hpp"
-#include "librm/device/remote/dr16.h"
+#include "librm/device/remote/dr16.hpp"
 #include "librm/device/remote/vt03.hpp"
-#include "librm/device/sensor/bmi088.h"
-#include "librm/device/sensor/ist8310.h"
-#include "librm/device/supercap/supercap.h"
+#include "librm/device/sensor/bmi088.hpp"
+#include "librm/device/sensor/ist8310.hpp"
+#include "librm/device/supercap/supercap.hpp"
 /****************/
 
 /******** MISC MODULES ********/
-#include "librm/modules/algorithm/ahrs/mahony.h"
-#include "librm/modules/algorithm/ahrs/ekf.h"
+#include "librm/modules/algorithm/ahrs/mahony.hpp"
+#include "librm/modules/algorithm/ahrs/ekf.hpp"
 #include "librm/modules/algorithm/chassis_fkik.hpp"
-#include "librm/modules/algorithm/crc.h"
+#include "librm/modules/algorithm/crc.hpp"
 #include "librm/modules/algorithm/float16.hpp"
 #include "librm/modules/algorithm/pid.hpp"
 #include "librm/modules/algorithm/threshold_trigger.hpp"

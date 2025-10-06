@@ -54,7 +54,7 @@
 #include <cmath>
 
 #include "librm/device/can_device.hpp"
-#include "librm/core/typedefs.h"
+#include "librm/core/typedefs.hpp"
 #include "librm/modules/algorithm/utils.hpp"
 
 namespace rm::device {
