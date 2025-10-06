@@ -58,8 +58,8 @@ class PID {
   f32 d_out_[2]{};  ///< 0: 这次, 1: 上次
   f32 error_[2]{};  ///< 0: 这次, 1: 上次
   f32 dt_{};
-  f32 trapezoid_{};                ///< 梯形积分计算结果
-  f32 diff_lpf_alpha_{1.f};        ///< 微分项低通滤波系数，取值范围(0, 1]，越小滤波效果越强，设置为1时不滤波
+  f32 trapezoid_{};  ///< 梯形积分计算结果
+  f32 diff_lpf_alpha_{1.f};  ///< 微分项低通滤波系数，取值范围(0, 1]，越小滤波效果越强，设置为1时不滤波
   bool enable_diff_first_{false};  ///< 是否微分先行
   bool enable_dynamic_ki_{false};  ///< 是否变速积分
   f32 dynamic_ki_{};               ///< 变速积分计算的ki
