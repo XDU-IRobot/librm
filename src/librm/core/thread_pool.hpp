@@ -41,7 +41,7 @@
 #include <functional>
 #include <stdexcept>
 
-namespace rm::core {
+namespace rm {
 
 class ThreadPool {
  public:

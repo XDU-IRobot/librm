@@ -123,9 +123,9 @@ void DirectDriveMotor::Set(f32 control_value) {
   if (current_mode_ == Mode::kUnknown) {
     using namespace std::chrono_literals;
     Enable(false);
-    rm::core::time::Sleep(2ms);
+    rm::Sleep(2ms);
     SetParameter(Parameters::Mode(Mode::kCurrent));
-    rm::core::time::Sleep(2ms);
+    rm::Sleep(2ms);
     Enable(true);
     current_mode_ = Mode::kCurrent;
   }
@@ -174,9 +174,9 @@ void DirectDriveMotor::Set(f32 control_value, Mode mode) {
   if (current_mode_ != mode) {
     using namespace std::chrono_literals;
     Enable(false);
-    rm::core::time::Sleep(2ms);
+    rm::Sleep(2ms);
     SetParameter(Parameters::Mode(mode));
-    rm::core::time::Sleep(2ms);
+    rm::Sleep(2ms);
     Enable(true);
   }
   current_mode_ = mode;

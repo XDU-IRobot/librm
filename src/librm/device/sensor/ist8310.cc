@@ -62,9 +62,9 @@ IST8310::IST8310(I2C_HandleTypeDef &hi2c, GPIO_TypeDef *rst_port, u16 rst_pin)
   // 发送初始化序列，有错误则设置status为对应错误码
   for (const auto &operation : ist8310_init_sequence) {
     this->Write(operation[0], const_cast<u8 *>(&operation[1]), 1);
-    core::time::Sleep(IST8310_COMM_WAIT_TIME_SHORT);
+    Sleep(IST8310_COMM_WAIT_TIME_SHORT);
     this->Read(operation[0], 1);
-    core::time::Sleep(IST8310_COMM_WAIT_TIME_SHORT);
+    Sleep(IST8310_COMM_WAIT_TIME_SHORT);
     if (this->buffer_[0] != operation[1]) {
       this->status_ = IST8310Status::SENSOR_ERROR;
     }
@@ -77,9 +77,9 @@ IST8310::IST8310(I2C_HandleTypeDef &hi2c, GPIO_TypeDef *rst_port, u16 rst_pin)
  */
 void IST8310::Reset() {
   HAL_GPIO_WritePin(this->rst_port_, this->rst_pin_, GPIO_PIN_RESET);
-  core::time::Sleep(IST8310_COMM_WAIT_TIME_LONG);
+  Sleep(IST8310_COMM_WAIT_TIME_LONG);
   HAL_GPIO_WritePin(this->rst_port_, this->rst_pin_, GPIO_PIN_SET);
-  core::time::Sleep(IST8310_COMM_WAIT_TIME_LONG);
+  Sleep(IST8310_COMM_WAIT_TIME_LONG);
 }
 
 /**

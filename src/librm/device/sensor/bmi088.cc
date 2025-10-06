@@ -87,19 +87,19 @@ BMI088::BMI088(SPI_HandleTypeDef &hspi, GPIO_TypeDef *cs1_accel_gpio_port, u16 c
 void BMI088::InitAccelerometer() {
   // 检查通信是否正常
   this->accel_device_.ReadBytes(BMI088_ACC_CHIP_ID, 2);
-  core::time::Sleep(BMI088_COM_WAIT_SENSOR_TIME);
+  Sleep(BMI088_COM_WAIT_SENSOR_TIME);
   this->accel_device_.ReadBytes(BMI088_ACC_CHIP_ID, 2);
-  core::time::Sleep(BMI088_COM_WAIT_SENSOR_TIME);
+  Sleep(BMI088_COM_WAIT_SENSOR_TIME);
 
   // soft reset一次
   this->accel_device_.WriteByte(BMI088_ACC_SOFTRESET, BMI088_ACC_SOFTRESET_VALUE);
-  core::time::Sleep(BMI088_LONG_DELAY_TIME);
+  Sleep(BMI088_LONG_DELAY_TIME);
 
   // 再次检查通信是否正常
   this->accel_device_.ReadBytes(BMI088_ACC_CHIP_ID, 2);
-  core::time::Sleep(BMI088_COM_WAIT_SENSOR_TIME);
+  Sleep(BMI088_COM_WAIT_SENSOR_TIME);
   this->accel_device_.ReadBytes(BMI088_ACC_CHIP_ID, 2);
-  core::time::Sleep(BMI088_COM_WAIT_SENSOR_TIME);
+  Sleep(BMI088_COM_WAIT_SENSOR_TIME);
 
   // 检查"who am I"寄存器值是否正确
   if (accel_device_.single_byte_buffer() != BMI088_ACC_CHIP_ID_VALUE) {
@@ -109,9 +109,9 @@ void BMI088::InitAccelerometer() {
   // 发送初始化序列，有错误则设置status为对应错误码
   for (const auto &operation : BMI088_ACCEL_INIT_SEQUENCE) {
     this->accel_device_.WriteByte(operation[0], operation[1]);
-    core::time::Sleep(BMI088_COM_WAIT_SENSOR_TIME);
+    Sleep(BMI088_COM_WAIT_SENSOR_TIME);
     this->accel_device_.ReadBytes(operation[0], 2);
-    core::time::Sleep(BMI088_COM_WAIT_SENSOR_TIME);
+    Sleep(BMI088_COM_WAIT_SENSOR_TIME);
 
     if (accel_device_.single_byte_buffer() != operation[1]) {
       this->status_ = (BMI088Status)operation[2];
@@ -125,19 +125,19 @@ void BMI088::InitAccelerometer() {
 void BMI088::InitGyroscope() {
   // 检查通信是否正常
   this->gyro_device_.ReadByte(BMI088_GYRO_CHIP_ID);
-  core::time::Sleep(BMI088_COM_WAIT_SENSOR_TIME);
+  Sleep(BMI088_COM_WAIT_SENSOR_TIME);
   this->gyro_device_.ReadByte(BMI088_GYRO_CHIP_ID);
-  core::time::Sleep(BMI088_COM_WAIT_SENSOR_TIME);
+  Sleep(BMI088_COM_WAIT_SENSOR_TIME);
 
   // soft reset一次
   this->gyro_device_.WriteByte(BMI088_GYRO_SOFTRESET, BMI088_GYRO_SOFTRESET_VALUE);
-  core::time::Sleep(BMI088_LONG_DELAY_TIME);
+  Sleep(BMI088_LONG_DELAY_TIME);
 
   // 再次检查通信是否正常
   this->gyro_device_.ReadByte(BMI088_GYRO_CHIP_ID);
-  core::time::Sleep(BMI088_COM_WAIT_SENSOR_TIME);
+  Sleep(BMI088_COM_WAIT_SENSOR_TIME);
   this->gyro_device_.ReadByte(BMI088_GYRO_CHIP_ID);
-  core::time::Sleep(BMI088_COM_WAIT_SENSOR_TIME);
+  Sleep(BMI088_COM_WAIT_SENSOR_TIME);
 
   // 检查"who am I"寄存器值是否正确
   if (gyro_device_.single_byte_buffer() != BMI088_GYRO_CHIP_ID_VALUE) {
@@ -147,9 +147,9 @@ void BMI088::InitGyroscope() {
   // 发送初始化序列，有错误则设置status为对应错误码
   for (const auto &operation : BMI088_GYRO_INIT_SEQUENCE) {
     this->gyro_device_.WriteByte(operation[0], operation[1]);
-    core::time::Sleep(BMI088_COM_WAIT_SENSOR_TIME);
+    Sleep(BMI088_COM_WAIT_SENSOR_TIME);
     this->gyro_device_.ReadByte(operation[0]);
-    core::time::Sleep(BMI088_COM_WAIT_SENSOR_TIME);
+    Sleep(BMI088_COM_WAIT_SENSOR_TIME);
 
     if (gyro_device_.single_byte_buffer() != operation[1]) {
       this->status_ = (BMI088Status)operation[2];
