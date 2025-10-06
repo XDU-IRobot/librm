@@ -66,14 +66,14 @@ class PID {
 
  public:
   // setters
-  void SetKp(f32 value);
-  void SetKi(f32 value);
-  void SetKd(f32 value);
-  void SetMaxOut(f32 value);
-  void SetMaxIout(f32 value);
-  void SetDiffLpfAlpha(f32 value);
-  void SetDiffFirst(bool enable);
-  void SetDynamicKi(bool enable);
+  PID &SetKp(f32 value);
+  PID &SetKi(f32 value);
+  PID &SetKd(f32 value);
+  PID &SetMaxOut(f32 value);
+  PID &SetMaxIout(f32 value);
+  PID &SetDiffLpfAlpha(f32 value);
+  PID &SetDiffFirst(bool enable);
+  PID &SetDynamicKi(bool enable);
 
   // getters
   f32 kp() const;

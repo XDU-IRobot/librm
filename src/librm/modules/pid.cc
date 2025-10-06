@@ -104,14 +104,38 @@ void PID::Clear() {
   std::memset(error_, 0, sizeof(error_));
 }
 
-void PID::SetKp(f32 value) { kp_ = value; }
-void PID::SetKi(f32 value) { ki_ = value; }
-void PID::SetKd(f32 value) { kd_ = value; }
-void PID::SetMaxOut(f32 value) { max_out_ = value; }
-void PID::SetMaxIout(f32 value) { max_iout_ = value; }
-void PID::SetDiffLpfAlpha(f32 value) { diff_lpf_alpha_ = value; }
-void PID::SetDiffFirst(bool enable) { enable_diff_first_ = enable; }
-void PID::SetDynamicKi(bool enable) { enable_dynamic_ki_ = enable; }
+PID &PID::SetKp(f32 value) {
+  kp_ = value;
+  return *this;
+}
+PID &PID::SetKi(f32 value) {
+  ki_ = value;
+  return *this;
+}
+PID &PID::SetKd(f32 value) {
+  kd_ = value;
+  return *this;
+}
+PID &PID::SetMaxOut(f32 value) {
+  max_out_ = value;
+  return *this;
+}
+PID &PID::SetMaxIout(f32 value) {
+  max_iout_ = value;
+  return *this;
+}
+PID &PID::SetDiffLpfAlpha(f32 value) {
+  diff_lpf_alpha_ = value;
+  return *this;
+}
+PID &PID::SetDiffFirst(bool enable) {
+  enable_diff_first_ = enable;
+  return *this;
+}
+PID &PID::SetDynamicKi(bool enable) {
+  enable_dynamic_ki_ = enable;
+  return *this;
+}
 
 f32 PID::kp() const { return kp_; }
 f32 PID::ki() const { return ki_; }
@@ -119,12 +143,12 @@ f32 PID::kd() const { return kd_; }
 f32 PID::max_out() const { return max_out_; }
 f32 PID::max_iout() const { return max_iout_; }
 f32 PID::set() const { return set_; }
-const f32* PID::ref() const { return ref_; }
+const f32 *PID::ref() const { return ref_; }
 f32 PID::out() const { return out_; }
 f32 PID::p_out() const { return p_out_; }
 f32 PID::i_out() const { return i_out_; }
-const f32* PID::d_out() const { return d_out_; }
-const f32* PID::error() const { return error_; }
+const f32 *PID::d_out() const { return d_out_; }
+const f32 *PID::error() const { return error_; }
 f32 PID::dt() const { return dt_; }
 f32 PID::trapezoid() const { return trapezoid_; }
 f32 PID::diff_lpf_alpha() const { return diff_lpf_alpha_; }
