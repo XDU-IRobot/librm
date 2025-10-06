@@ -21,13 +21,13 @@
 */
 
 /**
- * @file  librm/modules/algorithm/mahony.cc
+ * @file  librm/modules/mahony.cc
  * @brief Mahony姿态解算算法
  */
 
 #include "mahony.hpp"
 
-#include "librm/modules/algorithm/utils.hpp"
+#include "librm/modules/utils.hpp"
 
 #if defined(LIBRM_PLATFORM_STM32)
 #include "librm/hal/stm32/hal.hpp"
@@ -38,7 +38,7 @@
 
 #endif
 
-namespace rm::modules::algorithm {
+namespace rm::modules {
 
 inline f32 InvSqrt(f32 x) {
 #if defined(LIBRM_PLATFORM_STM32) && __FPU_PRESENT == 0
@@ -77,7 +77,7 @@ MahonyAhrs::MahonyAhrs(f32 sample_freq, f32 kp, f32 ki)
  * @brief       更新数据（无磁力计）
  * @param data  IMU数据
  */
-void MahonyAhrs::Update(const rm::modules::algorithm::ImuData6Dof &data) {
+void MahonyAhrs::Update(const rm::modules::ImuData6Dof &data) {
   f32 recipNorm;
   f32 halfvx, halfvy, halfvz;
   f32 halfex, halfey, halfez;
@@ -144,7 +144,7 @@ void MahonyAhrs::Update(const rm::modules::algorithm::ImuData6Dof &data) {
 
   // Convert quaternion to Euler angles
   f32 euler_ypr_temp[3], quaternion_temp[4] = {quaternion_.w, quaternion_.x, quaternion_.y, quaternion_.z};
-  utils::QuatToEuler(quaternion_temp, euler_ypr_temp);
+  QuatToEuler(quaternion_temp, euler_ypr_temp);
   euler_ypr_.yaw = euler_ypr_temp[0];
   euler_ypr_.pitch = euler_ypr_temp[1];
   euler_ypr_.roll = euler_ypr_temp[2];
@@ -154,7 +154,7 @@ void MahonyAhrs::Update(const rm::modules::algorithm::ImuData6Dof &data) {
  * @brief       更新数据（有磁力计）
  * @param data  IMU+磁力计数据
  */
-void MahonyAhrs::Update(const rm::modules::algorithm::ImuData9Dof &data) {
+void MahonyAhrs::Update(const rm::modules::ImuData9Dof &data) {
   f32 gx = data.gx, gy = data.gy, gz = data.gz, ax = data.ax, ay = data.ay, az = data.az, mx = data.mx, my = data.my,
       mz = data.mz;
   // Use IMU algorithm if magnetometer measurement invalid (avoids NaN in magnetometer normalisation)
@@ -250,7 +250,7 @@ void MahonyAhrs::Update(const rm::modules::algorithm::ImuData9Dof &data) {
 
   // Convert quaternion to Euler angles
   f32 euler_ypr_temp[3], quaternion_temp[4] = {quaternion_.w, quaternion_.x, quaternion_.y, quaternion_.z};
-  utils::QuatToEuler(quaternion_temp, euler_ypr_temp);
+  QuatToEuler(quaternion_temp, euler_ypr_temp);
   euler_ypr_.yaw = euler_ypr_temp[0];
   euler_ypr_.pitch = euler_ypr_temp[1];
   euler_ypr_.roll = euler_ypr_temp[2];
@@ -266,4 +266,4 @@ void MahonyAhrs::Update(const rm::modules::algorithm::ImuData9Dof &data) {
  */
 [[nodiscard]] const Quaternion &MahonyAhrs::quaternion() const { return quaternion_; }
 
-}  // namespace rm::modules::algorithm
+}  // namespace rm::modules

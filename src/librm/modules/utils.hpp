@@ -21,18 +21,18 @@
 */
 
 /**
- * @file  librm/modules/algorithm/utils.hpp
+ * @file  librm/modules/utils.hpp
  * @brief 通用工具函数
  */
 
-#ifndef LIBRM_MODULES_ALGORITHM_UTILS_UTILS_HPP
-#define LIBRM_MODULES_ALGORITHM_UTILS_UTILS_HPP
+#ifndef LIBRM_MODULES_UTILS_HPP
+#define LIBRM_MODULES_UTILS_HPP
 
 #include <cmath>
 
 #include "librm/core/typedefs.hpp"
 
-namespace rm::modules::algorithm::utils {
+namespace rm::modules {
 
 /**
  * @brief  符号函数
@@ -142,6 +142,6 @@ f32 IntToFloat(int x_int, f32 x_min, f32 x_max, int bits);
  */
 int FloatToInt(f32 x, f32 x_min, f32 x_max, int bits);
 
-}  // namespace rm::modules::algorithm::utils
+}  // namespace rm::modules
 
-#endif  // LIBRM_MODULES_ALGORITHM_UTILS_UTILS_HPP
+#endif  // LIBRM_MODULES_UTILS_HPP

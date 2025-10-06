@@ -22,7 +22,7 @@
 
 /**
  * @file  librm/device/supercap/supercap.hpp
- * @brief 超级电容
+ * @brief 2024赛季超级电容
  */
 
 #ifndef LIBRM_DEVICE_SUPERCAP_SUPERCAP_HPP

@@ -20,13 +20,13 @@
   SOFTWARE.
 */
 
-#ifndef LIBRM_MODULES_ALGORITHM_THRESHOLD_TRIGGER_HPP
-#define LIBRM_MODULES_ALGORITHM_THRESHOLD_TRIGGER_HPP
+#ifndef LIBRM_MODULES_THRESHOLD_TRIGGER_HPP
+#define LIBRM_MODULES_THRESHOLD_TRIGGER_HPP
 
 #include <functional>
 #include <vector>
 
-namespace rm::modules::algorithm {
+namespace rm::modules {
 
 /**
  * @brief 阈值触发器。Attach callbacks to rising and falling edges of a variable.
@@ -86,6 +86,6 @@ class ThresholdTrigger {
   std::vector<std::function<void()>> falling_edge_callbacks_{};
 };
 
-}  // namespace rm::modules::algorithm
+}  // namespace rm::modules
 
-#endif  // LIBRM_MODULES_ALGORITHM_THRESHOLD_TRIGGER_HPP
+#endif  // LIBRM_MODULES_THRESHOLD_TRIGGER_HPP

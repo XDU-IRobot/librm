@@ -21,21 +21,21 @@
 */
 
 /**
- * @file  librm/modules/algorithm/ahrs/ekf.hpp
+ * @file  librm/modules/ahrs/ekf.hpp
  * @brief EKF姿态解算算法
  */
 
-#ifndef LIBRM_MODULES_ALGORITHM_EKF_HPP
-#define LIBRM_MODULES_ALGORITHM_EKF_HPP
+#ifndef LIBRM_MODULES_AHRS_EKF_HPP
+#define LIBRM_MODULES_AHRS_EKF_HPP
 
 #include "librm/core/typedefs.hpp"
-#include "librm/modules/algorithm/ahrs/ahrs_interface.hpp"
+#include "librm/modules/ahrs/ahrs_interface.hpp"
 
 #include "kalman/LinearizedSystemModel.hpp"
 #include "kalman/LinearizedMeasurementModel.hpp"
 #include "kalman/ExtendedKalmanFilter.hpp"
 
-namespace rm::modules::algorithm {
+namespace rm::modules {
 
 class State : public Kalman::Vector<f32, 6> {
  public:
@@ -78,9 +78,9 @@ template <template <class> class CovarianceBase = Kalman::StandardBase>
 class SystemModel : public Kalman::LinearizedSystemModel<State, Control, CovarianceBase> {
  public:
   //! 状态向量简写
-  using S = rm::modules::algorithm::State;
+  using S = rm::modules::State;
   //! 控制向量简写
-  using C = rm::modules::algorithm::Control;
+  using C = rm::modules::Control;
 
   /**
    * @brief 构造函数
@@ -219,9 +219,9 @@ template <template <class> class CovarianceBase = Kalman::StandardBase>
 class accelMeasurementModel : public Kalman::LinearizedMeasurementModel<State, accelMeasurement, CovarianceBase> {
  public:
   //! 状态向量简写
-  using S = rm::modules::algorithm::State;
+  using S = rm::modules::State;
   //! 测量向量简写
-  using M = rm::modules::algorithm::accelMeasurement;
+  using M = rm::modules::accelMeasurement;
 
   // 构造函数
   accelMeasurementModel() {
@@ -275,6 +275,6 @@ class EkfAhrs : public AhrsInterface {
   Kalman::ExtendedKalmanFilter<State> ekf_;
 };
 
-}  // namespace rm::modules::algorithm
+}  // namespace rm::modules
 
-#endif  // LIBRM_MODULES_ALGORITHM_EKF_H
+#endif  // LIBRM_MODULES_AHRS_EKF_HPP

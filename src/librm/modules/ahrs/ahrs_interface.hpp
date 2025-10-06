@@ -21,16 +21,16 @@
 */
 
 /**
- * @file  librm/modules/algorithm/ahrs/ahrs_interface.hpp
+ * @file  librm/modules/ahrs/ahrs_interface.hpp
  * @brief AHRS算法接口
  */
 
-#ifndef LIBRM_MODULES_ALGORITHM_AHRS_AHRS_INTERFACE_HPP
-#define LIBRM_MODULES_ALGORITHM_AHRS_AHRS_INTERFACE_HPP
+#ifndef LIBRM_MODULES_AHRS_AHRS_INTERFACE_HPP
+#define LIBRM_MODULES_AHRS_AHRS_INTERFACE_HPP
 
 #include "librm/core/typedefs.hpp"
 
-namespace rm::modules::algorithm {
+namespace rm::modules {
 
 struct ImuData6Dof {
   f32 gx;
@@ -93,6 +93,6 @@ class AhrsInterface {
   [[nodiscard]] virtual const Quaternion &quaternion() const = 0;
 };
 
-}  // namespace rm::modules::algorithm
+}  // namespace rm::modules
 
-#endif  // LIBRM_MODULES_ALGORITHM_AHRS_AHRS_INTERFACE_H
+#endif  // LIBRM_MODULES_AHRS_AHRS_INTERFACE_H

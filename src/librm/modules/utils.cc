@@ -21,13 +21,13 @@
 */
 
 /**
- * @file  librm/modules/algorithm/utils.cc
+ * @file  librm/modules/utils.cc
  * @brief 通用工具函数
  */
 
 #include "utils.hpp"
 
-namespace rm::modules::algorithm::utils {
+namespace rm::modules {
 
 f32 Deadline(f32 value, f32 min_value, f32 max_value) {
   if (value < min_value || value > max_value) {
@@ -89,4 +89,4 @@ int FloatToInt(f32 x, f32 x_min, f32 x_max, int bits) {
   return (int)((x - offset) * ((f32)((1 << bits) - 1)) / span);
 }
 
-}  // namespace rm::modules::algorithm::utils
+}  // namespace rm::modules

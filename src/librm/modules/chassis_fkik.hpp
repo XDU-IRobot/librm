@@ -21,20 +21,20 @@
 */
 
 /**
- * @file  librm/modules/algorithm/chassis_fkik.hpp
+ * @file  librm/modules/chassis_fkik.hpp
  * @brief 各种常见底盘构型的正逆运动学解算
  */
 
-#ifndef LIBRM_MODULES_ALGORITHM_CHASSIS_FKIK_HPP
-#define LIBRM_MODULES_ALGORITHM_CHASSIS_FKIK_HPP
+#ifndef LIBRM_MODULES_CHASSIS_FKIK_HPP
+#define LIBRM_MODULES_CHASSIS_FKIK_HPP
 
 #include <cmath>
 #include <initializer_list>
 
 #include "librm/core/typedefs.hpp"
-#include "librm/modules/algorithm/utils.hpp"
+#include "librm/modules/utils.hpp"
 
-namespace rm::modules::algorithm {
+namespace rm::modules {
 
 /**
  * @brief max函数，由于一些神秘原因gcc-arm-none-eabi没有实现这个函数？？？？？？？（问号脸
@@ -143,7 +143,6 @@ class SteeringChassis {
    */
   inline auto Forward(f32 vx, f32 vy, f32 w, f32 current_lf_angle, f32 current_rf_angle, f32 current_lr_angle,
                       f32 current_rr_angle) {
-    using namespace rm::modules::algorithm::utils;
     Forward(vx, vy, w);
 
     // 依次计算每个舵的目标角度和目前角度的差值，如果差值大于90度，就把目标舵角加180度，轮速取反。
@@ -238,6 +237,6 @@ class QuadOmniChassis {
   } forward_result_{};
 };
 
-}  // namespace rm::modules::algorithm
+}  // namespace rm::modules
 
-#endif  // LIBRM_MODULES_ALGORITHM_CHASSIS_FKIK_HPP
+#endif  // LIBRM_MODULES_CHASSIS_FKIK_HPP

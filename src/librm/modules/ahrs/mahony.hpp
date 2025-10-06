@@ -21,19 +21,19 @@
 */
 
 /**
- * @file  modules/algorithm/mahony.hpp
+ * @file  modules/mahony.hpp
  * @brief Mahony姿态解算算法
  */
 
-#ifndef LIBRM_MODULES_ALGORITHM_MAHONY_HPP
-#define LIBRM_MODULES_ALGORITHM_MAHONY_HPP
+#ifndef LIBRM_MODULES_AHRS_MAHONY_HPP
+#define LIBRM_MODULES_AHRS_MAHONY_HPP
 
 #include <array>
 
 #include "librm/core/typedefs.hpp"
-#include "librm/modules/algorithm/ahrs/ahrs_interface.hpp"
+#include "librm/modules/ahrs/ahrs_interface.hpp"
 
-namespace rm::modules::algorithm {
+namespace rm::modules {
 
 class MahonyAhrs : public AhrsInterface {
  public:
@@ -61,6 +61,6 @@ class MahonyAhrs : public AhrsInterface {
                integral_fb_z_ = 0.0f;  // integral error terms scaled by Ki
 };
 
-}  // namespace rm::modules::algorithm
+}  // namespace rm::modules
 
-#endif  // LIBRM_MODULES_ALGORITHM_MAHONY_H
+#endif  // LIBRM_MODULES_AHRS_MAHONY_H

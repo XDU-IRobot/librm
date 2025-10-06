@@ -34,7 +34,7 @@
 
 #include <array>
 
-#include "librm/modules/algorithm/crc.hpp"
+#include "librm/modules/crc.hpp"
 
 namespace rm::device {
 
@@ -98,8 +98,8 @@ class Referee {
         valid_data_so_far_[valid_data_so_far_idx_++] = data;
 
         if (valid_data_so_far_idx_ == kRefProtocolHeaderLen) {
-          if (modules::algorithm::Crc8(valid_data_so_far_.data(), kRefProtocolHeaderLen - 1,
-                                       modules::algorithm::CRC8_INIT) == valid_data_so_far_[4]) {
+          if (modules::Crc8(valid_data_so_far_.data(), kRefProtocolHeaderLen - 1,
+                                       modules::CRC8_INIT) == valid_data_so_far_[4]) {
             deserialize_fsm_state_ = DeserializeFsmState::kCrc16;
           } else {
             deserialize_fsm_state_ = DeserializeFsmState::kSof;
@@ -119,8 +119,8 @@ class Referee {
           crc16_this_time_ = (valid_data_so_far_[kRefProtocolAllMetadataLen + data_len_this_time_ - 1] << 8) |
                              valid_data_so_far_[kRefProtocolAllMetadataLen + data_len_this_time_ - 2];
 
-          if (modules::algorithm::Crc16(valid_data_so_far_.data(), kRefProtocolAllMetadataLen + data_len_this_time_ - 2,
-                                        modules::algorithm::CRC16_INIT) == crc16_this_time_) {
+          if (modules::Crc16(valid_data_so_far_.data(), kRefProtocolAllMetadataLen + data_len_this_time_ - 2,
+                                        modules::CRC16_INIT) == crc16_this_time_) {
             cmdid_this_time_ = (valid_data_so_far_[6] << 8) | valid_data_so_far_[5];
 
             // 整包接收完+校验通过，把数据拷贝到反序列化缓冲区对应的结构体中

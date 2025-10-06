@@ -22,18 +22,16 @@
 
 /**
  * @file  librm/device/supercap/supercap.cc
- * @brief 超级电容
+ * @brief 2024赛季超级电容
  */
 
 #include "supercap.hpp"
 
 #include <cstring>
 
-#include "librm/modules/algorithm/utils.hpp"
+#include "librm/modules/utils.hpp"
 
 namespace rm::device {
-
-using modules::algorithm::utils::Map;
 
 SuperCap::SuperCap(hal::CanInterface &can) : CanDevice(can, 0x30) {}
 
@@ -100,8 +98,8 @@ void SuperCap::UpdateSettings(i16 power_limit, i16 output_limit, i16 input_limit
  */
 void SuperCap::RxCallback(const hal::CanMsg *msg) {
   i16 current_int16 = (msg->data[2] << 8) | msg->data[3];
-  this->voltage_ = Map((msg->data[0] << 8) | msg->data[1], -32000, 32000, 0, 30);
-  this->current_ = Map(current_int16, -32000, 32000, -20, 20);
+  this->voltage_ = modules::Map((msg->data[0] << 8) | msg->data[1], -32000, 32000, 0, 30);
+  this->current_ = modules::Map(current_int16, -32000, 32000, -20, 20);
   this->error_flags_ = (msg->data[4] << 8) | msg->data[5];
 }
 

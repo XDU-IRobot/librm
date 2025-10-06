@@ -34,7 +34,7 @@
 
 #include "librm/device/can_device.hpp"
 #include "librm/core/typedefs.hpp"
-#include "librm/modules/algorithm/utils.hpp"
+#include "librm/modules/utils.hpp"
 
 namespace rm::device {
 
@@ -150,16 +150,11 @@ class DmMotor final : public CanDevice {
       position_rad = -position_rad;
       max_speed_rad_per_sec = -max_speed_rad_per_sec;
     }
-    u16 pos_tmp =
-        modules::algorithm::utils::FloatToInt(position_rad, -this->settings_.p_max, this->settings_.p_max, 16);
-    u16 vel_tmp =
-        modules::algorithm::utils::FloatToInt(max_speed_rad_per_sec, -this->settings_.v_max, this->settings_.v_max, 12);
-    u16 kp_tmp =
-        modules::algorithm::utils::FloatToInt(kp, this->settings_.kp_range.first, this->settings_.kp_range.second, 12);
-    u16 kd_tmp =
-        modules::algorithm::utils::FloatToInt(kd, this->settings_.kd_range.first, this->settings_.kd_range.second, 12);
-    u16 tor_tmp =
-        modules::algorithm::utils::FloatToInt(accel_torque_nm, -this->settings_.t_max, this->settings_.t_max, 12);
+    u16 pos_tmp = modules::FloatToInt(position_rad, -this->settings_.p_max, this->settings_.p_max, 16);
+    u16 vel_tmp = modules::FloatToInt(max_speed_rad_per_sec, -this->settings_.v_max, this->settings_.v_max, 12);
+    u16 kp_tmp = modules::FloatToInt(kp, this->settings_.kp_range.first, this->settings_.kp_range.second, 12);
+    u16 kd_tmp = modules::FloatToInt(kd, this->settings_.kd_range.first, this->settings_.kd_range.second, 12);
+    u16 tor_tmp = modules::FloatToInt(accel_torque_nm, -this->settings_.t_max, this->settings_.t_max, 12);
 
     this->tx_buffer_[0] = (pos_tmp >> 8);
     this->tx_buffer_[1] = pos_tmp;
@@ -233,9 +228,9 @@ class DmMotor final : public CanDevice {
     int v_int = (msg->data[3] << 4) | (msg->data[4] >> 4);
     int t_int = ((msg->data[4] & 0xf) << 8) | msg->data[5];
     this->status_ = msg->data[0] | 0b00001111;
-    this->position_ = modules::algorithm::utils::IntToFloat(p_int, -this->settings_.p_max, this->settings_.p_max, 16);
-    this->speed_ = modules::algorithm::utils::IntToFloat(v_int, -this->settings_.v_max, this->settings_.v_max, 12);
-    this->torque_ = modules::algorithm::utils::IntToFloat(t_int, -this->settings_.t_max, this->settings_.t_max, 12);
+    this->position_ = modules::IntToFloat(p_int, -this->settings_.p_max, this->settings_.p_max, 16);
+    this->speed_ = modules::IntToFloat(v_int, -this->settings_.v_max, this->settings_.v_max, 12);
+    this->torque_ = modules::IntToFloat(t_int, -this->settings_.t_max, this->settings_.t_max, 12);
     this->mos_temperature_ = msg->data[6];
     this->coil_temperature_ = msg->data[7];
     if (this->reversed_) {

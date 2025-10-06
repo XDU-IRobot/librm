@@ -21,7 +21,7 @@
 */
 
 /**
- * @file  librm/modules/algorithm/crc.cc
+ * @file  librm/modules/crc.cc
  * @brief crc8/crc16/crc32/crc_ccitt
  */
 
@@ -29,7 +29,7 @@
 
 #include <string_view>
 
-namespace rm::modules::algorithm {
+namespace rm::modules {
 
 // crc8 generator polynomial:G(x)=x8+x5+x4+1
 constexpr u8 CRC8_TABLE[256] = {
@@ -240,4 +240,4 @@ u16 CrcCcitt(const std::string &input, u16 init) {
   return CrcCcitt(reinterpret_cast<const uint8_t *>(input.data()), input.size(), init);
 }
 
-}  // namespace rm::modules::algorithm
+}  // namespace rm::modules

@@ -21,39 +21,22 @@
 */
 
 /**
- * @file  librm/modules/algorithm/crc.hpp
- * @brief crc8/crc16
+ * @file  librm/modules/float16.hpp
+ * @brief float16和float32互转
  */
 
-#ifndef LIBRM_MODULES_ALGORITHM_CRC_HPP
-#define LIBRM_MODULES_ALGORITHM_CRC_HPP
+#ifndef LIBRM_MODULES_FLOAT16_HPP
+#define LIBRM_MODULES_FLOAT16_HPP
 
-#include <string>
+#include <cstdint>
 
-#include "librm/core/typedefs.hpp"
+namespace rm::modules {
 
-namespace rm::modules::algorithm {
+typedef uint16_t f16;
 
-constexpr u8 CRC8_INIT = 0xff;
-constexpr u16 CRC16_INIT = 0xffff;
-constexpr u32 CRC32_INIT = 0xffffffff;
+float F16ToF32(f16 i);
+f16 F32ToF16(float value);
 
-u8 Crc8(const u8 *input, usize len, u8 init);
-u8 Crc8(std::string_view input, u8 init);
-u8 Crc8(const std::string &input, u8 init);
+}  // namespace rm::modules
 
-u16 Crc16(const u8 *input, usize len, u16 init);
-u16 Crc16(std::string_view input, u16 init);
-u16 Crc16(const std::string &input, u16 init);
-
-u32 Crc32(const u32 *input, usize len, u32 init);
-u32 Crc32(std::string_view input, u32 init);
-u32 Crc32(const std::string &input, u32 init);
-
-u16 CrcCcitt(const u8 *input, usize len, u16 init);
-u16 CrcCcitt(std::string_view input, u16 init);
-u16 CrcCcitt(const std::string &input, u16 init);
-
-}  // namespace rm::modules::algorithm
-
-#endif  // LIBRM_MODULES_ALGORITHM_CRC_H
+#endif  // LIBRM_MODULES_FLOAT16_HPP

@@ -21,20 +21,20 @@
 */
 
 /**
- * @file  librm/modules/algorithm/pid.hpp
+ * @file  librm/modules/pid.hpp
  * @brief PID控制器
  */
 
-#ifndef LIBRM_MODULES_ALGORITHM_PID_HPP
-#define LIBRM_MODULES_ALGORITHM_PID_HPP
+#ifndef LIBRM_MODULES_PID_HPP
+#define LIBRM_MODULES_PID_HPP
 
 #include <cstring>
 #include <limits>
 
 #include "librm/core/typedefs.hpp"
-#include "librm/modules/algorithm/utils.hpp"
+#include "librm/modules/utils.hpp"
 
-namespace rm::modules::algorithm {
+namespace rm::modules {
 
 /**
  * @brief PID控制器类型
@@ -70,7 +70,7 @@ class PID {
     std::memset(d_buf_, 0, sizeof(d_buf_));
     std::memset(error_, 0, sizeof(error_));
   }
-  [[nodiscard]] f32 value() const { return utils::absConstrain(p_out_ + i_out_ + d_out_, max_out_); }
+  [[nodiscard]] f32 value() const { return absConstrain(p_out_ + i_out_ + d_out_, max_out_); }
   [[nodiscard]] f32 last_error() const { return error_[0]; }
   [[nodiscard]] f32 p_out() const { return p_out_; }
   [[nodiscard]] f32 i_out() const { return i_out_; }
@@ -111,7 +111,7 @@ inline void PID<PIDType::kPosition>::Update(f32 error) {
   d_buf_[0] = error_[0] - error_[1];
 
   d_out_ = kd_ * d_buf_[0];
-  i_out_ = utils::absConstrain(i_out_, max_iout_);
+  i_out_ = absConstrain(i_out_, max_iout_);
 }
 
 template <>
@@ -145,7 +145,7 @@ inline void PID<PIDType::kPosition>::UpdateExtDiff(f32 error, f32 external_diff)
   d_buf_[0] = external_diff;
 
   d_out_ = kd_ * d_buf_[0];
-  i_out_ = utils::absConstrain(i_out_, max_iout_);
+  i_out_ = absConstrain(i_out_, max_iout_);
 }
 
 template <>
@@ -191,7 +191,7 @@ inline void RingPID<PIDType::kPosition>::Update(f32 error) {
   error_[1] = error_[0];
   error_[0] = error;
 
-  error_[0] = utils::LoopConstrain(error_[0], -cycle_ / 2, cycle_ / 2);
+  error_[0] = LoopConstrain(error_[0], -cycle_ / 2, cycle_ / 2);
 
   p_out_ = kp_ * error_[0];
   i_out_ += ki_ * error_[0];
@@ -201,7 +201,7 @@ inline void RingPID<PIDType::kPosition>::Update(f32 error) {
   d_buf_[0] = error_[0] - error_[1];
 
   d_out_ = kd_ * d_buf_[0];
-  i_out_ = utils::absConstrain(i_out_, max_iout_);
+  i_out_ = absConstrain(i_out_, max_iout_);
 }
 
 template <>
@@ -210,7 +210,7 @@ inline void RingPID<PIDType::kDelta>::Update(f32 error) {
   error_[1] = error_[0];
   error_[0] = error;
 
-  error_[0] = utils::LoopConstrain(error_[0], -cycle_ / 2, cycle_ / 2);
+  error_[0] = LoopConstrain(error_[0], -cycle_ / 2, cycle_ / 2);
 
   p_out_ = kp_ * (error_[0] - error_[1]);
   i_out_ = ki_ * error_[0];
@@ -228,7 +228,7 @@ inline void RingPID<PIDType::kPosition>::UpdateExtDiff(f32 error, f32 external_d
   error_[1] = error_[0];
   error_[0] = error;
 
-  error_[0] = utils::LoopConstrain(error_[0], -cycle_ / 2, cycle_ / 2);
+  error_[0] = LoopConstrain(error_[0], -cycle_ / 2, cycle_ / 2);
 
   p_out_ = kp_ * error_[0];
   i_out_ += ki_ * error_[0];
@@ -239,7 +239,7 @@ inline void RingPID<PIDType::kPosition>::UpdateExtDiff(f32 error, f32 external_d
   d_buf_[0] = external_diff;
 
   d_out_ = kd_ * d_buf_[0];
-  i_out_ = utils::absConstrain(i_out_, max_iout_);
+  i_out_ = absConstrain(i_out_, max_iout_);
 }
 
 template <>
@@ -248,7 +248,7 @@ inline void RingPID<PIDType::kDelta>::UpdateExtDiff(f32 error, f32 external_diff
   error_[1] = error_[0];
   error_[0] = error;
 
-  error_[0] = utils::LoopConstrain(error_[0], -cycle_ / 2, cycle_ / 2);
+  error_[0] = LoopConstrain(error_[0], -cycle_ / 2, cycle_ / 2);
 
   p_out_ = kp_ * (error_[0] - error_[1]);
   i_out_ = ki_ * error_[0];
@@ -260,6 +260,6 @@ inline void RingPID<PIDType::kDelta>::UpdateExtDiff(f32 error, f32 external_diff
   d_out_ = kd_ * d_buf_[0];
 }
 
-}  // namespace rm::modules::algorithm
+}  // namespace rm::modules
 
-#endif  // LIBRM_MODULES_ALGORITHM_PID_HPP
+#endif  // LIBRM_MODULES_PID_HPP

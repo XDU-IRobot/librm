@@ -21,16 +21,16 @@
 */
 
 /**
- * @file  librm/modules/algorithm/ahrs/ekf.cc
+ * @file  librm/modules/ahrs/ekf.cc
  * @brief EKF姿态解算算法
  */
 
 #include "ekf.hpp"
 
-#include "librm/modules/algorithm/ahrs/ahrs_interface.hpp"
-#include "librm/modules/algorithm/utils.hpp"
+#include "librm/modules/ahrs/ahrs_interface.hpp"
+#include "librm/modules/utils.hpp"
 
-namespace rm::modules::algorithm {
+namespace rm::modules {
 
 EkfAhrs::EkfAhrs(f32 sample_freq)
     : sample_freq_(sample_freq),
@@ -54,13 +54,13 @@ EkfAhrs::EkfAhrs(f32 sample_freq)
   ekf_.init(x_);
 }
 
-void EkfAhrs::Update(const rm::modules::algorithm::ImuData9Dof &data) {}
+void EkfAhrs::Update(const rm::modules::ImuData9Dof &data) {}
 
 /**
  * @brief       更新数据（无磁力计）
  * @param data  IMU数据
  */
-void EkfAhrs::Update(const rm::modules::algorithm::ImuData6Dof &data) {
+void EkfAhrs::Update(const rm::modules::ImuData6Dof &data) {
   sys_.GetGyro(data.gx, data.gy, data.gz);
 
   auto Q = sys_.getCovariance();
@@ -102,7 +102,7 @@ void EkfAhrs::Update(const rm::modules::algorithm::ImuData6Dof &data) {
   quaternion_.z = ekf_.getState().q3();
 
   f32 euler_ypr_temp[3], quaternion_temp[4] = {quaternion_.w, quaternion_.x, quaternion_.y, quaternion_.z};
-  utils::QuatToEuler(quaternion_temp, euler_ypr_temp);
+  QuatToEuler(quaternion_temp, euler_ypr_temp);
   euler_ypr_.yaw = euler_ypr_temp[0];
   euler_ypr_.pitch = euler_ypr_temp[1];
   euler_ypr_.roll = euler_ypr_temp[2];
@@ -118,4 +118,4 @@ void EkfAhrs::Update(const rm::modules::algorithm::ImuData6Dof &data) {
  */
 [[nodiscard]] const Quaternion &EkfAhrs::quaternion() const { return quaternion_; }
 
-}  // namespace rm::modules::algorithm
+}  // namespace rm::modules

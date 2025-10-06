@@ -21,7 +21,7 @@
 */
 
 /**
- * @file  librm/modules/algorithm/float16.cc
+ * @file  librm/modules/float16.cc
  * @brief float16和float32互转
  */
 
@@ -32,7 +32,7 @@
 
 #include "librm/core/typedefs.hpp"
 
-namespace rm::modules::algorithm {
+namespace rm::modules {
 
 // f16的格式定义：https://en.wikipedia.org/wiki/Half-precision_floating-point_format
 // f32的格式定义：https://en.wikipedia.org/wiki/Single-precision_floating-point_format
@@ -203,4 +203,4 @@ f16 F32ToF16(float value) {
   }
 }
 
-}  // namespace rm::modules::algorithm
+}  // namespace rm::modules

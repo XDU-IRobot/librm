@@ -39,7 +39,7 @@
 #include "librm/core/typedefs.hpp"
 #include "librm/device/can_device.hpp"
 #include "librm/hal/can_interface.hpp"
-#include "librm/modules/algorithm/utils.hpp"
+#include "librm/modules/utils.hpp"
 
 namespace rm::device {
 

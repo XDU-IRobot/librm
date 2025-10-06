@@ -61,15 +61,15 @@
 #include "librm/device/supercap/supercap.hpp"
 /****************/
 
-/******** MISC MODULES ********/
-#include "librm/modules/algorithm/ahrs/mahony.hpp"
-#include "librm/modules/algorithm/ahrs/ekf.hpp"
-#include "librm/modules/algorithm/chassis_fkik.hpp"
-#include "librm/modules/algorithm/crc.hpp"
-#include "librm/modules/algorithm/float16.hpp"
-#include "librm/modules/algorithm/pid.hpp"
-#include "librm/modules/algorithm/threshold_trigger.hpp"
-#include "librm/modules/algorithm/utils.hpp"
+/******** MODULES ********/
+#include "librm/modules/ahrs/mahony.hpp"
+#include "librm/modules/ahrs/ekf.hpp"
+#include "librm/modules/chassis_fkik.hpp"
+#include "librm/modules/crc.hpp"
+#include "librm/modules/float16.hpp"
+#include "librm/modules/pid.hpp"
+#include "librm/modules/threshold_trigger.hpp"
+#include "librm/modules/utils.hpp"
 #include "librm/modules/vofa_plotter.hpp"
 /****************/
 

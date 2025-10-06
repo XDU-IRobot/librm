@@ -55,7 +55,7 @@
 
 #include "librm/device/can_device.hpp"
 #include "librm/core/typedefs.hpp"
-#include "librm/modules/algorithm/utils.hpp"
+#include "librm/modules/utils.hpp"
 
 namespace rm::device {
 
@@ -155,7 +155,7 @@ DjiMotor<motor_type>::DjiMotor(hal::CanInterface &can, u16 id, bool reversed)
 template <DjiMotorType motor_type>
 void DjiMotor<motor_type>::SetCurrent(i16 current) {
   // 限幅到电机能接受的最大电流
-  current = modules::algorithm::utils::absConstrain(current, DjiMotorProperties<motor_type>::kCurrentBound);
+  current = modules::absConstrain(current, DjiMotorProperties<motor_type>::kCurrentBound);
   // 处理反转
   if (this->reversed_) {
     current = -current;
