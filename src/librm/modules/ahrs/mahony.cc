@@ -27,6 +27,8 @@
 
 #include "mahony.hpp"
 
+#include <cmath>
+
 #include "librm/modules/utils.hpp"
 
 #if defined(LIBRM_PLATFORM_STM32)

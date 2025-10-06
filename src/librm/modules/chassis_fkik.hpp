@@ -147,20 +147,20 @@ class SteeringChassis {
 
     // 依次计算每个舵的目标角度和目前角度的差值，如果差值大于90度，就把目标舵角加180度，轮速取反。
     // 这样可以保证舵角变化量始终小于90度，加快舵的响应速度
-    if (std::abs(LoopConstrain(current_lf_angle - forward_result_.lf_steer_position, -M_PI, M_PI)) > M_PI / 2) {
-      forward_result_.lf_steer_position = LoopConstrain(forward_result_.lf_steer_position + M_PI, 0, 2 * M_PI);
+    if (std::abs(Wrap(current_lf_angle - forward_result_.lf_steer_position, -M_PI, M_PI)) > M_PI / 2) {
+      forward_result_.lf_steer_position = Wrap(forward_result_.lf_steer_position + M_PI, 0, 2 * M_PI);
       forward_result_.lf_wheel_speed = -forward_result_.lf_wheel_speed;
     }
-    if (std::abs(LoopConstrain(current_rf_angle - forward_result_.rf_steer_position, -M_PI, M_PI)) > M_PI / 2) {
-      forward_result_.rf_steer_position = LoopConstrain(forward_result_.rf_steer_position + M_PI, 0, 2 * M_PI);
+    if (std::abs(Wrap(current_rf_angle - forward_result_.rf_steer_position, -M_PI, M_PI)) > M_PI / 2) {
+      forward_result_.rf_steer_position = Wrap(forward_result_.rf_steer_position + M_PI, 0, 2 * M_PI);
       forward_result_.rf_wheel_speed = -forward_result_.rf_wheel_speed;
     }
-    if (std::abs(LoopConstrain(current_lr_angle - forward_result_.lr_steer_position, -M_PI, M_PI)) > M_PI / 2) {
-      forward_result_.lr_steer_position = LoopConstrain(forward_result_.lr_steer_position + M_PI, 0, 2 * M_PI);
+    if (std::abs(Wrap(current_lr_angle - forward_result_.lr_steer_position, -M_PI, M_PI)) > M_PI / 2) {
+      forward_result_.lr_steer_position = Wrap(forward_result_.lr_steer_position + M_PI, 0, 2 * M_PI);
       forward_result_.lr_wheel_speed = -forward_result_.lr_wheel_speed;
     }
-    if (std::abs(LoopConstrain(current_rr_angle - forward_result_.rr_steer_position, -M_PI, M_PI)) > M_PI / 2) {
-      forward_result_.rr_steer_position = LoopConstrain(forward_result_.rr_steer_position + M_PI, 0, 2 * M_PI);
+    if (std::abs(Wrap(current_rr_angle - forward_result_.rr_steer_position, -M_PI, M_PI)) > M_PI / 2) {
+      forward_result_.rr_steer_position = Wrap(forward_result_.rr_steer_position + M_PI, 0, 2 * M_PI);
       forward_result_.rr_wheel_speed = -forward_result_.rr_wheel_speed;
     }
 

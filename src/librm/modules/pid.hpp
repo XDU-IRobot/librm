@@ -28,237 +28,88 @@
 #ifndef LIBRM_MODULES_PID_HPP
 #define LIBRM_MODULES_PID_HPP
 
-#include <cstring>
-#include <limits>
-
 #include "librm/core/typedefs.hpp"
-#include "librm/modules/utils.hpp"
 
 namespace rm::modules {
 
 /**
- * @brief PID控制器类型
+ * @brief   位置式PID控制器
  */
-enum class PIDType {
-  kPosition,  ///< 位置式PID
-  kDelta,     ///< 增量式PID
-};
-
-/**
- * @brief   PID控制器
- * @tparam  type PID控制器类型
- */
-template <PIDType type>
 class PID {
  public:
-  PID() = default;
-  virtual ~PID() = default;
+  PID();
+  virtual ~PID();
+  PID(f32 kp, f32 ki, f32 kd, f32 max_out, f32 max_iout);
+  virtual void Update(f32 set, f32 ref, f32 dt = 1.f);
+  virtual void UpdateExtDiff(f32 set, f32 ref, f32 external_diff, f32 dt = 1.f);
+  void Clear();
 
-  PID(f32 kp, f32 ki, f32 kd, f32 max_out, f32 max_iout)
-      : kp_(kp), ki_(ki), kd_(kd), max_out_(max_out), max_iout_(max_iout) {}
-  virtual void Update(f32 error);
-  virtual void UpdateExtDiff(f32 error, f32 external_diff);
-  void Update(f32 set, f32 ref) { Update(set - ref); }
-  void UpdateExtDiff(f32 set, f32 ref, f32 external_diff) { Update(set - ref, external_diff); }
-  void Clear() {
-    set_ = 0;
-    fdb_ = 0;
-    out_ = 0;
-    p_out_ = 0;
-    i_out_ = 0;
-    d_out_ = 0;
-    std::memset(d_buf_, 0, sizeof(d_buf_));
-    std::memset(error_, 0, sizeof(error_));
-  }
-  [[nodiscard]] f32 value() const { return absConstrain(p_out_ + i_out_ + d_out_, max_out_); }
-  [[nodiscard]] f32 last_error() const { return error_[0]; }
-  [[nodiscard]] f32 p_out() const { return p_out_; }
-  [[nodiscard]] f32 i_out() const { return i_out_; }
-  [[nodiscard]] f32 d_out() const { return d_out_; }
-
- public:
+ protected:
   f32 kp_{};
   f32 ki_{};
   f32 kd_{};
-
   f32 max_out_{};
   f32 max_iout_{};
-
- protected:
   f32 set_{};
-  f32 fdb_{};
-
+  f32 ref_[2]{};  ///< 0: 这次, 1: 上次
   f32 out_{};
   f32 p_out_{};
   f32 i_out_{};
-  f32 d_out_{};
-  f32 d_buf_[3]{};  // 0: 这次, 1: 上次, 2: 上上次
-  f32 error_[3]{};  // 0: 这次, 1: 上次, 2: 上上次
+  f32 d_out_[2]{};  ///< 0: 这次, 1: 上次
+  f32 error_[2]{};  ///< 0: 这次, 1: 上次
+  f32 dt_{};
+  f32 trapezoid_{};                ///< 梯形积分计算结果
+  f32 diff_lpf_alpha_{1.f};        ///< 微分项低通滤波系数，取值范围(0, 1]，越小滤波效果越强，设置为1时不滤波
+  bool enable_diff_first_{false};  ///< 是否微分先行
+  bool enable_dynamic_ki_{false};  ///< 是否变速积分
+  f32 dynamic_ki_{};               ///< 变速积分计算的ki
+
+ public:
+  // setters
+  void SetKp(f32 value);
+  void SetKi(f32 value);
+  void SetKd(f32 value);
+  void SetMaxOut(f32 value);
+  void SetMaxIout(f32 value);
+  void SetDiffLpfAlpha(f32 value);
+  void SetDiffFirst(bool enable);
+  void SetDynamicKi(bool enable);
+
+  // getters
+  f32 kp() const;
+  f32 ki() const;
+  f32 kd() const;
+  f32 max_out() const;
+  f32 max_iout() const;
+  f32 set() const;
+  const f32* ref() const;
+  f32 out() const;
+  f32 p_out() const;
+  f32 i_out() const;
+  const f32* d_out() const;
+  const f32* error() const;
+  f32 dt() const;
+  f32 trapezoid() const;
+  f32 diff_lpf_alpha() const;
+  bool enable_diff_first() const;
+  bool enable_dynamic_ki() const;
+  f32 dynamic_ki() const;
 };
 
-template <>
-inline void PID<PIDType::kPosition>::Update(f32 error) {
-  error_[2] = error_[1];
-  error_[1] = error_[0];
-  error_[0] = error;
-
-  p_out_ = kp_ * error_[0];
-  i_out_ += ki_ * error_[0];
-
-  // update derivative term
-  d_buf_[2] = d_buf_[1];
-  d_buf_[1] = d_buf_[0];
-  d_buf_[0] = error_[0] - error_[1];
-
-  d_out_ = kd_ * d_buf_[0];
-  i_out_ = absConstrain(i_out_, max_iout_);
-}
-
-template <>
-inline void PID<PIDType::kDelta>::Update(f32 error) {
-  error_[2] = error_[1];
-  error_[1] = error_[0];
-  error_[0] = error;
-
-  p_out_ = kp_ * (error_[0] - error_[1]);
-  i_out_ = ki_ * error_[0];
-
-  d_buf_[2] = d_buf_[1];
-  d_buf_[1] = d_buf_[0];
-  d_buf_[0] = error_[0] - 2.0f * error_[1] + error_[2];
-
-  d_out_ = kd_ * d_buf_[0];
-}
-
-template <>
-inline void PID<PIDType::kPosition>::UpdateExtDiff(f32 error, f32 external_diff) {
-  error_[2] = error_[1];
-  error_[1] = error_[0];
-  error_[0] = error;
-
-  p_out_ = kp_ * error_[0];
-  i_out_ += ki_ * error_[0];
-
-  // update derivative term
-  d_buf_[2] = d_buf_[1];
-  d_buf_[1] = d_buf_[0];
-  d_buf_[0] = external_diff;
-
-  d_out_ = kd_ * d_buf_[0];
-  i_out_ = absConstrain(i_out_, max_iout_);
-}
-
-template <>
-inline void PID<PIDType::kDelta>::UpdateExtDiff(f32 error, f32 external_diff) {
-  error_[2] = error_[1];
-  error_[1] = error_[0];
-  error_[0] = error;
-
-  p_out_ = kp_ * (error_[0] - error_[1]);
-  i_out_ = ki_ * error_[0];
-
-  d_buf_[2] = d_buf_[1];
-  d_buf_[1] = d_buf_[0];
-  d_buf_[0] = external_diff;
-
-  d_out_ = kd_ * d_buf_[0];
-}
-
 /**
- * @brief 带过零点处理的PID控制器，可以用于电机位置闭环控制等情况
+ * @brief 带过零点处理的PID控制器，用于角度闭环控制
  */
-template <PIDType type>
-class RingPID : public PID<type> {
+class RingPID : public PID {
  public:
-  using PID<type>::Update;
-  using PID<type>::UpdateExtDiff;
-
-  RingPID() : cycle_(std::numeric_limits<f32>::max()) {}
-  virtual ~RingPID() override = default;
-
-  RingPID(f32 kp, f32 ki, f32 kd, f32 max_out, f32 max_iout, f32 cycle)
-      : PID<type>(kp, ki, kd, max_out, max_iout), cycle_(cycle) {}
-  void Update(f32 error) override;
-  void UpdateExtDiff(f32 error, f32 external_diff) override;
+  RingPID();
+  ~RingPID() override;
+  RingPID(f32 kp, f32 ki, f32 kd, f32 max_out, f32 max_iout, f32 cycle);
+  void Update(f32 set, f32 ref, f32 dt = 1.f) override;
+  void UpdateExtDiff(f32 set, f32 ref, f32 external_diff, f32 dt = 1.f) override;
 
  protected:
   f32 cycle_;
 };
-
-template <>
-inline void RingPID<PIDType::kPosition>::Update(f32 error) {
-  error_[2] = error_[1];
-  error_[1] = error_[0];
-  error_[0] = error;
-
-  error_[0] = LoopConstrain(error_[0], -cycle_ / 2, cycle_ / 2);
-
-  p_out_ = kp_ * error_[0];
-  i_out_ += ki_ * error_[0];
-
-  d_buf_[2] = d_buf_[1];
-  d_buf_[1] = d_buf_[0];
-  d_buf_[0] = error_[0] - error_[1];
-
-  d_out_ = kd_ * d_buf_[0];
-  i_out_ = absConstrain(i_out_, max_iout_);
-}
-
-template <>
-inline void RingPID<PIDType::kDelta>::Update(f32 error) {
-  error_[2] = error_[1];
-  error_[1] = error_[0];
-  error_[0] = error;
-
-  error_[0] = LoopConstrain(error_[0], -cycle_ / 2, cycle_ / 2);
-
-  p_out_ = kp_ * (error_[0] - error_[1]);
-  i_out_ = ki_ * error_[0];
-
-  d_buf_[2] = d_buf_[1];
-  d_buf_[1] = d_buf_[0];
-  d_buf_[0] = error_[0] - 2.0f * error_[1] + error_[2];
-
-  d_out_ = kd_ * d_buf_[0];
-}
-
-template <>
-inline void RingPID<PIDType::kPosition>::UpdateExtDiff(f32 error, f32 external_diff) {
-  error_[2] = error_[1];
-  error_[1] = error_[0];
-  error_[0] = error;
-
-  error_[0] = LoopConstrain(error_[0], -cycle_ / 2, cycle_ / 2);
-
-  p_out_ = kp_ * error_[0];
-  i_out_ += ki_ * error_[0];
-
-  // update derivative term
-  d_buf_[2] = d_buf_[1];
-  d_buf_[1] = d_buf_[0];
-  d_buf_[0] = external_diff;
-
-  d_out_ = kd_ * d_buf_[0];
-  i_out_ = absConstrain(i_out_, max_iout_);
-}
-
-template <>
-inline void RingPID<PIDType::kDelta>::UpdateExtDiff(f32 error, f32 external_diff) {
-  error_[2] = error_[1];
-  error_[1] = error_[0];
-  error_[0] = error;
-
-  error_[0] = LoopConstrain(error_[0], -cycle_ / 2, cycle_ / 2);
-
-  p_out_ = kp_ * (error_[0] - error_[1]);
-  i_out_ = ki_ * error_[0];
-
-  d_buf_[2] = d_buf_[1];
-  d_buf_[1] = d_buf_[0];
-  d_buf_[0] = external_diff;
-
-  d_out_ = kd_ * d_buf_[0];
-}
 
 }  // namespace rm::modules
 

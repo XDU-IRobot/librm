@@ -27,6 +27,8 @@
 
 #include "utils.hpp"
 
+#include <cmath>
+
 namespace rm::modules {
 
 f32 Deadline(f32 value, f32 min_value, f32 max_value) {
@@ -37,35 +39,11 @@ f32 Deadline(f32 value, f32 min_value, f32 max_value) {
   }
 }
 
-f32 Constrain(f32 input, f32 min_value, f32 max_value) {
-  if (input < min_value) {
-    return min_value;
-  } else if (input > max_value) {
-    return max_value;
-  } else {
-    return input;
-  }
-}
-
-f32 LoopConstrain(f32 input, f32 min_value, f32 max_value) {
+f32 Wrap(f32 input, f32 min_value, f32 max_value) {
   f32 cycle = max_value - min_value;
-  if (cycle < 0) {
-    return input;
-  }
-
-  if (input > max_value) {
-    while (input > max_value) {
-      input -= cycle;
-    }
-  } else if (input < min_value) {
-    while (input < min_value) {
-      input += cycle;
-    }
-  }
-  return input;
+  if (cycle <= 0) return input;
+  return fmodf(fmodf(input - min_value, cycle) + cycle, cycle) + min_value;
 }
-
-f32 DegToRad(f32 deg) { return deg * M_PI / 180; }
 
 void QuatToEuler(const f32 q[4], f32 euler[3]) {
   euler[0] = atan2f(2 * (q[0] * q[1] + q[2] * q[3]), 1 - 2 * (q[1] * q[1] + q[2] * q[2]));

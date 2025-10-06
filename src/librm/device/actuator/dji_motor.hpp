@@ -155,7 +155,8 @@ DjiMotor<motor_type>::DjiMotor(hal::CanInterface &can, u16 id, bool reversed)
 template <DjiMotorType motor_type>
 void DjiMotor<motor_type>::SetCurrent(i16 current) {
   // 限幅到电机能接受的最大电流
-  current = modules::absConstrain(current, DjiMotorProperties<motor_type>::kCurrentBound);
+  current = modules::Clamp(current, -DjiMotorProperties<motor_type>::kCurrentBound,
+                           DjiMotorProperties<motor_type>::kCurrentBound);
   // 处理反转
   if (this->reversed_) {
     current = -current;
