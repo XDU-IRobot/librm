@@ -64,6 +64,7 @@
 /******** MODULES ********/
 #include "librm/modules/ahrs/mahony.hpp"
 #include "librm/modules/ahrs/ekf.hpp"
+#include "librm/modules/angle.hpp"
 #include "librm/modules/chassis_fkik.hpp"
 #include "librm/modules/crc.hpp"
 #include "librm/modules/float16.hpp"
