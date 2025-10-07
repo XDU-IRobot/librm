@@ -29,11 +29,12 @@
 
 #include <cstring>
 #include <cmath>
-#include <limits>
 
 #include "librm/modules/utils.hpp"
 
 namespace rm::modules {
+
+PID::PID() = default;
 
 PID::PID(f32 kp, f32 ki, f32 kd, f32 max_out, f32 max_iout)
     : kp_(kp), ki_(ki), kd_(kd), max_out_(max_out), max_iout_(max_iout) {}
@@ -46,23 +47,38 @@ void PID::Update(f32 set, f32 ref, f32 dt) {
   ref_[0] = ref;
   dt_ = dt;
   error_[1] = error_[0];
-  error_[0] = set - ref;
+  if (enable_circular_) {
+    error_[0] = Wrap(set - ref, -circular_cycle_ / 2, circular_cycle_ / 2);  // 处理过零
+  } else {
+    error_[0] = set - ref;
+  }
+
+  f32 calc_kp{kp_}, calc_ki{(enable_dynamic_ki_ ? dynamic_ki_ : calc_ki)}, calc_kd{kd_};
+  if (enable_fuzzy_) {
+    const f32 d_error = (error_[0] - error_[1]) / dt_;
+    const f32 delta_kp = kp_fuzzy_.Infer(error_[0], d_error) * kp_ / 2.f;
+    const f32 delta_ki = ki_fuzzy_.Infer(error_[0], d_error) * (enable_dynamic_ki_ ? dynamic_ki_ : calc_ki) / 2.f;
+    const f32 delta_kd = kd_fuzzy_.Infer(error_[0], d_error) * kd_ / 2.f;
+    calc_kp += delta_kp;
+    calc_ki += delta_ki;
+    calc_kd += delta_kd;
+  }
 
   // p
-  p_out_ = kp_ * error_[0];
+  p_out_ = calc_kp * error_[0];
 
   // i
-  trapezoid_ = (error_[0] + error_[1]) / 2 * dt_;  // 梯形积分
-  dynamic_ki_ = ki_ / (1 + std::abs(error_[0]));   // 变速积分
-  i_out_ += (enable_dynamic_ki_ ? dynamic_ki_ : ki_) * trapezoid_;
+  trapezoid_ = (error_[0] + error_[1]) / 2 * dt_;     // 梯形积分
+  dynamic_ki_ = calc_ki / (1 + std::abs(error_[0]));  // 变速积分
+  i_out_ += calc_ki * trapezoid_;
   i_out_ = Clamp(i_out_, -max_iout_, max_iout_);
 
   // d
   d_out_[1] = d_out_[0];
   if (enable_diff_first_) {
-    d_out_[0] = kd_ * (ref_[0] - ref_[1]) / dt;  // 微分先行
+    d_out_[0] = calc_kd * (ref_[0] - ref_[1]) / dt;  // 微分先行
   } else {
-    d_out_[0] = kd_ * (error_[0] - error_[1]) / dt;
+    d_out_[0] = calc_kd * (error_[0] - error_[1]) / dt;
   }
   d_out_[0] = diff_lpf_alpha_ * d_out_[0] + (1 - diff_lpf_alpha_) * d_out_[1];  // 微分项滤波
 
@@ -75,20 +91,35 @@ void PID::UpdateExtDiff(f32 set, f32 ref, f32 external_diff, f32 dt) {
   ref_[0] = ref;
   dt_ = dt;
   error_[1] = error_[0];
-  error_[0] = set - ref;
+  if (enable_circular_) {
+    error_[0] = Wrap(set - ref, -circular_cycle_ / 2, circular_cycle_ / 2);  // 处理过零
+  } else {
+    error_[0] = set - ref;
+  }
+
+  f32 calc_kp{kp_}, calc_ki{(enable_dynamic_ki_ ? dynamic_ki_ : calc_ki)}, calc_kd{kd_};
+  if (enable_fuzzy_) {
+    const f32 d_error = (error_[0] - error_[1]) / dt_;
+    const f32 delta_kp = kp_fuzzy_.Infer(error_[0], d_error) * kp_ / 2.f;
+    const f32 delta_ki = ki_fuzzy_.Infer(error_[0], d_error) * (enable_dynamic_ki_ ? dynamic_ki_ : calc_ki) / 2.f;
+    const f32 delta_kd = kd_fuzzy_.Infer(error_[0], d_error) * kd_ / 2.f;
+    calc_kp += delta_kp;
+    calc_ki += delta_ki;
+    calc_kd += delta_kd;
+  }
 
   // p
-  p_out_ = kp_ * error_[0];
+  p_out_ = calc_kp * error_[0];
 
   // i
-  trapezoid_ = (error_[0] + error_[1]) / 2 * dt_;  // 梯形积分
-  dynamic_ki_ = ki_ / (1 + std::abs(error_[0]));   // 变速积分
-  i_out_ += (enable_dynamic_ki_ ? dynamic_ki_ : ki_) * trapezoid_;
+  trapezoid_ = (error_[0] + error_[1]) / 2 * dt_;     // 梯形积分
+  dynamic_ki_ = calc_ki / (1 + std::abs(error_[0]));  // 变速积分
+  i_out_ += calc_ki * trapezoid_;
   i_out_ = Clamp(i_out_, -max_iout_, max_iout_);
 
   // d
   d_out_[1] = d_out_[0];
-  d_out_[0] = kd_ * external_diff;
+  d_out_[0] = calc_kd * external_diff;
   d_out_[0] = diff_lpf_alpha_ * d_out_[0] + (1 - diff_lpf_alpha_) * d_out_[1];  // 微分项滤波
 
   out_ = Clamp(p_out_ + i_out_ + d_out_[0], -max_out_, max_out_);
@@ -136,6 +167,30 @@ PID &PID::SetDynamicKi(bool enable) {
   enable_dynamic_ki_ = enable;
   return *this;
 }
+PID &PID::SetCircular(bool enable) {
+  enable_circular_ = enable;
+  return *this;
+}
+PID &PID::SetCircularCycle(f32 cycle) {
+  circular_cycle_ = cycle;
+  return *this;
+}
+PID &PID::SetFuzzy(bool enable) {
+  enable_fuzzy_ = enable;
+  return *this;
+}
+PID &PID::SetFuzzyErrorScale(f32 value) {
+  kp_fuzzy_.SetErrorScale(value);
+  ki_fuzzy_.SetErrorScale(value);
+  kd_fuzzy_.SetErrorScale(value);
+  return *this;
+}
+PID &PID::SetFuzzyDErrorScale(f32 value) {
+  kp_fuzzy_.SetDErrorScale(value);
+  ki_fuzzy_.SetDErrorScale(value);
+  kd_fuzzy_.SetDErrorScale(value);
+  return *this;
+}
 
 f32 PID::kp() const { return kp_; }
 f32 PID::ki() const { return ki_; }
@@ -155,64 +210,82 @@ f32 PID::diff_lpf_alpha() const { return diff_lpf_alpha_; }
 bool PID::enable_diff_first() const { return enable_diff_first_; }
 bool PID::enable_dynamic_ki() const { return enable_dynamic_ki_; }
 f32 PID::dynamic_ki() const { return dynamic_ki_; }
+bool PID::enable_circular() const { return enable_circular_; }
+f32 PID::circular_cycle() const { return circular_cycle_; }
+bool PID::enable_fuzzy() const { return enable_fuzzy_; }
 
-RingPID::RingPID() : PID(), cycle_(std::numeric_limits<f32>::max()) {}
-RingPID::~RingPID() = default;
-RingPID::RingPID(f32 kp, f32 ki, f32 kd, f32 max_out, f32 max_iout, f32 cycle)
-    : PID(kp, ki, kd, max_out, max_iout), cycle_(cycle) {}
+PID::FuzzyInfer::FuzzyInfer(RuleTable rule_table) : rule_table_{rule_table} {}
 
-void RingPID::Update(f32 set, f32 ref, f32 dt) {
-  set_ = set;
-  ref_[1] = ref_[0];
-  ref_[0] = ref;
-  dt_ = dt;
-  error_[1] = error_[0];
-  error_[0] = Wrap(set - ref, -cycle_ / 2, cycle_ / 2);  // 处理过零
+f32 PID::FuzzyInfer::Infer(f32 error, f32 d_error) {
+  // 输入归一化到[-3, 3]
+  f32 e = error_scale_ == 0 ? 0 : error / error_scale_ * 3.f;
+  f32 ec = d_error_scale_ == 0 ? 0 : d_error / d_error_scale_ * 3.f;
 
-  // p
-  p_out_ = kp_ * error_[0];
+  // 限制输入范围
+  e = std::fabs(e) > 3.0f ? (e > 0.0f ? 3.0f : -3.0f) : e;
+  ec = std::fabs(ec) > 3.0f ? (ec > 0.0f ? 3.0f : -3.0f) : ec;
 
-  // i
-  trapezoid_ = (error_[0] + error_[1]) / 2 * dt_;  // 梯形积分
-  dynamic_ki_ = ki_ / (1 + std::abs(error_[0]));   // 变速积分
-  i_out_ += (enable_dynamic_ki_ ? dynamic_ki_ : ki_) * trapezoid_;
-  i_out_ = Clamp(i_out_, -max_iout_, max_iout_);
-
-  // d
-  d_out_[1] = d_out_[0];
-  if (enable_diff_first_) {
-    d_out_[0] = kd_ * (ref_[0] - ref_[1]) / dt;
-  } else {
-    d_out_[0] = kd_ * (error_[0] - error_[1]) / dt;
+  // 计算隶属度
+  std::array<f32, 7> e_degrees, ec_degrees;
+  for (int i = 0; i < 7; ++i) {
+    e_degrees[i] = CalcMembership(e, i);
+    ec_degrees[i] = CalcMembership(ec, i);
   }
-  d_out_[0] = diff_lpf_alpha_ * d_out_[0] + (1 - diff_lpf_alpha_) * d_out_[1];  // 微分项滤波
 
-  out_ = Clamp(p_out_ + i_out_ + d_out_[0], -max_out_, max_out_);
+  // 规则推理
+  f32 fuzzy_rule = 0.f, weight_sum = 0.f;
+  for (int i = 0; i < 7; ++i) {
+    for (int j = 0; j < 7; ++j) {
+      // 计算规则激活强度
+      const f32 w = e_degrees[i] * ec_degrees[j];
+      if (w <= 0.0f) {
+        continue;
+      }
+      // 更新输出隶属度
+      fuzzy_rule += w * rule_table_[i][j];
+      weight_sum += w;
+    }
+  }
+
+  // 防止除零
+  if (weight_sum == 0.0f) {
+    weight_sum = 1e-6f;
+  }
+  // 计算模糊推理结果的加权平均值
+  fuzzy_rule /= weight_sum;
+
+  return fuzzy_rule / 3.f;
 }
 
-void RingPID::UpdateExtDiff(f32 set, f32 ref, f32 external_diff, f32 dt) {
-  set_ = set;
-  ref_[1] = ref_[0];
-  ref_[0] = ref;
-  dt_ = dt;
-  error_[1] = error_[0];
-  error_[0] = Wrap(set - ref, -cycle_ / 2, cycle_ / 2);  // 处理过零
-
-  // p
-  p_out_ = kp_ * error_[0];
-
-  // i
-  trapezoid_ = (error_[0] + error_[1]) / 2 * dt_;  // 梯形积分
-  dynamic_ki_ = ki_ / (1 + std::abs(error_[0]));   // 变速积分
-  i_out_ += (enable_dynamic_ki_ ? dynamic_ki_ : ki_) * trapezoid_;
-  i_out_ = Clamp(i_out_, -max_iout_, max_iout_);
-
-  // d
-  d_out_[1] = d_out_[0];
-  d_out_[0] = kd_ * external_diff;
-  d_out_[0] = diff_lpf_alpha_ * d_out_[0] + (1 - diff_lpf_alpha_) * d_out_[1];  // 微分项滤波
-
-  out_ = Clamp(p_out_ + i_out_ + d_out_[0], -max_out_, max_out_);
+PID::FuzzyInfer &PID::FuzzyInfer::SetErrorScale(f32 value) {
+  error_scale_ = value;
+  return *this;
 }
+
+PID::FuzzyInfer &PID::FuzzyInfer::SetDErrorScale(f32 value) {
+  d_error_scale_ = value;
+  return *this;
+}
+
+const PID::FuzzyInfer::RuleTable &PID::FuzzyInfer::rule_table() const { return rule_table_; }
+f32 PID::FuzzyInfer::error_scale() const { return error_scale_; }
+f32 PID::FuzzyInfer::d_error_scale() const { return d_error_scale_; }
+
+f32 PID::FuzzyInfer::CalcMembership(f32 x, int set) {
+  const auto &params = kMembershipParams[set];
+
+  // 三角形隶属度函数
+  if (x <= params[0] || x >= params[2]) {
+    return 0.0f;
+  }
+  if (x <= params[1]) {
+    return (x - params[0]) / (params[1] - params[0]);
+  }
+  return (params[2] - x) / (params[2] - params[1]);
+}
+
+PID::FuzzyInfer &PID::kp_fuzzy() { return kp_fuzzy_; }
+PID::FuzzyInfer &PID::ki_fuzzy() { return ki_fuzzy_; }
+PID::FuzzyInfer &PID::kd_fuzzy() { return kd_fuzzy_; }
 
 }  // namespace rm::modules

@@ -28,6 +28,9 @@
 #ifndef LIBRM_MODULES_PID_HPP
 #define LIBRM_MODULES_PID_HPP
 
+#include <array>
+#include <limits>
+
 #include "librm/core/typedefs.hpp"
 
 namespace rm::modules {
@@ -40,8 +43,8 @@ class PID {
   PID();
   virtual ~PID();
   PID(f32 kp, f32 ki, f32 kd, f32 max_out, f32 max_iout);
-  virtual void Update(f32 set, f32 ref, f32 dt = 1.f);
-  virtual void UpdateExtDiff(f32 set, f32 ref, f32 external_diff, f32 dt = 1.f);
+  void Update(f32 set, f32 ref, f32 dt = 1.f);
+  void UpdateExtDiff(f32 set, f32 ref, f32 external_diff, f32 dt = 1.f);
   void Clear();
 
  protected:
@@ -55,14 +58,17 @@ class PID {
   f32 out_{};
   f32 p_out_{};
   f32 i_out_{};
-  f32 d_out_[2]{};  ///< 0: 这次, 1: 上次
-  f32 error_[2]{};  ///< 0: 这次, 1: 上次
-  f32 dt_{};
+  f32 d_out_[2]{};   ///< 0: 这次, 1: 上次
+  f32 error_[2]{};   ///< 0: 这次, 1: 上次
+  f32 dt_{};         ///< 上次调用Update时输入的dt
   f32 trapezoid_{};  ///< 梯形积分计算结果
   f32 diff_lpf_alpha_{1.f};  ///< 微分项低通滤波系数，取值范围(0, 1]，越小滤波效果越强，设置为1时不滤波
-  bool enable_diff_first_{false};  ///< 是否微分先行
-  bool enable_dynamic_ki_{false};  ///< 是否变速积分
-  f32 dynamic_ki_{};               ///< 变速积分计算的ki
+  bool enable_diff_first_{false};                        ///< 是否微分先行
+  bool enable_dynamic_ki_{false};                        ///< 是否变速积分
+  f32 dynamic_ki_{};                                     ///< 变速积分计算的ki
+  bool enable_circular_{false};                          ///< 是否启用过零点处理
+  f32 circular_cycle_{std::numeric_limits<f32>::max()};  ///< 过零点处理的周期
+  bool enable_fuzzy_{false};                             ///< 是否启用模糊PID
 
  public:
   // setters
@@ -74,8 +80,13 @@ class PID {
   PID &SetDiffLpfAlpha(f32 value);
   PID &SetDiffFirst(bool enable);
   PID &SetDynamicKi(bool enable);
+  PID &SetCircular(bool enable);
+  PID &SetCircularCycle(f32 cycle);
+  PID &SetFuzzy(bool enable);
+  PID &SetFuzzyErrorScale(f32 value);
+  PID &SetFuzzyDErrorScale(f32 value);
 
-  // getters
+  // const getters
   f32 kp() const;
   f32 ki() const;
   f32 kd() const;
@@ -94,21 +105,100 @@ class PID {
   bool enable_diff_first() const;
   bool enable_dynamic_ki() const;
   f32 dynamic_ki() const;
-};
-
-/**
- * @brief 带过零点处理的PID控制器，用于角度闭环控制
- */
-class RingPID : public PID {
- public:
-  RingPID();
-  ~RingPID() override;
-  RingPID(f32 kp, f32 ki, f32 kd, f32 max_out, f32 max_iout, f32 cycle);
-  void Update(f32 set, f32 ref, f32 dt = 1.f) override;
-  void UpdateExtDiff(f32 set, f32 ref, f32 external_diff, f32 dt = 1.f) override;
+  bool enable_circular() const;
+  f32 circular_cycle() const;
+  bool enable_fuzzy() const;
 
  protected:
-  f32 cycle_;
+  /**
+   * @brief 模糊推理引擎
+   * @brief source: https://github.com/TongjiSuperPower/sp_middleware/tree/main/tools/fuzzy_pid
+   */
+  class FuzzyInfer {
+   public:
+    using RuleTable = std::array<std::array<int, 7>, 7>;
+
+   public:
+    FuzzyInfer() = delete;
+    explicit FuzzyInfer(RuleTable rule_table);
+    f32 Infer(f32 error, f32 d_error);
+
+    // setters
+    FuzzyInfer &SetErrorScale(f32 value);
+    FuzzyInfer &SetDErrorScale(f32 value);
+
+    // getters
+    const RuleTable &rule_table() const;
+    f32 error_scale() const;
+    f32 d_error_scale() const;
+
+   protected:
+    f32 CalcMembership(f32 x, int set);
+
+    const RuleTable rule_table_;
+    f32 error_scale_{};    ///< 误差尺度因子
+    f32 d_error_scale_{};  ///< 误差变化率尺度因子
+
+    static constexpr f32 kMembershipParams[7][3] = {
+        {-3, -3, -2},  ///< NB
+        {-2, -2, -1},  ///< NM
+        {-1, -1, 0},   ///< NS
+        {-1, 0, 1},    ///< ZO
+        {0, 1, 1},     ///< PS
+        {1, 2, 2},     ///< PM
+        {2, 3, 3}      ///< PB
+    };
+  };
+
+  /**
+   * @brief 模糊论域分级常量值，对应语言变量 NB, NM, NS, ZO, PS, PM, PB
+   */
+  enum FuzzyDomain {
+    NB = -3,
+    NM,
+    NS,
+    ZO,
+    PS,
+    PM,
+    PB,
+  };
+  FuzzyInfer  //
+      kp_fuzzy_{{{
+          // NB  NM  NS  ZO  PS  PM  PB   (de →)
+          {{PB, PB, PM, PM, PS, ZO, ZO}},  // NB (e ↓)
+          {{PB, PB, PM, PS, PS, ZO, NS}},  // NM
+          {{PM, PM, PM, PS, ZO, NS, NS}},  // NS
+          {{PM, PM, PS, ZO, NS, NM, NM}},  // ZO
+          {{PS, PS, ZO, NS, NS, NM, NM}},  // PS
+          {{PS, ZO, NS, NM, NM, NM, NB}},  // PM
+          {{ZO, ZO, NM, NM, NM, NB, NB}}   // PB
+      }}},
+      ki_fuzzy_{{{
+          // NB  NM  NS  ZO  PS  PM  PB   (de →)
+          {{NB, NB, NM, NM, NS, ZO, ZO}},  // NB (e ↓)
+          {{NB, NB, NM, NS, NS, ZO, ZO}},  // NM
+          {{NB, NM, NS, NS, ZO, PS, PS}},  // NS
+          {{NM, NM, NS, ZO, PS, PM, PM}},  // ZO
+          {{NM, NS, ZO, PS, PS, PM, PB}},  // PS
+          {{ZO, ZO, PS, PS, PM, PB, PB}},  // PM
+          {{ZO, ZO, PS, PM, PM, PB, PB}}   // PB
+      }}},
+      kd_fuzzy_{{{
+          // NB  NM  NS  ZO  PS  PM  PB   (de →)
+          {{PS, NS, NB, NB, NB, NM, PS}},  // NB (e ↓)
+          {{PS, NS, NB, NM, NM, NS, ZO}},  // NM
+          {{ZO, NS, NM, NM, NS, NS, ZO}},  // NS
+          {{ZO, NS, NS, NS, NS, NS, ZO}},  // ZO
+          {{ZO, ZO, ZO, ZO, ZO, ZO, ZO}},  // PS
+          {{PB, NS, PS, PS, PS, PS, PB}},  // PM
+          {{PB, PM, PM, PM, PS, PS, PB}}   // PB
+      }}};
+
+  // FuzzyInfer object getters
+ public:
+  FuzzyInfer &kp_fuzzy();
+  FuzzyInfer &ki_fuzzy();
+  FuzzyInfer &kd_fuzzy();
 };
 
 }  // namespace rm::modules
