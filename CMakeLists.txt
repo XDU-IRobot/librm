@@ -33,6 +33,7 @@ add_subdirectory(libs)
 target_link_libraries(${PROJECT_NAME} PUBLIC third_party)
 
 if (${LIBRM_PLATFORM} STREQUAL "STM32")
+    target_link_options(${PROJECT_NAME} INTERFACE "LINKER:-u,gettimeofday")     # Ensure that gettimeofday is linked in, for platforms that need it (e.g. STM32 with newlib)
     target_link_libraries(${PROJECT_NAME} PRIVATE STM32_Drivers)
     if (${LIBRM_FREERTOS_AVAILABLE})
         target_compile_definitions(${PROJECT_NAME} PUBLIC -DLIBRM_FREERTOS_AVAILABLE)
