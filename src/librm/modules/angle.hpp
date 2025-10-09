@@ -41,7 +41,7 @@ class Angle {
  public:
   explicit constexpr Angle(f32 rad = 0.f) : value_rad_(rad) {}
 
-  constexpr f32 deg() const { return value_rad_ * 180.f / M_PIf; }
+  constexpr f32 deg() const { return value_rad_ * 180.f / static_cast<float>(M_PI); }
   constexpr f32 rad() const { return value_rad_; }
 
   constexpr Angle operator+(const Angle &other) const { return Angle{value_rad_ + other.value_rad_}; }
@@ -49,7 +49,7 @@ class Angle {
   constexpr Angle operator*(f32 scalar) const { return Angle{value_rad_ * scalar}; }
   constexpr Angle operator/(f32 scalar) const { return Angle{value_rad_ / scalar}; }
 
-  static Angle FromDeg(f32 deg) { return Angle{deg * M_PIf / 180.f}; }
+  static Angle FromDeg(f32 deg) { return Angle{deg * static_cast<float>(M_PI) / 180.f}; }
   static Angle FromRad(f32 rad) { return Angle{rad}; }
 
  private:
@@ -58,9 +58,11 @@ class Angle {
 
 namespace angle_literals {
 
-inline constexpr Angle operator"" _deg(long double deg) { return Angle{static_cast<f32>(deg * M_PIf / 180.f)}; }
+constexpr Angle operator"" _deg(long double deg) {
+  return Angle{static_cast<f32>(deg * static_cast<float>(M_PI) / 180.f)};
+}
 
-inline constexpr Angle operator"" _rad(long double rad) { return Angle{static_cast<f32>(rad)}; }
+constexpr Angle operator"" _rad(long double rad) { return Angle{static_cast<f32>(rad)}; }
 
 }  // namespace angle_literals
 

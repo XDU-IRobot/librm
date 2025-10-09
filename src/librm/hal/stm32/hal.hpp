@@ -29,20 +29,20 @@
 #define LIBRM_HAL_STM32_HAL_HPP
 
 #if defined(STM32F407xx) && __has_include("stm32f407xx.h") && __has_include("stm32f4xx_hal.h")
-#include "stm32f407xx.hpp"
-#include "stm32f4xx_hal.hpp"
+#include "stm32f407xx.h"
+#include "stm32f4xx_hal.h"
 #elif defined(STM32H723xx) && __has_include("stm32h723xx.h") && __has_include("stm32h7xx_hal.h")
-#include "stm32h723xx.hpp"
-#include "stm32h7xx_hal.hpp"
+#include "stm32h723xx.h"
+#include "stm32h7xx_hal.h"
 #elif defined(STM32H743xx) && __has_include("stm32h743xx.h") && __has_include("stm32h7xx_hal.h")
-#include "stm32h743xx.hpp"
-#include "stm32h7xx_hal.hpp"
+#include "stm32h743xx.h"
+#include "stm32h7xx_hal.h"
 #elif defined(STM32L412xx) && __has_include("stm32l412xx.h") && __has_include("stm32l4xx_hal.h")
-#include "stm32l412xx.hpp"
-#include "stm32l4xx_hal.hpp"
+#include "stm32l412xx.h"
+#include "stm32l4xx_hal.h"
 #elif defined(STM32F427xx) && __has_include("stm32f427xx.h") && __has_include("stm32f4xx_hal.h")
-#include "stm32f427xx.hpp"
-#include "stm32f4xx_hal.hpp"
+#include "stm32f427xx.h"
+#include "stm32f4xx_hal.h"
 #endif
 
 #endif  // LIBRM_HAL_STM32_HAL_HPP
