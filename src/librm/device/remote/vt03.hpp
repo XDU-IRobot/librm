@@ -31,6 +31,7 @@
 #include <cstring>
 #include <array>
 
+#include "librm/device/device.hpp"
 #include "librm/modules/utils.hpp"
 #include "librm/modules/crc.hpp"
 
@@ -39,7 +40,7 @@ namespace rm::device {
 /**
  * @brief VT03图传发送端的遥控器数据解析器
  */
-class VT03 {
+class VT03 : public Device {
  private:
   enum class DeserializeFsmState {
     kSof0,
@@ -117,6 +118,7 @@ class VT03 {
         crc16_this_time_ = (valid_data_so_far_[kFrameLength - 1] << 8) | valid_data_so_far_[kFrameLength - 2];
 
         if (modules::Crc16(valid_data_so_far_.data(), kFrameLength - 2, modules::CRC16_INIT) == crc16_this_time_) {
+          Heartbeat();
           // 整包接收完+校验通过，开始解析数据
           std::memcpy(&raw_payload_data_, valid_data_so_far_.data(), sizeof(raw_payload_data_));
           data_.right_x = modules::Map(raw_payload_data_.ch_0, 364, 1684, -1.0f, 1.0f);

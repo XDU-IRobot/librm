@@ -22,69 +22,68 @@
 
 /**
  * @file  librm/device/device.hpp
- * @brief 设备基类和设备管理器，用于监视设备状态
- * @todo  考虑到判断设备在线需要一个参照时间，所以需要先做一个时间模块提供全局时间参照
+ * @brief 驱动框架的设备基类，主要功能为监视设备在线状态
  */
 
 #ifndef LIBRM_DEVICE_DEVICE_HPP
 #define LIBRM_DEVICE_DEVICE_HPP
 
-#include <list>
+#include <chrono>
 
 #include "librm/core/typedefs.hpp"
 
 namespace rm::device {
 
 /**
- * @brief 设备状态
- */
-enum class DeviceStatus {
-  kOnline,   // 在线
-  kOffline,  // 离线
-  kUnknown,  // 未知(初始状态)
-};
-
-/**
- * @brief 设备基类，用于监视设备状态
+ * @brief 驱动框架的设备基类，主要功能为监视设备在线状态
  */
 class Device {
   friend class DeviceManager;
+
+  using time_point = std::chrono::time_point<std::chrono::steady_clock>;
+  using duration = std::chrono::steady_clock::duration;
 
  public:
   Device() = default;
   virtual ~Device() = default;
 
   /**
-   * @brief 更新设备状态
-   * @note  子类自行实现这个方法，设备管理器会定期调用；方法内部应该判断设备状态，然后返回设备是否在线
+   * @brief 设置心跳超时时间
+   * @param timeout 心跳超时时间
+   * @note  如果超过这个时间没有收到心跳则认为设备离线，默认值为1秒
    */
-  virtual bool IsDeviceOnline() = 0;
-  [[nodiscard]] DeviceStatus GetDeviceStatus() const;
+  void SetHeartbeatTimeout(duration timeout);
+
+  /**
+   * @return 设备在线状态
+   */
+  [[nodiscard]] bool IsAlive();
+
+  /**
+   * @return 上一次调用Heartbeat()时设备在线的时间戳
+   */
+  [[nodiscard]] time_point last_online() const;
 
  protected:
-  DeviceStatus status_{DeviceStatus::kUnknown};
-  u64 last_online_timestamp_{0};  // 上一次调用IsDeviceOnline()时设备在线的时间戳
-};
-
-/**
- * @brief 设备管理器，集中更新所有设备的在线状态
- * @note  单例类，使用GetInstance()获取实例
- * @note  应当定期不断调用Update()方法，更新所有设备的在线状态
- */
-class DeviceManager final {
- public:
-  static DeviceManager &GetInstance();
-
-  void RegisterDevice(Device &device);
-  void UnregisterDevice(Device &device);
-  void Update();
+  /**
+   * @brief 更新设备状态
+   * @note  子类应该在确定设备仍然在线（比如收到反馈报文）时调用此函数，更新设备在线时间戳
+   */
+  void Heartbeat();
 
  private:
-  DeviceManager() = default;
-  ~DeviceManager() = default;
+  /**
+   * @brief 设备状态
+   */
+  enum Status {
+    kUnknown = -1,  ///< 未知
+    kOffline,       ///< 离线
+    kOnline,        ///< 在线
+  };
 
-  std::list<Device *> devices_;
-  static constexpr u64 kOfflineTimeout{1000};  // 离线超时时间(ms)
+  Status online_status_{Status::kUnknown};
+  time_point last_online_{time_point::min()};  ///< 上一次调用Heartbeat()时设备在线的时间戳
+  duration heartbeat_timeout_{std::chrono::seconds(1)};  ///< 心跳超时时间，超过这个时间没有收到心跳则认为设备离线
 };
 
 }  // namespace rm::device

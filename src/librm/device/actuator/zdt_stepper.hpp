@@ -30,12 +30,13 @@
 
 #include "librm/core/typedefs.hpp"
 #include "librm/hal/serial_interface.hpp"
+#include "librm/device/device.hpp"
 
 using namespace rm;
 
 namespace rm::device {
 
-class ZdtStepper {
+class ZdtStepper : public Device {
  public:
   ZdtStepper(hal::SerialInterface &serial, u8 motor_id = 0);
   ~ZdtStepper() = default;

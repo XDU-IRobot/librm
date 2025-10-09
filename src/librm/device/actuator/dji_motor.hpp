@@ -206,6 +206,7 @@ inline void DjiMotor<>::SendCommand() {
  */
 template <DjiMotorType motor_type>
 void DjiMotor<motor_type>::RxCallback(const hal::CanMsg *msg) {
+  Heartbeat();
   this->encoder_ = (msg->data[0] << 8) | msg->data[1];
   this->rpm_ = (msg->data[2] << 8) | msg->data[3];
   if (this->reversed_) {

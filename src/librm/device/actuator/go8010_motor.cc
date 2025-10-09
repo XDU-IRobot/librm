@@ -94,6 +94,7 @@ void Go8010Motor::RxCallback(const std::vector<u8> &data, u16 rx_len) {
   if (rx_len != 16) {
     return;
   }
+
   std::copy(data.begin(), data.end(), reinterpret_cast<u8 *>(&recv_data_.motor_recv_data));
 
   // if (recv_data_.motor_recv_data.head[0] != 0xFE || recv_data_.motor_recv_data.head[1] != 0xEE) {
@@ -101,6 +102,7 @@ void Go8010Motor::RxCallback(const std::vector<u8> &data, u16 rx_len) {
   // }
 
   if (recv_data_.motor_recv_data.mode.id == send_data_.motor_send_data.mode.id) {
+    Heartbeat();
     recv_data_.id = recv_data_.motor_recv_data.mode.id;
     recv_data_.mode = recv_data_.motor_recv_data.mode.status;
     recv_data_.tau = recv_data_.motor_recv_data.fbk.tau / 256.f;

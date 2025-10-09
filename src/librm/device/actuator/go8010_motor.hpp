@@ -36,7 +36,7 @@
 
 namespace rm::device {
 
-class Go8010Motor {
+class Go8010Motor : public Device {
  public:
   struct ControlParam {
     f32 tau;

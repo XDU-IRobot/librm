@@ -31,6 +31,7 @@
 #include <vector>
 
 #include "librm/hal/can_interface.hpp"
+#include "librm/device/device.hpp"
 
 namespace rm::device {
 
@@ -45,7 +46,7 @@ namespace rm::device {
  *        基于具体平台实现，CAN总线类会用轮询或接管中断的方式接收所有报文，每接收到一条报文，它就会寻找有没有注册过想要接收这条报文的设备，
  *        如果有，这个设备的RxCallback()函数就会被CAN总线类调用。
  */
-class CanDevice {
+class CanDevice : public Device {
  public:
   /**
    * @param can        CAN外设对象

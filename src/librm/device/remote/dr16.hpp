@@ -32,46 +32,47 @@
 
 #include "librm/core/typedefs.hpp"
 #include "librm/hal/serial.hpp"
+#include "librm/device/device.hpp"
 
 namespace rm::device {
 
 /**
- * @brief 遥控器拨杆位置
- */
-enum class RcSwitchState : usize {
-  kUnknown = 0u,
-  kUp,
-  kDown,
-  kMid,
-};
-
-/**
- * @brief 键盘按键
- */
-enum class RcKey : u16 {
-  kW = 1u << 0,
-  kS = 1u << 1,
-  kA = 1u << 2,
-  kD = 1u << 3,
-  kShift = 1u << 4,
-  kCtrl = 1u << 5,
-  kQ = 1u << 6,
-  kE = 1u << 7,
-  kR = 1u << 8,
-  kF = 1u << 9,
-  kG = 1u << 10,
-  kZ = 1u << 11,
-  kX = 1u << 12,
-  kC = 1u << 13,
-  kV = 1u << 14,
-  kB = 1u << 15,
-};
-
-/**
  * @brief DR16接收机
  */
-class DR16 {
+class DR16 : public Device {
  public:
+  /**
+   * @brief 遥控器拨杆位置
+   */
+  enum class SwitchPosition : usize {
+    kUnknown = 0u,
+    kUp,
+    kDown,
+    kMid,
+  };
+
+  /**
+   * @brief 键盘按键
+   */
+  enum class Key : u16 {
+    kW = 1u << 0,
+    kS = 1u << 1,
+    kA = 1u << 2,
+    kD = 1u << 3,
+    kShift = 1u << 4,
+    kCtrl = 1u << 5,
+    kQ = 1u << 6,
+    kE = 1u << 7,
+    kR = 1u << 8,
+    kF = 1u << 9,
+    kG = 1u << 10,
+    kZ = 1u << 11,
+    kX = 1u << 12,
+    kC = 1u << 13,
+    kV = 1u << 14,
+    kB = 1u << 15,
+  };
+
   DR16() = delete;
   explicit DR16(hal::SerialInterface &serial);
 
@@ -83,23 +84,23 @@ class DR16 {
   [[nodiscard]] i16 right_x() const;
   [[nodiscard]] i16 right_y() const;
   [[nodiscard]] i16 dial() const;
-  [[nodiscard]] RcSwitchState switch_l() const;
-  [[nodiscard]] RcSwitchState switch_r() const;
+  [[nodiscard]] SwitchPosition switch_l() const;
+  [[nodiscard]] SwitchPosition switch_r() const;
   [[nodiscard]] i16 mouse_x() const;
   [[nodiscard]] i16 mouse_y() const;
   [[nodiscard]] i16 mouse_z() const;
   [[nodiscard]] bool mouse_button_left() const;
   [[nodiscard]] bool mouse_button_right() const;
-  [[nodiscard]] bool key(RcKey key) const;
+  [[nodiscard]] bool key(Key key) const;
 
  private:
   hal::SerialInterface *serial_;
 
   i16 axes_[5]{0};   // [0]: right_x, [1]: right_y, [2]: left_x, [3]: left_y, [4]: dial; 取值范围:-660~660;
   i16 mouse_[3]{0};  // [0]: x, [1]: y, [2]: z; 取值范围:-32768~32767;
-  bool mouse_button_[2]{false};                         // [0]: left, [1]: right
-  RcSwitchState switches_[2]{RcSwitchState::kUnknown};  // [0]: right, [1]: left
-  u16 keyboard_key_;                                    // 每一位代表一个键，0为未按下，1为按下
+  bool mouse_button_[2]{false};                           // [0]: left, [1]: right
+  SwitchPosition switches_[2]{SwitchPosition::kUnknown};  // [0]: right, [1]: left
+  u16 keyboard_key_;                                      // 每一位代表一个键，0为未按下，1为按下
 };
 
 }  // namespace rm::device

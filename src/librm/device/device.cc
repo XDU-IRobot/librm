@@ -22,17 +22,31 @@
 
 /**
  * @file  librm/device/device.cc
- * @brief 设备基类和设备管理器，用于监视设备状态
- * @todo  see device/device.h
+ * @brief 驱动框架的设备基类，主要功能为监视设备在线状态
  */
 
 #include "device.hpp"
 
 namespace rm::device {
 
-/**
- * @return 设备在线状态
- */
-DeviceStatus Device::GetDeviceStatus() const { return this->status_; }
+void Device::SetHeartbeatTimeout(duration timeout) { heartbeat_timeout_ = timeout; }
+
+[[nodiscard]] bool Device::IsAlive() {
+  if (online_status_ == Status::kOnline) {
+    const auto now = std::chrono::steady_clock::now();
+    // 如果距离上次在线时间戳超过心跳超时时间，认为设备离线
+    if (now - last_online_ > heartbeat_timeout_) {
+      online_status_ = Status::kOffline;
+    }
+  }
+  return online_status_ == Status::kOnline;
+}
+
+[[nodiscard]] Device::time_point Device::last_online() const { return last_online_; }
+
+void Device::Heartbeat() {
+  last_online_ = std::chrono::steady_clock::now();
+  online_status_ = Status::kOnline;
+}
 
 }  // namespace rm::device

@@ -117,6 +117,7 @@ void ZdtStepper::ReadVel() {
 
 void ZdtStepper::RxCallback(const std::vector<rm::u8> &data, rm::u16 rx_len) {
   if (data[0] == motor_id_ && data[1] == 0x36 && rx_len == 8) {
+    Heartbeat();
     const u32 pos_raw =
         static_cast<uint32_t>((static_cast<uint32_t>(data[3]) << 24) | (static_cast<uint32_t>(data[4]) << 16) |
                               (static_cast<uint32_t>(data[5]) << 8) | (static_cast<uint32_t>(data[6]) << 0));
@@ -125,6 +126,7 @@ void ZdtStepper::RxCallback(const std::vector<rm::u8> &data, rm::u16 rx_len) {
       feedback_.pos = -feedback_.pos;
     }
   } else if (data[0] == motor_id_ && data[1] == 0x35 && rx_len == 6) {
+    Heartbeat();
     const u16 vel_raw =
         static_cast<uint16_t>((static_cast<uint16_t>(data[3]) << 8) | (static_cast<uint16_t>(data[4]) << 0));
     feedback_.vel = vel_raw;

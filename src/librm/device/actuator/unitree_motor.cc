@@ -99,6 +99,7 @@ void UnitreeMotor::RxCallback(const std::vector<u8> &data, u16 rx_len) {
   }
 
   if (recv_data_.head.motor_id == send_data_.head.motor_id) {
+    Heartbeat();
     fb_param_.mode = recv_data_.data.mode;
     fb_param_.temp = recv_data_.data.temp;
     fb_param_.m_error = recv_data_.data.m_error;

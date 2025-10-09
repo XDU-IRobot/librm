@@ -275,7 +275,7 @@ class DirectDriveMotor : public CanDevice {
   void Set(f32 control_value);
   void Set(f32 control_value, Mode mode);
 
-  static void Heartbeat();
+  static void RequestFeedback();
 
   void Enable(bool enable);
   static void ResetAllOn(hal::CanInterface &can);

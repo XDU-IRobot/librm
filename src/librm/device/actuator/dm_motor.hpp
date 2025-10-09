@@ -224,6 +224,7 @@ class DmMotor final : public CanDevice {
    * @param msg   收到的报文
    */
   void RxCallback(const hal::CanMsg *msg) override {
+    Heartbeat();
     int p_int = (msg->data[1] << 8) | msg->data[2];
     int v_int = (msg->data[3] << 4) | (msg->data[4] >> 4);
     int t_int = ((msg->data[4] & 0xf) << 8) | msg->data[5];

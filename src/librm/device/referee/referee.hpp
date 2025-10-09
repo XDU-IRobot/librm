@@ -34,6 +34,7 @@
 
 #include <array>
 
+#include "librm/device/device.hpp"
 #include "librm/modules/crc.hpp"
 
 namespace rm::device {
@@ -42,7 +43,7 @@ namespace rm::device {
  * @brief 裁判系统
  */
 template <RefereeRevision revision>
-class Referee {
+class Referee : public Device {
  private:
   enum class DeserializeFsmState {
     kSof,
@@ -123,6 +124,7 @@ class Referee {
                              modules::CRC16_INIT) == crc16_this_time_) {
             cmdid_this_time_ = (valid_data_so_far_[6] << 8) | valid_data_so_far_[5];
 
+            Heartbeat();
             // 整包接收完+校验通过，把数据拷贝到反序列化缓冲区对应的结构体中
             memcpy((u8*)(&deserialize_buffer_) + referee_protocol_memory_map<revision>.at(cmdid_this_time_),
                    valid_data_so_far_.data() + kRefProtocolHeaderLen + kRefProtocolCmdIdLen, data_len_this_time_);
