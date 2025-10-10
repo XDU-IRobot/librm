@@ -51,6 +51,7 @@
 #include "librm/device/actuator/dm_motor.hpp"
 #include "librm/device/actuator/unitree_motor.hpp"
 #include "librm/device/actuator/go8010_motor.hpp"
+#include "librm/device/actuator/lk_motor.hpp"
 #include "librm/device/actuator/zdt_stepper.hpp"
 #include "librm/device/referee/referee.hpp"
 #include "librm/device/remote/dr16.hpp"
