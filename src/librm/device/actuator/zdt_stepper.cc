@@ -33,36 +33,43 @@ std::unordered_map<rm::hal::SerialInterface *,
                    std::unordered_map<rm::u8, std::function<void(const std::vector<rm::u8> &, rm::u16)>>>
     rx_callback_map_emotor;
 
-ZdtStepper::ZdtStepper(hal::SerialInterface &serial, u8 motor_id) : serial_{&serial}, motor_id_{motor_id} {
+ZdtStepper::ZdtStepper(hal::SerialInterface &serial, u8 motor_id, bool reversed)
+    : serial_{&serial}, reversed_{reversed}, motor_id_{motor_id} {
   rx_callback_map_emotor[&serial][motor_id] =
       std::bind(&ZdtStepper::RxCallback, this, std::placeholders::_1, std::placeholders::_2);
   serial_->AttachRxCallback(rx_callback_map_emotor[&serial][motor_id]);
 }
 
-void ZdtStepper::MotorVelCtrl(u8 dir, u16 vel, u8 acc, bool sync_flag) {
+void ZdtStepper::MotorVelCtrl(u16 vel, u8 acc, bool sync) {
   static uint8_t cmd[8] = {0};
 
   // 装载命令
-  cmd[0] = motor_id_;            // 地址
-  cmd[1] = 0xF6;                 // 功能码
-  cmd[2] = dir;                  // 方向
+  cmd[0] = motor_id_;           // 地址
+  cmd[1] = 0xF6;                // 功能码
+  cmd[2] = (vel >= 0 ? 0 : 1);  // 方向
+  if (reversed_) {
+    cmd[2] ^= 0x01;
+  }
   cmd[3] = (uint8_t)(vel >> 8);  // 速度(RPM)高8位字节
   cmd[4] = (uint8_t)(vel >> 0);  // 速度(RPM)低8位字节
   cmd[5] = acc;                  // 加速度，注意：0是直接启动
-  cmd[6] = sync_flag;            // 多机同步运动标志
+  cmd[6] = sync;                 // 多机同步运动标志
   cmd[7] = 0x6B;                 // 校验字节
 
   // 发送命令
   serial_->Write(cmd, 8);
 }
 
-void ZdtStepper::MotorPosCtrl(u8 dir, u16 vel, u8 acc, u32 clk, bool absolute, bool sync) {
+void ZdtStepper::MotorPosCtrl(u16 vel, u8 acc, u32 clk, bool absolute, bool sync) {
   static uint8_t cmd[13] = {0};
 
   // 装载命令
-  cmd[0] = motor_id_;             // 地址
-  cmd[1] = 0xFD;                  // 功能码
-  cmd[2] = dir;                   // 方向
+  cmd[0] = motor_id_;           // 地址
+  cmd[1] = 0xFD;                // 功能码
+  cmd[2] = (vel >= 0 ? 0 : 1);  // 方向
+  if (reversed_) {
+    cmd[2] ^= 0x01;
+  }
   cmd[3] = (uint8_t)(vel >> 8);   // 速度(RPM)高8位字节
   cmd[4] = (uint8_t)(vel >> 0);   // 速度(RPM)低8位字节
   cmd[5] = acc;                   // 加速度，注意：0是直接启动
@@ -82,10 +89,10 @@ void ZdtStepper::MotorSyncCtrl() {
   static uint8_t cmd[4] = {0};
 
   // 装载命令
-  cmd[0] = motor_id_;  // 地址
-  cmd[1] = 0xFF;       // 功能码
-  cmd[2] = 0x66;       // 辅助码
-  cmd[3] = 0x6B;       // 校验字节
+  cmd[0] = 0u;    // 地址
+  cmd[1] = 0xFF;  // 功能码
+  cmd[2] = 0x66;  // 辅助码
+  cmd[3] = 0x6B;  // 校验字节
 
   // 发送命令
   serial_->Write(cmd, 4);
