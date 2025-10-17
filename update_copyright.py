@@ -3,7 +3,7 @@ import re
 import os
 
 # 配置参数
-FILE_EXTENSIONS = ['.cpp', '.h', '.hpp', '.cc']  # 需要处理的文件扩展名
+FILE_EXTENSIONS = ['.cpp', '.h', '.hpp', '.cc', '.cmake', 'CMakeLists.txt']  # 需要处理的文件扩展名
 OLD_YEAR = 2024   # 原年份（或范围的结束年份）
 NEW_YEAR = 2025   # 新年份
 
