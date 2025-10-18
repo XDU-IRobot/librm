@@ -67,4 +67,11 @@ int FloatToInt(f32 x, f32 x_min, f32 x_max, int bits) {
   return (int)((x - offset) * ((f32)((1 << bits) - 1)) / span);
 }
 
+f32 SafeDiv(f32 dividend, f32 divisor) {
+  if (divisor == 0.f) {
+    divisor = 1e-6f;
+  }
+  return dividend / divisor;
+}
+
 }  // namespace rm::modules

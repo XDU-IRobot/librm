@@ -117,6 +117,14 @@ f32 IntToFloat(int x_int, f32 x_min, f32 x_max, int bits);
  */
 int FloatToInt(f32 x, f32 x_min, f32 x_max, int bits);
 
+/**
+ * @brief           安全的浮点数除法，处理除零的情况
+ * @param dividend  被除数
+ * @param divisor   除数
+ * @return          计算结果
+ */
+f32 SafeDiv(f32 dividend, f32 divisor);
+
 }  // namespace rm::modules
 
 #endif  // LIBRM_MODULES_UTILS_HPP

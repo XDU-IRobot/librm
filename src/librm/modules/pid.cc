@@ -53,12 +53,14 @@ void PID::Update(f32 set, f32 ref, f32 dt) {
     error_[0] = set - ref;
   }
 
-  f32 calc_kp{kp_}, calc_ki{(enable_dynamic_ki_ ? dynamic_ki_ : calc_ki)}, calc_kd{kd_};
+  using modules::SafeDiv;
+
+  f32 calc_kp{kp_}, calc_ki{(enable_dynamic_ki_ ? dynamic_ki_ : ki_)}, calc_kd{kd_};
   if (enable_fuzzy_) {
     const f32 d_error = (error_[0] - error_[1]) / dt_;
-    const f32 delta_kp = kp_fuzzy_.Infer(error_[0], d_error) * kp_ / 2.f;
-    const f32 delta_ki = ki_fuzzy_.Infer(error_[0], d_error) * (enable_dynamic_ki_ ? dynamic_ki_ : calc_ki) / 2.f;
-    const f32 delta_kd = kd_fuzzy_.Infer(error_[0], d_error) * kd_ / 2.f;
+    const f32 delta_kp = kp_fuzzy_.Infer(error_[0], d_error) * calc_kp / 2.f;
+    const f32 delta_ki = ki_fuzzy_.Infer(error_[0], d_error) * calc_ki / 2.f;
+    const f32 delta_kd = kd_fuzzy_.Infer(error_[0], d_error) * calc_kd / 2.f;
     calc_kp += delta_kp;
     calc_ki += delta_ki;
     calc_kd += delta_kd;
@@ -68,8 +70,8 @@ void PID::Update(f32 set, f32 ref, f32 dt) {
   p_out_ = calc_kp * error_[0];
 
   // i
-  trapezoid_ = (error_[0] + error_[1]) / 2 * dt_;     // 梯形积分
-  dynamic_ki_ = calc_ki / (1 + std::abs(error_[0]));  // 变速积分
+  trapezoid_ = (error_[0] + error_[1]) / 2 * dt_;           // 梯形积分
+  dynamic_ki_ = SafeDiv(calc_ki, 1 + std::abs(error_[0]));  // 变速积分
   i_out_ += calc_ki * trapezoid_;
   i_out_ = Clamp(i_out_, -max_iout_, max_iout_);
 
@@ -97,12 +99,14 @@ void PID::UpdateExtDiff(f32 set, f32 ref, f32 external_diff, f32 dt) {
     error_[0] = set - ref;
   }
 
-  f32 calc_kp{kp_}, calc_ki{(enable_dynamic_ki_ ? dynamic_ki_ : calc_ki)}, calc_kd{kd_};
+  using modules::SafeDiv;
+
+  f32 calc_kp{kp_}, calc_ki{(enable_dynamic_ki_ ? dynamic_ki_ : ki_)}, calc_kd{kd_};
   if (enable_fuzzy_) {
     const f32 d_error = (error_[0] - error_[1]) / dt_;
-    const f32 delta_kp = kp_fuzzy_.Infer(error_[0], d_error) * kp_ / 2.f;
-    const f32 delta_ki = ki_fuzzy_.Infer(error_[0], d_error) * (enable_dynamic_ki_ ? dynamic_ki_ : calc_ki) / 2.f;
-    const f32 delta_kd = kd_fuzzy_.Infer(error_[0], d_error) * kd_ / 2.f;
+    const f32 delta_kp = kp_fuzzy_.Infer(error_[0], d_error) * calc_kp / 2.f;
+    const f32 delta_ki = ki_fuzzy_.Infer(error_[0], d_error) * calc_ki / 2.f;
+    const f32 delta_kd = kd_fuzzy_.Infer(error_[0], d_error) * calc_kd / 2.f;
     calc_kp += delta_kp;
     calc_ki += delta_ki;
     calc_kd += delta_kd;
@@ -112,8 +116,8 @@ void PID::UpdateExtDiff(f32 set, f32 ref, f32 external_diff, f32 dt) {
   p_out_ = calc_kp * error_[0];
 
   // i
-  trapezoid_ = (error_[0] + error_[1]) / 2 * dt_;     // 梯形积分
-  dynamic_ki_ = calc_ki / (1 + std::abs(error_[0]));  // 变速积分
+  trapezoid_ = (error_[0] + error_[1]) / 2 * dt_;           // 梯形积分
+  dynamic_ki_ = SafeDiv(calc_ki, 1 + std::abs(error_[0]));  // 变速积分
   i_out_ += calc_ki * trapezoid_;
   i_out_ = Clamp(i_out_, -max_iout_, max_iout_);
 
