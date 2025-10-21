@@ -32,8 +32,6 @@
 #include "librm/hal/serial_interface.hpp"
 #include "librm/device/device.hpp"
 
-using namespace rm;
-
 namespace rm::device {
 
 class ZdtStepper : public Device {
