@@ -31,9 +31,11 @@
 #include <chrono>
 #include <thread>
 
-#if defined(LIBRM_PLATFORM_STM32)
-#include "librm/hal/stm32/hal.hpp"
+#ifdef LIBRM_FREERTOS_AVAILABLE
+#include "cmsis_os.h"
 #endif
+
+#include "librm/hal/stm32/hal.hpp"
 #include "librm/core/typedefs.hpp"
 
 namespace rm {
