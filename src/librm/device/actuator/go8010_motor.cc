@@ -28,9 +28,9 @@
 #include "go8010_motor.hpp"
 #include <cstdint>
 
-#include "librm/core/typedefs.h"
-#include "librm/hal/serial_interface.h"
-#include "librm/modules/algorithm/crc.h"
+#include "librm/core/typedefs.hpp"
+#include "librm/hal/serial_interface.hpp"
+#include "librm/modules/crc.hpp"
 
 /**
  * @brief 串口接收回调函数键值对
@@ -94,6 +94,7 @@ void Go8010Motor::RxCallback(const std::vector<u8> &data, u16 rx_len) {
   if (rx_len != 16) {
     return;
   }
+
   std::copy(data.begin(), data.end(), reinterpret_cast<u8 *>(&recv_data_.motor_recv_data));
 
   // if (recv_data_.motor_recv_data.head[0] != 0xFE || recv_data_.motor_recv_data.head[1] != 0xEE) {
@@ -101,6 +102,7 @@ void Go8010Motor::RxCallback(const std::vector<u8> &data, u16 rx_len) {
   // }
 
   if (recv_data_.motor_recv_data.mode.id == send_data_.motor_send_data.mode.id) {
+    Heartbeat();
     recv_data_.id = recv_data_.motor_recv_data.mode.id;
     recv_data_.mode = recv_data_.motor_recv_data.mode.status;
     recv_data_.tau = recv_data_.motor_recv_data.fbk.tau / 256.f;
@@ -129,7 +131,7 @@ void Go8010Motor::SetParam(const SendData &send_data) {
   send_data_.motor_send_data.comd.k_pos = send_data.kp * 1280;
   send_data_.motor_send_data.comd.k_spd = send_data.kd * 1280;
 
-  send_data_.motor_send_data.CRC16 = rm::modules::algorithm::CrcCcitt((rm::u8 *)&send_data_.motor_send_data, 15, 0x0);
+  send_data_.motor_send_data.CRC16 = rm::modules::CrcCcitt((rm::u8 *)&send_data_.motor_send_data, 15, 0x0);
 
   std::copy(reinterpret_cast<u8 *>(&send_data_.motor_send_data),
             reinterpret_cast<u8 *>(&send_data_.motor_send_data) + sizeof(send_data_.motor_send_data), tx_buffer_);

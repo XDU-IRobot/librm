@@ -28,7 +28,7 @@
 #ifndef LIBRM_DEVICE_REFEREE_PROTOCOL_HPP
 #define LIBRM_DEVICE_REFEREE_PROTOCOL_HPP
 
-#include "librm/core/typedefs.h"
+#include "librm/core/typedefs.hpp"
 
 #include <unordered_map>
 

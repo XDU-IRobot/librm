@@ -25,13 +25,13 @@
  * @brief UART类库
  */
 
-#include "librm/hal/stm32/hal.h"
+#include "librm/hal/stm32/hal.hpp"
 #if defined(HAL_UART_MODULE_ENABLED)
-#include "librm/hal/stm32/check_register_callbacks.h"
+#include "librm/hal/stm32/check_register_callbacks.hpp"
 
-#include "uart.h"
+#include "uart.hpp"
 
-#include "librm/core/exception.h"
+#include "librm/core/exception.hpp"
 
 /**
  * @brief 串口接收回调函数键值对

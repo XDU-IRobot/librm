@@ -27,8 +27,8 @@
 
 #include "unitree_motor.hpp"
 
-#include "librm/hal/serial_interface.h"
-#include "librm/modules/algorithm/crc.h"
+#include "librm/hal/serial_interface.hpp"
+#include "librm/modules/crc.hpp"
 
 /**
  * @brief 串口接收回调函数键值对
@@ -99,6 +99,7 @@ void UnitreeMotor::RxCallback(const std::vector<u8> &data, u16 rx_len) {
   }
 
   if (recv_data_.head.motor_id == send_data_.head.motor_id) {
+    Heartbeat();
     fb_param_.mode = recv_data_.data.mode;
     fb_param_.temp = recv_data_.data.temp;
     fb_param_.m_error = recv_data_.data.m_error;
@@ -139,7 +140,7 @@ void UnitreeMotor::SetParam(const ControlParam &ctrl_param) {
   send_data_.data.LowHzMotorCmdIndex = 0;
   send_data_.data.LowHzMotorCmdByte = 0;
 
-  send_data_.crc.ku32 = modules::algorithm::Crc32((u32 *)(&send_data_), 7, modules::algorithm::CRC32_INIT);
+  send_data_.crc.ku32 = modules::Crc32((u32 *)(&send_data_), 7, modules::CRC32_INIT);
 
   std::copy(reinterpret_cast<u8 *>(&send_data_), reinterpret_cast<u8 *>(&send_data_) + sizeof(send_data_), tx_buffer_);
 }

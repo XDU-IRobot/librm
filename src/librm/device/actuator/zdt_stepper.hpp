@@ -28,14 +28,13 @@
 #ifndef LIBRM_DEVICE_ACTUATOR_ZDT_STEPPER_HPP
 #define LIBRM_DEVICE_ACTUATOR_ZDT_STEPPER_HPP
 
-#include "librm/core/typedefs.h"
-#include "librm/hal/serial_interface.h"
-
-using namespace rm;
+#include "librm/core/typedefs.hpp"
+#include "librm/hal/serial_interface.hpp"
+#include "librm/device/device.hpp"
 
 namespace rm::device {
 
-class ZdtStepper {
+class ZdtStepper : public Device {
  public:
   ZdtStepper(hal::SerialInterface &serial, u8 motor_id, bool reversed = false);
   ~ZdtStepper() = default;
@@ -56,6 +55,8 @@ class ZdtStepper {
    * @param    clk ：脉冲数      ，范围0- (2^32 - 1)个
    * @param    absolute ：相位/绝对标志，false为相对运动，true为绝对值运动
    * @param    sync ：多机同步标志 ，false为不启用，true为启用
+   * @param    absolute ：相位/绝对标志，false为相对运动，true为绝对值运动
+   * @param    sync ：多机同步标志 ，false为不启用，true为启用
    * @retval   地址 + 功能码 + 命令状态 + 校验字节
    */
   void MotorPosCtrl(u16 vel, u8 acc, u32 clk, bool absolute, bool sync);
@@ -64,15 +65,18 @@ class ZdtStepper {
    * @brief    触发和这个电机在同一条串口总线上的所有电机执行同步命令
    */
   void MotorSyncCtrl();
+  void MotorSyncCtrl();
 
   /**
    * @brief    读取电机位置
    */
   void ReadPos();
+  void ReadPos();
 
   /**
    * @brief    读取电机速度
    */
+  void ReadVel();
   void ReadVel();
 
   /**

@@ -25,12 +25,12 @@
  * @brief   BMI088有关常量
  */
 
-#ifndef LIBRM_DEVICE_SENSOR_BMI088_CONST_H
-#define LIBRM_DEVICE_SENSOR_BMI088_CONST_H
+#ifndef LIBRM_DEVICE_SENSOR_BMI088_CONST_HPP
+#define LIBRM_DEVICE_SENSOR_BMI088_CONST_HPP
 
 #include <chrono>
 
-#include "librm/core/typedefs.h"
+#include "librm/core/typedefs.hpp"
 
 using namespace std::chrono_literals;
 
@@ -102,7 +102,7 @@ constexpr u8 BMI088_ACCEL_ZOUT_M = 0x17;
 
 constexpr u8 BMI088_SENSORTIME_DATA_L = 0x18;
 constexpr u8 BMI088_SENSORTIME_DATA_M = 0x19;
-constexpr u8 BMI088_SENSORTIME_DATA_H = 0x1A;
+constexpr u8 BMI088_SENSORTIME_DATA_HPP = 0x1A;
 
 constexpr u8 BMI088_ACC_INT_STAT_1 = 0x1D;
 constexpr u8 BMI088_ACCEL_DRDY_INTERRUPT_SHFITS = 0x7;
@@ -183,11 +183,11 @@ constexpr u8 BMI088_GYRO_CHIP_ID = 0x00;
 constexpr u8 BMI088_GYRO_CHIP_ID_VALUE = 0x0F;
 
 constexpr u8 BMI088_GYRO_X_L = 0x02;
-constexpr u8 BMI088_GYRO_X_H = 0x03;
+constexpr u8 BMI088_GYRO_X_HPP = 0x03;
 constexpr u8 BMI088_GYRO_Y_L = 0x04;
-constexpr u8 BMI088_GYRO_Y_H = 0x05;
+constexpr u8 BMI088_GYRO_Y_HPP = 0x05;
 constexpr u8 BMI088_GYRO_Z_L = 0x06;
-constexpr u8 BMI088_GYRO_Z_H = 0x07;
+constexpr u8 BMI088_GYRO_Z_HPP = 0x07;
 
 constexpr u8 BMI088_GYRO_INT_STAT_1 = 0x0A;
 constexpr u8 BMI088_GYRO_DYDR_SHFITS = 0x7;
@@ -256,4 +256,4 @@ constexpr u8 BMI088_GYRO_BIST_RDY = (0x1 << BMI088_GYRO_BIST_RDY_SHFITS);
 constexpr u8 BMI088_GYRO_TRIG_BIST_SHFITS = 0x0;
 constexpr u8 BMI088_GYRO_TRIG_BIST = (0x1 << BMI088_GYRO_TRIG_BIST_SHFITS);
 
-#endif  // LIBRM_DEVICE_SENSOR_BMI088_CONST_H
+#endif  // LIBRM_DEVICE_SENSOR_BMI088_CONST_HPP

@@ -36,10 +36,10 @@
 #include <cstring>
 #include <chrono>
 
-#include "librm/core/typedefs.h"
+#include "librm/core/typedefs.hpp"
 #include "librm/device/can_device.hpp"
-#include "librm/hal/can_interface.h"
-#include "librm/modules/algorithm/utils.hpp"
+#include "librm/hal/can_interface.hpp"
+#include "librm/modules/utils.hpp"
 
 namespace rm::device {
 
@@ -275,7 +275,7 @@ class DirectDriveMotor : public CanDevice {
   void Set(f32 control_value);
   void Set(f32 control_value, Mode mode);
 
-  static void Heartbeat();
+  static void RequestFeedback();
 
   void Enable(bool enable);
   static void ResetAllOn(hal::CanInterface &can);

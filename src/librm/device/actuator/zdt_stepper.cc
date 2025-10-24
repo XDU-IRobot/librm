@@ -79,12 +79,15 @@ void ZdtStepper::MotorPosCtrl(u16 vel, u8 acc, u32 clk, bool absolute, bool sync
   cmd[9] = (uint8_t)(clk >> 0);   // 脉冲数(bit0  - bit7 )
   cmd[10] = absolute;             // 相位/绝对标志，false为相对运动，true为绝对值运动
   cmd[11] = sync;                 // 多机同步运动标志，false为不启用，true为启用
+  cmd[10] = absolute;             // 相位/绝对标志，false为相对运动，true为绝对值运动
+  cmd[11] = sync;                 // 多机同步运动标志，false为不启用，true为启用
   cmd[12] = 0x6B;                 // 校验字节
 
   // 发送命令
   serial_->Write(cmd, 13);
 }
 
+void ZdtStepper::MotorSyncCtrl() {
 void ZdtStepper::MotorSyncCtrl() {
   static uint8_t cmd[4] = {0};
 
@@ -99,9 +102,11 @@ void ZdtStepper::MotorSyncCtrl() {
 }
 
 void ZdtStepper::ReadPos() {
+void ZdtStepper::ReadPos() {
   static uint8_t cmd[3] = {0};
 
   // 装载命令
+  cmd[0] = motor_id_;
   cmd[0] = motor_id_;
   cmd[1] = 0x36;
   cmd[2] = 0x6B;
@@ -111,9 +116,11 @@ void ZdtStepper::ReadPos() {
 }
 
 void ZdtStepper::ReadVel() {
+void ZdtStepper::ReadVel() {
   static uint8_t cmd[3] = {0};
 
   // 装载命令
+  cmd[0] = motor_id_;
   cmd[0] = motor_id_;
   cmd[1] = 0x35;
   cmd[2] = 0x6B;
@@ -124,6 +131,7 @@ void ZdtStepper::ReadVel() {
 
 void ZdtStepper::RxCallback(const std::vector<rm::u8> &data, rm::u16 rx_len) {
   if (data[0] == motor_id_ && data[1] == 0x36 && rx_len == 8) {
+    Heartbeat();
     const u32 pos_raw =
         static_cast<uint32_t>((static_cast<uint32_t>(data[3]) << 24) | (static_cast<uint32_t>(data[4]) << 16) |
                               (static_cast<uint32_t>(data[5]) << 8) | (static_cast<uint32_t>(data[6]) << 0));
@@ -132,6 +140,7 @@ void ZdtStepper::RxCallback(const std::vector<rm::u8> &data, rm::u16 rx_len) {
       feedback_.pos = -feedback_.pos;
     }
   } else if (data[0] == motor_id_ && data[1] == 0x35 && rx_len == 6) {
+    Heartbeat();
     const u16 vel_raw =
         static_cast<uint16_t>((static_cast<uint16_t>(data[3]) << 8) | (static_cast<uint16_t>(data[4]) << 0));
     feedback_.vel = vel_raw;

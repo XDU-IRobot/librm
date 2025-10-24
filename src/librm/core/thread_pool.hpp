@@ -41,7 +41,7 @@
 #include <functional>
 #include <stdexcept>
 
-namespace rm::core {
+namespace rm {
 
 class ThreadPool {
  public:
@@ -113,7 +113,7 @@ inline ThreadPool::~ThreadPool() {
   for (std::thread& worker : workers) worker.join();
 }
 
-}  // namespace rm::core
+}  // namespace rm
 
 #endif
 #endif  // LIBRM_CORE_THREAD_POOL_HPP

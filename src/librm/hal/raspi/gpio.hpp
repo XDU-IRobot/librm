@@ -21,7 +21,7 @@
 */
 
 /**
- * @file    librm/hal/raspi/gpio.h
+ * @file    librm/hal/raspi/gpio.hpp
  * @brief   wiringPi的gpio封装
  */
 
@@ -32,8 +32,8 @@
 
 #include <wiringPi.h>
 
-#include "librm/core/typedefs.h"
-#include "librm/hal/gpio_interface.h"
+#include "librm/core/typedefs.hpp"
+#include "librm/hal/gpio_interface.hpp"
 #include "librm/hal/raspi/wiringpi_init.hpp"
 
 namespace rm::hal::raspi {

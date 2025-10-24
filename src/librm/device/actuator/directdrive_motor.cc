@@ -42,6 +42,7 @@ std::unordered_map<hal::CanInterface *, DirectDriveMotor::TxBufferTable> DirectD
  * @brief 电机反馈处理回调函数
  */
 void DirectDriveMotor::RxCallback(const hal::CanMsg *msg) {
+  Heartbeat();
   if (msg->rx_std_id == 0x50 + id_) {
     const u16 iq_temp = (msg->data[2] << 8) | msg->data[3];
     const u16 rpm_temp = (msg->data[0] << 8) | msg->data[1];
@@ -63,7 +64,7 @@ void DirectDriveMotor::RxCallback(const hal::CanMsg *msg) {
 /**
  * @brief 向所有电机发送一次当前的控制指令，让它反馈一次数据
  */
-void DirectDriveMotor::Heartbeat() {
+void DirectDriveMotor::RequestFeedback() {
   for (auto &[can, buffer] : tx_buffer_table_) {
     can->Write(TxCommandId::kDrive1234, buffer.command_data, 8);
     can->Write(TxCommandId::kDrive5678, &buffer.command_data[8], 8);
@@ -123,9 +124,9 @@ void DirectDriveMotor::Set(f32 control_value) {
   if (current_mode_ == Mode::kUnknown) {
     using namespace std::chrono_literals;
     Enable(false);
-    rm::core::time::Sleep(2ms);
+    rm::Sleep(2ms);
     SetParameter(Parameters::Mode(Mode::kCurrent));
-    rm::core::time::Sleep(2ms);
+    rm::Sleep(2ms);
     Enable(true);
     current_mode_ = Mode::kCurrent;
   }
@@ -174,9 +175,9 @@ void DirectDriveMotor::Set(f32 control_value, Mode mode) {
   if (current_mode_ != mode) {
     using namespace std::chrono_literals;
     Enable(false);
-    rm::core::time::Sleep(2ms);
+    rm::Sleep(2ms);
     SetParameter(Parameters::Mode(mode));
-    rm::core::time::Sleep(2ms);
+    rm::Sleep(2ms);
     Enable(true);
   }
   current_mode_ = mode;

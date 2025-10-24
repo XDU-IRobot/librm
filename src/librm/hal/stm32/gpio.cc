@@ -25,13 +25,13 @@
  * @brief   stm32的GPIO类
  */
 
-#include "gpio.h"
+#include "gpio.hpp"
 
-#include "librm/hal/stm32/hal.h"
+#include "librm/hal/stm32/hal.hpp"
 #if defined(HAL_GPIO_MODULE_ENABLED)
 
-#include "librm/core/typedefs.h"
-#include "librm/hal/gpio_interface.h"
+#include "librm/core/typedefs.hpp"
+#include "librm/hal/gpio_interface.hpp"
 
 namespace rm::hal::stm32 {
 

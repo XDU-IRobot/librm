@@ -31,12 +31,14 @@
 #include <chrono>
 #include <thread>
 
-#if defined(LIBRM_PLATFORM_STM32)
-#include "librm/hal/stm32/hal.h"
+#ifdef LIBRM_FREERTOS_AVAILABLE
+#include "cmsis_os.h"
 #endif
-#include "librm/core/typedefs.h"
 
-namespace rm::core::time {
+#include "librm/hal/stm32/hal.hpp"
+#include "librm/core/typedefs.hpp"
+
+namespace rm {
 
 // STM32平台的延时比较复杂，所以专门实现两个函数
 #if defined(LIBRM_PLATFORM_STM32)
@@ -92,6 +94,6 @@ void Sleep(const std::chrono::duration<Rep, Period> &duration) {
   std::this_thread::sleep_for(duration);
 #endif
 }
-}  // namespace rm::core::time
+}  // namespace rm
 
 #endif  // LIBRM_CORE_TIME_HPP

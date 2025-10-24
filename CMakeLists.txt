@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2024 XDU-IRobot
+# Copyright (c) 2025 XDU-IRobot
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -33,6 +33,7 @@ add_subdirectory(libs)
 target_link_libraries(${PROJECT_NAME} PUBLIC third_party)
 
 if (${LIBRM_PLATFORM} STREQUAL "STM32")
+    target_link_options(${PROJECT_NAME} INTERFACE "LINKER:-u,gettimeofday")     # Ensure that gettimeofday is linked in, for platforms that need it (e.g. STM32 with newlib)
     target_link_libraries(${PROJECT_NAME} PRIVATE STM32_Drivers)
     if (${LIBRM_FREERTOS_AVAILABLE})
         target_compile_definitions(${PROJECT_NAME} PUBLIC -DLIBRM_FREERTOS_AVAILABLE)

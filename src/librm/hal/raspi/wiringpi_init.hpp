@@ -21,7 +21,7 @@
 */
 
 /**
- * @file    librm/hal/raspi/gpio.h
+ * @file    librm/hal/raspi/gpio.hpp
  * @brief   wiringPi的gpio封装
  */
 

@@ -32,17 +32,23 @@
 #include "protocol_v170.hpp"
 // implement and add more revisions here
 
-#include <array>
+#include <vector>
+#include <functional>
 
-#include "librm/modules/algorithm/crc.h"
+#include <etl/pseudo_moving_average.h>
+
+#include "librm/device/device.hpp"
+#include "librm/modules/crc.hpp"
 
 namespace rm::device {
 
 /**
- * @brief 裁判系统
+ * @brief   裁判系统
+ * @note    也可以把这个类当做一个通用的字节流通信分包器来用，
+ *          只需要把通信协议按照设计实现出来即可（参考现有裁判系统协议实现 protocol_vXXX.hpp）
  */
 template <RefereeRevision revision>
-class Referee {
+class Referee : public Device {
  private:
   enum class DeserializeFsmState {
     kSof,
@@ -54,6 +60,10 @@ class Referee {
   } deserialize_fsm_state_{DeserializeFsmState::kSof};
 
  public:
+  using RxCallback = std::function<void(u16,  ///< cmd_id
+                                        u8    ///< packet seq
+                                        )>;
+
   Referee() = default;
 
   void operator<<(u8 data) {
@@ -89,6 +99,7 @@ class Referee {
       }
 
       case DeserializeFsmState::kSeq: {
+        seq_this_time_ = data;
         valid_data_so_far_[valid_data_so_far_idx_++] = data;
         deserialize_fsm_state_ = DeserializeFsmState::kCrc8;
         break;
@@ -98,8 +109,8 @@ class Referee {
         valid_data_so_far_[valid_data_so_far_idx_++] = data;
 
         if (valid_data_so_far_idx_ == kRefProtocolHeaderLen) {
-          if (modules::algorithm::Crc8(valid_data_so_far_.data(), kRefProtocolHeaderLen - 1,
-                                       modules::algorithm::CRC8_INIT) == valid_data_so_far_[4]) {
+          if (modules::Crc8(valid_data_so_far_.data(), kRefProtocolHeaderLen - 1, modules::CRC8_INIT) ==
+              valid_data_so_far_[4]) {
             deserialize_fsm_state_ = DeserializeFsmState::kCrc16;
           } else {
             deserialize_fsm_state_ = DeserializeFsmState::kSof;
@@ -119,13 +130,26 @@ class Referee {
           crc16_this_time_ = (valid_data_so_far_[kRefProtocolAllMetadataLen + data_len_this_time_ - 1] << 8) |
                              valid_data_so_far_[kRefProtocolAllMetadataLen + data_len_this_time_ - 2];
 
-          if (modules::algorithm::Crc16(valid_data_so_far_.data(), kRefProtocolAllMetadataLen + data_len_this_time_ - 2,
-                                        modules::algorithm::CRC16_INIT) == crc16_this_time_) {
+          if (modules::Crc16(valid_data_so_far_.data(), kRefProtocolAllMetadataLen + data_len_this_time_ - 2,
+                             modules::CRC16_INIT) == crc16_this_time_) {
             cmdid_this_time_ = (valid_data_so_far_[6] << 8) | valid_data_so_far_[5];
 
-            // 整包接收完+校验通过，把数据拷贝到反序列化缓冲区对应的结构体中
-            memcpy((u8*)(&deserialize_buffer_) + referee_protocol_memory_map<revision>.at(cmdid_this_time_),
+            // 整包接收完+CRC校验通过！
+            // 裁判系统仍然在线
+            Heartbeat();
+            // 把数据拷贝到反序列化缓冲区对应的结构体中
+            memcpy(reinterpret_cast<u8 *>(&deserialize_buffer_) +
+                       referee_protocol_memory_map<revision>.at(cmdid_this_time_),
                    valid_data_so_far_.data() + kRefProtocolHeaderLen + kRefProtocolCmdIdLen, data_len_this_time_);
+            // 触发用户注册的回调函数
+            for (auto &cb : rx_callbacks_) {
+              if (cb) {
+                cb(cmdid_this_time_, seq_this_time_);
+              }
+            }
+            // 如果这一包的seq比上一包小，说明本次256包周期结束，计算丢包率
+            loss_rate_smooth_.add(static_cast<f32>(received_packets_) / 255.f * 100.f);
+            received_packets_ = 0;
           }
         }
         break;
@@ -139,15 +163,24 @@ class Referee {
     }
   }
 
-  const RefereeProtocol<revision>& data() const { return deserialize_buffer_; }
+  void AttachCallback(const RxCallback &callback) { rx_callbacks_.push_back(callback); }
+
+  const RefereeProtocol<revision> &data() const { return deserialize_buffer_; }
+
+  f32 loss_rate() const { return loss_rate_smooth_.value(); }
 
  private:
-  RefereeProtocol<revision> deserialize_buffer_;
-  std::array<u8, kRefProtocolFrameMaxLen> valid_data_so_far_;
+  RefereeProtocol<revision> deserialize_buffer_{};
   usize valid_data_so_far_idx_{0};
-  usize data_len_this_time_;
-  usize cmdid_this_time_;
-  u16 crc16_this_time_;
+  usize data_len_this_time_{0};
+  usize cmdid_this_time_{0};
+  u8 seq_this_time_{0};
+  u8 received_packets_{0};  ///< 本轮seq内正常接收到的数据包数量
+  u16 crc16_this_time_{0};
+  std::array<u8, kRefProtocolFrameMaxLen> valid_data_so_far_{};
+
+  std::vector<RxCallback> rx_callbacks_;                       ///< 数据包接收回调列表
+  etl::pseudo_moving_average<f32, 10> loss_rate_smooth_{0.f};  ///< 近10轮平均丢包率
 };
 
 }  // namespace rm::device

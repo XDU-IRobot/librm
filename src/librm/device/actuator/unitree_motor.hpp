@@ -29,14 +29,15 @@
 #ifndef LIBRM_DEVICE_ACTUATOR_UNITREE_MOTOR_HPP
 #define LIBRM_DEVICE_ACTUATOR_UNITREE_MOTOR_HPP
 
-#include "librm/hal/serial.h"
-#include "librm/core/typedefs.h"
+#include "librm/device/device.hpp"
+#include "librm/hal/serial.hpp"
+#include "librm/core/typedefs.hpp"
 
 #include <string>
 
 namespace rm::device {
 
-class UnitreeMotor {
+class UnitreeMotor : public Device {
  public:
   union ComData32 {
     i32 L;
