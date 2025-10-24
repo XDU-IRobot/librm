@@ -88,66 +88,66 @@ void ZdtStepper::MotorPosCtrl(u16 vel, u8 acc, u32 clk, bool absolute, bool sync
 }
 
 void ZdtStepper::MotorSyncCtrl() {
-void ZdtStepper::MotorSyncCtrl() {
-  static uint8_t cmd[4] = {0};
+  void ZdtStepper::MotorSyncCtrl() {
+    static uint8_t cmd[4] = {0};
 
-  // 装载命令
-  cmd[0] = 0u;    // 地址
-  cmd[1] = 0xFF;  // 功能码
-  cmd[2] = 0x66;  // 辅助码
-  cmd[3] = 0x6B;  // 校验字节
+    // 装载命令
+    cmd[0] = 0u;    // 地址
+    cmd[1] = 0xFF;  // 功能码
+    cmd[2] = 0x66;  // 辅助码
+    cmd[3] = 0x6B;  // 校验字节
 
-  // 发送命令
-  serial_->Write(cmd, 4);
-}
-
-void ZdtStepper::ReadPos() {
-void ZdtStepper::ReadPos() {
-  static uint8_t cmd[3] = {0};
-
-  // 装载命令
-  cmd[0] = motor_id_;
-  cmd[0] = motor_id_;
-  cmd[1] = 0x36;
-  cmd[2] = 0x6B;
-
-  // 发送命令
-  serial_->Write(cmd, 3);
-}
-
-void ZdtStepper::ReadVel() {
-void ZdtStepper::ReadVel() {
-  static uint8_t cmd[3] = {0};
-
-  // 装载命令
-  cmd[0] = motor_id_;
-  cmd[0] = motor_id_;
-  cmd[1] = 0x35;
-  cmd[2] = 0x6B;
-
-  // 发送命令
-  serial_->Write(cmd, 3);
-}
-
-void ZdtStepper::RxCallback(const std::vector<rm::u8> &data, rm::u16 rx_len) {
-  if (data[0] == motor_id_ && data[1] == 0x36 && rx_len == 8) {
-    Heartbeat();
-    const u32 pos_raw =
-        static_cast<uint32_t>((static_cast<uint32_t>(data[3]) << 24) | (static_cast<uint32_t>(data[4]) << 16) |
-                              (static_cast<uint32_t>(data[5]) << 8) | (static_cast<uint32_t>(data[6]) << 0));
-    feedback_.pos = (float)pos_raw * 360.0f / 65536.0f;
-    if (data[2]) {
-      feedback_.pos = -feedback_.pos;
-    }
-  } else if (data[0] == motor_id_ && data[1] == 0x35 && rx_len == 6) {
-    Heartbeat();
-    const u16 vel_raw =
-        static_cast<uint16_t>((static_cast<uint16_t>(data[3]) << 8) | (static_cast<uint16_t>(data[4]) << 0));
-    feedback_.vel = vel_raw;
-    if (data[2]) {
-      feedback_.vel = -feedback_.vel;
-    }
+    // 发送命令
+    serial_->Write(cmd, 4);
   }
-}
 
-}  // namespace rm::device
+  void ZdtStepper::ReadPos() {
+    void ZdtStepper::ReadPos() {
+      static uint8_t cmd[3] = {0};
+
+      // 装载命令
+      cmd[0] = motor_id_;
+      cmd[0] = motor_id_;
+      cmd[1] = 0x36;
+      cmd[2] = 0x6B;
+
+      // 发送命令
+      serial_->Write(cmd, 3);
+    }
+
+    void ZdtStepper::ReadVel() {
+      void ZdtStepper::ReadVel() {
+        static uint8_t cmd[3] = {0};
+
+        // 装载命令
+        cmd[0] = motor_id_;
+        cmd[0] = motor_id_;
+        cmd[1] = 0x35;
+        cmd[2] = 0x6B;
+
+        // 发送命令
+        serial_->Write(cmd, 3);
+      }
+
+      void ZdtStepper::RxCallback(const std::vector<rm::u8> &data, rm::u16 rx_len) {
+        if (data[0] == motor_id_ && data[1] == 0x36 && rx_len == 8) {
+          Heartbeat();
+          const u32 pos_raw =
+              static_cast<uint32_t>((static_cast<uint32_t>(data[3]) << 24) | (static_cast<uint32_t>(data[4]) << 16) |
+                                    (static_cast<uint32_t>(data[5]) << 8) | (static_cast<uint32_t>(data[6]) << 0));
+          feedback_.pos = (float)pos_raw * 360.0f / 65536.0f;
+          if (data[2]) {
+            feedback_.pos = -feedback_.pos;
+          }
+        } else if (data[0] == motor_id_ && data[1] == 0x35 && rx_len == 6) {
+          Heartbeat();
+          const u16 vel_raw =
+              static_cast<uint16_t>((static_cast<uint16_t>(data[3]) << 8) | (static_cast<uint16_t>(data[4]) << 0));
+          feedback_.vel = vel_raw;
+          if (data[2]) {
+            feedback_.vel = -feedback_.vel;
+          }
+        }
+      }
+
+    }  // namespace rm::device
