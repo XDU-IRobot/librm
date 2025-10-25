@@ -69,6 +69,7 @@
 #include "librm/modules/crc.hpp"
 #include "librm/modules/float16.hpp"
 #include "librm/modules/pid.hpp"
+#include "librm/modules/trajectory_limiter.hpp"
 #include "librm/modules/threshold_trigger.hpp"
 #include "librm/modules/utils.hpp"
 #include "librm/modules/vofa_plotter.hpp"
