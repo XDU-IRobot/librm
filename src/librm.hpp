@@ -55,6 +55,7 @@
 #include "librm/device/actuator/zdt_stepper.hpp"
 #include "librm/device/referee/referee.hpp"
 #include "librm/device/remote/dr16.hpp"
+#include "librm/device/remote/sbus.hpp"
 #include "librm/device/remote/vt03.hpp"
 #include "librm/device/sensor/bmi088.hpp"
 #include "librm/device/sensor/ist8310.hpp"
