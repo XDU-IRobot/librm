@@ -65,18 +65,15 @@ class ZdtStepper : public Device {
    * @brief    触发和这个电机在同一条串口总线上的所有电机执行同步命令
    */
   void MotorSyncCtrl();
-  void MotorSyncCtrl();
 
   /**
    * @brief    读取电机位置
    */
   void ReadPos();
-  void ReadPos();
 
   /**
    * @brief    读取电机速度
    */
-  void ReadVel();
   void ReadVel();
 
   /**
