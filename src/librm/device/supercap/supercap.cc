@@ -105,4 +105,29 @@ void SuperCap::RxCallback(const hal::CanMsg *msg) {
   this->error_flags_ = (msg->data[4] << 8) | msg->data[5];
 }
 
+/**
+ * @brief 兼容港科电容的CAN通信
+ * @param
+ */
+#ifdef Gk_SuperCap
+void SuperCap::Gk_UpdateCan(u8 enableDCDC, u8 systemRestart, u8 resv0, u16 feedbackRefereePowerLimit,
+                            u16 feedbackRefereeEnergyBuffer, u8 *resv1) {
+  this->txbuf_[0] = (resv0 << 2) | (systemRestart << 1) | (enableDCDC);
+  this->txbuf_[1] = (feedbackRefereePowerLimit);
+  this->txbuf_[2] = (feedbackRefereePowerLimit >> 8);
+  this->txbuf_[3] = (feedbackRefereeEnergyBuffer);
+  this->txbuf_[4] = (feedbackRefereeEnergyBuffer >> 8);
+  this->txbuf_[5] = *(resv1);
+  this->txbuf_[6] = *(resv1 + 1);
+  this->txbuf_[7] = *(resv1 + 2);
+  this->can_->Write(0x061, this->tx_buf_, 8);
+}
+void Gk_RxCallback(const hal::CanMsg *msg) {
+  this->RxData.errorCode = msg->data[0];
+  this->RxData.chassisPower =
+      (msg->(f32)data[4] << 24) | (msg->(f32)data[3] << 16) | (msg->(f32)data[2] << 8) | (msg->(f32)data[1]);
+  this->RxData.chassisPowerLimit = (msg->(i16)data[6] << 8) | (msg->data[5]);
+  this->RxData.capEnergy = msg->data[7];
+}
+#endif
 }  // namespace rm::device
