@@ -60,14 +60,14 @@ class MecanumChassis {
  public:
   MecanumChassis() = delete;
   ~MecanumChassis() = default;
-  inline MecanumChassis(f32 wheel_base, f32 wheel_track) : wheel_base_(wheel_base), wheel_track_(wheel_track) {}
+  MecanumChassis(f32 wheel_base, f32 wheel_track) : wheel_base_(wheel_base), wheel_track_(wheel_track) {}
 
   /**
    * @param vx    x轴方向的速度
    * @param vy    y轴方向的速度
    * @param wz    z轴方向的角速度
    */
-  inline auto Forward(f32 vx, f32 vy, f32 wz) {
+  auto Forward(f32 vx, f32 vy, f32 wz) {
     forward_result_.lf_speed = vx - vy - (wheel_base_ + wheel_track_) * wz;
     forward_result_.lr_speed = vx + vy + (wheel_base_ + wheel_track_) * wz;
     forward_result_.rf_speed = vx + vy - (wheel_base_ + wheel_track_) * wz;
@@ -75,7 +75,7 @@ class MecanumChassis {
     return forward_result_;
   }
   // TODO: ik
-  inline auto forward_result() const { return forward_result_; }
+  auto forward_result() const { return forward_result_; }
 
  private:
   struct {
@@ -92,7 +92,7 @@ class SteeringChassis {
  public:
   SteeringChassis() = delete;
   ~SteeringChassis() = default;
-  inline explicit SteeringChassis(f32 chassis_radius) : chassis_radius_(chassis_radius) {}
+  explicit SteeringChassis(f32 chassis_radius) : chassis_radius_(chassis_radius) {}
 
   /**
    * @brief 360度四舵轮正运动学
@@ -102,7 +102,7 @@ class SteeringChassis {
    * @note
    * 这个函数不考虑当前舵角与目标角度是否大于90度而反转舵，效率较低，如果有条件还是建议用另外一个Forward函数的重载版本
    */
-  inline auto Forward(f32 vx, f32 vy, f32 w) {
+  auto Forward(f32 vx, f32 vy, f32 w) {
     if (vx == 0.f && vy == 0.f && w == 0.f) {  // 理论上不应该直接比较浮点数，但是两个同类型浮点字面量比较应该没问题
       forward_result_.lf_steer_position = M_PI / 4.f;
       forward_result_.rf_steer_position = 3 * M_PI / 4.f;
@@ -141,8 +141,8 @@ class SteeringChassis {
    * @param current_lr_angle  当前的左后舵角度，弧度制，底盘前进方向为0
    * @param current_rr_angle  当前的右后舵角度，弧度制，底盘前进方向为0
    */
-  inline auto Forward(f32 vx, f32 vy, f32 w, f32 current_lf_angle, f32 current_rf_angle, f32 current_lr_angle,
-                      f32 current_rr_angle) {
+  auto Forward(f32 vx, f32 vy, f32 w, f32 current_lf_angle, f32 current_rf_angle, f32 current_lr_angle,
+               f32 current_rr_angle) {
     Forward(vx, vy, w);
 
     // 依次计算每个舵的目标角度和目前角度的差值，如果差值大于90度，就把目标舵角加180度，轮速取反。
@@ -188,34 +188,35 @@ class QuadOmniChassis {
    * @param vy    y轴方向的速度
    * @param wz    z轴方向的角速度
    */
-  inline auto Forward(f32 vx, f32 vy, f32 wz) {
-    forward_result_.front_wheel_speed = vx + wz;
-    forward_result_.back_wheel_speed = -vx + wz;
-    forward_result_.left_wheel_speed = vy + wz;
-    forward_result_.right_wheel_speed = -vy + wz;
-    // normalize
-    f32 max_speed = max_({std::abs(forward_result_.front_wheel_speed), std::abs(forward_result_.back_wheel_speed),
-                          std::abs(forward_result_.left_wheel_speed), std::abs(forward_result_.right_wheel_speed)});
-    if (max_speed > 1) {
-      forward_result_.front_wheel_speed /= max_speed;
-      forward_result_.back_wheel_speed /= max_speed;
-      forward_result_.left_wheel_speed /= max_speed;
-      forward_result_.right_wheel_speed /= max_speed;
+  auto Forward(f32 vx, f32 vy, f32 wz, bool normalize = false) {
+    forward_result_.lf_speed = vx + vy + wz;
+    forward_result_.rf_speed = vx - vy + wz;
+    forward_result_.lr_speed = -vx + vy + wz;
+    forward_result_.rr_speed = -vx - vy + wz;
+    if (normalize) {
+      const f32 max_speed = max_({std::abs(forward_result_.lf_speed), std::abs(forward_result_.rf_speed),
+                                  std::abs(forward_result_.lr_speed), std::abs(forward_result_.rr_speed)});
+      if (max_speed > 1) {
+        forward_result_.lf_speed /= max_speed;
+        forward_result_.rf_speed /= max_speed;
+        forward_result_.lr_speed /= max_speed;
+        forward_result_.rr_speed /= max_speed;
+      }
     }
 
     return forward_result_;
   }
 
   /**
-   * @param front_wheel_speed    前轮速度
-   * @param back_wheel_speed     后轮速度
-   * @param left_wheel_speed     左轮速度
-   * @param right_wheel_speed    右轮速度
+   * @param lf_speed    左前轮速度
+   * @param rf_speed    右前轮速度
+   * @param lr_speed    左后轮速度
+   * @param rr_speed    右后轮速度
    */
-  inline auto Inverse(f32 front_wheel_speed, f32 back_wheel_speed, f32 left_wheel_speed, f32 right_wheel_speed) {
-    inverse_result_.vx = (front_wheel_speed + back_wheel_speed - left_wheel_speed - right_wheel_speed) / 4;
-    inverse_result_.vy = (front_wheel_speed - back_wheel_speed + left_wheel_speed - right_wheel_speed) / 4;
-    inverse_result_.wz = (front_wheel_speed - back_wheel_speed - left_wheel_speed + right_wheel_speed) / 4;
+  auto Inverse(f32 lf_speed, f32 rf_speed, f32 lr_speed, f32 rr_speed) {
+    inverse_result_.vx = (lf_speed + rf_speed - lr_speed - rr_speed) / 4;
+    inverse_result_.vy = (-lf_speed + rf_speed - lr_speed + rr_speed) / 4;
+    inverse_result_.wz = (lf_speed + rf_speed + lr_speed + rr_speed) / 4;
     // normalize
     f32 max_speed = max_({std::abs(inverse_result_.vx), std::abs(inverse_result_.vy), std::abs(inverse_result_.wz)});
     if (max_speed > 1) {
@@ -226,14 +227,14 @@ class QuadOmniChassis {
 
     return inverse_result_;
   }
-  inline auto forward_result() const { return forward_result_; }
-  inline auto inverse_result() const { return inverse_result_; }
+  auto forward_result() const { return forward_result_; }
+  auto inverse_result() const { return inverse_result_; }
 
   struct {
     f32 vx, vy, wz;
   } inverse_result_{};
   struct {
-    f32 front_wheel_speed, back_wheel_speed, left_wheel_speed, right_wheel_speed;
+    f32 lf_speed, rf_speed, lr_speed, rr_speed;
   } forward_result_{};
 };
 
