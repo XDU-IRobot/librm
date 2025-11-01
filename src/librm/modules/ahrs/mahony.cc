@@ -145,11 +145,11 @@ void MahonyAhrs::Update(const rm::modules::ImuData6Dof &data) {
   quaternion_.z *= recipNorm;
 
   // Convert quaternion to Euler angles
-  f32 euler_ypr_temp[3], quaternion_temp[4] = {quaternion_.w, quaternion_.x, quaternion_.y, quaternion_.z};
-  QuatToEuler(quaternion_temp, euler_ypr_temp);
-  euler_ypr_.yaw = euler_ypr_temp[0];
-  euler_ypr_.pitch = euler_ypr_temp[1];
-  euler_ypr_.roll = euler_ypr_temp[2];
+  f32 euler_rpy_temp[3], quaternion_temp[4] = {quaternion_.w, quaternion_.x, quaternion_.y, quaternion_.z};
+  QuatToEuler(quaternion_temp, euler_rpy_temp);
+  euler_ypr_.yaw = euler_rpy_temp[2];
+  euler_ypr_.pitch = euler_rpy_temp[1];
+  euler_ypr_.roll = euler_rpy_temp[0];
 }
 
 /**
