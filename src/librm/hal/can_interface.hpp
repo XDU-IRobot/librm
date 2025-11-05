@@ -42,7 +42,7 @@ class CanDevice;
 namespace rm::hal {
 
 struct CanFrame {
-  etl::array<u8, 64> data;   ///< 数据
+  etl::array<u8, 64> data;  ///< 数据
   u16 rx_std_id;            ///< 标准ID
   u32 dlc;                  ///< 数据长度码
   bool is_fd_frame{false};  ///< 是否为FD帧
