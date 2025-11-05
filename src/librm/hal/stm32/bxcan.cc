@@ -159,13 +159,13 @@ void BxCan::Stop() {
 void BxCan::Fifo0MsgPendingCallback() {
   static CAN_RxHeaderTypeDef rx_header;
   HAL_CAN_GetRxMessage(hcan_, CAN_RX_FIFO0, &rx_header, rx_buffer_.data.data());
-  auto &device_list_ = GetDeviceListByRxStdid(rx_header.StdId);
-  if (device_list_.empty()) {
+  auto &device_list = GetDeviceListByRxStdid(rx_header.StdId);
+  if (device_list.empty()) {
     return;
   }
   rx_buffer_.rx_std_id = rx_header.StdId;
   rx_buffer_.dlc = rx_header.DLC;
-  for (auto &device : device_list_) {
+  for (auto &device : device_list) {
     device->RxCallback(&rx_buffer_);
   }
 }

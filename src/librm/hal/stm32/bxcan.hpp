@@ -31,6 +31,7 @@
 #include "librm/hal/stm32/hal.hpp"
 #if defined(HAL_CAN_MODULE_ENABLED)
 
+#include "librm/core/traits.hpp"
 #include "librm/hal/can_interface.hpp"
 #include "librm/device/can_device.hpp"
 
@@ -54,7 +55,7 @@ class BxCan final : public CanInterface, public detail::NonCopyable {
   void Fifo0MsgPendingCallback();
 
   u32 tx_mailbox_{0};
-  CanMsg rx_buffer_{};
+  CanFrame rx_buffer_{};
   CAN_HandleTypeDef *hcan_{nullptr};
   CAN_TxHeaderTypeDef hal_tx_header_ = {
       0, 0, CAN_ID_STD, CAN_RTR_DATA, 0, DISABLE,
