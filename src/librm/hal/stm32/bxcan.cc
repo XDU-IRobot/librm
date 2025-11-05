@@ -35,16 +35,17 @@
 #include <functional>
 #include <stdexcept>
 #include <algorithm>
+#include <etl/unordered_map.h>
 
 #include "librm/device/can_device.hpp"
 #include "librm/core/exception.hpp"
 
 /**
- * 用于存储回调函数的map
- * key: HAL库的CAN_HandleTypeDef
- * value: 回调函数
+ * @brief 存储各个hcan句柄对应的接收回调函数指针的map
  */
-static std::unordered_map<CAN_HandleTypeDef *, std::function<void()>> fn_cb_map;
+static etl::unordered_map<CAN_HandleTypeDef *, std::function<void()>,
+                          5>  // 一般来说不会用到超过5条CAN总线的STM32，这里设为5应该够了
+    fn_cb_map;
 
 /**
  * @brief  把std::function转换为函数指针

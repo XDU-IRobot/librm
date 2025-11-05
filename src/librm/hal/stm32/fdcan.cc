@@ -23,7 +23,6 @@
 /**
  * @file  librm/hal/stm32/fdcan.cc
  * @brief fdCAN类库
- * @todo  部分完成
  */
 
 #include "librm/hal/stm32/hal.hpp"
@@ -34,16 +33,17 @@
 
 #include <functional>
 #include <algorithm>
+#include <etl/unordered_map.h>
 
 #include "librm/device/can_device.hpp"
 #include "librm/core/exception.hpp"
 
 /**
- * 用于存储回调函数的map
- * key: HAL库的CAN_HandleTypeDef
- * value: 回调函数
+ * @brief 存储各个hfdcan句柄对应的接收回调函数指针的map
  */
-static std::unordered_map<FDCAN_HandleTypeDef *, std::function<void()>> fn_cb_map;
+static etl::unordered_map<FDCAN_HandleTypeDef *, std::function<void()>,
+                          5>  // 一般来说不会用到超过5条CAN总线的STM32，这里设为5应该够了
+    fn_cb_map;
 
 /**
  * @brief  把std::function转换为函数指针
@@ -70,7 +70,11 @@ namespace rm::hal::stm32 {
 /**
  * @param hcan HAL库的CAN_HandleTypeDef
  */
-FdCan::FdCan(FDCAN_HandleTypeDef &hfdcan) : hfdcan_(&hfdcan) {}
+FdCan::FdCan(FDCAN_HandleTypeDef &hfdcan)
+    : hfdcan_(&hfdcan),
+      // 判断这个FDCAN句柄对应的外设是否被设置为FD模式
+      fd_mode_{hfdcan.Init.FrameFormat == FDCAN_FRAME_FD_NO_BRS ||  //
+               hfdcan.Init.FrameFormat == FDCAN_FRAME_FD_BRS} {}
 
 /**
  * @brief 设置过滤器
@@ -86,22 +90,22 @@ void FdCan::SetFilter(u16 id, u16 mask) {
   can_filter_st.FilterID2 = mask;
   can_filter_st.RxBufferIndex = 0;
   can_filter_st.IsCalibrationMsg = 0;
-  if (reinterpret_cast<u32>(this->hfdcan_->Instance) == FDCAN1_BASE) {
+  if (reinterpret_cast<u32>(hfdcan_->Instance) == FDCAN1_BASE) {
     can_filter_st.FilterIndex = 0;
   }
-  if (reinterpret_cast<u32>(this->hfdcan_->Instance) == FDCAN2_BASE) {
+  if (reinterpret_cast<u32>(hfdcan_->Instance) == FDCAN2_BASE) {
     can_filter_st.FilterIndex = 1;
   }
-  if (reinterpret_cast<u32>(this->hfdcan_->Instance) == FDCAN3_BASE) {
+  if (reinterpret_cast<u32>(hfdcan_->Instance) == FDCAN3_BASE) {
     can_filter_st.FilterIndex = 2;
   }
 
   HAL_StatusTypeDef hal_status;
-  hal_status = HAL_FDCAN_ConfigGlobalFilter(this->hfdcan_, FDCAN_ACCEPT_IN_RX_FIFO0, FDCAN_REJECT, DISABLE, DISABLE);
+  hal_status = HAL_FDCAN_ConfigGlobalFilter(hfdcan_, FDCAN_ACCEPT_IN_RX_FIFO0, FDCAN_REJECT, DISABLE, DISABLE);
   if (hal_status != HAL_OK) {
     Throw(hal_error(hal_status));
   }
-  hal_status = HAL_FDCAN_ConfigFilter(this->hfdcan_, &can_filter_st);
+  hal_status = HAL_FDCAN_ConfigFilter(hfdcan_, &can_filter_st);
   if (hal_status != HAL_OK) {
     Throw(hal_error(hal_status));
   }
@@ -114,15 +118,41 @@ void FdCan::SetFilter(u16 id, u16 mask) {
  * @param size  数据长度
  */
 void FdCan::Write(u16 id, const u8 *data, usize size) {
-  if (size > 8) {
-    // todo:发送长度大于8的消息
-    Throw(std::runtime_error("Frame too long, extended frame is not supported yet"));
+  if (size > 64) {
+    Throw(std::runtime_error("CAN frame too long!"));
   }
-  this->hal_tx_header_.Identifier = id;
-  this->hal_tx_header_.DataLength = size;
+  if (!fd_mode_ && size > 8) {
+    Throw(std::runtime_error("Data is too long for a std CAN frame!"));
+  }
 
-  HAL_StatusTypeDef hal_status =
-      HAL_FDCAN_AddMessageToTxFifoQ(this->hfdcan_, &this->hal_tx_header_, const_cast<u8 *>(data));
+  if (fd_mode_) {
+    // 将字节长度转换为FDCAN DLC码
+    uint32_t dlc_code;
+    if (size <= 8) {
+      dlc_code = size;  // 8字节以下DLC码和数据长度相同
+    } else if (size <= 12) {
+      dlc_code = FDCAN_DLC_BYTES_12;
+    } else if (size <= 16) {
+      dlc_code = FDCAN_DLC_BYTES_16;
+    } else if (size <= 20) {
+      dlc_code = FDCAN_DLC_BYTES_20;
+    } else if (size <= 24) {
+      dlc_code = FDCAN_DLC_BYTES_24;
+    } else if (size <= 32) {
+      dlc_code = FDCAN_DLC_BYTES_32;
+    } else if (size <= 48) {
+      dlc_code = FDCAN_DLC_BYTES_48;
+    } else {
+      dlc_code = FDCAN_DLC_BYTES_64;
+    }
+    hal_tx_header_.DataLength = dlc_code;
+  } else {
+    hal_tx_header_.DataLength = size;
+  }
+
+  hal_tx_header_.Identifier = id;
+
+  HAL_StatusTypeDef hal_status = HAL_FDCAN_AddMessageToTxFifoQ(hfdcan_, &hal_tx_header_, const_cast<u8 *>(data));
   if (hal_status != HAL_OK) {
     Throw(hal_error(hal_status));
   }
@@ -133,12 +163,12 @@ void FdCan::Write(u16 id, const u8 *data, usize size) {
  */
 void FdCan::Write() {
   // 按优先级从高到低遍历所有消息队列
-  for (auto &queue : this->tx_queue_) {
+  for (auto &queue : tx_queue_) {
     if (queue.second.empty()) {
       continue;  // 如果是空的就换下一个
     }
     // 从队首取出一条消息发送
-    this->Write(queue.second.front()->rx_std_id, queue.second.front()->data.data(), queue.second.front()->dlc);
+    Write(queue.second.front()->rx_std_id, queue.second.front()->data.data(), queue.second.front()->dlc);
     queue.second.pop_front();
     // 检查消息队列长度是否超过了设定的最大长度，如果超过了就清空
     if (queue.second.size() > kQueueMaxSize) {
@@ -156,40 +186,46 @@ void FdCan::Write() {
  * @param priority  消息的优先级
  */
 void FdCan::Enqueue(u16 id, const u8 *data, usize size, CanTxPriority priority) {
-  if (size > 8) {
-    // todo:发送长度大于8的消息
-    Throw(std::runtime_error("Frame too long, extended frame is not supported yet"));
+  if (size > 64) {
+    Throw(std::runtime_error("CAN frame too long!"));
   }
+  if (!fd_mode_ && size > 8) {
+    Throw(std::runtime_error("Data is too long for a std CAN frame!"));
+  }
+
   // 检查消息队列长度是否超过了设定的最大长度，如果超过了就清空
-  if (this->tx_queue_[priority].size() > kQueueMaxSize) {
-    this->tx_queue_[priority].clear();
+  if (tx_queue_[priority].size() > kQueueMaxSize) {
+    tx_queue_[priority].clear();
   }
-  auto msg = std::make_shared<CanMsg>(CanMsg{
-      {},
-      id,
-      size,
-  });
+  auto msg = std::make_shared<CanMsg>(CanMsg{{}, id, size, fd_mode_});
   std::copy_n(data, size, msg->data.begin());
 
-  this->tx_queue_[priority].push_back(msg);
+  tx_queue_[priority].push_back(msg);
 }
 
 /**
  * @brief 启动CAN外设
  */
 void FdCan::Begin() {
+  // 如果这个FDCAN外设处于FD模式，就把发送头设置为FD格式
+  if (fd_mode_) {
+    hal_tx_header_.FDFormat = FDCAN_FD_CAN;
+  } else {
+    hal_tx_header_.FDFormat = FDCAN_CLASSIC_CAN;
+  }
+
   HAL_StatusTypeDef hal_status;
-  hal_status = HAL_FDCAN_ActivateNotification(this->hfdcan_, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0);
+  hal_status = HAL_FDCAN_ActivateNotification(hfdcan_, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0);
   if (hal_status != HAL_OK) {
     Throw(hal_error(hal_status));
   }
-  hal_status = HAL_FDCAN_ActivateNotification(this->hfdcan_, FDCAN_IT_BUS_OFF, 0);
+  hal_status = HAL_FDCAN_ActivateNotification(hfdcan_, FDCAN_IT_BUS_OFF, 0);
   if (hal_status != HAL_OK) {
     Throw(hal_error(hal_status));
   }
-  HAL_FDCAN_RegisterRxFifo0Callback(
-      this->hfdcan_, StdFunctionToCallbackFunctionPtr([this] { Fifo0MsgPendingCallback(); }, this->hfdcan_));
-  hal_status = HAL_FDCAN_Start(this->hfdcan_);
+  HAL_FDCAN_RegisterRxFifo0Callback(hfdcan_,
+                                    StdFunctionToCallbackFunctionPtr([this] { Fifo0MsgPendingCallback(); }, hfdcan_));
+  hal_status = HAL_FDCAN_Start(hfdcan_);
   if (hal_status != HAL_OK) {
     Throw(hal_error(hal_status));
   }
@@ -199,7 +235,7 @@ void FdCan::Begin() {
  * @brief 停止CAN外设
  */
 void FdCan::Stop() {
-  HAL_StatusTypeDef hal_status = HAL_FDCAN_Stop(this->hfdcan_);
+  HAL_StatusTypeDef hal_status = HAL_FDCAN_Stop(hfdcan_);
   if (hal_status != HAL_OK) {
     Throw(hal_error(hal_status));
   }
@@ -211,13 +247,34 @@ void FdCan::Stop() {
  */
 void FdCan::Fifo0MsgPendingCallback() {
   static FDCAN_RxHeaderTypeDef rx_header;
-  HAL_FDCAN_GetRxMessage(this->hfdcan_, FDCAN_RX_FIFO0, &rx_header, this->rx_buffer_.data.data());
+  HAL_FDCAN_GetRxMessage(hfdcan_, FDCAN_RX_FIFO0, &rx_header, rx_buffer_.data.data());
   auto &device_list_ = GetDeviceListByRxStdid(rx_header.Identifier);
   if (device_list_.empty()) {
     return;
   }
-  this->rx_buffer_.rx_std_id = rx_header.Identifier;
-  this->rx_buffer_.dlc = rx_header.DataLength;
+  rx_buffer_.rx_std_id = rx_header.Identifier;
+  if (rx_header.FDFormat == FDCAN_FD_CAN) {
+    // FD格式需要把DLC码转换为字节长度
+    if (rx_header.DataLength <= FDCAN_DLC_BYTES_8) {
+      rx_buffer_.dlc = rx_header.DataLength;  // 8字节以下DLC码和数据长度相同
+    } else if (rx_header.DataLength == FDCAN_DLC_BYTES_12) {
+      rx_buffer_.dlc = 12;
+    } else if (rx_header.DataLength == FDCAN_DLC_BYTES_16) {
+      rx_buffer_.dlc = 16;
+    } else if (rx_header.DataLength == FDCAN_DLC_BYTES_20) {
+      rx_buffer_.dlc = 20;
+    } else if (rx_header.DataLength == FDCAN_DLC_BYTES_24) {
+      rx_buffer_.dlc = 24;
+    } else if (rx_header.DataLength == FDCAN_DLC_BYTES_32) {
+      rx_buffer_.dlc = 32;
+    } else if (rx_header.DataLength == FDCAN_DLC_BYTES_48) {
+      rx_buffer_.dlc = 48;
+    } else {
+      rx_buffer_.dlc = 64;
+    }
+  } else {
+    rx_buffer_.dlc = rx_header.DataLength;
+  }
   for (auto &device : device_list_) {
     device->RxCallback(&rx_buffer_);
   }

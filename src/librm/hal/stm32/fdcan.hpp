@@ -23,7 +23,6 @@
 /**
  * @file  librm/hal/stm32/fdcan.h
  * @brief fdCAN类库
- * @todo  部分完成
  */
 
 #ifndef LIBRM_HAL_STM32_FDCAN_HPP
@@ -61,6 +60,8 @@ class FdCan : public CanInterface {
 
  private:
   void Fifo0MsgPendingCallback();
+
+  const bool fd_mode_{false};
 
   u32 tx_mailbox_{0};
   CanMsg rx_buffer_{};
