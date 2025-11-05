@@ -186,7 +186,7 @@ class LkMotor : public CanDevice {
    * @brief CAN回调函数，解码收到的反馈报文
    * @param msg   收到的报文
    */
-  void RxCallback(const hal::CanMsg *msg) override {
+  void RxCallback(const hal::CanFrame *msg) override {
     Heartbeat();
     switch (msg->data[0]) {
       case Instruction::kOpenLoopControl: {

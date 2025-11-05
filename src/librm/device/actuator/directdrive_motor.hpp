@@ -291,7 +291,7 @@ class DirectDriveMotor : public CanDevice {
   [[nodiscard]] inline f32 master_voltage() const { return feedback_.master_voltage; }
 
  private:
-  void RxCallback(const hal::CanMsg *msg) override;
+  void RxCallback(const hal::CanFrame *msg) override;
 };
 
 }  // namespace rm::device

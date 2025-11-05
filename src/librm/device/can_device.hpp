@@ -118,7 +118,7 @@ class CanDevice : public Device {
     return *this;
   }
 
-  virtual void RxCallback(const hal::CanMsg *msg) = 0;
+  virtual void RxCallback(const hal::CanFrame *msg) = 0;
 
  protected:
   hal::CanInterface *can_;

@@ -41,7 +41,7 @@ std::unordered_map<hal::CanInterface *, DirectDriveMotor::TxBufferTable> DirectD
 /**
  * @brief 电机反馈处理回调函数
  */
-void DirectDriveMotor::RxCallback(const hal::CanMsg *msg) {
+void DirectDriveMotor::RxCallback(const hal::CanFrame *msg) {
   Heartbeat();
   if (msg->rx_std_id == 0x50 + id_) {
     const u16 iq_temp = (msg->data[2] << 8) | msg->data[3];

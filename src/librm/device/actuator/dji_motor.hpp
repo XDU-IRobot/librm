@@ -115,7 +115,7 @@ class DjiMotor final : public CanDevice {
   /*************/
 
  private:
-  void RxCallback(const hal::CanMsg *msg) override;
+  void RxCallback(const hal::CanFrame *msg) override;
 
   u16 id_{};         // 电机ID
   bool reversed_{};  // 是否反转
@@ -205,7 +205,7 @@ inline void DjiMotor<>::SendCommand() {
  * @param  msg        收到的消息
  */
 template <DjiMotorType motor_type>
-void DjiMotor<motor_type>::RxCallback(const hal::CanMsg *msg) {
+void DjiMotor<motor_type>::RxCallback(const hal::CanFrame *msg) {
   Heartbeat();
   this->encoder_ = (msg->data[0] << 8) | msg->data[1];
   this->rpm_ = (msg->data[2] << 8) | msg->data[3];

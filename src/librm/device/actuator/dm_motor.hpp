@@ -223,7 +223,7 @@ class DmMotor final : public CanDevice {
    * @brief CAN回调函数，解码收到的反馈报文
    * @param msg   收到的报文
    */
-  void RxCallback(const hal::CanMsg *msg) override {
+  void RxCallback(const hal::CanFrame *msg) override {
     Heartbeat();
     int p_int = (msg->data[1] << 8) | msg->data[2];
     int v_int = (msg->data[3] << 4) | (msg->data[4] >> 4);

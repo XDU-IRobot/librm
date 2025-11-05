@@ -30,10 +30,10 @@
 
 #include "librm/core/typedefs.hpp"
 
-#include <array>
-#include <limits>
 #include <vector>
 #include <unordered_map>
+
+#include <etl/array.h>
 
 namespace rm::device {
 class CanDevice;
@@ -41,17 +41,11 @@ class CanDevice;
 
 namespace rm::hal {
 
-struct CanMsg {
-  std::array<u8, 64> data;  ///< 数据
+struct CanFrame {
+  etl::array<u8, 64> data;   ///< 数据
   u16 rx_std_id;            ///< 标准ID
   u32 dlc;                  ///< 数据长度码
   bool is_fd_frame{false};  ///< 是否为FD帧
-};
-
-enum class CanTxPriority {
-  kLow,
-  kNormal,
-  kHigh,
 };
 
 /**
@@ -70,20 +64,6 @@ class CanInterface {
    * @param size    数据长度
    */
   virtual void Write(u16 id, const u8 *data, usize size) = 0;
-
-  /***
-   * @brief 从消息队列里取出一条消息发送
-   */
-  virtual void Write() = 0;
-
-  /**
-   * @brief 向消息队列里加入一条消息
-   * @param id        数据帧ID
-   * @param data      数据指针
-   * @param size      数据长度
-   * @param priority  消息的优先级
-   */
-  virtual void Enqueue(u16 id, const u8 *data, usize size, CanTxPriority priority /*=CanTxPriority::kNormal*/) = 0;
 
   /**
    * @brief 设置过滤器

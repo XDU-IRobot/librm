@@ -123,51 +123,6 @@ void BxCan::Write(u16 id, const u8 *data, usize size) {
 }
 
 /**
- * @brief 从消息队列里取出一条消息发送
- */
-void BxCan::Write() {
-  // 按优先级从高到低遍历所有消息队列
-  for (auto &queue : tx_queue_) {
-    if (queue.second.empty()) {
-      continue;  // 如果是空的就换下一个
-    }
-    // 从队首取出一条消息发送
-    Write(queue.second.front()->rx_std_id, queue.second.front()->data.data(), queue.second.front()->dlc);
-    queue.second.pop_front();
-    // 检查消息队列长度是否超过了设定的最大长度，如果超过了就清空
-    if (queue.second.size() > kQueueMaxSize) {
-      queue.second.clear();
-    }
-    break;
-  }
-}
-
-/**
- * @brief 向消息队列里加入一条消息
- * @param id        数据帧ID
- * @param data      数据指针
- * @param size      数据长度
- * @param priority  消息的优先级
- */
-void BxCan::Enqueue(u16 id, const u8 *data, usize size, CanTxPriority priority) {
-  if (size > 8) {
-    Throw(std::runtime_error("Data is too long for a CAN frame!"));
-  }
-  // 检查消息队列长度是否超过了设定的最大长度，如果超过了就清空
-  if (tx_queue_[priority].size() > kQueueMaxSize) {
-    tx_queue_[priority].clear();
-  }
-  auto msg = std::make_shared<CanMsg>(CanMsg{
-      {},
-      id,
-      size,
-  });
-  std::copy_n(data, size, msg->data.begin());
-
-  tx_queue_[priority].push_back(msg);
-}
-
-/**
  * @brief 启动CAN外设
  */
 void BxCan::Begin() {

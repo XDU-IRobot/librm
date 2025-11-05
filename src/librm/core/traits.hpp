@@ -21,48 +21,22 @@
 */
 
 /**
- * @file  librm/hal/stm32/bxcan.h
- * @brief bxCAN类库
+ * @file  librm/core/traits.hpp
+ * @brief 类型特征定义
  */
 
-#ifndef LIBRM_HAL_STM32_BXCAN_HPP
-#define LIBRM_HAL_STM32_BXCAN_HPP
+#ifndef LIBRM_CORE_TRAITS_HPP
+#define LIBRM_CORE_TRAITS_HPP
 
-#include "librm/hal/stm32/hal.hpp"
-#if defined(HAL_CAN_MODULE_ENABLED)
+namespace rm {
+namespace detail {
+struct NonCopyable {
+  NonCopyable() = default;
+  virtual ~NonCopyable() = default;
 
-#include "librm/hal/can_interface.hpp"
-#include "librm/device/can_device.hpp"
-
-namespace rm::hal::stm32 {
-
-/**
- * @brief bxCAN类库
- */
-class BxCan final : public CanInterface, public detail::NonCopyable {
- public:
-  explicit BxCan(CAN_HandleTypeDef &hcan);
-  BxCan() = default;
-  ~BxCan() override = default;
-
-  void SetFilter(u16 id, u16 mask) override;
-  void Write(u16 id, const u8 *data, usize size) override;
-  void Begin() override;
-  void Stop() override;
-
- private:
-  void Fifo0MsgPendingCallback();
-
-  u32 tx_mailbox_{0};
-  CanMsg rx_buffer_{};
-  CAN_HandleTypeDef *hcan_{nullptr};
-  CAN_TxHeaderTypeDef hal_tx_header_ = {
-      0, 0, CAN_ID_STD, CAN_RTR_DATA, 0, DISABLE,
-  };
+  NonCopyable(const NonCopyable &) = delete;
+  NonCopyable &operator=(const NonCopyable &) = delete;
 };
-
-}  // namespace rm::hal::stm32
-
+}  // namespace detail
+}  // namespace rm
 #endif
-
-#endif  // LIBRM_HAL_STM32_BXCAN_HPP
