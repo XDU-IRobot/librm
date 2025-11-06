@@ -37,7 +37,7 @@
 #include <etl/unordered_map.h>
 
 #include "librm/device/can_device.hpp"
-#include "librm/core/exception.hpp"
+#include "librm/hal/stm32/helper_macro.hpp"
 
 /**
  * @brief 存储各个hfdcan句柄对应的接收回调函数指针的map
@@ -101,15 +101,9 @@ void FdCan::SetFilter(u16 id, u16 mask) {
     can_filter_st.FilterIndex = 2;
   }
 
-  HAL_StatusTypeDef hal_status;
-  hal_status = HAL_FDCAN_ConfigGlobalFilter(hfdcan_, FDCAN_ACCEPT_IN_RX_FIFO0, FDCAN_REJECT, DISABLE, DISABLE);
-  if (hal_status != HAL_OK) {
-    Throw(hal_error(hal_status));
-  }
-  hal_status = HAL_FDCAN_ConfigFilter(hfdcan_, &can_filter_st);
-  if (hal_status != HAL_OK) {
-    Throw(hal_error(hal_status));
-  }
+  LIBRM_STM32_HAL_ASSERT(
+      HAL_FDCAN_ConfigGlobalFilter(hfdcan_, FDCAN_ACCEPT_IN_RX_FIFO0, FDCAN_REJECT, DISABLE, DISABLE));
+  LIBRM_STM32_HAL_ASSERT(HAL_FDCAN_ConfigFilter(hfdcan_, &can_filter_st));
 }
 
 /**
@@ -153,10 +147,10 @@ void FdCan::Write(u16 id, const u8 *data, usize size) {
 
   hal_tx_header_.Identifier = id;
 
-  HAL_StatusTypeDef hal_status = HAL_FDCAN_AddMessageToTxFifoQ(hfdcan_, &hal_tx_header_, const_cast<u8 *>(data));
-  if (hal_status != HAL_OK) {
-    Throw(hal_error(hal_status));
+  while (HAL_FDCAN_GetTxFifoFreeLevel(hfdcan_) == 0) {
+    // 等待FDCAN外设空闲
   }
+  LIBRM_STM32_HAL_ASSERT(HAL_FDCAN_AddMessageToTxFifoQ(hfdcan_, &hal_tx_header_, const_cast<u8 *>(data)));
 }
 
 /**
@@ -170,32 +164,17 @@ void FdCan::Begin() {
     hal_tx_header_.FDFormat = FDCAN_CLASSIC_CAN;
   }
 
-  HAL_StatusTypeDef hal_status;
-  hal_status = HAL_FDCAN_ActivateNotification(hfdcan_, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0);
-  if (hal_status != HAL_OK) {
-    Throw(hal_error(hal_status));
-  }
-  hal_status = HAL_FDCAN_ActivateNotification(hfdcan_, FDCAN_IT_BUS_OFF, 0);
-  if (hal_status != HAL_OK) {
-    Throw(hal_error(hal_status));
-  }
-  HAL_FDCAN_RegisterRxFifo0Callback(hfdcan_,
-                                    StdFunctionToCallbackFunctionPtr([this] { Fifo0MsgPendingCallback(); }, hfdcan_));
-  hal_status = HAL_FDCAN_Start(hfdcan_);
-  if (hal_status != HAL_OK) {
-    Throw(hal_error(hal_status));
-  }
+  LIBRM_STM32_HAL_ASSERT(HAL_FDCAN_ActivateNotification(hfdcan_, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0));
+  LIBRM_STM32_HAL_ASSERT(HAL_FDCAN_ActivateNotification(hfdcan_, FDCAN_IT_BUS_OFF, 0));
+  LIBRM_STM32_HAL_ASSERT(HAL_FDCAN_RegisterRxFifo0Callback(
+      hfdcan_, StdFunctionToCallbackFunctionPtr([this] { Fifo0MsgPendingCallback(); }, hfdcan_)));
+  LIBRM_STM32_HAL_ASSERT(HAL_FDCAN_Start(hfdcan_));
 }
 
 /**
  * @brief 停止CAN外设
  */
-void FdCan::Stop() {
-  HAL_StatusTypeDef hal_status = HAL_FDCAN_Stop(hfdcan_);
-  if (hal_status != HAL_OK) {
-    Throw(hal_error(hal_status));
-  }
-}
+void FdCan::Stop() { LIBRM_STM32_HAL_ASSERT(HAL_FDCAN_Stop(hfdcan_)); }
 
 /**
  * @brief 利用Register callbacks机制，用这个函数替代HAL_CAN_RxFifo0MsgPendingCallback
@@ -203,7 +182,7 @@ void FdCan::Stop() {
  */
 void FdCan::Fifo0MsgPendingCallback() {
   static FDCAN_RxHeaderTypeDef rx_header;
-  HAL_FDCAN_GetRxMessage(hfdcan_, FDCAN_RX_FIFO0, &rx_header, rx_buffer_.data.data());
+  LIBRM_STM32_HAL_ASSERT(HAL_FDCAN_GetRxMessage(hfdcan_, FDCAN_RX_FIFO0, &rx_header, rx_buffer_.data.data()));
   auto &device_list_ = GetDeviceListByRxStdid(rx_header.Identifier);
   if (device_list_.empty()) {
     return;

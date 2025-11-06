@@ -38,7 +38,7 @@
 #include <etl/unordered_map.h>
 
 #include "librm/device/can_device.hpp"
-#include "librm/core/exception.hpp"
+#include "librm/hal/stm32/helper_macro.hpp"
 
 /**
  * @brief 存储各个hcan句柄对应的接收回调函数指针的map
@@ -96,11 +96,7 @@ void BxCan::SetFilter(u16 id, u16 mask) {
     can_filter_st.SlaveStartFilterBank = 14;
     can_filter_st.FilterBank = 14;
   }
-
-  HAL_StatusTypeDef hal_status = HAL_CAN_ConfigFilter(hcan_, &can_filter_st);
-  if (hal_status != HAL_OK) {
-    Throw(hal_error(hal_status));
-  }
+  LIBRM_STM32_HAL_ASSERT(HAL_CAN_ConfigFilter(hcan_, &can_filter_st));
 }
 
 /**
@@ -116,41 +112,28 @@ void BxCan::Write(u16 id, const u8 *data, usize size) {
   hal_tx_header_.StdId = id;
   hal_tx_header_.DLC = size;
 
-  HAL_StatusTypeDef hal_status = HAL_CAN_AddTxMessage(hcan_, &hal_tx_header_, data, &tx_mailbox_);
-  if (hal_status != HAL_OK) {
-    Throw(hal_error(hal_status));
+  // 等待CAN外设空闲
+  while (HAL_CAN_GetTxMailboxesFreeLevel(hcan_) == 0) {
   }
+
+  LIBRM_STM32_HAL_ASSERT(HAL_CAN_AddTxMessage(hcan_, &hal_tx_header_, data, &tx_mailbox_));
 }
 
 /**
  * @brief 启动CAN外设
  */
 void BxCan::Begin() {
-  HAL_StatusTypeDef hal_status;
-  hal_status = HAL_CAN_RegisterCallback(hcan_, HAL_CAN_RX_FIFO0_MSG_PENDING_CB_ID,
-                                        StdFunctionToCallbackFunctionPtr([this] { Fifo0MsgPendingCallback(); }, hcan_));
-  if (hal_status != HAL_OK) {
-    Throw(hal_error(hal_status));
-  }
-  hal_status = HAL_CAN_Start(hcan_);
-  if (hal_status != HAL_OK) {
-    Throw(hal_error(hal_status));
-  }
-  hal_status = HAL_CAN_ActivateNotification(hcan_, CAN_IT_RX_FIFO0_MSG_PENDING);
-  if (hal_status != HAL_OK) {
-    Throw(hal_error(hal_status));
-  }
+  LIBRM_STM32_HAL_ASSERT(
+      HAL_CAN_RegisterCallback(hcan_, HAL_CAN_RX_FIFO0_MSG_PENDING_CB_ID,
+                               StdFunctionToCallbackFunctionPtr([this] { Fifo0MsgPendingCallback(); }, hcan_)));
+  LIBRM_STM32_HAL_ASSERT(HAL_CAN_Start(hcan_));
+  LIBRM_STM32_HAL_ASSERT(HAL_CAN_ActivateNotification(hcan_, CAN_IT_RX_FIFO0_MSG_PENDING));
 }
 
 /**
  * @brief 停止CAN外设
  */
-void BxCan::Stop() {
-  HAL_StatusTypeDef hal_status = HAL_CAN_Stop(hcan_);
-  if (hal_status != HAL_OK) {
-    Throw(hal_error(hal_status));
-  }
-}
+void BxCan::Stop() { LIBRM_STM32_HAL_ASSERT(HAL_CAN_Stop(hcan_)); }
 
 /**
  * @brief 利用Register callbacks机制，用这个函数替代HAL_CAN_RxFifo0MsgPendingCallback
@@ -158,7 +141,7 @@ void BxCan::Stop() {
  */
 void BxCan::Fifo0MsgPendingCallback() {
   static CAN_RxHeaderTypeDef rx_header;
-  HAL_CAN_GetRxMessage(hcan_, CAN_RX_FIFO0, &rx_header, rx_buffer_.data.data());
+  LIBRM_STM32_HAL_ASSERT(HAL_CAN_GetRxMessage(hcan_, CAN_RX_FIFO0, &rx_header, rx_buffer_.data.data()));
   auto &device_list = GetDeviceListByRxStdid(rx_header.StdId);
   if (device_list.empty()) {
     return;
