@@ -37,7 +37,7 @@
 
 namespace rm::hal::stm32 {
 
-class FdCan : public CanInterface, public detail::NonCopyable {
+class FdCan : public CanInterface, detail::NonCopyable {
  public:
   explicit FdCan(FDCAN_HandleTypeDef &hfdcan);
 

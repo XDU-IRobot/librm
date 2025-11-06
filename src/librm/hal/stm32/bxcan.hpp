@@ -40,7 +40,7 @@ namespace rm::hal::stm32 {
 /**
  * @brief bxCAN类库
  */
-class BxCan final : public CanInterface, public detail::NonCopyable {
+class BxCan final : public CanInterface, detail::NonCopyable {
  public:
   explicit BxCan(CAN_HandleTypeDef &hcan);
   BxCan() = default;

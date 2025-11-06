@@ -30,12 +30,14 @@
 
 namespace rm {
 namespace detail {
-struct NonCopyable {
-  NonCopyable() = default;
-  virtual ~NonCopyable() = default;
+class NonCopyable {
+ public:
+  NonCopyable(const NonCopyable&) = delete;
+  NonCopyable& operator=(const NonCopyable&) = delete;
 
-  NonCopyable(const NonCopyable &) = delete;
-  NonCopyable &operator=(const NonCopyable &) = delete;
+ protected:
+  NonCopyable() = default;
+  ~NonCopyable() = default;
 };
 }  // namespace detail
 }  // namespace rm

@@ -23,7 +23,6 @@
 /**
  * @file  librm/hal/linux/socketcan.hpp
  * @brief SocketCAN类库
- * @todo  实现tx消息队列
  */
 
 #ifndef LIBRM_HAL_LINUX_SOCKETCAN_HPP
@@ -44,52 +43,33 @@
 #include <sys/socket.h>
 #include <unistd.h>
 
+#include "librm/core/traits.hpp"
 #include "librm/device/can_device.hpp"
 #include "librm/hal/can_interface.hpp"
 
 namespace rm::hal::linux_ {
 
-class SocketCan : public hal::CanInterface {
+class SocketCan : public hal::CanInterface, rm::detail::NonCopyable {
  public:
   explicit SocketCan(const char *dev);
   SocketCan() = default;
   ~SocketCan() override;
 
-  // 禁止拷贝构造
-  SocketCan(const SocketCan &) = delete;
-  SocketCan &operator=(const SocketCan &) = delete;
-
   void SetFilter(u16 id, u16 mask) override;
   void Write(u16 id, const u8 *data, usize size) override;
-  void Write() override;
-  void Enqueue(u16 id, const u8 *data, usize size, CanTxPriority priority) override;
   void Begin() override;
   void Stop() override;
 
  private:
   void RecvThread();
 
-  int socket_fd_;
-  struct ::sockaddr_can addr_;
-  struct ::ifreq interface_request_;
-  struct ::can_filter filter_;
-  struct ::can_frame tx_buf_;
-  std::string netdev_;
-  CanMsg rx_buffer_{};
-  std::thread recv_thread_{};
-  std::atomic_bool recv_thread_running_{false};
-  std::unordered_map<CanTxPriority, std::deque<std::shared_ptr<CanMsg>>> tx_queue_{
-      {CanTxPriority::kHigh, {}},
-      {CanTxPriority::kNormal, {}},
-      {CanTxPriority::kLow, {}},
-  };  // <priority, queue>
-
-  /**
-   * @brief 消息队列最大长度
-   * @note  在插入或发送消息的时候，如果检测到消息队列长度超过这个值，就会清空消息队列（待发送的消息都会被丢弃）
-   * @note  触发清空队列的动作意味着插入消息的速度大于发送消息的速度，应该减少发送消息的数量
-   */
-  static constexpr usize kQueueMaxSize = 100;
+  int socket_fd_{-1};                            ///< 当前使用的 CAN 套接字描述符
+  struct ::sockaddr_can addr_ {};                ///< 绑定使用的 CAN 接口地址
+  struct ::ifreq interface_request_ {};          ///< ioctl 查询时使用的结构体缓存
+  struct ::can_filter filter_ {};                ///< 最近一次配置的过滤器参数
+  std::string netdev_;                           ///< CAN 网络设备名（例如 "can0"）
+  std::thread recv_thread_{};                    ///< 后台接收工作线程
+  std::atomic_bool recv_thread_running_{false};  ///< 指示接收线程是否继续运行
 };
 
 }  // namespace rm::hal::linux_
