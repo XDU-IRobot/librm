@@ -25,6 +25,9 @@
  * @brief 轨迹限制器
  */
 
+#ifndef LIBRM_MODULES_TRAJECTORY_LIMITER_HPP
+#define LIBRM_MODULES_TRAJECTORY_LIMITER_HPP
+
 #include "librm/core/typedefs.hpp"
 
 namespace rm::modules {
@@ -82,3 +85,5 @@ class TrajectoryLimiter {
 };
 
 }  // namespace rm::modules
+
+#endif  // LIBRM_MODULES_TRAJECTORY_LIMITER_HPP
