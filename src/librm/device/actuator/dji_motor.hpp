@@ -49,9 +49,7 @@
 #ifndef LIBRM_DEVICE_ACTUATOR_DJI_MOTOR_HPP
 #define LIBRM_DEVICE_ACTUATOR_DJI_MOTOR_HPP
 
-#include <array>
-#include <unordered_map>
-#include <cmath>
+#include <etl/unordered_map.h>
 
 #include "librm/device/can_device.hpp"
 #include "librm/core/typedefs.hpp"
@@ -59,10 +57,14 @@
 
 namespace rm::device {
 
-constexpr i16 kDjiMotorMaxEncoder = 8191;
+struct DjiMotorTxBuffer {
+  u8 data[16];
+  bool part1_modified{false};
+  bool part2_modified{false};
+};
 
 enum class DjiMotorType { Default, GM6020, M3508, M2006 };
-template <DjiMotorType motor_type>
+template <DjiMotorType>
 struct DjiMotorProperties {};
 
 template <>
@@ -70,7 +72,7 @@ struct DjiMotorProperties<DjiMotorType::GM6020> {
   static constexpr u16 kRxIdBase = 0x204;
   static constexpr u16 kControlId[2] = {0x1ff, 0x2ff};
   static constexpr i16 kCurrentBound = 30000;
-  static std::unordered_map<hal::CanInterface *, std::array<u8, 18>> tx_buf_;
+  static etl::unordered_map<hal::CanInterface *, DjiMotorTxBuffer, 5> tx_buf_;
 };
 
 template <>
@@ -78,7 +80,7 @@ struct DjiMotorProperties<DjiMotorType::M3508> {
   static constexpr u16 kRxIdBase = 0x200;
   static constexpr u16 kControlId[2] = {0x200, 0x1ff};
   static constexpr i16 kCurrentBound = 16384;
-  static std::unordered_map<hal::CanInterface *, std::array<u8, 18>> tx_buf_;
+  static etl::unordered_map<hal::CanInterface *, DjiMotorTxBuffer, 5> tx_buf_;
 };
 
 template <>
@@ -86,7 +88,7 @@ struct DjiMotorProperties<DjiMotorType::M2006> {
   static constexpr u16 kRxIdBase = 0x200;
   static constexpr u16 kControlId[2] = {0x200, 0x1ff};
   static constexpr i16 kCurrentBound = 10000;
-  static std::unordered_map<hal::CanInterface *, std::array<u8, 18>> tx_buf_;
+  static etl::unordered_map<hal::CanInterface *, DjiMotorTxBuffer, 5> tx_buf_;
 };
 
 /**
@@ -94,37 +96,79 @@ struct DjiMotorProperties<DjiMotorType::M2006> {
  * @tparam motor_type 电机类型(GM6020, M3508, M2006)
  */
 template <DjiMotorType motor_type = DjiMotorType::Default>
-class DjiMotor final : public CanDevice {
+class DjiMotor : public CanDevice {
+  using Props = DjiMotorProperties<motor_type>;
+
  public:
   DjiMotor() = delete;
-  DjiMotor(DjiMotor &&) noexcept = default;
   ~DjiMotor() override = default;
-  DjiMotor(hal::CanInterface &can, u16 id, bool reversed = false);
-
-  void SetCurrent(i16 current);
-
-  static void SendCommand();
 
   /**
-   * @brief 向某条CAN总线上的对应型号的所有大疆电机发出控制消息
+   * @param can      指向CAN总线对象的引用
+   * @param id       电机ID
+   * @param reversed 是否反转
+   */
+  DjiMotor(hal::CanInterface &can, u16 id, bool reversed = false)
+      : CanDevice(can, Props::kRxIdBase + id), id_(id), reversed_(reversed) {
+    // 如果这个电机对象所在CAN总线的发送缓冲区还未创建，就创建一个
+    if (Props::tx_buf_.find(&can) == Props::tx_buf_.end()) {
+      Props::tx_buf_.insert({&can, {0}});
+    }
+  }
+
+  /**
+   * @brief  设置电机的输出电流
+   * @note   这个函数不会发送控制消息，在设置电流值后需要调用SendCommand函数向所有电机发出控制消息
+   * @param  current    设定电流值
+   */
+  void SetCurrent(i16 current) {
+    // 限幅到电机能接受的最大电流
+    current = modules::Clamp(current, -Props::kCurrentBound, Props::kCurrentBound);
+    // 处理反转
+    if (this->reversed_) {
+      current = -current;
+    }
+    // 根据这个电机所属的can总线(this->can_)和电机ID(this->id_)找到对应的发送缓冲区，写入电流值
+    Props::tx_buf_[this->can_].data[(this->id_ - 1) * 2] = (current >> 8) & 0xff;
+    Props::tx_buf_[this->can_].data[(this->id_ - 1) * 2 + 1] = current & 0xff;
+    // 根据电机ID判断缓冲区前八字节需要发送，还是后八字节需要发送
+    if (1 <= this->id_ && this->id_ <= 4) {
+      Props::tx_buf_[this->can_].part1_modified = true;
+    } else if (5 <= this->id_ && this->id_ <= 8) {
+      Props::tx_buf_[this->can_].part2_modified = true;
+    }
+  }
+
+  /**
+   * @brief 实际发送控制消息给对应型号的所有大疆电机，如果不传模板参数则向所有型号电机发送控制消息
+   */
+  static void SendCommand() {
+    for (auto &[can, buffer] : Props::tx_buf_) {
+      if (buffer.part1_modified) {
+        can->Write(Props::kControlId[0], buffer.data, 8);
+        buffer.part1_modified = false;
+      }
+      if (buffer.part2_modified) {
+        can->Write(Props::kControlId[1], buffer.data + 8, 8);
+        buffer.part2_modified = false;
+      }
+    }
+  }
+
+  /**
+   * @brief
+   * 实际发送控制消息给某条CAN总线上对应型号的所有大疆电机，如果不传模板参数则向这条CAN总线上所有型号电机发送控制消息
    * @param can 目标CAN总线
    */
-  static void SendCommand(hal::CanInterface &can) {
-    if constexpr (motor_type == DjiMotorType::Default) {
-      // 不传模板参数时，向所有型号电机发送控制消息
-      SendCommand<DjiMotorType::GM6020>(can);
-      SendCommand<DjiMotorType::M3508>(can);
-      SendCommand<DjiMotorType::M2006>(can);
-      return;
-    }
-    for (auto &[canbus, buffer] : DjiMotorProperties<motor_type>::tx_buf_) {
-      if (buffer.at(16) == 1 && canbus == &can) {
-        canbus->Write(DjiMotorProperties<motor_type>::kControlId[0], buffer.data(), 8);
-        buffer.at(16) = 0;
+  static void SendCommand(hal::CanInterface &target_can) {
+    for (auto &[can, buffer] : Props::tx_buf_) {
+      if (buffer.part1_modified && can == &target_can) {
+        can->Write(Props::kControlId[0], buffer.data, 8);
+        buffer.part1_modified = false;
       }
-      if (buffer.at(17) == 1 && canbus == &can) {
-        canbus->Write(DjiMotorProperties<motor_type>::kControlId[1], buffer.data() + 8, 8);
-        buffer.at(17) = 0;
+      if (buffer.part2_modified && can == &target_can) {
+        can->Write(Props::kControlId[1], buffer.data + 8, 8);
+        buffer.part2_modified = false;
       }
     }
   }
@@ -135,20 +179,28 @@ class DjiMotor final : public CanDevice {
   [[nodiscard]] i16 current() const { return this->current_; }
   [[nodiscard]] u8 temperature() const { return this->temperature_; }
 
-  [[nodiscard]] f32 pos_degree() const { return (f32)this->encoder() / kDjiMotorMaxEncoder * 360.f; }
-  [[nodiscard]] f32 pos_rad() const { return (f32)this->encoder() / kDjiMotorMaxEncoder * M_PI * 2; }
+  [[nodiscard]] f32 pos_degree() const { return (f32)this->encoder() / kMaxEncoderValue * 360.f; }
+  [[nodiscard]] f32 pos_rad() const { return (f32)this->encoder() / kMaxEncoderValue * M_PI * 2; }
   /*************/
 
  private:
-  void RxCallback(const hal::CanFrame *msg) override;
+  void RxCallback(const hal::CanFrame *msg) override {
+    Heartbeat();
+    this->encoder_ = (msg->data[0] << 8) | msg->data[1];
+    this->rpm_ = (msg->data[2] << 8) | msg->data[3];
+    this->current_ = (msg->data[4] << 8) | msg->data[5];
+    this->temperature_ = msg->data[6];
+  }
 
-  u16 id_{};         // 电机ID
-  bool reversed_{};  // 是否反转
+  constexpr static i16 kMaxEncoderValue = 8191;
+
+  u16 id_{};         ///< 电机ID
+  bool reversed_{};  ///< 是否反转
   /**   FEEDBACK DATA   **/
-  u16 encoder_{};     // 电机编码器值
-  i16 rpm_{};         // 电机转速
-  i16 current_{};     // 电机实际电流
-  u8 temperature_{};  // 电机温度
+  u16 encoder_{};     ///< 电机编码器值
+  i16 rpm_{};         ///< 电机转速
+  i16 current_{};     ///< 电机实际电流
+  u8 temperature_{};  ///< 电机温度
   /***********************/
 };
 
@@ -157,65 +209,7 @@ using M3508 = DjiMotor<DjiMotorType::M3508>;
 using M2006 = DjiMotor<DjiMotorType::M2006>;
 
 /**
- * @tparam motor_type 电机类型(GM6020, M3508, M2006)
- * @param  can        指向CAN总线对象的指针
- * @param  id         电机ID
- * @param  reversed   是否反转
- */
-template <DjiMotorType motor_type>
-DjiMotor<motor_type>::DjiMotor(hal::CanInterface &can, u16 id, bool reversed)
-    : CanDevice(can, DjiMotorProperties<motor_type>::kRxIdBase + id), id_(id), reversed_(reversed) {
-  // 如果这个电机对象所在CAN总线的发送缓冲区还未创建，就创建一个
-  if (DjiMotorProperties<motor_type>::tx_buf_.find(&can) == DjiMotorProperties<motor_type>::tx_buf_.end()) {
-    DjiMotorProperties<motor_type>::tx_buf_.insert({&can, {0}});
-  }
-}
-
-/**
- * @brief  设置电机的输出电流，本模板函数留给子类实例化，设定电流范围
- * @note   这个函数不会发送控制消息，在设置电流值后需要调用SendCommand函数向所有电机发出控制消息
- * @tparam motor_type 电机类型
- * @param  current    设定电流值
- */
-template <DjiMotorType motor_type>
-void DjiMotor<motor_type>::SetCurrent(i16 current) {
-  // 限幅到电机能接受的最大电流
-  current = modules::Clamp(current, -DjiMotorProperties<motor_type>::kCurrentBound,
-                           DjiMotorProperties<motor_type>::kCurrentBound);
-  // 处理反转
-  if (this->reversed_) {
-    current = -current;
-  }
-  // 根据这个电机所属的can总线(this->can_)和电机ID(this->id_)找到对应的发送缓冲区，写入电流值
-  DjiMotorProperties<motor_type>::tx_buf_[this->can_].at((this->id_ - 1) * 2) = (current >> 8) & 0xff;
-  DjiMotorProperties<motor_type>::tx_buf_[this->can_].at((this->id_ - 1) * 2 + 1) = current & 0xff;
-  // 根据电机ID判断缓冲区前八位需要发送，还是后八位需要发送，把对应的标志位置1
-  if (1 <= this->id_ && this->id_ <= 4) {
-    DjiMotorProperties<motor_type>::tx_buf_[this->can_].at(16) = 1;
-  } else if (5 <= this->id_ && this->id_ <= 8) {
-    DjiMotorProperties<motor_type>::tx_buf_[this->can_].at(17) = 1;
-  }
-}
-
-/**
- * @brief 向对应型号的所有大疆电机发出控制消息
- */
-template <DjiMotorType motor_type>
-void DjiMotor<motor_type>::SendCommand() {
-  for (auto &[canbus, buffer] : DjiMotorProperties<motor_type>::tx_buf_) {
-    if (buffer.at(16) == 1) {
-      canbus->Write(DjiMotorProperties<motor_type>::kControlId[0], buffer.data(), 8);
-      buffer.at(16) = 0;
-    }
-    if (buffer.at(17) == 1) {
-      canbus->Write(DjiMotorProperties<motor_type>::kControlId[1], buffer.data() + 8, 8);
-      buffer.at(17) = 0;
-    }
-  }
-}
-
-/**
- * @brief  向所有大疆电机发出控制消息
+ * @brief  不传模板参数的SendCommand函数特化，向所有电机都发送控制消息
  */
 template <>
 inline void DjiMotor<>::SendCommand() {
@@ -225,21 +219,13 @@ inline void DjiMotor<>::SendCommand() {
 }
 
 /**
- * @brief  CAN回调函数，解码收到的反馈报文
- * @tparam motor_type 电机类型
- * @param  msg        收到的消息
+ * @brief  不传模板参数的SendCommand函数特化，向指定CAN总线上的所有电机都发送控制消息
  */
-template <DjiMotorType motor_type>
-void DjiMotor<motor_type>::RxCallback(const hal::CanFrame *msg) {
-  Heartbeat();
-  this->encoder_ = (msg->data[0] << 8) | msg->data[1];
-  this->rpm_ = (msg->data[2] << 8) | msg->data[3];
-  if (this->reversed_) {
-    this->encoder_ = kDjiMotorMaxEncoder - this->encoder_;
-    this->rpm_ = -this->rpm_;
-  }
-  this->current_ = (msg->data[4] << 8) | msg->data[5];
-  this->temperature_ = msg->data[6];
+template <>
+inline void DjiMotor<>::SendCommand(hal::CanInterface &can) {
+  GM6020::SendCommand(can);
+  M3508::SendCommand(can);
+  M2006::SendCommand(can);
 }
 
 }  // namespace rm::device

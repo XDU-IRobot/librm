@@ -61,7 +61,7 @@ class CanDevice : public Device {
   /**
    * @brief 析构
    */
-  virtual ~CanDevice() {
+  ~CanDevice() override {
     // 析构时，把这个设备对象从CAN总线的注册列表中移除
     can_->UnregisterDevice(*this);
   }
@@ -69,7 +69,7 @@ class CanDevice : public Device {
   /**
    * @brief 拷贝构造
    */
-  inline CanDevice(const CanDevice &old) {
+  CanDevice(const CanDevice &old) {
     can_ = old.can_;
     rx_std_ids_ = old.rx_std_ids_;
     // 设备对象复制之后，把新对象注册给CAN总线
@@ -80,7 +80,7 @@ class CanDevice : public Device {
   /**
    * @brief 拷贝赋值
    */
-  inline CanDevice &operator=(const CanDevice &old) {
+  CanDevice &operator=(const CanDevice &old) {
     // 同上
     can_ = old.can_;
     rx_std_ids_ = old.rx_std_ids_;
@@ -94,7 +94,7 @@ class CanDevice : public Device {
   /**
    * @brief 移动构造
    */
-  inline CanDevice(CanDevice &&old) {
+  CanDevice(CanDevice &&old) noexcept {
     can_ = old.can_;
     rx_std_ids_ = std::move(old.rx_std_ids_);
     // 把被移动的设备对象从CAN总线的注册列表中移除，然后把新对象注册给CAN总线
@@ -107,7 +107,7 @@ class CanDevice : public Device {
   /**
    * @brief 移动赋值
    */
-  inline CanDevice &operator=(CanDevice &&old) {
+  CanDevice &operator=(CanDevice &&old) noexcept {
     can_ = old.can_;
     rx_std_ids_ = std::move(old.rx_std_ids_);
     // 同上

@@ -32,8 +32,8 @@ namespace rm::device {
 /**
  * @brief 三种型号电机各自的发送缓冲区
  */
-std::unordered_map<hal::CanInterface *, std::array<u8, 18>> DjiMotorProperties<DjiMotorType::GM6020>::tx_buf_{};
-std::unordered_map<hal::CanInterface *, std::array<u8, 18>> DjiMotorProperties<DjiMotorType::M3508>::tx_buf_{};
-std::unordered_map<hal::CanInterface *, std::array<u8, 18>> DjiMotorProperties<DjiMotorType::M2006>::tx_buf_{};
+etl::unordered_map<hal::CanInterface *, DjiMotorTxBuffer, 5> DjiMotorProperties<DjiMotorType::GM6020>::tx_buf_{};
+etl::unordered_map<hal::CanInterface *, DjiMotorTxBuffer, 5> DjiMotorProperties<DjiMotorType::M3508>::tx_buf_{};
+etl::unordered_map<hal::CanInterface *, DjiMotorTxBuffer, 5> DjiMotorProperties<DjiMotorType::M2006>::tx_buf_{};
 
 }  // namespace rm::device
