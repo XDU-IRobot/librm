@@ -102,7 +102,32 @@ class DjiMotor final : public CanDevice {
   DjiMotor(hal::CanInterface &can, u16 id, bool reversed = false);
 
   void SetCurrent(i16 current);
+
   static void SendCommand();
+
+  /**
+   * @brief 向某条CAN总线上的对应型号的所有大疆电机发出控制消息
+   * @param can 目标CAN总线
+   */
+  static void SendCommand(hal::CanInterface &can) {
+    if constexpr (motor_type == DjiMotorType::Default) {
+      // 不传模板参数时，向所有型号电机发送控制消息
+      SendCommand<DjiMotorType::GM6020>(can);
+      SendCommand<DjiMotorType::M3508>(can);
+      SendCommand<DjiMotorType::M2006>(can);
+      return;
+    }
+    for (auto &[canbus, buffer] : DjiMotorProperties<motor_type>::tx_buf_) {
+      if (buffer.at(16) == 1 && canbus == &can) {
+        canbus->Write(DjiMotorProperties<motor_type>::kControlId[0], buffer.data(), 8);
+        buffer.at(16) = 0;
+      }
+      if (buffer.at(17) == 1 && canbus == &can) {
+        canbus->Write(DjiMotorProperties<motor_type>::kControlId[1], buffer.data() + 8, 8);
+        buffer.at(17) = 0;
+      }
+    }
+  }
 
   /** 取值函数 **/
   [[nodiscard]] u16 encoder() const { return this->encoder_; }
