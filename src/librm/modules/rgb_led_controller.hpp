@@ -22,29 +22,25 @@
 
 /**
  * @file  librm/modules/rgb_led_controller.hpp
- * @brief RGB LED控制器
+ * @brief RGB LED控制器（基于通用序列播放器实现）
  */
 
 #ifndef LIBRM_MODULES_RGB_LED_CONTROLLER_HPP
 #define LIBRM_MODULES_RGB_LED_CONTROLLER_HPP
 
 #include <tuple>
-#include <type_traits>
 
 #include "librm/core/typedefs.hpp"
+#include "librm/modules/sequence_player.hpp"
 
 namespace rm::modules {
 
 /**
- * @brief RGB LED灯效的基类，子类通过继承该类并且实现Update和Reset方法来定义一种灯效
+ * @brief RGB LED灯效的基类，继承自SequenceGenerator
  */
-class RgbLedPattern {
+class RgbLedPattern : public SequenceGenerator<std::tuple<u8, u8, u8>> {
  public:
-  virtual ~RgbLedPattern() = default;
   using Rgb = std::tuple<u8, u8, u8>;  ///< (0, 0, 0) ~ (255, 255, 255)
-
-  virtual Rgb Update() = 0;
-  virtual void Reset() = 0;
 };
 
 /**
@@ -156,75 +152,42 @@ class RgbFlow : public RgbLedPattern {
 
 }  // namespace led_pattern
 
-namespace detail {
-template <typename T, typename Tuple>
-struct tuple_element_index;
-
-template <typename T, typename... Ts>
-struct tuple_element_index<T, std::tuple<T, Ts...>> {
-  static constexpr usize value = 0;
-};
-
-template <typename T, typename U, typename... Ts>
-struct tuple_element_index<T, std::tuple<U, Ts...>> {
-  static constexpr usize value = 1 + tuple_element_index<T, std::tuple<Ts...>>::value;
-};
-}  // namespace detail
-
+/**
+ * @brief RGB LED控制器，基于通用的SequencePlayer实现
+ * @tparam PatternTypes LED灯效类型列表，所有类型必须继承自RgbLedPattern
+ *
+ * @example
+ * ```cpp
+ * // 创建RGB LED控制器，包含多种灯效
+ * RgbLedController<led_pattern::Off, led_pattern::GreenBreath, led_pattern::RedFlash> led_controller;
+ *
+ * // 切换到绿色呼吸灯效
+ * led_controller.SetPattern<led_pattern::GreenBreath>();
+ *
+ * // 在1ms定时器中更新
+ * auto [r, g, b] = led_controller.Update();
+ * SetRgbLed(r, g, b);
+ * ```
+ */
 template <typename... PatternTypes>
-class RgbLedController {
-  static_assert(sizeof...(PatternTypes) > 0, "At least one pattern type must be provided");
-  static_assert((std::is_base_of<RgbLedPattern, PatternTypes>::value && ...),
-                "All PatternTypes must derive from RgbLedPattern");
-
+class RgbLedController : public SequencePlayer<RgbLedPattern::Rgb, PatternTypes...> {
  public:
-  RgbLedController() : patterns_{PatternTypes()...} {}
+  using Base = SequencePlayer<RgbLedPattern::Rgb, PatternTypes...>;
 
   /**
    * @brief           切换当前的灯效
-   * @tparam Pattern  要切换到的灯效
+   * @tparam Pattern  要切换到的灯效类型
    */
   template <typename Pattern>
   void SetPattern() {
-    constexpr usize pattern_id = detail::tuple_element_index<Pattern, std::tuple<PatternTypes...>>::value;
-    current_pattern_index_ = pattern_id;
-    std::get<pattern_id>(patterns_).Reset();
+    Base::template SetSequence<Pattern>();
   }
 
   /**
-   * @brief  更新当前灯效并获取当前颜色
+   * @brief  获取当前颜色（Update方法继承自SequencePlayer）
    * @return 当前颜色的RGB值
    */
-  std::tuple<u8, u8, u8> Update() {
-    current_color_ = std::apply(
-        [this](auto &...patterns) {
-          RgbLedPattern::Rgb result;
-          usize i = 0;
-          // 使用折叠表达式遍历元组中的所有灯效模式
-          // 当 i 等于当前灯效模式索引时，调用其 Update 方法
-          (
-              [&] {
-                if (i++ == current_pattern_index_) {
-                  result = patterns.Update();
-                }
-              }(),
-              ...);
-          return result;
-        },
-        patterns_);
-    return current_color_;
-  }
-
-  /**
-   * @brief  获取当前颜色
-   * @return 当前颜色的RGB值
-   */
-  const auto &current_color() const { return current_color_; }
-
- private:
-  RgbLedPattern::Rgb current_color_{0, 0, 0};
-  std::tuple<PatternTypes...> patterns_;
-  usize current_pattern_index_{0};
+  const auto &current_color() const { return Base::current_output(); }
 };
 
 }  // namespace rm::modules
