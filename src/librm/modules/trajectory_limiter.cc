@@ -42,24 +42,68 @@ void TrajectoryLimiter::ResetAt(f32 position) {
 }
 
 f32 TrajectoryLimiter::Update(f32 dt) {
-  // 1. 计算为了在 dt 时间内到达目标位置所需的速度 (v_d)
-  const f32 desired_vel = (target_pos_ - current_pos_) / dt;
+  const f32 position_error = target_pos_ - current_pos_;
 
-  // 2. 计算为了在 dt 时间内达到该速度所需的加速度 (a_d)
-  const f32 desired_accel = (desired_vel - current_vel_) / dt;
+  // 死区处理：如果位置误差很小且速度也很小，直接到达目标
+  const f32 position_deadband = 1e-4f;
+  const f32 velocity_deadband = 1e-4f;
+  if (std::abs(position_error) < position_deadband && std::abs(current_vel_) < velocity_deadband) {
+    current_pos_ = target_pos_;
+    current_vel_ = 0.0f;
+    return current_pos_;
+  }
 
-  // 3. 限制加速度
-  const f32 accel = std::clamp(desired_accel, -max_accel_, max_accel_);
+  // 1. 计算为了在 dt 时间内到达目标位置所需的参考速度
+  f32 reference_vel = position_error / dt;
 
-  // 4. 根据限制后的加速度更新速度
-  f32 next_vel = current_vel_ + accel * dt;
+  // 2. 首先检查参考速度是否超出速度限制
+  const bool ref_vel_exceeds_limit = std::abs(reference_vel) > max_vel_;
 
-  // 5. 限制速度
-  next_vel = std::clamp(next_vel, -max_vel_, max_vel_);
+  // 3. 计算达到参考速度所需的加速度
+  f32 reference_accel = (reference_vel - current_vel_) / dt;
 
-  // 6. 根据最终的速度更新位置
-  current_pos_ += next_vel * dt;
-  current_vel_ = next_vel;
+  // 4. 检查参考加速度是否超出加速度限制
+  const bool ref_accel_exceeds_limit = std::abs(reference_accel) > max_accel_;
+
+  // 5. 只有当参考轨迹超出限制时，才需要介入
+  if (ref_vel_exceeds_limit || ref_accel_exceeds_limit) {
+    // 先限制速度
+    reference_vel = std::clamp(reference_vel, -max_vel_, max_vel_);
+
+    // 重新计算加速度
+    reference_accel = (reference_vel - current_vel_) / dt;
+
+    // 再限制加速度
+    const f32 limited_accel = std::clamp(reference_accel, -max_accel_, max_accel_);
+
+    // 计算实际能达到的速度
+    f32 next_vel = current_vel_ + limited_accel * dt;
+
+    // 安全检查：确保不会冲过目标
+    // 计算按当前速度刹车需要的距离
+    const f32 braking_distance = (next_vel * next_vel) / (2.0f * max_accel_);
+    const bool moving_towards_target = (next_vel * position_error) > 0;
+
+    if (moving_towards_target && std::abs(braking_distance) > std::abs(position_error)) {
+      // 需要减速以避免冲过目标
+      const f32 sign = (position_error > 0) ? 1.0f : -1.0f;
+      next_vel = sign * std::sqrt(2.0f * max_accel_ * std::abs(position_error));
+    }
+
+    // 更新位置
+    const f32 position_delta = next_vel * dt;
+    if (std::abs(position_delta) > std::abs(position_error)) {
+      current_pos_ = target_pos_;
+      current_vel_ = 0.0f;
+    } else {
+      current_pos_ += position_delta;
+      current_vel_ = next_vel;
+    }
+  } else {
+    // 参考轨迹在限制范围内，保持透明，直接跟随
+    current_pos_ = target_pos_;
+    current_vel_ = reference_vel;
+  }
 
   return current_pos_;
 }
