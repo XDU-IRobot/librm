@@ -28,6 +28,7 @@
 #include "trajectory_limiter.hpp"
 
 #include <algorithm>
+#include <cmath>
 
 namespace rm::modules {
 
