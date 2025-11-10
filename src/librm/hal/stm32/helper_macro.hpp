@@ -31,11 +31,16 @@
 #include "librm/core/exception.hpp"
 #include "librm/hal/stm32/hal.hpp"
 
-#define LIBRM_STM32_HAL_ASSERT(hal_api_call)  \
-  do {                                        \
-    if ((hal_api_call) != HAL_OK) {           \
-      rm::Throw(rm::hal_error(hal_api_call)); \
-    }                                         \
+#ifdef LIBRM_BYPASS_HAL_ASSERT  // 因为librm当前的错误处理系统还不够完善，所以暂时允许用户绕过HAL断言，后续会移除这个宏
+#define LIBRM_STM32_HAL_ASSERT(hal_api_call) (hal_api_call)
+#else
+#define LIBRM_STM32_HAL_ASSERT(hal_api_call)         \
+  do {                                               \
+    const HAL_StatusTypeDef status = (hal_api_call); \
+    if ((status) != HAL_OK) {                        \
+      rm::Throw(rm::hal_error(status));              \
+    }                                                \
   } while (0)
+#endif
 
 #endif

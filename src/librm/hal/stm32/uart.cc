@@ -31,6 +31,7 @@
 
 #include "uart.hpp"
 
+#include "librm/hal/stm32/helper_macro.hpp"
 #include "librm/core/exception.hpp"
 
 /**
@@ -62,8 +63,8 @@ static std::unordered_map<UART_HandleTypeDef *, std::function<void(void)>> fn_er
  * 并不能直接强转成函数指针。借助这个函数，可以把std::function对象转换成函数指针。然后就可以把这个类内的回调函数传给HAL库了。
  */
 
-static auto StdFunctionToCallbackFunctionPtr(std::function<void(rm::u16)> fn,
-                                             UART_HandleTypeDef *huart) -> pUART_RxEventCallbackTypeDef {
+static auto StdFunctionToCallbackFunctionPtr(std::function<void(rm::u16)> fn, UART_HandleTypeDef *huart)
+    -> pUART_RxEventCallbackTypeDef {
   fn_cb_map[huart] = std::move(fn);
   return [](UART_HandleTypeDef *handle, rm::u16 rx_len) {
     if (fn_cb_map.find(handle) != fn_cb_map.end()) {
@@ -72,8 +73,8 @@ static auto StdFunctionToCallbackFunctionPtr(std::function<void(rm::u16)> fn,
   };
 }
 
-static auto StdFunctionToErrorCallbackFunctionPtr(std::function<void(void)> fn,
-                                                  UART_HandleTypeDef *huart) -> pUART_CallbackTypeDef {
+static auto StdFunctionToErrorCallbackFunctionPtr(std::function<void(void)> fn, UART_HandleTypeDef *huart)
+    -> pUART_CallbackTypeDef {
   fn_error_map[huart] = std::move(fn);
   return [](UART_HandleTypeDef *handle) {
     if (fn_error_map.find(handle) != fn_error_map.end()) {
@@ -108,28 +109,32 @@ void Uart::Begin() {
     Throw(std::runtime_error("DMA mode is selected but DMA is not configured"));
   }
   // 注册接收完成回调函数
-  HAL_UART_RegisterRxEventCallback(
-      this->huart_,
-      StdFunctionToCallbackFunctionPtr(std::bind(&Uart::HalRxCpltCallback, this, std::placeholders::_1), this->huart_));
-
+  LIBRM_STM32_HAL_ASSERT(
+      HAL_UART_RegisterRxEventCallback(this->huart_,                                                               //
+                                       StdFunctionToCallbackFunctionPtr(std::bind(&Uart::HalRxCpltCallback, this,  //
+                                                                                  std::placeholders::_1),          //
+                                                                        this->huart_)));
   // 注册错误回调函数
-  HAL_UART_RegisterCallback(
-      this->huart_, HAL_UART_ERROR_CB_ID,
-      StdFunctionToErrorCallbackFunctionPtr(std::bind(&Uart::HalErrorCallback, this), this->huart_));
+  LIBRM_STM32_HAL_ASSERT(HAL_UART_RegisterCallback(
+      this->huart_,          //
+      HAL_UART_ERROR_CB_ID,  //
+      StdFunctionToErrorCallbackFunctionPtr(std::bind(&Uart::HalErrorCallback, this), this->huart_)));
 
   // 启动接收
   switch (this->rx_mode_) {
     case UartMode::kNormal:
-      HAL_UART_Receive(this->huart_, this->rx_buf_[0].data(), this->rx_buf_[this->buffer_selector_].size(),
-                       HAL_MAX_DELAY);
+      LIBRM_STM32_HAL_ASSERT(HAL_UART_Receive(this->huart_, this->rx_buf_[0].data(),
+                                              this->rx_buf_[this->buffer_selector_].size(), HAL_MAX_DELAY));
       break;
     case UartMode::kInterrupt:
-      HAL_UART_Receive_IT(this->huart_, this->rx_buf_[0].data(), this->rx_buf_[this->buffer_selector_].size());
+      LIBRM_STM32_HAL_ASSERT(HAL_UARTEx_ReceiveToIdle_IT(this->huart_, this->rx_buf_[0].data(),
+                                                         this->rx_buf_[this->buffer_selector_].size()));
       break;
 #if defined(HAL_DMA_MODULE_ENABLED)
     case UartMode::kDma:
-      HAL_UARTEx_ReceiveToIdle_DMA(this->huart_, this->rx_buf_[0].data(), this->rx_buf_[this->buffer_selector_].size());
       __HAL_DMA_DISABLE_IT(this->huart_->hdmarx, DMA_IT_HT);  // 关闭DMA半传输中断
+      LIBRM_STM32_HAL_ASSERT(HAL_UARTEx_ReceiveToIdle_DMA(this->huart_, this->rx_buf_[0].data(),
+                                                          this->rx_buf_[this->buffer_selector_].size()));
       break;
 #endif
   }
@@ -143,14 +148,14 @@ void Uart::Begin() {
 void Uart::Write(const u8 *data, usize size) {
   switch (this->tx_mode_) {
     case UartMode::kNormal:
-      HAL_UART_Transmit(this->huart_, const_cast<u8 *>(data), size, HAL_MAX_DELAY);
+      LIBRM_STM32_HAL_ASSERT(HAL_UART_Transmit(this->huart_, const_cast<u8 *>(data), size, HAL_MAX_DELAY));
       break;
     case UartMode::kInterrupt:
-      HAL_UART_Transmit_IT(this->huart_, const_cast<u8 *>(data), size);
+      LIBRM_STM32_HAL_ASSERT(HAL_UART_Transmit_IT(this->huart_, const_cast<u8 *>(data), size));
       break;
 #if defined(HAL_DMA_MODULE_ENABLED)
     case UartMode::kDma:
-      HAL_UART_Transmit_DMA(this->huart_, const_cast<u8 *>(data), size);
+      LIBRM_STM32_HAL_ASSERT(HAL_UART_Transmit_DMA(this->huart_, const_cast<u8 *>(data), size));
       break;
 #endif
   }
@@ -176,18 +181,17 @@ void Uart::HalRxCpltCallback(u16 rx_len) {
   // 判断rx模式，重新启动接收
   switch (this->rx_mode_) {
     case UartMode::kNormal:
-      HAL_UART_Receive(this->huart_, this->rx_buf_[!this->buffer_selector_].data(),
-                       this->rx_buf_[!this->buffer_selector_].size(), HAL_MAX_DELAY);
+      LIBRM_STM32_HAL_ASSERT(HAL_UART_Receive(this->huart_, this->rx_buf_[!this->buffer_selector_].data(),
+                                              this->rx_buf_[!this->buffer_selector_].size(), HAL_MAX_DELAY));
       break;
     case UartMode::kInterrupt:
-      HAL_UART_Receive_IT(this->huart_, this->rx_buf_[!this->buffer_selector_].data(),
-                          this->rx_buf_[!this->buffer_selector_].size());
+      LIBRM_STM32_HAL_ASSERT(HAL_UARTEx_ReceiveToIdle_IT(this->huart_, this->rx_buf_[!this->buffer_selector_].data(),
+                                                         this->rx_buf_[!this->buffer_selector_].size()));
       break;
 #if defined(HAL_DMA_MODULE_ENABLED)
     case UartMode::kDma:
-      HAL_UARTEx_ReceiveToIdle_DMA(this->huart_, this->rx_buf_[!this->buffer_selector_].data(),
-                                   this->rx_buf_[!this->buffer_selector_].size());
-      __HAL_DMA_DISABLE_IT(this->huart_->hdmarx, DMA_IT_HT);  // 关闭DMA半传输中断
+      LIBRM_STM32_HAL_ASSERT(HAL_UARTEx_ReceiveToIdle_DMA(this->huart_, this->rx_buf_[!this->buffer_selector_].data(),
+                                                          this->rx_buf_[!this->buffer_selector_].size()));
       break;
 #endif
   }
@@ -206,18 +210,17 @@ void Uart::HalErrorCallback() {
   u16 rx_len = this->rx_buf_[this->buffer_selector_].size();
   switch (this->rx_mode_) {
     case UartMode::kNormal:
-      HAL_UART_Receive(this->huart_, this->rx_buf_[!this->buffer_selector_].data(),
-                       this->rx_buf_[!this->buffer_selector_].size(), HAL_MAX_DELAY);
+      LIBRM_STM32_HAL_ASSERT(HAL_UART_Receive(this->huart_, this->rx_buf_[!this->buffer_selector_].data(),
+                                              this->rx_buf_[!this->buffer_selector_].size(), HAL_MAX_DELAY));
       break;
     case UartMode::kInterrupt:
-      HAL_UART_Receive_IT(this->huart_, this->rx_buf_[!this->buffer_selector_].data(),
-                          this->rx_buf_[!this->buffer_selector_].size());
+      LIBRM_STM32_HAL_ASSERT(HAL_UARTEx_ReceiveToIdle_IT(this->huart_, this->rx_buf_[!this->buffer_selector_].data(),
+                                                         this->rx_buf_[!this->buffer_selector_].size()));
       break;
 #if defined(HAL_DMA_MODULE_ENABLED)
     case UartMode::kDma:
-      HAL_UARTEx_ReceiveToIdle_DMA(this->huart_, this->rx_buf_[!this->buffer_selector_].data(),
-                                   this->rx_buf_[!this->buffer_selector_].size());
-      __HAL_DMA_DISABLE_IT(this->huart_->hdmarx, DMA_IT_HT);  // 关闭DMA半传输中断
+      LIBRM_STM32_HAL_ASSERT(HAL_UARTEx_ReceiveToIdle_DMA(this->huart_, this->rx_buf_[!this->buffer_selector_].data(),
+                                                          this->rx_buf_[!this->buffer_selector_].size()));
       break;
 #endif
   }
