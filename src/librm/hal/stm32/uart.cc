@@ -63,8 +63,8 @@ static std::unordered_map<UART_HandleTypeDef *, std::function<void(void)>> fn_er
  * 并不能直接强转成函数指针。借助这个函数，可以把std::function对象转换成函数指针。然后就可以把这个类内的回调函数传给HAL库了。
  */
 
-static auto StdFunctionToCallbackFunctionPtr(std::function<void(rm::u16)> fn, UART_HandleTypeDef *huart)
-    -> pUART_RxEventCallbackTypeDef {
+static auto StdFunctionToCallbackFunctionPtr(std::function<void(rm::u16)> fn,
+                                             UART_HandleTypeDef *huart) -> pUART_RxEventCallbackTypeDef {
   fn_cb_map[huart] = std::move(fn);
   return [](UART_HandleTypeDef *handle, rm::u16 rx_len) {
     if (fn_cb_map.find(handle) != fn_cb_map.end()) {
@@ -73,8 +73,8 @@ static auto StdFunctionToCallbackFunctionPtr(std::function<void(rm::u16)> fn, UA
   };
 }
 
-static auto StdFunctionToErrorCallbackFunctionPtr(std::function<void(void)> fn, UART_HandleTypeDef *huart)
-    -> pUART_CallbackTypeDef {
+static auto StdFunctionToErrorCallbackFunctionPtr(std::function<void(void)> fn,
+                                                  UART_HandleTypeDef *huart) -> pUART_CallbackTypeDef {
   fn_error_map[huart] = std::move(fn);
   return [](UART_HandleTypeDef *handle) {
     if (fn_error_map.find(handle) != fn_error_map.end()) {
