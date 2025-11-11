@@ -194,10 +194,11 @@ struct NoteDuration {
   static constexpr u16 kQuarter = 60000 / Bpm;
 
   // 基本音符时值
-  static constexpr u16 kWhole = kQuarter * 4;      ///< 全音符
-  static constexpr u16 kHalf = kQuarter * 2;       ///< 二分音符
-  static constexpr u16 kEighth = kQuarter / 2;     ///< 八分音符
-  static constexpr u16 kSixteenth = kQuarter / 4;  ///< 十六分音符
+  static constexpr u16 kWhole = kQuarter * 4;         ///< 全音符
+  static constexpr u16 kHalf = kQuarter * 2;          ///< 二分音符
+  static constexpr u16 kEighth = kQuarter / 2;        ///< 八分音符
+  static constexpr u16 kSixteenth = kQuarter / 4;     ///< 十六分音符
+  static constexpr u16 kThirtySecond = kQuarter / 8;  ///< 三十二分音符
 
   // 附点音符时值（原时值的1.5倍）
   static constexpr u16 kDottedWhole = kWhole + kHalf;         ///< 附点全音符
@@ -255,7 +256,7 @@ class Beeps : public BuzzerMelody {
 
   BuzzerNote Update() override {
     using Freq = NoteFreqStandard;
-    using Duration = NoteDuration120;
+    using Duration = NoteDuration140;
 
     if (note_index_ >= BeepsCount * 2) {
       return BuzzerNote(0, 0);  // 播放完毕
@@ -299,9 +300,9 @@ class Startup : public BuzzerMelody {
     using Duration = NoteDuration160;
 
     constexpr std::array<BuzzerNote, 3> kMelody = {
-        BuzzerNote(Freq::kC6, Duration::kEighth),
-        BuzzerNote(Freq::kE6, Duration::kEighth),
-        BuzzerNote(Freq::kG6, Duration::kQuarter),
+        BuzzerNote(Freq::kC6, Duration::kSixteenth),
+        BuzzerNote(Freq::kE6, Duration::kSixteenth),
+        BuzzerNote(Freq::kG6, Duration::kEighth),
     };
 
     if (note_index_ >= kMelody.size()) {
@@ -339,7 +340,7 @@ class Error : public BuzzerMelody {
 
   BuzzerNote Update() override {
     using Freq = NoteFreqStandard;
-    using Duration = NoteDuration120;
+    using Duration = NoteDuration160;
 
     constexpr std::array<BuzzerNote, 4> kMelody = {
         BuzzerNote(Freq::kG5, Duration::kSixteenth),
@@ -385,7 +386,7 @@ class Success : public BuzzerMelody {
     using Duration = NoteDuration160;
 
     constexpr std::array<BuzzerNote, 2> kMelody = {
-        BuzzerNote(Freq::kC6, Duration::kEighth),
+        BuzzerNote(Freq::kC6, Duration::kSixteenth),
         BuzzerNote(Freq::kC7, Duration::kQuarter),
     };
 
@@ -426,15 +427,14 @@ class SuperMario : public BuzzerMelody {
     using Duration = NoteDuration120;
 
     constexpr std::array kMelody = {
-        BuzzerNote(Freq::kE6, Duration::kSixteenth), BuzzerNote(Freq::kRest, Duration::kSixteenth),
-        BuzzerNote(Freq::kE6, Duration::kSixteenth), BuzzerNote(Freq::kRest, Duration::kSixteenth),
-        BuzzerNote(Freq::kRest, Duration::kEighth),  BuzzerNote(Freq::kE6, Duration::kEighth),
-        BuzzerNote(Freq::kRest, Duration::kEighth),  BuzzerNote(Freq::kC6, Duration::kEighth),
-        BuzzerNote(Freq::kE6, Duration::kEighth),    BuzzerNote(Freq::kRest, Duration::kEighth),
-        BuzzerNote(Freq::kG6, Duration::kQuarter),   BuzzerNote(Freq::kRest, Duration::kQuarter),
-        BuzzerNote(Freq::kG5, Duration::kQuarter),   BuzzerNote(Freq::kRest, Duration::kQuarter),
-        BuzzerNote(Freq::kC6, Duration::kEighth),    BuzzerNote(Freq::kRest, Duration::kEighth),
-        BuzzerNote(Freq::kG5, Duration::kEighth),    BuzzerNote(Freq::kRest, Duration::kEighth),
+        BuzzerNote(Freq::kE6, Duration::kThirtySecond), BuzzerNote(Freq::kRest, Duration::kThirtySecond),
+        BuzzerNote(Freq::kE6, Duration::kSixteenth),    BuzzerNote(Freq::kRest, Duration::kSixteenth),
+        BuzzerNote(Freq::kE6, Duration::kSixteenth),    BuzzerNote(Freq::kRest, Duration::kSixteenth),
+        BuzzerNote(Freq::kC6, Duration::kSixteenth),    BuzzerNote(Freq::kE6, Duration::kSixteenth),
+        BuzzerNote(Freq::kRest, Duration::kSixteenth),  BuzzerNote(Freq::kG6, Duration::kEighth),
+        BuzzerNote(Freq::kRest, Duration::kEighth),     BuzzerNote(Freq::kG5, Duration::kEighth),
+        BuzzerNote(Freq::kRest, Duration::kEighth),     BuzzerNote(Freq::kC6, Duration::kSixteenth),
+        BuzzerNote(Freq::kRest, Duration::kSixteenth),  BuzzerNote(Freq::kG5, Duration::kSixteenth),
     };
 
     if (note_index_ >= kMelody.size()) {
@@ -484,11 +484,12 @@ class TheLick : public BuzzerMelody {
     using Freq = NoteFreqStandard;
     using Duration = NoteDuration<85>;
 
-    constexpr std::array<BuzzerNote, 9> kMelody = {
-        BuzzerNote(Freq::kD6, Duration::kSixteenth), BuzzerNote(Freq::kE6, Duration::kSixteenth),
-        BuzzerNote(Freq::kF6, Duration::kSixteenth), BuzzerNote(Freq::kG6, Duration::kSixteenth),
-        BuzzerNote(Freq::kE6, Duration::kSixteenth), BuzzerNote(Freq::kRest, Duration::kSixteenth),
-        BuzzerNote(Freq::kC6, Duration::kSixteenth), BuzzerNote(Freq::kD6, Duration::kDottedEighth),
+    constexpr std::array kMelody = {
+        BuzzerNote(Freq::kD6, Duration::kSixteenth),      BuzzerNote(Freq::kE6, Duration::kSixteenth),
+        BuzzerNote(Freq::kF6, Duration::kSixteenth),      BuzzerNote(Freq::kG6, Duration::kSixteenth),
+        BuzzerNote(Freq::kDs6, Duration::kThirtySecond),  BuzzerNote(Freq::kE6, Duration::kSixteenth),
+        BuzzerNote(Freq::kRest, Duration::kThirtySecond), BuzzerNote(Freq::kC6, Duration::kSixteenth),
+        BuzzerNote(Freq::kD6, Duration::kDottedEighth),
     };
 
     if (note_index_ >= kMelody.size()) {
