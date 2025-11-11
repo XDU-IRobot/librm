@@ -73,7 +73,7 @@ class GreenBreath : public RgbLedPattern {
     // 呼吸周期：1700ms
     constexpr u32 kBreathPeriod = 1700;
     u32 phase = elapsed % kBreathPeriod;
-    
+
     f32 brightness;
     if (phase < kBreathPeriod / 2) {
       // 前半周期：从0到255
@@ -82,7 +82,7 @@ class GreenBreath : public RgbLedPattern {
       // 后半周期：从255到0
       brightness = 255.0f - ((phase - kBreathPeriod / 2) * 255.0f) / (kBreathPeriod / 2);
     }
-    
+
     return Rgb(0, static_cast<u8>(brightness), 0);
   }
 
@@ -128,7 +128,7 @@ class RgbFlow : public RgbLedPattern {
     auto elapsed = ElapsedMs(start_time_, now);
     // 完整颜色循环周期：1536ms
     u32 phase = elapsed % 1536;
-    
+
     u8 r, g, b;
     if (phase < 512) {
       r = 255 - (phase * 255) / 512;
