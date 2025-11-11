@@ -515,6 +515,51 @@ class TheLick : public BuzzerMelody {
   TimePoint note_start_time_;
 };
 
+/**
+ * @brief man see u again
+ */
+class SeeUAgain : public BuzzerMelody {
+ public:
+  SeeUAgain() = default;
+
+  BuzzerNote Update(TimePoint now) override {
+    using Freq = NoteFreqStandard;
+    using Duration = NoteDuration100;
+
+    constexpr std::array kMelody = {
+        BuzzerNote(Freq::kC7, Duration::kEighth),        BuzzerNote(Freq::kB6, Duration::kEighth),
+        BuzzerNote(Freq::kA6, Duration::kDottedQuarter), BuzzerNote(Freq::kG6, Duration::kEighth),
+        BuzzerNote(Freq::kRest, Duration::kQuarter),     BuzzerNote(Freq::kC7, Duration::kEighth),
+        BuzzerNote(Freq::kB6, Duration::kEighth),        BuzzerNote(Freq::kA6, Duration::kDottedEighth),
+        BuzzerNote(Freq::kB6, Duration::kSixteenth),     BuzzerNote(Freq::kA6, Duration::kEighth),
+        BuzzerNote(Freq::kG6, Duration::kEighth),        BuzzerNote(Freq::kE6, Duration::kEighth),
+    };
+
+    if (note_index_ >= kMelody.size()) {
+      return BuzzerNote(0, 0);
+    }
+
+    auto note = kMelody[note_index_];
+
+    auto elapsed = ElapsedMs(note_start_time_, now);
+    if (elapsed >= note.duration) {
+      note_index_++;
+      note_start_time_ = now;
+    }
+
+    return note;
+  }
+
+  void Reset(TimePoint now) override {
+    note_index_ = 0;
+    note_start_time_ = now;
+  }
+
+ private:
+  rm::usize note_index_{0};
+  TimePoint note_start_time_;
+};
+
 // NOTE: 你可以参照上面的几个Melody，通过继承BuzzerMelody类来实现自己的音乐序列
 
 }  // namespace buzzer_melody
