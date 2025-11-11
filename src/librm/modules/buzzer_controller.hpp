@@ -255,7 +255,7 @@ class Beeps : public BuzzerMelody {
 
   BuzzerNote Update(TimePoint now) override {
     using Freq = NoteFreqStandard;
-    using Duration = NoteDuration140;
+    using Duration = NoteDuration160;
 
     if (note_index_ >= BeepsCount * 2) {
       return BuzzerNote(0, 0);  // 播放完毕
@@ -263,9 +263,9 @@ class Beeps : public BuzzerMelody {
 
     BuzzerNote note;
     if (note_index_ % 2 == 0) {
-      note = BuzzerNote(Freq::kC6, Duration::kSixteenth);  // 响声
+      note = BuzzerNote(Freq::kE6, Duration::kThirtySecond);  // 响声
     } else {
-      note = BuzzerNote(Freq::kRest, Duration::kSixteenth);  // 静音
+      note = BuzzerNote(Freq::kRest, Duration::kThirtySecond);  // 静音
     }
 
     auto elapsed = ElapsedMs(note_start_time_, now);
@@ -385,7 +385,7 @@ class Success : public BuzzerMelody {
 
     constexpr std::array<BuzzerNote, 2> kMelody = {
         BuzzerNote(Freq::kC6, Duration::kSixteenth),
-        BuzzerNote(Freq::kC7, Duration::kQuarter),
+        BuzzerNote(Freq::kC7, Duration::kDottedEighth),
     };
 
     if (note_index_ >= kMelody.size()) {
@@ -480,7 +480,7 @@ class TheLick : public BuzzerMelody {
 
   BuzzerNote Update(TimePoint now) override {
     using Freq = NoteFreqStandard;
-    using Duration = NoteDuration<85>;
+    using Duration = NoteDuration160;
 
     constexpr std::array kMelody = {
         BuzzerNote(Freq::kD6, Duration::kSixteenth),      BuzzerNote(Freq::kE6, Duration::kSixteenth),
