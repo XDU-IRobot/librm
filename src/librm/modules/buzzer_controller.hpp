@@ -230,7 +230,6 @@ class BuzzerMelody : public SequenceGenerator<BuzzerNote> {
 
 /**
  * @brief 一些预定义的蜂鸣器音乐/提示音
- * @note  这些音乐都是按1ms一个step来设计的，如果音乐的播放速度听起来不对（太快/太慢），检查一下Update调用的频率是否正确
  */
 namespace buzzer_melody {
 
@@ -241,9 +240,9 @@ class Silent : public BuzzerMelody {
  public:
   Silent() = default;
 
-  BuzzerNote Update() override { return BuzzerNote(0, 0); }
+  BuzzerNote Update(TimePoint now) override { return BuzzerNote(0, 0); }
 
-  void Reset() override {}
+  void Reset(TimePoint now) override {}
 };
 
 /**
@@ -254,7 +253,7 @@ class Beeps : public BuzzerMelody {
  public:
   Beeps() = default;
 
-  BuzzerNote Update() override {
+  BuzzerNote Update(TimePoint now) override {
     using Freq = NoteFreqStandard;
     using Duration = NoteDuration140;
 
@@ -269,23 +268,23 @@ class Beeps : public BuzzerMelody {
       note = BuzzerNote(Freq::kRest, Duration::kSixteenth);  // 静音
     }
 
-    elapsed_time_ += 1;  // 假设1ms调用一次
-    if (elapsed_time_ >= note.duration) {
+    auto elapsed = ElapsedMs(note_start_time_, now);
+    if (elapsed >= note.duration) {
       note_index_++;
-      elapsed_time_ = 0;
+      note_start_time_ = now;
     }
 
     return note;
   }
 
-  void Reset() override {
+  void Reset(TimePoint now) override {
     note_index_ = 0;
-    elapsed_time_ = 0;
+    note_start_time_ = now;
   }
 
  private:
   usize note_index_{0};
-  u32 elapsed_time_{0};
+  TimePoint note_start_time_;
 };
 
 /**
@@ -295,7 +294,7 @@ class Startup : public BuzzerMelody {
  public:
   Startup() = default;
 
-  BuzzerNote Update() override {
+  BuzzerNote Update(TimePoint now) override {
     using Freq = NoteFreqStandard;
     using Duration = NoteDuration160;
 
@@ -311,24 +310,23 @@ class Startup : public BuzzerMelody {
 
     auto note = kMelody[note_index_];
 
-    // 更新计时器
-    elapsed_time_ += 1;  // 假设1ms调用一次
-    if (elapsed_time_ >= note.duration) {
+    auto elapsed = ElapsedMs(note_start_time_, now);
+    if (elapsed >= note.duration) {
       note_index_++;
-      elapsed_time_ = 0;
+      note_start_time_ = now;
     }
 
     return note;
   }
 
-  void Reset() override {
+  void Reset(TimePoint now) override {
     note_index_ = 0;
-    elapsed_time_ = 0;
+    note_start_time_ = now;
   }
 
  private:
   usize note_index_{0};
-  u32 elapsed_time_{0};
+  TimePoint note_start_time_;
 };
 
 /**
@@ -338,7 +336,7 @@ class Error : public BuzzerMelody {
  public:
   Error() = default;
 
-  BuzzerNote Update() override {
+  BuzzerNote Update(TimePoint now) override {
     using Freq = NoteFreqStandard;
     using Duration = NoteDuration160;
 
@@ -355,23 +353,23 @@ class Error : public BuzzerMelody {
 
     auto note = kMelody[note_index_];
 
-    elapsed_time_ += 1;
-    if (elapsed_time_ >= note.duration) {
+    auto elapsed = ElapsedMs(note_start_time_, now);
+    if (elapsed >= note.duration) {
       note_index_++;
-      elapsed_time_ = 0;
+      note_start_time_ = now;
     }
 
     return note;
   }
 
-  void Reset() override {
+  void Reset(TimePoint now) override {
     note_index_ = 0;
-    elapsed_time_ = 0;
+    note_start_time_ = now;
   }
 
  private:
   usize note_index_{0};
-  u32 elapsed_time_{0};
+  TimePoint note_start_time_;
 };
 
 /**
@@ -381,7 +379,7 @@ class Success : public BuzzerMelody {
  public:
   Success() = default;
 
-  BuzzerNote Update() override {
+  BuzzerNote Update(TimePoint now) override {
     using Freq = NoteFreqStandard;
     using Duration = NoteDuration160;
 
@@ -396,23 +394,23 @@ class Success : public BuzzerMelody {
 
     auto note = kMelody[note_index_];
 
-    elapsed_time_ += 1;
-    if (elapsed_time_ >= note.duration) {
+    auto elapsed = ElapsedMs(note_start_time_, now);
+    if (elapsed >= note.duration) {
       note_index_++;
-      elapsed_time_ = 0;
+      note_start_time_ = now;
     }
 
     return note;
   }
 
-  void Reset() override {
+  void Reset(TimePoint now) override {
     note_index_ = 0;
-    elapsed_time_ = 0;
+    note_start_time_ = now;
   }
 
  private:
   usize note_index_{0};
-  u32 elapsed_time_{0};
+  TimePoint note_start_time_;
 };
 
 /**
@@ -422,7 +420,7 @@ class SuperMario : public BuzzerMelody {
  public:
   SuperMario() = default;
 
-  BuzzerNote Update() override {
+  BuzzerNote Update(TimePoint now) override {
     using Freq = NoteFreqStandard;
     using Duration = NoteDuration120;
 
@@ -443,23 +441,23 @@ class SuperMario : public BuzzerMelody {
 
     auto note = kMelody[note_index_];
 
-    elapsed_time_ += 1;
-    if (elapsed_time_ >= note.duration) {
+    auto elapsed = ElapsedMs(note_start_time_, now);
+    if (elapsed >= note.duration) {
       note_index_++;
-      elapsed_time_ = 0;
+      note_start_time_ = now;
     }
 
     return note;
   }
 
-  void Reset() override {
+  void Reset(TimePoint now) override {
     note_index_ = 0;
-    elapsed_time_ = 0;
+    note_start_time_ = now;
   }
 
  private:
   usize note_index_{0};
-  u32 elapsed_time_{0};
+  TimePoint note_start_time_;
 };
 
 /**
@@ -480,7 +478,7 @@ class TheLick : public BuzzerMelody {
  public:
   TheLick() = default;
 
-  BuzzerNote Update() override {
+  BuzzerNote Update(TimePoint now) override {
     using Freq = NoteFreqStandard;
     using Duration = NoteDuration<85>;
 
@@ -498,23 +496,23 @@ class TheLick : public BuzzerMelody {
 
     auto note = kMelody[note_index_];
 
-    elapsed_time_ += 1;
-    if (elapsed_time_ >= note.duration) {
+    auto elapsed = ElapsedMs(note_start_time_, now);
+    if (elapsed >= note.duration) {
       note_index_++;
-      elapsed_time_ = 0;
+      note_start_time_ = now;
     }
 
     return note;
   }
 
-  void Reset() override {
+  void Reset(TimePoint now) override {
     note_index_ = 0;
-    elapsed_time_ = 0;
+    note_start_time_ = now;
   }
 
  private:
   usize note_index_{0};
-  u32 elapsed_time_{0};
+  TimePoint note_start_time_;
 };
 
 // NOTE: 你可以参照上面的几个Melody，通过继承BuzzerMelody类来实现自己的音乐序列
@@ -534,14 +532,14 @@ class TheLick : public BuzzerMelody {
  *     buzzer_melody::Startup,
  *     buzzer_melody::Error,
  *     buzzer_melody::Success,
- *     buzzer_melody::SuperMarioLoop,
+ *     buzzer_melody::SuperMario,
  *     buzzer_melody::TheLick
  * > buzzer_controller;
  *
  * // 播放启动提示音
- * buzzer_controller.Play<buzzer_melody::StartupBeep>();
+ * buzzer_controller.Play<buzzer_melody::Startup>();
  *
- * // 在1ms定时器中更新
+ * // 在任意频率的定时器或主循环中更新（不要求固定1ms）
  * auto note = buzzer_controller.Update();
  * if (note.frequency > 0) {
  *     SetBuzzerFrequency(note.frequency);

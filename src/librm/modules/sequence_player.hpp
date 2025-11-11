@@ -28,6 +28,7 @@
 #ifndef LIBRM_MODULES_SEQUENCE_PLAYER_HPP
 #define LIBRM_MODULES_SEQUENCE_PLAYER_HPP
 
+#include <chrono>
 #include <tuple>
 
 #include <etl/delegate.h>
@@ -41,23 +42,39 @@ namespace rm::modules {
  * @tparam OutputType 序列输出的数据类型
  *
  * @note 子类需要实现Update和Reset方法来定义一个序列生成器
+ * @note Update方法接收当前时间戳，基于绝对时间进行状态更新
  */
 template <typename OutputType>
 class SequenceGenerator {
  public:
   virtual ~SequenceGenerator() = default;
   using Output = OutputType;
+  using TimePoint = std::chrono::steady_clock::time_point;
+  using Duration = std::chrono::steady_clock::duration;
 
   /**
-   * @brief  更新序列状态并返回当前输出
-   * @return 当前序列的输出值
+   * @brief       更新序列状态并返回当前输出
+   * @param now   当前时间点
+   * @return      当前序列的输出值
    */
-  virtual Output Update() = 0;
+  virtual Output Update(TimePoint now) = 0;
 
   /**
-   * @brief 重置序列状态到初始状态
+   * @brief       重置序列状态到初始状态
+   * @param now   重置时的时间点
    */
-  virtual void Reset() = 0;
+  virtual void Reset(TimePoint now) = 0;
+
+ protected:
+  /**
+   * @brief       计算从起始时间到现在经过的毫秒数
+   * @param start 起始时间点
+   * @param now   当前时间点
+   * @return      经过的毫秒数
+   */
+  static u32 ElapsedMs(TimePoint start, TimePoint now) {
+    return std::chrono::duration_cast<std::chrono::milliseconds>(now - start).count();
+  }
 };
 
 namespace detail {
@@ -86,18 +103,18 @@ struct tuple_element_index<T, std::tuple<U, Ts...>> {
  * class LinearRamp : public SequenceGenerator<float> {
  *   float value_ = 0.0f;
  * public:
- *   float Update() override { return value_ += 0.1f; }
- *   void Reset() override { value_ = 0.0f; }
+ *   float Update(TimePoint now_unused) override { return value_ += 0.1f; }
+ *   void Reset(TimePoint now_unused) override { value_ = 0.0f; }
  * };
  *
  * class SineWave : public SequenceGenerator<float> {
  *   float phase_ = 0.0f;
  * public:
- *   float Update() override {
+ *   float Update(TimePoint now_unused) override {
  *     phase_ += 0.01f;
  *     return std::sin(phase_);
  *   }
- *   void Reset() override { phase_ = 0.0f; }
+ *   void Reset(TimePoint now_unused) override { phase_ = 0.0f; }
  * };
  *
  * // 创建播放器
@@ -139,8 +156,9 @@ class SequencePlayer {
    * @return 当前序列的输出值
    */
   Output Update() {
-    // 直接调用当前序列的Update方法，无需遍历查找
-    current_output_ = current_update_fn_();
+    const auto now = std::chrono::steady_clock::now();
+    // 直接调用当前序列的Update方法，传入当前时间
+    current_output_ = current_update_fn_(now);
     return current_output_;
   }
 
@@ -154,8 +172,9 @@ class SequencePlayer {
    * @brief  重置当前序列到初始状态
    */
   void Reset() {
+    auto now = std::chrono::steady_clock::now();
     if (current_reset_fn_) {
-      current_reset_fn_();
+      current_reset_fn_(now);
     }
   }
 
@@ -166,40 +185,43 @@ class SequencePlayer {
    */
   template <usize sequence_id>
   void SetSequenceByIndex() {
+    auto now = std::chrono::steady_clock::now();
     // 重置序列状态
-    std::get<sequence_id>(sequences_).Reset();
+    std::get<sequence_id>(sequences_).Reset(now);
     // 使用etl::delegate绑定对应序列的Update方法
-    current_update_fn_ =
-        etl::delegate<Output()>::template create<SequencePlayer, &SequencePlayer::UpdateSequence<sequence_id>>(*this);
+    current_update_fn_ = etl::delegate<Output(std::chrono::steady_clock::time_point)>::template create<
+        SequencePlayer, &SequencePlayer::UpdateSequence<sequence_id>>(*this);
     // 绑定Reset方法
-    current_reset_fn_ =
-        etl::delegate<void()>::create<SequencePlayer, &SequencePlayer::ResetSequence<sequence_id>>(*this);
+    current_reset_fn_ = etl::delegate<void(std::chrono::steady_clock::time_point)>::create<
+        SequencePlayer, &SequencePlayer::ResetSequence<sequence_id>>(*this);
   }
 
   /**
    * @brief                   调用指定索引的序列的Update方法（内部辅助方法）
    * @tparam sequence_id      序列在tuple中的索引
+   * @param now               当前时间点
    * @return                  序列输出值
    */
   template <usize sequence_id>
-  Output UpdateSequence() {
-    return std::get<sequence_id>(sequences_).Update();
+  Output UpdateSequence(std::chrono::steady_clock::time_point now) {
+    return std::get<sequence_id>(sequences_).Update(now);
   }
 
   /**
    * @brief                   调用指定索引的序列的Reset方法（内部辅助方法）
    * @tparam sequence_id      序列在tuple中的索引
+   * @param now               当前时间点
    */
   template <usize sequence_id>
-  void ResetSequence() {
-    std::get<sequence_id>(sequences_).Reset();
+  void ResetSequence(std::chrono::steady_clock::time_point now) {
+    std::get<sequence_id>(sequences_).Reset(now);
   }
 
   Output current_output_{};
   std::tuple<SequenceTypes...> sequences_;
   // 使用etl::delegate，无动态内存分配，直接指向当前序列的Update和Reset方法
-  etl::delegate<Output()> current_update_fn_;
-  etl::delegate<void()> current_reset_fn_;
+  etl::delegate<Output(std::chrono::steady_clock::time_point)> current_update_fn_;
+  etl::delegate<void(std::chrono::steady_clock::time_point)> current_reset_fn_;
 };
 
 }  // namespace rm::modules

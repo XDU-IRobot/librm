@@ -45,7 +45,6 @@ class RgbLedPattern : public SequenceGenerator<std::tuple<u8, u8, u8>> {
 
 /**
  * @brief 几个常用的LED灯效
- * @note  注意这几个灯效都是按1ms一个step来设计的，如果效果看起来不是很正常，检查一下Update调用的频率是否正确
  */
 namespace led_pattern {
 
@@ -56,96 +55,101 @@ class Off : public RgbLedPattern {
  public:
   Off() = default;
 
-  Rgb Update() override { return Rgb(0, 0, 0); }
+  Rgb Update(TimePoint now) override { return Rgb(0, 0, 0); }
 
-  void Reset() override {}
+  void Reset(TimePoint now) override {}
 };
 
 /**
  * @brief 绿色呼吸灯
+ * @note  呼吸周期约为1700ms（从0到255再回到0）
  */
 class GreenBreath : public RgbLedPattern {
  public:
   GreenBreath() = default;
 
-  Rgb Update() override {
-    if (increasing_) {
-      brightness_ += 0.3f;
-      if (brightness_ >= 255.f) {
-        brightness_ = 255.f;
-        increasing_ = false;
-      }
+  Rgb Update(TimePoint now) override {
+    auto elapsed = ElapsedMs(start_time_, now);
+    // 呼吸周期：1700ms
+    constexpr u32 kBreathPeriod = 1700;
+    u32 phase = elapsed % kBreathPeriod;
+    
+    f32 brightness;
+    if (phase < kBreathPeriod / 2) {
+      // 前半周期：从0到255
+      brightness = (phase * 255.0f) / (kBreathPeriod / 2);
     } else {
-      brightness_ -= 0.3f;
-      if (brightness_ <= 0.f) {
-        brightness_ = 0.f;
-        increasing_ = true;
-      }
+      // 后半周期：从255到0
+      brightness = 255.0f - ((phase - kBreathPeriod / 2) * 255.0f) / (kBreathPeriod / 2);
     }
-    return Rgb(0, brightness_, 0);
+    
+    return Rgb(0, static_cast<u8>(brightness), 0);
   }
 
-  void Reset() override {
-    brightness_ = 0.f;
-    increasing_ = true;
-  }
+  void Reset(TimePoint now) override { start_time_ = now; }
 
  private:
-  f32 brightness_{0.f};
-  bool increasing_{true};
+  TimePoint start_time_;
 };
 
 /**
  * @brief 红灯闪烁
+ * @note  闪烁周期为1000ms（500ms开，500ms关）
  */
 class RedFlash : public RgbLedPattern {
  public:
   RedFlash() = default;
 
-  Rgb Update() override {
-    flash_counter_ = (flash_counter_ + 1) % 1000;
-    if (flash_counter_ < 500) {
+  Rgb Update(TimePoint now) override {
+    auto elapsed = ElapsedMs(start_time_, now);
+    // 闪烁周期：1000ms
+    u32 phase = elapsed % 1000;
+    if (phase < 500) {
       return Rgb(255, 0, 0);
     }
     return Rgb(0, 0, 0);
   }
 
-  void Reset() override { flash_counter_ = 0; }
+  void Reset(TimePoint now) override { start_time_ = now; }
 
  private:
-  usize flash_counter_{0};
+  TimePoint start_time_;
 };
 
 /**
  * @brief RGB流动
+ * @note  完整颜色循环周期为1536ms（红->绿->蓝->红）
  */
 class RgbFlow : public RgbLedPattern {
  public:
   RgbFlow() = default;
 
-  Rgb Update() override {
-    phase_ = (phase_ + 1) % 1536;
+  Rgb Update(TimePoint now) override {
+    auto elapsed = ElapsedMs(start_time_, now);
+    // 完整颜色循环周期：1536ms
+    u32 phase = elapsed % 1536;
+    
     u8 r, g, b;
-    if (phase_ < 512) {
-      r = 255 - (phase_ * 255) / 512;
-      g = (phase_ * 255) / 512;
+    if (phase < 512) {
+      r = 255 - (phase * 255) / 512;
+      g = (phase * 255) / 512;
       b = 0;
-    } else if (phase_ < 1024) {
+    } else if (phase < 1024) {
       r = 0;
-      g = 255 - ((phase_ - 512) * 255) / 512;
-      b = ((phase_ - 512) * 255) / 512;
+      g = 255 - ((phase - 512) * 255) / 512;
+      b = ((phase - 512) * 255) / 512;
     } else {
-      r = ((phase_ - 1024) * 255) / 512;
+      r = ((phase - 1024) * 255) / 512;
       g = 0;
-      b = 255 - ((phase_ - 1024) * 255) / 512;
+      b = 255 - ((phase - 1024) * 255) / 512;
     }
     return Rgb(r, g, b);
   }
 
-  void Reset() override { phase_ = 0; }
+  void Reset(TimePoint now) override { start_time_ = now; }
 
  private:
-  usize phase_{0};
+  TimePoint start_time_;
 };
 
 // NOTE: 你可以参照上面的三个Pattern，通过继承RgbLedPattern类来实现自己的LED灯效
@@ -164,7 +168,7 @@ class RgbFlow : public RgbLedPattern {
  * // 切换到绿色呼吸灯效
  * led_controller.SetPattern<led_pattern::GreenBreath>();
  *
- * // 在1ms定时器中更新
+ * // 在任意频率的定时器或主循环中更新（不要求固定1ms）
  * auto [r, g, b] = led_controller.Update();
  * SetRgbLed(r, g, b);
  * ```
