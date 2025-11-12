@@ -19,17 +19,13 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# Check if the compiler supports C++17
+find_package(GTest REQUIRED)
 
-include(CheckCXXCompilerFlag)
-check_cxx_compiler_flag("-std=c++17" COMPILER_SUPPORTS_CXX17)
-check_cxx_compiler_flag("-std=c++1z" COMPILER_SUPPORTS_CXX1Z)
-if (COMPILER_SUPPORTS_CXX17)
-    set(CMAKE_CXX_STANDARD 17)
-    set(CMAKE_CXX_STANDARD_REQUIRED ON)
-elseif (COMPILER_SUPPORTS_CXX1Z)
-    set(CMAKE_CXX_STANDARD 17)
-    set(CMAKE_CXX_STANDARD_REQUIRED ON)
-else ()
-    message(FATAL_ERROR "[librm]: The compiler ${CMAKE_CXX_COMPILER} has no C++17 support. Please use a different C++ compiler.")
-endif ()
+add_executable(librm_tests
+  trajectory_limiter.cc
+)
+
+target_link_libraries(librm_tests PRIVATE
+  rm
+  GTest::gtest_main
+)

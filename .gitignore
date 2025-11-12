@@ -34,4 +34,5 @@
 *.out
 *.app
 
+build
 cmake-build*
