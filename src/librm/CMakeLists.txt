@@ -24,14 +24,14 @@ cmake_minimum_required(VERSION 3.13)
 file(GLOB_RECURSE SOURCES "${CMAKE_CURRENT_LIST_DIR}/core/*.cc"
         "${CMAKE_CURRENT_LIST_DIR}/device/*.cc"
         "${CMAKE_CURRENT_LIST_DIR}/modules/*.cc")
-
+        
 if ("${LIBRM_PLATFORM}" STREQUAL "STM32")
     file(GLOB_RECURSE PLATFORM_SOURCES "${CMAKE_CURRENT_LIST_DIR}/hal/stm32/*.cc")
-elseif (${LIBRM_PLATFORM} STREQUAL "LINUX")
-    if (${LIBRM_PLATFORM_LINUX_TYPE} STREQUAL "JETSON")
+elseif ("${LIBRM_PLATFORM}" STREQUAL "LINUX")
+    if ("${LIBRM_PLATFORM_LINUX_TYPE}" STREQUAL "JETSON")
         file(GLOB_RECURSE PLATFORM_SOURCES "${CMAKE_CURRENT_LIST_DIR}/hal/linux/*.cc"
                 "${CMAKE_CURRENT_LIST_DIR}/hal/jetson/*.cc")
-    elseif (${LIBRM_PLATFORM_LINUX_TYPE} STREQUAL "RASPI")
+    elseif ("${LIBRM_PLATFORM_LINUX_TYPE}" STREQUAL "RASPI")
         file(GLOB_RECURSE PLATFORM_SOURCES "${CMAKE_CURRENT_LIST_DIR}/hal/linux/*.cc"
                 "${CMAKE_CURRENT_LIST_DIR}/hal/raspi/*.cc")
     else ()
