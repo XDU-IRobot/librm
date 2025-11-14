@@ -192,6 +192,7 @@ void Uart::HalRxCpltCallback(u16 rx_len) {
     case UartMode::kDma:
       LIBRM_STM32_HAL_ASSERT(HAL_UARTEx_ReceiveToIdle_DMA(this->huart_, this->rx_buf_[!this->buffer_selector_].data(),
                                                           this->rx_buf_[!this->buffer_selector_].size()));
+      __HAL_DMA_DISABLE_IT(this->huart_->hdmarx, DMA_IT_HT);  // 关闭DMA半传输中断
       break;
 #endif
   }
@@ -221,6 +222,7 @@ void Uart::HalErrorCallback() {
     case UartMode::kDma:
       LIBRM_STM32_HAL_ASSERT(HAL_UARTEx_ReceiveToIdle_DMA(this->huart_, this->rx_buf_[!this->buffer_selector_].data(),
                                                           this->rx_buf_[!this->buffer_selector_].size()));
+      __HAL_DMA_DISABLE_IT(this->huart_->hdmarx, DMA_IT_HT);  // 关闭DMA半传输中断
       break;
 #endif
   }
