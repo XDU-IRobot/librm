@@ -205,6 +205,7 @@ struct NoteDuration {
   static constexpr u16 kDottedHalf = kHalf + kQuarter;        ///< 附点二分音符
   static constexpr u16 kDottedQuarter = kQuarter + kEighth;   ///< 附点四分音符
   static constexpr u16 kDottedEighth = kEighth + kSixteenth;  ///< 附点八分音符
+  static constexpr u16 kDottedSixteenth = kSixteenth + kThirtySecond;  ///< 附点十六分音符
 
   // 三连音时值（原时值的2/3）
   static constexpr u16 kTripletHalf = (kHalf * 2) / 3;        ///< 三连音二分音符
@@ -527,12 +528,53 @@ class SeeUAgain : public BuzzerMelody {
     using Duration = NoteDuration100;
 
     constexpr std::array kMelody = {
-        BuzzerNote(Freq::kC7, Duration::kEighth),        BuzzerNote(Freq::kB6, Duration::kEighth),
-        BuzzerNote(Freq::kA6, Duration::kDottedQuarter), BuzzerNote(Freq::kG6, Duration::kEighth),
-        BuzzerNote(Freq::kRest, Duration::kQuarter),     BuzzerNote(Freq::kC7, Duration::kEighth),
-        BuzzerNote(Freq::kB6, Duration::kEighth),        BuzzerNote(Freq::kA6, Duration::kDottedEighth),
-        BuzzerNote(Freq::kB6, Duration::kSixteenth),     BuzzerNote(Freq::kA6, Duration::kEighth),
-        BuzzerNote(Freq::kG6, Duration::kEighth),        BuzzerNote(Freq::kE6, Duration::kEighth),
+      BuzzerNote(Freq::kC6, Duration::kEighth), BuzzerNote(Freq::kE6, Duration::kEighth),
+      BuzzerNote(Freq::kG6, Duration::kEighth), BuzzerNote(Freq::kA6, Duration::kDottedQuarter),
+      BuzzerNote(Freq::kG6, Duration::kDottedSixteenth), BuzzerNote(Freq::kRest, Duration::kThirtySecond),
+      BuzzerNote(Freq::kG6, Duration::kQuarter), BuzzerNote(Freq::kRest, Duration::kDottedEighth),
+      BuzzerNote(Freq::kC6, Duration::kSixteenth), BuzzerNote(Freq::kD6, Duration::kDottedSixteenth),
+      BuzzerNote(Freq::kRest, Duration::kThirtySecond), BuzzerNote(Freq::kD6, Duration::kEighth),
+      BuzzerNote(Freq::kC6, Duration::kEighth), BuzzerNote(Freq::kD6, Duration::kEighth),
+      BuzzerNote(Freq::kE6, Duration::kQuarter), BuzzerNote(Freq::kRest, Duration::kEighth),
+      BuzzerNote(Freq::kE6, Duration::kSixteenth), BuzzerNote(Freq::kG6, Duration::kSixteenth),
+      BuzzerNote(Freq::kA6, Duration::kEighth), BuzzerNote(Freq::kB6, Duration::kEighth),
+      BuzzerNote(Freq::kA6, Duration::kEighth), BuzzerNote(Freq::kG6, Duration::kEighth),
+      BuzzerNote(Freq::kE6, Duration::kEighth), BuzzerNote(Freq::kD6, Duration::kDottedSixteenth),
+      BuzzerNote(Freq::kRest, Duration::kThirtySecond), BuzzerNote(Freq::kD6, Duration::kEighth),
+      BuzzerNote(Freq::kC6, Duration::kEighth), BuzzerNote(Freq::kD6, Duration::kDottedSixteenth),
+      BuzzerNote(Freq::kRest, Duration::kThirtySecond),BuzzerNote(Freq::kD6, Duration::kDottedSixteenth),
+      BuzzerNote(Freq::kRest, Duration::kThirtySecond),BuzzerNote(Freq::kD6, Duration::kDottedSixteenth),
+      BuzzerNote(Freq::kRest, Duration::kThirtySecond),BuzzerNote(Freq::kC6, Duration::kEighth),
+      BuzzerNote(Freq::kRest, Duration::kQuarter), BuzzerNote(Freq::kRest, Duration::kSixteenth),
+      BuzzerNote(Freq::kC6, Duration::kSixteenth), BuzzerNote(Freq::kE6, Duration::kSixteenth),
+      BuzzerNote(Freq::kG6, Duration::kEighth), BuzzerNote(Freq::kA6, Duration::kDottedQuarter),
+      BuzzerNote(Freq::kG6, Duration::kDottedSixteenth), BuzzerNote(Freq::kRest, Duration::kThirtySecond),
+      BuzzerNote(Freq::kG6, Duration::kQuarter), BuzzerNote(Freq::kRest, Duration::kDottedEighth),
+      BuzzerNote(Freq::kC6, Duration::kSixteenth), BuzzerNote(Freq::kD6, Duration::kDottedSixteenth),
+      BuzzerNote(Freq::kRest, Duration::kThirtySecond), BuzzerNote(Freq::kD6, Duration::kEighth),
+      BuzzerNote(Freq::kC6, Duration::kEighth), BuzzerNote(Freq::kE6, Duration::kEighth),
+      BuzzerNote(Freq::kRest, Duration::kQuarter), BuzzerNote(Freq::kD6, Duration::kSixteenth),
+      BuzzerNote(Freq::kE6, Duration::kSixteenth), BuzzerNote(Freq::kG6, Duration::kEighth),
+      BuzzerNote(Freq::kA6, Duration::kEighth), BuzzerNote(Freq::kC7, Duration::kEighth),
+      BuzzerNote(Freq::kD7, Duration::kEighth), BuzzerNote(Freq::kE7, Duration::kEighth),
+      BuzzerNote(Freq::kD7, Duration::kEighth),           BuzzerNote(Freq::kC7, Duration::kEighth),
+      BuzzerNote(Freq::kG6, Duration::kSixteenth),        BuzzerNote(Freq::kA6, Duration::kSixteenth),
+      BuzzerNote(Freq::kC7, Duration::kEighth),           BuzzerNote(Freq::kD7, Duration::kDottedSixteenth),
+      BuzzerNote(Freq::kRest, Duration::kThirtySecond),   BuzzerNote(Freq::kD7, Duration::kDottedSixteenth),
+      BuzzerNote(Freq::kRest, Duration::kThirtySecond),
+      BuzzerNote(Freq::kD7, Duration::kEighth),           BuzzerNote(Freq::kC7, Duration::kEighth),
+      BuzzerNote(Freq::kRest, Duration::kQuarter),        BuzzerNote(Freq::kG6, Duration::kSixteenth),
+      BuzzerNote(Freq::kA6, Duration::kSixteenth),        BuzzerNote(Freq::kC7, Duration::kEighth),
+      BuzzerNote(Freq::kD7, Duration::kDottedSixteenth),  BuzzerNote(Freq::kRest, Duration::kThirtySecond),
+      BuzzerNote(Freq::kD7, Duration::kDottedSixteenth),  BuzzerNote(Freq::kRest, Duration::kThirtySecond),
+      BuzzerNote(Freq::kD7, Duration::kEighth),           BuzzerNote(Freq::kC7, Duration::kEighth),
+      BuzzerNote(Freq::kRest, Duration::kQuarter),        BuzzerNote(Freq::kRest, Duration::kQuarter),
+      BuzzerNote(Freq::kC7, Duration::kEighth),           BuzzerNote(Freq::kB6, Duration::kEighth),
+      BuzzerNote(Freq::kA6, Duration::kDottedQuarter),    BuzzerNote(Freq::kG6, Duration::kEighth),
+      BuzzerNote(Freq::kRest, Duration::kQuarter),        BuzzerNote(Freq::kC7, Duration::kEighth),
+      BuzzerNote(Freq::kB6, Duration::kEighth),           BuzzerNote(Freq::kA6, Duration::kDottedEighth),
+      BuzzerNote(Freq::kB6, Duration::kSixteenth),        BuzzerNote(Freq::kA6, Duration::kEighth),
+      BuzzerNote(Freq::kG6, Duration::kEighth),           BuzzerNote(Freq::kE6, Duration::kEighth),
     };
 
     if (note_index_ >= kMelody.size()) {
