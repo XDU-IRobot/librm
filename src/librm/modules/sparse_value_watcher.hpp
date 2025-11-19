@@ -28,6 +28,8 @@
 #ifndef LIBRM_MODULES_SPARSE_VALUE_WATCHER_HPP
 #define LIBRM_MODULES_SPARSE_VALUE_WATCHER_HPP
 
+#include <functional>
+
 #include <etl/delegate.h>
 
 namespace rm::modules {
@@ -35,7 +37,7 @@ namespace rm::modules {
  * @brief 监视一个离散值的变化，当值发生变化时触发回调函数
  * @tparam T 要监视的值的类型
  */
-template <typename T>
+template <typename T, bool UseStdFunction = false>
 class SparseValueWatcher {
  public:
   /**
@@ -43,7 +45,10 @@ class SparseValueWatcher {
    * @param old_value 变化前的值
    * @param new_value 变化后的值
    */
-  using Callback = etl::delegate<void(const T &old_value, const T &new_value)>;
+  using Callback = std::conditional_t<                              //
+      UseStdFunction,                                               //
+      std::function<void(const T &old_value, const T &new_value)>,  //
+      etl::delegate<void(const T &old_value, const T &new_value)>>;
 
   SparseValueWatcher() = default;
 
