@@ -132,9 +132,9 @@ void Uart::Begin() {
       break;
 #if defined(HAL_DMA_MODULE_ENABLED)
     case UartMode::kDma:
-      __HAL_DMA_DISABLE_IT(this->huart_->hdmarx, DMA_IT_HT);  // 关闭DMA半传输中断
       LIBRM_STM32_HAL_ASSERT(HAL_UARTEx_ReceiveToIdle_DMA(this->huart_, this->rx_buf_[0].data(),
                                                           this->rx_buf_[this->buffer_selector_].size()));
+      __HAL_DMA_DISABLE_IT(this->huart_->hdmarx, DMA_IT_HT);  // 关闭DMA半传输中断
       break;
 #endif
   }
