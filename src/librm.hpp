@@ -59,6 +59,7 @@
 #include "librm/device/remote/vt03.hpp"
 #include "librm/device/sensor/bmi088.hpp"
 #include "librm/device/sensor/ist8310.hpp"
+#include "librm/device/sensor/jy_me02_can.hpp"
 #include "librm/device/supercap/supercap.hpp"
 #include "librm/device/supercap/gk_supercap.hpp"
 /****************/
