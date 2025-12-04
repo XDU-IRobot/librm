@@ -118,7 +118,7 @@ class VT03 : public Device {
         crc16_this_time_ = (valid_data_so_far_[kFrameLength - 1] << 8) | valid_data_so_far_[kFrameLength - 2];
 
         if (modules::Crc16(valid_data_so_far_.data(), kFrameLength - 2, modules::CRC16_INIT) == crc16_this_time_) {
-          Heartbeat();
+          ReportStatus(kOk);
           // 整包接收完+校验通过，开始解析数据
           std::memcpy(&raw_payload_data_, valid_data_so_far_.data(), sizeof(raw_payload_data_));
           data_.right_x = modules::Map(raw_payload_data_.ch_0, 364, 1684, -1.0f, 1.0f);

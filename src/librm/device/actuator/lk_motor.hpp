@@ -187,7 +187,7 @@ class LkMotor : public CanDevice {
    * @param msg   收到的报文
    */
   void RxCallback(const hal::CanFrame *msg) override {
-    Heartbeat();
+    ReportStatus(kOk);
     switch (msg->data[0]) {
       case Instruction::kOpenLoopControl: {
         feedback_.temperature = *(i8 *)(&msg->data[1]);
@@ -255,6 +255,15 @@ class LkMotor : public CanDevice {
     } error_state;
   } feedback_{};
 };
+
+template <usize encoder_bits>
+using LkMotorMS = LkMotor<LkMotorType::kMS, encoder_bits>;
+template <usize encoder_bits>
+using LkMotorMF = LkMotor<LkMotorType::kMF, encoder_bits>;
+template <usize encoder_bits>
+using LkMotorMH = LkMotor<LkMotorType::kMH, encoder_bits>;
+template <usize encoder_bits>
+using LkMotorMG = LkMotor<LkMotorType::kMG, encoder_bits>;
 
 }  // namespace rm::device
 

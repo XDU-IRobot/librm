@@ -102,7 +102,7 @@ void Go8010Motor::RxCallback(const std::vector<u8> &data, u16 rx_len) {
   // }
 
   if (recv_data_.motor_recv_data.mode.id == send_data_.motor_send_data.mode.id) {
-    Heartbeat();
+    ReportStatus(kOk);
     recv_data_.id = recv_data_.motor_recv_data.mode.id;
     recv_data_.mode = recv_data_.motor_recv_data.mode.status;
     recv_data_.tau = recv_data_.motor_recv_data.fbk.tau / 256.f;

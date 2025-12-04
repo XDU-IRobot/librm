@@ -27,6 +27,8 @@
 
 #include "sbus.hpp"
 
+#include "librm/device/actuator/directdrive_motor.hpp"
+
 namespace rm::device {
 
 /**
@@ -47,8 +49,6 @@ void Sbus::RxCallback(const std::vector<u8> &data, u16 rx_len) {
   if (rx_len != kSbusFrameSize || data[0] != kSbusStartByte || data[24] != kSbusEndByte) {
     return;
   }
-
-  Heartbeat();
 
   // 16 channels of 11-bit data
   channels_[0] = (data[1] | data[2] << 8) & 0x07FF;
@@ -73,6 +73,12 @@ void Sbus::RxCallback(const std::vector<u8> &data, u16 rx_len) {
   digital_channel_2_ = (data[23] & 0x02);
   frame_lost_ = (data[23] & 0x04);
   failsafe_ = (data[23] & 0x08);
+
+  if (failsafe_) {
+    ReportStatus(kFault);
+  } else {
+    ReportStatus(kOk);
+  }
 }
 
 i16 Sbus::channel(int channel_num) const {

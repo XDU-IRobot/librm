@@ -47,6 +47,9 @@ void GkSupercap::Update(const TxData &tx_data) {
  * @brief CAN回调函数，解码收到的反馈报文
  * @param msg 收到的消息
  */
-void GkSupercap::RxCallback(const hal::CanFrame *msg) { memcpy(&rx_data_, &msg->data[0], sizeof(RxData)); }
+void GkSupercap::RxCallback(const hal::CanFrame *msg) {
+  ReportStatus(kOk);
+  memcpy(&rx_data_, &msg->data[0], sizeof(RxData));
+}
 
 }  // namespace rm::device

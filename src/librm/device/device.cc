@@ -31,22 +31,20 @@ namespace rm::device {
 
 void Device::SetHeartbeatTimeout(duration timeout) { heartbeat_timeout_ = timeout; }
 
-[[nodiscard]] bool Device::IsAlive() {
-  if (online_status_ == Status::kOnline) {
-    const auto now = std::chrono::steady_clock::now();
-    // 如果距离上次在线时间戳超过心跳超时时间，认为设备离线
-    if (now - last_online_ > heartbeat_timeout_) {
-      online_status_ = Status::kOffline;
-    }
+[[nodiscard]] bool Device::Ok() {
+  const auto now = std::chrono::steady_clock::now();
+  if (now - last_seen_ > heartbeat_timeout_) {
+    // 如果距离上次设备上报状态时间超过心跳超时时间，则认为设备离线
+    online_status_ = kOffline;
   }
-  return online_status_ == Status::kOnline;
+  return online_status_ == kOk;
 }
 
-[[nodiscard]] Device::time_point Device::last_online() const { return last_online_; }
+[[nodiscard]] Device::time_point Device::last_seen() const { return last_seen_; }
 
-void Device::Heartbeat() {
-  last_online_ = std::chrono::steady_clock::now();
-  online_status_ = Status::kOnline;
+void Device::ReportStatus(Status status) {
+  last_seen_ = std::chrono::steady_clock::now();
+  online_status_ = status;
 }
 
 }  // namespace rm::device

@@ -53,7 +53,7 @@ void DR16::RxCallback(const std::vector<u8> &data, u16 rx_len) {
   if (rx_len != 18) {
     return;
   }
-  Heartbeat();
+  ReportStatus(kOk);
   this->axes_[0] = (data[0] | (data[1] << 8)) & 0x07ff;         //!< Channel 0
   this->axes_[1] = ((data[1] >> 3) | (data[2] << 5)) & 0x07ff;  //!< Channel 1
   this->axes_[2] = ((data[2] >> 6) | (data[3] << 2) |           //!< Channel 2

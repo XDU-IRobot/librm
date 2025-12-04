@@ -134,9 +134,9 @@ class Referee : public Device {
                              modules::CRC16_INIT) == crc16_this_time_) {
             cmdid_this_time_ = (valid_data_so_far_[6] << 8) | valid_data_so_far_[5];
 
-            // 整包接收完+CRC校验通过！
+            // 整包接收完+CRC校验通过
             // 裁判系统仍然在线
-            Heartbeat();
+            ReportStatus(kOk);
             // 把数据拷贝到反序列化缓冲区对应的结构体中
             memcpy(reinterpret_cast<u8 *>(&deserialize_buffer_) +
                        referee_protocol_memory_map<revision>.at(cmdid_this_time_),
