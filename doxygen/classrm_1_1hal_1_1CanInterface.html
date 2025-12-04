@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1CanInterface.html','
 <p>CAN接口类  
  <a href="classrm_1_1hal_1_1CanInterface.html#details">更多...</a></p>
 
-<p><code>#include &lt;<a class="el" href="can__interface_8h_source.html">can_interface.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="can__interface_8hpp_source.html">can_interface.hpp</a>&gt;</code></p>
 <div class="dynheader">
 类 rm::hal::CanInterface 继承关系图:</div>
 <div class="dyncontent">
@@ -122,11 +122,6 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:af5cfc29d748a66e6b0a7290beca694c0" id="r_af5cfc29d748a66e6b0a7290beca694c0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1CanInterface.html#af5cfc29d748a66e6b0a7290beca694c0">Write</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> id, const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *<a class="el" href="unitree__motor_8hpp.html#a7ea4cf5640b96ae38ed53527f508183a">data</a>, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size)=0</td></tr>
 <tr class="memdesc:af5cfc29d748a66e6b0a7290beca694c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">立即向总线上发送数据  <br /></td></tr>
 <tr class="separator:af5cfc29d748a66e6b0a7290beca694c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accf3e101ccb05b4f583bb19aaf1b9bca" id="r_accf3e101ccb05b4f583bb19aaf1b9bca"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1CanInterface.html#accf3e101ccb05b4f583bb19aaf1b9bca">Write</a> ()=0</td></tr>
-<tr class="separator:accf3e101ccb05b4f583bb19aaf1b9bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63b696861b59fe68c26f65d5d6a9e3c4" id="r_a63b696861b59fe68c26f65d5d6a9e3c4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1CanInterface.html#a63b696861b59fe68c26f65d5d6a9e3c4">Enqueue</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> id, const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *<a class="el" href="unitree__motor_8hpp.html#a7ea4cf5640b96ae38ed53527f508183a">data</a>, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size, <a class="el" href="namespacerm_1_1hal.html#ad9ce02a3d77a1b56213e665171676a18">CanTxPriority</a> priority)=0</td></tr>
-<tr class="memdesc:a63b696861b59fe68c26f65d5d6a9e3c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">向消息队列里加入一条消息  <br /></td></tr>
-<tr class="separator:a63b696861b59fe68c26f65d5d6a9e3c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac91bfc026f2e2545b30371fd0d4ba9fb" id="r_ac91bfc026f2e2545b30371fd0d4ba9fb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1CanInterface.html#ac91bfc026f2e2545b30371fd0d4ba9fb">SetFilter</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> id, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> mask)=0</td></tr>
 <tr class="memdesc:ac91bfc026f2e2545b30371fd0d4ba9fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置过滤器  <br /></td></tr>
 <tr class="separator:ac91bfc026f2e2545b30371fd0d4ba9fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -208,67 +203,6 @@ Protected 成员函数</h2></td></tr>
 <p>启动CAN外设 </p>
 
 <p>在 <a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html#a1277a6601d0376946fe8e21835fad629">rm::hal::linux_::SocketCan</a> , 以及 <a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html#ab4ef81aaa906635c58a1f24e3c8f372d">rm::hal::stm32::BxCan</a> 内被实现.</p>
-
-</div>
-</div>
-<a id="a63b696861b59fe68c26f65d5d6a9e3c4" name="a63b696861b59fe68c26f65d5d6a9e3c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63b696861b59fe68c26f65d5d6a9e3c4">&#9670;&#160;</a></span>Enqueue()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void rm::hal::CanInterface::Enqueue </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm_1_1hal.html#ad9ce02a3d77a1b56213e665171676a18">CanTxPriority</a>&#160;</td>
-          <td class="paramname"><em>priority</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>向消息队列里加入一条消息 </p>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">id</td><td>数据帧ID </td></tr>
-    <tr><td class="paramname">data</td><td>数据指针 </td></tr>
-    <tr><td class="paramname">size</td><td>数据长度 </td></tr>
-    <tr><td class="paramname">priority</td><td>消息的优先级 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>在 <a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html#ad845937d886bfde171d89d164dc33da6">rm::hal::linux_::SocketCan</a> , 以及 <a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html#ae3b63ac686030ea2bd3917b7ef7cad06">rm::hal::stm32::BxCan</a> 内被实现.</p>
 
 </div>
 </div>
@@ -446,35 +380,8 @@ Protected 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a id="accf3e101ccb05b4f583bb19aaf1b9bca" name="accf3e101ccb05b4f583bb19aaf1b9bca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accf3e101ccb05b4f583bb19aaf1b9bca">&#9670;&#160;</a></span>Write() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void rm::hal::CanInterface::Write </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>在 <a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html#a3ac66fa801749b308e0f7ed219eb2299">rm::hal::linux_::SocketCan</a> , 以及 <a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html#a422c5a93c0294d83cffbc5f0e52a6940">rm::hal::stm32::BxCan</a> 内被实现.</p>
-
-</div>
-</div>
 <a id="af5cfc29d748a66e6b0a7290beca694c0" name="af5cfc29d748a66e6b0a7290beca694c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5cfc29d748a66e6b0a7290beca694c0">&#9670;&#160;</a></span>Write() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af5cfc29d748a66e6b0a7290beca694c0">&#9670;&#160;</a></span>Write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -551,7 +458,7 @@ Protected 成员函数</h2></td></tr>
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
-<li>src/librm/hal/<a class="el" href="can__interface_8h_source.html">can_interface.h</a></li>
+<li>src/librm/hal/<a class="el" href="can__interface_8hpp_source.html">can_interface.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

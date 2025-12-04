@@ -102,7 +102,8 @@ $(document).ready(function(){initNavTree('time_8hpp.html',''); initResizable(); 
 <a href="#details">更多...</a></p>
 <div class="textblock"><code>#include &lt;chrono&gt;</code><br />
 <code>#include &lt;thread&gt;</code><br />
-<code>#include &quot;<a class="el" href="typedefs_8h_source.html">librm/core/typedefs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="hal_8hpp_source.html">librm/hal/stm32/hal.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="typedefs_8hpp_source.html">librm/core/typedefs.hpp</a>&quot;</code><br />
 </div>
 <p><a href="time_8hpp_source.html">浏览源代码.</a></p>
 <table class="memberdecls">
@@ -110,16 +111,12 @@ $(document).ready(function(){initNavTree('time_8hpp.html',''); initResizable(); 
 命名空间</h2></td></tr>
 <tr class="memitem:namespacerm" id="r_namespacerm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm.html">rm</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacerm_1_1core" id="r_namespacerm_1_1core"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1core.html">rm::core</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacerm_1_1core_1_1time" id="r_namespacerm_1_1core_1_1time"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1core_1_1time.html">rm::core::time</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 函数</h2></td></tr>
-<tr class="memitem:a8a1075a598c146c485b38d2739025d7e" id="r_a8a1075a598c146c485b38d2739025d7e"><td class="memTemplParams" colspan="2">template&lt;typename Rep , typename Period &gt; </td></tr>
-<tr class="memitem:a8a1075a598c146c485b38d2739025d7e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerm_1_1core_1_1time.html#a8a1075a598c146c485b38d2739025d7e">rm::core::time::Sleep</a> (const std::chrono::duration&lt; Rep, Period &gt; &amp;duration)</td></tr>
-<tr class="separator:a8a1075a598c146c485b38d2739025d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f8a1bdc2c9b56c0f7607a4e5b9a1453" id="r_a4f8a1bdc2c9b56c0f7607a4e5b9a1453"><td class="memTemplParams" colspan="2">template&lt;typename Rep , typename Period &gt; </td></tr>
+<tr class="memitem:a4f8a1bdc2c9b56c0f7607a4e5b9a1453"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerm.html#a4f8a1bdc2c9b56c0f7607a4e5b9a1453">rm::Sleep</a> (const std::chrono::duration&lt; Rep, Period &gt; &amp;duration)</td></tr>
+<tr class="separator:a4f8a1bdc2c9b56c0f7607a4e5b9a1453"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>时间模块，用来包装不同平台的时间相关功能 </p>

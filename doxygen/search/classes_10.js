@@ -1,5 +1,27 @@
 var searchData=
 [
-  ['vofaplotter_0',['VofaPlotter',['../classrm_1_1modules_1_1VofaPlotter.html',1,'rm::modules']]],
-  ['vt03_1',['VT03',['../classrm_1_1device_1_1VT03.html',1,'rm::device']]]
+  ['sbus_0',['Sbus',['../classrm_1_1device_1_1Sbus.html',1,'rm::device']]],
+  ['seeuagain_1',['SeeUAgain',['../classrm_1_1modules_1_1buzzer__melody_1_1SeeUAgain.html',1,'rm::modules::buzzer_melody']]],
+  ['senddata_2',['senddata',['../structrm_1_1device_1_1Go8010Motor_1_1SendData.html',1,'rm::device::Go8010Motor::SendData'],['../structrm_1_1device_1_1UnitreeMotor_1_1SendData.html',1,'rm::device::UnitreeMotor::SendData']]],
+  ['sequencegenerator_3',['SequenceGenerator',['../classrm_1_1modules_1_1SequenceGenerator.html',1,'rm::modules']]],
+  ['sequencegenerator_3c_20buzzernote_20_3e_4',['SequenceGenerator&lt; BuzzerNote &gt;',['../classrm_1_1modules_1_1SequenceGenerator.html',1,'rm::modules']]],
+  ['sequencegenerator_3c_20std_3a_3atuple_3c_20u8_2c_20u8_2c_20u8_20_3e_20_3e_5',['SequenceGenerator&lt; std::tuple&lt; u8, u8, u8 &gt; &gt;',['../classrm_1_1modules_1_1SequenceGenerator.html',1,'rm::modules']]],
+  ['sequenceplayer_6',['SequencePlayer',['../classrm_1_1modules_1_1SequencePlayer.html',1,'rm::modules']]],
+  ['sequenceplayer_3c_20buzzernote_2c_20melodytypes_2e_2e_2e_20_3e_7',['SequencePlayer&lt; BuzzerNote, MelodyTypes... &gt;',['../classrm_1_1modules_1_1SequencePlayer.html',1,'rm::modules']]],
+  ['sequenceplayer_3c_20rgbledpattern_3a_3argb_2c_20patterntypes_2e_2e_2e_20_3e_8',['SequencePlayer&lt; RgbLedPattern::Rgb, PatternTypes... &gt;',['../classrm_1_1modules_1_1SequencePlayer.html',1,'rm::modules']]],
+  ['serial_9',['Serial',['../classrm_1_1hal_1_1linux___1_1Serial.html',1,'rm::hal::linux_']]],
+  ['serialinterface_10',['SerialInterface',['../classrm_1_1hal_1_1SerialInterface.html',1,'rm::hal']]],
+  ['silent_11',['Silent',['../classrm_1_1modules_1_1buzzer__melody_1_1Silent.html',1,'rm::modules::buzzer_melody']]],
+  ['socketcan_12',['SocketCan',['../classrm_1_1hal_1_1linux___1_1SocketCan.html',1,'rm::hal::linux_']]],
+  ['sparsevaluewatcher_13',['SparseValueWatcher',['../classrm_1_1modules_1_1SparseValueWatcher.html',1,'rm::modules']]],
+  ['spi_14',['Spi',['../classrm_1_1hal_1_1stm32_1_1Spi.html',1,'rm::hal::stm32']]],
+  ['spidevice_15',['SpiDevice',['../classrm_1_1hal_1_1stm32_1_1SpiDevice.html',1,'rm::hal::stm32']]],
+  ['spiinterface_16',['SpiInterface',['../classrm_1_1hal_1_1SpiInterface.html',1,'rm::hal']]],
+  ['startup_17',['Startup',['../classrm_1_1modules_1_1buzzer__melody_1_1Startup.html',1,'rm::modules::buzzer_melody']]],
+  ['state_18',['State',['../classrm_1_1modules_1_1State.html',1,'rm::modules']]],
+  ['steeringchassis_19',['SteeringChassis',['../classrm_1_1modules_1_1SteeringChassis.html',1,'rm::modules']]],
+  ['success_20',['Success',['../classrm_1_1modules_1_1buzzer__melody_1_1Success.html',1,'rm::modules::buzzer_melody']]],
+  ['supercap_21',['SuperCap',['../classrm_1_1device_1_1SuperCap.html',1,'rm::device']]],
+  ['supermario_22',['SuperMario',['../classrm_1_1modules_1_1buzzer__melody_1_1SuperMario.html',1,'rm::modules::buzzer_melody']]],
+  ['systemmodel_23',['SystemModel',['../classrm_1_1modules_1_1SystemModel.html',1,'rm::modules']]]
 ];

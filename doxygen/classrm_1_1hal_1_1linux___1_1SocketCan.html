@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1linux___1_1SocketCan
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="socketcan_8h_source.html">socketcan.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="socketcan_8hpp_source.html">socketcan.hpp</a>&gt;</code></p>
 <div class="dynheader">
 类 rm::hal::linux_::SocketCan 继承关系图:</div>
 <div class="dyncontent">
@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1linux___1_1SocketCan
   <img src="classrm_1_1hal_1_1linux___1_1SocketCan.png" usemap="#rm::hal::linux_5F::SocketCan_map" alt=""/>
   <map id="rm::hal::linux_5F::SocketCan_map" name="rm::hal::linux_5F::SocketCan_map">
 <area href="classrm_1_1hal_1_1CanInterface.html" title="CAN接口类" alt="rm::hal::CanInterface" shape="rect" coords="0,0,155,24"/>
+<area href="classrm_1_1detail_1_1NonCopyable.html" alt="rm::detail::NonCopyable" shape="rect" coords="165,0,320,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -117,20 +118,11 @@ Public 成员函数</h2></td></tr>
 <tr class="separator:a822bca68a8b9455eaf591a4c9cb61ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e600fefbb55da703f27fbb66ff8d6ce" id="r_a2e600fefbb55da703f27fbb66ff8d6ce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html#a2e600fefbb55da703f27fbb66ff8d6ce">~SocketCan</a> () override</td></tr>
 <tr class="separator:a2e600fefbb55da703f27fbb66ff8d6ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6e95400435b056107487ebfe0fc80b5" id="r_ae6e95400435b056107487ebfe0fc80b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html#ae6e95400435b056107487ebfe0fc80b5">SocketCan</a> (const <a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html">SocketCan</a> &amp;)=delete</td></tr>
-<tr class="separator:ae6e95400435b056107487ebfe0fc80b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5eece6f63c4eb0b8ef8928d75e3b28e0" id="r_a5eece6f63c4eb0b8ef8928d75e3b28e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html">SocketCan</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html#a5eece6f63c4eb0b8ef8928d75e3b28e0">operator=</a> (const <a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html">SocketCan</a> &amp;)=delete</td></tr>
-<tr class="separator:a5eece6f63c4eb0b8ef8928d75e3b28e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac61dd347a1abbce44a45e7311c62c9ee" id="r_ac61dd347a1abbce44a45e7311c62c9ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html#ac61dd347a1abbce44a45e7311c62c9ee">SetFilter</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> id, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> mask) override</td></tr>
 <tr class="separator:ac61dd347a1abbce44a45e7311c62c9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96dc866167dfe90d1e5250f797c3db56" id="r_a96dc866167dfe90d1e5250f797c3db56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html#a96dc866167dfe90d1e5250f797c3db56">Write</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> id, const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *<a class="el" href="unitree__motor_8hpp.html#a7ea4cf5640b96ae38ed53527f508183a">data</a>, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size) override</td></tr>
 <tr class="memdesc:a96dc866167dfe90d1e5250f797c3db56"><td class="mdescLeft">&#160;</td><td class="mdescRight">立刻向总线上发送数据  <br /></td></tr>
 <tr class="separator:a96dc866167dfe90d1e5250f797c3db56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ac66fa801749b308e0f7ed219eb2299" id="r_a3ac66fa801749b308e0f7ed219eb2299"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html#a3ac66fa801749b308e0f7ed219eb2299">Write</a> () override</td></tr>
-<tr class="separator:a3ac66fa801749b308e0f7ed219eb2299"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad845937d886bfde171d89d164dc33da6" id="r_ad845937d886bfde171d89d164dc33da6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html#ad845937d886bfde171d89d164dc33da6">Enqueue</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> id, const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *<a class="el" href="unitree__motor_8hpp.html#a7ea4cf5640b96ae38ed53527f508183a">data</a>, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size, <a class="el" href="namespacerm_1_1hal.html#ad9ce02a3d77a1b56213e665171676a18">CanTxPriority</a> priority) override</td></tr>
-<tr class="memdesc:ad845937d886bfde171d89d164dc33da6"><td class="mdescLeft">&#160;</td><td class="mdescRight">向消息队列里加入一条消息  <br /></td></tr>
-<tr class="separator:ad845937d886bfde171d89d164dc33da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1277a6601d0376946fe8e21835fad629" id="r_a1277a6601d0376946fe8e21835fad629"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html#a1277a6601d0376946fe8e21835fad629">Begin</a> () override</td></tr>
 <tr class="memdesc:a1277a6601d0376946fe8e21835fad629"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化SocketCan  <br /></td></tr>
 <tr class="separator:a1277a6601d0376946fe8e21835fad629"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,7 +147,7 @@ Public 成员函数</h2></td></tr>
 </table>
 <h2 class="groupheader">构造及析构函数说明</h2>
 <a id="ac4bd286b0aa37ea85b68ea3edf05f913" name="ac4bd286b0aa37ea85b68ea3edf05f913"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4bd286b0aa37ea85b68ea3edf05f913">&#9670;&#160;</a></span>SocketCan() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4bd286b0aa37ea85b68ea3edf05f913">&#9670;&#160;</a></span>SocketCan() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -187,7 +179,7 @@ Public 成员函数</h2></td></tr>
 </div>
 </div>
 <a id="a822bca68a8b9455eaf591a4c9cb61ad3" name="a822bca68a8b9455eaf591a4c9cb61ad3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a822bca68a8b9455eaf591a4c9cb61ad3">&#9670;&#160;</a></span>SocketCan() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a822bca68a8b9455eaf591a4c9cb61ad3">&#9670;&#160;</a></span>SocketCan() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -236,32 +228,6 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a id="ae6e95400435b056107487ebfe0fc80b5" name="ae6e95400435b056107487ebfe0fc80b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6e95400435b056107487ebfe0fc80b5">&#9670;&#160;</a></span>SocketCan() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">rm::hal::linux_::SocketCan::SocketCan </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html">SocketCan</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">成员函数说明</h2>
 <a id="a1277a6601d0376946fe8e21835fad629" name="a1277a6601d0376946fe8e21835fad629"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1277a6601d0376946fe8e21835fad629">&#9670;&#160;</a></span>Begin()</h2>
@@ -289,93 +255,6 @@ Public 成员函数</h2></td></tr>
 <p>初始化SocketCan </p>
 
 <p>实现了 <a class="el" href="classrm_1_1hal_1_1CanInterface.html#a6bae71da4ba4ee5bf9f21cc03f602498">rm::hal::CanInterface</a>.</p>
-
-</div>
-</div>
-<a id="ad845937d886bfde171d89d164dc33da6" name="ad845937d886bfde171d89d164dc33da6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad845937d886bfde171d89d164dc33da6">&#9670;&#160;</a></span>Enqueue()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rm::hal::linux_::SocketCan::Enqueue </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm_1_1hal.html#ad9ce02a3d77a1b56213e665171676a18">CanTxPriority</a>&#160;</td>
-          <td class="paramname"><em>priority</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>向消息队列里加入一条消息 </p>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">id</td><td>数据帧ID </td></tr>
-    <tr><td class="paramname">data</td><td>数据指针 </td></tr>
-    <tr><td class="paramname">size</td><td>数据长度 </td></tr>
-    <tr><td class="paramname">priority</td><td>消息的优先级 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>实现了 <a class="el" href="classrm_1_1hal_1_1CanInterface.html#a63b696861b59fe68c26f65d5d6a9e3c4">rm::hal::CanInterface</a>.</p>
-
-</div>
-</div>
-<a id="a5eece6f63c4eb0b8ef8928d75e3b28e0" name="a5eece6f63c4eb0b8ef8928d75e3b28e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5eece6f63c4eb0b8ef8928d75e3b28e0">&#9670;&#160;</a></span>operator=()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html">SocketCan</a> &amp; rm::hal::linux_::SocketCan::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html">SocketCan</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -453,35 +332,8 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a id="a3ac66fa801749b308e0f7ed219eb2299" name="a3ac66fa801749b308e0f7ed219eb2299"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ac66fa801749b308e0f7ed219eb2299">&#9670;&#160;</a></span>Write() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rm::hal::linux_::SocketCan::Write </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>实现了 <a class="el" href="classrm_1_1hal_1_1CanInterface.html#accf3e101ccb05b4f583bb19aaf1b9bca">rm::hal::CanInterface</a>.</p>
-
-</div>
-</div>
 <a id="a96dc866167dfe90d1e5250f797c3db56" name="a96dc866167dfe90d1e5250f797c3db56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96dc866167dfe90d1e5250f797c3db56">&#9670;&#160;</a></span>Write() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a96dc866167dfe90d1e5250f797c3db56">&#9670;&#160;</a></span>Write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -535,7 +387,7 @@ Public 成员函数</h2></td></tr>
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
-<li>src/librm/hal/linux/<a class="el" href="socketcan_8h_source.html">socketcan.h</a></li>
+<li>src/librm/hal/linux/<a class="el" href="socketcan_8hpp_source.html">socketcan.hpp</a></li>
 <li>src/librm/hal/linux/<a class="el" href="socketcan_8cc.html">socketcan.cc</a></li>
 </ul>
 </div><!-- contents -->

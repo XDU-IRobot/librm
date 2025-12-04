@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: src/librm/modules/angle.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('angle_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">angle.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="angle_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2025 XDU-IRobot</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">  copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"></span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">  copies or substantial portions of the Software.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"></span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef LIBRM_MODULES_ANGLE_HPP</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_MODULES_ANGLE_HPP</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;<a class="code" href="typedefs_8hpp.html">librm/core/typedefs.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1modules.html">rm::modules</a> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="};">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1Angle.html">   40</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1modules_1_1Angle.html">Angle</a> {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1Angle.html#aa0c1fad5d0a4dc26e47a1c321a4b987e">   42</a></span>  <span class="keyword">explicit</span> <span class="keyword">constexpr</span> <a class="code hl_function" href="classrm_1_1modules_1_1Angle.html#aa0c1fad5d0a4dc26e47a1c321a4b987e">Angle</a>(<a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_function" href="classrm_1_1modules_1_1Angle.html#acef6959748a4a2f9ff4d75610cc11cde">rad</a> = 0.f) : value_rad_(<a class="code hl_function" href="classrm_1_1modules_1_1Angle.html#acef6959748a4a2f9ff4d75610cc11cde">rad</a>) {}</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1Angle.html#ae8f0e41d2d9f5bd5c5829a190e1d4e6c">   44</a></span>  <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_function" href="classrm_1_1modules_1_1Angle.html#ae8f0e41d2d9f5bd5c5829a190e1d4e6c">deg</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> value_rad_ * 180.f / <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">M_PI</a>); }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1Angle.html#acef6959748a4a2f9ff4d75610cc11cde">   45</a></span>  <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_function" href="classrm_1_1modules_1_1Angle.html#acef6959748a4a2f9ff4d75610cc11cde">rad</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> value_rad_; }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1Angle.html#afa59f90f6ceebac217aa28bbe5919ad5">   47</a></span>  <span class="keyword">constexpr</span> <a class="code hl_class" href="classrm_1_1modules_1_1Angle.html">Angle</a> <a class="code hl_function" href="classrm_1_1modules_1_1Angle.html#afa59f90f6ceebac217aa28bbe5919ad5">operator+</a>(<span class="keyword">const</span> <a class="code hl_class" href="classrm_1_1modules_1_1Angle.html">Angle</a> &amp;<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">other</a>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_class" href="classrm_1_1modules_1_1Angle.html">Angle</a>{value_rad_ + <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">other</a>.value_rad_}; }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1Angle.html#abac4f9ade756e6638c51c9fc456ac529">   48</a></span>  <span class="keyword">constexpr</span> <a class="code hl_class" href="classrm_1_1modules_1_1Angle.html">Angle</a> <a class="code hl_function" href="classrm_1_1modules_1_1Angle.html#abac4f9ade756e6638c51c9fc456ac529">operator-</a>(<span class="keyword">const</span> <a class="code hl_class" href="classrm_1_1modules_1_1Angle.html">Angle</a> &amp;<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">other</a>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_class" href="classrm_1_1modules_1_1Angle.html">Angle</a>{value_rad_ - <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">other</a>.value_rad_}; }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1Angle.html#af948f2430f69d765394cda08f6d3623e">   49</a></span>  <span class="keyword">constexpr</span> <a class="code hl_class" href="classrm_1_1modules_1_1Angle.html">Angle</a> <a class="code hl_function" href="classrm_1_1modules_1_1Angle.html#af948f2430f69d765394cda08f6d3623e">operator*</a>(<a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">scalar</a>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_class" href="classrm_1_1modules_1_1Angle.html">Angle</a>{value_rad_ * <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">scalar</a>}; }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1Angle.html#ae243e7296b4198d9e5729cfda81f5845">   50</a></span>  <span class="keyword">constexpr</span> <a class="code hl_class" href="classrm_1_1modules_1_1Angle.html">Angle</a> <a class="code hl_function" href="classrm_1_1modules_1_1Angle.html#ae243e7296b4198d9e5729cfda81f5845">operator/</a>(<a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">scalar</a>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_class" href="classrm_1_1modules_1_1Angle.html">Angle</a>{value_rad_ / <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">scalar</a>}; }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1Angle.html#aa01d001a4a88bdd528f22c4dd469db62">   52</a></span>  <span class="keyword">static</span> <a class="code hl_class" href="classrm_1_1modules_1_1Angle.html">Angle</a> <a class="code hl_function" href="classrm_1_1modules_1_1Angle.html#aa01d001a4a88bdd528f22c4dd469db62">FromDeg</a>(<a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_function" href="classrm_1_1modules_1_1Angle.html#ae8f0e41d2d9f5bd5c5829a190e1d4e6c">deg</a>) { <span class="keywordflow">return</span> <a class="code hl_class" href="classrm_1_1modules_1_1Angle.html">Angle</a>{<a class="code hl_function" href="classrm_1_1modules_1_1Angle.html#ae8f0e41d2d9f5bd5c5829a190e1d4e6c">deg</a> * <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">M_PI</a>) / 180.f}; }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1Angle.html#adb10fe6df1eaa0aa1ef0e1e17959accb">   53</a></span>  <span class="keyword">static</span> <a class="code hl_class" href="classrm_1_1modules_1_1Angle.html">Angle</a> <a class="code hl_function" href="classrm_1_1modules_1_1Angle.html#adb10fe6df1eaa0aa1ef0e1e17959accb">FromRad</a>(<a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_function" href="classrm_1_1modules_1_1Angle.html#acef6959748a4a2f9ff4d75610cc11cde">rad</a>) { <span class="keywordflow">return</span> <a class="code hl_class" href="classrm_1_1modules_1_1Angle.html">Angle</a>{<a class="code hl_function" href="classrm_1_1modules_1_1Angle.html#acef6959748a4a2f9ff4d75610cc11cde">rad</a>}; }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> value_rad_;  </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>};</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="namespacerm_1_1modules_1_1angle__literals.html">   59</a></span><span class="keyword">namespace </span>angle_literals {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">constexpr</span> <a class="code hl_class" href="classrm_1_1modules_1_1Angle.html">Angle</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">_deg</a>(<span class="keywordtype">long</span> <span class="keywordtype">double</span> deg) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordflow">return</span> <a class="code hl_class" href="classrm_1_1modules_1_1Angle.html">Angle</a>{<span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a><span class="keyword">&gt;</span>(deg * <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">M_PI</a>) / 180.f)};</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">constexpr</span> <a class="code hl_class" href="classrm_1_1modules_1_1Angle.html">Angle</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">_rad</a>(<span class="keywordtype">long</span> <span class="keywordtype">double</span> rad) { <span class="keywordflow">return</span> <a class="code hl_class" href="classrm_1_1modules_1_1Angle.html">Angle</a>{<span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a><span class="keyword">&gt;</span>(rad)}; }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}  <span class="comment">// namespace angle_literals</span></div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}  <span class="comment">// namespace rm::modules</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_MODULES_ANGLE_H</span></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1Angle_html"><div class="ttname"><a href="classrm_1_1modules_1_1Angle.html">rm::modules::Angle</a></div><div class="ttdoc">角度值、弧度制的转换、计算和表示工具类</div><div class="ttdef"><b>Definition</b> angle.hpp:40</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1Angle_html_aa01d001a4a88bdd528f22c4dd469db62"><div class="ttname"><a href="classrm_1_1modules_1_1Angle.html#aa01d001a4a88bdd528f22c4dd469db62">rm::modules::Angle::FromDeg</a></div><div class="ttdeci">static Angle FromDeg(f32 deg)</div><div class="ttdef"><b>Definition</b> angle.hpp:52</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1Angle_html_aa0c1fad5d0a4dc26e47a1c321a4b987e"><div class="ttname"><a href="classrm_1_1modules_1_1Angle.html#aa0c1fad5d0a4dc26e47a1c321a4b987e">rm::modules::Angle::Angle</a></div><div class="ttdeci">constexpr Angle(f32 rad=0.f)</div><div class="ttdef"><b>Definition</b> angle.hpp:42</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1Angle_html_abac4f9ade756e6638c51c9fc456ac529"><div class="ttname"><a href="classrm_1_1modules_1_1Angle.html#abac4f9ade756e6638c51c9fc456ac529">rm::modules::Angle::operator-</a></div><div class="ttdeci">constexpr Angle operator-(const Angle &amp;other) const</div><div class="ttdef"><b>Definition</b> angle.hpp:48</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1Angle_html_acef6959748a4a2f9ff4d75610cc11cde"><div class="ttname"><a href="classrm_1_1modules_1_1Angle.html#acef6959748a4a2f9ff4d75610cc11cde">rm::modules::Angle::rad</a></div><div class="ttdeci">constexpr f32 rad() const</div><div class="ttdef"><b>Definition</b> angle.hpp:45</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1Angle_html_adb10fe6df1eaa0aa1ef0e1e17959accb"><div class="ttname"><a href="classrm_1_1modules_1_1Angle.html#adb10fe6df1eaa0aa1ef0e1e17959accb">rm::modules::Angle::FromRad</a></div><div class="ttdeci">static Angle FromRad(f32 rad)</div><div class="ttdef"><b>Definition</b> angle.hpp:53</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1Angle_html_ae243e7296b4198d9e5729cfda81f5845"><div class="ttname"><a href="classrm_1_1modules_1_1Angle.html#ae243e7296b4198d9e5729cfda81f5845">rm::modules::Angle::operator/</a></div><div class="ttdeci">constexpr Angle operator/(f32 scalar) const</div><div class="ttdef"><b>Definition</b> angle.hpp:50</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1Angle_html_ae8f0e41d2d9f5bd5c5829a190e1d4e6c"><div class="ttname"><a href="classrm_1_1modules_1_1Angle.html#ae8f0e41d2d9f5bd5c5829a190e1d4e6c">rm::modules::Angle::deg</a></div><div class="ttdeci">constexpr f32 deg() const</div><div class="ttdef"><b>Definition</b> angle.hpp:44</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1Angle_html_af948f2430f69d765394cda08f6d3623e"><div class="ttname"><a href="classrm_1_1modules_1_1Angle.html#af948f2430f69d765394cda08f6d3623e">rm::modules::Angle::operator*</a></div><div class="ttdeci">constexpr Angle operator*(f32 scalar) const</div><div class="ttdef"><b>Definition</b> angle.hpp:49</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1Angle_html_afa59f90f6ceebac217aa28bbe5919ad5"><div class="ttname"><a href="classrm_1_1modules_1_1Angle.html#afa59f90f6ceebac217aa28bbe5919ad5">rm::modules::Angle::operator+</a></div><div class="ttdeci">constexpr Angle operator+(const Angle &amp;other) const</div><div class="ttdef"><b>Definition</b> angle.hpp:47</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html"><div class="ttname"><a href="namespacerm_1_1modules.html">rm::modules</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:33</div></div>
+<div class="ttc" id="anamespacerm_html_abe438454936420638776f339c29718b1"><div class="ttname"><a href="namespacerm.html#abe438454936420638776f339c29718b1">rm::f32</a></div><div class="ttdeci">float f32</div><div class="ttdef"><b>Definition</b> typedefs.hpp:52</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html">rm::modules::NoteFreq</a></div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:93</div></div>
+<div class="ttc" id="atypedefs_8hpp_html"><div class="ttname"><a href="typedefs_8hpp.html">typedefs.hpp</a></div><div class="ttdoc">全局数据类型定义</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_9bd6aa59caad6cbef13c0eefdd946af0.html">modules</a></li><li class="navelem"><a class="el" href="angle_8hpp.html">angle.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

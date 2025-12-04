@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>librm: src/librm/modules/algorithm/ahrs/mahony.cc 文件参考</title>
+<title>librm: src/librm/modules/ahrs/mahony.cc 文件参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,8 +97,9 @@ $(document).ready(function(){initNavTree('mahony_8cc.html',''); initResizable();
   <div class="headertitle"><div class="title">mahony.cc 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="mahony_8h_source.html">mahony.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="utils_8hpp_source.html">librm/modules/algorithm/utils.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="mahony_8hpp_source.html">mahony.hpp</a>&quot;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &quot;<a class="el" href="utils_8hpp_source.html">librm/modules/utils.hpp</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 命名空间</h2></td></tr>
@@ -106,20 +107,18 @@ $(document).ready(function(){initNavTree('mahony_8cc.html',''); initResizable();
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacerm_1_1modules" id="r_namespacerm_1_1modules"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html">rm::modules</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacerm_1_1modules_1_1algorithm" id="r_namespacerm_1_1modules_1_1algorithm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules_1_1algorithm.html">rm::modules::algorithm</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 函数</h2></td></tr>
-<tr class="memitem:a9d4b5b00a44f29a082ff4ad27d362b4e" id="r_a9d4b5b00a44f29a082ff4ad27d362b4e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules_1_1algorithm.html#a9d4b5b00a44f29a082ff4ad27d362b4e">rm::modules::algorithm::InvSqrt</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> x)</td></tr>
-<tr class="separator:a9d4b5b00a44f29a082ff4ad27d362b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66277a3c6147831ea573519977117e82" id="r_a66277a3c6147831ea573519977117e82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a66277a3c6147831ea573519977117e82">rm::modules::InvSqrt</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> x)</td></tr>
+<tr class="separator:a66277a3c6147831ea573519977117e82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_9bd6aa59caad6cbef13c0eefdd946af0.html">modules</a></li><li class="navelem"><a class="el" href="dir_eabaf14e3296d098547794244d58ab73.html">algorithm</a></li><li class="navelem"><a class="el" href="dir_fe5e5c54235b65110e7fc9f948f4aea1.html">ahrs</a></li><li class="navelem"><a class="el" href="mahony_8cc.html">mahony.cc</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_9bd6aa59caad6cbef13c0eefdd946af0.html">modules</a></li><li class="navelem"><a class="el" href="dir_15311b616e9958c3958366363e9fbff5.html">ahrs</a></li><li class="navelem"><a class="el" href="mahony_8cc.html">mahony.cc</a></li>
     <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

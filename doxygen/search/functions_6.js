@@ -1,10 +1,15 @@
 var searchData=
 [
-  ['f_0',['f',['../classrm_1_1modules_1_1algorithm_1_1SystemModel.html#adc13dece2d3c62a4985bb098b5c9b15a',1,'rm::modules::algorithm::SystemModel']]],
-  ['f16tof32_1',['F16ToF32',['../namespacerm_1_1modules_1_1algorithm.html#ac1ff1e8c3f68a79c253fe139e6533ebd',1,'rm::modules::algorithm']]],
-  ['f32tof16_2',['F32ToF16',['../namespacerm_1_1modules_1_1algorithm.html#a1dc72a39f4842241baeb1bf74840912e',1,'rm::modules::algorithm']]],
-  ['feedback_3',['feedback',['../classrm_1_1device_1_1ZdtStepper.html#a769f1a0e22c9aff167e12358033e3b7d',1,'rm::device::ZdtStepper']]],
-  ['floattoint_4',['FloatToInt',['../namespacerm_1_1modules_1_1algorithm_1_1utils.html#ad2e429d98c36dca103e0bdf1bc2f9e4c',1,'rm::modules::algorithm::utils']]],
-  ['forward_5',['forward',['../classrm_1_1modules_1_1algorithm_1_1MecanumChassis.html#a1bfcde444128cf3c19e6010d7212589d',1,'rm::modules::algorithm::MecanumChassis::Forward()'],['../classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a59ed782f98ae12c36c110109ed9ba6f1',1,'rm::modules::algorithm::SteeringChassis::Forward(f32 vx, f32 vy, f32 w)'],['../classrm_1_1modules_1_1algorithm_1_1SteeringChassis.html#a3027988d66a4d52c47c82f6a50d8eda5',1,'rm::modules::algorithm::SteeringChassis::Forward(f32 vx, f32 vy, f32 w, f32 current_lf_angle, f32 current_rf_angle, f32 current_lr_angle, f32 current_rr_angle)'],['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a2914e45dea789ac26249c753a1de20f2',1,'rm::modules::algorithm::QuadOmniChassis::Forward()']]],
-  ['forward_5fresult_6',['forward_result',['../classrm_1_1modules_1_1algorithm_1_1MecanumChassis.html#a83820c7f53bc636b7318f471ee6ef5a4',1,'rm::modules::algorithm::MecanumChassis::forward_result()'],['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html#a9c28bfa26589fbeb0ed6fab90de30aef',1,'rm::modules::algorithm::QuadOmniChassis::forward_result()']]]
+  ['f_0',['f',['../classrm_1_1modules_1_1SystemModel.html#a20ec8a61f6facee82e6c141a5f45479a',1,'rm::modules::SystemModel']]],
+  ['f16tof32_1',['F16ToF32',['../namespacerm_1_1modules.html#a93db9bcf6668458e04decaa8a6b2c94c',1,'rm::modules']]],
+  ['f32tof16_2',['F32ToF16',['../namespacerm_1_1modules.html#aeee0650b70e2b8a7eec52f4ca98df9e8',1,'rm::modules']]],
+  ['failsafe_3',['failsafe',['../classrm_1_1device_1_1Sbus.html#a0abc3084611197863e3f6256caee29d5',1,'rm::device::Sbus']]],
+  ['feedback_4',['feedback',['../classrm_1_1device_1_1LkMotor.html#ac19ea1cb1010e837131e6a9b75033890',1,'rm::device::LkMotor::feedback()'],['../classrm_1_1device_1_1ZdtStepper.html#a769f1a0e22c9aff167e12358033e3b7d',1,'rm::device::ZdtStepper::feedback()']]],
+  ['floattoint_5',['FloatToInt',['../namespacerm_1_1modules.html#afd7996d2a8e6184242c411f05a94cd65',1,'rm::modules']]],
+  ['forward_6',['forward',['../classrm_1_1modules_1_1QuadOmniChassis.html#abbe6c334c380065bbc36258807d57351',1,'rm::modules::QuadOmniChassis::Forward()'],['../classrm_1_1modules_1_1SteeringChassis.html#ada5fd5ba2160904a7fe4fc6f577774a3',1,'rm::modules::SteeringChassis::Forward(f32 vx, f32 vy, f32 w, f32 current_lf_angle, f32 current_rf_angle, f32 current_lr_angle, f32 current_rr_angle)'],['../classrm_1_1modules_1_1SteeringChassis.html#a644a94c4ebf49dc41bb9c2729f2a0455',1,'rm::modules::SteeringChassis::Forward(f32 vx, f32 vy, f32 w)'],['../classrm_1_1modules_1_1MecanumChassis.html#a069011204669bc227f1f3153e251027f',1,'rm::modules::MecanumChassis::Forward(f32 vx, f32 vy, f32 wz)']]],
+  ['forward_5fresult_7',['forward_result',['../classrm_1_1modules_1_1MecanumChassis.html#aae2be5386784958bc87fa708ae17a096',1,'rm::modules::MecanumChassis::forward_result()'],['../classrm_1_1modules_1_1QuadOmniChassis.html#ac46ad7ec11d7d3932ebee57a3115293e',1,'rm::modules::QuadOmniChassis::forward_result()']]],
+  ['frame_5flost_8',['frame_lost',['../classrm_1_1device_1_1Sbus.html#a954e15c651e398b3da32d7e7610aa0ed',1,'rm::device::Sbus']]],
+  ['fromdeg_9',['FromDeg',['../classrm_1_1modules_1_1Angle.html#aa01d001a4a88bdd528f22c4dd469db62',1,'rm::modules::Angle']]],
+  ['fromrad_10',['FromRad',['../classrm_1_1modules_1_1Angle.html#adb10fe6df1eaa0aa1ef0e1e17959accb',1,'rm::modules::Angle']]],
+  ['fuzzyinfer_11',['fuzzyinfer',['../classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#a6d0b9ddd6096203e8d779355dae17c5e',1,'rm::modules::PID::FuzzyInfer::FuzzyInfer()=delete'],['../classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#aac49bcfa4c08accf2f6d93fb8abb377c',1,'rm::modules::PID::FuzzyInfer::FuzzyInfer(RuleTable rule_table)']]]
 ];

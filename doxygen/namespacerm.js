@@ -1,10 +1,11 @@
 var namespacerm =
 [
-    [ "core", "namespacerm_1_1core.html", "namespacerm_1_1core" ],
+    [ "detail", "namespacerm_1_1detail.html", "namespacerm_1_1detail" ],
     [ "device", "namespacerm_1_1device.html", "namespacerm_1_1device" ],
     [ "hal", "namespacerm_1_1hal.html", "namespacerm_1_1hal" ],
     [ "modules", "namespacerm_1_1modules.html", "namespacerm_1_1modules" ],
     [ "hal_error", "classrm_1_1hal__error.html", "classrm_1_1hal__error" ],
+    [ "ThreadPool", "classrm_1_1ThreadPool.html", "classrm_1_1ThreadPool" ],
     [ "f32", "namespacerm.html#abe438454936420638776f339c29718b1", null ],
     [ "f64", "namespacerm.html#a9fea0b33753053edbc024452364b2e92", null ],
     [ "i16", "namespacerm.html#ab0024293c4410554bd98c9bb792c8afb", null ],
@@ -16,5 +17,6 @@ var namespacerm =
     [ "u64", "namespacerm.html#a0863ccbdab2c54f662053f0496ed09f4", null ],
     [ "u8", "namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34", null ],
     [ "usize", "namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630", null ],
+    [ "Sleep", "namespacerm.html#a4f8a1bdc2c9b56c0f7607a4e5b9a1453", null ],
     [ "Throw", "namespacerm.html#af69326a719d5dfef55cdbe321f815a44", null ]
 ];

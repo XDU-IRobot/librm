@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: src/librm/device/device.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('device_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">device.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="device_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2025 XDU-IRobot</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">  copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"></span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">  copies or substantial portions of the Software.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"></span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef LIBRM_DEVICE_DEVICE_HPP</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_DEVICE_DEVICE_HPP</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;initializer_list&gt;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;etl/vector.h&gt;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="core_2exception_8hpp.html">librm/core/exception.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1device.html">rm::device</a> {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Device.html">   44</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keyword">using </span>time_point = std::chrono::time_point&lt;std::chrono::steady_clock&gt;;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keyword">using </span>duration = std::chrono::steady_clock::duration;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Device.html#a7cfac1f099daba6efea2fc462a5fa7c2">   49</a></span>  <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a7cfac1f099daba6efea2fc462a5fa7c2">Device</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Device.html#abc47f697e77010da09e8449f3d5a9094">   50</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="classrm_1_1device_1_1Device.html#abc47f697e77010da09e8449f3d5a9094">~Device</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a227f58f357e464c7699866378a89b7dc">SetHeartbeatTimeout</a>(duration timeout);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classrm_1_1device_1_1Device.html#ae24e0283ae6acdb1856f2e5fcb2dc72f">Ok</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  [[nodiscard]] time_point <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a0f1b8eb171231fad7f23adac2879224b">last_seen</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> <span class="keyword">protected</span>:</div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="};">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">   73</a></span>  <span class="keyword">enum</span> <a class="code hl_enumeration" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Status</a> {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5">   74</a></span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5">kUnknown</a> = -1,  </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca49868fdd51a9c221b3b9c076adc6d64e">   75</a></span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca49868fdd51a9c221b3b9c076adc6d64e">kOffline</a>,       </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca888af1cb59179c046f400d9fdd64dc0c">   76</a></span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca888af1cb59179c046f400d9fdd64dc0c">kFault</a>,         </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21">   77</a></span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21">kOk</a>,            </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  };</div>
+</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a7cc99f092ea347a682754478b34e489a">ReportStatus</a>(<a class="code hl_enumeration" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Status</a> status);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <a class="code hl_enumeration" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Status</a> online_status_{<a class="code hl_enumvalue" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5">kUnknown</a>};</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  time_point last_seen_{time_point::min()};              </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  duration heartbeat_timeout_{std::chrono::seconds(1)};  </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>};</div>
+</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> kMaxDevices, <span class="keywordtype">bool</span> kUseStdFunctionCallback = true&gt;</div>
+<div class="foldopen" id="foldopen00098" data-start="{" data-end="};">
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1DeviceManager.html">   98</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1device_1_1DeviceManager.html">DeviceManager</a> {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keyword">using </span>CallbackType =                                   <span class="comment">//</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      std::conditional_t&lt;kUseStdFunctionCallback,        <span class="comment">//</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                         std::function&lt;void(<a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> *)&gt;,  <span class="comment">//</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                         void (*)(<a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> *)&gt;;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1DeviceManager.html#a028d1a34e435a947241fef7e1c18dcbd">  105</a></span>  <a class="code hl_function" href="classrm_1_1device_1_1DeviceManager.html#a028d1a34e435a947241fef7e1c18dcbd">DeviceManager</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1DeviceManager.html#a860e6398d4a4d0c04b2ef5f853d28e00">  107</a></span>  <a class="code hl_function" href="classrm_1_1device_1_1DeviceManager.html#a860e6398d4a4d0c04b2ef5f853d28e00">DeviceManager</a>(std::initializer_list&lt;Device *&gt; devices) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">if</span> (devices.size() &lt;= kMaxDevices) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      devices_ = devices;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      <a class="code hl_function" href="namespacerm.html#af69326a719d5dfef55cdbe321f815a44">Throw</a>(std::runtime_error(<span class="stringliteral">&quot;DeviceManager: Too many devices!&quot;</span>));</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  }</div>
+</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1DeviceManager.html#a22459fd6171f9d231c9f7736fe7ffbc3">  115</a></span>  <a class="code hl_class" href="classrm_1_1device_1_1DeviceManager.html">DeviceManager</a> &amp;<a class="code hl_function" href="classrm_1_1device_1_1DeviceManager.html#a22459fd6171f9d231c9f7736fe7ffbc3">operator&lt;&lt;</a>(<a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> *device) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">if</span> (devices_.size() &lt; kMaxDevices) {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      devices_.push_back(device);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>      <a class="code hl_function" href="namespacerm.html#af69326a719d5dfef55cdbe321f815a44">Throw</a>(std::runtime_error(<span class="stringliteral">&quot;DeviceManager: Too many devices!&quot;</span>));</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  }</div>
+</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="foldopen" id="foldopen00128" data-start="{" data-end="}">
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1DeviceManager.html#a8cb8238051a0b07445bde3f7d7894409">  128</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classrm_1_1device_1_1DeviceManager.html#a8cb8238051a0b07445bde3f7d7894409">Update</a>() {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    all_device_ok_ = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> device : devices_) {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      <span class="keywordflow">if</span> (!device-&gt;Ok()) {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        all_device_ok_ = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;callback : fault_offline_callbacks_) {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>          callback(device);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>      }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordflow">return</span> all_device_ok_;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  }</div>
+</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="foldopen" id="foldopen00145" data-start="{" data-end="}">
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1DeviceManager.html#aaea4f336ab87673234dfc2bd83eb3901">  145</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1DeviceManager.html#aaea4f336ab87673234dfc2bd83eb3901">OnDeviceFaultOrOffline</a>(CallbackType callback) {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keywordflow">if</span> (fault_offline_callbacks_.size() &lt; 10) {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>      fault_offline_callbacks_.emplace_back(callback);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>      <a class="code hl_function" href="namespacerm.html#af69326a719d5dfef55cdbe321f815a44">Throw</a>(std::runtime_error(<span class="stringliteral">&quot;DeviceManager: Too many fault callbacks!&quot;</span>));</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  }</div>
+</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1DeviceManager.html#a91de39c2ba38e6dab33c9cbe3df54ed8">  156</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classrm_1_1device_1_1DeviceManager.html#a91de39c2ba38e6dab33c9cbe3df54ed8">all_device_ok</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> all_device_ok_; }</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  <span class="keywordtype">bool</span> all_device_ok_{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  etl::vector&lt;CallbackType, 10&gt; fault_offline_callbacks_;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  etl::vector&lt;Device *, kMaxDevices&gt; devices_;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>};</div>
+</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>}  <span class="comment">// namespace rm::device</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_DEVICE_DEVICE_HPP</span></div>
+<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html">rm::device::DeviceManager</a></div><div class="ttdoc">设备管理器，用来维护多个设备的在线状态</div><div class="ttdef"><b>Definition</b> device.hpp:98</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_a028d1a34e435a947241fef7e1c18dcbd"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#a028d1a34e435a947241fef7e1c18dcbd">rm::device::DeviceManager::DeviceManager</a></div><div class="ttdeci">DeviceManager()=default</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_a22459fd6171f9d231c9f7736fe7ffbc3"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#a22459fd6171f9d231c9f7736fe7ffbc3">rm::device::DeviceManager::operator&lt;&lt;</a></div><div class="ttdeci">DeviceManager &amp; operator&lt;&lt;(Device *device)</div><div class="ttdef"><b>Definition</b> device.hpp:115</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_a860e6398d4a4d0c04b2ef5f853d28e00"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#a860e6398d4a4d0c04b2ef5f853d28e00">rm::device::DeviceManager::DeviceManager</a></div><div class="ttdeci">DeviceManager(std::initializer_list&lt; Device * &gt; devices)</div><div class="ttdef"><b>Definition</b> device.hpp:107</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_a8cb8238051a0b07445bde3f7d7894409"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#a8cb8238051a0b07445bde3f7d7894409">rm::device::DeviceManager::Update</a></div><div class="ttdeci">bool Update()</div><div class="ttdoc">更新所有设备的在线状态</div><div class="ttdef"><b>Definition</b> device.hpp:128</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_a91de39c2ba38e6dab33c9cbe3df54ed8"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#a91de39c2ba38e6dab33c9cbe3df54ed8">rm::device::DeviceManager::all_device_ok</a></div><div class="ttdeci">bool all_device_ok() const</div><div class="ttdef"><b>Definition</b> device.hpp:156</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_aaea4f336ab87673234dfc2bd83eb3901"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#aaea4f336ab87673234dfc2bd83eb3901">rm::device::DeviceManager::OnDeviceFaultOrOffline</a></div><div class="ttdeci">void OnDeviceFaultOrOffline(CallbackType callback)</div><div class="ttdoc">注册设备故障或离线回调</div><div class="ttdef"><b>Definition</b> device.hpp:145</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html"><div class="ttname"><a href="classrm_1_1device_1_1Device.html">rm::device::Device</a></div><div class="ttdoc">驱动框架的设备基类，主要功能为监视设备在线状态</div><div class="ttdef"><b>Definition</b> device.hpp:44</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a0f1b8eb171231fad7f23adac2879224b"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a0f1b8eb171231fad7f23adac2879224b">rm::device::Device::last_seen</a></div><div class="ttdeci">time_point last_seen() const</div><div class="ttdef"><b>Definition</b> device.cc:43</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a16a7bedc3fb137033e1537713d3626bc"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">rm::device::Device::Status</a></div><div class="ttdeci">Status</div><div class="ttdoc">设备状态</div><div class="ttdef"><b>Definition</b> device.hpp:73</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5">rm::device::Device::kUnknown</a></div><div class="ttdeci">@ kUnknown</div><div class="ttdoc">未知</div><div class="ttdef"><b>Definition</b> device.hpp:74</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a16a7bedc3fb137033e1537713d3626bca49868fdd51a9c221b3b9c076adc6d64e"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca49868fdd51a9c221b3b9c076adc6d64e">rm::device::Device::kOffline</a></div><div class="ttdeci">@ kOffline</div><div class="ttdoc">离线</div><div class="ttdef"><b>Definition</b> device.hpp:75</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a16a7bedc3fb137033e1537713d3626bca888af1cb59179c046f400d9fdd64dc0c"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca888af1cb59179c046f400d9fdd64dc0c">rm::device::Device::kFault</a></div><div class="ttdeci">@ kFault</div><div class="ttdoc">在线但存在故障（比如电机过流）</div><div class="ttdef"><b>Definition</b> device.hpp:76</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21">rm::device::Device::kOk</a></div><div class="ttdeci">@ kOk</div><div class="ttdoc">在线且正常工作</div><div class="ttdef"><b>Definition</b> device.hpp:77</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a227f58f357e464c7699866378a89b7dc"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a227f58f357e464c7699866378a89b7dc">rm::device::Device::SetHeartbeatTimeout</a></div><div class="ttdeci">void SetHeartbeatTimeout(duration timeout)</div><div class="ttdoc">设置心跳超时时间</div><div class="ttdef"><b>Definition</b> device.cc:32</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a7cc99f092ea347a682754478b34e489a"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a7cc99f092ea347a682754478b34e489a">rm::device::Device::ReportStatus</a></div><div class="ttdeci">void ReportStatus(Status status)</div><div class="ttdoc">更新设备状态</div><div class="ttdef"><b>Definition</b> device.cc:45</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a7cfac1f099daba6efea2fc462a5fa7c2"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a7cfac1f099daba6efea2fc462a5fa7c2">rm::device::Device::Device</a></div><div class="ttdeci">Device()=default</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_abc47f697e77010da09e8449f3d5a9094"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#abc47f697e77010da09e8449f3d5a9094">rm::device::Device::~Device</a></div><div class="ttdeci">virtual ~Device()=default</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_ae24e0283ae6acdb1856f2e5fcb2dc72f"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#ae24e0283ae6acdb1856f2e5fcb2dc72f">rm::device::Device::Ok</a></div><div class="ttdeci">bool Ok()</div><div class="ttdef"><b>Definition</b> device.cc:34</div></div>
+<div class="ttc" id="acore_2exception_8hpp_html"><div class="ttname"><a href="core_2exception_8hpp.html">exception.hpp</a></div><div class="ttdoc">异常处理</div></div>
+<div class="ttc" id="anamespacerm_1_1device_html"><div class="ttname"><a href="namespacerm_1_1device.html">rm::device</a></div><div class="ttdef"><b>Definition</b> directdrive_motor.cc:37</div></div>
+<div class="ttc" id="anamespacerm_html_af69326a719d5dfef55cdbe321f815a44"><div class="ttname"><a href="namespacerm.html#af69326a719d5dfef55cdbe321f815a44">rm::Throw</a></div><div class="ttdeci">void Throw(__attribute__((__unused__)) const std::exception &amp;e)</div><div class="ttdoc">抛出异常</div><div class="ttdef"><b>Definition</b> exception.hpp:43</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_e8cded2b3f09657169024877e246b3be.html">device</a></li><li class="navelem"><a class="el" href="device_8hpp.html">device.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

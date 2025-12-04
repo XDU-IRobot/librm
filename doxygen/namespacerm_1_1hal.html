@@ -94,8 +94,7 @@ $(document).ready(function(){initNavTree('namespacerm_1_1hal.html',''); initResi
   <div class="summary">
 <a href="#namespaces">命名空间</a> &#124;
 <a href="#nested-classes">类</a> &#124;
-<a href="#typedef-members">类型定义</a> &#124;
-<a href="#enum-members">枚举</a>  </div>
+<a href="#typedef-members">类型定义</a>  </div>
   <div class="headertitle"><div class="title">rm::hal 命名空间参考</div></div>
 </div><!--header-->
 <div class="contents">
@@ -109,13 +108,16 @@ $(document).ready(function(){initNavTree('namespacerm_1_1hal.html',''); initResi
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1hal_1_1CanFrame.html">CanFrame</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1CanInterface.html">CanInterface</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CAN接口类  <a href="classrm_1_1hal_1_1CanInterface.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1hal_1_1CanMsg.html">CanMsg</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1PinInterface.html">PinInterface</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO引脚接口类  <a href="classrm_1_1hal_1_1PinInterface.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1PollingTimer.html">PollingTimer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">轮询式定时器实现（适用于无chrono环境，如STM32）。通过手动累加时间增量实现超时检测，需定期调用 <a class="el" href="classrm_1_1hal_1_1PollingTimer.html#a585e8891be991407a32b4c47e12be9bf" title="轮询定时器状态，需手动传入本次时间增量。">Poll()</a>。  <a href="classrm_1_1hal_1_1PollingTimer.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SerialInterface.html">SerialInterface</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">串口接口类  <a href="classrm_1_1hal_1_1SerialInterface.html#details">更多...</a><br /></td></tr>
@@ -123,20 +125,15 @@ $(document).ready(function(){initNavTree('namespacerm_1_1hal.html',''); initResi
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SpiInterface.html">SpiInterface</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI接口类  <a href="classrm_1_1hal_1_1SpiInterface.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1TimerInterface.html">TimerInterface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">定时器接口类，定义了定时器的基本操作。  <a href="classrm_1_1hal_1_1TimerInterface.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 类型定义</h2></td></tr>
 <tr class="memitem:ab6c25fb295d0b957ffb1181fa48b787c" id="r_ab6c25fb295d0b957ffb1181fa48b787c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1hal.html#ab6c25fb295d0b957ffb1181fa48b787c">SerialRxCallbackFunction</a> = std::function&lt; void(const std::vector&lt; <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> &gt; &amp;, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>)&gt;</td></tr>
 <tr class="memdesc:ab6c25fb295d0b957ffb1181fa48b787c"><td class="mdescLeft">&#160;</td><td class="mdescRight">串口接收完成回调函数类型，传入的参数分别为接收到的数据和数据长度  <br /></td></tr>
 <tr class="separator:ab6c25fb295d0b957ffb1181fa48b787c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-枚举</h2></td></tr>
-<tr class="memitem:ad9ce02a3d77a1b56213e665171676a18" id="r_ad9ce02a3d77a1b56213e665171676a18"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1hal.html#ad9ce02a3d77a1b56213e665171676a18">CanTxPriority</a> { <a class="el" href="namespacerm_1_1hal.html#ad9ce02a3d77a1b56213e665171676a18acd8fe42741a3bbc973bbf1d404afeff4">kLow</a>
-, <a class="el" href="namespacerm_1_1hal.html#ad9ce02a3d77a1b56213e665171676a18a07fa7a19aa722c635a15e94cb7f50416">kNormal</a>
-, <a class="el" href="namespacerm_1_1hal.html#ad9ce02a3d77a1b56213e665171676a18aa022f15e910eb36278094efb6e808a07">kHigh</a>
- }</td></tr>
-<tr class="separator:ad9ce02a3d77a1b56213e665171676a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">类型定义说明</h2>
 <a id="ab6c25fb295d0b957ffb1181fa48b787c" name="ab6c25fb295d0b957ffb1181fa48b787c"></a>
@@ -152,34 +149,6 @@ $(document).ready(function(){initNavTree('namespacerm_1_1hal.html',''); initResi
 </div><div class="memdoc">
 
 <p>串口接收完成回调函数类型，传入的参数分别为接收到的数据和数据长度 </p>
-
-</div>
-</div>
-<h2 class="groupheader">枚举类型说明</h2>
-<a id="ad9ce02a3d77a1b56213e665171676a18" name="ad9ce02a3d77a1b56213e665171676a18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9ce02a3d77a1b56213e665171676a18">&#9670;&#160;</a></span>CanTxPriority</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="namespacerm_1_1hal.html#ad9ce02a3d77a1b56213e665171676a18">rm::hal::CanTxPriority</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ad9ce02a3d77a1b56213e665171676a18acd8fe42741a3bbc973bbf1d404afeff4" name="ad9ce02a3d77a1b56213e665171676a18acd8fe42741a3bbc973bbf1d404afeff4"></a>kLow&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ad9ce02a3d77a1b56213e665171676a18a07fa7a19aa722c635a15e94cb7f50416" name="ad9ce02a3d77a1b56213e665171676a18a07fa7a19aa722c635a15e94cb7f50416"></a>kNormal&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ad9ce02a3d77a1b56213e665171676a18aa022f15e910eb36278094efb6e808a07" name="ad9ce02a3d77a1b56213e665171676a18aa022f15e910eb36278094efb6e808a07"></a>kHigh&#160;</td><td class="fielddoc"></td></tr>
-</table>
 
 </div>
 </div>

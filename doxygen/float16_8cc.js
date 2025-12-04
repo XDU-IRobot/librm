@@ -1,5 +1,5 @@
 var float16_8cc =
 [
-    [ "F16ToF32", "float16_8cc.html#ac1ff1e8c3f68a79c253fe139e6533ebd", null ],
-    [ "F32ToF16", "float16_8cc.html#a1dc72a39f4842241baeb1bf74840912e", null ]
+    [ "F16ToF32", "float16_8cc.html#a93db9bcf6668458e04decaa8a6b2c94c", null ],
+    [ "F32ToF16", "float16_8cc.html#aeee0650b70e2b8a7eec52f4ca98df9e8", null ]
 ];

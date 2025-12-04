@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: rm::hal::TimerInterface类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classrm_1_1hal_1_1TimerInterface.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classrm_1_1hal_1_1TimerInterface-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">rm::hal::TimerInterface类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>定时器接口类，定义了定时器的基本操作。  
+ <a href="classrm_1_1hal_1_1TimerInterface.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="timer__interface_8hpp_source.html">timer_interface.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 rm::hal::TimerInterface 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classrm_1_1hal_1_1TimerInterface.png" usemap="#rm::hal::TimerInterface_map" alt=""/>
+  <map id="rm::hal::TimerInterface_map" name="rm::hal::TimerInterface_map">
+<area href="classrm_1_1hal_1_1PollingTimer.html" title="轮询式定时器实现（适用于无chrono环境，如STM32）。通过手动累加时间增量实现超时检测，需定期调用 Poll()。" alt="rm::hal::PollingTimer" shape="rect" coords="0,56,140,80"/>
+<area href="classrm_1_1hal_1_1linux___1_1TimerFd.html" alt="rm::hal::linux_::TimerFd" shape="rect" coords="150,56,290,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a1bef017e0108d003db1824cae45596a6" id="r_a1bef017e0108d003db1824cae45596a6"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1TimerInterface.html#a1bef017e0108d003db1824cae45596a6">~TimerInterface</a> ()=default</td></tr>
+<tr class="memdesc:a1bef017e0108d003db1824cae45596a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">虚析构函数，保证派生类正确析构。  <br /></td></tr>
+<tr class="separator:a1bef017e0108d003db1824cae45596a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7de4f88db98dd58d9340200c1bf8000b" id="r_a7de4f88db98dd58d9340200c1bf8000b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1TimerInterface.html#a7de4f88db98dd58d9340200c1bf8000b">Start</a> (std::chrono::duration&lt; <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> &gt; timeout)=0</td></tr>
+<tr class="memdesc:a7de4f88db98dd58d9340200c1bf8000b"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动定时器。  <br /></td></tr>
+<tr class="separator:a7de4f88db98dd58d9340200c1bf8000b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aebde6ef217b09c3b20dac2c1ae144b" id="r_a4aebde6ef217b09c3b20dac2c1ae144b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1TimerInterface.html#a4aebde6ef217b09c3b20dac2c1ae144b">Stop</a> ()=0</td></tr>
+<tr class="memdesc:a4aebde6ef217b09c3b20dac2c1ae144b"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止定时器。  <br /></td></tr>
+<tr class="separator:a4aebde6ef217b09c3b20dac2c1ae144b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52f7f82b05c9ba14f4ebe6195d95e2e0" id="r_a52f7f82b05c9ba14f4ebe6195d95e2e0"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1TimerInterface.html#a52f7f82b05c9ba14f4ebe6195d95e2e0">running</a> () const =0</td></tr>
+<tr class="memdesc:a52f7f82b05c9ba14f4ebe6195d95e2e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询定时器是否正在运行。  <br /></td></tr>
+<tr class="separator:a52f7f82b05c9ba14f4ebe6195d95e2e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a006da585e7397010f96acbf6912f18bc" id="r_a006da585e7397010f96acbf6912f18bc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1TimerInterface.html#a006da585e7397010f96acbf6912f18bc">AttachCallback</a> (etl::delegate&lt; void()&gt; callback)=0</td></tr>
+<tr class="memdesc:a006da585e7397010f96acbf6912f18bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">绑定定时器超时回调函数。  <br /></td></tr>
+<tr class="separator:a006da585e7397010f96acbf6912f18bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>定时器接口类，定义了定时器的基本操作。 </p>
+<p>该接口用于抽象定时器的启动、停止、运行状态查询及回调绑定。 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a1bef017e0108d003db1824cae45596a6" name="a1bef017e0108d003db1824cae45596a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bef017e0108d003db1824cae45596a6">&#9670;&#160;</a></span>~TimerInterface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual rm::hal::TimerInterface::~TimerInterface </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>虚析构函数，保证派生类正确析构。 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a006da585e7397010f96acbf6912f18bc" name="a006da585e7397010f96acbf6912f18bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a006da585e7397010f96acbf6912f18bc">&#9670;&#160;</a></span>AttachCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void rm::hal::TimerInterface::AttachCallback </td>
+          <td>(</td>
+          <td class="paramtype">etl::delegate&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>callback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>绑定定时器超时回调函数。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">callback</td><td>超时后调用的回调函数。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在 <a class="el" href="classrm_1_1hal_1_1linux___1_1TimerFd.html#a89045a3e236fd4c862da4ede8c088f1e">rm::hal::linux_::TimerFd</a> , 以及 <a class="el" href="classrm_1_1hal_1_1PollingTimer.html#adbc7c12093cacb0d50b62d99b8d72efe">rm::hal::PollingTimer</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a52f7f82b05c9ba14f4ebe6195d95e2e0" name="a52f7f82b05c9ba14f4ebe6195d95e2e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52f7f82b05c9ba14f4ebe6195d95e2e0">&#9670;&#160;</a></span>running()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool rm::hal::TimerInterface::running </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>查询定时器是否正在运行。 </p>
+<dl class="section return"><dt>返回</dt><dd>若定时器正在运行返回true，否则返回false。 </dd></dl>
+
+<p>在 <a class="el" href="classrm_1_1hal_1_1linux___1_1TimerFd.html#a70728ecbe071c725b322ff4e754913d8">rm::hal::linux_::TimerFd</a> , 以及 <a class="el" href="classrm_1_1hal_1_1PollingTimer.html#ad89b5f29685b3a233f1e10eeab68312f">rm::hal::PollingTimer</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a7de4f88db98dd58d9340200c1bf8000b" name="a7de4f88db98dd58d9340200c1bf8000b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7de4f88db98dd58d9340200c1bf8000b">&#9670;&#160;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void rm::hal::TimerInterface::Start </td>
+          <td>(</td>
+          <td class="paramtype">std::chrono::duration&lt; <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> &gt;&#160;</td>
+          <td class="paramname"><em>timeout</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>启动定时器。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeout</td><td>定时器超时时间。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在 <a class="el" href="classrm_1_1hal_1_1linux___1_1TimerFd.html#aab587463194b4e717309fb292e0a4459">rm::hal::linux_::TimerFd</a> , 以及 <a class="el" href="classrm_1_1hal_1_1PollingTimer.html#a51729204e4154b8da07ec6d7b49a3dba">rm::hal::PollingTimer</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a4aebde6ef217b09c3b20dac2c1ae144b" name="a4aebde6ef217b09c3b20dac2c1ae144b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aebde6ef217b09c3b20dac2c1ae144b">&#9670;&#160;</a></span>Stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void rm::hal::TimerInterface::Stop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>停止定时器。 </p>
+
+<p>在 <a class="el" href="classrm_1_1hal_1_1linux___1_1TimerFd.html#a9ba8bbb534dcc892b32df26447846aeb">rm::hal::linux_::TimerFd</a> , 以及 <a class="el" href="classrm_1_1hal_1_1PollingTimer.html#a4cc943f448aeb02c3e1241a004f42d6b">rm::hal::PollingTimer</a> 内被实现.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/librm/hal/<a class="el" href="timer__interface_8hpp_source.html">timer_interface.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1hal.html">hal</a></li><li class="navelem"><a class="el" href="classrm_1_1hal_1_1TimerInterface.html">TimerInterface</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

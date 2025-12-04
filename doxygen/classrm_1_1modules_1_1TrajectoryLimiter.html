@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: rm::modules::TrajectoryLimiter类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classrm_1_1modules_1_1TrajectoryLimiter.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classrm_1_1modules_1_1TrajectoryLimiter-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">rm::modules::TrajectoryLimiter类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>轨迹限制器 给定最大速度和最大加速度，限制输入信号，使其不超过速度和加速度约束。 如果输入信号本身未超出约束，则输出与输入相同。  
+ <a href="classrm_1_1modules_1_1TrajectoryLimiter.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="trajectory__limiter_8hpp_source.html">trajectory_limiter.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aa70d6f06c8ea739cfba592c14b33bd8c" id="r_aa70d6f06c8ea739cfba592c14b33bd8c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#aa70d6f06c8ea739cfba592c14b33bd8c">TrajectoryLimiter</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">max_vel</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">max_accel</a>)</td></tr>
+<tr class="separator:aa70d6f06c8ea739cfba592c14b33bd8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a6c3be5e8263b3344435a659695f282" id="r_a6a6c3be5e8263b3344435a659695f282"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a6a6c3be5e8263b3344435a659695f282">SetTarget</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">target</a>)</td></tr>
+<tr class="memdesc:a6a6c3be5e8263b3344435a659695f282"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置目标位置  <br /></td></tr>
+<tr class="separator:a6a6c3be5e8263b3344435a659695f282"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a591ae33f83362b4aa30d14e5970623c9" id="r_a591ae33f83362b4aa30d14e5970623c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a591ae33f83362b4aa30d14e5970623c9">ResetAt</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">position</a>)</td></tr>
+<tr class="memdesc:a591ae33f83362b4aa30d14e5970623c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置限制器，并设置初始位置  <br /></td></tr>
+<tr class="separator:a591ae33f83362b4aa30d14e5970623c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fe5b9496274a07900a3697e78cdfae4" id="r_a3fe5b9496274a07900a3697e78cdfae4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a3fe5b9496274a07900a3697e78cdfae4">Update</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> dt)</td></tr>
+<tr class="memdesc:a3fe5b9496274a07900a3697e78cdfae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新位置和速度  <br /></td></tr>
+<tr class="separator:a3fe5b9496274a07900a3697e78cdfae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe897160321ce0eee11cfa3c4d56549d" id="r_abe897160321ce0eee11cfa3c4d56549d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#abe897160321ce0eee11cfa3c4d56549d">IsAtTarget</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">tolerance</a>=1<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">e</a>-6f) <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a></td></tr>
+<tr class="memdesc:abe897160321ce0eee11cfa3c4d56549d"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查是否到达目标位置  <br /></td></tr>
+<tr class="separator:abe897160321ce0eee11cfa3c4d56549d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d2ae5cfa182971db260565922471d68" id="r_a2d2ae5cfa182971db260565922471d68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a2d2ae5cfa182971db260565922471d68">current_position</a> () <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a></td></tr>
+<tr class="separator:a2d2ae5cfa182971db260565922471d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89d3e30d8d07076429a59cb51f53dcd3" id="r_a89d3e30d8d07076429a59cb51f53dcd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a89d3e30d8d07076429a59cb51f53dcd3">current_velocity</a> () <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a></td></tr>
+<tr class="separator:a89d3e30d8d07076429a59cb51f53dcd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3124a80033f46e7b71dd417a6cd8f075" id="r_a3124a80033f46e7b71dd417a6cd8f075"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a3124a80033f46e7b71dd417a6cd8f075">target_position</a> () <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a></td></tr>
+<tr class="separator:a3124a80033f46e7b71dd417a6cd8f075"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>轨迹限制器 给定最大速度和最大加速度，限制输入信号，使其不超过速度和加速度约束。 如果输入信号本身未超出约束，则输出与输入相同。 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aa70d6f06c8ea739cfba592c14b33bd8c" name="aa70d6f06c8ea739cfba592c14b33bd8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa70d6f06c8ea739cfba592c14b33bd8c">&#9670;&#160;</a></span>TrajectoryLimiter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rm::modules::TrajectoryLimiter::TrajectoryLimiter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>max_vel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>max_accel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">max_vel</td><td>最大速度，单位位置/秒 </td></tr>
+    <tr><td class="paramname">max_accel</td><td>最大加速度，单位位置/秒^2 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a2d2ae5cfa182971db260565922471d68" name="a2d2ae5cfa182971db260565922471d68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d2ae5cfa182971db260565922471d68">&#9670;&#160;</a></span>current_position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::modules::TrajectoryLimiter::current_position </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Getters </p>
+
+</div>
+</div>
+<a id="a89d3e30d8d07076429a59cb51f53dcd3" name="a89d3e30d8d07076429a59cb51f53dcd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89d3e30d8d07076429a59cb51f53dcd3">&#9670;&#160;</a></span>current_velocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::modules::TrajectoryLimiter::current_velocity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abe897160321ce0eee11cfa3c4d56549d" name="abe897160321ce0eee11cfa3c4d56549d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe897160321ce0eee11cfa3c4d56549d">&#9670;&#160;</a></span>IsAtTarget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> rm::modules::TrajectoryLimiter::IsAtTarget </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>tolerance</em> = <code>1<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">e</a>-6f</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查是否到达目标位置 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tolerance</td><td>容差 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>若已到达目标位置则返回true，否则返回false </dd></dl>
+
+</div>
+</div>
+<a id="a591ae33f83362b4aa30d14e5970623c9" name="a591ae33f83362b4aa30d14e5970623c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a591ae33f83362b4aa30d14e5970623c9">&#9670;&#160;</a></span>ResetAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a> rm::modules::TrajectoryLimiter::ResetAt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>重置限制器，并设置初始位置 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>初始位置 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6a6c3be5e8263b3344435a659695f282" name="a6a6c3be5e8263b3344435a659695f282"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a6c3be5e8263b3344435a659695f282">&#9670;&#160;</a></span>SetTarget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a> rm::modules::TrajectoryLimiter::SetTarget </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置目标位置 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>目标位置 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3124a80033f46e7b71dd417a6cd8f075" name="a3124a80033f46e7b71dd417a6cd8f075"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3124a80033f46e7b71dd417a6cd8f075">&#9670;&#160;</a></span>target_position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::modules::TrajectoryLimiter::target_position </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3fe5b9496274a07900a3697e78cdfae4" name="a3fe5b9496274a07900a3697e78cdfae4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fe5b9496274a07900a3697e78cdfae4">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::modules::TrajectoryLimiter::Update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>dt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>更新位置和速度 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>时间增量，单位秒 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>更新后的当前位置 </dd></dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/librm/modules/<a class="el" href="trajectory__limiter_8hpp_source.html">trajectory_limiter.hpp</a></li>
+<li>src/librm/modules/<a class="el" href="trajectory__limiter_8cc.html">trajectory_limiter.cc</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1modules.html">modules</a></li><li class="navelem"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html">TrajectoryLimiter</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

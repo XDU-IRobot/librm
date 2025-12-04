@@ -101,14 +101,15 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1stm32_1_1BxCan.html'
 <p>bxCAN类库  
  <a href="classrm_1_1hal_1_1stm32_1_1BxCan.html#details">更多...</a></p>
 
-<p><code>#include &lt;<a class="el" href="bxcan_8h_source.html">bxcan.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="bxcan_8hpp_source.html">bxcan.hpp</a>&gt;</code></p>
 <div class="dynheader">
 类 rm::hal::stm32::BxCan 继承关系图:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classrm_1_1hal_1_1stm32_1_1BxCan.png" usemap="#rm::hal::stm32::BxCan_map" alt=""/>
   <map id="rm::hal::stm32::BxCan_map" name="rm::hal::stm32::BxCan_map">
-<area href="classrm_1_1hal_1_1CanInterface.html" title="CAN接口类" alt="rm::hal::CanInterface" shape="rect" coords="0,0,130,24"/>
+<area href="classrm_1_1hal_1_1CanInterface.html" title="CAN接口类" alt="rm::hal::CanInterface" shape="rect" coords="0,0,145,24"/>
+<area href="classrm_1_1detail_1_1NonCopyable.html" alt="rm::detail::NonCopyable" shape="rect" coords="155,0,300,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -120,22 +121,12 @@ Public 成员函数</h2></td></tr>
 <tr class="separator:a21cb78e772cb668cd423f3f664cda8e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a555257bde1751ea6314faad33ef9a579" id="r_a555257bde1751ea6314faad33ef9a579"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html#a555257bde1751ea6314faad33ef9a579">~BxCan</a> () override=default</td></tr>
 <tr class="separator:a555257bde1751ea6314faad33ef9a579"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab59244c7b05352138bda3eb783947ac" id="r_aab59244c7b05352138bda3eb783947ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html#aab59244c7b05352138bda3eb783947ac">BxCan</a> (const <a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html">BxCan</a> &amp;)=delete</td></tr>
-<tr class="separator:aab59244c7b05352138bda3eb783947ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8862bb27c968a33da33622112c3a1f10" id="r_a8862bb27c968a33da33622112c3a1f10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html">BxCan</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html#a8862bb27c968a33da33622112c3a1f10">operator=</a> (const <a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html">BxCan</a> &amp;)=delete</td></tr>
-<tr class="separator:a8862bb27c968a33da33622112c3a1f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3535283d15434dd7643ee3f496d37df" id="r_aa3535283d15434dd7643ee3f496d37df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html#aa3535283d15434dd7643ee3f496d37df">SetFilter</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> id, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> mask) override</td></tr>
 <tr class="memdesc:aa3535283d15434dd7643ee3f496d37df"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置过滤器  <br /></td></tr>
 <tr class="separator:aa3535283d15434dd7643ee3f496d37df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b1950fdac0da23de0f609259af2aa48" id="r_a0b1950fdac0da23de0f609259af2aa48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html#a0b1950fdac0da23de0f609259af2aa48">Write</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> id, const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *<a class="el" href="unitree__motor_8hpp.html#a7ea4cf5640b96ae38ed53527f508183a">data</a>, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size) override</td></tr>
 <tr class="memdesc:a0b1950fdac0da23de0f609259af2aa48"><td class="mdescLeft">&#160;</td><td class="mdescRight">立刻向总线上发送数据  <br /></td></tr>
 <tr class="separator:a0b1950fdac0da23de0f609259af2aa48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a422c5a93c0294d83cffbc5f0e52a6940" id="r_a422c5a93c0294d83cffbc5f0e52a6940"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html#a422c5a93c0294d83cffbc5f0e52a6940">Write</a> () override</td></tr>
-<tr class="memdesc:a422c5a93c0294d83cffbc5f0e52a6940"><td class="mdescLeft">&#160;</td><td class="mdescRight">从消息队列里取出一条消息发送  <br /></td></tr>
-<tr class="separator:a422c5a93c0294d83cffbc5f0e52a6940"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3b63ac686030ea2bd3917b7ef7cad06" id="r_ae3b63ac686030ea2bd3917b7ef7cad06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html#ae3b63ac686030ea2bd3917b7ef7cad06">Enqueue</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> id, const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *<a class="el" href="unitree__motor_8hpp.html#a7ea4cf5640b96ae38ed53527f508183a">data</a>, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size, <a class="el" href="namespacerm_1_1hal.html#ad9ce02a3d77a1b56213e665171676a18">CanTxPriority</a> priority) override</td></tr>
-<tr class="memdesc:ae3b63ac686030ea2bd3917b7ef7cad06"><td class="mdescLeft">&#160;</td><td class="mdescRight">向消息队列里加入一条消息  <br /></td></tr>
-<tr class="separator:ae3b63ac686030ea2bd3917b7ef7cad06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4ef81aaa906635c58a1f24e3c8f372d" id="r_ab4ef81aaa906635c58a1f24e3c8f372d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html#ab4ef81aaa906635c58a1f24e3c8f372d">Begin</a> () override</td></tr>
 <tr class="memdesc:ab4ef81aaa906635c58a1f24e3c8f372d"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动CAN外设  <br /></td></tr>
 <tr class="separator:ab4ef81aaa906635c58a1f24e3c8f372d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,7 +153,7 @@ Public 成员函数</h2></td></tr>
 <div class="textblock"><p>bxCAN类库 </p>
 </div><h2 class="groupheader">构造及析构函数说明</h2>
 <a id="a2e280ad7e0403b2b5cdc320429af23f3" name="a2e280ad7e0403b2b5cdc320429af23f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e280ad7e0403b2b5cdc320429af23f3">&#9670;&#160;</a></span>BxCan() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e280ad7e0403b2b5cdc320429af23f3">&#9670;&#160;</a></span>BxCan() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,7 +185,7 @@ Public 成员函数</h2></td></tr>
 </div>
 </div>
 <a id="a21cb78e772cb668cd423f3f664cda8e9" name="a21cb78e772cb668cd423f3f664cda8e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21cb78e772cb668cd423f3f664cda8e9">&#9670;&#160;</a></span>BxCan() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a21cb78e772cb668cd423f3f664cda8e9">&#9670;&#160;</a></span>BxCan() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -243,32 +234,6 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a id="aab59244c7b05352138bda3eb783947ac" name="aab59244c7b05352138bda3eb783947ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab59244c7b05352138bda3eb783947ac">&#9670;&#160;</a></span>BxCan() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">rm::hal::stm32::BxCan::BxCan </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html">BxCan</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">成员函数说明</h2>
 <a id="ab4ef81aaa906635c58a1f24e3c8f372d" name="ab4ef81aaa906635c58a1f24e3c8f372d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab4ef81aaa906635c58a1f24e3c8f372d">&#9670;&#160;</a></span>Begin()</h2>
@@ -296,93 +261,6 @@ Public 成员函数</h2></td></tr>
 <p>启动CAN外设 </p>
 
 <p>实现了 <a class="el" href="classrm_1_1hal_1_1CanInterface.html#a6bae71da4ba4ee5bf9f21cc03f602498">rm::hal::CanInterface</a>.</p>
-
-</div>
-</div>
-<a id="ae3b63ac686030ea2bd3917b7ef7cad06" name="ae3b63ac686030ea2bd3917b7ef7cad06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3b63ac686030ea2bd3917b7ef7cad06">&#9670;&#160;</a></span>Enqueue()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rm::hal::stm32::BxCan::Enqueue </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm_1_1hal.html#ad9ce02a3d77a1b56213e665171676a18">CanTxPriority</a>&#160;</td>
-          <td class="paramname"><em>priority</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>向消息队列里加入一条消息 </p>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">id</td><td>数据帧ID </td></tr>
-    <tr><td class="paramname">data</td><td>数据指针 </td></tr>
-    <tr><td class="paramname">size</td><td>数据长度 </td></tr>
-    <tr><td class="paramname">priority</td><td>消息的优先级 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>实现了 <a class="el" href="classrm_1_1hal_1_1CanInterface.html#a63b696861b59fe68c26f65d5d6a9e3c4">rm::hal::CanInterface</a>.</p>
-
-</div>
-</div>
-<a id="a8862bb27c968a33da33622112c3a1f10" name="a8862bb27c968a33da33622112c3a1f10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8862bb27c968a33da33622112c3a1f10">&#9670;&#160;</a></span>operator=()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html">BxCan</a> &amp; rm::hal::stm32::BxCan::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html">BxCan</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -462,37 +340,8 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a id="a422c5a93c0294d83cffbc5f0e52a6940" name="a422c5a93c0294d83cffbc5f0e52a6940"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a422c5a93c0294d83cffbc5f0e52a6940">&#9670;&#160;</a></span>Write() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rm::hal::stm32::BxCan::Write </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>从消息队列里取出一条消息发送 </p>
-
-<p>实现了 <a class="el" href="classrm_1_1hal_1_1CanInterface.html#accf3e101ccb05b4f583bb19aaf1b9bca">rm::hal::CanInterface</a>.</p>
-
-</div>
-</div>
 <a id="a0b1950fdac0da23de0f609259af2aa48" name="a0b1950fdac0da23de0f609259af2aa48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b1950fdac0da23de0f609259af2aa48">&#9670;&#160;</a></span>Write() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b1950fdac0da23de0f609259af2aa48">&#9670;&#160;</a></span>Write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -546,7 +395,7 @@ Public 成员函数</h2></td></tr>
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
-<li>src/librm/hal/stm32/<a class="el" href="bxcan_8h_source.html">bxcan.h</a></li>
+<li>src/librm/hal/stm32/<a class="el" href="bxcan_8hpp_source.html">bxcan.hpp</a></li>
 <li>src/librm/hal/stm32/<a class="el" href="bxcan_8cc.html">bxcan.cc</a></li>
 </ul>
 </div><!-- contents -->

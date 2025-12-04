@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: src/librm/modules/sequence_player.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('sequence__player_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">sequence_player.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="sequence__player_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2025 XDU-IRobot</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">  copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"></span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">  copies or substantial portions of the Software.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"></span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef LIBRM_MODULES_SEQUENCE_PLAYER_HPP</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_MODULES_SEQUENCE_PLAYER_HPP</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;tuple&gt;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;etl/delegate.h&gt;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;<a class="code" href="typedefs_8hpp.html">librm/core/typedefs.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1modules.html">rm::modules</a> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> OutputType&gt;</div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1SequenceGenerator.html">   48</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1modules_1_1SequenceGenerator.html">SequenceGenerator</a> {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1SequenceGenerator.html#a2f638e56652aed0bbc4c5c56c279e261">   50</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="classrm_1_1modules_1_1SequenceGenerator.html#a2f638e56652aed0bbc4c5c56c279e261">~SequenceGenerator</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1SequenceGenerator.html#a4af90e6484ede6dd935dc0d274f4d6e6">   51</a></span>  <span class="keyword">using </span><a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">Output</a> = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">OutputType</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">   52</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> = std::chrono::steady_clock::time_point;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1SequenceGenerator.html#a7ee8dbdddcd5c174cbfbac2346044380">   53</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a7ee8dbdddcd5c174cbfbac2346044380">Duration</a> = std::chrono::steady_clock::duration;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1SequenceGenerator.html#a8d233c68843108d60db31cbf2fdedd2b">   60</a></span>  <span class="keyword">virtual</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">Output</a> <a class="code hl_function" href="classrm_1_1modules_1_1SequenceGenerator.html#a8d233c68843108d60db31cbf2fdedd2b">Update</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">now</a>) = 0;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1SequenceGenerator.html#ad3a3e706171193c34880cbfe41328ec8">   66</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1modules_1_1SequenceGenerator.html#ad3a3e706171193c34880cbfe41328ec8">Reset</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">now</a>) = 0;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> <span class="keyword">protected</span>:</div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1SequenceGenerator.html#a3db32923ee92ecbdedd29ba8fb014862">   75</a></span>  <span class="keyword">static</span> <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> <a class="code hl_function" href="classrm_1_1modules_1_1SequenceGenerator.html#a3db32923ee92ecbdedd29ba8fb014862">ElapsedMs</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">start</a>, <a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">now</a>) {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">return</span> std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">now</a> - <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">start</a>).count();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  }</div>
+</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>};</div>
+</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="namespacerm_1_1modules_1_1detail.html">   80</a></span><span class="keyword">namespace </span>detail {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Tuple&gt;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1detail_1_1tuple__element__index.html">   82</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrm_1_1modules_1_1detail_1_1tuple__element__index.html">tuple_element_index</a>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <span class="keyword">typename</span>... <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">Ts</a>&gt;</div>
+<div class="foldopen" id="foldopen00085" data-start="{" data-end="};">
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1detail_1_1tuple__element__index_3_01T_00_01std_1_1tuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html">   85</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrm_1_1modules_1_1detail_1_1tuple__element__index.html">tuple_element_index</a>&lt;<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, std::<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">tuple</a>&lt;T, Ts...&gt;&gt; {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1detail_1_1tuple__element__index_3_01T_00_01std_1_1tuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html#affe35b5b53250c9859db95c616903d62">   86</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> value = 0;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>};</div>
+</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <span class="keyword">typename</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">U</a>, <span class="keyword">typename</span>... <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">Ts</a>&gt;</div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="};">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1detail_1_1tuple__element__index_3_01T_00_01std_1_1tuple_3_01U_00_01Ts_8_8_8_01_4_01_4.html">   90</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrm_1_1modules_1_1detail_1_1tuple__element__index.html">tuple_element_index</a>&lt;<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, std::<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">tuple</a>&lt;U, Ts...&gt;&gt; {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1detail_1_1tuple__element__index_3_01T_00_01std_1_1tuple_3_01U_00_01Ts_8_8_8_01_4_01_4.html#a1686dd51bfcef4bb724775c6774e207a">   91</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> value = 1 + <a class="code hl_struct" href="structrm_1_1modules_1_1detail_1_1tuple__element__index.html">tuple_element_index</a>&lt;<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, std::tuple&lt;<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">Ts</a>...&gt;&gt;::value;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>};</div>
+</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>}  <span class="comment">// namespace detail</span></div>
+</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">OutputType</a>, <span class="keyword">typename</span>... <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">SequenceTypes</a>&gt;</div>
+<div class="foldopen" id="foldopen00131" data-start="{" data-end="};">
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1SequencePlayer.html">  131</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1modules_1_1SequencePlayer.html">SequencePlayer</a> {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>...(SequenceTypes) &gt; 0, <span class="stringliteral">&quot;At least one sequence type must be provided&quot;</span>);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keyword">static_assert</span>((std::is_base_of&lt;SequenceGenerator&lt;OutputType&gt;, <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">SequenceTypes</a>&gt;::value &amp;&amp; ...),</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                <span class="stringliteral">&quot;All SequenceTypes must derive from SequenceGenerator&lt;OutputType&gt;&quot;</span>);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1SequencePlayer.html#adac85e8b5afca2442219b3252b3a7f35">  137</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classrm_1_1modules_1_1SequencePlayer.html#adac85e8b5afca2442219b3252b3a7f35">Output</a> = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">OutputType</a>;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="foldopen" id="foldopen00139" data-start="{" data-end="}">
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1SequencePlayer.html#a573f91fcce5c7c95916281de8e8bed95">  139</a></span>  <a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#a573f91fcce5c7c95916281de8e8bed95">SequencePlayer</a>() : sequences_{<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">SequenceTypes</a>()...} {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="comment">// 初始化时设置当前更新函数指向第一个序列的Update方法</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">SetSequenceByIndex&lt;0&gt;</a>();</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  }</div>
+</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Sequence&gt;</div>
+<div class="foldopen" id="foldopen00149" data-start="{" data-end="}">
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1SequencePlayer.html#acb59128f30e689c3cf02545697c10816">  149</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#acb59128f30e689c3cf02545697c10816">SetSequence</a>() {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">sequence_id</a> = <a class="code hl_struct" href="structrm_1_1modules_1_1detail_1_1tuple__element__index.html">detail::tuple_element_index</a>&lt;<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">Sequence</a>, std::tuple&lt;<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">SequenceTypes</a>...&gt;&gt;::value;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">SetSequenceByIndex&lt;sequence_id&gt;</a>();</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  }</div>
+</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="foldopen" id="foldopen00158" data-start="{" data-end="}">
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1SequencePlayer.html#a6e315a55b50db842a53a619b6d8ed1ba">  158</a></span>  <a class="code hl_typedef" href="classrm_1_1modules_1_1SequencePlayer.html#adac85e8b5afca2442219b3252b3a7f35">Output</a> <a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#a6e315a55b50db842a53a619b6d8ed1ba">Update</a>() {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">now</a> = std::chrono::steady_clock::now();</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="comment">// 直接调用当前序列的Update方法，传入当前时间</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    current_output_ = current_update_fn_(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">now</a>);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordflow">return</span> current_output_;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  }</div>
+</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1SequencePlayer.html#a4fa229a13ac0f1cdffdb91e763859a89">  169</a></span>  <span class="keyword">const</span> <a class="code hl_typedef" href="classrm_1_1modules_1_1SequencePlayer.html#adac85e8b5afca2442219b3252b3a7f35">Output</a> &amp;<a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#a4fa229a13ac0f1cdffdb91e763859a89">current_output</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> current_output_; }</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="foldopen" id="foldopen00174" data-start="{" data-end="}">
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1SequencePlayer.html#a120485fc17661e034718562ee5f7c6d8">  174</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#a120485fc17661e034718562ee5f7c6d8">Reset</a>() {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keyword">auto</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">now</a> = std::chrono::steady_clock::now();</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keywordflow">if</span> (current_reset_fn_) {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>      current_reset_fn_(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">now</a>);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    }</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>  }</div>
+</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  <span class="keyword">template</span> &lt;usize sequence_<span class="keywordtype">id</span>&gt;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  <span class="keywordtype">void</span> SetSequenceByIndex() {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keyword">auto</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">now</a> = std::chrono::steady_clock::now();</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="comment">// 重置序列状态</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    std::get&lt;sequence_id&gt;(sequences_).Reset(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">now</a>);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="comment">// 使用etl::delegate绑定对应序列的Update方法</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    current_update_fn_ = etl::delegate&lt;<a class="code hl_typedef" href="classrm_1_1modules_1_1SequencePlayer.html#adac85e8b5afca2442219b3252b3a7f35">Output</a>(std::chrono::steady_clock::time_point)&gt;::template <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">create</a>&lt;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#a573f91fcce5c7c95916281de8e8bed95">SequencePlayer</a>, &amp;SequencePlayer::UpdateSequence&lt;sequence_id&gt;&gt;(*this);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="comment">// 绑定Reset方法</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    current_reset_fn_ = etl::delegate&lt;<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">void</a>(std::chrono::steady_clock::time_point)&gt;::create&lt;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#a573f91fcce5c7c95916281de8e8bed95">SequencePlayer</a>, &amp;SequencePlayer::ResetSequence&lt;sequence_id&gt;&gt;(*this);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  }</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  <span class="keyword">template</span> &lt;usize sequence_<span class="keywordtype">id</span>&gt;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <a class="code hl_typedef" href="classrm_1_1modules_1_1SequencePlayer.html#adac85e8b5afca2442219b3252b3a7f35">Output</a> UpdateSequence(std::chrono::steady_clock::time_point now) {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keywordflow">return</span> std::get&lt;sequence_id&gt;(sequences_).Update(now);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  }</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>  <span class="keyword">template</span> &lt;usize sequence_<span class="keywordtype">id</span>&gt;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  <span class="keywordtype">void</span> ResetSequence(std::chrono::steady_clock::time_point now) {</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    std::get&lt;sequence_id&gt;(sequences_).Reset(now);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  }</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  <a class="code hl_typedef" href="classrm_1_1modules_1_1SequencePlayer.html#adac85e8b5afca2442219b3252b3a7f35">Output</a> current_output_{};</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  std::tuple&lt;SequenceTypes...&gt; sequences_;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  <span class="comment">// 使用etl::delegate，无动态内存分配，直接指向当前序列的Update和Reset方法</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  etl::delegate&lt;<a class="code hl_typedef" href="classrm_1_1modules_1_1SequencePlayer.html#adac85e8b5afca2442219b3252b3a7f35">Output</a>(std::chrono::steady_clock::time_point)&gt; current_update_fn_;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>  etl::delegate&lt;void(std::chrono::steady_clock::time_point)&gt; current_reset_fn_;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>};</div>
+</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>}  <span class="comment">// namespace rm::modules</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_MODULES_SEQUENCE_PLAYER_HPP</span></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html">rm::modules::SequenceGenerator</a></div><div class="ttdoc">序列生成器的基类</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:48</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a2e96a1993839f2ef43a599dd47ef96bf"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">rm::modules::SequenceGenerator::TimePoint</a></div><div class="ttdeci">std::chrono::steady_clock::time_point TimePoint</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:52</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a2f638e56652aed0bbc4c5c56c279e261"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a2f638e56652aed0bbc4c5c56c279e261">rm::modules::SequenceGenerator::~SequenceGenerator</a></div><div class="ttdeci">virtual ~SequenceGenerator()=default</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a3db32923ee92ecbdedd29ba8fb014862"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a3db32923ee92ecbdedd29ba8fb014862">rm::modules::SequenceGenerator::ElapsedMs</a></div><div class="ttdeci">static u32 ElapsedMs(TimePoint start, TimePoint now)</div><div class="ttdoc">计算从起始时间到现在经过的毫秒数</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:75</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a7ee8dbdddcd5c174cbfbac2346044380"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a7ee8dbdddcd5c174cbfbac2346044380">rm::modules::SequenceGenerator::Duration</a></div><div class="ttdeci">std::chrono::steady_clock::duration Duration</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:53</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a8d233c68843108d60db31cbf2fdedd2b"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a8d233c68843108d60db31cbf2fdedd2b">rm::modules::SequenceGenerator::Update</a></div><div class="ttdeci">virtual Output Update(TimePoint now)=0</div><div class="ttdoc">更新序列状态并返回当前输出</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_ad3a3e706171193c34880cbfe41328ec8"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#ad3a3e706171193c34880cbfe41328ec8">rm::modules::SequenceGenerator::Reset</a></div><div class="ttdeci">virtual void Reset(TimePoint now)=0</div><div class="ttdoc">重置序列状态到初始状态</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html">rm::modules::SequencePlayer</a></div><div class="ttdef"><b>Definition</b> sequence_player.hpp:131</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_a120485fc17661e034718562ee5f7c6d8"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#a120485fc17661e034718562ee5f7c6d8">rm::modules::SequencePlayer::Reset</a></div><div class="ttdeci">void Reset()</div><div class="ttdoc">重置当前序列到初始状态</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:174</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_a4fa229a13ac0f1cdffdb91e763859a89"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#a4fa229a13ac0f1cdffdb91e763859a89">rm::modules::SequencePlayer::current_output</a></div><div class="ttdeci">const Output &amp; current_output() const</div><div class="ttdoc">获取当前输出值（不更新序列）</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:169</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_a573f91fcce5c7c95916281de8e8bed95"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#a573f91fcce5c7c95916281de8e8bed95">rm::modules::SequencePlayer::SequencePlayer</a></div><div class="ttdeci">SequencePlayer()</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:139</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_a6e315a55b50db842a53a619b6d8ed1ba"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#a6e315a55b50db842a53a619b6d8ed1ba">rm::modules::SequencePlayer::Update</a></div><div class="ttdeci">Output Update()</div><div class="ttdoc">更新当前序列并获取输出</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:158</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_acb59128f30e689c3cf02545697c10816"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#acb59128f30e689c3cf02545697c10816">rm::modules::SequencePlayer::SetSequence</a></div><div class="ttdeci">void SetSequence()</div><div class="ttdoc">切换当前的序列生成器</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:149</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_adac85e8b5afca2442219b3252b3a7f35"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#adac85e8b5afca2442219b3252b3a7f35">rm::modules::SequencePlayer::Output</a></div><div class="ttdeci">OutputType Output</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:137</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html"><div class="ttname"><a href="namespacerm_1_1modules.html">rm::modules</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:33</div></div>
+<div class="ttc" id="anamespacerm_html_a1df35482f4a88e1fe1450c7eb4cf4630"><div class="ttname"><a href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">rm::usize</a></div><div class="ttdeci">size_t usize</div><div class="ttdef"><b>Definition</b> typedefs.hpp:51</div></div>
+<div class="ttc" id="anamespacerm_html_aae5bb39b0da6b1cf1b7ed1c03342ec66"><div class="ttname"><a href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">rm::u32</a></div><div class="ttdeci">uint32_t u32</div><div class="ttdef"><b>Definition</b> typedefs.hpp:45</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html">rm::modules::NoteFreq</a></div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:93</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1detail_1_1tuple__element__index_html"><div class="ttname"><a href="structrm_1_1modules_1_1detail_1_1tuple__element__index.html">rm::modules::detail::tuple_element_index</a></div><div class="ttdef"><b>Definition</b> sequence_player.hpp:82</div></div>
+<div class="ttc" id="atypedefs_8hpp_html"><div class="ttname"><a href="typedefs_8hpp.html">typedefs.hpp</a></div><div class="ttdoc">全局数据类型定义</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_9bd6aa59caad6cbef13c0eefdd946af0.html">modules</a></li><li class="navelem"><a class="el" href="sequence__player_8hpp.html">sequence_player.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

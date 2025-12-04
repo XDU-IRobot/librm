@@ -1,6 +1,6 @@
 var float16_8hpp =
 [
-    [ "f16", "float16_8hpp.html#a2f002fb1c540189c2ec694b9c9cda697", null ],
-    [ "F16ToF32", "float16_8hpp.html#ac1ff1e8c3f68a79c253fe139e6533ebd", null ],
-    [ "F32ToF16", "float16_8hpp.html#a1dc72a39f4842241baeb1bf74840912e", null ]
+    [ "f16", "float16_8hpp.html#a28f15ab7a38a430eeda8268469c4ef7a", null ],
+    [ "F16ToF32", "float16_8hpp.html#a93db9bcf6668458e04decaa8a6b2c94c", null ],
+    [ "F32ToF16", "float16_8hpp.html#aeee0650b70e2b8a7eec52f4ca98df9e8", null ]
 ];

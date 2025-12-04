@@ -54,27 +54,31 @@ var NAVTREE =
       [ "文件列表", "files.html", "files_dup" ],
       [ "文件成员", "globals.html", [
         [ "全部", "globals.html", "globals_dup" ],
+        [ "函数", "globals_func.html", null ],
         [ "变量", "globals_vars.html", "globals_vars" ],
         [ "宏定义", "globals_defs.html", null ]
       ] ]
-    ] ]
+    ] ],
+    [ "示例", "examples.html", "examples" ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"ahrs__interface_8h.html",
-"classrm_1_1device_1_1BMI088.html#aba61add85d32d26d622f84cd632453b4",
-"classrm_1_1device_1_1SuperCap.html#a84937fb7350f370f3973fda2111385b0",
-"classrm_1_1hal_1_1linux___1_1SocketCan.html#ae6e95400435b056107487ebfe0fc80b5",
-"classrm_1_1modules_1_1algorithm_1_1PID.html#ad359182443a4952400f57ca5d60f1a81",
-"dm__motor_8hpp.html#a09c7ea6c3cbe688e5936931e1665b94ea22f7e05f35e7f25d5f24304feb24bee8",
-"namespacerm_1_1device.html#a446a65e64cf80e3dde0a69feb01d203a",
-"structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a93fc49f71b253c4fc3fd2eefeb0b35d0",
-"structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4.html#a1d560f7b77f1422d722246106fdd2668",
-"structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#a1082a5d8d7b98e1bf8640b9b01b44c8a",
-"structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html#acb751962e5e07913d4dc98955d49b28a",
-"utils_8cc.html#aca5ebfeac5ff3918136424930db02929"
+"_2home_2runner_2work_2librm_2librm_2src_2librm_2modules_2buzzer_controller_8hpp-example.html",
+"classrm_1_1detail_1_1NonCopyable.html#a305a9a444515e165dcb9b15241f75ec9",
+"classrm_1_1device_1_1DmMotor.html#a02c25aca0ea083647973931c6d6e5a57",
+"classrm_1_1device_1_1SuperCap.html#aca3a762d601d49264a8aea928cf09cc5",
+"classrm_1_1hal_1_1linux___1_1SocketCan.html#a2e600fefbb55da703f27fbb66ff8d6ce",
+"classrm_1_1modules_1_1PID.html#a08e002c8672ac3c6ef2396e26c54ac21",
+"classrm_1_1modules_1_1SparseValueWatcher.html#a5ff8d95a0622909369dcb8a7d5253fe8",
+"crc_8cc.html#a49c5b26e850ba7c17f4db29b4456e464",
+"ist8310_8hpp_source.html",
+"stm32_2gpio_8hpp.html",
+"structrm_1_1device_1_1Go8010Motor_1_1ReceiveData.html",
+"structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4.html#acdd3ac7811e6633fef4e4c631ff77843",
+"structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#ad5eb0f8e82fc35889ada463d6be01951",
+"supercap_8hpp.html#a520cae32c0d3c11485bf66d736ae2b23a5b899cabb290b99ccb0a20d0c76471fa"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';

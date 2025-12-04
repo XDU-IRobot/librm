@@ -1,0 +1,791 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: /home/runner/work/librm/librm/src/librm/modules/buzzer_controller.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_2home_2runner_2work_2librm_2librm_2src_2librm_2modules_2buzzer_controller_8hpp-example.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">/home/runner/work/librm/librm/src/librm/modules/buzzer_controller.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<p>音符频率定义（基于十二平均律计算）</p>
+<p>音符频率定义（基于十二平均律计算） </p><dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">A4Freq</td><td>A4音符的基准频率（默认440Hz，国际标准音高） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>使用十二平均律计算所有音符频率 公式：f(n) = A4 * 2^((n-69)/12)，其中n为MIDI音符号 或者：f = A4 * 2^(semitones/12)，semitones为相对于A4的半音数</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 使用标准音高A4=440Hz</span></div>
+<div class="line"><span class="keyword">using </span>Freq = NoteFreq&lt;440&gt;;</div>
+<div class="line">BuzzerNote note(Freq::kC5, 500);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 使用巴洛克音高A4=415Hz</span></div>
+<div class="line"><span class="keyword">using </span>BaroqueFreq = NoteFreq&lt;415&gt;;</div>
+<div class="line">BuzzerNote baroque_note(BaroqueFreq::kC5, 500);</div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment">  Copyright (c) 2025 XDU-IRobot</span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><span class="comment">  in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><span class="comment">  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><span class="comment">  copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><span class="comment">  furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">  The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><span class="comment">  copies or substantial portions of the Software.</span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><span class="comment">  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><span class="comment">  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><span class="comment">  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><span class="comment">  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
+<div class="line"><span class="comment">  SOFTWARE.</span></div>
+<div class="line"><span class="comment">*/</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#ifndef LIBRM_MODULES_BUZZER_CONTROLLER_HPP</span></div>
+<div class="line"><span class="preprocessor">#define LIBRM_MODULES_BUZZER_CONTROLLER_HPP</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="typedefs_8hpp.html">librm/core/typedefs.hpp</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="sequence__player_8hpp.html">librm/modules/sequence_player.hpp</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1modules.html">rm::modules</a> {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>BuzzerNote {</div>
+<div class="line">  <a id="a0" name="a0"></a><a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a1" name="a1"></a><a class="code hl_variable" href="structrm_1_1modules_1_1BuzzerNote.html#ac34188a0bd7a3a241cda838cebec2dcb">frequency</a>;  </div>
+<div class="line">  <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a2" name="a2"></a><a class="code hl_variable" href="structrm_1_1modules_1_1BuzzerNote.html#aa863a628e9906e50f34c39839116302d">duration</a>;   </div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">constexpr</span> BuzzerNote(<a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> freq = 0, <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> dur = 0) : <a class="code hl_variable" href="structrm_1_1modules_1_1BuzzerNote.html#ac34188a0bd7a3a241cda838cebec2dcb">frequency</a>(freq), <a class="code hl_variable" href="structrm_1_1modules_1_1BuzzerNote.html#aa863a628e9906e50f34c39839116302d">duration</a>(dur) {}</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a3" name="a3"></a><a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(<a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> a4_freq, <a id="a4" name="a4"></a><a class="code hl_typedef" href="namespacerm.html#ab0024293c4410554bd98c9bb792c8afb">i16</a> semitones) {</div>
+<div class="line">  <span class="comment">// 使用近似计算：2^(n/12) ≈ 使用查找表或者分段计算</span></div>
+<div class="line">  <span class="comment">// 为了编译期计算，使用整数运算</span></div>
+<div class="line">  <a id="a5" name="a5"></a><a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> ratio = 1.0f;</div>
+<div class="line">  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> semitone_ratio = 1.059463094359f;  <span class="comment">// 2^(1/12)</span></div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">if</span> (semitones &gt; 0) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<a class="code hl_typedef" href="namespacerm.html#ab0024293c4410554bd98c9bb792c8afb">i16</a> i = 0; i &lt; semitones; ++i) {</div>
+<div class="line">      ratio *= semitone_ratio;</div>
+<div class="line">    }</div>
+<div class="line">  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (semitones &lt; 0) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<a class="code hl_typedef" href="namespacerm.html#ab0024293c4410554bd98c9bb792c8afb">i16</a> i = 0; i &gt; semitones; --i) {</div>
+<div class="line">      ratio /= semitone_ratio;</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a><span class="keyword">&gt;</span>(a4_freq * ratio + 0.5f);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span> &lt;u16 A4Freq = 440&gt;</div>
+<div class="line"><span class="keyword">struct </span>NoteFreq {</div>
+<div class="line">  <span class="comment">// 静音</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a6" name="a6"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#ae3b0ddfc8f62bdcd7c964c1f9c7f5a7e">kRest</a> = 0;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// 第3八度（A4下12个半音开始）</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a7" name="a7"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a132b3d2abffe6e286de5da9c6beb41fb">kC3</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -21);   <span class="comment">// A4 - 21半音</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a8" name="a8"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a960c451bf913faf66014e7c4d16e1789">kCs3</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -20);  <span class="comment">// C#3 / Db3</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a9" name="a9"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a0dc8ca3c0e4194fb7b5d7bbf5c2ee2bb">kD3</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -19);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a10" name="a10"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a8e471a8dfe26a735e1769c7855989f5f">kDs3</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -18);  <span class="comment">// D#3 / Eb3</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a11" name="a11"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a84102c07cc22b3ce37ce46fcf984e525">kE3</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -17);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a12" name="a12"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a36e240dae005eaa2c78674ce11147d6d">kF3</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -16);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a13" name="a13"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a09e8f2ec8cb5ae897f9b35d8a402d46d">kFs3</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -15);  <span class="comment">// F#3 / Gb3</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a14" name="a14"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#ab2aea278af3281dd83e5c30d55cd08f1">kG3</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -14);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a15" name="a15"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a28905a12de3874e63510f5a5803b0dce">kGs3</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -13);  <span class="comment">// G#3 / Ab3</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a16" name="a16"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a04a0c061f00fe02d3347918c6c593027">kA3</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -12);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a17" name="a17"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#aa127647d549aad3714601332cbbe2bdf">kAs3</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -11);  <span class="comment">// A#3 / Bb3</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a18" name="a18"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a0a9eed7499fb1e472ac1a70ae584f459">kB3</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -10);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// 第4八度（中央C）</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a19" name="a19"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#adecd9c57bb96780469be4f8d93c19d8a">kC4</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -9);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a20" name="a20"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#ac4cb463dd4cc2af96f1dc0595dedc930">kCs4</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -8);  <span class="comment">// C#4 / Db4</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a21" name="a21"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a053a44ccc51bf46f8eb5e44964f7849e">kD4</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -7);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a22" name="a22"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#ab326b5c97725184eb8d3496094727e6a">kDs4</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -6);  <span class="comment">// D#4 / Eb4</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a23" name="a23"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a28fe1f11f1f3b18ad4f6bc63684f0625">kE4</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -5);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a24" name="a24"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a00ea6136dbf8a33d0781044953f21bb8">kF4</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -4);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a25" name="a25"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a13bf2f12733b09ebe42f85b5dbe3d0c4">kFs4</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -3);  <span class="comment">// F#4 / Gb4</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a26" name="a26"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#ad984e38b411f73277dbcb34224ebac0a">kG4</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -2);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a27" name="a27"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#ae02cecb9f37f2c22df6919c38e99df72">kGs4</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, -1);  <span class="comment">// G#4 / Ab4</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a28" name="a28"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#af83360b681b1e5e0ccb5a3408c72ebff">kA4</a> = A4Freq;                          <span class="comment">// 基准音</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a29" name="a29"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a5e65e244cef6a83584313429094543fb">kAs4</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 1);   <span class="comment">// A#4 / Bb4</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a30" name="a30"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a6bdc492d03c10b942c63c59a37269c5f">kB4</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 2);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// 第5八度</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a31" name="a31"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#ab05ff3633b605360e58a123e15733f40">kC5</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 3);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a32" name="a32"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a4e243eb4eae1d1eed565113c190fddaa">kCs5</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 4);  <span class="comment">// C#5 / Db5</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a33" name="a33"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a7a8ffd282d1b75649a68483106c2862a">kD5</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 5);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a34" name="a34"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#ad9543bc477c168a1589498de0add5b4a">kDs5</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 6);  <span class="comment">// D#5 / Eb5</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a35" name="a35"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#ae4dec3cf7d017bb56795f3e866f2dfa0">kE5</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 7);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a36" name="a36"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a2325fb2625a838f6f140cd57f281136a">kF5</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 8);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a37" name="a37"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a872feb03fd974cd287d0af2c30bb2975">kFs5</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 9);  <span class="comment">// F#5 / Gb5</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a38" name="a38"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#ae8af7d61193973f57272bad35431f729">kG5</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 10);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a39" name="a39"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#ac53f568e261056a27460882a4552f07b">kGs5</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 11);  <span class="comment">// G#5 / Ab5</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a40" name="a40"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a927d8a45eb1a36d96d036a536845bd7c">kA5</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 12);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a41" name="a41"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a73c18ecdaea17ecafa94ead3ed6f3061">kAs5</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 13);  <span class="comment">// A#5 / Bb5</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a42" name="a42"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#ab0a2e26b310837077ed243ee3716c2e6">kB5</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 14);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// 第6八度</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a43" name="a43"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#aa3eb3c402c2785774b0b6aa9dd5beed9">kC6</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 15);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a44" name="a44"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a042dfbcea94c1d1b1d5c1eb606b23025">kCs6</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 16);  <span class="comment">// C#6 / Db6</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a45" name="a45"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#ab070f89fda107130890eb5bcb80a2611">kD6</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 17);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a46" name="a46"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a5b02e959d38285ba2232956e576f7865">kDs6</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 18);  <span class="comment">// D#6 / Eb6</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a47" name="a47"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a42f9cb7a843aeaf8d9522b0307dbe351">kE6</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 19);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a48" name="a48"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a1e09840cf490c28ea78f7fa3c4c9c6fb">kF6</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 20);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a49" name="a49"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a48a3f2a5239d43d07a7dd383e1a03036">kFs6</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 21);  <span class="comment">// F#6 / Gb6</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a50" name="a50"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#aff7043c508f2bb96ae371c4ecb18d944">kG6</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 22);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a51" name="a51"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a7bc675370e3d061db1798e2e432f752d">kGs6</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 23);  <span class="comment">// G#6 / Ab6</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a52" name="a52"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a7c205f1cefe7ac3d56a9859f24c85992">kA6</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 24);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a53" name="a53"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#ac7f9f03d5a196331a86746e67fd1c2f5">kAs6</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 25);  <span class="comment">// A#6 / Bb6</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a54" name="a54"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#acf82ee6b38f1a3899713ceaa5bb6b357">kB6</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 26);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// 第7八度（可选，高音区）</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a55" name="a55"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a118ff72fedee395df73d4c8777b441ed">kC7</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 27);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a56" name="a56"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#ae89cf10a6129d4378d59f265914833b5">kCs7</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 28);  <span class="comment">// C#7 / Db7</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a57" name="a57"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#ae25930c2193aecfd029d34979bb05892">kD7</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 29);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a58" name="a58"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a9c2cdfef3661e1e08ced9e95050b0a5d">kDs7</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 30);  <span class="comment">// D#7 / Eb7</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a59" name="a59"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a0bfa1fef2b86e3b8e60b562c48dfc7f1">kE7</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 31);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a60" name="a60"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a721a47edf4050f8855a8faf8ad67606f">kF7</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 32);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a61" name="a61"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#ac805ed84fb7d208694b1df29f68c0fad">kFs7</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 33);  <span class="comment">// F#7 / Gb7</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a62" name="a62"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#ae7475407ef379b5304de7454fd421c37">kG7</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 34);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a63" name="a63"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a47ebe97b06a602267e44580fde7becd1">kGs7</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 35);  <span class="comment">// G#7 / Ab7</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a64" name="a64"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#aa88d9cd87e8ff842c9f11e5eae87e1ca">kA7</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 36);</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a65" name="a65"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#ac689724bf4d8d03e9a1dc7a2ef488150">kAs7</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 37);  <span class="comment">// A#7 / Bb7</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a66" name="a66"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteFreq.html#a7706f1ba6317cf5986ad6b0219512c4e">kB7</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">CalculateNoteFreq</a>(A4Freq, 38);</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 常用音高标准的别名</span></div>
+<div class="line"><span class="keyword">using </span><a id="a67" name="a67"></a><a class="code hl_typedef" href="namespacerm_1_1modules.html#aaa060bd699023f8871ba2f797ec96966">NoteFreqStandard</a> = NoteFreq&lt;440&gt;;  </div>
+<div class="line"><span class="keyword">using </span><a id="a68" name="a68"></a><a class="code hl_typedef" href="namespacerm_1_1modules.html#a20cc9cd70ea5d0292db4683628d6952f">NoteFreqBaroque</a> = NoteFreq&lt;415&gt;;   </div>
+<div class="line"><span class="keyword">using </span><a id="a69" name="a69"></a><a class="code hl_typedef" href="namespacerm_1_1modules.html#aa36bc63e258a297251899f7921652630">NoteFreqChamber</a> = NoteFreq&lt;432&gt;;   </div>
+<div class="line"><span class="keyword">using </span><a id="a70" name="a70"></a><a class="code hl_typedef" href="namespacerm_1_1modules.html#abcc1c2cfc3cb7eecfbf6f1f211dff4fa">NoteFreqHigh</a> = NoteFreq&lt;442&gt;;      </div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span> &lt;u16 Bpm&gt;</div>
+<div class="line"><span class="keyword">struct </span>NoteDuration {</div>
+<div class="line">  <span class="comment">// 四分音符时值 = 60000ms / BPM</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a71" name="a71"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#acd7424e3d425d0f2431363e4c42c74db">kQuarter</a> = 60000 / Bpm;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// 基本音符时值</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a72" name="a72"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#adc4744e106874bbba106233fbf137cb1">kWhole</a> = <a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#acd7424e3d425d0f2431363e4c42c74db">kQuarter</a> * 4;         </div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a73" name="a73"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#a9f461bf529c88ca96b6fd821dcd286de">kHalf</a> = <a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#acd7424e3d425d0f2431363e4c42c74db">kQuarter</a> * 2;          </div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a74" name="a74"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#a71ff20852d71ac57bf6abe32dda76889">kEighth</a> = <a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#acd7424e3d425d0f2431363e4c42c74db">kQuarter</a> / 2;        </div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a75" name="a75"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#ab562fc6f683c1e14726205efbd74b959">kSixteenth</a> = <a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#acd7424e3d425d0f2431363e4c42c74db">kQuarter</a> / 4;     </div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a76" name="a76"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#a914cc76ebed67b6928b698a4a7f290d0">kThirtySecond</a> = <a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#acd7424e3d425d0f2431363e4c42c74db">kQuarter</a> / 8;  </div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// 附点音符时值（原时值的1.5倍）</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a77" name="a77"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#ae94877893e1ae515fa90ebdda8f3384e">kDottedWhole</a> = <a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#adc4744e106874bbba106233fbf137cb1">kWhole</a> + <a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#a9f461bf529c88ca96b6fd821dcd286de">kHalf</a>;                  </div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a78" name="a78"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#a5817f03a81cbd6cd7f3ae904017c54b0">kDottedHalf</a> = <a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#a9f461bf529c88ca96b6fd821dcd286de">kHalf</a> + <a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#acd7424e3d425d0f2431363e4c42c74db">kQuarter</a>;                 </div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a79" name="a79"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#a37bb3616dbbaced0a03292a3fd8e88ae">kDottedQuarter</a> = <a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#acd7424e3d425d0f2431363e4c42c74db">kQuarter</a> + <a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#a71ff20852d71ac57bf6abe32dda76889">kEighth</a>;            </div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a80" name="a80"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#a28c91ddc0e6bc42978486f1daf01405e">kDottedEighth</a> = <a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#a71ff20852d71ac57bf6abe32dda76889">kEighth</a> + <a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#ab562fc6f683c1e14726205efbd74b959">kSixteenth</a>;           </div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a81" name="a81"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#acd41abada9485ab1317656825d1ed050">kDottedSixteenth</a> = <a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#ab562fc6f683c1e14726205efbd74b959">kSixteenth</a> + <a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#a914cc76ebed67b6928b698a4a7f290d0">kThirtySecond</a>;  </div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// 三连音时值（原时值的2/3）</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a82" name="a82"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#ad4e48496472e177eb3b9d05a4ee87fdf">kTripletHalf</a> = (<a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#a9f461bf529c88ca96b6fd821dcd286de">kHalf</a> * 2) / 3;        </div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a83" name="a83"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#ae42d58e1855c70e1ee7dfb0800aa4f3e">kTripletQuarter</a> = (<a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#acd7424e3d425d0f2431363e4c42c74db">kQuarter</a> * 2) / 3;  </div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a id="a84" name="a84"></a><a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#a2ce5ae197d08af3fef97efe746897684">kTripletEighth</a> = (<a class="code hl_variable" href="structrm_1_1modules_1_1NoteDuration.html#a71ff20852d71ac57bf6abe32dda76889">kEighth</a> * 2) / 3;    </div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 常用BPM的别名</span></div>
+<div class="line"><span class="keyword">using </span><a id="a85" name="a85"></a><a class="code hl_typedef" href="namespacerm_1_1modules.html#a1820b940892bb284b16cc60829ff41ff">NoteDuration60</a> = NoteDuration&lt;60&gt;;    </div>
+<div class="line"><span class="keyword">using </span><a id="a86" name="a86"></a><a class="code hl_typedef" href="namespacerm_1_1modules.html#a2e5fb4b4898ab1d4d965fa7209bb2ae7">NoteDuration80</a> = NoteDuration&lt;80&gt;;    </div>
+<div class="line"><span class="keyword">using </span><a id="a87" name="a87"></a><a class="code hl_typedef" href="namespacerm_1_1modules.html#a21562849517d17620e3c1af08f6b53b8">NoteDuration100</a> = NoteDuration&lt;100&gt;;  </div>
+<div class="line"><span class="keyword">using </span><a id="a88" name="a88"></a><a class="code hl_typedef" href="namespacerm_1_1modules.html#ae66d390d4c6d646316961d77d586f887">NoteDuration120</a> = NoteDuration&lt;120&gt;;  </div>
+<div class="line"><span class="keyword">using </span><a id="a89" name="a89"></a><a class="code hl_typedef" href="namespacerm_1_1modules.html#a2abe6c853ae82b8399cb6c270617ff7d">NoteDuration140</a> = NoteDuration&lt;140&gt;;  </div>
+<div class="line"><span class="keyword">using </span><a id="a90" name="a90"></a><a class="code hl_typedef" href="namespacerm_1_1modules.html#a8e52a0756d49c45af89519a46ae9d4a2">NoteDuration160</a> = NoteDuration&lt;160&gt;;  </div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>BuzzerMelody : <span class="keyword">public</span> SequenceGenerator&lt;BuzzerNote&gt; {</div>
+<div class="line"> <span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">using </span><a id="a91" name="a91"></a><a class="code hl_typedef" href="classrm_1_1modules_1_1BuzzerMelody.html#aaf6656f3ceebcf68cf9b6d6097339c71">Note</a> = BuzzerNote;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>buzzer_melody {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>Silent : <span class="keyword">public</span> BuzzerMelody {</div>
+<div class="line"> <span class="keyword">public</span>:</div>
+<div class="line">  <a id="a92" name="a92"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1Silent.html#a36f6b77058d14fdcb19d581b409d14d0">Silent</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"> </div>
+<div class="line">  BuzzerNote <a id="a93" name="a93"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1Silent.html#a4a84dac7252f42c0f7b100f207ac3ac0">Update</a>(<a id="a94" name="a94"></a><a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> now)<span class="keyword"> override </span>{ <span class="keywordflow">return</span> BuzzerNote(0, 0); }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">void</span> <a id="a95" name="a95"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1Silent.html#a3149f4667d6782783247c030ff05b09d">Reset</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> now)<span class="keyword"> override </span>{}</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span> &lt;usize BeepsCount&gt;</div>
+<div class="line"><span class="keyword">class </span>Beeps : <span class="keyword">public</span> BuzzerMelody {</div>
+<div class="line"> <span class="keyword">public</span>:</div>
+<div class="line">  <a id="a96" name="a96"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1Beeps.html#abc49ed348eb5db84759e0f543d18ee9f">Beeps</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"> </div>
+<div class="line">  BuzzerNote <a id="a97" name="a97"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1Beeps.html#afa6e015b2ad765d5c08002614ee57299">Update</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> now)<span class="keyword"> override </span>{</div>
+<div class="line">    <span class="keyword">using </span>Freq = <a class="code hl_typedef" href="namespacerm_1_1modules.html#aaa060bd699023f8871ba2f797ec96966">NoteFreqStandard</a>;</div>
+<div class="line">    <span class="keyword">using </span><a id="a98" name="a98"></a><a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a7ee8dbdddcd5c174cbfbac2346044380">Duration</a> = <a class="code hl_typedef" href="namespacerm_1_1modules.html#a8e52a0756d49c45af89519a46ae9d4a2">NoteDuration160</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (note_index_ &gt;= BeepsCount * 2) {</div>
+<div class="line">      <span class="keywordflow">return</span> BuzzerNote(0, 0);  <span class="comment">// 播放完毕</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    BuzzerNote note;</div>
+<div class="line">    <span class="keywordflow">if</span> (note_index_ % 2 == 0) {</div>
+<div class="line">      note = BuzzerNote(Freq::kE6, Duration::kThirtySecond);  <span class="comment">// 响声</span></div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">      note = BuzzerNote(Freq::kRest, Duration::kThirtySecond);  <span class="comment">// 静音</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">auto</span> elapsed = <a id="a99" name="a99"></a><a class="code hl_function" href="classrm_1_1modules_1_1SequenceGenerator.html#a3db32923ee92ecbdedd29ba8fb014862">ElapsedMs</a>(note_start_time_, now);</div>
+<div class="line">    <span class="keywordflow">if</span> (elapsed &gt;= note.duration) {</div>
+<div class="line">      note_index_++;</div>
+<div class="line">      note_start_time_ = now;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> note;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">void</span> <a id="a100" name="a100"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1Beeps.html#a3d471c51481e7a68b2465bfe368aaf19">Reset</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> now)<span class="keyword"> override </span>{</div>
+<div class="line">    note_index_ = 0;</div>
+<div class="line">    note_start_time_ = now;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line"> <span class="keyword">private</span>:</div>
+<div class="line">  <a id="a101" name="a101"></a><a class="code hl_typedef" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> note_index_{0};</div>
+<div class="line">  <a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> note_start_time_;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>Startup : <span class="keyword">public</span> BuzzerMelody {</div>
+<div class="line"> <span class="keyword">public</span>:</div>
+<div class="line">  <a id="a102" name="a102"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1Startup.html#a7a33ac84e272ec2f9cc411ef7995af39">Startup</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"> </div>
+<div class="line">  BuzzerNote <a id="a103" name="a103"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1Startup.html#a8be60dcbfe68a6e059043394ed41be26">Update</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> now)<span class="keyword"> override </span>{</div>
+<div class="line">    <span class="keyword">using </span>Freq = <a class="code hl_typedef" href="namespacerm_1_1modules.html#aaa060bd699023f8871ba2f797ec96966">NoteFreqStandard</a>;</div>
+<div class="line">    <span class="keyword">using </span><a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a7ee8dbdddcd5c174cbfbac2346044380">Duration</a> = <a class="code hl_typedef" href="namespacerm_1_1modules.html#a8e52a0756d49c45af89519a46ae9d4a2">NoteDuration160</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">constexpr</span> std::array&lt;BuzzerNote, 3&gt; kMelody = {</div>
+<div class="line">        BuzzerNote(Freq::kC6, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kE6, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kG6, Duration::kEighth),</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (note_index_ &gt;= kMelody.size()) {</div>
+<div class="line">      <span class="keywordflow">return</span> BuzzerNote(0, 0);  <span class="comment">// 播放完毕</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">auto</span> note = kMelody[note_index_];</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">auto</span> elapsed = <a class="code hl_function" href="classrm_1_1modules_1_1SequenceGenerator.html#a3db32923ee92ecbdedd29ba8fb014862">ElapsedMs</a>(note_start_time_, now);</div>
+<div class="line">    <span class="keywordflow">if</span> (elapsed &gt;= note.duration) {</div>
+<div class="line">      note_index_++;</div>
+<div class="line">      note_start_time_ = now;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> note;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">void</span> <a id="a104" name="a104"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1Startup.html#a27cb346ba7e3f16e59d1ecb87d402b41">Reset</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> now)<span class="keyword"> override </span>{</div>
+<div class="line">    note_index_ = 0;</div>
+<div class="line">    note_start_time_ = now;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line"> <span class="keyword">private</span>:</div>
+<div class="line">  <a class="code hl_typedef" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> note_index_{0};</div>
+<div class="line">  <a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> note_start_time_;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>Error : <span class="keyword">public</span> BuzzerMelody {</div>
+<div class="line"> <span class="keyword">public</span>:</div>
+<div class="line">  <a id="a105" name="a105"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1Error.html#acb424d4ffa59fafd76ec9d3606ae24c7">Error</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"> </div>
+<div class="line">  BuzzerNote <a id="a106" name="a106"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1Error.html#ad41c81c6e4233d41bc8b60912817c755">Update</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> now)<span class="keyword"> override </span>{</div>
+<div class="line">    <span class="keyword">using </span>Freq = <a class="code hl_typedef" href="namespacerm_1_1modules.html#aaa060bd699023f8871ba2f797ec96966">NoteFreqStandard</a>;</div>
+<div class="line">    <span class="keyword">using </span><a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a7ee8dbdddcd5c174cbfbac2346044380">Duration</a> = <a class="code hl_typedef" href="namespacerm_1_1modules.html#a8e52a0756d49c45af89519a46ae9d4a2">NoteDuration160</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">constexpr</span> std::array&lt;BuzzerNote, 4&gt; kMelody = {</div>
+<div class="line">        BuzzerNote(Freq::kG5, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kG5, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kSixteenth),</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (note_index_ &gt;= kMelody.size()) {</div>
+<div class="line">      <span class="keywordflow">return</span> BuzzerNote(0, 0);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">auto</span> note = kMelody[note_index_];</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">auto</span> elapsed = <a class="code hl_function" href="classrm_1_1modules_1_1SequenceGenerator.html#a3db32923ee92ecbdedd29ba8fb014862">ElapsedMs</a>(note_start_time_, now);</div>
+<div class="line">    <span class="keywordflow">if</span> (elapsed &gt;= note.duration) {</div>
+<div class="line">      note_index_++;</div>
+<div class="line">      note_start_time_ = now;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> note;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">void</span> <a id="a107" name="a107"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1Error.html#a7a64a59327300fbba130b63c30aa8b78">Reset</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> now)<span class="keyword"> override </span>{</div>
+<div class="line">    note_index_ = 0;</div>
+<div class="line">    note_start_time_ = now;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line"> <span class="keyword">private</span>:</div>
+<div class="line">  <a class="code hl_typedef" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> note_index_{0};</div>
+<div class="line">  <a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> note_start_time_;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>Success : <span class="keyword">public</span> BuzzerMelody {</div>
+<div class="line"> <span class="keyword">public</span>:</div>
+<div class="line">  <a id="a108" name="a108"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1Success.html#aabb4f0db20a35aa25a7d924c85bab451">Success</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"> </div>
+<div class="line">  BuzzerNote <a id="a109" name="a109"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1Success.html#a68fe2e6313727e7973e687f695071f2a">Update</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> now)<span class="keyword"> override </span>{</div>
+<div class="line">    <span class="keyword">using </span>Freq = <a class="code hl_typedef" href="namespacerm_1_1modules.html#aaa060bd699023f8871ba2f797ec96966">NoteFreqStandard</a>;</div>
+<div class="line">    <span class="keyword">using </span><a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a7ee8dbdddcd5c174cbfbac2346044380">Duration</a> = <a class="code hl_typedef" href="namespacerm_1_1modules.html#a8e52a0756d49c45af89519a46ae9d4a2">NoteDuration160</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">constexpr</span> std::array&lt;BuzzerNote, 2&gt; kMelody = {</div>
+<div class="line">        BuzzerNote(Freq::kC6, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kC7, Duration::kDottedEighth),</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (note_index_ &gt;= kMelody.size()) {</div>
+<div class="line">      <span class="keywordflow">return</span> BuzzerNote(0, 0);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">auto</span> note = kMelody[note_index_];</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">auto</span> elapsed = <a class="code hl_function" href="classrm_1_1modules_1_1SequenceGenerator.html#a3db32923ee92ecbdedd29ba8fb014862">ElapsedMs</a>(note_start_time_, now);</div>
+<div class="line">    <span class="keywordflow">if</span> (elapsed &gt;= note.duration) {</div>
+<div class="line">      note_index_++;</div>
+<div class="line">      note_start_time_ = now;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> note;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">void</span> <a id="a110" name="a110"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1Success.html#a5bac00ee64c432ee8965b0685925073e">Reset</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> now)<span class="keyword"> override </span>{</div>
+<div class="line">    note_index_ = 0;</div>
+<div class="line">    note_start_time_ = now;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line"> <span class="keyword">private</span>:</div>
+<div class="line">  <a class="code hl_typedef" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> note_index_{0};</div>
+<div class="line">  <a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> note_start_time_;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>SuperMario : <span class="keyword">public</span> BuzzerMelody {</div>
+<div class="line"> <span class="keyword">public</span>:</div>
+<div class="line">  <a id="a111" name="a111"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1SuperMario.html#a504e05c22fa7b27019f09ec3043746df">SuperMario</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"> </div>
+<div class="line">  BuzzerNote <a id="a112" name="a112"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1SuperMario.html#a7b3b1d6fe191a315cddcb1a7dfca8118">Update</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> now)<span class="keyword"> override </span>{</div>
+<div class="line">    <span class="keyword">using </span>Freq = <a class="code hl_typedef" href="namespacerm_1_1modules.html#aaa060bd699023f8871ba2f797ec96966">NoteFreqStandard</a>;</div>
+<div class="line">    <span class="keyword">using </span><a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a7ee8dbdddcd5c174cbfbac2346044380">Duration</a> = <a class="code hl_typedef" href="namespacerm_1_1modules.html#ae66d390d4c6d646316961d77d586f887">NoteDuration120</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">constexpr</span> std::array kMelody = {</div>
+<div class="line">        BuzzerNote(Freq::kE6, Duration::kThirtySecond), BuzzerNote(Freq::kRest, Duration::kThirtySecond),</div>
+<div class="line">        BuzzerNote(Freq::kE6, Duration::kSixteenth),    BuzzerNote(Freq::kRest, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kE6, Duration::kSixteenth),    BuzzerNote(Freq::kRest, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kC6, Duration::kSixteenth),    BuzzerNote(Freq::kE6, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kSixteenth),  BuzzerNote(Freq::kG6, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kEighth),     BuzzerNote(Freq::kG5, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kEighth),     BuzzerNote(Freq::kC6, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kSixteenth),  BuzzerNote(Freq::kG5, Duration::kSixteenth),</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (note_index_ &gt;= kMelody.size()) {</div>
+<div class="line">      <span class="keywordflow">return</span> BuzzerNote(0, 0);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">auto</span> note = kMelody[note_index_];</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">auto</span> elapsed = <a class="code hl_function" href="classrm_1_1modules_1_1SequenceGenerator.html#a3db32923ee92ecbdedd29ba8fb014862">ElapsedMs</a>(note_start_time_, now);</div>
+<div class="line">    <span class="keywordflow">if</span> (elapsed &gt;= note.duration) {</div>
+<div class="line">      note_index_++;</div>
+<div class="line">      note_start_time_ = now;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> note;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">void</span> <a id="a113" name="a113"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1SuperMario.html#ae25b0d12d21ef70da6c05d7add735ad3">Reset</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> now)<span class="keyword"> override </span>{</div>
+<div class="line">    note_index_ = 0;</div>
+<div class="line">    note_start_time_ = now;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line"> <span class="keyword">private</span>:</div>
+<div class="line">  <a class="code hl_typedef" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> note_index_{0};</div>
+<div class="line">  <a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> note_start_time_;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>TheLick : <span class="keyword">public</span> BuzzerMelody {</div>
+<div class="line"> <span class="keyword">public</span>:</div>
+<div class="line">  <a id="a114" name="a114"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1TheLick.html#a986dcfa45b8fce08e3d0e6da08b66656">TheLick</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"> </div>
+<div class="line">  BuzzerNote <a id="a115" name="a115"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1TheLick.html#a93d5733f9be089ced433a4553ffedb4b">Update</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> now)<span class="keyword"> override </span>{</div>
+<div class="line">    <span class="keyword">using </span>Freq = <a class="code hl_typedef" href="namespacerm_1_1modules.html#aaa060bd699023f8871ba2f797ec96966">NoteFreqStandard</a>;</div>
+<div class="line">    <span class="keyword">using </span><a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a7ee8dbdddcd5c174cbfbac2346044380">Duration</a> = <a class="code hl_typedef" href="namespacerm_1_1modules.html#a8e52a0756d49c45af89519a46ae9d4a2">NoteDuration160</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">constexpr</span> std::array kMelody = {</div>
+<div class="line">        BuzzerNote(Freq::kD6, Duration::kSixteenth),      BuzzerNote(Freq::kE6, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kF6, Duration::kSixteenth),      BuzzerNote(Freq::kG6, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kDs6, Duration::kThirtySecond),  BuzzerNote(Freq::kE6, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kThirtySecond), BuzzerNote(Freq::kC6, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kD6, Duration::kDottedEighth),</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (note_index_ &gt;= kMelody.size()) {</div>
+<div class="line">      <span class="keywordflow">return</span> BuzzerNote(0, 0);  <span class="comment">// 播放完毕</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">auto</span> note = kMelody[note_index_];</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">auto</span> elapsed = <a class="code hl_function" href="classrm_1_1modules_1_1SequenceGenerator.html#a3db32923ee92ecbdedd29ba8fb014862">ElapsedMs</a>(note_start_time_, now);</div>
+<div class="line">    <span class="keywordflow">if</span> (elapsed &gt;= note.duration) {</div>
+<div class="line">      note_index_++;</div>
+<div class="line">      note_start_time_ = now;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> note;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">void</span> <a id="a116" name="a116"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1TheLick.html#a660a67132318d6c794694851ba19995f">Reset</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> now)<span class="keyword"> override </span>{</div>
+<div class="line">    note_index_ = 0;</div>
+<div class="line">    note_start_time_ = now;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line"> <span class="keyword">private</span>:</div>
+<div class="line">  <a class="code hl_typedef" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> note_index_{0};</div>
+<div class="line">  <a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> note_start_time_;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>SeeUAgain : <span class="keyword">public</span> BuzzerMelody {</div>
+<div class="line"> <span class="keyword">public</span>:</div>
+<div class="line">  <a id="a117" name="a117"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1SeeUAgain.html#ae96203e265b05f341b09827f8cb7c24c">SeeUAgain</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"> </div>
+<div class="line">  BuzzerNote <a id="a118" name="a118"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1SeeUAgain.html#a5b028c95e56b9188fb6bf53cbf245b48">Update</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> now)<span class="keyword"> override </span>{</div>
+<div class="line">    <span class="keyword">using </span>Freq = <a class="code hl_typedef" href="namespacerm_1_1modules.html#aaa060bd699023f8871ba2f797ec96966">NoteFreqStandard</a>;</div>
+<div class="line">    <span class="keyword">using </span><a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a7ee8dbdddcd5c174cbfbac2346044380">Duration</a> = <a class="code hl_typedef" href="namespacerm_1_1modules.html#a21562849517d17620e3c1af08f6b53b8">NoteDuration100</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">constexpr</span> std::array kMelody = {</div>
+<div class="line">        BuzzerNote(Freq::kC6, Duration::kEighth),          BuzzerNote(Freq::kE6, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kG6, Duration::kEighth),          BuzzerNote(Freq::kA6, Duration::kDottedQuarter),</div>
+<div class="line">        BuzzerNote(Freq::kG6, Duration::kDottedSixteenth), BuzzerNote(Freq::kRest, Duration::kThirtySecond),</div>
+<div class="line">        BuzzerNote(Freq::kG6, Duration::kQuarter),         BuzzerNote(Freq::kRest, Duration::kDottedEighth),</div>
+<div class="line">        BuzzerNote(Freq::kC6, Duration::kSixteenth),       BuzzerNote(Freq::kD6, Duration::kDottedSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kThirtySecond),  BuzzerNote(Freq::kD6, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kC6, Duration::kEighth),          BuzzerNote(Freq::kD6, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kE6, Duration::kQuarter),         BuzzerNote(Freq::kRest, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kE6, Duration::kSixteenth),       BuzzerNote(Freq::kG6, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kA6, Duration::kEighth),          BuzzerNote(Freq::kB6, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kA6, Duration::kEighth),          BuzzerNote(Freq::kG6, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kE6, Duration::kEighth),          BuzzerNote(Freq::kD6, Duration::kDottedSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kThirtySecond),  BuzzerNote(Freq::kD6, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kC6, Duration::kEighth),          BuzzerNote(Freq::kD6, Duration::kDottedSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kThirtySecond),  BuzzerNote(Freq::kD6, Duration::kDottedSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kThirtySecond),  BuzzerNote(Freq::kD6, Duration::kDottedSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kThirtySecond),  BuzzerNote(Freq::kC6, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kQuarter),       BuzzerNote(Freq::kRest, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kC6, Duration::kSixteenth),       BuzzerNote(Freq::kE6, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kG6, Duration::kEighth),          BuzzerNote(Freq::kA6, Duration::kDottedQuarter),</div>
+<div class="line">        BuzzerNote(Freq::kG6, Duration::kDottedSixteenth), BuzzerNote(Freq::kRest, Duration::kThirtySecond),</div>
+<div class="line">        BuzzerNote(Freq::kG6, Duration::kQuarter),         BuzzerNote(Freq::kRest, Duration::kDottedEighth),</div>
+<div class="line">        BuzzerNote(Freq::kC6, Duration::kSixteenth),       BuzzerNote(Freq::kD6, Duration::kDottedSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kThirtySecond),  BuzzerNote(Freq::kD6, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kC6, Duration::kEighth),          BuzzerNote(Freq::kE6, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kQuarter),       BuzzerNote(Freq::kD6, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kE6, Duration::kSixteenth),       BuzzerNote(Freq::kG6, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kA6, Duration::kEighth),          BuzzerNote(Freq::kC7, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kD7, Duration::kEighth),          BuzzerNote(Freq::kE7, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kD7, Duration::kEighth),          BuzzerNote(Freq::kC7, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kG6, Duration::kSixteenth),       BuzzerNote(Freq::kA6, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kC7, Duration::kEighth),          BuzzerNote(Freq::kD7, Duration::kDottedSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kThirtySecond),  BuzzerNote(Freq::kD7, Duration::kDottedSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kThirtySecond),  BuzzerNote(Freq::kD7, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kC7, Duration::kEighth),          BuzzerNote(Freq::kRest, Duration::kQuarter),</div>
+<div class="line">        BuzzerNote(Freq::kG6, Duration::kSixteenth),       BuzzerNote(Freq::kA6, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kC7, Duration::kEighth),          BuzzerNote(Freq::kD7, Duration::kDottedSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kThirtySecond),  BuzzerNote(Freq::kD7, Duration::kDottedSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kThirtySecond),  BuzzerNote(Freq::kD7, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kC7, Duration::kEighth),          BuzzerNote(Freq::kRest, Duration::kQuarter),</div>
+<div class="line">        BuzzerNote(Freq::kRest, Duration::kQuarter),       BuzzerNote(Freq::kC7, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kB6, Duration::kEighth),          BuzzerNote(Freq::kA6, Duration::kDottedQuarter),</div>
+<div class="line">        BuzzerNote(Freq::kG6, Duration::kEighth),          BuzzerNote(Freq::kRest, Duration::kQuarter),</div>
+<div class="line">        BuzzerNote(Freq::kC7, Duration::kEighth),          BuzzerNote(Freq::kB6, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kA6, Duration::kDottedEighth),    BuzzerNote(Freq::kB6, Duration::kSixteenth),</div>
+<div class="line">        BuzzerNote(Freq::kA6, Duration::kEighth),          BuzzerNote(Freq::kG6, Duration::kEighth),</div>
+<div class="line">        BuzzerNote(Freq::kE6, Duration::kEighth),</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (note_index_ &gt;= kMelody.size()) {</div>
+<div class="line">      <span class="keywordflow">return</span> BuzzerNote(0, 0);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">auto</span> note = kMelody[note_index_];</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">auto</span> elapsed = <a class="code hl_function" href="classrm_1_1modules_1_1SequenceGenerator.html#a3db32923ee92ecbdedd29ba8fb014862">ElapsedMs</a>(note_start_time_, now);</div>
+<div class="line">    <span class="keywordflow">if</span> (elapsed &gt;= note.duration) {</div>
+<div class="line">      note_index_++;</div>
+<div class="line">      note_start_time_ = now;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> note;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">void</span> <a id="a119" name="a119"></a><a class="code hl_function" href="classrm_1_1modules_1_1buzzer__melody_1_1SeeUAgain.html#a87da759fa835794b7905e5496bb0c7a0">Reset</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> now)<span class="keyword"> override </span>{</div>
+<div class="line">    note_index_ = 0;</div>
+<div class="line">    note_start_time_ = now;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line"> <span class="keyword">private</span>:</div>
+<div class="line">  <a class="code hl_typedef" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">rm::usize</a> note_index_{0};</div>
+<div class="line">  <a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> note_start_time_;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// NOTE: 你可以参照上面的几个Melody，通过继承BuzzerMelody类来实现自己的音乐序列</span></div>
+<div class="line"> </div>
+<div class="line">}  <span class="comment">// namespace buzzer_melody</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span>... MelodyTypes&gt;</div>
+<div class="line"><span class="keyword">class </span>BuzzerController : <span class="keyword">public</span> SequencePlayer&lt;BuzzerNote, MelodyTypes...&gt; {</div>
+<div class="line"> <span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">using </span><a id="a120" name="a120"></a><a class="code hl_typedef" href="classrm_1_1modules_1_1BuzzerController.html#abdf17b17730d8ea19f8737abbc309f71">Base</a> = <a id="a121" name="a121"></a><a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#a573f91fcce5c7c95916281de8e8bed95">SequencePlayer</a>&lt;BuzzerNote, MelodyTypes...&gt;;</div>
+<div class="line">  <span class="keyword">using </span><a id="a122" name="a122"></a><a class="code hl_typedef" href="classrm_1_1modules_1_1BuzzerController.html#a94a57dd143769515db6293b4422ccb2c">Note</a> = BuzzerNote;</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Melody&gt;</div>
+<div class="line">  <span class="keywordtype">void</span> <a id="a123" name="a123"></a><a class="code hl_function" href="classrm_1_1modules_1_1BuzzerController.html#a8a45ec9d88456ccb0760dbeb8baa7d50">Play</a>() {</div>
+<div class="line">    Base::template SetSequence&lt;Melody&gt;();</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">void</span> <a id="a124" name="a124"></a><a class="code hl_function" href="classrm_1_1modules_1_1BuzzerController.html#a37c057547ffcb6051a1138e633ab79a5">Stop</a>() { <a id="a125" name="a125"></a><a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#a120485fc17661e034718562ee5f7c6d8">Base::Reset</a>(); }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">const</span> <a class="code hl_typedef" href="classrm_1_1modules_1_1BuzzerController.html#a94a57dd143769515db6293b4422ccb2c">Note</a> &amp;<a id="a126" name="a126"></a><a class="code hl_function" href="classrm_1_1modules_1_1BuzzerController.html#a43be814805d91feb2a5e2879833baf5f">current_note</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a id="a127" name="a127"></a><a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#a4fa229a13ac0f1cdffdb91e763859a89">Base::current_output</a>(); }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">bool</span> <a id="a128" name="a128"></a><a class="code hl_function" href="classrm_1_1modules_1_1BuzzerController.html#ab7f99be1d4c21286925d45639083bdf7">is_playing</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#a4fa229a13ac0f1cdffdb91e763859a89">Base::current_output</a>().frequency &gt; 0; }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">}  <span class="comment">// namespace rm::modules</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_MODULES_BUZZER_CONTROLLER_HPP</span></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1BuzzerController_html_a37c057547ffcb6051a1138e633ab79a5"><div class="ttname"><a href="classrm_1_1modules_1_1BuzzerController.html#a37c057547ffcb6051a1138e633ab79a5">rm::modules::BuzzerController::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">停止播放（切换到静音）</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:657</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1BuzzerController_html_a43be814805d91feb2a5e2879833baf5f"><div class="ttname"><a href="classrm_1_1modules_1_1BuzzerController.html#a43be814805d91feb2a5e2879833baf5f">rm::modules::BuzzerController::current_note</a></div><div class="ttdeci">const Note &amp; current_note() const</div><div class="ttdoc">获取当前音符（Update方法继承自SequencePlayer）</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:663</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1BuzzerController_html_a8a45ec9d88456ccb0760dbeb8baa7d50"><div class="ttname"><a href="classrm_1_1modules_1_1BuzzerController.html#a8a45ec9d88456ccb0760dbeb8baa7d50">rm::modules::BuzzerController::Play</a></div><div class="ttdeci">void Play()</div><div class="ttdoc">播放指定的音乐/提示音</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:649</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1BuzzerController_html_a94a57dd143769515db6293b4422ccb2c"><div class="ttname"><a href="classrm_1_1modules_1_1BuzzerController.html#a94a57dd143769515db6293b4422ccb2c">rm::modules::BuzzerController::Note</a></div><div class="ttdeci">BuzzerNote Note</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:642</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1BuzzerController_html_ab7f99be1d4c21286925d45639083bdf7"><div class="ttname"><a href="classrm_1_1modules_1_1BuzzerController.html#ab7f99be1d4c21286925d45639083bdf7">rm::modules::BuzzerController::is_playing</a></div><div class="ttdeci">bool is_playing() const</div><div class="ttdoc">检查当前是否正在发声</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:669</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1BuzzerController_html_abdf17b17730d8ea19f8737abbc309f71"><div class="ttname"><a href="classrm_1_1modules_1_1BuzzerController.html#abdf17b17730d8ea19f8737abbc309f71">rm::modules::BuzzerController::Base</a></div><div class="ttdeci">SequencePlayer&lt; BuzzerNote, MelodyTypes... &gt; Base</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:641</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1BuzzerMelody_html_aaf6656f3ceebcf68cf9b6d6097339c71"><div class="ttname"><a href="classrm_1_1modules_1_1BuzzerMelody.html#aaf6656f3ceebcf68cf9b6d6097339c71">rm::modules::BuzzerMelody::Note</a></div><div class="ttdeci">BuzzerNote Note</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:229</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a2e96a1993839f2ef43a599dd47ef96bf"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">rm::modules::SequenceGenerator&lt; BuzzerNote &gt;::TimePoint</a></div><div class="ttdeci">std::chrono::steady_clock::time_point TimePoint</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:52</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a3db32923ee92ecbdedd29ba8fb014862"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a3db32923ee92ecbdedd29ba8fb014862">rm::modules::SequenceGenerator&lt; BuzzerNote &gt;::ElapsedMs</a></div><div class="ttdeci">static u32 ElapsedMs(TimePoint start, TimePoint now)</div><div class="ttdoc">计算从起始时间到现在经过的毫秒数</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:75</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a7ee8dbdddcd5c174cbfbac2346044380"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a7ee8dbdddcd5c174cbfbac2346044380">rm::modules::SequenceGenerator&lt; BuzzerNote &gt;::Duration</a></div><div class="ttdeci">std::chrono::steady_clock::duration Duration</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:53</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_a120485fc17661e034718562ee5f7c6d8"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#a120485fc17661e034718562ee5f7c6d8">rm::modules::SequencePlayer&lt; BuzzerNote, MelodyTypes... &gt;::Reset</a></div><div class="ttdeci">void Reset()</div><div class="ttdoc">重置当前序列到初始状态</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:174</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_a4fa229a13ac0f1cdffdb91e763859a89"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#a4fa229a13ac0f1cdffdb91e763859a89">rm::modules::SequencePlayer&lt; BuzzerNote, MelodyTypes... &gt;::current_output</a></div><div class="ttdeci">const Output &amp; current_output() const</div><div class="ttdoc">获取当前输出值（不更新序列）</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:169</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_a573f91fcce5c7c95916281de8e8bed95"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#a573f91fcce5c7c95916281de8e8bed95">rm::modules::SequencePlayer&lt; BuzzerNote, MelodyTypes... &gt;::SequencePlayer</a></div><div class="ttdeci">SequencePlayer()</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:139</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1Beeps_html_a3d471c51481e7a68b2465bfe368aaf19"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1Beeps.html#a3d471c51481e7a68b2465bfe368aaf19">rm::modules::buzzer_melody::Beeps::Reset</a></div><div class="ttdeci">void Reset(TimePoint now) override</div><div class="ttdoc">重置序列状态到初始状态</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:281</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1Beeps_html_abc49ed348eb5db84759e0f543d18ee9f"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1Beeps.html#abc49ed348eb5db84759e0f543d18ee9f">rm::modules::buzzer_melody::Beeps::Beeps</a></div><div class="ttdeci">Beeps()=default</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1Beeps_html_afa6e015b2ad765d5c08002614ee57299"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1Beeps.html#afa6e015b2ad765d5c08002614ee57299">rm::modules::buzzer_melody::Beeps::Update</a></div><div class="ttdeci">BuzzerNote Update(TimePoint now) override</div><div class="ttdoc">更新序列状态并返回当前输出</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:257</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1Error_html_a7a64a59327300fbba130b63c30aa8b78"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1Error.html#a7a64a59327300fbba130b63c30aa8b78">rm::modules::buzzer_melody::Error::Reset</a></div><div class="ttdeci">void Reset(TimePoint now) override</div><div class="ttdoc">重置序列状态到初始状态</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:366</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1Error_html_acb424d4ffa59fafd76ec9d3606ae24c7"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1Error.html#acb424d4ffa59fafd76ec9d3606ae24c7">rm::modules::buzzer_melody::Error::Error</a></div><div class="ttdeci">Error()=default</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1Error_html_ad41c81c6e4233d41bc8b60912817c755"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1Error.html#ad41c81c6e4233d41bc8b60912817c755">rm::modules::buzzer_melody::Error::Update</a></div><div class="ttdeci">BuzzerNote Update(TimePoint now) override</div><div class="ttdoc">更新序列状态并返回当前输出</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:340</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1SeeUAgain_html_a5b028c95e56b9188fb6bf53cbf245b48"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1SeeUAgain.html#a5b028c95e56b9188fb6bf53cbf245b48">rm::modules::buzzer_melody::SeeUAgain::Update</a></div><div class="ttdeci">BuzzerNote Update(TimePoint now) override</div><div class="ttdoc">更新序列状态并返回当前输出</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:526</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1SeeUAgain_html_a87da759fa835794b7905e5496bb0c7a0"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1SeeUAgain.html#a87da759fa835794b7905e5496bb0c7a0">rm::modules::buzzer_melody::SeeUAgain::Reset</a></div><div class="ttdeci">void Reset(TimePoint now) override</div><div class="ttdoc">重置序列状态到初始状态</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:595</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1SeeUAgain_html_ae96203e265b05f341b09827f8cb7c24c"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1SeeUAgain.html#ae96203e265b05f341b09827f8cb7c24c">rm::modules::buzzer_melody::SeeUAgain::SeeUAgain</a></div><div class="ttdeci">SeeUAgain()=default</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1Silent_html_a3149f4667d6782783247c030ff05b09d"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1Silent.html#a3149f4667d6782783247c030ff05b09d">rm::modules::buzzer_melody::Silent::Reset</a></div><div class="ttdeci">void Reset(TimePoint now) override</div><div class="ttdoc">重置序列状态到初始状态</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:246</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1Silent_html_a36f6b77058d14fdcb19d581b409d14d0"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1Silent.html#a36f6b77058d14fdcb19d581b409d14d0">rm::modules::buzzer_melody::Silent::Silent</a></div><div class="ttdeci">Silent()=default</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1Silent_html_a4a84dac7252f42c0f7b100f207ac3ac0"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1Silent.html#a4a84dac7252f42c0f7b100f207ac3ac0">rm::modules::buzzer_melody::Silent::Update</a></div><div class="ttdeci">BuzzerNote Update(TimePoint now) override</div><div class="ttdoc">更新序列状态并返回当前输出</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:244</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1Startup_html_a27cb346ba7e3f16e59d1ecb87d402b41"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1Startup.html#a27cb346ba7e3f16e59d1ecb87d402b41">rm::modules::buzzer_melody::Startup::Reset</a></div><div class="ttdeci">void Reset(TimePoint now) override</div><div class="ttdoc">重置序列状态到初始状态</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:323</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1Startup_html_a7a33ac84e272ec2f9cc411ef7995af39"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1Startup.html#a7a33ac84e272ec2f9cc411ef7995af39">rm::modules::buzzer_melody::Startup::Startup</a></div><div class="ttdeci">Startup()=default</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1Startup_html_a8be60dcbfe68a6e059043394ed41be26"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1Startup.html#a8be60dcbfe68a6e059043394ed41be26">rm::modules::buzzer_melody::Startup::Update</a></div><div class="ttdeci">BuzzerNote Update(TimePoint now) override</div><div class="ttdoc">更新序列状态并返回当前输出</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:298</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1Success_html_a5bac00ee64c432ee8965b0685925073e"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1Success.html#a5bac00ee64c432ee8965b0685925073e">rm::modules::buzzer_melody::Success::Reset</a></div><div class="ttdeci">void Reset(TimePoint now) override</div><div class="ttdoc">重置序列状态到初始状态</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:407</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1Success_html_a68fe2e6313727e7973e687f695071f2a"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1Success.html#a68fe2e6313727e7973e687f695071f2a">rm::modules::buzzer_melody::Success::Update</a></div><div class="ttdeci">BuzzerNote Update(TimePoint now) override</div><div class="ttdoc">更新序列状态并返回当前输出</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:383</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1Success_html_aabb4f0db20a35aa25a7d924c85bab451"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1Success.html#aabb4f0db20a35aa25a7d924c85bab451">rm::modules::buzzer_melody::Success::Success</a></div><div class="ttdeci">Success()=default</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1SuperMario_html_a504e05c22fa7b27019f09ec3043746df"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1SuperMario.html#a504e05c22fa7b27019f09ec3043746df">rm::modules::buzzer_melody::SuperMario::SuperMario</a></div><div class="ttdeci">SuperMario()=default</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1SuperMario_html_a7b3b1d6fe191a315cddcb1a7dfca8118"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1SuperMario.html#a7b3b1d6fe191a315cddcb1a7dfca8118">rm::modules::buzzer_melody::SuperMario::Update</a></div><div class="ttdeci">BuzzerNote Update(TimePoint now) override</div><div class="ttdoc">更新序列状态并返回当前输出</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:424</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1SuperMario_html_ae25b0d12d21ef70da6c05d7add735ad3"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1SuperMario.html#ae25b0d12d21ef70da6c05d7add735ad3">rm::modules::buzzer_melody::SuperMario::Reset</a></div><div class="ttdeci">void Reset(TimePoint now) override</div><div class="ttdoc">重置序列状态到初始状态</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:454</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1TheLick_html_a660a67132318d6c794694851ba19995f"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1TheLick.html#a660a67132318d6c794694851ba19995f">rm::modules::buzzer_melody::TheLick::Reset</a></div><div class="ttdeci">void Reset(TimePoint now) override</div><div class="ttdoc">重置序列状态到初始状态</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:509</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1TheLick_html_a93d5733f9be089ced433a4553ffedb4b"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1TheLick.html#a93d5733f9be089ced433a4553ffedb4b">rm::modules::buzzer_melody::TheLick::Update</a></div><div class="ttdeci">BuzzerNote Update(TimePoint now) override</div><div class="ttdoc">更新序列状态并返回当前输出</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:482</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1buzzer__melody_1_1TheLick_html_a986dcfa45b8fce08e3d0e6da08b66656"><div class="ttname"><a href="classrm_1_1modules_1_1buzzer__melody_1_1TheLick.html#a986dcfa45b8fce08e3d0e6da08b66656">rm::modules::buzzer_melody::TheLick::TheLick</a></div><div class="ttdeci">TheLick()=default</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html"><div class="ttname"><a href="namespacerm_1_1modules.html">rm::modules</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:33</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a1820b940892bb284b16cc60829ff41ff"><div class="ttname"><a href="namespacerm_1_1modules.html#a1820b940892bb284b16cc60829ff41ff">rm::modules::NoteDuration60</a></div><div class="ttdeci">NoteDuration&lt; 60 &gt; NoteDuration60</div><div class="ttdoc">慢速 (60 BPM)</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:217</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a20cc9cd70ea5d0292db4683628d6952f"><div class="ttname"><a href="namespacerm_1_1modules.html#a20cc9cd70ea5d0292db4683628d6952f">rm::modules::NoteFreqBaroque</a></div><div class="ttdeci">NoteFreq&lt; 415 &gt; NoteFreqBaroque</div><div class="ttdoc">巴洛克音高 A4=415Hz</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:170</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a21562849517d17620e3c1af08f6b53b8"><div class="ttname"><a href="namespacerm_1_1modules.html#a21562849517d17620e3c1af08f6b53b8">rm::modules::NoteDuration100</a></div><div class="ttdeci">NoteDuration&lt; 100 &gt; NoteDuration100</div><div class="ttdoc">中速 (100 BPM)</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:219</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a2abe6c853ae82b8399cb6c270617ff7d"><div class="ttname"><a href="namespacerm_1_1modules.html#a2abe6c853ae82b8399cb6c270617ff7d">rm::modules::NoteDuration140</a></div><div class="ttdeci">NoteDuration&lt; 140 &gt; NoteDuration140</div><div class="ttdoc">稍快 (140 BPM)</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:221</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a2e5fb4b4898ab1d4d965fa7209bb2ae7"><div class="ttname"><a href="namespacerm_1_1modules.html#a2e5fb4b4898ab1d4d965fa7209bb2ae7">rm::modules::NoteDuration80</a></div><div class="ttdeci">NoteDuration&lt; 80 &gt; NoteDuration80</div><div class="ttdoc">稍慢 (80 BPM)</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:218</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a5c36d51256a29d06abd3da9aaaddf582"><div class="ttname"><a href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">rm::modules::CalculateNoteFreq</a></div><div class="ttdeci">constexpr u16 CalculateNoteFreq(u16 a4_freq, i16 semitones)</div><div class="ttdoc">音符频率计算辅助函数（编译期计算十二平均律频率）</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:55</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a8e52a0756d49c45af89519a46ae9d4a2"><div class="ttname"><a href="namespacerm_1_1modules.html#a8e52a0756d49c45af89519a46ae9d4a2">rm::modules::NoteDuration160</a></div><div class="ttdeci">NoteDuration&lt; 160 &gt; NoteDuration160</div><div class="ttdoc">快速 (160 BPM)</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:222</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_aa36bc63e258a297251899f7921652630"><div class="ttname"><a href="namespacerm_1_1modules.html#aa36bc63e258a297251899f7921652630">rm::modules::NoteFreqChamber</a></div><div class="ttdeci">NoteFreq&lt; 432 &gt; NoteFreqChamber</div><div class="ttdoc">室内乐音高 A4=432Hz</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:171</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_aaa060bd699023f8871ba2f797ec96966"><div class="ttname"><a href="namespacerm_1_1modules.html#aaa060bd699023f8871ba2f797ec96966">rm::modules::NoteFreqStandard</a></div><div class="ttdeci">NoteFreq&lt; 440 &gt; NoteFreqStandard</div><div class="ttdoc">国际标准音高 A4=440Hz</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:169</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_abcc1c2cfc3cb7eecfbf6f1f211dff4fa"><div class="ttname"><a href="namespacerm_1_1modules.html#abcc1c2cfc3cb7eecfbf6f1f211dff4fa">rm::modules::NoteFreqHigh</a></div><div class="ttdeci">NoteFreq&lt; 442 &gt; NoteFreqHigh</div><div class="ttdoc">高音高 A4=442Hz</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:172</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_ae66d390d4c6d646316961d77d586f887"><div class="ttname"><a href="namespacerm_1_1modules.html#ae66d390d4c6d646316961d77d586f887">rm::modules::NoteDuration120</a></div><div class="ttdeci">NoteDuration&lt; 120 &gt; NoteDuration120</div><div class="ttdoc">标准速度 (120 BPM)</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:220</div></div>
+<div class="ttc" id="anamespacerm_html_a1df35482f4a88e1fe1450c7eb4cf4630"><div class="ttname"><a href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">rm::usize</a></div><div class="ttdeci">size_t usize</div><div class="ttdef"><b>Definition</b> typedefs.hpp:51</div></div>
+<div class="ttc" id="anamespacerm_html_a8f3662a01c5fa99494989944ee6c6157"><div class="ttname"><a href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">rm::u16</a></div><div class="ttdeci">uint16_t u16</div><div class="ttdef"><b>Definition</b> typedefs.hpp:44</div></div>
+<div class="ttc" id="anamespacerm_html_ab0024293c4410554bd98c9bb792c8afb"><div class="ttname"><a href="namespacerm.html#ab0024293c4410554bd98c9bb792c8afb">rm::i16</a></div><div class="ttdeci">int16_t i16</div><div class="ttdef"><b>Definition</b> typedefs.hpp:48</div></div>
+<div class="ttc" id="anamespacerm_html_abe438454936420638776f339c29718b1"><div class="ttname"><a href="namespacerm.html#abe438454936420638776f339c29718b1">rm::f32</a></div><div class="ttdeci">float f32</div><div class="ttdef"><b>Definition</b> typedefs.hpp:52</div></div>
+<div class="ttc" id="asequence__player_8hpp_html"><div class="ttname"><a href="sequence__player_8hpp.html">sequence_player.hpp</a></div><div class="ttdoc">通用序列播放器，可以播放任意类型的数据序列</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1BuzzerNote_html_aa863a628e9906e50f34c39839116302d"><div class="ttname"><a href="structrm_1_1modules_1_1BuzzerNote.html#aa863a628e9906e50f34c39839116302d">rm::modules::BuzzerNote::duration</a></div><div class="ttdeci">u16 duration</div><div class="ttdoc">持续时间 (ms)</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:43</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1BuzzerNote_html_ac34188a0bd7a3a241cda838cebec2dcb"><div class="ttname"><a href="structrm_1_1modules_1_1BuzzerNote.html#ac34188a0bd7a3a241cda838cebec2dcb">rm::modules::BuzzerNote::frequency</a></div><div class="ttdeci">u16 frequency</div><div class="ttdoc">频率 (Hz)，0表示静音</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:42</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteDuration_html_a28c91ddc0e6bc42978486f1daf01405e"><div class="ttname"><a href="structrm_1_1modules_1_1NoteDuration.html#a28c91ddc0e6bc42978486f1daf01405e">rm::modules::NoteDuration::kDottedEighth</a></div><div class="ttdeci">static constexpr u16 kDottedEighth</div><div class="ttdoc">附点八分音符</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:207</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteDuration_html_a2ce5ae197d08af3fef97efe746897684"><div class="ttname"><a href="structrm_1_1modules_1_1NoteDuration.html#a2ce5ae197d08af3fef97efe746897684">rm::modules::NoteDuration::kTripletEighth</a></div><div class="ttdeci">static constexpr u16 kTripletEighth</div><div class="ttdoc">三连音八分音符</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:213</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteDuration_html_a37bb3616dbbaced0a03292a3fd8e88ae"><div class="ttname"><a href="structrm_1_1modules_1_1NoteDuration.html#a37bb3616dbbaced0a03292a3fd8e88ae">rm::modules::NoteDuration::kDottedQuarter</a></div><div class="ttdeci">static constexpr u16 kDottedQuarter</div><div class="ttdoc">附点四分音符</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:206</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteDuration_html_a5817f03a81cbd6cd7f3ae904017c54b0"><div class="ttname"><a href="structrm_1_1modules_1_1NoteDuration.html#a5817f03a81cbd6cd7f3ae904017c54b0">rm::modules::NoteDuration::kDottedHalf</a></div><div class="ttdeci">static constexpr u16 kDottedHalf</div><div class="ttdoc">附点二分音符</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:205</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteDuration_html_a71ff20852d71ac57bf6abe32dda76889"><div class="ttname"><a href="structrm_1_1modules_1_1NoteDuration.html#a71ff20852d71ac57bf6abe32dda76889">rm::modules::NoteDuration::kEighth</a></div><div class="ttdeci">static constexpr u16 kEighth</div><div class="ttdoc">八分音符</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:199</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteDuration_html_a914cc76ebed67b6928b698a4a7f290d0"><div class="ttname"><a href="structrm_1_1modules_1_1NoteDuration.html#a914cc76ebed67b6928b698a4a7f290d0">rm::modules::NoteDuration::kThirtySecond</a></div><div class="ttdeci">static constexpr u16 kThirtySecond</div><div class="ttdoc">三十二分音符</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:201</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteDuration_html_a9f461bf529c88ca96b6fd821dcd286de"><div class="ttname"><a href="structrm_1_1modules_1_1NoteDuration.html#a9f461bf529c88ca96b6fd821dcd286de">rm::modules::NoteDuration::kHalf</a></div><div class="ttdeci">static constexpr u16 kHalf</div><div class="ttdoc">二分音符</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:198</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteDuration_html_ab562fc6f683c1e14726205efbd74b959"><div class="ttname"><a href="structrm_1_1modules_1_1NoteDuration.html#ab562fc6f683c1e14726205efbd74b959">rm::modules::NoteDuration::kSixteenth</a></div><div class="ttdeci">static constexpr u16 kSixteenth</div><div class="ttdoc">十六分音符</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:200</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteDuration_html_acd41abada9485ab1317656825d1ed050"><div class="ttname"><a href="structrm_1_1modules_1_1NoteDuration.html#acd41abada9485ab1317656825d1ed050">rm::modules::NoteDuration::kDottedSixteenth</a></div><div class="ttdeci">static constexpr u16 kDottedSixteenth</div><div class="ttdoc">附点十六分音符</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:208</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteDuration_html_acd7424e3d425d0f2431363e4c42c74db"><div class="ttname"><a href="structrm_1_1modules_1_1NoteDuration.html#acd7424e3d425d0f2431363e4c42c74db">rm::modules::NoteDuration::kQuarter</a></div><div class="ttdeci">static constexpr u16 kQuarter</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:194</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteDuration_html_ad4e48496472e177eb3b9d05a4ee87fdf"><div class="ttname"><a href="structrm_1_1modules_1_1NoteDuration.html#ad4e48496472e177eb3b9d05a4ee87fdf">rm::modules::NoteDuration::kTripletHalf</a></div><div class="ttdeci">static constexpr u16 kTripletHalf</div><div class="ttdoc">三连音二分音符</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:211</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteDuration_html_adc4744e106874bbba106233fbf137cb1"><div class="ttname"><a href="structrm_1_1modules_1_1NoteDuration.html#adc4744e106874bbba106233fbf137cb1">rm::modules::NoteDuration::kWhole</a></div><div class="ttdeci">static constexpr u16 kWhole</div><div class="ttdoc">全音符</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:197</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteDuration_html_ae42d58e1855c70e1ee7dfb0800aa4f3e"><div class="ttname"><a href="structrm_1_1modules_1_1NoteDuration.html#ae42d58e1855c70e1ee7dfb0800aa4f3e">rm::modules::NoteDuration::kTripletQuarter</a></div><div class="ttdeci">static constexpr u16 kTripletQuarter</div><div class="ttdoc">三连音四分音符</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:212</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteDuration_html_ae94877893e1ae515fa90ebdda8f3384e"><div class="ttname"><a href="structrm_1_1modules_1_1NoteDuration.html#ae94877893e1ae515fa90ebdda8f3384e">rm::modules::NoteDuration::kDottedWhole</a></div><div class="ttdeci">static constexpr u16 kDottedWhole</div><div class="ttdoc">附点全音符</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:204</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a00ea6136dbf8a33d0781044953f21bb8"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a00ea6136dbf8a33d0781044953f21bb8">rm::modules::NoteFreq::kF4</a></div><div class="ttdeci">static constexpr u16 kF4</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:117</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a042dfbcea94c1d1b1d5c1eb606b23025"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a042dfbcea94c1d1b1d5c1eb606b23025">rm::modules::NoteFreq::kCs6</a></div><div class="ttdeci">static constexpr u16 kCs6</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:141</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a04a0c061f00fe02d3347918c6c593027"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a04a0c061f00fe02d3347918c6c593027">rm::modules::NoteFreq::kA3</a></div><div class="ttdeci">static constexpr u16 kA3</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:107</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a053a44ccc51bf46f8eb5e44964f7849e"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a053a44ccc51bf46f8eb5e44964f7849e">rm::modules::NoteFreq::kD4</a></div><div class="ttdeci">static constexpr u16 kD4</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:114</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a09e8f2ec8cb5ae897f9b35d8a402d46d"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a09e8f2ec8cb5ae897f9b35d8a402d46d">rm::modules::NoteFreq::kFs3</a></div><div class="ttdeci">static constexpr u16 kFs3</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:104</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a0a9eed7499fb1e472ac1a70ae584f459"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a0a9eed7499fb1e472ac1a70ae584f459">rm::modules::NoteFreq::kB3</a></div><div class="ttdeci">static constexpr u16 kB3</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:109</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a0bfa1fef2b86e3b8e60b562c48dfc7f1"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a0bfa1fef2b86e3b8e60b562c48dfc7f1">rm::modules::NoteFreq::kE7</a></div><div class="ttdeci">static constexpr u16 kE7</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:158</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a0dc8ca3c0e4194fb7b5d7bbf5c2ee2bb"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a0dc8ca3c0e4194fb7b5d7bbf5c2ee2bb">rm::modules::NoteFreq::kD3</a></div><div class="ttdeci">static constexpr u16 kD3</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:100</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a118ff72fedee395df73d4c8777b441ed"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a118ff72fedee395df73d4c8777b441ed">rm::modules::NoteFreq::kC7</a></div><div class="ttdeci">static constexpr u16 kC7</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:154</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a132b3d2abffe6e286de5da9c6beb41fb"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a132b3d2abffe6e286de5da9c6beb41fb">rm::modules::NoteFreq::kC3</a></div><div class="ttdeci">static constexpr u16 kC3</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:98</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a13bf2f12733b09ebe42f85b5dbe3d0c4"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a13bf2f12733b09ebe42f85b5dbe3d0c4">rm::modules::NoteFreq::kFs4</a></div><div class="ttdeci">static constexpr u16 kFs4</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:118</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a1e09840cf490c28ea78f7fa3c4c9c6fb"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a1e09840cf490c28ea78f7fa3c4c9c6fb">rm::modules::NoteFreq::kF6</a></div><div class="ttdeci">static constexpr u16 kF6</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:145</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a2325fb2625a838f6f140cd57f281136a"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a2325fb2625a838f6f140cd57f281136a">rm::modules::NoteFreq::kF5</a></div><div class="ttdeci">static constexpr u16 kF5</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:131</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a28905a12de3874e63510f5a5803b0dce"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a28905a12de3874e63510f5a5803b0dce">rm::modules::NoteFreq::kGs3</a></div><div class="ttdeci">static constexpr u16 kGs3</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:106</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a28fe1f11f1f3b18ad4f6bc63684f0625"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a28fe1f11f1f3b18ad4f6bc63684f0625">rm::modules::NoteFreq::kE4</a></div><div class="ttdeci">static constexpr u16 kE4</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:116</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a36e240dae005eaa2c78674ce11147d6d"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a36e240dae005eaa2c78674ce11147d6d">rm::modules::NoteFreq::kF3</a></div><div class="ttdeci">static constexpr u16 kF3</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:103</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a42f9cb7a843aeaf8d9522b0307dbe351"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a42f9cb7a843aeaf8d9522b0307dbe351">rm::modules::NoteFreq::kE6</a></div><div class="ttdeci">static constexpr u16 kE6</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:144</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a47ebe97b06a602267e44580fde7becd1"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a47ebe97b06a602267e44580fde7becd1">rm::modules::NoteFreq::kGs7</a></div><div class="ttdeci">static constexpr u16 kGs7</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:162</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a48a3f2a5239d43d07a7dd383e1a03036"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a48a3f2a5239d43d07a7dd383e1a03036">rm::modules::NoteFreq::kFs6</a></div><div class="ttdeci">static constexpr u16 kFs6</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:146</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a4e243eb4eae1d1eed565113c190fddaa"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a4e243eb4eae1d1eed565113c190fddaa">rm::modules::NoteFreq::kCs5</a></div><div class="ttdeci">static constexpr u16 kCs5</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:127</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a5b02e959d38285ba2232956e576f7865"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a5b02e959d38285ba2232956e576f7865">rm::modules::NoteFreq::kDs6</a></div><div class="ttdeci">static constexpr u16 kDs6</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:143</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a5e65e244cef6a83584313429094543fb"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a5e65e244cef6a83584313429094543fb">rm::modules::NoteFreq::kAs4</a></div><div class="ttdeci">static constexpr u16 kAs4</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:122</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a6bdc492d03c10b942c63c59a37269c5f"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a6bdc492d03c10b942c63c59a37269c5f">rm::modules::NoteFreq::kB4</a></div><div class="ttdeci">static constexpr u16 kB4</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:123</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a721a47edf4050f8855a8faf8ad67606f"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a721a47edf4050f8855a8faf8ad67606f">rm::modules::NoteFreq::kF7</a></div><div class="ttdeci">static constexpr u16 kF7</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:159</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a73c18ecdaea17ecafa94ead3ed6f3061"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a73c18ecdaea17ecafa94ead3ed6f3061">rm::modules::NoteFreq::kAs5</a></div><div class="ttdeci">static constexpr u16 kAs5</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:136</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a7706f1ba6317cf5986ad6b0219512c4e"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a7706f1ba6317cf5986ad6b0219512c4e">rm::modules::NoteFreq::kB7</a></div><div class="ttdeci">static constexpr u16 kB7</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:165</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a7a8ffd282d1b75649a68483106c2862a"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a7a8ffd282d1b75649a68483106c2862a">rm::modules::NoteFreq::kD5</a></div><div class="ttdeci">static constexpr u16 kD5</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:128</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a7bc675370e3d061db1798e2e432f752d"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a7bc675370e3d061db1798e2e432f752d">rm::modules::NoteFreq::kGs6</a></div><div class="ttdeci">static constexpr u16 kGs6</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:148</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a7c205f1cefe7ac3d56a9859f24c85992"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a7c205f1cefe7ac3d56a9859f24c85992">rm::modules::NoteFreq::kA6</a></div><div class="ttdeci">static constexpr u16 kA6</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:149</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a84102c07cc22b3ce37ce46fcf984e525"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a84102c07cc22b3ce37ce46fcf984e525">rm::modules::NoteFreq::kE3</a></div><div class="ttdeci">static constexpr u16 kE3</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:102</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a872feb03fd974cd287d0af2c30bb2975"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a872feb03fd974cd287d0af2c30bb2975">rm::modules::NoteFreq::kFs5</a></div><div class="ttdeci">static constexpr u16 kFs5</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:132</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a8e471a8dfe26a735e1769c7855989f5f"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a8e471a8dfe26a735e1769c7855989f5f">rm::modules::NoteFreq::kDs3</a></div><div class="ttdeci">static constexpr u16 kDs3</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:101</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a927d8a45eb1a36d96d036a536845bd7c"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a927d8a45eb1a36d96d036a536845bd7c">rm::modules::NoteFreq::kA5</a></div><div class="ttdeci">static constexpr u16 kA5</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:135</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a960c451bf913faf66014e7c4d16e1789"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a960c451bf913faf66014e7c4d16e1789">rm::modules::NoteFreq::kCs3</a></div><div class="ttdeci">static constexpr u16 kCs3</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:99</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_a9c2cdfef3661e1e08ced9e95050b0a5d"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#a9c2cdfef3661e1e08ced9e95050b0a5d">rm::modules::NoteFreq::kDs7</a></div><div class="ttdeci">static constexpr u16 kDs7</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:157</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_aa127647d549aad3714601332cbbe2bdf"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#aa127647d549aad3714601332cbbe2bdf">rm::modules::NoteFreq::kAs3</a></div><div class="ttdeci">static constexpr u16 kAs3</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:108</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_aa3eb3c402c2785774b0b6aa9dd5beed9"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#aa3eb3c402c2785774b0b6aa9dd5beed9">rm::modules::NoteFreq::kC6</a></div><div class="ttdeci">static constexpr u16 kC6</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:140</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_aa88d9cd87e8ff842c9f11e5eae87e1ca"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#aa88d9cd87e8ff842c9f11e5eae87e1ca">rm::modules::NoteFreq::kA7</a></div><div class="ttdeci">static constexpr u16 kA7</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:163</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_ab05ff3633b605360e58a123e15733f40"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#ab05ff3633b605360e58a123e15733f40">rm::modules::NoteFreq::kC5</a></div><div class="ttdeci">static constexpr u16 kC5</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:126</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_ab070f89fda107130890eb5bcb80a2611"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#ab070f89fda107130890eb5bcb80a2611">rm::modules::NoteFreq::kD6</a></div><div class="ttdeci">static constexpr u16 kD6</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:142</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_ab0a2e26b310837077ed243ee3716c2e6"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#ab0a2e26b310837077ed243ee3716c2e6">rm::modules::NoteFreq::kB5</a></div><div class="ttdeci">static constexpr u16 kB5</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:137</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_ab2aea278af3281dd83e5c30d55cd08f1"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#ab2aea278af3281dd83e5c30d55cd08f1">rm::modules::NoteFreq::kG3</a></div><div class="ttdeci">static constexpr u16 kG3</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:105</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_ab326b5c97725184eb8d3496094727e6a"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#ab326b5c97725184eb8d3496094727e6a">rm::modules::NoteFreq::kDs4</a></div><div class="ttdeci">static constexpr u16 kDs4</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:115</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_ac4cb463dd4cc2af96f1dc0595dedc930"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#ac4cb463dd4cc2af96f1dc0595dedc930">rm::modules::NoteFreq::kCs4</a></div><div class="ttdeci">static constexpr u16 kCs4</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:113</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_ac53f568e261056a27460882a4552f07b"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#ac53f568e261056a27460882a4552f07b">rm::modules::NoteFreq::kGs5</a></div><div class="ttdeci">static constexpr u16 kGs5</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:134</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_ac689724bf4d8d03e9a1dc7a2ef488150"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#ac689724bf4d8d03e9a1dc7a2ef488150">rm::modules::NoteFreq::kAs7</a></div><div class="ttdeci">static constexpr u16 kAs7</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:164</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_ac7f9f03d5a196331a86746e67fd1c2f5"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#ac7f9f03d5a196331a86746e67fd1c2f5">rm::modules::NoteFreq::kAs6</a></div><div class="ttdeci">static constexpr u16 kAs6</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:150</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_ac805ed84fb7d208694b1df29f68c0fad"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#ac805ed84fb7d208694b1df29f68c0fad">rm::modules::NoteFreq::kFs7</a></div><div class="ttdeci">static constexpr u16 kFs7</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:160</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_acf82ee6b38f1a3899713ceaa5bb6b357"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#acf82ee6b38f1a3899713ceaa5bb6b357">rm::modules::NoteFreq::kB6</a></div><div class="ttdeci">static constexpr u16 kB6</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:151</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_ad9543bc477c168a1589498de0add5b4a"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#ad9543bc477c168a1589498de0add5b4a">rm::modules::NoteFreq::kDs5</a></div><div class="ttdeci">static constexpr u16 kDs5</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:129</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_ad984e38b411f73277dbcb34224ebac0a"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#ad984e38b411f73277dbcb34224ebac0a">rm::modules::NoteFreq::kG4</a></div><div class="ttdeci">static constexpr u16 kG4</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:119</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_adecd9c57bb96780469be4f8d93c19d8a"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#adecd9c57bb96780469be4f8d93c19d8a">rm::modules::NoteFreq::kC4</a></div><div class="ttdeci">static constexpr u16 kC4</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:112</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_ae02cecb9f37f2c22df6919c38e99df72"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#ae02cecb9f37f2c22df6919c38e99df72">rm::modules::NoteFreq::kGs4</a></div><div class="ttdeci">static constexpr u16 kGs4</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:120</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_ae25930c2193aecfd029d34979bb05892"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#ae25930c2193aecfd029d34979bb05892">rm::modules::NoteFreq::kD7</a></div><div class="ttdeci">static constexpr u16 kD7</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:156</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_ae3b0ddfc8f62bdcd7c964c1f9c7f5a7e"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#ae3b0ddfc8f62bdcd7c964c1f9c7f5a7e">rm::modules::NoteFreq::kRest</a></div><div class="ttdeci">static constexpr u16 kRest</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:95</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_ae4dec3cf7d017bb56795f3e866f2dfa0"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#ae4dec3cf7d017bb56795f3e866f2dfa0">rm::modules::NoteFreq::kE5</a></div><div class="ttdeci">static constexpr u16 kE5</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:130</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_ae7475407ef379b5304de7454fd421c37"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#ae7475407ef379b5304de7454fd421c37">rm::modules::NoteFreq::kG7</a></div><div class="ttdeci">static constexpr u16 kG7</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:161</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_ae89cf10a6129d4378d59f265914833b5"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#ae89cf10a6129d4378d59f265914833b5">rm::modules::NoteFreq::kCs7</a></div><div class="ttdeci">static constexpr u16 kCs7</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:155</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_ae8af7d61193973f57272bad35431f729"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#ae8af7d61193973f57272bad35431f729">rm::modules::NoteFreq::kG5</a></div><div class="ttdeci">static constexpr u16 kG5</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:133</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_af83360b681b1e5e0ccb5a3408c72ebff"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#af83360b681b1e5e0ccb5a3408c72ebff">rm::modules::NoteFreq::kA4</a></div><div class="ttdeci">static constexpr u16 kA4</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:121</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html_aff7043c508f2bb96ae371c4ecb18d944"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html#aff7043c508f2bb96ae371c4ecb18d944">rm::modules::NoteFreq::kG6</a></div><div class="ttdeci">static constexpr u16 kG6</div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:147</div></div>
+<div class="ttc" id="atypedefs_8hpp_html"><div class="ttname"><a href="typedefs_8hpp.html">typedefs.hpp</a></div><div class="ttdoc">全局数据类型定义</div></div>
+</div><!-- fragment --> </div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

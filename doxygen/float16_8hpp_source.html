@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>librm: src/librm/modules/algorithm/float16.hpp 源文件</title>
+<title>librm: src/librm/modules/float16.hpp 源文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -121,31 +121,32 @@ $(document).ready(function(){initNavTree('float16_8hpp_source.html',''); initRes
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef LIBRM_MODULES_ALGORITHM_FLOAT16_HPP</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_MODULES_ALGORITHM_FLOAT16_HPP</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef LIBRM_MODULES_FLOAT16_HPP</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_MODULES_FLOAT16_HPP</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1modules_1_1algorithm.html">rm::modules::algorithm</a> {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1modules.html">rm::modules</a> {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="namespacerm_1_1modules_1_1algorithm.html#a2f002fb1c540189c2ec694b9c9cda697">   35</a></span><span class="keyword">typedef</span> uint16_t <a class="code hl_typedef" href="namespacerm_1_1modules_1_1algorithm.html#a2f002fb1c540189c2ec694b9c9cda697">f16</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="namespacerm_1_1modules.html#a28f15ab7a38a430eeda8268469c4ef7a">   35</a></span><span class="keyword">typedef</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint16_t</a> <a class="code hl_typedef" href="namespacerm_1_1modules.html#a28f15ab7a38a430eeda8268469c4ef7a">f16</a>;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keywordtype">float</span> <a class="code hl_function" href="namespacerm_1_1modules_1_1algorithm.html#ac1ff1e8c3f68a79c253fe139e6533ebd">F16ToF32</a>(<a class="code hl_typedef" href="namespacerm_1_1modules_1_1algorithm.html#a2f002fb1c540189c2ec694b9c9cda697">f16</a> i);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><a class="code hl_typedef" href="namespacerm_1_1modules_1_1algorithm.html#a2f002fb1c540189c2ec694b9c9cda697">f16</a> <a class="code hl_function" href="namespacerm_1_1modules_1_1algorithm.html#a1dc72a39f4842241baeb1bf74840912e">F32ToF16</a>(<span class="keywordtype">float</span> value);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keywordtype">float</span> <a class="code hl_function" href="namespacerm_1_1modules.html#a93db9bcf6668458e04decaa8a6b2c94c">F16ToF32</a>(<a class="code hl_typedef" href="namespacerm_1_1modules.html#a28f15ab7a38a430eeda8268469c4ef7a">f16</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><a class="code hl_typedef" href="namespacerm_1_1modules.html#a28f15ab7a38a430eeda8268469c4ef7a">f16</a> <a class="code hl_function" href="namespacerm_1_1modules.html#aeee0650b70e2b8a7eec52f4ca98df9e8">F32ToF16</a>(<span class="keywordtype">float</span> value);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}  <span class="comment">// namespace rm::modules::algorithm</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}  <span class="comment">// namespace rm::modules</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_MODULES_ALGORITHM_FLOAT16_HPP</span></div>
-<div class="ttc" id="anamespacerm_1_1modules_1_1algorithm_html"><div class="ttname"><a href="namespacerm_1_1modules_1_1algorithm.html">rm::modules::algorithm</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.h:33</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_1_1algorithm_html_a1dc72a39f4842241baeb1bf74840912e"><div class="ttname"><a href="namespacerm_1_1modules_1_1algorithm.html#a1dc72a39f4842241baeb1bf74840912e">rm::modules::algorithm::F32ToF16</a></div><div class="ttdeci">f16 F32ToF16(float value)</div><div class="ttdef"><b>Definition</b> float16.cc:140</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_1_1algorithm_html_a2f002fb1c540189c2ec694b9c9cda697"><div class="ttname"><a href="namespacerm_1_1modules_1_1algorithm.html#a2f002fb1c540189c2ec694b9c9cda697">rm::modules::algorithm::f16</a></div><div class="ttdeci">uint16_t f16</div><div class="ttdef"><b>Definition</b> float16.hpp:35</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_1_1algorithm_html_ac1ff1e8c3f68a79c253fe139e6533ebd"><div class="ttname"><a href="namespacerm_1_1modules_1_1algorithm.html#ac1ff1e8c3f68a79c253fe139e6533ebd">rm::modules::algorithm::F16ToF32</a></div><div class="ttdeci">float F16ToF32(f16 i)</div><div class="ttdef"><b>Definition</b> float16.cc:40</div></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_MODULES_FLOAT16_HPP</span></div>
+<div class="ttc" id="anamespacerm_1_1modules_html"><div class="ttname"><a href="namespacerm_1_1modules.html">rm::modules</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:33</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a28f15ab7a38a430eeda8268469c4ef7a"><div class="ttname"><a href="namespacerm_1_1modules.html#a28f15ab7a38a430eeda8268469c4ef7a">rm::modules::f16</a></div><div class="ttdeci">uint16_t f16</div><div class="ttdef"><b>Definition</b> float16.hpp:35</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a93db9bcf6668458e04decaa8a6b2c94c"><div class="ttname"><a href="namespacerm_1_1modules.html#a93db9bcf6668458e04decaa8a6b2c94c">rm::modules::F16ToF32</a></div><div class="ttdeci">float F16ToF32(f16 i)</div><div class="ttdef"><b>Definition</b> float16.cc:40</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_aeee0650b70e2b8a7eec52f4ca98df9e8"><div class="ttname"><a href="namespacerm_1_1modules.html#aeee0650b70e2b8a7eec52f4ca98df9e8">rm::modules::F32ToF16</a></div><div class="ttdeci">f16 F32ToF16(float value)</div><div class="ttdef"><b>Definition</b> float16.cc:140</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html">rm::modules::NoteFreq</a></div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:93</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_9bd6aa59caad6cbef13c0eefdd946af0.html">modules</a></li><li class="navelem"><a class="el" href="dir_eabaf14e3296d098547794244d58ab73.html">algorithm</a></li><li class="navelem"><a class="el" href="float16_8hpp.html">float16.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_9bd6aa59caad6cbef13c0eefdd946af0.html">modules</a></li><li class="navelem"><a class="el" href="float16_8hpp.html">float16.hpp</a></li>
     <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

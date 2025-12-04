@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>librm: src/librm/modules/algorithm/threshold_trigger.hpp 源文件</title>
+<title>librm: src/librm/modules/threshold_trigger.hpp 源文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -121,22 +121,22 @@ $(document).ready(function(){initNavTree('threshold__trigger_8hpp_source.html','
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#ifndef LIBRM_MODULES_ALGORITHM_THRESHOLD_TRIGGER_HPP</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define LIBRM_MODULES_ALGORITHM_THRESHOLD_TRIGGER_HPP</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#ifndef LIBRM_MODULES_THRESHOLD_TRIGGER_HPP</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define LIBRM_MODULES_THRESHOLD_TRIGGER_HPP</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1modules_1_1algorithm.html">rm::modules::algorithm</a> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1modules.html">rm::modules</a> {</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html">   36</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html">ThresholdTrigger</a> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1ThresholdTrigger.html">   36</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1modules_1_1ThresholdTrigger.html">ThresholdTrigger</a> {</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> <span class="keyword">public</span>:</div>
 <div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html#aa7d93763976ecaab58edc16bda360519">   38</a></span>  <a class="code hl_function" href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html#aa7d93763976ecaab58edc16bda360519">ThresholdTrigger</a>(T&amp; variable, T rising_threshold, T falling_threshold)</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      : variable_(variable), rising_threshold_(rising_threshold), falling_threshold_(falling_threshold) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">if</span> (variable &gt; rising_threshold) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1ThresholdTrigger.html#a9d9163fd0c3fa9462caa1a5198edf4dd">   38</a></span>  <a class="code hl_function" href="classrm_1_1modules_1_1ThresholdTrigger.html#a9d9163fd0c3fa9462caa1a5198edf4dd">ThresholdTrigger</a>(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">T</a>&amp; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">variable</a>, <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">T</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">rising_threshold</a>, <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">T</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">falling_threshold</a>)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      : variable_(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">variable</a>), rising_threshold_(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">rising_threshold</a>), falling_threshold_(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">falling_threshold</a>) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">if</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">variable</a> &gt; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">rising_threshold</a>) {</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      state_ = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      state_ = <span class="keyword">false</span>;</div>
@@ -146,7 +146,7 @@ $(document).ready(function(){initNavTree('threshold__trigger_8hpp_source.html','
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> U = T, std::enable_if_t&lt;std::is_same_v&lt;U, <span class="keywordtype">bool</span>&gt;, <span class="keywordtype">int</span>&gt; = 0&gt;</div>
 <div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html#a8669f4d1d963d914cf44dd5fe6f472ec">   48</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html#a8669f4d1d963d914cf44dd5fe6f472ec">ThresholdTrigger</a>(U&amp; var) : variable_(var), rising_threshold_(true), falling_threshold_(false) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1ThresholdTrigger.html#a5708ccbc4b13471cf71950f255980bf5">   48</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classrm_1_1modules_1_1ThresholdTrigger.html#a5708ccbc4b13471cf71950f255980bf5">ThresholdTrigger</a>(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">U</a>&amp; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">var</a>) : variable_(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">var</a>), rising_threshold_(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">true</a>), falling_threshold_(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">false</a>) {</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">if</span> (variable_) {</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      state_ = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    } <span class="keywordflow">else</span> {</div>
@@ -156,30 +156,30 @@ $(document).ready(function(){initNavTree('threshold__trigger_8hpp_source.html','
 </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
 <div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html#a13afa0db59fed598a24509c2d8d91448">   56</a></span>  <a class="code hl_class" href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html">ThresholdTrigger</a>&amp; <a class="code hl_function" href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html#a13afa0db59fed598a24509c2d8d91448">OnRising</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; callback) {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    rising_edge_callbacks_.push_back(callback);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1ThresholdTrigger.html#a1cf32aacc31ace4e3f4f54a4a92bc6b6">   56</a></span>  <a class="code hl_class" href="classrm_1_1modules_1_1ThresholdTrigger.html">ThresholdTrigger</a>&amp; <a class="code hl_function" href="classrm_1_1modules_1_1ThresholdTrigger.html#a1cf32aacc31ace4e3f4f54a4a92bc6b6">OnRising</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">callback</a>) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    rising_edge_callbacks_.push_back(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">callback</a>);</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  }</div>
 </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
 <div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html#a80bec87d51119657ef434354e48b2817">   61</a></span>  <a class="code hl_class" href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html">ThresholdTrigger</a>&amp; <a class="code hl_function" href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html#a80bec87d51119657ef434354e48b2817">OnFalling</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; callback) {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    falling_edge_callbacks_.push_back(callback);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1ThresholdTrigger.html#afe941f763269a45a9d79f871d458c3f4">   61</a></span>  <a class="code hl_class" href="classrm_1_1modules_1_1ThresholdTrigger.html">ThresholdTrigger</a>&amp; <a class="code hl_function" href="classrm_1_1modules_1_1ThresholdTrigger.html#afe941f763269a45a9d79f871d458c3f4">OnFalling</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">callback</a>) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    falling_edge_callbacks_.push_back(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">callback</a>);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  }</div>
 </div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
 <div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html#aab19b79c1c03b04e7bc9cd6b1ff8f196">   66</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html#aab19b79c1c03b04e7bc9cd6b1ff8f196">Update</a>() {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1ThresholdTrigger.html#a84ad54922bc7910b1c5c9b53af8b32ab">   66</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1modules_1_1ThresholdTrigger.html#a84ad54922bc7910b1c5c9b53af8b32ab">Update</a>() {</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> (variable_ &gt;= rising_threshold_ &amp;&amp; !state_) {</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      state_ = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; callback : rising_edge_callbacks_) {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        callback();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">callback</a> : rising_edge_callbacks_) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">callback</a>();</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      }</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (variable_ &lt;= falling_threshold_ &amp;&amp; state_) {</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      state_ = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; callback : falling_edge_callbacks_) {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        callback();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">callback</a> : falling_edge_callbacks_) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">callback</a>();</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      }</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  }</div>
@@ -187,30 +187,31 @@ $(document).ready(function(){initNavTree('threshold__trigger_8hpp_source.html','
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordtype">bool</span> state_;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  T&amp; variable_;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  T rising_threshold_;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  T falling_threshold_;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  std::vector&lt;std::function&lt;void()&gt;&gt; rising_edge_callbacks_{};</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">T</a>&amp; variable_;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">T</a> rising_threshold_;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">T</a> falling_threshold_;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  std::vector&lt;std::function&lt;<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">void</a>()&gt;&gt; rising_edge_callbacks_{};</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  std::vector&lt;std::function&lt;void()&gt;&gt; falling_edge_callbacks_{};</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>};</div>
 </div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}  <span class="comment">// namespace rm::modules::algorithm</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}  <span class="comment">// namespace rm::modules</span></div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_MODULES_ALGORITHM_THRESHOLD_TRIGGER_HPP</span></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1algorithm_1_1ThresholdTrigger_html"><div class="ttname"><a href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html">rm::modules::algorithm::ThresholdTrigger</a></div><div class="ttdoc">阈值触发器。Attach callbacks to rising and falling edges of a variable.</div><div class="ttdef"><b>Definition</b> threshold_trigger.hpp:36</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1algorithm_1_1ThresholdTrigger_html_a13afa0db59fed598a24509c2d8d91448"><div class="ttname"><a href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html#a13afa0db59fed598a24509c2d8d91448">rm::modules::algorithm::ThresholdTrigger::OnRising</a></div><div class="ttdeci">ThresholdTrigger &amp; OnRising(const std::function&lt; void()&gt; &amp;callback)</div><div class="ttdef"><b>Definition</b> threshold_trigger.hpp:56</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1algorithm_1_1ThresholdTrigger_html_a80bec87d51119657ef434354e48b2817"><div class="ttname"><a href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html#a80bec87d51119657ef434354e48b2817">rm::modules::algorithm::ThresholdTrigger::OnFalling</a></div><div class="ttdeci">ThresholdTrigger &amp; OnFalling(const std::function&lt; void()&gt; &amp;callback)</div><div class="ttdef"><b>Definition</b> threshold_trigger.hpp:61</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1algorithm_1_1ThresholdTrigger_html_a8669f4d1d963d914cf44dd5fe6f472ec"><div class="ttname"><a href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html#a8669f4d1d963d914cf44dd5fe6f472ec">rm::modules::algorithm::ThresholdTrigger::ThresholdTrigger</a></div><div class="ttdeci">ThresholdTrigger(U &amp;var)</div><div class="ttdef"><b>Definition</b> threshold_trigger.hpp:48</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1algorithm_1_1ThresholdTrigger_html_aa7d93763976ecaab58edc16bda360519"><div class="ttname"><a href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html#aa7d93763976ecaab58edc16bda360519">rm::modules::algorithm::ThresholdTrigger::ThresholdTrigger</a></div><div class="ttdeci">ThresholdTrigger(T &amp;variable, T rising_threshold, T falling_threshold)</div><div class="ttdef"><b>Definition</b> threshold_trigger.hpp:38</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1algorithm_1_1ThresholdTrigger_html_aab19b79c1c03b04e7bc9cd6b1ff8f196"><div class="ttname"><a href="classrm_1_1modules_1_1algorithm_1_1ThresholdTrigger.html#aab19b79c1c03b04e7bc9cd6b1ff8f196">rm::modules::algorithm::ThresholdTrigger::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdef"><b>Definition</b> threshold_trigger.hpp:66</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_1_1algorithm_html"><div class="ttname"><a href="namespacerm_1_1modules_1_1algorithm.html">rm::modules::algorithm</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.h:33</div></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_MODULES_THRESHOLD_TRIGGER_HPP</span></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1ThresholdTrigger_html"><div class="ttname"><a href="classrm_1_1modules_1_1ThresholdTrigger.html">rm::modules::ThresholdTrigger</a></div><div class="ttdoc">阈值触发器。Attach callbacks to rising and falling edges of a variable.</div><div class="ttdef"><b>Definition</b> threshold_trigger.hpp:36</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1ThresholdTrigger_html_a1cf32aacc31ace4e3f4f54a4a92bc6b6"><div class="ttname"><a href="classrm_1_1modules_1_1ThresholdTrigger.html#a1cf32aacc31ace4e3f4f54a4a92bc6b6">rm::modules::ThresholdTrigger::OnRising</a></div><div class="ttdeci">ThresholdTrigger &amp; OnRising(const std::function&lt; void()&gt; &amp;callback)</div><div class="ttdef"><b>Definition</b> threshold_trigger.hpp:56</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1ThresholdTrigger_html_a5708ccbc4b13471cf71950f255980bf5"><div class="ttname"><a href="classrm_1_1modules_1_1ThresholdTrigger.html#a5708ccbc4b13471cf71950f255980bf5">rm::modules::ThresholdTrigger::ThresholdTrigger</a></div><div class="ttdeci">ThresholdTrigger(U &amp;var)</div><div class="ttdef"><b>Definition</b> threshold_trigger.hpp:48</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1ThresholdTrigger_html_a84ad54922bc7910b1c5c9b53af8b32ab"><div class="ttname"><a href="classrm_1_1modules_1_1ThresholdTrigger.html#a84ad54922bc7910b1c5c9b53af8b32ab">rm::modules::ThresholdTrigger::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdef"><b>Definition</b> threshold_trigger.hpp:66</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1ThresholdTrigger_html_a9d9163fd0c3fa9462caa1a5198edf4dd"><div class="ttname"><a href="classrm_1_1modules_1_1ThresholdTrigger.html#a9d9163fd0c3fa9462caa1a5198edf4dd">rm::modules::ThresholdTrigger::ThresholdTrigger</a></div><div class="ttdeci">ThresholdTrigger(T &amp;variable, T rising_threshold, T falling_threshold)</div><div class="ttdef"><b>Definition</b> threshold_trigger.hpp:38</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1ThresholdTrigger_html_afe941f763269a45a9d79f871d458c3f4"><div class="ttname"><a href="classrm_1_1modules_1_1ThresholdTrigger.html#afe941f763269a45a9d79f871d458c3f4">rm::modules::ThresholdTrigger::OnFalling</a></div><div class="ttdeci">ThresholdTrigger &amp; OnFalling(const std::function&lt; void()&gt; &amp;callback)</div><div class="ttdef"><b>Definition</b> threshold_trigger.hpp:61</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html"><div class="ttname"><a href="namespacerm_1_1modules.html">rm::modules</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:33</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html">rm::modules::NoteFreq</a></div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:93</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_9bd6aa59caad6cbef13c0eefdd946af0.html">modules</a></li><li class="navelem"><a class="el" href="dir_eabaf14e3296d098547794244d58ab73.html">algorithm</a></li><li class="navelem"><a class="el" href="threshold__trigger_8hpp.html">threshold_trigger.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_9bd6aa59caad6cbef13c0eefdd946af0.html">modules</a></li><li class="navelem"><a class="el" href="threshold__trigger_8hpp.html">threshold_trigger.hpp</a></li>
     <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

@@ -1,9 +1,13 @@
 var searchData=
 [
-  ['u16_0',['u16',['../namespacerm.html#a8f3662a01c5fa99494989944ee6c6157',1,'rm']]],
-  ['u32_1',['u32',['../namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66',1,'rm']]],
-  ['u64_2',['u64',['../namespacerm.html#a0863ccbdab2c54f662053f0496ed09f4',1,'rm']]],
-  ['u8_3',['u8',['../namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34',1,'rm']]],
-  ['userzero_4',['UserZero',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a014c3c30e51744d2a7a4ccb94cab7ad3',1,'rm::device::DirectDriveMotor::Parameters']]],
-  ['usize_5',['usize',['../namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630',1,'rm']]]
+  ['phaseinductance_0',['PhaseInductance',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a863250990f1fed3c31dee7e45c1bfd22',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['phaseresistance_1',['PhaseResistance',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#ae59982efd1bee97b8e94ff0f1d7626c2',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['polepairs_2',['PolePairs',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#ab361df896568d12a23d076fdb0232b25',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['positionkd_3',['PositionKd',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a70a359c813cbf9b5fe3473c4621bc4ef',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['positionki_4',['PositionKi',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a29cd8d0eeb5b4caea95fd1abf3b76cfc',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['positionkp_5',['PositionKp',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a61564937855155469446b278cce23562',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['positionplanningaccel_6',['PositionPlanningAccel',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#afe089b7bfdf5ad993e5ab18371eadb2d',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['positionplanningdeaccel_7',['PositionPlanningDeaccel',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#aceb64d5e75d7ad2492f63fc003f1038d',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['positionplanningmaxspeed_8',['PositionPlanningMaxSpeed',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a0e65975c5fb4c515bf828fd0de51e808',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['pwmfrequency_9',['PwmFrequency',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a56b4dd4315b321257b246d7b5ec8f43d',1,'rm::device::DirectDriveMotor::Parameters']]]
 ];

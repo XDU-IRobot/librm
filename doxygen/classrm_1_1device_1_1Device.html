@@ -93,17 +93,33 @@ $(document).ready(function(){initNavTree('classrm_1_1device_1_1Device.html','');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public 成员函数</a> &#124;
-<a href="#pro-attribs">Protected 属性</a> &#124;
-<a href="#friends">友元</a> &#124;
+<a href="#pro-types">Protected 类型</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
 <a href="classrm_1_1device_1_1Device-members.html">所有成员列表</a>  </div>
-  <div class="headertitle"><div class="title">rm::device::Device类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+  <div class="headertitle"><div class="title">rm::device::Device类 参考</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>设备基类，用于监视设备状态  
+<p>驱动框架的设备基类，主要功能为监视设备在线状态  
  <a href="classrm_1_1device_1_1Device.html#details">更多...</a></p>
 
-<p><code>#include &lt;<a class="el" href="device_8h_source.html">device.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="device_8hpp_source.html">device.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 rm::device::Device 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classrm_1_1device_1_1Device.png" usemap="#rm::device::Device_map" alt=""/>
+  <map id="rm::device::Device_map" name="rm::device::Device_map">
+<area href="classrm_1_1device_1_1CanDevice.html" title="CAN设备的基类" alt="rm::device::CanDevice" shape="rect" coords="200,56,390,80"/>
+<area href="classrm_1_1device_1_1DR16.html" title="DR16接收机" alt="rm::device::DR16" shape="rect" coords="200,112,390,136"/>
+<area href="classrm_1_1device_1_1Go8010Motor.html" alt="rm::device::Go8010Motor" shape="rect" coords="200,168,390,192"/>
+<area href="classrm_1_1device_1_1Referee.html" title="裁判系统" alt="rm::device::Referee&lt; revision &gt;" shape="rect" coords="200,224,390,248"/>
+<area href="classrm_1_1device_1_1Sbus.html" title="通用SBUS接收机" alt="rm::device::Sbus" shape="rect" coords="200,280,390,304"/>
+<area href="classrm_1_1device_1_1UnitreeMotor.html" alt="rm::device::UnitreeMotor" shape="rect" coords="200,336,390,360"/>
+<area href="classrm_1_1device_1_1VT03.html" title="VT03图传发送端的遥控器数据解析器" alt="rm::device::VT03" shape="rect" coords="200,392,390,416"/>
+<area href="classrm_1_1device_1_1ZdtStepper.html" alt="rm::device::ZdtStepper" shape="rect" coords="200,448,390,472"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
@@ -111,27 +127,68 @@ Public 成员函数</h2></td></tr>
 <tr class="separator:a7cfac1f099daba6efea2fc462a5fa7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc47f697e77010da09e8449f3d5a9094" id="r_abc47f697e77010da09e8449f3d5a9094"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#abc47f697e77010da09e8449f3d5a9094">~Device</a> ()=default</td></tr>
 <tr class="separator:abc47f697e77010da09e8449f3d5a9094"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d6c88f587fd2b402667022818d6c937" id="r_a3d6c88f587fd2b402667022818d6c937"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a3d6c88f587fd2b402667022818d6c937">IsDeviceOnline</a> ()=0</td></tr>
-<tr class="memdesc:a3d6c88f587fd2b402667022818d6c937"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新设备状态  <br /></td></tr>
-<tr class="separator:a3d6c88f587fd2b402667022818d6c937"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade97c1e2dbe8ad959fc20346ed841399" id="r_ade97c1e2dbe8ad959fc20346ed841399"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm_1_1device.html#aabf51ce4f3e3ad477db1e7f4af4ff9d7">DeviceStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#ade97c1e2dbe8ad959fc20346ed841399">GetDeviceStatus</a> () const</td></tr>
-<tr class="separator:ade97c1e2dbe8ad959fc20346ed841399"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a227f58f357e464c7699866378a89b7dc" id="r_a227f58f357e464c7699866378a89b7dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a227f58f357e464c7699866378a89b7dc">SetHeartbeatTimeout</a> (duration timeout)</td></tr>
+<tr class="memdesc:a227f58f357e464c7699866378a89b7dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置心跳超时时间  <br /></td></tr>
+<tr class="separator:a227f58f357e464c7699866378a89b7dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae24e0283ae6acdb1856f2e5fcb2dc72f" id="r_ae24e0283ae6acdb1856f2e5fcb2dc72f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#ae24e0283ae6acdb1856f2e5fcb2dc72f">Ok</a> ()</td></tr>
+<tr class="separator:ae24e0283ae6acdb1856f2e5fcb2dc72f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f1b8eb171231fad7f23adac2879224b" id="r_a0f1b8eb171231fad7f23adac2879224b"><td class="memItemLeft" align="right" valign="top">time_point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a0f1b8eb171231fad7f23adac2879224b">last_seen</a> () const</td></tr>
+<tr class="separator:a0f1b8eb171231fad7f23adac2879224b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
-Protected 属性</h2></td></tr>
-<tr class="memitem:a8969b50da3f87b74487466b4ee83e2b3" id="r_a8969b50da3f87b74487466b4ee83e2b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm_1_1device.html#aabf51ce4f3e3ad477db1e7f4af4ff9d7">DeviceStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a8969b50da3f87b74487466b4ee83e2b3">status_</a> {<a class="el" href="namespacerm_1_1device.html#aabf51ce4f3e3ad477db1e7f4af4ff9d7a25c2dc47991b3df171ed5192bcf70390">DeviceStatus::kUnknown</a>}</td></tr>
-<tr class="separator:a8969b50da3f87b74487466b4ee83e2b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa575c9f376dd55753759323d272f2ace" id="r_aa575c9f376dd55753759323d272f2ace"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#a0863ccbdab2c54f662053f0496ed09f4">u64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#aa575c9f376dd55753759323d272f2ace">last_online_timestamp_</a> {0}</td></tr>
-<tr class="separator:aa575c9f376dd55753759323d272f2ace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-types" name="pro-types"></a>
+Protected 类型</h2></td></tr>
+<tr class="memitem:a16a7bedc3fb137033e1537713d3626bc" id="r_a16a7bedc3fb137033e1537713d3626bc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Status</a> { <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5">kUnknown</a> = -1
+, <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca49868fdd51a9c221b3b9c076adc6d64e">kOffline</a>
+, <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca888af1cb59179c046f400d9fdd64dc0c">kFault</a>
+, <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21">kOk</a>
+ }</td></tr>
+<tr class="memdesc:a16a7bedc3fb137033e1537713d3626bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">设备状态  <a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">更多...</a><br /></td></tr>
+<tr class="separator:a16a7bedc3fb137033e1537713d3626bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
-友元</h2></td></tr>
-<tr class="memitem:aead9a9546ea765538d3f95894afea912" id="r_aead9a9546ea765538d3f95894afea912"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#aead9a9546ea765538d3f95894afea912">DeviceManager</a></td></tr>
-<tr class="separator:aead9a9546ea765538d3f95894afea912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a7cc99f092ea347a682754478b34e489a" id="r_a7cc99f092ea347a682754478b34e489a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a7cc99f092ea347a682754478b34e489a">ReportStatus</a> (<a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Status</a> status)</td></tr>
+<tr class="memdesc:a7cc99f092ea347a682754478b34e489a"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新设备状态  <br /></td></tr>
+<tr class="separator:a7cc99f092ea347a682754478b34e489a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><p>设备基类，用于监视设备状态 </p>
-</div><h2 class="groupheader">构造及析构函数说明</h2>
+<div class="textblock"><p>驱动框架的设备基类，主要功能为监视设备在线状态 </p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a16a7bedc3fb137033e1537713d3626bc" name="a16a7bedc3fb137033e1537713d3626bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16a7bedc3fb137033e1537713d3626bc">&#9670;&#160;</a></span>Status</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">rm::device::Device::Status</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设备状态 </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5" name="a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5"></a>kUnknown&#160;</td><td class="fielddoc"><p>未知 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a16a7bedc3fb137033e1537713d3626bca49868fdd51a9c221b3b9c076adc6d64e" name="a16a7bedc3fb137033e1537713d3626bca49868fdd51a9c221b3b9c076adc6d64e"></a>kOffline&#160;</td><td class="fielddoc"><p>离线 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a16a7bedc3fb137033e1537713d3626bca888af1cb59179c046f400d9fdd64dc0c" name="a16a7bedc3fb137033e1537713d3626bca888af1cb59179c046f400d9fdd64dc0c"></a>kFault&#160;</td><td class="fielddoc"><p>在线但存在故障（比如电机过流） </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21" name="a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21"></a>kOk&#160;</td><td class="fielddoc"><p>在线且正常工作 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
 <a id="a7cfac1f099daba6efea2fc462a5fa7c2" name="a7cfac1f099daba6efea2fc462a5fa7c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7cfac1f099daba6efea2fc462a5fa7c2">&#9670;&#160;</a></span>Device()</h2>
 
@@ -183,122 +240,100 @@ Protected 属性</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">成员函数说明</h2>
-<a id="ade97c1e2dbe8ad959fc20346ed841399" name="ade97c1e2dbe8ad959fc20346ed841399"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade97c1e2dbe8ad959fc20346ed841399">&#9670;&#160;</a></span>GetDeviceStatus()</h2>
+<a id="a0f1b8eb171231fad7f23adac2879224b" name="a0f1b8eb171231fad7f23adac2879224b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f1b8eb171231fad7f23adac2879224b">&#9670;&#160;</a></span>last_seen()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacerm_1_1device.html#aabf51ce4f3e3ad477db1e7f4af4ff9d7">DeviceStatus</a> rm::device::Device::GetDeviceStatus </td>
+          <td class="memname">Device::time_point rm::device::Device::last_seen </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>返回</dt><dd>设备在线状态 </dd></dl>
+<dl class="section return"><dt>返回</dt><dd>获取最后一次设备上报状态的时间点 </dd></dl>
 
 </div>
 </div>
-<a id="a3d6c88f587fd2b402667022818d6c937" name="a3d6c88f587fd2b402667022818d6c937"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d6c88f587fd2b402667022818d6c937">&#9670;&#160;</a></span>IsDeviceOnline()</h2>
+<a id="ae24e0283ae6acdb1856f2e5fcb2dc72f" name="ae24e0283ae6acdb1856f2e5fcb2dc72f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae24e0283ae6acdb1856f2e5fcb2dc72f">&#9670;&#160;</a></span>Ok()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool rm::device::Device::IsDeviceOnline </td>
+          <td class="memname">bool rm::device::Device::Ok </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>设备是否在线且正常工作 </dd></dl>
+
+</div>
+</div>
+<a id="a7cc99f092ea347a682754478b34e489a" name="a7cc99f092ea347a682754478b34e489a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cc99f092ea347a682754478b34e489a">&#9670;&#160;</a></span>ReportStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rm::device::Device::ReportStatus </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Status</a>&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>更新设备状态 </p>
-<dl class="section note"><dt>注解</dt><dd>子类自行实现这个方法，设备管理器会定期调用；方法内部应该判断设备状态，然后返回设备是否在线 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>子类应该在确定设备仍然在线（比如收到反馈报文）时调用此函数，更新设备在线时间戳 </dd></dl>
 
 </div>
 </div>
-<h2 class="groupheader">友元及相关函数文档</h2>
-<a id="aead9a9546ea765538d3f95894afea912" name="aead9a9546ea765538d3f95894afea912"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aead9a9546ea765538d3f95894afea912">&#9670;&#160;</a></span>DeviceManager</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">friend class <a class="el" href="classrm_1_1device_1_1DeviceManager.html">DeviceManager</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">类成员变量说明</h2>
-<a id="aa575c9f376dd55753759323d272f2ace" name="aa575c9f376dd55753759323d272f2ace"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa575c9f376dd55753759323d272f2ace">&#9670;&#160;</a></span>last_online_timestamp_</h2>
+<a id="a227f58f357e464c7699866378a89b7dc" name="a227f58f357e464c7699866378a89b7dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a227f58f357e464c7699866378a89b7dc">&#9670;&#160;</a></span>SetHeartbeatTimeout()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacerm.html#a0863ccbdab2c54f662053f0496ed09f4">u64</a> rm::device::Device::last_online_timestamp_ {0}</td>
+          <td class="memname">void rm::device::Device::SetHeartbeatTimeout </td>
+          <td>(</td>
+          <td class="paramtype">duration&#160;</td>
+          <td class="paramname"><em>timeout</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a8969b50da3f87b74487466b4ee83e2b3" name="a8969b50da3f87b74487466b4ee83e2b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8969b50da3f87b74487466b4ee83e2b3">&#9670;&#160;</a></span>status_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespacerm_1_1device.html#aabf51ce4f3e3ad477db1e7f4af4ff9d7">DeviceStatus</a> rm::device::Device::status_ {<a class="el" href="namespacerm_1_1device.html#aabf51ce4f3e3ad477db1e7f4af4ff9d7a25c2dc47991b3df171ed5192bcf70390">DeviceStatus::kUnknown</a>}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>设置心跳超时时间 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeout</td><td>心跳超时时间 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>如果超过这个时间没有收到心跳则认为设备离线，默认值为1秒 </dd></dl>
 
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
-<li>src/librm/device/<a class="el" href="device_8h_source.html">device.h</a></li>
+<li>src/librm/device/<a class="el" href="device_8hpp_source.html">device.hpp</a></li>
 <li>src/librm/device/<a class="el" href="device_8cc.html">device.cc</a></li>
 </ul>
 </div><!-- contents -->

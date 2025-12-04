@@ -1,7 +1,6 @@
 var classrm_1_1device_1_1DjiMotor =
 [
     [ "DjiMotor", "classrm_1_1device_1_1DjiMotor.html#a886506a8f47c92b01ef9bda7e99a93a8", null ],
-    [ "DjiMotor", "classrm_1_1device_1_1DjiMotor.html#a876bab8ce2cb798394fd69091069607e", null ],
     [ "~DjiMotor", "classrm_1_1device_1_1DjiMotor.html#a93fbd992ad96f1b6166eba43dec93bd6", null ],
     [ "DjiMotor", "classrm_1_1device_1_1DjiMotor.html#a23cac6728e82dfea4b37c034f4ae3194", null ],
     [ "current", "classrm_1_1device_1_1DjiMotor.html#a02fcdb19ff9618355ed9a660f95b0e5d", null ],

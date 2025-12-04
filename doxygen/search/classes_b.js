@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['quadomnichassis_0',['QuadOmniChassis',['../classrm_1_1modules_1_1algorithm_1_1QuadOmniChassis.html',1,'rm::modules::algorithm']]],
-  ['quaternion_1',['Quaternion',['../structrm_1_1modules_1_1algorithm_1_1Quaternion.html',1,'rm::modules::algorithm']]]
+  ['noncopyable_0',['NonCopyable',['../classrm_1_1detail_1_1NonCopyable.html',1,'rm::detail']]],
+  ['noteduration_1',['NoteDuration',['../structrm_1_1modules_1_1NoteDuration.html',1,'rm::modules']]],
+  ['notefreq_2',['NoteFreq',['../structrm_1_1modules_1_1NoteFreq.html',1,'rm::modules']]]
 ];

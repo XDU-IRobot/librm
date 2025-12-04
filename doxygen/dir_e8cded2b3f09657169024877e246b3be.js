@@ -7,5 +7,5 @@ var dir_e8cded2b3f09657169024877e246b3be =
     [ "supercap", "dir_39ff50bc82bc692fce8e78ca26e2d6a0.html", "dir_39ff50bc82bc692fce8e78ca26e2d6a0" ],
     [ "can_device.hpp", "can__device_8hpp.html", "can__device_8hpp" ],
     [ "device.cc", "device_8cc.html", null ],
-    [ "device.h", "device_8h.html", "device_8h" ]
+    [ "device.hpp", "device_8hpp.html", "device_8hpp" ]
 ];

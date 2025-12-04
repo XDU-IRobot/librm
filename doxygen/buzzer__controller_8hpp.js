@@ -1,0 +1,27 @@
+var buzzer__controller_8hpp =
+[
+    [ "rm::modules::BuzzerNote", "structrm_1_1modules_1_1BuzzerNote.html", "structrm_1_1modules_1_1BuzzerNote" ],
+    [ "rm::modules::NoteFreq< A4Freq >", "structrm_1_1modules_1_1NoteFreq.html", null ],
+    [ "rm::modules::NoteDuration< Bpm >", "structrm_1_1modules_1_1NoteDuration.html", null ],
+    [ "rm::modules::BuzzerMelody", "classrm_1_1modules_1_1BuzzerMelody.html", "classrm_1_1modules_1_1BuzzerMelody" ],
+    [ "rm::modules::buzzer_melody::Silent", "classrm_1_1modules_1_1buzzer__melody_1_1Silent.html", "classrm_1_1modules_1_1buzzer__melody_1_1Silent" ],
+    [ "rm::modules::buzzer_melody::Beeps< BeepsCount >", "classrm_1_1modules_1_1buzzer__melody_1_1Beeps.html", "classrm_1_1modules_1_1buzzer__melody_1_1Beeps" ],
+    [ "rm::modules::buzzer_melody::Startup", "classrm_1_1modules_1_1buzzer__melody_1_1Startup.html", "classrm_1_1modules_1_1buzzer__melody_1_1Startup" ],
+    [ "rm::modules::buzzer_melody::Error", "classrm_1_1modules_1_1buzzer__melody_1_1Error.html", "classrm_1_1modules_1_1buzzer__melody_1_1Error" ],
+    [ "rm::modules::buzzer_melody::Success", "classrm_1_1modules_1_1buzzer__melody_1_1Success.html", "classrm_1_1modules_1_1buzzer__melody_1_1Success" ],
+    [ "rm::modules::buzzer_melody::SuperMario", "classrm_1_1modules_1_1buzzer__melody_1_1SuperMario.html", "classrm_1_1modules_1_1buzzer__melody_1_1SuperMario" ],
+    [ "rm::modules::buzzer_melody::TheLick", "classrm_1_1modules_1_1buzzer__melody_1_1TheLick.html", "classrm_1_1modules_1_1buzzer__melody_1_1TheLick" ],
+    [ "rm::modules::buzzer_melody::SeeUAgain", "classrm_1_1modules_1_1buzzer__melody_1_1SeeUAgain.html", "classrm_1_1modules_1_1buzzer__melody_1_1SeeUAgain" ],
+    [ "rm::modules::BuzzerController< MelodyTypes >", "classrm_1_1modules_1_1BuzzerController.html", "classrm_1_1modules_1_1BuzzerController" ],
+    [ "NoteDuration100", "buzzer__controller_8hpp.html#a21562849517d17620e3c1af08f6b53b8", null ],
+    [ "NoteDuration120", "buzzer__controller_8hpp.html#ae66d390d4c6d646316961d77d586f887", null ],
+    [ "NoteDuration140", "buzzer__controller_8hpp.html#a2abe6c853ae82b8399cb6c270617ff7d", null ],
+    [ "NoteDuration160", "buzzer__controller_8hpp.html#a8e52a0756d49c45af89519a46ae9d4a2", null ],
+    [ "NoteDuration60", "buzzer__controller_8hpp.html#a1820b940892bb284b16cc60829ff41ff", null ],
+    [ "NoteDuration80", "buzzer__controller_8hpp.html#a2e5fb4b4898ab1d4d965fa7209bb2ae7", null ],
+    [ "NoteFreqBaroque", "buzzer__controller_8hpp.html#a20cc9cd70ea5d0292db4683628d6952f", null ],
+    [ "NoteFreqChamber", "buzzer__controller_8hpp.html#aa36bc63e258a297251899f7921652630", null ],
+    [ "NoteFreqHigh", "buzzer__controller_8hpp.html#abcc1c2cfc3cb7eecfbf6f1f211dff4fa", null ],
+    [ "NoteFreqStandard", "buzzer__controller_8hpp.html#aaa060bd699023f8871ba2f797ec96966", null ],
+    [ "CalculateNoteFreq", "buzzer__controller_8hpp.html#a5c36d51256a29d06abd3da9aaaddf582", null ]
+];

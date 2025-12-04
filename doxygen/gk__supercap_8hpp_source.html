@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: src/librm/device/supercap/gk_supercap.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('gk__supercap_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">gk_supercap.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="gk__supercap_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2025 XDU-IRobot</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">  copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"></span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">  copies or substantial portions of the Software.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"></span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef LIBRM_DEVICE_SUPERCAP_GK_SUPERCAP_HPP</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_DEVICE_SUPERCAP_GK_SUPERCAP_HPP</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;<a class="code" href="can__device_8hpp.html">librm/device/can_device.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1device.html">rm::device</a> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1GkSupercap.html#ab96d02c9d61780fc4524df91c9718af3">   38</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1device_1_1GkSupercap.html">GkSupercap</a> final : <span class="keyword">public</span> <a class="code hl_class" href="classrm_1_1device_1_1CanDevice.html">CanDevice</a> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6">   43</a></span>  <span class="keyword">enum</span> <a class="code hl_enumeration" href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6">ErrorFlag</a> : <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6acaece04c1c7d2ffc796e5c51f38bc5a0">   44</a></span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6acaece04c1c7d2ffc796e5c51f38bc5a0">kUnderVoltage</a> = 1u &lt;&lt; 0,     </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6a18d35d5596d8721d40f42665dcea0a8b">   45</a></span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6a18d35d5596d8721d40f42665dcea0a8b">kOverVoltage</a> = 1u &lt;&lt; 1,      </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6a08216a111b75a0c6f9d030d8543a7a18">   46</a></span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6a08216a111b75a0c6f9d030d8543a7a18">kBuckBoost</a> = 1u &lt;&lt; 2,        </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6ab53e6fd8a730d9a0d4b30fd0094cb14a">   47</a></span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6ab53e6fd8a730d9a0d4b30fd0094cb14a">kShortCircuit</a> = 1u &lt;&lt; 3,     </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6ab438f5dd81d5afde6654dabe57c40b2d">   48</a></span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6ab438f5dd81d5afde6654dabe57c40b2d">kHighTemperature</a> = 1u &lt;&lt; 4,  </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6a9b94257a5ee380b8c4eece4fdcfca290">   49</a></span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6a9b94257a5ee380b8c4eece4fdcfca290">kNoPowerInput</a> = 1u &lt;&lt; 5,     </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6ae5cbca71c61636db1965d5d164165f0b">   50</a></span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6ae5cbca71c61636db1965d5d164165f0b">kCapacitor</a> = 1u &lt;&lt; 6,        </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  };</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">struct </span><a class="code hl_function" href="classrm_1_1device_1_1GkSupercap.html#ab96d02c9d61780fc4524df91c9718af3">__attribute__</a>((__packed__)) TxData {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> enable_dcdc : 1;                  </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> system_restart : 1;               </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> resv0 : 6;                        </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> feedback_referee_power_limit;    </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> feedback_referee_energy_buffer;  </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> resv1[3];                         </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  };</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keyword">struct </span><a class="code hl_function" href="classrm_1_1device_1_1GkSupercap.html#ab96d02c9d61780fc4524df91c9718af3">__attribute__</a>((__packed__)) RxData {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> error_code;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> chassis_power;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> chassis_power_limit;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> cap_energy;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  };</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(TxData) &lt;= 8, <span class="stringliteral">&quot;TxData size must be less than or equal to 8 bytes&quot;</span>);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(RxData) &lt;= 8, <span class="stringliteral">&quot;RxData size must be less than or equal to 8 bytes&quot;</span>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classrm_1_1device_1_1GkSupercap.html#a1fb99d567d8167d02d8a0767de112110">GkSupercap</a>(hal::CanInterface &amp;can);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1GkSupercap.html#a1294c3863653c96e37577b9503452013">   79</a></span>  <a class="code hl_function" href="classrm_1_1device_1_1GkSupercap.html#a1294c3863653c96e37577b9503452013">GkSupercap</a>(<a class="code hl_class" href="classrm_1_1device_1_1GkSupercap.html">GkSupercap</a> &amp;&amp;other) <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1GkSupercap.html#a1fb99d567d8167d02d8a0767de112110">   81</a></span>  <a class="code hl_function" href="classrm_1_1device_1_1GkSupercap.html#a1fb99d567d8167d02d8a0767de112110">GkSupercap</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1GkSupercap.html#a70b56c08f1127d875d95f488e4d4ba51">   82</a></span>  <a class="code hl_function" href="classrm_1_1device_1_1GkSupercap.html#a70b56c08f1127d875d95f488e4d4ba51">~GkSupercap</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1GkSupercap.html#ab7d8ab1f97c8576ecde8b3b93f56b5ba">Update</a>(<span class="keyword">const</span> TxData &amp;tx_data_);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1GkSupercap.html#aa064441864d23e407e3639a99be77a79">RxCallback</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrm_1_1hal_1_1CanFrame.html">hal::CanFrame</a> *msg) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  RxData rx_data_{};</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> tx_buf_[8]{};</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>};</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}  <span class="comment">// namespace rm::device</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_DEVICE_SUPERCAP_GK_SUPERCAP_HPP</span></div>
+<div class="ttc" id="acan__device_8hpp_html"><div class="ttname"><a href="can__device_8hpp.html">can_device.hpp</a></div><div class="ttdoc">CAN设备抽象类</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1CanDevice_html"><div class="ttname"><a href="classrm_1_1device_1_1CanDevice.html">rm::device::CanDevice</a></div><div class="ttdoc">CAN设备的基类</div><div class="ttdef"><b>Definition</b> can_device.hpp:49</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1GkSupercap_html"><div class="ttname"><a href="classrm_1_1device_1_1GkSupercap.html">rm::device::GkSupercap</a></div><div class="ttdoc">港科超级电容</div><div class="ttdef"><b>Definition</b> gk_supercap.hpp:38</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1GkSupercap_html_a1294c3863653c96e37577b9503452013"><div class="ttname"><a href="classrm_1_1device_1_1GkSupercap.html#a1294c3863653c96e37577b9503452013">rm::device::GkSupercap::GkSupercap</a></div><div class="ttdeci">GkSupercap(GkSupercap &amp;&amp;other) noexcept=default</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1GkSupercap_html_a1fb99d567d8167d02d8a0767de112110"><div class="ttname"><a href="classrm_1_1device_1_1GkSupercap.html#a1fb99d567d8167d02d8a0767de112110">rm::device::GkSupercap::GkSupercap</a></div><div class="ttdeci">GkSupercap()=delete</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1GkSupercap_html_a70b56c08f1127d875d95f488e4d4ba51"><div class="ttname"><a href="classrm_1_1device_1_1GkSupercap.html#a70b56c08f1127d875d95f488e4d4ba51">rm::device::GkSupercap::~GkSupercap</a></div><div class="ttdeci">~GkSupercap() override=default</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1GkSupercap_html_a92b9f7f96ac4dd2d6265814bbc04a5b6"><div class="ttname"><a href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6">rm::device::GkSupercap::ErrorFlag</a></div><div class="ttdeci">ErrorFlag</div><div class="ttdoc">港科超级电容的错误flags各位的定义</div><div class="ttdef"><b>Definition</b> gk_supercap.hpp:43</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1GkSupercap_html_a92b9f7f96ac4dd2d6265814bbc04a5b6a08216a111b75a0c6f9d030d8543a7a18"><div class="ttname"><a href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6a08216a111b75a0c6f9d030d8543a7a18">rm::device::GkSupercap::kBuckBoost</a></div><div class="ttdeci">@ kBuckBoost</div><div class="ttdoc">BUCKBOOST回路错误警告(通常为MOS管损坏或者驱动器损坏)</div><div class="ttdef"><b>Definition</b> gk_supercap.hpp:46</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1GkSupercap_html_a92b9f7f96ac4dd2d6265814bbc04a5b6a18d35d5596d8721d40f42665dcea0a8b"><div class="ttname"><a href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6a18d35d5596d8721d40f42665dcea0a8b">rm::device::GkSupercap::kOverVoltage</a></div><div class="ttdeci">@ kOverVoltage</div><div class="ttdoc">超压警告</div><div class="ttdef"><b>Definition</b> gk_supercap.hpp:45</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1GkSupercap_html_a92b9f7f96ac4dd2d6265814bbc04a5b6a9b94257a5ee380b8c4eece4fdcfca290"><div class="ttname"><a href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6a9b94257a5ee380b8c4eece4fdcfca290">rm::device::GkSupercap::kNoPowerInput</a></div><div class="ttdeci">@ kNoPowerInput</div><div class="ttdoc">无电源输入警告</div><div class="ttdef"><b>Definition</b> gk_supercap.hpp:49</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1GkSupercap_html_a92b9f7f96ac4dd2d6265814bbc04a5b6ab438f5dd81d5afde6654dabe57c40b2d"><div class="ttname"><a href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6ab438f5dd81d5afde6654dabe57c40b2d">rm::device::GkSupercap::kHighTemperature</a></div><div class="ttdeci">@ kHighTemperature</div><div class="ttdoc">高温警告</div><div class="ttdef"><b>Definition</b> gk_supercap.hpp:48</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1GkSupercap_html_a92b9f7f96ac4dd2d6265814bbc04a5b6ab53e6fd8a730d9a0d4b30fd0094cb14a"><div class="ttname"><a href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6ab53e6fd8a730d9a0d4b30fd0094cb14a">rm::device::GkSupercap::kShortCircuit</a></div><div class="ttdeci">@ kShortCircuit</div><div class="ttdoc">短路警告</div><div class="ttdef"><b>Definition</b> gk_supercap.hpp:47</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1GkSupercap_html_a92b9f7f96ac4dd2d6265814bbc04a5b6acaece04c1c7d2ffc796e5c51f38bc5a0"><div class="ttname"><a href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6acaece04c1c7d2ffc796e5c51f38bc5a0">rm::device::GkSupercap::kUnderVoltage</a></div><div class="ttdeci">@ kUnderVoltage</div><div class="ttdoc">低电压警告</div><div class="ttdef"><b>Definition</b> gk_supercap.hpp:44</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1GkSupercap_html_a92b9f7f96ac4dd2d6265814bbc04a5b6ae5cbca71c61636db1965d5d164165f0b"><div class="ttname"><a href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6ae5cbca71c61636db1965d5d164165f0b">rm::device::GkSupercap::kCapacitor</a></div><div class="ttdeci">@ kCapacitor</div><div class="ttdoc">电容错误警告(通常为未接电容)</div><div class="ttdef"><b>Definition</b> gk_supercap.hpp:50</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1GkSupercap_html_aa064441864d23e407e3639a99be77a79"><div class="ttname"><a href="classrm_1_1device_1_1GkSupercap.html#aa064441864d23e407e3639a99be77a79">rm::device::GkSupercap::RxCallback</a></div><div class="ttdeci">void RxCallback(const hal::CanFrame *msg) override</div><div class="ttdoc">CAN回调函数，解码收到的反馈报文</div><div class="ttdef"><b>Definition</b> gk_supercap.cc:50</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1GkSupercap_html_ab7d8ab1f97c8576ecde8b3b93f56b5ba"><div class="ttname"><a href="classrm_1_1device_1_1GkSupercap.html#ab7d8ab1f97c8576ecde8b3b93f56b5ba">rm::device::GkSupercap::Update</a></div><div class="ttdeci">void Update(const TxData &amp;tx_data_)</div><div class="ttdoc">更新超级电容设置</div><div class="ttdef"><b>Definition</b> gk_supercap.cc:41</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1GkSupercap_html_ab96d02c9d61780fc4524df91c9718af3"><div class="ttname"><a href="classrm_1_1device_1_1GkSupercap.html#ab96d02c9d61780fc4524df91c9718af3">rm::device::GkSupercap::__attribute__</a></div><div class="ttdeci">struct __attribute__((__packed__)) TxData</div><div class="ttdoc">港科超级电容用于CAN通信的结构体，必须以一位对齐</div><div class="ttdef"><b>Definition</b> gk_supercap.hpp:56</div></div>
+<div class="ttc" id="anamespacerm_1_1device_html"><div class="ttname"><a href="namespacerm_1_1device.html">rm::device</a></div><div class="ttdef"><b>Definition</b> directdrive_motor.cc:37</div></div>
+<div class="ttc" id="anamespacerm_html_a287a55f70760f2a0c8cfdacddd9b2d34"><div class="ttname"><a href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">rm::u8</a></div><div class="ttdeci">uint8_t u8</div><div class="ttdef"><b>Definition</b> typedefs.hpp:43</div></div>
+<div class="ttc" id="anamespacerm_html_a8f3662a01c5fa99494989944ee6c6157"><div class="ttname"><a href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">rm::u16</a></div><div class="ttdeci">uint16_t u16</div><div class="ttdef"><b>Definition</b> typedefs.hpp:44</div></div>
+<div class="ttc" id="anamespacerm_html_abe438454936420638776f339c29718b1"><div class="ttname"><a href="namespacerm.html#abe438454936420638776f339c29718b1">rm::f32</a></div><div class="ttdeci">float f32</div><div class="ttdef"><b>Definition</b> typedefs.hpp:52</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html">rm::hal::CanFrame</a></div><div class="ttdef"><b>Definition</b> can_interface.hpp:44</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_e8cded2b3f09657169024877e246b3be.html">device</a></li><li class="navelem"><a class="el" href="dir_39ff50bc82bc692fce8e78ca26e2d6a0.html">supercap</a></li><li class="navelem"><a class="el" href="gk__supercap_8hpp.html">gk_supercap.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

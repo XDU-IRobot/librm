@@ -126,74 +126,94 @@ $(document).ready(function(){initNavTree('librm_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/******** CORE ********/</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;<a class="code" href="thread__pool_8hpp.html">librm/core/thread_pool.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;<a class="code" href="typedefs_8h.html">librm/core/typedefs.h</a>&quot;</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;<a class="code" href="core_2exception_8h.html">librm/core/exception.h</a>&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;<a class="code" href="typedefs_8hpp.html">librm/core/typedefs.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;<a class="code" href="core_2exception_8hpp.html">librm/core/exception.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="time_8hpp.html">librm/core/time.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">/****************/</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">/******** HAL ********/</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;<a class="code" href="can_8h.html">librm/hal/can.h</a>&quot;</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;<a class="code" href="gpio_8h.html">librm/hal/gpio.h</a>&quot;</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &quot;<a class="code" href="serial_8h.html">librm/hal/serial.h</a>&quot;</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &quot;<a class="code" href="spi_8h.html">librm/hal/spi.h</a>&quot;</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">/****************/</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">/******** DEVICE ********/</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#include &quot;<a class="code" href="device_8h.html">librm/device/device.h</a>&quot;</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#include &quot;<a class="code" href="can__device_8hpp.html">librm/device/can_device.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#include &quot;<a class="code" href="directdrive__motor_8hpp.html">librm/device/actuator/directdrive_motor.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#include &quot;<a class="code" href="dji__motor_8hpp.html">librm/device/actuator/dji_motor.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#include &quot;<a class="code" href="dm__motor_8hpp.html">librm/device/actuator/dm_motor.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#include &quot;<a class="code" href="unitree__motor_8hpp.html">librm/device/actuator/unitree_motor.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#include &quot;<a class="code" href="go8010__motor_8hpp.html">librm/device/actuator/go8010_motor.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#include &quot;<a class="code" href="zdt__stepper_8hpp.html">librm/device/actuator/zdt_stepper.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#include &quot;<a class="code" href="referee_8hpp.html">librm/device/referee/referee.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#include &quot;<a class="code" href="dr16_8h.html">librm/device/remote/dr16.h</a>&quot;</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#include &quot;<a class="code" href="vt03_8hpp.html">librm/device/remote/vt03.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#include &quot;<a class="code" href="bmi088_8h.html">librm/device/sensor/bmi088.h</a>&quot;</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#include &quot;<a class="code" href="ist8310_8h.html">librm/device/sensor/ist8310.h</a>&quot;</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#include &quot;<a class="code" href="supercap_8h.html">librm/device/supercap/supercap.h</a>&quot;</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">/****************/</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">/******** MISC MODULES ********/</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#include &quot;<a class="code" href="mahony_8h.html">librm/modules/algorithm/ahrs/mahony.h</a>&quot;</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#include &quot;<a class="code" href="ekf_8h.html">librm/modules/algorithm/ahrs/ekf.h</a>&quot;</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#include &quot;<a class="code" href="chassis__fkik_8hpp.html">librm/modules/algorithm/chassis_fkik.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#include &quot;<a class="code" href="crc_8h.html">librm/modules/algorithm/crc.h</a>&quot;</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#include &quot;<a class="code" href="float16_8hpp.html">librm/modules/algorithm/float16.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#include &quot;<a class="code" href="pid_8hpp.html">librm/modules/algorithm/pid.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#include &quot;<a class="code" href="threshold__trigger_8hpp.html">librm/modules/algorithm/threshold_trigger.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#include &quot;<a class="code" href="utils_8hpp.html">librm/modules/algorithm/utils.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#include &quot;<a class="code" href="vofa__plotter_8hpp.html">librm/modules/vofa_plotter.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">/****************/</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HPP</span></div>
-<div class="ttc" id="abmi088_8h_html"><div class="ttname"><a href="bmi088_8h.html">bmi088.h</a></div><div class="ttdoc">BMI088传感器类</div></div>
-<div class="ttc" id="acan_8h_html"><div class="ttname"><a href="can_8h.html">can.h</a></div><div class="ttdoc">根据平台宏定义决定Can的具体实现，并且在can_interface.h里提供一个接口类CanInterface实现多态</div></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;<a class="code" href="can_8hpp.html">librm/hal/can.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;<a class="code" href="gpio_8hpp.html">librm/hal/gpio.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &quot;<a class="code" href="serial_8hpp.html">librm/hal/serial.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &quot;<a class="code" href="spi_8hpp.html">librm/hal/spi.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &quot;<a class="code" href="timer_8hpp.html">librm/hal/timer.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">/****************/</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/******** DEVICE ********/</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#include &quot;<a class="code" href="device_8hpp.html">librm/device/device.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#include &quot;<a class="code" href="can__device_8hpp.html">librm/device/can_device.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#include &quot;<a class="code" href="directdrive__motor_8hpp.html">librm/device/actuator/directdrive_motor.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#include &quot;<a class="code" href="dji__motor_8hpp.html">librm/device/actuator/dji_motor.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#include &quot;<a class="code" href="dm__motor_8hpp.html">librm/device/actuator/dm_motor.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#include &quot;<a class="code" href="unitree__motor_8hpp.html">librm/device/actuator/unitree_motor.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#include &quot;<a class="code" href="go8010__motor_8hpp.html">librm/device/actuator/go8010_motor.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#include &quot;<a class="code" href="lk__motor_8hpp.html">librm/device/actuator/lk_motor.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#include &quot;<a class="code" href="zdt__stepper_8hpp.html">librm/device/actuator/zdt_stepper.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#include &quot;<a class="code" href="referee_8hpp.html">librm/device/referee/referee.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#include &quot;<a class="code" href="dr16_8hpp.html">librm/device/remote/dr16.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#include &quot;<a class="code" href="sbus_8hpp.html">librm/device/remote/sbus.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#include &quot;<a class="code" href="vt03_8hpp.html">librm/device/remote/vt03.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#include &quot;<a class="code" href="bmi088_8hpp.html">librm/device/sensor/bmi088.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#include &quot;<a class="code" href="ist8310_8hpp.html">librm/device/sensor/ist8310.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#include &quot;<a class="code" href="supercap_8hpp.html">librm/device/supercap/supercap.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#include &quot;<a class="code" href="gk__supercap_8hpp.html">librm/device/supercap/gk_supercap.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">/****************/</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">/******** MODULES ********/</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#include &quot;<a class="code" href="mahony_8hpp.html">librm/modules/ahrs/mahony.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#include &quot;<a class="code" href="ekf_8hpp.html">librm/modules/ahrs/ekf.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#include &quot;<a class="code" href="angle_8hpp.html">librm/modules/angle.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#include &quot;<a class="code" href="buzzer__controller_8hpp.html">librm/modules/buzzer_controller.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#include &quot;<a class="code" href="chassis__fkik_8hpp.html">librm/modules/chassis_fkik.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#include &quot;<a class="code" href="crc_8hpp.html">librm/modules/crc.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#include &quot;<a class="code" href="float16_8hpp.html">librm/modules/float16.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#include &quot;<a class="code" href="pid_8hpp.html">librm/modules/pid.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#include &quot;<a class="code" href="rgb__led__controller_8hpp.html">librm/modules/rgb_led_controller.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#include &quot;<a class="code" href="sequence__player_8hpp.html">librm/modules/sequence_player.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#include &quot;<a class="code" href="sparse__value__watcher_8hpp.html">librm/modules/sparse_value_watcher.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#include &quot;<a class="code" href="trajectory__limiter_8hpp.html">librm/modules/trajectory_limiter.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#include &quot;<a class="code" href="threshold__trigger_8hpp.html">librm/modules/threshold_trigger.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#include &quot;<a class="code" href="utils_8hpp.html">librm/modules/utils.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#include &quot;<a class="code" href="vofa__plotter_8hpp.html">librm/modules/vofa_plotter.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">/****************/</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HPP</span></div>
+<div class="ttc" id="aangle_8hpp_html"><div class="ttname"><a href="angle_8hpp.html">angle.hpp</a></div><div class="ttdoc">角度值、弧度制的转换、计算和表示工具类</div></div>
+<div class="ttc" id="abmi088_8hpp_html"><div class="ttname"><a href="bmi088_8hpp.html">bmi088.hpp</a></div><div class="ttdoc">BMI088传感器类</div></div>
+<div class="ttc" id="abuzzer__controller_8hpp_html"><div class="ttname"><a href="buzzer__controller_8hpp.html">buzzer_controller.hpp</a></div><div class="ttdoc">蜂鸣器音乐控制器（基于通用序列播放器实现）</div></div>
+<div class="ttc" id="acan_8hpp_html"><div class="ttname"><a href="can_8hpp.html">can.hpp</a></div><div class="ttdoc">根据平台宏定义决定Can的具体实现，并且在can_interface.h里提供一个接口类CanInterface实现多态</div></div>
 <div class="ttc" id="acan__device_8hpp_html"><div class="ttname"><a href="can__device_8hpp.html">can_device.hpp</a></div><div class="ttdoc">CAN设备抽象类</div></div>
 <div class="ttc" id="achassis__fkik_8hpp_html"><div class="ttname"><a href="chassis__fkik_8hpp.html">chassis_fkik.hpp</a></div><div class="ttdoc">各种常见底盘构型的正逆运动学解算</div></div>
-<div class="ttc" id="acore_2exception_8h_html"><div class="ttname"><a href="core_2exception_8h.html">exception.h</a></div><div class="ttdoc">异常处理</div></div>
-<div class="ttc" id="acrc_8h_html"><div class="ttname"><a href="crc_8h.html">crc.h</a></div><div class="ttdoc">crc8/crc16</div></div>
-<div class="ttc" id="adevice_8h_html"><div class="ttname"><a href="device_8h.html">device.h</a></div><div class="ttdoc">设备基类和设备管理器，用于监视设备状态</div></div>
+<div class="ttc" id="acore_2exception_8hpp_html"><div class="ttname"><a href="core_2exception_8hpp.html">exception.hpp</a></div><div class="ttdoc">异常处理</div></div>
+<div class="ttc" id="acrc_8hpp_html"><div class="ttname"><a href="crc_8hpp.html">crc.hpp</a></div><div class="ttdoc">crc8/crc16</div></div>
+<div class="ttc" id="adevice_8hpp_html"><div class="ttname"><a href="device_8hpp.html">device.hpp</a></div><div class="ttdoc">驱动框架的设备基类，主要功能为监视设备在线状态</div></div>
 <div class="ttc" id="adirectdrive__motor_8hpp_html"><div class="ttname"><a href="directdrive__motor_8hpp.html">directdrive_motor.hpp</a></div><div class="ttdoc">本末电机类库</div></div>
 <div class="ttc" id="adji__motor_8hpp_html"><div class="ttname"><a href="dji__motor_8hpp.html">dji_motor.hpp</a></div><div class="ttdoc">大疆电机类库</div></div>
 <div class="ttc" id="adm__motor_8hpp_html"><div class="ttname"><a href="dm__motor_8hpp.html">dm_motor.hpp</a></div><div class="ttdoc">达妙电机类库</div></div>
-<div class="ttc" id="adr16_8h_html"><div class="ttname"><a href="dr16_8h.html">dr16.h</a></div><div class="ttdoc">DR16接收机</div></div>
-<div class="ttc" id="aekf_8h_html"><div class="ttname"><a href="ekf_8h.html">ekf.h</a></div><div class="ttdoc">EKF姿态解算算法</div></div>
+<div class="ttc" id="adr16_8hpp_html"><div class="ttname"><a href="dr16_8hpp.html">dr16.hpp</a></div><div class="ttdoc">DR16接收机</div></div>
+<div class="ttc" id="aekf_8hpp_html"><div class="ttname"><a href="ekf_8hpp.html">ekf.hpp</a></div><div class="ttdoc">EKF姿态解算算法</div></div>
 <div class="ttc" id="afloat16_8hpp_html"><div class="ttname"><a href="float16_8hpp.html">float16.hpp</a></div><div class="ttdoc">float16和float32互转</div></div>
+<div class="ttc" id="agk__supercap_8hpp_html"><div class="ttname"><a href="gk__supercap_8hpp.html">gk_supercap.hpp</a></div><div class="ttdoc">港科超级电容协议</div></div>
 <div class="ttc" id="ago8010__motor_8hpp_html"><div class="ttname"><a href="go8010__motor_8hpp.html">go8010_motor.hpp</a></div><div class="ttdoc">GO8010电机类库</div></div>
-<div class="ttc" id="agpio_8h_html"><div class="ttname"><a href="gpio_8h.html">gpio.h</a></div></div>
-<div class="ttc" id="aist8310_8h_html"><div class="ttname"><a href="ist8310_8h.html">ist8310.h</a></div><div class="ttdoc">IST8310磁力计类</div></div>
-<div class="ttc" id="amahony_8h_html"><div class="ttname"><a href="mahony_8h.html">mahony.h</a></div></div>
+<div class="ttc" id="agpio_8hpp_html"><div class="ttname"><a href="gpio_8hpp.html">gpio.hpp</a></div></div>
+<div class="ttc" id="aist8310_8hpp_html"><div class="ttname"><a href="ist8310_8hpp.html">ist8310.hpp</a></div><div class="ttdoc">IST8310磁力计类</div></div>
+<div class="ttc" id="alk__motor_8hpp_html"><div class="ttname"><a href="lk__motor_8hpp.html">lk_motor.hpp</a></div><div class="ttdoc">瓴控电机类库</div></div>
+<div class="ttc" id="amahony_8hpp_html"><div class="ttname"><a href="mahony_8hpp.html">mahony.hpp</a></div></div>
 <div class="ttc" id="apid_8hpp_html"><div class="ttname"><a href="pid_8hpp.html">pid.hpp</a></div><div class="ttdoc">PID控制器</div></div>
 <div class="ttc" id="areferee_8hpp_html"><div class="ttname"><a href="referee_8hpp.html">referee.hpp</a></div><div class="ttdoc">裁判系统</div></div>
-<div class="ttc" id="aserial_8h_html"><div class="ttname"><a href="serial_8h.html">serial.h</a></div><div class="ttdoc">根据平台宏定义决定具体实现，并且在serial_interface.h里提供一个接口类SerialInterface实现多态</div></div>
-<div class="ttc" id="aspi_8h_html"><div class="ttname"><a href="spi_8h.html">spi.h</a></div><div class="ttdoc">根据平台宏定义决定具体实现，并且在spi_interface.h里提供一个接口类SpiInterface实现多态</div></div>
-<div class="ttc" id="asupercap_8h_html"><div class="ttname"><a href="supercap_8h.html">supercap.h</a></div><div class="ttdoc">超级电容</div></div>
+<div class="ttc" id="argb__led__controller_8hpp_html"><div class="ttname"><a href="rgb__led__controller_8hpp.html">rgb_led_controller.hpp</a></div><div class="ttdoc">RGB LED控制器（基于通用序列播放器实现）</div></div>
+<div class="ttc" id="asbus_8hpp_html"><div class="ttname"><a href="sbus_8hpp.html">sbus.hpp</a></div><div class="ttdoc">通用SBUS接收机</div></div>
+<div class="ttc" id="asequence__player_8hpp_html"><div class="ttname"><a href="sequence__player_8hpp.html">sequence_player.hpp</a></div><div class="ttdoc">通用序列播放器，可以播放任意类型的数据序列</div></div>
+<div class="ttc" id="aserial_8hpp_html"><div class="ttname"><a href="serial_8hpp.html">serial.hpp</a></div><div class="ttdoc">根据平台宏定义决定具体实现，并且在serial_interface.h里提供一个接口类SerialInterface实现多态</div></div>
+<div class="ttc" id="asparse__value__watcher_8hpp_html"><div class="ttname"><a href="sparse__value__watcher_8hpp.html">sparse_value_watcher.hpp</a></div><div class="ttdoc">离散值监视器</div></div>
+<div class="ttc" id="aspi_8hpp_html"><div class="ttname"><a href="spi_8hpp.html">spi.hpp</a></div><div class="ttdoc">根据平台宏定义决定具体实现，并且在spi_interface.h里提供一个接口类SpiInterface实现多态</div></div>
+<div class="ttc" id="asupercap_8hpp_html"><div class="ttname"><a href="supercap_8hpp.html">supercap.hpp</a></div><div class="ttdoc">2024赛季超级电容</div></div>
 <div class="ttc" id="athread__pool_8hpp_html"><div class="ttname"><a href="thread__pool_8hpp.html">thread_pool.hpp</a></div><div class="ttdoc">https://github.com/progschj/ThreadPool/</div></div>
 <div class="ttc" id="athreshold__trigger_8hpp_html"><div class="ttname"><a href="threshold__trigger_8hpp.html">threshold_trigger.hpp</a></div></div>
 <div class="ttc" id="atime_8hpp_html"><div class="ttname"><a href="time_8hpp.html">time.hpp</a></div><div class="ttdoc">时间模块，用来包装不同平台的时间相关功能</div></div>
-<div class="ttc" id="atypedefs_8h_html"><div class="ttname"><a href="typedefs_8h.html">typedefs.h</a></div><div class="ttdoc">全局数据类型定义</div></div>
+<div class="ttc" id="atimer_8hpp_html"><div class="ttname"><a href="timer_8hpp.html">timer.hpp</a></div><div class="ttdoc">根据平台宏定义决定具体实现</div></div>
+<div class="ttc" id="atrajectory__limiter_8hpp_html"><div class="ttname"><a href="trajectory__limiter_8hpp.html">trajectory_limiter.hpp</a></div><div class="ttdoc">轨迹限制器</div></div>
+<div class="ttc" id="atypedefs_8hpp_html"><div class="ttname"><a href="typedefs_8hpp.html">typedefs.hpp</a></div><div class="ttdoc">全局数据类型定义</div></div>
 <div class="ttc" id="aunitree__motor_8hpp_html"><div class="ttname"><a href="unitree__motor_8hpp.html">unitree_motor.hpp</a></div><div class="ttdoc">宇树电机类库</div></div>
 <div class="ttc" id="autils_8hpp_html"><div class="ttname"><a href="utils_8hpp.html">utils.hpp</a></div><div class="ttdoc">通用工具函数</div></div>
 <div class="ttc" id="avofa__plotter_8hpp_html"><div class="ttname"><a href="vofa__plotter_8hpp.html">vofa_plotter.hpp</a></div><div class="ttdoc">绘图器，用于将变量的值格式化后发给上位机绘图，格式适配vofa的FireWater协议</div></div>

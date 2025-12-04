@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: src/librm/modules/ahrs/ahrs_interface.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('ahrs__interface_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ahrs_interface.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ahrs__interface_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2025 XDU-IRobot</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">  copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"></span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">  copies or substantial portions of the Software.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"></span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef LIBRM_MODULES_AHRS_AHRS_INTERFACE_HPP</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_MODULES_AHRS_AHRS_INTERFACE_HPP</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;<a class="code" href="typedefs_8hpp.html">librm/core/typedefs.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="namespacerm_1_1modules.html">   33</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1modules.html">rm::modules</a> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1ImuData6Dof.html">   35</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrm_1_1modules_1_1ImuData6Dof.html">ImuData6Dof</a> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1ImuData6Dof.html#ac22a5d54b66bf552df66ab1201379b4f">   36</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1ImuData6Dof.html#ac22a5d54b66bf552df66ab1201379b4f">gx</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1ImuData6Dof.html#a117b68fd31feb42c3a2ceb545bcf449b">   37</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1ImuData6Dof.html#a117b68fd31feb42c3a2ceb545bcf449b">gy</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1ImuData6Dof.html#a6e684df3abab24b5ce9c484677a18a6f">   38</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1ImuData6Dof.html#a6e684df3abab24b5ce9c484677a18a6f">gz</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1ImuData6Dof.html#a6dd05745abd3ba792ca4d0f706c21685">   39</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1ImuData6Dof.html#a6dd05745abd3ba792ca4d0f706c21685">ax</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1ImuData6Dof.html#a4ee58cb5d75dd90c65d61bd6a079975b">   40</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1ImuData6Dof.html#a4ee58cb5d75dd90c65d61bd6a079975b">ay</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1ImuData6Dof.html#a96699c3f13e1e6a0474750dec555d29f">   41</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1ImuData6Dof.html#a96699c3f13e1e6a0474750dec555d29f">az</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
+</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1ImuData9Dof.html">   44</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrm_1_1modules_1_1ImuData9Dof.html">ImuData9Dof</a> {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1ImuData9Dof.html#a1121cf5a5755ca71a3654ef52b90475f">   45</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1ImuData9Dof.html#a1121cf5a5755ca71a3654ef52b90475f">gx</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1ImuData9Dof.html#af198d061b2a85e2db8944f4b37832557">   46</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1ImuData9Dof.html#af198d061b2a85e2db8944f4b37832557">gy</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1ImuData9Dof.html#a1d675c3013f798236b91d3e79d86db73">   47</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1ImuData9Dof.html#a1d675c3013f798236b91d3e79d86db73">gz</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1ImuData9Dof.html#addeee2489b02e4c18cdbef8d2f3037c0">   48</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1ImuData9Dof.html#addeee2489b02e4c18cdbef8d2f3037c0">ax</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1ImuData9Dof.html#a6b1ca60d9c54073feb69d161bd648646">   49</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1ImuData9Dof.html#a6b1ca60d9c54073feb69d161bd648646">ay</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1ImuData9Dof.html#ac3e06e5904e63ee1c4dc4d053ecdd694">   50</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1ImuData9Dof.html#ac3e06e5904e63ee1c4dc4d053ecdd694">az</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1ImuData9Dof.html#a45963dcf068cd3d3e3d0136216eebedb">   51</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1ImuData9Dof.html#a45963dcf068cd3d3e3d0136216eebedb">mx</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1ImuData9Dof.html#a36594c86ea03e516f1e51716c97fc990">   52</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1ImuData9Dof.html#a36594c86ea03e516f1e51716c97fc990">my</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1ImuData9Dof.html#a459fbb7f5ba9d33f5a01297fdebb02ef">   53</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1ImuData9Dof.html#a459fbb7f5ba9d33f5a01297fdebb02ef">mz</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
+</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="};">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1EulerAngle.html">   56</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrm_1_1modules_1_1EulerAngle.html">EulerAngle</a> {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1EulerAngle.html#abdc9b1cbaa13ed523461c2f764d85190">   57</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1EulerAngle.html#abdc9b1cbaa13ed523461c2f764d85190">roll</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1EulerAngle.html#af00d93e0327c8edae87ae5f7bc9968ce">   58</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1EulerAngle.html#af00d93e0327c8edae87ae5f7bc9968ce">pitch</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1EulerAngle.html#a4ff3fea344c5c1d491244984a914ad07">   59</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1EulerAngle.html#a4ff3fea344c5c1d491244984a914ad07">yaw</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>};</div>
+</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="};">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1Quaternion.html">   62</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrm_1_1modules_1_1Quaternion.html">Quaternion</a> {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1Quaternion.html#acb7d532ad2e368ce4ebf29654fdbb2fb">   63</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1Quaternion.html#acb7d532ad2e368ce4ebf29654fdbb2fb">w</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1Quaternion.html#afd6627b3797e8febe524ec5810112e73">   64</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1Quaternion.html#afd6627b3797e8febe524ec5810112e73">x</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1Quaternion.html#a0c4bd530350f65b0c8d63089363e6a05">   65</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1Quaternion.html#a0c4bd530350f65b0c8d63089363e6a05">y</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1Quaternion.html#a75c31041284c4440b71143530c2cae83">   66</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1Quaternion.html#a75c31041284c4440b71143530c2cae83">z</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>};</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="};">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1AhrsInterface.html">   69</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1modules_1_1AhrsInterface.html">AhrsInterface</a> {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1AhrsInterface.html#ac8055dff10297d17efb8518162290bfa">   71</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="classrm_1_1modules_1_1AhrsInterface.html#ac8055dff10297d17efb8518162290bfa">~AhrsInterface</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1AhrsInterface.html#aa514d9e58c167e542a1c4c5903666de1">   77</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1modules_1_1AhrsInterface.html#aa514d9e58c167e542a1c4c5903666de1">Update</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrm_1_1modules_1_1ImuData6Dof.html">ImuData6Dof</a> &amp;<a class="code hl_variable" href="unitree__motor_8hpp.html#a7ea4cf5640b96ae38ed53527f508183a">data</a>) = 0;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1AhrsInterface.html#a020f6a89c8c0aeb80d9cce1292877db6">   83</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1modules_1_1AhrsInterface.html#a020f6a89c8c0aeb80d9cce1292877db6">Update</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrm_1_1modules_1_1ImuData9Dof.html">ImuData9Dof</a> &amp;<a class="code hl_variable" href="unitree__motor_8hpp.html#a7ea4cf5640b96ae38ed53527f508183a">data</a>) = 0;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1AhrsInterface.html#a3a508dfc05657c271a113ae63d3d76e2">   88</a></span>  [[<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">nodiscard</a>]] <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code hl_struct" href="structrm_1_1modules_1_1EulerAngle.html">EulerAngle</a> &amp;<a class="code hl_function" href="classrm_1_1modules_1_1AhrsInterface.html#a3a508dfc05657c271a113ae63d3d76e2">euler_angle</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1AhrsInterface.html#aab7f1c60cd1e465e47f8b945275549c7">   93</a></span>  [[<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">nodiscard</a>]] <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code hl_struct" href="structrm_1_1modules_1_1Quaternion.html">Quaternion</a> &amp;<a class="code hl_function" href="classrm_1_1modules_1_1AhrsInterface.html#aab7f1c60cd1e465e47f8b945275549c7">quaternion</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>};</div>
+</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}  <span class="comment">// namespace rm::modules</span></div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_MODULES_AHRS_AHRS_INTERFACE_H</span></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1AhrsInterface_html"><div class="ttname"><a href="classrm_1_1modules_1_1AhrsInterface.html">rm::modules::AhrsInterface</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:69</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1AhrsInterface_html_a020f6a89c8c0aeb80d9cce1292877db6"><div class="ttname"><a href="classrm_1_1modules_1_1AhrsInterface.html#a020f6a89c8c0aeb80d9cce1292877db6">rm::modules::AhrsInterface::Update</a></div><div class="ttdeci">virtual void Update(const ImuData9Dof &amp;data)=0</div><div class="ttdoc">更新AHRS数据</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1AhrsInterface_html_a3a508dfc05657c271a113ae63d3d76e2"><div class="ttname"><a href="classrm_1_1modules_1_1AhrsInterface.html#a3a508dfc05657c271a113ae63d3d76e2">rm::modules::AhrsInterface::euler_angle</a></div><div class="ttdeci">virtual const EulerAngle &amp; euler_angle() const =0</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1AhrsInterface_html_aa514d9e58c167e542a1c4c5903666de1"><div class="ttname"><a href="classrm_1_1modules_1_1AhrsInterface.html#aa514d9e58c167e542a1c4c5903666de1">rm::modules::AhrsInterface::Update</a></div><div class="ttdeci">virtual void Update(const ImuData6Dof &amp;data)=0</div><div class="ttdoc">更新AHRS数据</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1AhrsInterface_html_aab7f1c60cd1e465e47f8b945275549c7"><div class="ttname"><a href="classrm_1_1modules_1_1AhrsInterface.html#aab7f1c60cd1e465e47f8b945275549c7">rm::modules::AhrsInterface::quaternion</a></div><div class="ttdeci">virtual const Quaternion &amp; quaternion() const =0</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1AhrsInterface_html_ac8055dff10297d17efb8518162290bfa"><div class="ttname"><a href="classrm_1_1modules_1_1AhrsInterface.html#ac8055dff10297d17efb8518162290bfa">rm::modules::AhrsInterface::~AhrsInterface</a></div><div class="ttdeci">virtual ~AhrsInterface()=default</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html"><div class="ttname"><a href="namespacerm_1_1modules.html">rm::modules</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:33</div></div>
+<div class="ttc" id="anamespacerm_html_abe438454936420638776f339c29718b1"><div class="ttname"><a href="namespacerm.html#abe438454936420638776f339c29718b1">rm::f32</a></div><div class="ttdeci">float f32</div><div class="ttdef"><b>Definition</b> typedefs.hpp:52</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1EulerAngle_html"><div class="ttname"><a href="structrm_1_1modules_1_1EulerAngle.html">rm::modules::EulerAngle</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:56</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1EulerAngle_html_a4ff3fea344c5c1d491244984a914ad07"><div class="ttname"><a href="structrm_1_1modules_1_1EulerAngle.html#a4ff3fea344c5c1d491244984a914ad07">rm::modules::EulerAngle::yaw</a></div><div class="ttdeci">f32 yaw</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:59</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1EulerAngle_html_abdc9b1cbaa13ed523461c2f764d85190"><div class="ttname"><a href="structrm_1_1modules_1_1EulerAngle.html#abdc9b1cbaa13ed523461c2f764d85190">rm::modules::EulerAngle::roll</a></div><div class="ttdeci">f32 roll</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:57</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1EulerAngle_html_af00d93e0327c8edae87ae5f7bc9968ce"><div class="ttname"><a href="structrm_1_1modules_1_1EulerAngle.html#af00d93e0327c8edae87ae5f7bc9968ce">rm::modules::EulerAngle::pitch</a></div><div class="ttdeci">f32 pitch</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:58</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1ImuData6Dof_html"><div class="ttname"><a href="structrm_1_1modules_1_1ImuData6Dof.html">rm::modules::ImuData6Dof</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:35</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1ImuData6Dof_html_a117b68fd31feb42c3a2ceb545bcf449b"><div class="ttname"><a href="structrm_1_1modules_1_1ImuData6Dof.html#a117b68fd31feb42c3a2ceb545bcf449b">rm::modules::ImuData6Dof::gy</a></div><div class="ttdeci">f32 gy</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:37</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1ImuData6Dof_html_a4ee58cb5d75dd90c65d61bd6a079975b"><div class="ttname"><a href="structrm_1_1modules_1_1ImuData6Dof.html#a4ee58cb5d75dd90c65d61bd6a079975b">rm::modules::ImuData6Dof::ay</a></div><div class="ttdeci">f32 ay</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:40</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1ImuData6Dof_html_a6dd05745abd3ba792ca4d0f706c21685"><div class="ttname"><a href="structrm_1_1modules_1_1ImuData6Dof.html#a6dd05745abd3ba792ca4d0f706c21685">rm::modules::ImuData6Dof::ax</a></div><div class="ttdeci">f32 ax</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:39</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1ImuData6Dof_html_a6e684df3abab24b5ce9c484677a18a6f"><div class="ttname"><a href="structrm_1_1modules_1_1ImuData6Dof.html#a6e684df3abab24b5ce9c484677a18a6f">rm::modules::ImuData6Dof::gz</a></div><div class="ttdeci">f32 gz</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:38</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1ImuData6Dof_html_a96699c3f13e1e6a0474750dec555d29f"><div class="ttname"><a href="structrm_1_1modules_1_1ImuData6Dof.html#a96699c3f13e1e6a0474750dec555d29f">rm::modules::ImuData6Dof::az</a></div><div class="ttdeci">f32 az</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:41</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1ImuData6Dof_html_ac22a5d54b66bf552df66ab1201379b4f"><div class="ttname"><a href="structrm_1_1modules_1_1ImuData6Dof.html#ac22a5d54b66bf552df66ab1201379b4f">rm::modules::ImuData6Dof::gx</a></div><div class="ttdeci">f32 gx</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:36</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1ImuData9Dof_html"><div class="ttname"><a href="structrm_1_1modules_1_1ImuData9Dof.html">rm::modules::ImuData9Dof</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:44</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1ImuData9Dof_html_a1121cf5a5755ca71a3654ef52b90475f"><div class="ttname"><a href="structrm_1_1modules_1_1ImuData9Dof.html#a1121cf5a5755ca71a3654ef52b90475f">rm::modules::ImuData9Dof::gx</a></div><div class="ttdeci">f32 gx</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:45</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1ImuData9Dof_html_a1d675c3013f798236b91d3e79d86db73"><div class="ttname"><a href="structrm_1_1modules_1_1ImuData9Dof.html#a1d675c3013f798236b91d3e79d86db73">rm::modules::ImuData9Dof::gz</a></div><div class="ttdeci">f32 gz</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:47</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1ImuData9Dof_html_a36594c86ea03e516f1e51716c97fc990"><div class="ttname"><a href="structrm_1_1modules_1_1ImuData9Dof.html#a36594c86ea03e516f1e51716c97fc990">rm::modules::ImuData9Dof::my</a></div><div class="ttdeci">f32 my</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:52</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1ImuData9Dof_html_a45963dcf068cd3d3e3d0136216eebedb"><div class="ttname"><a href="structrm_1_1modules_1_1ImuData9Dof.html#a45963dcf068cd3d3e3d0136216eebedb">rm::modules::ImuData9Dof::mx</a></div><div class="ttdeci">f32 mx</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:51</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1ImuData9Dof_html_a459fbb7f5ba9d33f5a01297fdebb02ef"><div class="ttname"><a href="structrm_1_1modules_1_1ImuData9Dof.html#a459fbb7f5ba9d33f5a01297fdebb02ef">rm::modules::ImuData9Dof::mz</a></div><div class="ttdeci">f32 mz</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:53</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1ImuData9Dof_html_a6b1ca60d9c54073feb69d161bd648646"><div class="ttname"><a href="structrm_1_1modules_1_1ImuData9Dof.html#a6b1ca60d9c54073feb69d161bd648646">rm::modules::ImuData9Dof::ay</a></div><div class="ttdeci">f32 ay</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:49</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1ImuData9Dof_html_ac3e06e5904e63ee1c4dc4d053ecdd694"><div class="ttname"><a href="structrm_1_1modules_1_1ImuData9Dof.html#ac3e06e5904e63ee1c4dc4d053ecdd694">rm::modules::ImuData9Dof::az</a></div><div class="ttdeci">f32 az</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:50</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1ImuData9Dof_html_addeee2489b02e4c18cdbef8d2f3037c0"><div class="ttname"><a href="structrm_1_1modules_1_1ImuData9Dof.html#addeee2489b02e4c18cdbef8d2f3037c0">rm::modules::ImuData9Dof::ax</a></div><div class="ttdeci">f32 ax</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:48</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1ImuData9Dof_html_af198d061b2a85e2db8944f4b37832557"><div class="ttname"><a href="structrm_1_1modules_1_1ImuData9Dof.html#af198d061b2a85e2db8944f4b37832557">rm::modules::ImuData9Dof::gy</a></div><div class="ttdeci">f32 gy</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:46</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html">rm::modules::NoteFreq</a></div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:93</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1Quaternion_html"><div class="ttname"><a href="structrm_1_1modules_1_1Quaternion.html">rm::modules::Quaternion</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:62</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1Quaternion_html_a0c4bd530350f65b0c8d63089363e6a05"><div class="ttname"><a href="structrm_1_1modules_1_1Quaternion.html#a0c4bd530350f65b0c8d63089363e6a05">rm::modules::Quaternion::y</a></div><div class="ttdeci">f32 y</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:65</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1Quaternion_html_a75c31041284c4440b71143530c2cae83"><div class="ttname"><a href="structrm_1_1modules_1_1Quaternion.html#a75c31041284c4440b71143530c2cae83">rm::modules::Quaternion::z</a></div><div class="ttdeci">f32 z</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:66</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1Quaternion_html_acb7d532ad2e368ce4ebf29654fdbb2fb"><div class="ttname"><a href="structrm_1_1modules_1_1Quaternion.html#acb7d532ad2e368ce4ebf29654fdbb2fb">rm::modules::Quaternion::w</a></div><div class="ttdeci">f32 w</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:63</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1Quaternion_html_afd6627b3797e8febe524ec5810112e73"><div class="ttname"><a href="structrm_1_1modules_1_1Quaternion.html#afd6627b3797e8febe524ec5810112e73">rm::modules::Quaternion::x</a></div><div class="ttdeci">f32 x</div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:64</div></div>
+<div class="ttc" id="atypedefs_8hpp_html"><div class="ttname"><a href="typedefs_8hpp.html">typedefs.hpp</a></div><div class="ttdoc">全局数据类型定义</div></div>
+<div class="ttc" id="aunitree__motor_8hpp_html_a7ea4cf5640b96ae38ed53527f508183a"><div class="ttname"><a href="unitree__motor_8hpp.html#a7ea4cf5640b96ae38ed53527f508183a">data</a></div><div class="ttdeci">ComDataSend data</div><div class="ttdef"><b>Definition</b> unitree_motor.hpp:1</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_9bd6aa59caad6cbef13c0eefdd946af0.html">modules</a></li><li class="navelem"><a class="el" href="dir_15311b616e9958c3958366363e9fbff5.html">ahrs</a></li><li class="navelem"><a class="el" href="ahrs__interface_8hpp.html">ahrs_interface.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

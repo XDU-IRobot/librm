@@ -136,16 +136,15 @@ $(document).ready(function(){initNavTree('thread__pool_8hpp_source.html',''); in
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="namespacerm_1_1core.html">   44</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1core.html">rm::core</a> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm.html">rm</a> {</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="foldopen" id="foldopen00046" data-start="{" data-end="};">
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classrm_1_1core_1_1ThreadPool.html">   46</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1core_1_1ThreadPool.html">ThreadPool</a> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classrm_1_1ThreadPool.html">   46</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1ThreadPool.html">ThreadPool</a> {</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <a class="code hl_class" href="classrm_1_1core_1_1ThreadPool.html">ThreadPool</a>(<span class="keywordtype">size_t</span>);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <a class="code hl_class" href="classrm_1_1ThreadPool.html">ThreadPool</a>(<span class="keywordtype">size_t</span>);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">template</span> &lt;<span class="keyword">class </span>F, <span class="keyword">class</span>... Args&gt;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">auto</span> <a class="code hl_function" href="classrm_1_1core_1_1ThreadPool.html#adbd9acb623399dfc48fdf7a5cb641191">enqueue</a>(F&amp;&amp; f, Args&amp;&amp;... args) -&gt; std::future&lt;<span class="keyword">typename</span> std::result_of&lt;F(Args...)&gt;::type&gt;;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_function" href="classrm_1_1core_1_1ThreadPool.html#adc79c3daa8dd6c96efa6bab551d7b24d">~ThreadPool</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">auto</span> <a class="code hl_function" href="classrm_1_1ThreadPool.html#af4b07a9592ce6ce654c8a9b12a396d80">enqueue</a>(F&amp;&amp; f, Args&amp;&amp;... args) -&gt; std::future&lt;<span class="keyword">typename</span> std::result_of&lt;F(Args...)&gt;::type&gt;;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_function" href="classrm_1_1ThreadPool.html#a3cb2fe05ed96b48f41c7c26c5a29b5d9">~ThreadPool</a>();</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="comment">// need to keep track of threads so we can join them</span></div>
@@ -162,7 +161,7 @@ $(document).ready(function(){initNavTree('thread__pool_8hpp_source.html',''); in
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">// the constructor just launches some amount of workers</span></div>
 <div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classrm_1_1core_1_1ThreadPool.html#a3cf5035bea2017113ad505a84289edac">   66</a></span><span class="keyword">inline</span> <a class="code hl_function" href="classrm_1_1core_1_1ThreadPool.html#a3cf5035bea2017113ad505a84289edac">ThreadPool::ThreadPool</a>(<span class="keywordtype">size_t</span> threads) : stop(false) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classrm_1_1ThreadPool.html#a3932421209c7d1babc319718ea8308f0">   66</a></span><span class="keyword">inline</span> <a class="code hl_function" href="classrm_1_1ThreadPool.html#a3932421209c7d1babc319718ea8308f0">ThreadPool::ThreadPool</a>(<span class="keywordtype">size_t</span> threads) : stop(false) {</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; threads; ++i)</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    workers.emplace_back([<span class="keyword">this</span>] {</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      for (;;) {</div>
@@ -185,7 +184,7 @@ $(document).ready(function(){initNavTree('thread__pool_8hpp_source.html',''); in
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">// add new work item to the pool</span></div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="keyword">template</span> &lt;<span class="keyword">class </span>F, <span class="keyword">class</span>... Args&gt;</div>
 <div class="foldopen" id="foldopen00087" data-start="{" data-end="}">
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classrm_1_1core_1_1ThreadPool.html#adbd9acb623399dfc48fdf7a5cb641191">   87</a></span><span class="keyword">auto</span> ThreadPool::enqueue(F&amp;&amp; f, Args&amp;&amp;... args) -&gt; std::future&lt;<span class="keyword">typename</span> std::result_of&lt;F(Args...)&gt;::type&gt; {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classrm_1_1ThreadPool.html#af4b07a9592ce6ce654c8a9b12a396d80">   87</a></span><span class="keyword">auto</span> ThreadPool::enqueue(F&amp;&amp; f, Args&amp;&amp;... args) -&gt; std::future&lt;<span class="keyword">typename</span> std::result_of&lt;F(Args...)&gt;::type&gt; {</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keyword">using </span>return_type = <span class="keyword">typename</span> std::result_of&lt;F(Args...)&gt;::type;</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keyword">auto</span> task =</div>
@@ -207,7 +206,7 @@ $(document).ready(function(){initNavTree('thread__pool_8hpp_source.html',''); in
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment">// the destructor joins all threads</span></div>
 <div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classrm_1_1core_1_1ThreadPool.html#adc79c3daa8dd6c96efa6bab551d7b24d">  107</a></span><span class="keyword">inline</span> ThreadPool::~ThreadPool() {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classrm_1_1ThreadPool.html#a3cb2fe05ed96b48f41c7c26c5a29b5d9">  107</a></span><span class="keyword">inline</span> ThreadPool::~ThreadPool() {</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  {</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    std::unique_lock&lt;std::mutex&gt; lock(queue_mutex);</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    stop = <span class="keyword">true</span>;</div>
@@ -217,16 +216,15 @@ $(document).ready(function(){initNavTree('thread__pool_8hpp_source.html',''); in
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>}</div>
 </div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}  <span class="comment">// namespace rm::core</span></div>
-</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}  <span class="comment">// namespace rm</span></div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_CORE_THREAD_POOL_HPP</span></div>
-<div class="ttc" id="aclassrm_1_1core_1_1ThreadPool_html"><div class="ttname"><a href="classrm_1_1core_1_1ThreadPool.html">rm::core::ThreadPool</a></div><div class="ttdef"><b>Definition</b> thread_pool.hpp:46</div></div>
-<div class="ttc" id="aclassrm_1_1core_1_1ThreadPool_html_a3cf5035bea2017113ad505a84289edac"><div class="ttname"><a href="classrm_1_1core_1_1ThreadPool.html#a3cf5035bea2017113ad505a84289edac">rm::core::ThreadPool::ThreadPool</a></div><div class="ttdeci">ThreadPool(size_t)</div><div class="ttdef"><b>Definition</b> thread_pool.hpp:66</div></div>
-<div class="ttc" id="aclassrm_1_1core_1_1ThreadPool_html_adbd9acb623399dfc48fdf7a5cb641191"><div class="ttname"><a href="classrm_1_1core_1_1ThreadPool.html#adbd9acb623399dfc48fdf7a5cb641191">rm::core::ThreadPool::enqueue</a></div><div class="ttdeci">auto enqueue(F &amp;&amp;f, Args &amp;&amp;... args) -&gt; std::future&lt; typename std::result_of&lt; F(Args...)&gt;::type &gt;</div><div class="ttdef"><b>Definition</b> thread_pool.hpp:87</div></div>
-<div class="ttc" id="aclassrm_1_1core_1_1ThreadPool_html_adc79c3daa8dd6c96efa6bab551d7b24d"><div class="ttname"><a href="classrm_1_1core_1_1ThreadPool.html#adc79c3daa8dd6c96efa6bab551d7b24d">rm::core::ThreadPool::~ThreadPool</a></div><div class="ttdeci">~ThreadPool()</div><div class="ttdef"><b>Definition</b> thread_pool.hpp:107</div></div>
-<div class="ttc" id="anamespacerm_1_1core_html"><div class="ttname"><a href="namespacerm_1_1core.html">rm::core</a></div><div class="ttdef"><b>Definition</b> thread_pool.hpp:44</div></div>
+<div class="ttc" id="aclassrm_1_1ThreadPool_html"><div class="ttname"><a href="classrm_1_1ThreadPool.html">rm::ThreadPool</a></div><div class="ttdef"><b>Definition</b> thread_pool.hpp:46</div></div>
+<div class="ttc" id="aclassrm_1_1ThreadPool_html_a3932421209c7d1babc319718ea8308f0"><div class="ttname"><a href="classrm_1_1ThreadPool.html#a3932421209c7d1babc319718ea8308f0">rm::ThreadPool::ThreadPool</a></div><div class="ttdeci">ThreadPool(size_t)</div><div class="ttdef"><b>Definition</b> thread_pool.hpp:66</div></div>
+<div class="ttc" id="aclassrm_1_1ThreadPool_html_a3cb2fe05ed96b48f41c7c26c5a29b5d9"><div class="ttname"><a href="classrm_1_1ThreadPool.html#a3cb2fe05ed96b48f41c7c26c5a29b5d9">rm::ThreadPool::~ThreadPool</a></div><div class="ttdeci">~ThreadPool()</div><div class="ttdef"><b>Definition</b> thread_pool.hpp:107</div></div>
+<div class="ttc" id="aclassrm_1_1ThreadPool_html_af4b07a9592ce6ce654c8a9b12a396d80"><div class="ttname"><a href="classrm_1_1ThreadPool.html#af4b07a9592ce6ce654c8a9b12a396d80">rm::ThreadPool::enqueue</a></div><div class="ttdeci">auto enqueue(F &amp;&amp;f, Args &amp;&amp;... args) -&gt; std::future&lt; typename std::result_of&lt; F(Args...)&gt;::type &gt;</div><div class="ttdef"><b>Definition</b> thread_pool.hpp:87</div></div>
+<div class="ttc" id="anamespacerm_html"><div class="ttname"><a href="namespacerm.html">rm</a></div><div class="ttdef"><b>Definition</b> exception.hpp:37</div></div>
 <div class="ttc" id="aunitree__motor_8hpp_html_aa20e9bed3e6c21a8b09ebb720a6b8bab"><div class="ttname"><a href="unitree__motor_8hpp.html#aa20e9bed3e6c21a8b09ebb720a6b8bab">res</a></div><div class="ttdeci">i8 res[1]</div><div class="ttdef"><b>Definition</b> unitree_motor.hpp:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
