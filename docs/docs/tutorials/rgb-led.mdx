@@ -1,0 +1,71 @@
+# RGB LED 控制器
+
+本例程演示如何使用 librm 中的 `RgbLedController` 类控制 RGB LED 的各种灯效。
+
+`RgbLedController` 基于 `SequencePlayer` 实现，提供了多种预定义灯效（呼吸灯、闪烁、流动等），也可以自定义灯效。
+
+## 代码示例
+
+```cpp
+#include "tim.h"
+#include "cmsis_os.h"
+
+#include <librm.hpp>
+
+// 自定义灯效：紫色闪烁
+class PurpleFlash : public rm::modules::RgbLedPattern {
+  TimePoint start_time_;
+
+ public:
+  Rgb Update(TimePoint now) override {
+    auto elapsed = ElapsedMs(start_time_, now);
+    // 每500ms切换一次
+    if ((elapsed / 500) % 2 == 0) {
+      return Rgb(128, 0, 128);  // 紫色
+    }
+    return Rgb(0, 0, 0);  // 熄灭
+  }
+
+  void Reset(TimePoint now) override {
+    start_time_ = now;
+  }
+};
+
+extern "C" void RgbLedTask(const void *pv_arg) {
+  // 创建 RGB LED 控制器，包含多种灯效
+  rm::modules::RgbLedController<
+      rm::modules::led_pattern::Off,
+      rm::modules::led_pattern::GreenBreath,
+      rm::modules::led_pattern::RedFlash,
+      rm::modules::led_pattern::RgbFlow,
+      PurpleFlash
+  > led_controller;
+
+  // 启动时播放绿色呼吸灯
+  led_controller.SetPattern<rm::modules::led_pattern::GreenBreath>();
+
+  for (;;) {
+    // 更新灯效并获取当前颜色
+    auto [r, g, b] = led_controller.Update();
+
+    // 设置 PWM 输出（假设使用 TIM3 的三个通道）
+    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, r);
+    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, g);
+    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, b);
+
+    osDelay(10);  // 100Hz 更新频率
+  }
+}
+```
+
+:::tip
+预定义灯效包括：
+- `Off` - 关闭
+- `GreenBreath` - 绿色呼吸灯（1700ms 周期）
+- `RedFlash` - 红灯闪烁（1000ms 周期）
+- `RgbFlow` - RGB 流动（1536ms 周期）
+:::
+
+:::info
+可以通过继承 `RgbLedPattern` 类实现自定义灯效，只需实现 `Update()` 和 `Reset()` 方法即可。
+:::

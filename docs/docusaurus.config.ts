@@ -40,6 +40,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/XDU-IRobot/librm/tree/main/docs/",
+          routeBasePath: "/",
         },
         // blog: {
         //   showReadingTime: true,

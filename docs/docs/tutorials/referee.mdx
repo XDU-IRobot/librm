@@ -4,7 +4,7 @@
 
 这一部分代码在编写时有移植性方面的考虑，所以设计为和串口 HAL 解耦；因此，例程代码不和硬件平台相关，程序中编造了一串假数据来模拟裁判系统发来的数据。
 
-## 代码
+## 基本使用
 
 ```cpp
 #include <librm.hpp>
@@ -25,6 +25,42 @@ int main() {
   ref.data().event_data;
   ref.data().game_robot_HP.blue_3_robot_HP;
   // ...
+  return 0;
+}
+```
+
+## 回调函数
+
+可以使用 `AttachCallback` 方法注册回调函数，在接收到完整数据包并通过 CRC 校验后自动调用。回调函数会接收到 `cmd_id` 和包序列号 `seq` 作为参数。
+
+```cpp
+#include <librm.hpp>
+
+int main() {
+  rm::device::Referee<rm::device::RefereeRevision::kV170> ref;
+
+  // 注册回调函数
+  ref.AttachCallback([&ref](u16 cmd_id, u8 seq) {
+    // 根据cmd_id处理不同类型的数据
+    if (cmd_id == 0x0001) {
+      // 处理比赛状态数据
+      auto game_status = ref.data().game_status;
+      // ...
+    } else if (cmd_id == 0x0003) {
+      // 处理机器人血量数据
+      auto robot_hp = ref.data().game_robot_HP;
+      // ...
+    }
+  });
+
+  // 可以注册多个回调函数，它们会按注册顺序依次执行
+  ref.AttachCallback([](u16 cmd_id, u8 seq) {
+    printf("Received packet: cmd_id=0x%04x, seq=%d\n", cmd_id, seq);
+  });
+
+  // 接收数据
+  // ref << uart_data;
+
   return 0;
 }
 ```

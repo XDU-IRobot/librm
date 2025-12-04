@@ -1,0 +1,106 @@
+# 蜂鸣器控制器
+
+本例程演示如何使用 librm 中的 `BuzzerController` 类控制蜂鸣器播放各种音乐和提示音。
+
+`BuzzerController` 基于 `SequencePlayer` 实现，支持音符序列播放，并且提供了几条示例旋律（启动音、错误提示、成功提示等）。
+
+## 代码示例
+
+```cpp
+#include "tim.h"
+#include "cmsis_os.h"
+
+#include <librm.hpp>
+
+// 自定义音乐：两只老虎（片段）
+class TwoTigers : public rm::modules::BuzzerMelody {
+  using Freq = rm::modules::NoteFreqStandard;
+  using Duration = rm::modules::NoteDuration120;
+
+  rm::usize note_index_{0};
+  TimePoint note_start_time_;
+
+  static constexpr std::array kMelody = {
+      rm::modules::BuzzerNote(Freq::kC5, Duration::kQuarter),
+      rm::modules::BuzzerNote(Freq::kD5, Duration::kQuarter),
+      rm::modules::BuzzerNote(Freq::kE5, Duration::kQuarter),
+      rm::modules::BuzzerNote(Freq::kC5, Duration::kQuarter),
+      rm::modules::BuzzerNote(Freq::kC5, Duration::kQuarter),
+      rm::modules::BuzzerNote(Freq::kD5, Duration::kQuarter),
+      rm::modules::BuzzerNote(Freq::kE5, Duration::kQuarter),
+      rm::modules::BuzzerNote(Freq::kC5, Duration::kQuarter),
+  };
+
+ public:
+  BuzzerNote Update(TimePoint now) override {
+    if (note_index_ >= kMelody.size()) {
+      return BuzzerNote(0, 0);  // 播放完毕
+    }
+
+    auto note = kMelody[note_index_];
+    auto elapsed = ElapsedMs(note_start_time_, now);
+
+    if (elapsed >= note.duration) {
+      note_index_++;
+      note_start_time_ = now;
+    }
+
+    return note;
+  }
+
+  void Reset(TimePoint now) override {
+    note_index_ = 0;
+    note_start_time_ = now;
+  }
+};
+
+extern "C" void BuzzerTask(const void *pv_arg) {
+  // 创建蜂鸣器控制器，包含多种音乐
+  rm::modules::BuzzerController<
+      rm::modules::buzzer_melody::Silent,
+      rm::modules::buzzer_melody::Beeps<3>,
+      rm::modules::buzzer_melody::Startup,
+      rm::modules::buzzer_melody::Error,
+      rm::modules::buzzer_melody::Success,
+      rm::modules::buzzer_melody::SuperMario,
+      rm::modules::buzzer_melody::TheLick,
+      TwoTigers
+  > buzzer;
+
+  // 启动 PWM
+  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
+
+  // 播放启动音
+  buzzer.Play<rm::modules::buzzer_melody::Startup>();
+
+  for (;;) {
+    // 更新并获取当前音符
+    auto note = buzzer.Update();
+
+    if (note.frequency > 0) {
+      // 设置频率：ARR = Timer_Clock / Frequency - 1
+      uint32_t arr = 1000000 / note.frequency - 1;
+      __HAL_TIM_SET_AUTORELOAD(&htim4, arr);
+      __HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, arr / 2);  // 50% 占空比
+    } else {
+      // 静音
+      __HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 0);
+    }
+
+    osDelay(1);  // 1kHz 更新频率
+  }
+}
+```
+
+:::tip
+librm 内建了几条示例旋律，可以直接使用：
+
+- `Silent` - 静音
+- `Beeps<N>` - 滴滴响 N 声
+- `Startup` - 启动提示音
+- `Error` - 错误提示音
+- `Success` - 成功提示音
+- `SuperMario` - 超级马里奥主题曲（片段）
+- `TheLick` - The Lick（爵士经典乐句）
+- `SeeUAgain` - See You Again（片段）
+  :::

@@ -1,0 +1,154 @@
+# 设备状态监控
+
+本例程演示如何使用 librm 中的 `Device` 基类和 `DeviceManager` 设备管理器来监控设备的在线状态和工作状态。
+
+设备状态监控框架通过心跳机制自动检测设备是否离线，并在设备故障或离线时触发回调函数。设备有三种状态：`kOk`（正常）、`kFault`（故障）、`kOffline`（离线，超过超时时间未收到状态上报）。
+
+librm 中的大部分设备驱动类都基于这套机制实现了状态上报逻辑，可以直接添加到 `DeviceManager`。
+
+## 代码示例
+
+### 基本用法
+
+```cpp
+#include "cmsis_os.h"
+#include <librm.hpp>
+
+extern "C" void DeviceMonitorTask(const void *pv_arg) {
+  rm::hal::Can can1(hcan1);
+  rm::device::M3508 motor1(can1, 1);
+  rm::device::M3508 motor2(can1, 2);
+  rm::device::GM6020 motor3(can1, 3);
+  can1.Begin();
+
+  // 创建设备管理器，最多可以添加 10 个设备
+  rm::device::DeviceManager<10> device_manager;
+
+  // 将设备添加到管理器
+  device_manager << &motor1 << &motor2 << &motor3;
+
+  // 注册设备故障或离线回调
+  device_manager.OnDeviceFaultOrOffline([](rm::device::Device *device) {
+    // 设备故障或离线时的处理逻辑
+    // 例如：停止所有运动、触发蜂鸣器报警、LED 指示等
+  });
+
+  for (;;) {
+    // 更新所有设备状态并检查
+    bool all_ok = device_manager.Update();
+
+    if (all_ok) {
+      // 所有设备正常
+    } else {
+      // 存在故障或离线设备
+    }
+
+    osDelay(100);  // 100ms 检查一次
+  }
+}
+```
+
+### 自定义设备类
+
+如果新编写了一个设备驱动，想要整合进这套状态监控框架，继承 `Device` 基类并在适当时机调用 `ReportStatus` 方法报告设备状态：
+
+```cpp
+#include <librm.hpp>
+
+// 自定义传感器设备
+class CustomSensor : public rm::device::Device {
+ public:
+  void Update() {
+    // 读取传感器数据
+    bool data_valid = ReadSensorData();
+
+    if (data_valid) {
+      // 数据有效，报告设备正常
+      ReportStatus(Status::kOk);
+    } else {
+      // 数据异常，报告设备故障
+      ReportStatus(Status::kFault);
+    }
+  }
+
+  float GetValue() const { return value_; }
+
+ private:
+  bool ReadSensorData() {
+    // 实际的传感器读取逻辑
+    // 返回 true 表示数据有效，false 表示数据异常
+    return true;
+  }
+
+  float value_{0.0f};
+};
+
+// 使用自定义传感器
+CustomSensor imu_sensor;
+imu_sensor.SetHeartbeatTimeout(std::chrono::milliseconds(500));  // 设置500ms超时
+
+rm::device::DeviceManager<5> sensors;
+sensors << &imu_sensor;
+
+extern "C" void SensorTask(const void *pv_arg) {
+  for (;;) {
+    // 更新传感器数据
+    imu_sensor.Update();
+
+    // 检查传感器状态
+    if (imu_sensor.Ok()) {
+      float value = imu_sensor.GetValue();
+      // 使用传感器数据
+    }
+
+    osDelay(10);
+  }
+}
+```
+
+### 分组管理
+
+:::tip
+实际应用中可以像下面这样将不同区域的设备分组管理，例如底盘、云台等，从而实现更灵活的状态监控和保护逻辑。
+:::
+
+```cpp
+#include "cmsis_os.h"
+#include <librm.hpp>
+
+rm::device::DeviceManager<8> chassis_motors;
+rm::device::DeviceManager<4> gimbal_motors;
+
+extern "C" void SafetyMonitorTask(const void *pv_arg) {
+  chassis_motors.OnDeviceFaultOrOffline([](rm::device::Device *device) {
+    // 停止所有底盘电机
+  });
+  gimbal_motors.OnDeviceFaultOrOffline([](rm::device::Device *device) {
+    // 停止云台运动
+  });
+
+  for (;;) {
+    bool chassis_ok = chassis_motors.Update();
+    bool gimbal_ok = gimbal_motors.Update();
+
+    // 根据状态执行保护逻辑
+    osDelay(50);
+  }
+}
+```
+
+## 主要 API
+
+### `Device` 基类
+
+- `void SetHeartbeatTimeout(duration timeout)` - 设置心跳超时时间（默认 1 秒）
+- `bool Ok()` - 检查设备是否在线且正常工作
+- `time_point last_seen() const` - 获取设备最后一次上报状态的时间点
+- `protected void ReportStatus(Status status)` - 由设备驱动`Device`类调用，报告当前的设备状态
+
+### `DeviceManager` 设备管理器
+
+- `DeviceManager& operator<<(Device *device)` - 添加设备
+- `bool Update()` - 更新所有设备状态，返回是否所有设备都正常
+- `void OnDeviceFaultOrOffline(CallbackType callback)` - 注册故障/离线回调
+- `bool all_device_ok() const` - 获取所有设备是否正常

@@ -1,0 +1,126 @@
+# Float16 浮点数转换
+
+本例程演示如何使用 librm 中的 Float16 功能进行半精度浮点数（FP16）和单精度浮点数（FP32）之间的转换。
+
+Float16 使用 16 位存储，相比 Float32 可以节省 50% 的存储空间和传输带宽，且大部分情况下精度损失相较于映射到 uint16 的整个范围（0~65535）要小。
+
+FP16 在和上位机通信的时候非常有用，比如一个姿态四元数是 4 个 fp32，转换成 fp16 后只需要 8 个字节，可以放在一个 CAN 帧里传输完。
+
+## 基础概念
+
+- **Float16 (FP16)**：16 位半精度浮点数
+
+  - 符号位：1 位
+  - 指数位：5 位（偏移量 15）
+  - 尾数位：10 位
+  - 表示范围：约 ±6.55×10⁴
+  - 精度：约 3-4 位有效数字
+
+- **Float32 (FP32)**：32 位单精度浮点数
+  - 符号位：1 位
+  - 指数位：8 位（偏移量 127）
+  - 尾数位：23 位
+  - 表示范围：约 ±3.4×10³⁸
+  - 精度：约 6-7 位有效数字
+
+## Float32 转 Float16
+
+将单精度浮点数压缩为半精度浮点数，用于节省存储或传输带宽。
+
+```cpp
+#include <librm.hpp>
+
+int main() {
+  float value = 3.14159f;
+
+  // 转换为 Float16
+  rm::modules::f16 half_value = rm::modules::F32ToF16(value);
+
+  // 现在可以存储或传输 half_value（仅占 2 字节）
+  return 0;
+}
+```
+
+## Float16 转 Float32
+
+将半精度浮点数解压为单精度浮点数，用于计算。
+
+```cpp
+#include <librm.hpp>
+
+int main() {
+  rm::modules::f16 half_value = 0x4248;  // Float16 表示的 3.14...
+
+  // 转换为 Float32
+  float value = rm::modules::F16ToF32(half_value);
+
+  // 现在可以用 value 进行正常的浮点运算
+  float result = value * 2.0f;
+
+  return 0;
+}
+```
+
+## 特殊值处理
+
+Float16 支持 IEEE 754 标准的特殊值。
+
+```cpp
+#include <librm.hpp>
+#include <cmath>
+
+int main() {
+  // 正无穷
+  float inf = INFINITY;
+  rm::modules::f16 h_inf = rm::modules::F32ToF16(inf);
+  float inf_back = rm::modules::F16ToF32(h_inf);  // 仍是 INFINITY
+
+  // 负无穷
+  float neg_inf = -INFINITY;
+  rm::modules::f16 h_neg_inf = rm::modules::F32ToF16(neg_inf);
+
+  // NaN（非数字）
+  float nan = NAN;
+  rm::modules::f16 h_nan = rm::modules::F32ToF16(nan);
+
+  // 零值（正零和负零）
+  float zero = 0.0f;
+  float neg_zero = -0.0f;
+  rm::modules::f16 h_zero = rm::modules::F32ToF16(zero);
+  rm::modules::f16 h_neg_zero = rm::modules::F32ToF16(neg_zero);
+
+  return 0;
+}
+```
+
+## 精度损失
+
+Float16 的精度和范围比 Float32 小，转换时需要注意。
+
+```cpp
+#include <librm.hpp>
+#include <cstdio>
+
+int main() {
+  // 精度损失示例
+  float original = 3.1415926f;  // 7 位精度
+  rm::modules::f16 half = rm::modules::F32ToF16(original);
+  float restored = rm::modules::F16ToF32(half);  // 约 3.141（3-4 位精度）
+
+  printf("Original: %.7f\n", original);
+  printf("Restored: %.7f\n", restored);
+  printf("Error: %.7f\n", original - restored);
+
+  // 超出范围：自动变为无穷
+  float huge = 1e10f;  // 远超 Float16 范围
+  rm::modules::f16 h_huge = rm::modules::F32ToF16(huge);
+  float back = rm::modules::F16ToF32(h_huge);  // 变为 INFINITY
+
+  // 次正规数（subnormal）
+  float tiny = 1e-10f;
+  rm::modules::f16 h_tiny = rm::modules::F32ToF16(tiny);
+  // 可能变为 0 或次正规数
+
+  return 0;
+}
+```

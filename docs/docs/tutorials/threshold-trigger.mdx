@@ -19,7 +19,7 @@
 
 int main() {
   bool var;
-  auto tt = rm::modules::algorithm::ThresholdTrigger<bool>(var)
+  auto tt = rm::modules::ThresholdTrigger<bool>(var)
                 .OnRising([]() { std::cout << "Rising edge\n"; })
                 .OnFalling([]() { std::cout << "Falling edge\n"; });
 
@@ -36,7 +36,7 @@ int main() {
 
 int main() {
   int var;
-  auto tt = rm::modules::algorithm::ThresholdTrigger<int>(var, 10, 20)
+  auto tt = rm::modules::ThresholdTrigger<int>(var, 10, 20)
                 .OnRising([]() { std::cout << "Rising edge\n"; })
                 .OnFalling([]() { std::cout << "Falling edge\n"; });
 

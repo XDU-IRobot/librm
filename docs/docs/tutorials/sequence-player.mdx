@@ -1,0 +1,88 @@
+# 序列播放器
+
+本例程演示如何使用 librm 中的 `SequencePlayer` 类创建通用的序列播放器，可以在多个序列生成器之间切换。
+
+`SequencePlayer` 是一个通用的序列播放框架，允许定义多个序列生成器并在运行时动态切换。基于此框架可以实现 LED 灯效控制、蜂鸣器音乐播放等功能。
+
+## 代码示例
+
+```cpp
+#include <librm.hpp>
+#include <cmath>
+
+// 定义序列生成器：线性增长
+class LinearRamp : public rm::modules::SequenceGenerator<float> {
+  float value_ = 0.0f;
+  TimePoint start_time_;
+
+ public:
+  float Update(TimePoint now) override {
+    value_ += 0.1f;
+    return value_;
+  }
+
+  void Reset(TimePoint now) override {
+    value_ = 0.0f;
+    start_time_ = now;
+  }
+};
+
+// 定义序列生成器：正弦波
+class SineWave : public rm::modules::SequenceGenerator<float> {
+  TimePoint start_time_;
+
+ public:
+  float Update(TimePoint now) override {
+    auto elapsed_ms = ElapsedMs(start_time_, now);
+    float phase = elapsed_ms * 0.001f;  // 1秒周期
+    return std::sin(phase * 2.0f * 3.14159f);
+  }
+
+  void Reset(TimePoint now) override {
+    start_time_ = now;
+  }
+};
+
+// 定义序列生成器：方波
+class SquareWave : public rm::modules::SequenceGenerator<float> {
+  TimePoint start_time_;
+
+ public:
+  float Update(TimePoint now) override {
+    auto elapsed_ms = ElapsedMs(start_time_, now);
+    return (elapsed_ms % 1000 < 500) ? 1.0f : -1.0f;
+  }
+
+  void Reset(TimePoint now) override {
+    start_time_ = now;
+  }
+};
+
+int main() {
+  // 创建序列播放器，包含三种序列
+  rm::modules::SequencePlayer<float, LinearRamp, SineWave, SquareWave> player;
+
+  // 切换到正弦波序列
+  player.SetSequence<SineWave>();
+
+  // 更新并获取输出
+  for (int i = 0; i < 100; i++) {
+    float output = player.Update();
+    // 使用输出值...
+
+    osDelay(10);
+  }
+
+  // 切换到方波序列
+  player.SetSequence<SquareWave>();
+
+  // 重置当前序列
+  player.Reset();
+
+  return 0;
+}
+```
+
+:::tip
+所有序列生成器必须继承自 `SequenceGenerator<OutputType>` 并实现 `Update()` 和 `Reset()` 方法。`Update()` 方法接收当前时间点，基于绝对时间进行状态更新。
+:::

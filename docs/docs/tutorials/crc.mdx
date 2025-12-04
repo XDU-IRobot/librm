@@ -1,0 +1,132 @@
+# CRC 校验
+
+本例程演示如何使用 librm 中的 CRC 校验功能进行数据完整性验证。
+
+librm 提供了 CRC8、CRC16、CRC32 和 CRC-CCITT 四种 CRC 校验算法，常用于串口通信、CAN 通信等场景的数据校验。
+
+## CRC8 校验
+
+CRC8 使用生成多项式 G(x)=x⁸+x⁵+x⁴+1，初始值为 0xFF。
+
+```cpp
+#include <librm.hpp>
+
+int main() {
+  // 准备数据
+  uint8_t data[] = {0x01, 0x02, 0x03, 0x04, 0x05};
+  
+  // 计算 CRC8 校验值
+  uint8_t crc8 = rm::modules::Crc8(data, sizeof(data), rm::modules::CRC8_INIT);
+  
+  // 发送数据时附加 CRC
+  uint8_t send_buffer[6];
+  memcpy(send_buffer, data, 5);
+  send_buffer[5] = crc8;
+  
+  // 接收数据后验证
+  uint8_t recv_buffer[6] = {0x01, 0x02, 0x03, 0x04, 0x05, crc8};
+  uint8_t verify = rm::modules::Crc8(recv_buffer, 6, rm::modules::CRC8_INIT);
+  // 如果数据完整，verify 应该等于 0
+  
+  return 0;
+}
+```
+
+## CRC16 校验
+
+```cpp
+#include <librm.hpp>
+
+void ProcessRefereeData() {
+  uint8_t frame_header[5];  // 包含 SOF、data_length、seq、CRC8
+  uint8_t cmd_id[2];
+  uint8_t data[100];
+  uint16_t frame_tail;  // CRC16
+  
+  // 计算帧头 CRC8
+  uint8_t header_crc8 = rm::modules::Crc8(
+    frame_header, 4, rm::modules::CRC8_INIT
+  );
+  
+  // 验证帧头
+  if (header_crc8 != frame_header[4]) {
+    // 帧头校验失败
+    return;
+  }
+  
+  // 计算整帧 CRC16（不包括 CRC16 本身）
+  size_t frame_len = 5 + 2 + data_length;
+  uint8_t frame_buffer[256];
+  memcpy(frame_buffer, frame_header, 5);
+  memcpy(frame_buffer + 5, cmd_id, 2);
+  memcpy(frame_buffer + 7, data, data_length);
+  
+  uint16_t calc_crc16 = rm::modules::Crc16(
+    frame_buffer, frame_len, rm::modules::CRC16_INIT
+  );
+  
+  // 验证整帧
+  if (calc_crc16 != frame_tail) {
+    // 数据校验失败
+    return;
+  }
+  
+  // 数据有效，继续处理
+}
+```
+
+## CRC32 校验
+
+```cpp
+#include <librm.hpp>
+#include <string>
+
+int main() {
+  // 对字符串数据进行 CRC32 校验
+  std::string message = "Hello, RoboMaster!";
+  uint32_t crc32 = rm::modules::Crc32(message, rm::modules::CRC32_INIT);
+  
+  // 也可以对原始字节数组校验
+  uint32_t data[] = {0x12345678, 0x9ABCDEF0, 0x11223344};
+  uint32_t crc = rm::modules::Crc32(data, 3, rm::modules::CRC32_INIT);
+  
+  return 0;
+}
+```
+
+## CRC-CCITT 校验
+
+CRC-CCITT 是另一种常用的 16 位 CRC 算法，用于某些特定的通信协议。
+
+```cpp
+#include <librm.hpp>
+
+int main() {
+  uint8_t data[] = {0xAA, 0xBB, 0xCC, 0xDD};
+  
+  // 计算 CRC-CCITT
+  uint16_t crc_ccitt = rm::modules::CrcCcitt(
+    data, sizeof(data), rm::modules::CRC16_INIT
+  );
+  
+  return 0;
+}
+```
+
+## 使用 string_view
+
+所有 CRC 函数都支持使用 `std::string_view` 和 `std::string` 作为输入：
+
+```cpp
+#include <librm.hpp>
+#include <string_view>
+
+void CheckProtocol(std::string_view packet) {
+  // 直接对 string_view 计算 CRC
+  uint16_t crc = rm::modules::Crc16(packet, rm::modules::CRC16_INIT);
+  
+  // 或者对 string
+  std::string data_str = "test data";
+  uint8_t crc8 = rm::modules::Crc8(data_str, rm::modules::CRC8_INIT);
+}
+```

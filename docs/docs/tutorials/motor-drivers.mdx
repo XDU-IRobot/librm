@@ -1,0 +1,268 @@
+# 电机驱动速查
+
+本文档列举 librm 中常见电机驱动的基本用法。
+
+## 大疆电机（GM6020 / M3508 / M2006）
+
+```cpp
+#include <librm.hpp>
+
+// 初始化 CAN 总线
+rm::hal::Can can1(hcan1);
+can1.SetFilter(0, 0);
+can1.Begin();
+
+// 创建电机对象（ID 1-8，第三个参数为是否反转）
+rm::device::GM6020 yaw_motor(can1, 1);      // 云台电机
+rm::device::M3508 wheel_motor(can1, 2);     // 底盘轮电机
+rm::device::M2006 friction_motor(can1, 3);  // 摩擦轮电机
+
+// 控制循环
+for (;;) {
+  // 设置电流（GM6020: ±30000, M3508: ±16384, M2006: ±10000）
+  yaw_motor.SetCurrent(5000);
+  wheel_motor.SetCurrent(-8000);
+  friction_motor.SetCurrent(3000);
+
+  // 统一发送控制指令（发送所有大疆电机）
+  rm::device::DjiMotor<>::SendCommand();
+
+  // 或者只发送特定型号
+  // rm::device::GM6020::SendCommand();
+  // rm::device::M3508::SendCommand();
+
+  // 读取反馈
+  uint16_t encoder = yaw_motor.encoder();  // 0-8191
+  int16_t rpm = wheel_motor.rpm();
+  int16_t current = friction_motor.current();
+  uint8_t temp = yaw_motor.temperature();
+  float angle_deg = yaw_motor.pos_degree();  // 0-360°
+  float angle_rad = yaw_motor.pos_rad();     // 0-2π
+
+  osDelay(1);
+}
+```
+
+## 达妙电机（DM-J4310 等）
+
+```cpp
+#include <librm.hpp>
+
+rm::hal::Can can1(hcan1);
+can1.Begin();
+
+// MIT 模式（位置速度力矩混合控制）
+// 参数：master_id, slave_id, p_max, v_max, t_max, kp_range, kd_range
+rm::device::DmMotor<rm::device::DmMotorControlMode::kMit> dm_motor(
+    can1, {0x01, 0x01, 12.5f, 10.0f, 10.0f, {0.0f, 500.0f}, {0.0f, 5.0f}});
+
+// 使能电机
+dm_motor.SendInstruction(rm::device::DmMotorInstructions::kEnable);
+osDelay(10);
+
+// 设置零点
+dm_motor.SendInstruction(rm::device::DmMotorInstructions::kSetZeroPosition);
+osDelay(10);
+
+for (;;) {
+  // MIT 模式控制：位置(rad)、速度(rad/s)、前馈力矩(N·m)、kp、kd
+  dm_motor.SetPosition(1.5f, 2.0f, 0.5f, 10.0f, 1.0f);
+
+  // 读取反馈
+  float pos = dm_motor.pos();      // rad
+  float vel = dm_motor.vel();      // rad/s
+  float torque = dm_motor.tau();   // N·m
+  uint8_t status = dm_motor.status();
+  uint8_t mos_temp = dm_motor.mos_temperature();
+  uint8_t coil_temp = dm_motor.coil_temperature();
+
+  osDelay(1);
+}
+
+// 失能电机
+dm_motor.SendInstruction(rm::device::DmMotorInstructions::kDisable);
+
+// 速度位置模式
+// 参数：master_id, slave_id, p_max, v_max, t_max
+rm::device::DmMotor<rm::device::DmMotorControlMode::kSpeedPosition> dm_motor2(
+    can1, {0x02, 0x02, 12.5f, 10.0f, 10.0f});
+
+dm_motor2.SendInstruction(rm::device::DmMotorInstructions::kEnable);
+osDelay(10);
+
+for (;;) {
+  dm_motor2.SetPosition(3.14f, 2.0f);  // 位置(rad)、速度(rad/s)
+  osDelay(1);
+}
+
+// 速度模式
+// 参数：master_id, slave_id, v_max, t_max
+rm::device::DmMotor<rm::device::DmMotorControlMode::kSpeed> dm_motor3(
+    can1, {0x03, 0x03, 10.0f, 10.0f});
+
+dm_motor3.SendInstruction(rm::device::DmMotorInstructions::kEnable);
+osDelay(10);
+
+for (;;) {
+  dm_motor3.SetSpeed(5.0f);  // 速度(rad/s)
+  osDelay(1);
+}
+```
+
+## 瓴控电机（MG / MF / MH / MS 系列）
+
+```cpp
+#include <librm.hpp>
+
+rm::hal::Can can1(hcan1);
+can1.Begin();
+
+rm::device::LkMotorMG<15> lk_motor_mg(can1, 1);      // MG 系列，15 位编码器
+rm::device::LkMotorMF<18> lk_motor_mf(can1, 2);      // MF 系列，18 位编码器
+rm::device::LkMotorMH<15> lk_motor_mh(can1, 3);      // MH 系列，15 位编码器
+rm::device::LkMotorMS<18> lk_motor_ms(can1, 4);      // MS 系列，18 位编码器
+
+// 使能（注意：瓴控电机的驱动板有 bug，给它发的命令报文会被延迟处理，建议多发几次）
+lk_motor_mg.SendInstruction(rm::device::LkMotor<rm::device::LkMotorType::kMG, 15>::Instruction::kEnable);
+
+for (;;) {
+  // 力矩控制（MF: ±16.5N·m, MG: ±33N·m，MS 系列不支持）
+  lk_motor_mg.SetTorque(5.0f);  // N·m
+
+  // MS 系列支持开环控制
+  // lk_motor_ms.SetPower(500.0f);  // -850 ~ 850
+
+  // 读取反馈（通过 feedback() 访问所有状态）
+  auto fb = lk_motor_mg.feedback();
+  float pos = fb.position_rad;     // rad
+  int16_t speed = fb.speed_rad_ps; // rad/s
+  float iq = fb.iq;                // 转矩电流(A)
+  int8_t temp = fb.temperature;    // 温度(°C)
+  float voltage = fb.voltage;      // 电压(V)
+  bool enabled = fb.enabled;       // 使能状态
+
+  // 检查错误状态
+  if (fb.error_state.over_current) {
+    // 处理过流错误
+  }
+
+  osDelay(1);
+}
+
+// 失能（建议多发几次）
+lk_motor_mg.SendInstruction(rm::device::LkMotor<rm::device::LkMotorType::kMG, 15>::Instruction::kDisable);
+```
+
+## 宇树电机（GO-M8010 等）
+
+```cpp
+#include <librm.hpp>
+
+// 宇树电机使用串口通信
+rm::hal::Serial serial(huart1);
+rm::device::UnitreeMotor unitree_motor(serial, 0x01);  // 串口，电机ID
+
+for (;;) {
+  // 设置力矩
+  unitree_motor.SetTau(0.5f);  // N·m
+  unitree_motor.SendCommend();
+
+  // 读取反馈
+  float pos = unitree_motor.pos();
+  float vel = unitree_motor.vel();
+  float torque = unitree_motor.tau();
+  int16_t acc = unitree_motor.acc();
+
+  osDelay(1);
+}
+```
+
+## 张大头步进驱动
+
+```cpp
+#include <librm.hpp>
+
+rm::hal::Serial serial(huart1);
+rm::device::ZdtStepper stepper(serial, 0x01);
+
+for (;;) {
+  // 位置控制（速度 rpm，加速度，脉冲数，是否绝对位置，是否同步）
+  stepper.MotorPosCtrl(500, 50, 10000, false, false);
+
+  // 速度控制（速度 rpm，加速度，是否同步）
+  // stepper.MotorVelCtrl(300, 50, false);
+
+  // 读取反馈
+  auto fb = stepper.feedback();
+  float pos = fb.pos;
+  float vel = fb.vel;
+
+  osDelay(1);
+}
+```
+
+## 本末电机（DirectDrive）
+
+```cpp
+#include <librm.hpp>
+
+rm::hal::Can can1(hcan1);
+can1.Begin();
+
+rm::device::DirectDriveMotor dd_motor(can1, 0x01);
+
+dd_motor.Enable(true);
+
+for (;;) {
+  // 力矩控制（需要先设置为力矩控制模式）
+  dd_motor.SetMode(rm::device::DirectDriveMotor::Mode::kTorque);
+  dd_motor.SetTorque(2.5f);  // N·m
+
+  // 读取反馈
+  auto fb = dd_motor.feedback();
+  float rpm = fb.rpm;
+  float iq = fb.iq;
+  uint16_t encoder = fb.encoder;
+  float voltage = fb.master_voltage;
+
+  osDelay(1);
+}
+
+dd_motor.Enable(false);
+```
+
+## 宇树 GO8010 电机
+
+```cpp
+#include <librm.hpp>
+
+// GO8010 电机使用串口通信
+rm::hal::Serial serial(huart1);
+rm::device::Go8010Motor go_motor(serial, 0x01);
+
+for (;;) {
+  // 设置力矩
+  go_motor.SetTau(0.5f);  // N·m
+  go_motor.SendCommend();
+
+  // 读取反馈
+  float pos = go_motor.pos();
+  float vel = go_motor.vel();
+  float torque = go_motor.tau();
+
+  osDelay(1);
+}
+```
+
+## 注意事项
+
+:::warning
+
+- 大疆电机需要调用 `SendCommand()` 统一发送控制命令，其他电机在设置控制值时立即发送
+  :::
+
+:::tip
+
+- 串级 PID 控制参考 `pid.mdx` 文档
+- 需要平滑轨迹时配合 `TrajectoryLimiter` 使用
+  :::

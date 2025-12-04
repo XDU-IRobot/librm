@@ -1,0 +1,282 @@
+# PID 控制器
+
+本例程演示如何使用 librm 中的 `PID` 类实现位置式 PID 控制。
+
+`PID` 类是一个功能完善的位置式 PID 控制器，实现了梯形积分、变速积分、微分先行、微分滤波、过零点处理、模糊 PID 等高级特性。
+
+## 基础用法
+
+```cpp
+#include "can.h"
+#include "cmsis_os.h"
+
+#include <librm.hpp>
+
+extern "C" void MotorControlTask(const void *pv_arg) {
+  rm::hal::Can can1(hcan1);
+  rm::device::GM6020 motor(can1, 1);
+  can1.SetFilter(0, 0);
+  can1.Begin();
+
+  // 创建 PID 控制器
+  // 参数：kp, ki, kd, max_out, max_iout
+  rm::modules::PID pid(5, 0, 0, 30000, 0);
+
+  for (;;) {
+    // 更新 PID：目标值 3000，反馈值为电机编码器值
+    pid.Update(3000, motor.encoder());
+
+    // 输出到电机
+    motor.SetCurrent(static_cast<int16_t>(pid.out()));
+    rm::device::DjiMotor<>::SendCommand();
+
+    osDelay(1);
+  }
+}
+```
+
+## 角度控制（过零点处理）
+
+编码器角度控制经常遇到从 8191 跳到 0 的过零问题，使用循环模式可自动处理：
+
+```cpp
+rm::modules::PID pid(5, 0, 0, 30000, 0);
+pid.SetCircular(true).SetCircularCycle(8191);  // 启用循环模式，周期为 8191
+
+for (;;) {
+  // 目标 100，当前 8000 时，误差会被计算为 292 而不是 -7900
+  pid.Update(100, motor.encoder());
+  motor.SetCurrent(static_cast<int16_t>(pid.out()));
+  rm::device::DjiMotor<>::SendCommand();
+  osDelay(1);
+}
+```
+
+## 速度控制（指定时间步长）
+
+速度环建议指定时间步长 `dt`，以获得准确的微分和积分计算：
+
+```cpp
+rm::modules::PID velocity_pid(10, 0.5, 0, 16384, 5000);
+
+const float dt = 0.001f;  // 1ms 控制周期
+
+for (;;) {
+  float target_vel = GetTargetVelocity();
+  float current_vel = motor.velocity();
+
+  // 传入 dt 参数
+  velocity_pid.Update(target_vel, current_vel, dt);
+
+  motor.SetCurrent(static_cast<int16_t>(velocity_pid.out()));
+  rm::device::DjiMotor<>::SendCommand();
+  osDelay(1);
+}
+```
+
+## 串级 PID
+
+位置环 + 速度环的串级控制：
+
+```cpp
+rm::modules::PID position_pid(0.5, 0, 0, 100, 0);    // 外环：位置
+rm::modules::PID velocity_pid(10, 0.5, 0, 16384, 5000);  // 内环：速度
+
+position_pid.SetCircular(true).SetCircularCycle(8191);
+
+const float dt = 0.001f;
+
+for (;;) {
+  float target_pos = GetTargetPosition();
+
+  // 外环输出作为内环目标
+  position_pid.Update(target_pos, motor.angle(), dt);
+  float target_vel = position_pid.out();
+
+  // 内环控制
+  velocity_pid.Update(target_vel, motor.velocity(), dt);
+
+  motor.SetCurrent(static_cast<int16_t>(velocity_pid.out()));
+  rm::device::DjiMotor<>::SendCommand();
+  osDelay(1);
+}
+```
+
+## 微分先行
+
+防止目标值突变导致微分项剧烈抖动：
+
+```cpp
+rm::modules::PID pid(5, 0.1, 0.5, 30000, 5000);
+pid.SetDiffFirst(true);  // 启用微分先行
+
+// 微分项计算反馈值的变化率，而不是误差的变化率
+// 适用于目标值频繁跳变的场景
+```
+
+## 微分滤波
+
+对微分项进行低通滤波，减小高频噪声影响：
+
+```cpp
+rm::modules::PID pid(5, 0.1, 0.5, 30000, 5000);
+pid.SetDiffLpfAlpha(0.3f);  // 滤波系数，(0, 1]，越小滤波越强
+
+// 默认为 1.0（不滤波）
+// 建议范围：0.1 ~ 0.5
+```
+
+## 变速积分
+
+误差大时减小积分作用，防止积分饱和：
+
+```cpp
+rm::modules::PID pid(5, 0.5, 0, 30000, 5000);
+pid.SetDynamicKi(true);  // 启用变速积分
+
+// ki 会根据误差大小自动调整：ki_actual = ki / (1 + |error|)
+// 误差小时积分强，误差大时积分弱
+```
+
+## 外部微分
+
+使用外部传感器（如 IMU）提供微分信号：
+
+```cpp
+rm::modules::PID pid(5, 0.1, 0.5, 30000, 5000);
+
+for (;;) {
+  float target_angle = GetTargetAngle();
+  float current_angle = motor.angle();
+  float angular_velocity = imu.gyro_z();  // 使用陀螺仪角速度
+
+  // 使用外部微分信号
+  pid.UpdateExtDiff(target_angle, current_angle, angular_velocity, dt);
+
+  motor.SetCurrent(static_cast<int16_t>(pid.out()));
+  rm::device::DjiMotor<>::SendCommand();
+  osDelay(1);
+}
+```
+
+## 模糊 PID
+
+自适应调整 PID 参数，提升控制性能：
+
+```cpp
+rm::modules::PID pid(5, 0.1, 0.5, 30000, 5000);
+pid.SetFuzzy(true);              // 启用模糊 PID
+pid.SetFuzzyErrorScale(1);    // 误差尺度因子：工作中会出现的误差范围。比如说云台控制任务可能会出现 ±45 度的误差，这里就设置为 45
+pid.SetFuzzyDErrorScale(1);    // 同上，但是是针对误差变化率，也就是 derror
+```
+
+## 获取状态信息
+
+```cpp
+rm::modules::PID pid(5, 0.1, 0.5, 30000, 5000);
+
+pid.Update(target, feedback, dt);
+
+// 获取各项输出
+float output = pid.out();       // 总输出
+float p_term = pid.p_out();     // P 项
+float i_term = pid.i_out();     // I 项
+float d_term = pid.d_out()[0];  // D 项（当前）
+
+// 获取误差
+float error = pid.error()[0];      // 当前误差
+float last_error = pid.error()[1]; // 上次误差
+
+// 获取参数
+float kp = pid.kp();
+float ki = pid.ki();
+float kd = pid.kd();
+```
+
+## 重置控制器
+
+在切换控制模式或重新开始控制时，清除历史状态：
+
+```cpp
+rm::modules::PID pid(5, 0.1, 0.5, 30000, 5000);
+
+// 使用一段时间后...
+
+// 清除所有历史状态（误差、积分、微分等）
+pid.Clear();
+
+// 重新开始控制
+for (;;) {
+  pid.Update(new_target, feedback, dt);
+  // ...
+}
+```
+
+## 动态调整参数
+
+```cpp
+rm::modules::PID pid(5, 0.1, 0.5, 30000, 5000);
+
+// 链式调用设置参数
+pid.SetKp(10)
+   .SetKi(0.2)
+   .SetKd(1.0)
+   .SetMaxOut(20000)
+   .SetMaxIout(3000);
+
+// 也可以分开设置
+if (high_precision_mode) {
+  pid.SetKp(15);
+  pid.SetKd(2.0);
+}
+```
+
+## API 参考
+
+### 构造函数
+
+```cpp
+PID(f32 kp, f32 ki, f32 kd, f32 max_out, f32 max_iout);
+```
+
+- `kp`: 比例系数
+- `ki`: 积分系数
+- `kd`: 微分系数
+- `max_out`: 最大输出限幅
+- `max_iout`: 最大积分限幅
+
+### 主要方法
+
+| 方法                                                                    | 说明                                      |
+| ----------------------------------------------------------------------- | ----------------------------------------- |
+| `void Update(f32 set, f32 ref, f32 dt = 1.f)`                           | 更新 PID 输出                             |
+| `void UpdateExtDiff(f32 set, f32 ref, f32 external_diff, f32 dt = 1.f)` | 使用外部微分信号更新                      |
+| `void Clear()`                                                          | 清除历史状态                              |
+| `f32 out()`                                                             | 获取总输出                                |
+| `f32 p_out()`                                                           | 获取 P 项输出                             |
+| `f32 i_out()`                                                           | 获取 I 项输出                             |
+| `const f32* d_out()`                                                    | 获取 D 项输出（数组，0 为当前，1 为上次） |
+| `const f32* error()`                                                    | 获取误差（数组，0 为当前，1 为上次）      |
+
+### 配置方法（可链式调用）
+
+| 方法                                       | 说明                        |
+| ------------------------------------------ | --------------------------- |
+| `SetKp(f32)` / `SetKi(f32)` / `SetKd(f32)` | 设置 PID 参数               |
+| `SetMaxOut(f32)` / `SetMaxIout(f32)`       | 设置输出和积分限幅          |
+| `SetCircular(bool)`                        | 启用/禁用循环模式           |
+| `SetCircularCycle(f32)`                    | 设置循环周期                |
+| `SetDiffFirst(bool)`                       | 启用/禁用微分先行           |
+| `SetDynamicKi(bool)`                       | 启用/禁用变速积分           |
+| `SetDiffLpfAlpha(f32)`                     | 设置微分滤波系数 (0, 1]     |
+| `SetFuzzy(bool)`                           | 启用/禁用模糊 PID           |
+| `SetFuzzyErrorScale(f32)`                  | 设置模糊 PID 误差尺度       |
+| `SetFuzzyDErrorScale(f32)`                 | 设置模糊 PID 误差变化率尺度 |
+
+## 注意事项
+
+:::warning
+
+- 积分限幅 `max_iout` 应小于总输出限幅 `max_out`
+- 使用 `Clear()` 方法会清除积分累积，可能导致瞬间输出跳变
+  :::

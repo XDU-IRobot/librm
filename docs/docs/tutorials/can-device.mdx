@@ -5,42 +5,37 @@
 librm 对 CAN 总线和设备的封装使用[观察者模式](https://refactoringguru.cn/design-patterns/observer)，如果不熟悉这种设计模式，建议先自行了解一下。
 
 CAN 设备向 CAN 总线类"注册"自己，并且告知自己要接收哪些 ID 的报文；
-基于具体平台实现，CAN 总线类会用轮询或接管中断的方式接收所有报文，每接收到一条报文，它就会寻找有没有注册过想要接收这条报文的设备，
-如果有，这个设备的 RxCallback()函数就会被 CAN 总线类调用。
+CAN 总线类会处理对接硬件 API 接收报文的逻辑，每接收到一条报文，它就会寻找有没有注册过想要接收这条报文的设备，如果有，这个设备的 `RxCallback()` 函数就会被 CAN 总线类调用。
 
 整个过程分为以下几个步骤：
 
 1. 继承`rm::device::CanDevice`
 
-2. 在构造函数的初始化列表中代理构造，向 CAN 总线类表明自己要注册到这一条 CAN 总线上、说明自己要接收哪些 ID 的报文
+2. 委托构造`CanDevice`，向 CAN 总线类表明自己要注册到这一条 CAN 总线上、列出自己要接收哪些 ID 的报文
 
-3. 实现`private void RxCallback(const hal::CanMsg *msg)`成员函数，在这个回调函数中编写收到报文时的处理逻辑
+3. 实现`private void RxCallback(const hal::CanFrame *msg)`成员函数，在这个回调函数中编写收到报文时的处理逻辑
 
-> [!CAUTION]
-> 回调函数是同步且可重入的，在实现回调函数时需要注意线程安全，且不要在回调函数中做耗时操作。
-
-下面是一段在 Linux 平台下的例程代码，例程实现了一个最基本的 CAN 设备，它接收`can0`总线上的`0x123`标准帧 ID 的报文，并且把报文的内容打印到屏幕上。
+:::warning
+Linux 下，`RxCallback()`函数会在一个单独的线程中被调用，因此请注意线程安全问题。
+:::
 
 ## 代码
 
-```cpp
-#include "librm.hpp"
+下面是一段在 Linux 平台下的例程代码，例程实现了一个最基本的 CAN 设备，它接收`can0`总线上的`0x123`标准帧 ID 的报文，并且把报文的内容打印到屏幕上。
 
+```cpp
 #include <iostream>
 
-using rm::device::CanDevice;
-using rm::hal::Can;
+#include <librm.hpp>
 
-class BasicCanDevice : public CanDevice {
-public:
-  BasicCanDevice(rm::hal::CanInterface &can, uint32_t rx_std_id)
-      : CanDevice{can, rx_std_id} {}
+class BasicCanDevice : public rm::device::CanDevice {
+ public:
+  BasicCanDevice(rm::hal::CanInterface &can, uint32_t rx_std_id) : CanDevice{can, rx_std_id} {}
 
-private:
-  void RxCallback(const rm::hal::CanMsg *msg) override {
+ private:
+  void RxCallback(const rm::hal::CanFrame *msg) override {
     // 在这里处理接收到的报文
-    std::printf("Received a message! stdid=%d, dlc=%d\n", msg->rx_std_id,
-                msg->dlc);
+    std::printf("Received a message! stdid=%d, dlc=%d\n", msg->rx_std_id, msg->dlc);
     for (int i = 0; i < msg->dlc; i++) {
       std::printf("%02X ", msg->data[i]);
     }
@@ -49,12 +44,13 @@ private:
 };
 
 int main() {
-  Can can0{"can0"};
-  BasicCanDevice device{can0, 0x123}; // 我想要接收can0上的0x123标准帧ID的报文！
+  rm::hal::Can can0{"can0"};
+  BasicCanDevice device{can0, 0x123};  // 我想要接收can0上的0x123标准帧ID的报文！
 
   can0.Begin();
 
   while (true) {
+    std::this_thread::sleep_for(std::chrono::seconds(1));
   }
 
   return 0;

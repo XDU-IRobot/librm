@@ -1,6 +1,6 @@
-# C 板姿态解算
+# 姿态解算
 
-本例程演示如何使用 librm 中的 BMI088 封装和 Mahony 姿态解算算法实现姿态解算。
+本例程演示如何使用 librm 中的 BMI088 驱动和 Mahony 姿态解算算法实现姿态解算。
 
 ## 代码
 
@@ -8,10 +8,10 @@
 #include "cmsis_os.h"
 #include "spi.h"
 
-#include "librm.hpp"
+#include <librm.hpp">
 
-using rm::device::sensor::BMI088;
-using rm::modules::algorithm::MahonyAhrs;
+using rm::device::BMI088;
+using rm::modules::MahonyAhrs;
 
 // 注意！！：不要在全局作用域中创建传感器对象，因为这样会导致对象的构造函数在main函数之前调用，而HAL库此时还未初始化
 // 如果需要全局访问，可以将对象指针声明为全局变量，然后在任务函数中new一个对象绑定到指针上
@@ -23,16 +23,14 @@ using rm::modules::algorithm::MahonyAhrs;
 extern "C" {
 
 void ExampleAttitudeTask(const void *pv_arg) {
-  BMI088 bmi088(hspi1, CS1_ACCEL_GPIO_Port, CS1_ACCEL_Pin, CS1_GYRO_GPIO_Port,
-                CS1_GYRO_Pin);
+  BMI088 bmi088(hspi1, CS1_ACCEL_GPIO_Port, CS1_ACCEL_Pin, CS1_GYRO_GPIO_Port, CS1_GYRO_Pin);
   // 传入采样率
   MahonyAhrs mahony(1000.0f);
 
   for (;;) {
     bmi088.Update();
-    mahony.Update(rm::modules::algorithm::ImuData6Dof{
-        bmi088.gyro_x(), bmi088.gyro_y(), bmi088.gyro_z(), bmi088.accel_x(),
-        bmi088.accel_y(), bmi088.accel_z()});
+    mahony.Update(rm::modules::ImuData6Dof{bmi088.gyro_x(), bmi088.gyro_y(), bmi088.gyro_z(), bmi088.accel_x(),
+                                           bmi088.accel_y(), bmi088.accel_z()});
 
     // 获取姿态数据(欧拉角，弧度)
     mahony.euler_angle().pitch;

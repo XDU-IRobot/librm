@@ -1,19 +1,21 @@
 # STM32CubeMX
 
 :::note
-由于调用 HAL 库的方式有待改进，目前，librm 仅支持以下芯片：
+由于目前没有找到一种优雅的方法来获取芯片对应 HAL 库的头文件具体叫什么名字，所以目前 librm 中采用了通过HAL库里的宏定义来适配不同的 STM32 芯片的方式。
+
+目前 librm 里有以下芯片的适配：
 
 - STM32F407xx
 - STM32H723xx
 - STM32L412xx
 - STM32F427xx
 
-如果你需要在其他芯片上使用 librm，请联系我们或者提交 issue，我们会尽快添加支持。
+如果你需要在其他芯片上使用 librm，只需要在 `librm/src/hal/stm32/hal.h` 中按照已有的格式添加一个条目即可。
 :::
 
 ## 配置编译环境
 
-librm 只支持在 CubeMX 生成的 CMake 工程中编译使用。 **如果你使用 Keil、IAR 等其他 IDE 开发 STM32，则不能使用 librm。** 在进行下一步之前，请按网上的教程配置好 CMake 和编译器。我们推荐使用 gcc-arm-none-eabi。
+librm 只支持在 CubeMX 生成的 CMake 工程中编译使用。 **如果你使用 Keil、IAR 等其他 IDE 开发 STM32，则不能使用 librm。**
 
 如果不熟悉配置过程，请参考我们录制的环境配置教程：
 

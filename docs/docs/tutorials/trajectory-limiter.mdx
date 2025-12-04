@@ -1,0 +1,199 @@
+# 轨迹限制器
+
+本例程演示如何使用 librm 中的 `TrajectoryLimiter` 类实现基于梯形速度规划的轨迹限制。
+
+`TrajectoryLimiter` 限制目标位置的变化速度和加速度，使其不超过预设的约束。当输入信号本身未超出约束时，输出与输入相同；超出时则自动规划平滑轨迹。适用于云台角度平滑跟踪、机械臂关节控制等场景
+
+## 代码示例
+
+### 基础用法
+
+```cpp
+#include <librm.hpp>
+
+// 创建一个轨迹限制器
+// 最大速度: 10 rad/s
+// 最大加速度: 50 rad/s²
+rm::modules::TrajectoryLimiter limiter(10.0f, 50.0f);
+
+// 初始化位置为 0
+limiter.ResetAt(0.0f);
+
+// 设置目标位置为 5 rad
+limiter.SetTarget(5.0f);
+
+// 在控制循环中更新（假设控制周期为 1ms）
+while (!limiter.IsAtTarget()) {
+  float current_pos = limiter.Update(0.001f);  // dt = 1ms
+  
+  // 使用 current_pos 控制电机或其他执行器
+  // ...
+  
+  osDelay(1);
+}
+```
+
+### 云台角度平滑控制
+
+以下示例演示如何使用 `TrajectoryLimiter` 实现云台 yaw 轴的平滑跟踪：
+
+```cpp
+#include "can.h"
+#include "cmsis_os.h"
+
+#include <librm.hpp>
+
+extern "C" void GimbalYawTask(const void *pv_arg) {
+  // 初始化 CAN 和电机
+  rm::hal::Can can1(hcan1);
+  rm::device::GM6020 yaw_motor(can1, 1);
+  can1.SetFilter(0, 0);
+  can1.Begin();
+  
+  // 创建轨迹限制器
+  // 最大速度: 360°/s (2π rad/s)
+  // 最大加速度: 1800°/s² (10π rad/s²)
+  rm::modules::TrajectoryLimiter limiter(6.28f, 31.4f);
+  
+  // 创建位置 PID 控制器
+  rm::modules::PID pid(5, 0, 0, 30000, 0);
+  pid.SetCircular(true).SetCircularCycle(8191);
+  
+  // 初始化限制器位置
+  limiter.ResetAt(yaw_motor.angle());
+  
+  const float dt = 0.001f;  // 1ms 控制周期
+  
+  for (;;) {
+    // 从遥控器或其他来源获取目标角度
+    float target_angle = GetTargetAngleFromRC();
+    
+    // 设置目标位置
+    limiter.SetTarget(target_angle);
+    
+    // 更新轨迹限制器，获取平滑后的目标位置
+    float smooth_target = limiter.Update(dt);
+    
+    // PID 控制
+    pid.Update(smooth_target, yaw_motor.angle());
+    yaw_motor.SetCurrent(static_cast<int16_t>(pid.out()));
+    
+    // 发送控制指令
+    rm::device::DjiMotor<>::SendCommand();
+    
+    osDelay(1);
+  }
+}
+```
+
+### 动态改变目标位置
+
+`TrajectoryLimiter` 可以随时改变目标位置，限制器会自动规划新的轨迹：
+
+```cpp
+rm::modules::TrajectoryLimiter limiter(10.0f, 50.0f);
+limiter.ResetAt(0.0f);
+
+// 第一个目标
+limiter.SetTarget(5.0f);
+
+for (int i = 0; i < 1000; i++) {
+  // 在运动过程中改变目标
+  if (i == 500) {
+    limiter.SetTarget(-3.0f);  // 改变目标位置
+  }
+  
+  float current_pos = limiter.Update(0.001f);
+  // 使用 current_pos...
+  
+  osDelay(1);
+}
+```
+
+### 检查是否到达目标
+
+```cpp
+rm::modules::TrajectoryLimiter limiter(10.0f, 50.0f);
+limiter.ResetAt(0.0f);
+limiter.SetTarget(5.0f);
+
+while (true) {
+  float current_pos = limiter.Update(0.001f);
+  
+  // 检查是否到达目标（默认容差 1e-6）
+  if (limiter.IsAtTarget()) {
+    // 已到达目标，可以执行下一步操作
+    break;
+  }
+  
+  // 也可以自定义容差
+  if (limiter.IsAtTarget(0.01f)) {
+    // 在 0.01 的容差范围内
+    break;
+  }
+  
+  osDelay(1);
+}
+```
+
+### 获取当前状态
+
+```cpp
+rm::modules::TrajectoryLimiter limiter(10.0f, 50.0f);
+limiter.ResetAt(0.0f);
+limiter.SetTarget(5.0f);
+
+for (int i = 0; i < 100; i++) {
+  limiter.Update(0.001f);
+  
+  // 获取当前位置
+  float pos = limiter.current_position();
+  
+  // 获取当前速度
+  float vel = limiter.current_velocity();
+  
+  // 获取目标位置
+  float target = limiter.target_position();
+  
+  printf("pos=%.3f, vel=%.3f, target=%.3f\n", pos, vel, target);
+  
+  osDelay(1);
+}
+```
+
+## API 参考
+
+### 构造函数
+
+```cpp
+TrajectoryLimiter(f32 max_vel, f32 max_accel);
+```
+
+- `max_vel`: 最大速度（单位：位置/秒）
+- `max_accel`: 最大加速度（单位：位置/秒²）
+
+### 主要方法
+
+| 方法 | 说明 |
+|------|------|
+| `void SetTarget(f32 target)` | 设置目标位置 |
+| `void ResetAt(f32 position)` | 重置限制器并设置初始位置 |
+| `f32 Update(f32 dt)` | 更新位置和速度，返回当前位置 |
+| `bool IsAtTarget(f32 tolerance = 1e-6f)` | 检查是否到达目标位置 |
+| `f32 current_position()` | 获取当前位置 |
+| `f32 current_velocity()` | 获取当前速度 |
+| `f32 target_position()` | 获取目标位置 |
+
+## 注意事项
+
+:::warning
+- `dt` 参数必须为正数且不能太小（至少大于 1e-6 秒）
+- 不要在限制器更新过程中修改最大速度和最大加速度参数
+- 确保控制周期稳定，避免 `dt` 变化过大
+:::
+
+:::tip
+- 对于角度控制，建议配合 PID 控制器的循环模式使用
+- 可以根据实际应用调整最大速度和加速度参数以获得最佳性能
+- 使用 `IsAtTarget()` 方法时，可以根据实际精度要求调整容差参数
+:::

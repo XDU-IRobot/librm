@@ -1,0 +1,46 @@
+# 角度表示与转换
+
+本例程演示如何使用 librm 中的 `Angle` 类进行角度值和弧度值之间的转换、计算和表示。
+
+`Angle` 类提供了一种强类型的方式来处理角度值和弧度制，防止混用度和弧度导致的计算错误。
+
+## 代码示例
+
+```cpp
+#include <librm.hpp>
+#include <cmath>
+
+using namespace rm::modules::angle_literals;
+
+int main() {
+  // 创建角度对象
+  auto angle1 = 90.0_deg;                              // 使用度数字面量
+  auto angle2 = 1.57_rad;                              // 使用弧度字面量
+  // 或者这样：
+  auto angle3 = rm::modules::Angle::FromDeg(45.0f);    // 从度数创建
+  auto angle4 = rm::modules::Angle::FromRad(3.14f);    // 从弧度创建
+
+  // 获取角度值
+  float deg_value = angle1.deg();  // 90.0（度）
+  float rad_value = angle1.rad();  // 1.5708...（弧度）
+
+  // 角度运算
+  auto sum = 30.0_deg + 60.0_deg;   // 90°
+  auto diff = 180.0_deg - 45.0_deg; // 135°
+  auto doubled = 45.0_deg * 2.0f;   // 90°
+  auto halved = 90.0_deg / 2.0f;    // 45°
+
+  // 三角函数计算
+  auto angle = 45.0_deg;
+  float sin_val = std::sin(angle.rad());  // sin(45°) ≈ 0.707
+  float cos_val = std::cos(angle.rad());  // cos(45°) ≈ 0.707
+
+  // 单位混用
+  float config_deg = 30.0f;
+  float sensor_rad = 0.785f;
+  auto total = rm::modules::Angle::FromDeg(config_deg) +
+               rm::modules::Angle::FromRad(sensor_rad);
+
+  return 0;
+}
+```

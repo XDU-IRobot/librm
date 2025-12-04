@@ -1,0 +1,164 @@
+# 离散值监视器
+
+本例程演示如何使用 librm 中的 `SparseValueWatcher` 类监视一个离散值的变化，并在值发生变化时触发回调函数。
+
+`SparseValueWatcher` 适用于监视状态量、开关量、枚举值等离散变化的变量。当检测到值发生变化时，会调用预先设置的回调函数，并传入变化前后的值。
+
+## 代码示例
+
+### 基本用法
+
+```cpp
+#include <librm.hpp>
+#include <iostream>
+
+enum class RobotState {
+  kIdle,
+  kRunning,
+  kError,
+  kEmergency
+};
+
+int main() {
+  // 创建离散值监视器，初始状态为 Idle
+  rm::modules::SparseValueWatcher<RobotState> state_watcher(RobotState::kIdle);
+
+  // 设置值变化时的回调函数
+  state_watcher.OnValueChange([](const RobotState &old_state, const RobotState &new_state) {
+    std::cout << "State changed from " << static_cast<int>(old_state)
+              << " to " << static_cast<int>(new_state) << std::endl;
+  });
+
+  // 更新状态
+  state_watcher.Update(RobotState::kRunning);  // 触发回调
+  state_watcher.Update(RobotState::kRunning);  // 值未变化，不触发
+  state_watcher.Update(RobotState::kError);    // 触发回调
+
+  return 0;
+}
+```
+
+### 监视按键状态
+
+```cpp
+#include "cmsis_os.h"
+#include <librm.hpp>
+
+extern "C" void KeyMonitorTask(const void *pv_arg) {
+  // 监视按键状态（假设按键状态为 bool 类型）
+  rm::modules::SparseValueWatcher<bool> key_watcher(false);
+
+  key_watcher.OnValueChange([](const bool &old_val, const bool &new_val) {
+    if (new_val) {
+      // 按键按下
+      HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+    } else {
+      // 按键释放
+      HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+    }
+  });
+
+  for (;;) {
+    // 读取当前按键状态
+    bool current_state = HAL_GPIO_ReadPin(KEY_GPIO_Port, KEY_Pin) == GPIO_PIN_SET;
+
+    // 更新监视器（仅在状态变化时触发回调）
+    key_watcher.Update(current_state);
+
+    osDelay(10);
+  }
+}
+```
+
+### 使用成员函数作为回调
+
+```cpp
+#include <librm.hpp>
+
+class Robot {
+ public:
+  Robot() {
+    // 使用 etl::delegate 绑定成员函数作为回调
+    mode_watcher_.OnValueChange(
+        etl::delegate<void(const int &, const int &)>::create<Robot, &Robot::OnModeChange>(*this));
+  }
+
+  void UpdateMode(int new_mode) {
+    mode_watcher_.Update(new_mode);
+  }
+
+ private:
+  void OnModeChange(const int &old_mode, const int &new_mode) {
+    // 处理模式切换
+    if (new_mode == 1) {
+      // 进入自动模式
+    } else if (new_mode == 2) {
+      // 进入手动模式
+    }
+  }
+
+  rm::modules::SparseValueWatcher<int> mode_watcher_{0};
+};
+
+int main() {
+  Robot robot;
+
+  robot.UpdateMode(1);  // 切换到模式 1
+  robot.UpdateMode(2);  // 切换到模式 2
+
+  return 0;
+}
+```
+
+### 使用 std::function
+
+```cpp
+#include <librm.hpp>
+#include <functional>
+
+int main() {
+  // 使用 std::function 而非 etl::delegate
+  rm::modules::SparseValueWatcher<int, true> watcher(0);
+
+  int change_count = 0;
+
+  // 可以捕获外部变量
+  watcher.OnValueChange([&change_count](const int &old_val, const int &new_val) {
+    change_count++;
+    std::cout << "Changed " << change_count << " times" << std::endl;
+  });
+
+  watcher.Update(1);
+  watcher.Update(2);
+  watcher.Update(3);
+
+  return 0;
+}
+```
+
+## 模板参数
+
+`SparseValueWatcher` 有两个模板参数：
+
+- `T` - 要监视的值的类型，需要支持 `!=` 比较运算符
+- `UseStdFunction` - 是否使用 `std::function` 作为回调类型（默认为 `false`，使用 `etl::delegate`）
+
+:::tip
+默认使用 `etl::delegate` 可以避免动态内存分配，在嵌入式系统中更加高效。如果需要捕获外部变量或使用更复杂的 lambda 表达式，可以设置 `UseStdFunction = true` 使用 `std::function`。
+:::
+
+## API 说明
+
+### 构造函数
+
+```cpp
+SparseValueWatcher()  // 默认构造
+SparseValueWatcher(T initial_value)  // 指定初始值
+SparseValueWatcher(T initial_value, Callback callback)  // 指定初始值和回调
+```
+
+### 成员函数
+
+- `void OnValueChange(Callback callback)` - 设置值变化时的回调函数
+- `void Update(const T &new_value)` - 更新值并检查是否发生变化，如果变化则触发回调
+- `const T& value() const` - 获取当前值
