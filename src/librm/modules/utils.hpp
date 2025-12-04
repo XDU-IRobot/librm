@@ -125,6 +125,15 @@ int FloatToInt(f32 x, f32 x_min, f32 x_max, int bits);
  */
 f32 SafeDiv(f32 dividend, f32 divisor);
 
+/**
+ * @brief           判断一个浮点数是否在目标值的某个阈值范围内
+ * @param value     输入值
+ * @param target    目标值
+ * @param threshold 阈值
+ * @return          在范围内返回true，否则返回false
+ */
+bool IsNear(f32 value, f32 target, f32 threshold);
+
 }  // namespace rm::modules
 
 #endif  // LIBRM_MODULES_UTILS_HPP
