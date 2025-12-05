@@ -33,7 +33,7 @@
 #include "librm/hal/timer_interface.hpp"
 
 #if defined(LIBRM_PLATFORM_STM32)
-// TODO
+#include "librm/hal/stm32/hal.hpp"
 #elif defined(LIBRM_PLATFORM_LINUX)
 #include "librm/hal/linux/timerfd.hpp"
 #endif
@@ -107,7 +107,7 @@ class PollingTimer : public TimerInterface {
 };
 
 #if defined(LIBRM_PLATFORM_STM32)
-#if defined(HAL_TIMER_MODULE_ENABLED)
+#if defined(HAL_TIM_MODULE_ENABLED)
 // TODO
 #else
 #warning "No HAL timer module found, using polling timer as fallback."
