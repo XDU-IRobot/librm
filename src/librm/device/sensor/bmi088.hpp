@@ -22,8 +22,7 @@
 
 /**
  * @file    librm/device/sensor/bmi088.hpp
- * @brief   BMI088传感器类
- * @todo    DMA传输+硬件片选(maybe)
+ * @brief   BMI088 IMU
  */
 
 #ifndef LIBRM_DEVICE_SENSOR_BMI088_HPP
@@ -83,9 +82,9 @@ enum class BMI088AccelRange : u8 {
 };
 
 /**
- * @brief BMI088传感器类
+ * @brief BMI088 IMU
  */
-class [[deprecated]] BMI088 {
+class BMI088 {
  public:
   BMI088() = delete;
   ~BMI088() = default;
