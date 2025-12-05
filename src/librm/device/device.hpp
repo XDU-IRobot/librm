@@ -86,7 +86,7 @@ class Device {
 
  private:
   Status online_status_{kUnknown};
-  time_point last_seen_{time_point::min()};              ///< 设备最后一次上报状态的时间点
+  time_point last_seen_{time_point::min()};  ///< 设备最后一次上报状态的时间点
   duration heartbeat_timeout_{std::chrono::seconds(1)};  ///< 心跳超时时间，超过这个时间没有收到心跳则认为设备离线
 };
 
