@@ -30,7 +30,7 @@
 
 #include "librm/core/typedefs.hpp"
 
-#include <unordered_map>
+#include <etl/unordered_map.h>
 
 namespace rm::device {
 
@@ -40,6 +40,9 @@ constexpr auto kRefProtocolHeaderLen = 5;
 constexpr auto kRefProtocolCmdIdLen = 2;
 constexpr auto kRefProtocolCrc16Len = 2;
 constexpr auto kRefProtocolAllMetadataLen = kRefProtocolHeaderLen + kRefProtocolCmdIdLen + kRefProtocolCrc16Len;
+
+constexpr int kRefProtocolMaxCmdIdEntries =
+    40;  ///< 这个数字决定了 referee_protocol_memory_map 的最大容量，详情见下面的注释。
 
 /**
  * @brief 裁判系统协议版本
@@ -62,10 +65,13 @@ template <RefereeRevision revision>
 struct RefereeProtocol {};
 
 /**
- * @brief 裁判系统协议内存映射，记录了每个操作码对应的数据结构在 RefereeProtocol 中的偏移量
+ * @brief 裁判系统协议内存映射，记录了每个命令码对应的数据结构在 RefereeProtocol 中的偏移量
  */
 template <RefereeRevision revision>
-const std::unordered_map<u16, usize> referee_protocol_memory_map{};
+extern const etl::unordered_map<
+    u16, usize,
+    kRefProtocolMaxCmdIdEntries>  ///< 目前来看裁判系统协议的命令码数量不会超过这么多，如果以后超过这个数字了可以调大。
+    referee_protocol_memory_map{};
 
 }  // namespace rm::device
 

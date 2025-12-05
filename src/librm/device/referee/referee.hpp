@@ -45,7 +45,7 @@ namespace rm::device {
 /**
  * @brief   裁判系统
  * @note    也可以把这个类当做一个通用的字节流通信分包器来用，
- *          只需要把通信协议按照设计实现出来即可（参考现有裁判系统协议实现 protocol_vXXX.hpp）
+ *          只需要把通信协议按照设计实现出来即可（参考现有裁判系统协议实现 protocol_vXXX.hpp/.cc）
  */
 template <RefereeRevision revision>
 class Referee : public Device {

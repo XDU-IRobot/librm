@@ -206,34 +206,6 @@ struct RefereeProtocol<RefereeRevision::kV170> {
 
 #pragma pack(pop)
 
-// clang-format off
-template <>
-const inline std::unordered_map<u16, usize> referee_protocol_memory_map<RefereeRevision::kV170>{
-    {RefereeCmdId<RefereeRevision::kV170>::kGameStatus, offsetof(RefereeProtocol<RefereeRevision::kV170>, game_status)},
-    {RefereeCmdId<RefereeRevision::kV170>::kGameResult, offsetof(RefereeProtocol<RefereeRevision::kV170>, game_result)},
-    {RefereeCmdId<RefereeRevision::kV170>::kGameRobotHp, offsetof(RefereeProtocol<RefereeRevision::kV170>, game_robot_HP)},
-    {RefereeCmdId<RefereeRevision::kV170>::kEventData, offsetof(RefereeProtocol<RefereeRevision::kV170>, event_data)},
-    {RefereeCmdId<RefereeRevision::kV170>::kRefereeWarning, offsetof(RefereeProtocol<RefereeRevision::kV170>, referee_warning)},
-    {RefereeCmdId<RefereeRevision::kV170>::kDartInformation, offsetof(RefereeProtocol<RefereeRevision::kV170>, dart_info)},
-    {RefereeCmdId<RefereeRevision::kV170>::kRobotStatus, offsetof(RefereeProtocol<RefereeRevision::kV170>, robot_status)},
-    {RefereeCmdId<RefereeRevision::kV170>::kPowerHeatData, offsetof(RefereeProtocol<RefereeRevision::kV170>, power_heat_data)},
-    {RefereeCmdId<RefereeRevision::kV170>::kRobotPos, offsetof(RefereeProtocol<RefereeRevision::kV170>, robot_pos)},
-    {RefereeCmdId<RefereeRevision::kV170>::kBuff, offsetof(RefereeProtocol<RefereeRevision::kV170>, buff)},
-    {RefereeCmdId<RefereeRevision::kV170>::kHurtData, offsetof(RefereeProtocol<RefereeRevision::kV170>, hurt_data)},
-    {RefereeCmdId<RefereeRevision::kV170>::kShootData, offsetof(RefereeProtocol<RefereeRevision::kV170>, shoot_data)},
-    {RefereeCmdId<RefereeRevision::kV170>::kProjectileAllowance, offsetof(RefereeProtocol<RefereeRevision::kV170>, projectile_allowance)},
-    {RefereeCmdId<RefereeRevision::kV170>::kRfidStatus, offsetof(RefereeProtocol<RefereeRevision::kV170>, rfid_status)},
-    {RefereeCmdId<RefereeRevision::kV170>::kDartClientCmd, offsetof(RefereeProtocol<RefereeRevision::kV170>, dart_client_cmd)},
-    {RefereeCmdId<RefereeRevision::kV170>::kGroundRobotPosition, offsetof(RefereeProtocol<RefereeRevision::kV170>, ground_robot_position)},
-    {RefereeCmdId<RefereeRevision::kV170>::kRadarMarkData, offsetof(RefereeProtocol<RefereeRevision::kV170>, radar_mark_data)},
-    {RefereeCmdId<RefereeRevision::kV170>::kSentryInfo, offsetof(RefereeProtocol<RefereeRevision::kV170>, sentry_info)},
-    {RefereeCmdId<RefereeRevision::kV170>::kRadarInfo, offsetof(RefereeProtocol<RefereeRevision::kV170>, radar_info)},
-    {RefereeCmdId<RefereeRevision::kV170>::kCustomRobotData, offsetof(RefereeProtocol<RefereeRevision::kV170>, custom_robot_data)},
-    {RefereeCmdId<RefereeRevision::kV170>::kMapCommand, offsetof(RefereeProtocol<RefereeRevision::kV170>, map_command)},
-    {RefereeCmdId<RefereeRevision::kV170>::kRemoteControl, offsetof(RefereeProtocol<RefereeRevision::kV170>, remote_control)}
-};
-// clang-format on
-
 }  // namespace rm::device
 
 #endif  // LIBRM_DEVICE_REFEREE_PROTOCOL_V170_HPP
