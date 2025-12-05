@@ -67,13 +67,14 @@ inline f32 InvSqrt(f32 x) {
 MahonyAhrs::MahonyAhrs(f32 sample_freq, f32 kp, f32 ki)
     : two_kp_(2.f * kp),
       two_ki_(2.f * ki),
-      sample_freq_(sample_freq),
+
       q0_(1.0f),
       q1_(0.0f),
       q2_(0.0f),
       q3_(0.0f),
       quaternion_{1.0f, 0.0f, 0.0f, 0.0f},
-      euler_ypr_{0.0f, 0.0f, 0.0f} {}
+      euler_ypr_{0.0f, 0.0f, 0.0f},
+      sample_freq_(sample_freq) {}
 
 /**
  * @brief       更新数据（无磁力计）

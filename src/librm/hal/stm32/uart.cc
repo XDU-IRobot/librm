@@ -208,7 +208,6 @@ void Uart::HalRxCpltCallback(u16 rx_len) {
 
 void Uart::HalErrorCallback() {
   // 重启接收
-  u16 rx_len = this->rx_buf_[this->buffer_selector_].size();
   switch (this->rx_mode_) {
     case UartMode::kNormal:
       LIBRM_STM32_HAL_ASSERT(HAL_UART_Receive(this->huart_, this->rx_buf_[!this->buffer_selector_].data(),

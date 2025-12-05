@@ -21,9 +21,9 @@
 */
 
 /**
- * @file  librm/hal/stm32/spi_device.h
- * @brief SPI设备抽象
- * @todo  实现不够通用，有改进空间
+ * @file        librm/hal/stm32/spi_device.h
+ * @brief       SPI设备抽象
+ * @deprecated  这个模块在librm开发的早期设计，没有考虑到跨平台的需求，直接面向STM32 HAL开发，现已弃用。
  */
 
 #ifndef LIBRM_HAL_STM32_SPI_DEVICE_HPP
@@ -36,9 +36,10 @@
 
 namespace rm::hal::stm32 {
 /**
- * @brief SPI设备基类
+ * @brief       SPI设备基类
+ * @deprecated  这个模块在librm开发的早期设计，没有考虑到跨平台的需求，直接面向STM32 HAL开发，现已弃用。
  */
-class [[deprecated]] SpiDevice {
+class SpiDevice {
  public:
   SpiDevice(SPI_HandleTypeDef &hspi, GPIO_TypeDef *cs_gpio_port, u16 cs_pin);
   SpiDevice() = delete;

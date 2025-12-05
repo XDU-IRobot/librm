@@ -33,12 +33,11 @@
 #include "librm/hal/serial.hpp"
 #include "librm/core/typedefs.hpp"
 
-#include <string>
-
 namespace rm::device {
 
 class UnitreeMotor : public Device {
  public:
+#pragma pack(push, 1)
   union ComData32 {
     i32 L;
     u8 ku8[4];
@@ -94,7 +93,7 @@ class UnitreeMotor : public Device {
     u8 LowHzMotorCmdByte;
 
     ComData32 Res[1];
-  } __attribute__((packed));
+  };
 
   struct ComDataReceive {
     u8 mode;
@@ -131,23 +130,25 @@ class UnitreeMotor : public Device {
     u8 f_error;
 
     i8 res[1];
-  } __attribute__((packed));
+  };
 
   struct SendData {
     ComHead head;
     ComDataSend data;
     ComData32 crc;
-  } __attribute__((packed));
+  };
 
   struct ReceiveData {
     ComHead head;
     ComDataReceive data;
     ComData32 crc;
-  } __attribute__((packed));
+  };
+
+#pragma pack(pop)
 
  public:
-  UnitreeMotor(hal::SerialInterface &serial, u8 motor_id = 0x0);
-  ~UnitreeMotor() = default;
+  explicit UnitreeMotor(hal::SerialInterface &serial, u8 motor_id = 0x0);
+  ~UnitreeMotor() override = default;
 
   void SetTau(f32 tau);
 
@@ -168,8 +169,8 @@ class UnitreeMotor : public Device {
 
   SendData send_data_;
   ReceiveData recv_data_;
-  ControlParam ctrl_param_;
-  FeedbackParam fb_param_;
+  ControlParam ctrl_param_{};
+  FeedbackParam fb_param_{};
   u8 tx_buffer_[34]{0};
 };
 

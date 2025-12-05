@@ -173,7 +173,7 @@ u32 Crc32(const u32 *input, usize len, u32 init) {
   for (u32 i = 0; i < len; i++) {
     bits = 0;
     data = input[i];
-    for (u32 bits = 0; bits < 32; bits++) {
+    for (bits = 0; bits < 32; bits++) {
       xbit = 1 << (31 - bits);
 
       if (crc32 & 0x80000000) {

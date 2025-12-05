@@ -33,6 +33,7 @@
 #include <initializer_list>
 
 #include <etl/vector.h>
+#include <etl/delegate.h>
 
 #include "librm/core/exception.hpp"
 
@@ -85,21 +86,22 @@ class Device {
 
  private:
   Status online_status_{kUnknown};
-  time_point last_seen_{time_point::min()};  ///< 设备最后一次上报状态的时间点
+  time_point last_seen_{time_point::min()};              ///< 设备最后一次上报状态的时间点
   duration heartbeat_timeout_{std::chrono::seconds(1)};  ///< 心跳超时时间，超过这个时间没有收到心跳则认为设备离线
 };
 
 /**
  * @brief 设备管理器，用来维护多个设备的在线状态
  * @tparam kMaxDevices 最大容纳的设备数量，按需设置
- * @tparam kUseStdFunctionCallback 是否使用 std::function 作为回调类型，默认为 true
+ * @tparam kUseStdFunctionCallback 是否使用 std::function 作为回调类型，默认为 true。如果设置为 false 则使用
+ * etl::delegate（类似C++26 std::function_ref），无动态内存分配但使用起来不如 std::function 方便
  */
 template <size_t kMaxDevices, bool kUseStdFunctionCallback = true>
 class DeviceManager {
   using CallbackType =                                   //
       std::conditional_t<kUseStdFunctionCallback,        //
                          std::function<void(Device *)>,  //
-                         void (*)(Device *)>;
+                         etl::delegate<void(Device *)>>;
 
  public:
   DeviceManager() = default;
