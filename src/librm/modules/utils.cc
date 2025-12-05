@@ -74,6 +74,6 @@ f32 SafeDiv(f32 dividend, f32 divisor) {
   return dividend / divisor;
 }
 
-bool IsNear(f32 value, f32 target, f32 threshold) { return std::fabsf(value - target) <= threshold; }
+bool IsNear(f32 value, f32 target, f32 threshold) { return std::fabs(value - target) <= threshold; }
 
 }  // namespace rm::modules
