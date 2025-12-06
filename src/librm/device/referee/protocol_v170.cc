@@ -31,7 +31,7 @@ namespace rm::device {
 
 // clang-format off
 template <>
-const inline etl::unordered_map<u16, usize, kRefProtocolMaxCmdIdEntries> referee_protocol_memory_map<RefereeRevision::kV170>{
+const etl::unordered_map<u16, usize, kRefProtocolMaxCmdIdEntries> referee_protocol_memory_map<RefereeRevision::kV170>{
     {RefereeCmdId<RefereeRevision::kV170>::kGameStatus, offsetof(RefereeProtocol<RefereeRevision::kV170>, game_status)},
     {RefereeCmdId<RefereeRevision::kV170>::kGameResult, offsetof(RefereeProtocol<RefereeRevision::kV170>, game_result)},
     {RefereeCmdId<RefereeRevision::kV170>::kGameRobotHp, offsetof(RefereeProtocol<RefereeRevision::kV170>, game_robot_HP)},
