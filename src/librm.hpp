@@ -58,6 +58,7 @@
 #include "librm/device/remote/sbus.hpp"
 #include "librm/device/remote/vt03.hpp"
 #include "librm/device/sensor/bmi088.hpp"
+#include "librm/device/sensor/hipnuc_imu.hpp"
 #include "librm/device/sensor/ist8310.hpp"
 #include "librm/device/sensor/jy_me02_can.hpp"
 #include "librm/device/supercap/supercap.hpp"

@@ -17,6 +17,9 @@ add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/eigen)
 unset(BUILD_TESTS)      # suppress CMP0077 warning
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/etl)
 
+# hipnuc sdk
+add_subdirectory(hipnuc_sdk)
+
 # pack up all third party libraries to a single target
 add_library(third_party INTERFACE)
 if (LIBRM_PLATFORM STREQUAL "LINUX")
@@ -28,7 +31,7 @@ if (LIBRM_PLATFORM_LINUX_TYPE STREQUAL "RASPI")
     target_link_libraries(third_party INTERFACE ${WIRINGPI_LIBRARIES})
 endif ()
 
-target_link_libraries(third_party INTERFACE Kalman eigen etl::etl)
+target_link_libraries(third_party INTERFACE Kalman eigen etl::etl hipnuc_sdk)
 
 set(BUILD_TESTS OFF)
 set(BUILD_EXHAUSTIVE_TESTS OFF)
