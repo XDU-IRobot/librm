@@ -149,6 +149,7 @@ class DmMotor final : public CanDevice {
     if (this->reversed_) {
       position_rad = -position_rad;
       max_speed_rad_per_sec = -max_speed_rad_per_sec;
+      accel_torque_nm = -accel_torque_nm;
     }
     u16 pos_tmp = modules::FloatToInt(position_rad, -this->settings_.p_max, this->settings_.p_max, 16);
     u16 vel_tmp = modules::FloatToInt(max_speed_rad_per_sec, -this->settings_.v_max, this->settings_.v_max, 12);
