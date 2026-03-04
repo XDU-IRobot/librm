@@ -31,6 +31,7 @@
 #include "protocol_v164.hpp"
 #include "protocol_v170.hpp"
 #include "protocol_new_v110.hpp"
+#include "protocol_new_v120.hpp"
 // implement and add more revisions here
 
 #include <cstring>
