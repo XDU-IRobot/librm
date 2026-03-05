@@ -21,7 +21,7 @@ Copyright (c) 2026 XDU-IRobot
 */
 
 /**
- * @file  librm/device/referee/protocol_new_v110.hpp
+ * @file  librm/device/referee/protocol_new_v120.hpp
  * @brief 裁判系统通信协议V1.2.0（2026-2-9）
  */
 
@@ -50,8 +50,8 @@ struct RefereeCmdId<RefereeRevision::kNewV120> {
   constexpr static u16 kBuff = 0x204;                  // 增益
   constexpr static u16 kHurtData = 0x206;              // 伤害数据
   constexpr static u16 kShootData = 0x207;             // 射击数据
-  constexpr static u16 kProjectileAllowance = 0x208    // 允许发弹量;
-      constexpr static u16 kRfidStatus = 0x209;        // RFID模块
+  constexpr static u16 kProjectileAllowance = 0x208;   // 允许发弹量
+  constexpr static u16 kRfidStatus = 0x209;            // RFID模块
   constexpr static u16 kDartClientCmd = 0x20a;         // 飞镖选手端
   constexpr static u16 kGroundRobotPosition = 0x20b;   // 地面机器人位置数据（哨兵）
   constexpr static u16 kRadarMarkData = 0x20c;         // 雷达标记
@@ -192,6 +192,24 @@ struct RefereeProtocol<RefereeRevision::kNewV120> {
     u8 radar_info;
   } radar_info;
   struct {
+    u8 data[12];
+  } radar_0;
+  struct {
+    u8 data[12];
+  } radar_1;
+  struct {
+    u8 data[12];
+  } radar_2;
+  struct {
+    u8 data[12];
+  } radar_3;
+  struct {
+    u8 data[12];
+  } radar_4;
+  struct {
+    u8 data[12];
+  } radar_5;
+  struct {
     u16 data_cmd_id;
     u16 sender_id;
     u16 receiver_id;
@@ -214,7 +232,7 @@ struct RefereeProtocol<RefereeRevision::kNewV120> {
     u16 infantry_4_position_x;
     u16 infantry_4_position_y;
     u16 reserved;
-    u16 reserved;
+    u16 reserved_2;
     u16 sentry_position_x;
     u16 sentry_position_y;
   } map_robot_data;
@@ -225,7 +243,8 @@ struct RefereeProtocol<RefereeRevision::kNewV120> {
     i8 delta_x[49];
     i8 delta_y[49];
     u16 sender_id;
-  } map_data struct {
+  } map_data;
+  struct {
     u16 sender_id;
     u16 receiver_id;
     u8 user_data[30];
@@ -277,6 +296,12 @@ struct RefereeProtocolMemoryMap<RefereeRevision::kNewV120> {
       {RefereeCmdId<RefereeRevision::kNewV120>::kRadarMarkData, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, radar_mark_data)},
       {RefereeCmdId<RefereeRevision::kNewV120>::kSentryInfo, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, sentry_info)},
       {RefereeCmdId<RefereeRevision::kNewV120>::kRadarInfo, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, radar_info)},
+      {RefereeCmdId<RefereeRevision::kNewV120>::kRadar0, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, radar_0)},
+      {RefereeCmdId<RefereeRevision::kNewV120>::kRadar1, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, radar_1)},
+      {RefereeCmdId<RefereeRevision::kNewV120>::kRadar2, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, radar_2)},
+      {RefereeCmdId<RefereeRevision::kNewV120>::kRadar3, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, radar_3)},
+      {RefereeCmdId<RefereeRevision::kNewV120>::kRadar4, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, radar_4)},
+      {RefereeCmdId<RefereeRevision::kNewV120>::kRadar5, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, radar_5)},
       {RefereeCmdId<RefereeRevision::kNewV120>::kRobotInteractionData, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, robot_interaction_data)},
       {RefereeCmdId<RefereeRevision::kNewV120>::kCustomRobotData, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, custom_robot_data)},
       {RefereeCmdId<RefereeRevision::kNewV120>::kMapCommand, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, map_command)},
