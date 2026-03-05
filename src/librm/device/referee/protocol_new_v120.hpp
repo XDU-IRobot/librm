@@ -38,42 +38,41 @@ namespace rm::device {
 
 template <>
 struct RefereeCmdId<RefereeRevision::kNewV120> {
-  constexpr static u16 kGameStatus = 0x1;//比赛状态
-  constexpr static u16 kGameResult = 0x2;//比赛结果
-  constexpr static u16 kGameRobotHp = 0x3;//机器人血量
-  constexpr static u16 kEventData = 0x101;//场地事件
-  constexpr static u16 kRefereeWarning = 0x104;//裁判系统警告
-  constexpr static u16 kDartInformation = 0x105;//飞镖发射
-  constexpr static u16 kRobotStatus = 0x201;//机器人性能数据
-  constexpr static u16 kPowerHeatData = 0x202;//底盘/射击热量
-  constexpr static u16 kRobotPos = 0x203;//机器人位置
-  constexpr static u16 kBuff = 0x204;//增益
-  constexpr static u16 kHurtData = 0x206;//伤害数据
-  constexpr static u16 kShootData = 0x207;//射击数据
-  constexpr static u16 kProjectileAllowance = 0x208;//允许发弹量;
-  constexpr static u16 kRfidStatus = 0x209;//RFID模块
-  constexpr static u16 kDartClientCmd = 0x20a;//飞镖选手端
-  constexpr static u16 kGroundRobotPosition = 0x20b;//地面机器人位置数据（哨兵）
-  constexpr static u16 kRadarMarkData = 0x20c;//雷达标记
-  constexpr static u16 kSentryInfo = 0x20d;//哨兵自主决策
-  constexpr static u16 kRadarInfo = 0x20e;//雷达自主决策
-  constexpr static u16 kRobotInteractionData = 0x301;//机器人交互数据
-  constexpr static u16 kCustomRobotData = 0x302;//自定义控制器与机器人交互
-  constexpr static u16 kMapCommand = 0x303;//选手端小地图
-  constexpr static u16 kMapRobotData = 0x305;//选手端小地图收雷达数据
-  constexpr static u16 kCustomClientData = 0x306;//自定义控制器与选手交互
-  constexpr static u16 kMapData = 0x307;//选手端小地图（哨兵）
-  constexpr static u16 kCustomInfo = 0x308;//选手端小地图接收己方机器人数据
-  constexpr static u16 kRobotCustomData = 0x309;   // 自定义控制器接收
-  constexpr static u16 kRobotCustomData2 = 0x310;  // 自定义客户端
-  constexpr static u16 kRobotCustomData3 = 0x311;//自定义客户端与机器人交互自定义命令
-  constexpr static u16 kRadar0 = 0xa01;//雷达标记对方位置
-  constexpr static u16 kRadar1 = 0xa02;//雷达标记对方血量
-  constexpr static u16 kRadar2 = 0xa03;//雷达标记对方发弹
-  constexpr static u16 kRadar3 = 0xa04;//雷达标记对方宏观状态
-  constexpr static u16 kRadar4 = 0xa05;//雷达标记对方增益
-  constexpr static u16 kRadar5 = 0xa06;//雷达标记对方干扰波密钥
-
+  constexpr static u16 kGameStatus = 0x1;              // 比赛状态
+  constexpr static u16 kGameResult = 0x2;              // 比赛结果
+  constexpr static u16 kGameRobotHp = 0x3;             // 机器人血量
+  constexpr static u16 kEventData = 0x101;             // 场地事件
+  constexpr static u16 kRefereeWarning = 0x104;        // 裁判系统警告
+  constexpr static u16 kDartInformation = 0x105;       // 飞镖发射
+  constexpr static u16 kRobotStatus = 0x201;           // 机器人性能数据
+  constexpr static u16 kPowerHeatData = 0x202;         // 底盘/射击热量
+  constexpr static u16 kRobotPos = 0x203;              // 机器人位置
+  constexpr static u16 kBuff = 0x204;                  // 增益
+  constexpr static u16 kHurtData = 0x206;              // 伤害数据
+  constexpr static u16 kShootData = 0x207;             // 射击数据
+  constexpr static u16 kProjectileAllowance = 0x208;   // 允许发弹量;
+  constexpr static u16 kRfidStatus = 0x209;            // RFID模块
+  constexpr static u16 kDartClientCmd = 0x20a;         // 飞镖选手端
+  constexpr static u16 kGroundRobotPosition = 0x20b;   // 地面机器人位置数据（哨兵）
+  constexpr static u16 kRadarMarkData = 0x20c;         // 雷达标记
+  constexpr static u16 kSentryInfo = 0x20d;            // 哨兵自主决策
+  constexpr static u16 kRadarInfo = 0x20e;             // 雷达自主决策
+  constexpr static u16 kRobotInteractionData = 0x301;  // 机器人交互数据
+  constexpr static u16 kCustomRobotData = 0x302;       // 自定义控制器与机器人交互
+  constexpr static u16 kMapCommand = 0x303;            // 选手端小地图
+  constexpr static u16 kMapRobotData = 0x305;          // 选手端小地图收雷达数据
+  constexpr static u16 kCustomClientData = 0x306;      // 自定义控制器与选手交互
+  constexpr static u16 kMapData = 0x307;               // 选手端小地图（哨兵）
+  constexpr static u16 kCustomInfo = 0x308;            // 选手端小地图接收己方机器人数据
+  constexpr static u16 kRobotCustomData = 0x309;       // 自定义控制器接收
+  constexpr static u16 kRobotCustomData2 = 0x310;      // 自定义客户端
+  constexpr static u16 kRobotCustomData3 = 0x311;      // 自定义客户端与机器人交互自定义命令
+  constexpr static u16 kRadar0 = 0xa01;                // 雷达标记对方位置
+  constexpr static u16 kRadar1 = 0xa02;                // 雷达标记对方血量
+  constexpr static u16 kRadar2 = 0xa03;                // 雷达标记对方发弹
+  constexpr static u16 kRadar3 = 0xa04;                // 雷达标记对方宏观状态
+  constexpr static u16 kRadar4 = 0xa05;                // 雷达标记对方增益
+  constexpr static u16 kRadar5 = 0xa06;                // 雷达标记对方干扰波密钥
 };
 
 #pragma pack(push, 1)
@@ -226,8 +225,8 @@ struct RefereeProtocol<RefereeRevision::kNewV120> {
     i8 delta_x[49];
     i8 delta_y[49];
     u16 sender_id;
-  }map_data;
-  struct{
+  } map_data;
+  struct {
   } map_data struct {
     u16 sender_id;
     u16 receiver_id;
