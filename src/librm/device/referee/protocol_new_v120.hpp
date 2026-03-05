@@ -227,7 +227,6 @@ struct RefereeProtocol<RefereeRevision::kNewV120> {
     u16 sender_id;
   } map_data;
   struct {
-  } map_data struct {
     u16 sender_id;
     u16 receiver_id;
     u8 user_data[30];
