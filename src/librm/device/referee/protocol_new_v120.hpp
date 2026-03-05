@@ -21,7 +21,7 @@ Copyright (c) 2026 XDU-IRobot
 */
 
 /**
- * @file  librm/device/referee/protocol_new_v110.hpp
+ * @file  librm/device/referee/protocol_new_v120.hpp
  * @brief 裁判系统通信协议V1.2.0（2026-2-9）
  */
 
@@ -50,7 +50,7 @@ struct RefereeCmdId<RefereeRevision::kNewV120> {
   constexpr static u16 kBuff = 0x204;//增益
   constexpr static u16 kHurtData = 0x206;//伤害数据
   constexpr static u16 kShootData = 0x207;//射击数据
-  constexpr static u16 kProjectileAllowance = 0x208//允许发弹量;
+  constexpr static u16 kProjectileAllowance = 0x208;//允许发弹量;
   constexpr static u16 kRfidStatus = 0x209;//RFID模块
   constexpr static u16 kDartClientCmd = 0x20a;//飞镖选手端
   constexpr static u16 kGroundRobotPosition = 0x20b;//地面机器人位置数据（哨兵）
@@ -215,7 +215,7 @@ struct RefereeProtocol<RefereeRevision::kNewV120> {
     u16 infantry_4_position_x;
     u16 infantry_4_position_y;
     u16 reserved;
-    u16 reserved;
+    u16 reserved_2;
     u16 sentry_position_x;
     u16 sentry_position_y;
   } map_robot_data;
@@ -226,7 +226,7 @@ struct RefereeProtocol<RefereeRevision::kNewV120> {
     i8 delta_x[49];
     i8 delta_y[49];
     u16 sender_id;
-  }map_data
+  }map_data;
   struct{
     u16 sender_id;
     u16 receiver_id;
