@@ -197,15 +197,15 @@ struct RefereeProtocol<RefereeRevision::kNewV120> {
     u16 sender_id;
     u16 receiver_id;
     u8 user_data[112];
-  }robot_interaction_data;
-  struct{
+  } robot_interaction_data;
+  struct {
     f32 target_position_x;
     f32 target_position_y;
     u8 cmd_keyboard;
     u8 target_robot_id;
     u16 cmd_source;
-  }map_command;
-  struct{
+  } map_command;
+  struct {
     u16 hero_position_x;
     u16 hero_position_y;
     u16 engineer_position_x;
@@ -219,7 +219,7 @@ struct RefereeProtocol<RefereeRevision::kNewV120> {
     u16 sentry_position_x;
     u16 sentry_position_y;
   } map_robot_data;
-  struct{
+  struct {
     u8 intention;
     u16 start_position_x;
     u16 start_position_y;
@@ -228,6 +228,7 @@ struct RefereeProtocol<RefereeRevision::kNewV120> {
     u16 sender_id;
   }map_data;
   struct{
+  } map_data struct {
     u16 sender_id;
     u16 receiver_id;
     u8 user_data[30];
@@ -244,14 +245,14 @@ struct RefereeProtocol<RefereeRevision::kNewV120> {
   struct {
     u8 data[30];
   } robot_custom_data_3;
-  struct{
+  struct {
     u16 key_value;
-    u16 x_position:12;
-    u16 mouse_left:4;
-    u16 y_position:12;
-    u16 mouse_right:4;
+    u16 x_position : 12;
+    u16 mouse_left : 4;
+    u16 y_position : 12;
+    u16 mouse_right : 4;
     u16 reserved;
-  }custom_client_data;
+  } custom_client_data;
 };
 
 #pragma pack(pop)
