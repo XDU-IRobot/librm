@@ -192,6 +192,24 @@ struct RefereeProtocol<RefereeRevision::kNewV120> {
     u8 radar_info;
   } radar_info;
   struct {
+    u8 data[12];
+  } radar_0;  ///< 0xa01 雷达标记对方位置（占位，待官方V1.2.0文档确认字段布局）
+  struct {
+    u8 data[12];
+  } radar_1;  ///< 0xa02 雷达标记对方血量（占位，待官方V1.2.0文档确认字段布局）
+  struct {
+    u8 data[12];
+  } radar_2;  ///< 0xa03 雷达标记对方发弹（占位，待官方V1.2.0文档确认字段布局）
+  struct {
+    u8 data[12];
+  } radar_3;  ///< 0xa04 雷达标记对方宏观状态（占位，待官方V1.2.0文档确认字段布局）
+  struct {
+    u8 data[12];
+  } radar_4;  ///< 0xa05 雷达标记对方增益（占位，待官方V1.2.0文档确认字段布局）
+  struct {
+    u8 data[12];
+  } radar_5;  ///< 0xa06 雷达标记对方干扰波密钥（占位，待官方V1.2.0文档确认字段布局）
+  struct {
     u16 data_cmd_id;
     u16 sender_id;
     u16 receiver_id;
@@ -278,6 +296,12 @@ struct RefereeProtocolMemoryMap<RefereeRevision::kNewV120> {
       {RefereeCmdId<RefereeRevision::kNewV120>::kRadarMarkData, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, radar_mark_data)},
       {RefereeCmdId<RefereeRevision::kNewV120>::kSentryInfo, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, sentry_info)},
       {RefereeCmdId<RefereeRevision::kNewV120>::kRadarInfo, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, radar_info)},
+      {RefereeCmdId<RefereeRevision::kNewV120>::kRadar0, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, radar_0)},
+      {RefereeCmdId<RefereeRevision::kNewV120>::kRadar1, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, radar_1)},
+      {RefereeCmdId<RefereeRevision::kNewV120>::kRadar2, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, radar_2)},
+      {RefereeCmdId<RefereeRevision::kNewV120>::kRadar3, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, radar_3)},
+      {RefereeCmdId<RefereeRevision::kNewV120>::kRadar4, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, radar_4)},
+      {RefereeCmdId<RefereeRevision::kNewV120>::kRadar5, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, radar_5)},
       {RefereeCmdId<RefereeRevision::kNewV120>::kRobotInteractionData, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, robot_interaction_data)},
       {RefereeCmdId<RefereeRevision::kNewV120>::kCustomRobotData, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, custom_robot_data)},
       {RefereeCmdId<RefereeRevision::kNewV120>::kMapCommand, offsetof(RefereeProtocol<RefereeRevision::kNewV120>, map_command)},
