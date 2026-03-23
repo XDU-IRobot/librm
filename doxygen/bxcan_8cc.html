@@ -92,7 +92,8 @@ $(document).ready(function(){initNavTree('bxcan_8cc.html',''); initResizable(); 
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">命名空间</a>  </div>
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#func-members">函数</a>  </div>
   <div class="headertitle"><div class="title">bxcan.cc 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
@@ -102,10 +103,6 @@ $(document).ready(function(){initNavTree('bxcan_8cc.html',''); initResizable(); 
 <div class="textblock"><code>#include &quot;<a class="el" href="hal_8hpp_source.html">librm/hal/stm32/hal.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="check__register__callbacks_8hpp_source.html">librm/hal/stm32/check_register_callbacks.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="bxcan_8hpp_source.html">bxcan.hpp</a>&quot;</code><br />
-<code>#include &lt;functional&gt;</code><br />
-<code>#include &lt;stdexcept&gt;</code><br />
-<code>#include &lt;algorithm&gt;</code><br />
-<code>#include &lt;etl/unordered_map.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="can__device_8hpp_source.html">librm/device/can_device.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="helper__macro_8hpp_source.html">librm/hal/stm32/helper_macro.hpp</a>&quot;</code><br />
 </div><table class="memberdecls">
@@ -117,6 +114,15 @@ $(document).ready(function(){initNavTree('bxcan_8cc.html',''); initResizable(); 
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacerm_1_1hal_1_1stm32" id="r_namespacerm_1_1hal_1_1stm32"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1hal_1_1stm32.html">rm::hal::stm32</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:aec4aab6c7a6c8e98e4068e4130b92f8b" id="r_aec4aab6c7a6c8e98e4068e4130b92f8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1hal_1_1stm32.html#aec4aab6c7a6c8e98e4068e4130b92f8b">rm::hal::stm32::__attribute__</a> ((always_inline)) static inline int GetCanIndex(CAN_HandleTypeDef *hcan)</td></tr>
+<tr class="memdesc:aec4aab6c7a6c8e98e4068e4130b92f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据CAN实例地址获取bxcan_instances数组索引  <br /></td></tr>
+<tr class="separator:aec4aab6c7a6c8e98e4068e4130b92f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48ed7a3622bd56bb9a20571ba1cc61e2" id="r_a48ed7a3622bd56bb9a20571ba1cc61e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1hal_1_1stm32.html#a48ed7a3622bd56bb9a20571ba1cc61e2">rm::hal::stm32::CanRxFifo0MsgPendingCallback</a> (CAN_HandleTypeDef *hcan)</td></tr>
+<tr class="memdesc:a48ed7a3622bd56bb9a20571ba1cc61e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册给HAL库的CAN接收回调函数  <br /></td></tr>
+<tr class="separator:a48ed7a3622bd56bb9a20571ba1cc61e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>bxCAN类库 </p>

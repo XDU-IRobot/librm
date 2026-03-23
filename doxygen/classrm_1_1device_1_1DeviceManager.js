@@ -1,9 +1,11 @@
 var classrm_1_1device_1_1DeviceManager =
 [
-    [ "DeviceManager", "classrm_1_1device_1_1DeviceManager.html#a028d1a34e435a947241fef7e1c18dcbd", null ],
-    [ "DeviceManager", "classrm_1_1device_1_1DeviceManager.html#a860e6398d4a4d0c04b2ef5f853d28e00", null ],
-    [ "all_device_ok", "classrm_1_1device_1_1DeviceManager.html#a91de39c2ba38e6dab33c9cbe3df54ed8", null ],
-    [ "OnDeviceFaultOrOffline", "classrm_1_1device_1_1DeviceManager.html#aaea4f336ab87673234dfc2bd83eb3901", null ],
-    [ "operator<<", "classrm_1_1device_1_1DeviceManager.html#a22459fd6171f9d231c9f7736fe7ffbc3", null ],
-    [ "Update", "classrm_1_1device_1_1DeviceManager.html#a8cb8238051a0b07445bde3f7d7894409", null ]
+    [ "DeviceManager", "classrm_1_1device_1_1DeviceManager.html#a2caaeee6038b3eb2a25796a54732f052", null ],
+    [ "DeviceManager", "classrm_1_1device_1_1DeviceManager.html#a17ecd8a83e0167051339898180cf662b", null ],
+    [ "all_device_ok", "classrm_1_1device_1_1DeviceManager.html#a8915913710283e7057e7e734221711f2", null ],
+    [ "GetDeviceListByStatus", "classrm_1_1device_1_1DeviceManager.html#a4a7d79216b01c6d721eb346dbb85f89f", null ],
+    [ "GetSummaryString", "classrm_1_1device_1_1DeviceManager.html#a016eb7bed7f5f1dc50a4ee1f310262be", null ],
+    [ "OnDeviceStatusChange", "classrm_1_1device_1_1DeviceManager.html#ae97601cb93c501f36cd7334c72335763", null ],
+    [ "operator<<", "classrm_1_1device_1_1DeviceManager.html#ae608f46a9d7f2ee136b84c5e0222b03c", null ],
+    [ "Update", "classrm_1_1device_1_1DeviceManager.html#a888ce23bee4e77ddfedf190a36b5632e", null ]
 ];

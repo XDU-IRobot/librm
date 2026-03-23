@@ -1,10 +1,16 @@
 var searchData=
 [
-  ['q0_0',['q0',['../classrm_1_1modules_1_1State.html#a71759af7ccb5b12b5dc629c048f4b030',1,'rm::modules::State::q0() const'],['../classrm_1_1modules_1_1State.html#aef4edb0d0765fc0ed65f11ef9b255ecb',1,'rm::modules::State::q0()']]],
-  ['q1_1',['q1',['../classrm_1_1modules_1_1State.html#a57476506fabe4952e7fc0a504e6a2038',1,'rm::modules::State::q1() const'],['../classrm_1_1modules_1_1State.html#aca51414013eed892b1bd36b25ac2c7d6',1,'rm::modules::State::q1()']]],
-  ['q2_2',['q2',['../classrm_1_1modules_1_1State.html#a899be4c5dafdbe7c662d97cc9df35f87',1,'rm::modules::State::q2() const'],['../classrm_1_1modules_1_1State.html#ac6d6c146c1ed0b8162e225c7bdd77ba6',1,'rm::modules::State::q2()']]],
-  ['q3_3',['q3',['../classrm_1_1modules_1_1State.html#a08f84cc1f5e6f164893017c35964f071',1,'rm::modules::State::q3() const'],['../classrm_1_1modules_1_1State.html#a1930fd32dfcbf8145272c8a144df9b77',1,'rm::modules::State::q3()']]],
-  ['quadomnichassis_4',['QuadOmniChassis',['../classrm_1_1modules_1_1QuadOmniChassis.html#ae9a1dbd0831d3d2954bc43547bf8dcb4',1,'rm::modules::QuadOmniChassis']]],
-  ['quaternion_5',['quaternion',['../classrm_1_1modules_1_1AhrsInterface.html#aab7f1c60cd1e465e47f8b945275549c7',1,'rm::modules::AhrsInterface::quaternion()'],['../classrm_1_1modules_1_1EkfAhrs.html#ae80bafdf9134035d584943c2d41ea24c',1,'rm::modules::EkfAhrs::quaternion()'],['../classrm_1_1modules_1_1MahonyAhrs.html#a50ae6252fe2c32bbeba6145a7842d642',1,'rm::modules::MahonyAhrs::quaternion()']]],
-  ['quattoeuler_6',['QuatToEuler',['../namespacerm_1_1modules.html#ac1abcdc63fe24c52620c5895231de53c',1,'rm::modules']]]
+  ['p_5fout_0',['p_out',['../classrm_1_1modules_1_1PID.html#ae8e8adfdb2991a5302dbc5331067d858',1,'rm::modules::PID']]],
+  ['peak_1',['peak',['../classrm_1_1device_1_1STP23L.html#ad4c924bf93775e5129200cd1d26c389e',1,'rm::device::STP23L']]],
+  ['pid_2',['pid',['../classrm_1_1modules_1_1PID.html#a76fdbf339005655f7f7fadfac1b2772f',1,'rm::modules::PID::PID()'],['../classrm_1_1modules_1_1PID.html#ac61fd8e1f894d65cba1bfc10a3124251',1,'rm::modules::PID::PID(f32 kp, f32 ki, f32 kd, f32 max_out, f32 max_iout)']]],
+  ['pin_3',['pin',['../classrm_1_1hal_1_1stm32_1_1Pin.html#a17d07b13a5fec2894181c23e774740f4',1,'rm::hal::stm32::Pin::Pin(GPIO_TypeDef &amp;port, u16 pin)'],['../classrm_1_1hal_1_1stm32_1_1Pin.html#a363f8c0bc476e1632eaed4e984d960cd',1,'rm::hal::stm32::Pin::Pin()=delete']]],
+  ['pitch_4',['pitch',['../classrm_1_1device_1_1HipnucImu.html#a686798d5f61e446344cbcd30c5d0e30b',1,'rm::device::HipnucImu::pitch()'],['../classrm_1_1device_1_1HipnucImuCan.html#aea949f07e8d38a4acb2c6a84ad087e5a',1,'rm::device::HipnucImuCan::pitch()']]],
+  ['play_5',['Play',['../classrm_1_1modules_1_1BuzzerController.html#a8a45ec9d88456ccb0760dbeb8baa7d50',1,'rm::modules::BuzzerController']]],
+  ['poll_6',['poll',['../classrm_1_1modules_1_1PollingTimer.html#a2592804b00ff620da07e4472ab82135d',1,'rm::modules::PollingTimer::Poll()'],['../classrm_1_1hal_1_1PollingTimer.html#a585e8891be991407a32b4c47e12be9bf',1,'rm::hal::PollingTimer::Poll(uint32_t time_increment_ms)']]],
+  ['pollingtimer_7',['PollingTimer',['../classrm_1_1hal_1_1PollingTimer.html#a95f19e8ad543ee7c8047b6ca91c84a16',1,'rm::hal::PollingTimer']]],
+  ['pos_8',['pos',['../classrm_1_1device_1_1DmMotor.html#a50570b2c73d1f780cc4ba4d341d5387d',1,'rm::device::DmMotor::pos()'],['../classrm_1_1device_1_1Go8010Motor.html#ac056d83cd4782687c722eb4400cc6ba2',1,'rm::device::Go8010Motor::pos()'],['../classrm_1_1device_1_1UnitreeMotor.html#ae138c834eff3ba2e8462a1875827610c',1,'rm::device::UnitreeMotor::pos()']]],
+  ['pos_5fdeg_9',['pos_deg',['../classrm_1_1device_1_1DirectDriveMotor.html#a689f53ab00b8a87cf656c06b59887d2a',1,'rm::device::DirectDriveMotor']]],
+  ['pos_5fdegree_10',['pos_degree',['../classrm_1_1device_1_1DjiMotor.html#a0924aa76edcfc6f31e8bd901aba8eb78',1,'rm::device::DjiMotor']]],
+  ['pos_5frad_11',['pos_rad',['../classrm_1_1device_1_1DirectDriveMotor.html#abf16ada07442b63cb03d0557e1223b92',1,'rm::device::DirectDriveMotor::pos_rad()'],['../classrm_1_1device_1_1DjiMotor.html#ac07e5cd49cee29928699e495d7ac22c8',1,'rm::device::DjiMotor::pos_rad()']]],
+  ['pressure_12',['pressure',['../classrm_1_1device_1_1HipnucImuCan.html#a4fdc6badf9a5be4ca9ac8783c0383577',1,'rm::device::HipnucImuCan']]]
 ];

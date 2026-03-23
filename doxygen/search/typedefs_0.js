@@ -1,5 +1,32 @@
 var searchData=
 [
   ['absolutezero_0',['AbsoluteZero',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a885a340208029b6ec075f0f8375147be',1,'rm::device::DirectDriveMotor::Parameters']]],
-  ['adcbaselineerrortolerance_1',['AdcBaselineErrorTolerance',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#aac80a01d65ec3c0d760b86d76abd9d74',1,'rm::device::DirectDriveMotor::Parameters']]]
+  ['adcbaselineerrortolerance_1',['AdcBaselineErrorTolerance',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#aac80a01d65ec3c0d760b86d76abd9d74',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['averagefilter_2',['AverageFilter',['../namespacerm_1_1modules.html#ac5866c84d2152925a7f3f793ba88ab05',1,'rm::modules']]],
+  ['averagefilterfloat_5fsize5_3',['AverageFilterFloat_Size5',['../namespacerm_1_1modules.html#a51f9a38da37b2859cb5f744c0ea390cb',1,'rm::modules']]],
+  ['averagefilterint16_5fsize2_4',['AverageFilterInt16_Size2',['../namespacerm_1_1modules.html#af12a3e5df0aeaa899b78304708010077',1,'rm::modules']]],
+  ['averagefilterint16_5fsize3_5',['AverageFilterInt16_Size3',['../namespacerm_1_1modules.html#abe367806631f9b624fa240f057ce6c69',1,'rm::modules']]],
+  ['averagefilterint16_5fsize4_6',['AverageFilterInt16_Size4',['../namespacerm_1_1modules.html#a6235c018357c0178c2ebfa179af71300',1,'rm::modules']]],
+  ['averagefilterint16_5fsize5_7',['AverageFilterInt16_Size5',['../namespacerm_1_1modules.html#adfb571928b0d7576246e15473d1aa33e',1,'rm::modules']]],
+  ['averagefilterint32_5fsize2_8',['AverageFilterInt32_Size2',['../namespacerm_1_1modules.html#a2d1ee7e387ef30af98427f0dcd3aebd4',1,'rm::modules']]],
+  ['averagefilterint32_5fsize3_9',['AverageFilterInt32_Size3',['../namespacerm_1_1modules.html#a0a0968642cf5f321908272c270307a2c',1,'rm::modules']]],
+  ['averagefilterint32_5fsize4_10',['AverageFilterInt32_Size4',['../namespacerm_1_1modules.html#ae7b75c4750451b22a6fc87d53ef7215a',1,'rm::modules']]],
+  ['averagefilterint32_5fsize5_11',['AverageFilterInt32_Size5',['../namespacerm_1_1modules.html#a65c9d728c5e54f3cd772a9cbf577112a',1,'rm::modules']]],
+  ['averagefilterint8_5fsize2_12',['AverageFilterInt8_Size2',['../namespacerm_1_1modules.html#a4a5e6b8ba53c6e214bed15f3e330d053',1,'rm::modules']]],
+  ['averagefilterint8_5fsize3_13',['AverageFilterInt8_Size3',['../namespacerm_1_1modules.html#af5ebe804c18327c73c42325bddbfae7a',1,'rm::modules']]],
+  ['averagefilterint8_5fsize4_14',['AverageFilterInt8_Size4',['../namespacerm_1_1modules.html#a23cb43fc31cd0e16f82afb7cf0878d98',1,'rm::modules']]],
+  ['averagefilterint8_5fsize5_15',['AverageFilterInt8_Size5',['../namespacerm_1_1modules.html#a5ecb373b46ddc10fb18aff63ac6c2ef2',1,'rm::modules']]],
+  ['averagefilteruint16_5fsize2_16',['AverageFilterUInt16_Size2',['../namespacerm_1_1modules.html#a4016667ef4178673672e39c1ad33cae2',1,'rm::modules']]],
+  ['averagefilteruint16_5fsize3_17',['AverageFilterUInt16_Size3',['../namespacerm_1_1modules.html#a1140ecc07dad25f5bd5b4dffba6538f3',1,'rm::modules']]],
+  ['averagefilteruint16_5fsize4_18',['AverageFilterUInt16_Size4',['../namespacerm_1_1modules.html#a09dd093216fae5675b284251c36ddc09',1,'rm::modules']]],
+  ['averagefilteruint16_5fsize5_19',['AverageFilterUInt16_Size5',['../namespacerm_1_1modules.html#a45638adac71f4a0ea340d6e01d6c8ca2',1,'rm::modules']]],
+  ['averagefilteruint32_5fsize2_20',['AverageFilterUInt32_Size2',['../namespacerm_1_1modules.html#a39f21bf2b3fec6eb7c54129b6bd36332',1,'rm::modules']]],
+  ['averagefilteruint32_5fsize3_21',['AverageFilterUInt32_Size3',['../namespacerm_1_1modules.html#a45b780cdc26d89896e402f50990a7ac7',1,'rm::modules']]],
+  ['averagefilteruint32_5fsize4_22',['AverageFilterUInt32_Size4',['../namespacerm_1_1modules.html#ae2ae1d001c1dd311539e4d5ad056ff8d',1,'rm::modules']]],
+  ['averagefilteruint32_5fsize5_23',['AverageFilterUInt32_Size5',['../namespacerm_1_1modules.html#afbf0a7e2ce2e62ddb97d835fef623a62',1,'rm::modules']]],
+  ['averagefilteruint8_5fsize2_24',['AverageFilterUInt8_Size2',['../namespacerm_1_1modules.html#a3905504ad3997cd0eec07745696823ec',1,'rm::modules']]],
+  ['averagefilteruint8_5fsize3_25',['AverageFilterUInt8_Size3',['../namespacerm_1_1modules.html#a90ee231d3259ac07fd2fa983f803905e',1,'rm::modules']]],
+  ['averagefilteruint8_5fsize4_26',['AverageFilterUInt8_Size4',['../namespacerm_1_1modules.html#a7ff5fd9de9835085d06ed5b0f037201e',1,'rm::modules']]],
+  ['averagefilteruint8_5fsize5_27',['AverageFilterUInt8_Size5',['../namespacerm_1_1modules.html#ac8bc21d60b6f32de57368873f15d96a8',1,'rm::modules']]],
+  ['averageintegralfilter_28',['AverageIntegralFilter',['../namespacerm_1_1modules.html#a036bf550088aa109be8df2b7414c1018',1,'rm::modules']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['m2006_0',['M2006',['../namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a93f5090472f646ad30fccecc43f7b2c7',1,'rm::device']]],
-  ['m3508_1',['M3508',['../namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a2a11d96160e8fc87860f3f795e81b080',1,'rm::device']]]
+  ['pb_0',['PB',['../classrm_1_1modules_1_1PID.html#a15fbbb71657b5c3ca8dbabd05d877a84aedba6d291369d75dc58f1beeb46ce56c',1,'rm::modules::PID']]],
+  ['pm_1',['PM',['../classrm_1_1modules_1_1PID.html#a15fbbb71657b5c3ca8dbabd05d877a84a46ea9ac6e71a303dc2823982733960d1',1,'rm::modules::PID']]],
+  ['ps_2',['PS',['../classrm_1_1modules_1_1PID.html#a15fbbb71657b5c3ca8dbabd05d877a84ac49080623ace2b5ab5188e58c8a483dd',1,'rm::modules::PID']]]
 ];

@@ -1,5 +1,14 @@
 var searchData=
 [
-  ['thermallimit_0',['ThermalLimit',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a09212e853bb6c087d8260f9105d9e646',1,'rm::device::DirectDriveMotor::Parameters']]],
-  ['timepoint_1',['TimePoint',['../classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf',1,'rm::modules::SequenceGenerator']]]
+  ['s_0',['s',['../classrm_1_1modules_1_1SystemModel.html#a34e488354e5dea0131f68ef6feb4bd7b',1,'rm::modules::SystemModel::S'],['../classrm_1_1modules_1_1accelMeasurementModel.html#a88f1ffe2e91d25d83a280a8334261ba3',1,'rm::modules::accelMeasurementModel::S']]],
+  ['secondspeedloopkd_1',['SecondSpeedLoopKd',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a29d345fb3df262961f5700e467b744bb',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['secondspeedloopki_2',['SecondSpeedLoopKi',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a96c2c533f467bcddae4ec6611832c4f8',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['secondspeedloopkp_3',['SecondSpeedLoopKp',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a6e887e90a79132e0c160b58f5d2c0d4e',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['serialnumber_4',['SerialNumber',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a1ad1017c340c641d856ddccc57905070',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['serialrxcallbackfunction_5',['SerialRxCallbackFunction',['../namespacerm_1_1hal.html#ab6c25fb295d0b957ffb1181fa48b787c',1,'rm::hal']]],
+  ['settings_6',['Settings',['../classrm_1_1device_1_1DmMotor.html#a667e7454d199e17b099db4ea73cfc5fa',1,'rm::device::DmMotor']]],
+  ['slewlimiter_7',['SlewLimiter',['../namespacerm_1_1modules.html#afdde4eadf42314fbaa664c9ceeb156e9',1,'rm::modules']]],
+  ['speedcontroller_8',['SpeedController',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a3ec6b3d451e0ae739efb19214f1db78c',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['speedloopaccel_9',['SpeedLoopAccel',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a4b76f397bf413adfd0b1071a8c1280be',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['speedloopparamswitchpoint_10',['SpeedLoopParamSwitchPoint',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#afe0aa74988407675248073e64fe0c508',1,'rm::device::DirectDriveMotor::Parameters']]]
 ];

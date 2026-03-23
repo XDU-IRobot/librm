@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['device_3a_3acandevice_0',['CanDevice',['../classrm_1_1hal_1_1CanInterface.html#a745146b251a28f11ca56c23b8ecdf76b',1,'rm::hal::CanInterface']]]
+  ['canrxfifo0msgpendingcallback_0',['CanRxFifo0MsgPendingCallback',['../classrm_1_1hal_1_1stm32_1_1BxCan.html#a4312ef342693d10683d76df13e1005bf',1,'rm::hal::stm32::BxCan']]]
 ];

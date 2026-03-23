@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('core_2exception_8hpp_source.html','');
 </div><!--header-->
 <div class="contents">
 <a href="core_2exception_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2025 XDU-IRobot</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2026 XDU-IRobot</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
@@ -125,33 +125,36 @@ $(document).ready(function(){initNavTree('core_2exception_8hpp_source.html','');
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_CORE_EXCEPTIONS_HPP</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;<a class="code" href="hal_2stm32_2exception_8hpp.html">librm/hal/stm32/exception.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="namespacerm.html">   37</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm.html">rm</a> {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="namespacerm.html#af69326a719d5dfef55cdbe321f815a44">   43</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacerm.html#af69326a719d5dfef55cdbe321f815a44">Throw</a>(<a class="code hl_function" href="posix__complement_8cc.html#a83e33830d13db492dab0ec9518cb8509">__attribute__</a>((__unused__)) <span class="keyword">const</span> std::exception&amp; e) {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_LINUX)</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordflow">throw</span> e;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#elif defined(LIBRM_PLATFORM_STM32)</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">// stm32编译时一般会带-fno-exceptions参数，不能抛异常。所以不管是什么异常，都不处理，直接死机。</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="hal_2stm32_2exception_8hpp.html">librm/hal/stm32/exception.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="namespacerm.html">   38</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm.html">rm</a> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="namespacerm.html#ac948acc594f27343ce59b3ac31c2cacd">   46</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacerm.html#ac948acc594f27343ce59b3ac31c2cacd">Throw</a>(<a class="code hl_function" href="posix__complement_8cc.html#a83e33830d13db492dab0ec9518cb8509">__attribute__</a>((__unused__)) <span class="keyword">const</span> T&amp; e) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">static_assert</span>(std::is_base_of&lt;std::exception, T&gt;::value, <span class="stringliteral">&quot;Thrown type must be derived from std::exception&quot;</span>);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_LINUX)</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordflow">throw</span> e;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#elif defined(LIBRM_PLATFORM_STM32)</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">// stm32编译时一般会带-fno-exceptions参数，不能抛异常。所以不管是什么异常，都不处理，直接死机。</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
 </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}  <span class="comment">// namespace rm</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}  <span class="comment">// namespace rm</span></div>
 </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="ahal_2stm32_2exception_8hpp_html"><div class="ttname"><a href="hal_2stm32_2exception_8hpp.html">exception.hpp</a></div></div>
-<div class="ttc" id="anamespacerm_html"><div class="ttname"><a href="namespacerm.html">rm</a></div><div class="ttdef"><b>Definition</b> exception.hpp:37</div></div>
-<div class="ttc" id="anamespacerm_html_af69326a719d5dfef55cdbe321f815a44"><div class="ttname"><a href="namespacerm.html#af69326a719d5dfef55cdbe321f815a44">rm::Throw</a></div><div class="ttdeci">void Throw(__attribute__((__unused__)) const std::exception &amp;e)</div><div class="ttdoc">抛出异常</div><div class="ttdef"><b>Definition</b> exception.hpp:43</div></div>
+<div class="ttc" id="anamespacerm_html"><div class="ttname"><a href="namespacerm.html">rm</a></div><div class="ttdef"><b>Definition</b> exception.hpp:38</div></div>
+<div class="ttc" id="anamespacerm_html_ac948acc594f27343ce59b3ac31c2cacd"><div class="ttname"><a href="namespacerm.html#ac948acc594f27343ce59b3ac31c2cacd">rm::Throw</a></div><div class="ttdeci">void Throw(__attribute__((__unused__)) const T &amp;e)</div><div class="ttdoc">抛出异常</div><div class="ttdef"><b>Definition</b> exception.hpp:46</div></div>
 <div class="ttc" id="aposix__complement_8cc_html_a83e33830d13db492dab0ec9518cb8509"><div class="ttname"><a href="posix__complement_8cc.html#a83e33830d13db492dab0ec9518cb8509">__attribute__</a></div><div class="ttdeci">__attribute__((weak)) int gettimeofday(struct timeval *tv</div><div class="ttdef"><b>Definition</b> posix_complement.cc:41</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,4 +1,25 @@
 var searchData=
 [
-  ['noncopyable_0',['noncopyable',['../classrm_1_1detail_1_1NonCopyable.html#ad732324e978c3636b0db78484c878b2a',1,'rm::detail::NonCopyable::NonCopyable(const NonCopyable &amp;)=delete'],['../classrm_1_1detail_1_1NonCopyable.html#a19c1fbc1009b8c3f35217e4ad3089821',1,'rm::detail::NonCopyable::NonCopyable()=default']]]
+  ['m3508powermodel_0',['M3508PowerModel',['../classrm_1_1modules_1_1M3508PowerModel.html#a24f6a2d160414fd9fccbda01861ed32d',1,'rm::modules::M3508PowerModel']]],
+  ['mag_5fx_1',['mag_x',['../classrm_1_1device_1_1HipnucImu.html#a3e88a6c574caeaf1b081fcc2de877a7e',1,'rm::device::HipnucImu::mag_x()'],['../classrm_1_1device_1_1IST8310.html#af92bab1ccfebd2f13e2085dd82c762f6',1,'rm::device::IST8310::mag_x()']]],
+  ['mag_5fy_2',['mag_y',['../classrm_1_1device_1_1HipnucImu.html#a0f9712fccea146d01d0f26b3bda75902',1,'rm::device::HipnucImu::mag_y()'],['../classrm_1_1device_1_1IST8310.html#a0709a04bb93a3cbeb3c9bf92774de9f2',1,'rm::device::IST8310::mag_y()']]],
+  ['mag_5fz_3',['mag_z',['../classrm_1_1device_1_1HipnucImu.html#af5971eabfa61dd97638de9e4c7db9d2b',1,'rm::device::HipnucImu::mag_z()'],['../classrm_1_1device_1_1IST8310.html#ae2d520eaf423ed4fd956d6c91f2b02c4',1,'rm::device::IST8310::mag_z()']]],
+  ['mahonyahrs_4',['MahonyAhrs',['../classrm_1_1modules_1_1MahonyAhrs.html#a3a546e4b7fd177748ea679ea5cc646eb',1,'rm::modules::MahonyAhrs']]],
+  ['main_5fstatus_5',['main_status',['../classrm_1_1device_1_1HipnucImu.html#a7aa9041cb6513df8a5b13e7377777462',1,'rm::device::HipnucImu']]],
+  ['map_6',['Map',['../namespacerm_1_1modules.html#a96230949b340336eb705ecaaf30a6cb0',1,'rm::modules']]],
+  ['master_5fvoltage_7',['master_voltage',['../classrm_1_1device_1_1DirectDriveMotor.html#a2b16ff2ffc64f610e0e2c3f707f76d11',1,'rm::device::DirectDriveMotor']]],
+  ['max_5fiout_8',['max_iout',['../classrm_1_1modules_1_1PID.html#a04ba2c8982833fb0e0da157a6f88592b',1,'rm::modules::PID']]],
+  ['max_5fout_9',['max_out',['../classrm_1_1modules_1_1PID.html#a5f34dd2a4f398560d4acc794ea6f19a5',1,'rm::modules::PID']]],
+  ['mecanumchassis_10',['mecanumchassis',['../classrm_1_1modules_1_1MecanumChassis.html#add41f14494a099474b1efcd2408d6007',1,'rm::modules::MecanumChassis::MecanumChassis()=delete'],['../classrm_1_1modules_1_1MecanumChassis.html#aed1f1da8cd2f508a1b419dfd794e9b64',1,'rm::modules::MecanumChassis::MecanumChassis(f32 wheel_base, f32 wheel_track)']]],
+  ['modifier_5fmask_11',['modifier_mask',['../classrm_1_1modules_1_1KeyboardHandler.html#accac3bc7c11dfbe80409572c91273dad',1,'rm::modules::KeyboardHandler']]],
+  ['mos_5ftemperature_12',['mos_temperature',['../classrm_1_1device_1_1DmMotor.html#a0749dcfef7ef261879221af2cc74e039',1,'rm::device::DmMotor']]],
+  ['motorcalibrator_13',['MotorCalibrator',['../classrm_1_1modules_1_1MotorCalibrator.html#a89c920d479489d9fe53796b53db15e6b',1,'rm::modules::MotorCalibrator']]],
+  ['motorposctrl_14',['MotorPosCtrl',['../classrm_1_1device_1_1ZdtStepper.html#a215106bc16f85e0e9eed47f8799c4081',1,'rm::device::ZdtStepper']]],
+  ['motorsyncctrl_15',['MotorSyncCtrl',['../classrm_1_1device_1_1ZdtStepper.html#a116d0ed8b48f5f586098cab7962c93f9',1,'rm::device::ZdtStepper']]],
+  ['motorvelctrl_16',['MotorVelCtrl',['../classrm_1_1device_1_1ZdtStepper.html#a156271cf6f9937e411ee38e5b1e7f654',1,'rm::device::ZdtStepper']]],
+  ['mouse_5fbutton_5fleft_17',['mouse_button_left',['../classrm_1_1device_1_1DR16.html#afba5900247c4f28df12b08a5ebd686cd',1,'rm::device::DR16']]],
+  ['mouse_5fbutton_5fright_18',['mouse_button_right',['../classrm_1_1device_1_1DR16.html#a2e0280b3d651ec0c6908664db2fba93f',1,'rm::device::DR16']]],
+  ['mouse_5fx_19',['mouse_x',['../classrm_1_1device_1_1DR16.html#a1f9f1b60bd62e201aca0b85b54fc28f8',1,'rm::device::DR16']]],
+  ['mouse_5fy_20',['mouse_y',['../classrm_1_1device_1_1DR16.html#a7930c4fddf439df4f387c3b98c1f6da2',1,'rm::device::DR16']]],
+  ['mouse_5fz_21',['mouse_z',['../classrm_1_1device_1_1DR16.html#a978f064bf36f6ce36ca4b17dc467174e',1,'rm::device::DR16']]]
 ];

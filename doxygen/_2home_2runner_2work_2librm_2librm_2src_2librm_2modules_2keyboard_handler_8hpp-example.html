@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: /home/runner/work/librm/librm/src/librm/modules/keyboard_handler.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_2home_2runner_2work_2librm_2librm_2src_2librm_2modules_2keyboard_handler_8hpp-example.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">/home/runner/work/librm/librm/src/librm/modules/keyboard_handler.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<p>构造函数</p>
+<p>构造函数 </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">modifier_mask</td><td>所有modifier键的组合掩码，用于区分modifier键和普通键</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 假设Ctrl在bit16，Shift在bit17，Alt在bit18</span></div>
+<div class="line"><span class="keyword">constexpr</span> u32 kAllModifiers = (1U &lt;&lt; 16) | (1U &lt;&lt; 17) | (1U &lt;&lt; 18);</div>
+<div class="line">KeyboardHandler&lt;32, 8&gt; handler(kAllModifiers);</div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment">  Copyright (c) 2026 XDU-IRobot</span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><span class="comment">  in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><span class="comment">  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><span class="comment">  copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><span class="comment">  furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">  The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><span class="comment">  copies or substantial portions of the Software.</span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><span class="comment">  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><span class="comment">  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><span class="comment">  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><span class="comment">  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
+<div class="line"><span class="comment">  SOFTWARE.</span></div>
+<div class="line"><span class="comment">*/</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#ifndef LIBRM_MODULES_KEYBOARD_HANDLER_HPP</span></div>
+<div class="line"><span class="preprocessor">#define LIBRM_MODULES_KEYBOARD_HANDLER_HPP</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;etl/algorithm.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;etl/delegate.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;etl/vector.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="typedefs_8hpp.html">librm/core/typedefs.hpp</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1modules.html">rm::modules</a> {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>KeyEvent {</div>
+<div class="line">  <span class="keyword">enum</span> <a id="a0" name="a0"></a><a class="code hl_enumeration" href="structrm_1_1modules_1_1KeyEvent.html#af6c653a4bdd0424812d3f85c2a7f5bbe">Type</a> {</div>
+<div class="line">    <a id="a1" name="a1"></a><a class="code hl_enumvalue" href="structrm_1_1modules_1_1KeyEvent.html#af6c653a4bdd0424812d3f85c2a7f5bbea059f5aea4edf03837eef762243e23599">kKeyDown</a>,  </div>
+<div class="line">    <a id="a2" name="a2"></a><a class="code hl_enumvalue" href="structrm_1_1modules_1_1KeyEvent.html#af6c653a4bdd0424812d3f85c2a7f5bbeab16d2926a19014ec6072181539c58302">kKeyUp</a>     </div>
+<div class="line">  };</div>
+<div class="line">  <a id="a3" name="a3"></a><a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> <a id="a4" name="a4"></a><a class="code hl_variable" href="structrm_1_1modules_1_1KeyEvent.html#aa4866bf5f7d8ba2c5f5a5c4553f5a3ee">key</a>;        </div>
+<div class="line">  <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> <a id="a5" name="a5"></a><a class="code hl_variable" href="structrm_1_1modules_1_1KeyEvent.html#a36e3c45fb950888ab0617463d7f393d3">modifiers</a>;  </div>
+<div class="line">  <a class="code hl_enumeration" href="structrm_1_1modules_1_1KeyEvent.html#af6c653a4bdd0424812d3f85c2a7f5bbe">Type</a> <a id="a6" name="a6"></a><a class="code hl_variable" href="structrm_1_1modules_1_1KeyEvent.html#a7c60ca4f9f53925b35970f5053922ef6">type</a>;      </div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span> &lt;usize MaxBindings = 32, usize MaxConcurrentKeys = 8, <span class="keywordtype">bool</span> UseStdFunction = true&gt;</div>
+<div class="line"><span class="keyword">class </span>KeyboardHandler {</div>
+<div class="line"> <span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">using </span><a id="a7" name="a7"></a><a class="code hl_typedef" href="classrm_1_1modules_1_1KeyboardHandler.html#af0ee221e4b45170e46808ebb860a6709">KeyCallback</a> = std::conditional_t&lt;UseStdFunction,                        <span class="comment">//</span></div>
+<div class="line">                                         std::function&lt;void(<span class="keyword">const</span> KeyEvent&amp;)&gt;,  <span class="comment">//</span></div>
+<div class="line">                                         etl::delegate&lt;void(<span class="keyword">const</span> KeyEvent&amp;)&gt;&gt;;</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">explicit</span> KeyboardHandler(<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> <a id="a8" name="a8"></a><a class="code hl_function" href="classrm_1_1modules_1_1KeyboardHandler.html#accac3bc7c11dfbe80409572c91273dad">modifier_mask</a>) : modifier_mask_(<a class="code hl_function" href="classrm_1_1modules_1_1KeyboardHandler.html#accac3bc7c11dfbe80409572c91273dad">modifier_mask</a>) {}</div>
+<div class="line"> </div>
+<div class="line">  <a id="a9" name="a9"></a><a class="code hl_function" href="classrm_1_1modules_1_1KeyboardHandler.html#aa5896c9b1ecee57307fa0788db5574ea">~KeyboardHandler</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// 允许拷贝</span></div>
+<div class="line">  KeyboardHandler(<span class="keyword">const</span> KeyboardHandler&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line">  KeyboardHandler&amp; <a id="a10" name="a10"></a><a class="code hl_function" href="classrm_1_1modules_1_1KeyboardHandler.html#a89420ba27ea8b854c9573a0cb1f8124a">operator=</a>(<span class="keyword">const</span> KeyboardHandler&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// 禁止移动（etl容器不支持移动语义）</span></div>
+<div class="line">  KeyboardHandler(KeyboardHandler&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line">  KeyboardHandler&amp; <a class="code hl_function" href="classrm_1_1modules_1_1KeyboardHandler.html#a89420ba27ea8b854c9573a0cb1f8124a">operator=</a>(KeyboardHandler&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"> </div>
+<div class="line">  [[nodiscard]] <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> <a class="code hl_function" href="classrm_1_1modules_1_1KeyboardHandler.html#accac3bc7c11dfbe80409572c91273dad">modifier_mask</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> modifier_mask_; }</div>
+<div class="line"> </div>
+<div class="line">  KeyboardHandler&amp; <a id="a11" name="a11"></a><a class="code hl_function" href="classrm_1_1modules_1_1KeyboardHandler.html#a3875bc6393f3408f81828fbd1d9ce7b0">SetModifierMask</a>(<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> mask) {</div>
+<div class="line">    modifier_mask_ = mask;</div>
+<div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  KeyboardHandler&amp; <a id="a12" name="a12"></a><a class="code hl_function" href="classrm_1_1modules_1_1KeyboardHandler.html#a454fbbd2e509dda9c04e7a6438d43467">OnKeyDown</a>(<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> key, <a class="code hl_typedef" href="classrm_1_1modules_1_1KeyboardHandler.html#af0ee221e4b45170e46808ebb860a6709">KeyCallback</a> callback) { <span class="keywordflow">return</span> <a class="code hl_function" href="classrm_1_1modules_1_1KeyboardHandler.html#a454fbbd2e509dda9c04e7a6438d43467">OnKeyDown</a>(key, 0, callback); }</div>
+<div class="line"> </div>
+<div class="line">  KeyboardHandler&amp; <a class="code hl_function" href="classrm_1_1modules_1_1KeyboardHandler.html#a454fbbd2e509dda9c04e7a6438d43467">OnKeyDown</a>(<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> key, <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> required_modifiers, <a class="code hl_typedef" href="classrm_1_1modules_1_1KeyboardHandler.html#af0ee221e4b45170e46808ebb860a6709">KeyCallback</a> callback) {</div>
+<div class="line">    <span class="keywordflow">if</span> (!key_down_bindings_.full()) {</div>
+<div class="line">      key_down_bindings_.push_back({key, required_modifiers, callback});</div>
+<div class="line">      <span class="comment">// 按modifier数量降序排序，确保组合键优先匹配</span></div>
+<div class="line">      SortBindings(key_down_bindings_);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  KeyboardHandler&amp; <a id="a13" name="a13"></a><a class="code hl_function" href="classrm_1_1modules_1_1KeyboardHandler.html#ae8b3e860c5baf066ea034e312f1efbba">OnKeyUp</a>(<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> key, <a class="code hl_typedef" href="classrm_1_1modules_1_1KeyboardHandler.html#af0ee221e4b45170e46808ebb860a6709">KeyCallback</a> callback) { <span class="keywordflow">return</span> <a class="code hl_function" href="classrm_1_1modules_1_1KeyboardHandler.html#ae8b3e860c5baf066ea034e312f1efbba">OnKeyUp</a>(key, 0, callback); }</div>
+<div class="line"> </div>
+<div class="line">  KeyboardHandler&amp; <a class="code hl_function" href="classrm_1_1modules_1_1KeyboardHandler.html#ae8b3e860c5baf066ea034e312f1efbba">OnKeyUp</a>(<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> key, <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> required_modifiers, <a class="code hl_typedef" href="classrm_1_1modules_1_1KeyboardHandler.html#af0ee221e4b45170e46808ebb860a6709">KeyCallback</a> callback) {</div>
+<div class="line">    <span class="keywordflow">if</span> (!key_up_bindings_.full()) {</div>
+<div class="line">      key_up_bindings_.push_back({key, required_modifiers, callback});</div>
+<div class="line">      SortBindings(key_up_bindings_);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">void</span> <a id="a14" name="a14"></a><a class="code hl_function" href="classrm_1_1modules_1_1KeyboardHandler.html#a341eb4a1760d3fe872bba81a812b1582">Update</a>(<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> keycode) {</div>
+<div class="line">    <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> regular_mask = ~modifier_mask_;</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> current_modifiers = keycode &amp; modifier_mask_;</div>
+<div class="line">    <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> current_regular_keys = keycode &amp; regular_mask;</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> prev_regular_keys = prev_keycode_ &amp; regular_mask;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 检测新按下的普通键</span></div>
+<div class="line">    <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> newly_pressed_regular = current_regular_keys &amp; ~prev_regular_keys;</div>
+<div class="line">    <span class="comment">// 检测新释放的普通键</span></div>
+<div class="line">    <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> newly_released_regular = prev_regular_keys &amp; ~current_regular_keys;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 处理新按下的普通键</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> bit = 0; bit &lt; 32; ++bit) {</div>
+<div class="line">      <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> key_mask = 1U &lt;&lt; bit;</div>
+<div class="line"> </div>
+<div class="line">      <span class="comment">// 跳过modifier键</span></div>
+<div class="line">      <span class="keywordflow">if</span> (key_mask &amp; modifier_mask_) {</div>
+<div class="line">        <span class="keywordflow">continue</span>;</div>
+<div class="line">      }</div>
+<div class="line"> </div>
+<div class="line">      <span class="keywordflow">if</span> (newly_pressed_regular &amp; key_mask) {</div>
+<div class="line">        <span class="comment">// 普通键是新按下的，使用当前modifier状态来判断组合键</span></div>
+<div class="line">        HandleKeyDown(key_mask, current_modifiers);</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 处理新释放的普通键</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> bit = 0; bit &lt; 32; ++bit) {</div>
+<div class="line">      <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> key_mask = 1U &lt;&lt; bit;</div>
+<div class="line"> </div>
+<div class="line">      <span class="keywordflow">if</span> (key_mask &amp; modifier_mask_) {</div>
+<div class="line">        <span class="keywordflow">continue</span>;</div>
+<div class="line">      }</div>
+<div class="line"> </div>
+<div class="line">      <span class="keywordflow">if</span> (newly_released_regular &amp; key_mask) {</div>
+<div class="line">        <span class="comment">// 释放键时，使用该键按下时记录的modifier状态</span></div>
+<div class="line">        HandleKeyUp(key_mask);</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 更新按键按下时的modifier状态记录</span></div>
+<div class="line">    UpdatePressedKeyModifiers(newly_pressed_regular, current_modifiers);</div>
+<div class="line">    ClearReleasedKeyModifiers(newly_released_regular);</div>
+<div class="line"> </div>
+<div class="line">    prev_keycode_ = keycode;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">void</span> <a id="a15" name="a15"></a><a class="code hl_function" href="classrm_1_1modules_1_1KeyboardHandler.html#a9f97daca1e1585d5a041dfa20f21808f">Reset</a>() {</div>
+<div class="line">    prev_keycode_ = 0;</div>
+<div class="line">    pressed_key_modifiers_.clear();</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">void</span> <a id="a16" name="a16"></a><a class="code hl_function" href="classrm_1_1modules_1_1KeyboardHandler.html#acea9f242bf2dc9ad6a8488e5e7cb9b46">ClearBindings</a>() {</div>
+<div class="line">    key_down_bindings_.clear();</div>
+<div class="line">    key_up_bindings_.clear();</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line"> <span class="keyword">private</span>:</div>
+<div class="line">  <span class="keyword">struct </span>KeyBinding {</div>
+<div class="line">    <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> key;                 </div>
+<div class="line">    <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> required_modifiers;  </div>
+<div class="line">    <a class="code hl_typedef" href="classrm_1_1modules_1_1KeyboardHandler.html#af0ee221e4b45170e46808ebb860a6709">KeyCallback</a> callback;    </div>
+<div class="line">  };</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">struct </span>PressedKeyState {</div>
+<div class="line">    <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> key;        </div>
+<div class="line">    <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> modifiers;  </div>
+<div class="line">  };</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">using </span>BindingVector = etl::vector&lt;KeyBinding, MaxBindings&gt;;</div>
+<div class="line">  <span class="keyword">using </span>PressedKeyVector = etl::vector&lt;PressedKeyState, MaxConcurrentKeys&gt;;</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> SortBindings(BindingVector&amp; bindings) {</div>
+<div class="line">    etl::sort(bindings.begin(), bindings.end(), [](<span class="keyword">const</span> KeyBinding&amp; a, <span class="keyword">const</span> KeyBinding&amp; b) {</div>
+<div class="line">      return CountBits(a.required_modifiers) &gt; CountBits(b.required_modifiers);</div>
+<div class="line">    });</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">static</span> <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> CountBits(<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> n) {</div>
+<div class="line">    <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> count = 0;</div>
+<div class="line">    <span class="keywordflow">while</span> (n) {</div>
+<div class="line">      count += n &amp; 1;</div>
+<div class="line">      n &gt;&gt;= 1;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> count;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">void</span> HandleKeyDown(<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> key, <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> current_modifiers) {</div>
+<div class="line">    <span class="keywordtype">bool</span> matched = <span class="keyword">false</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 查找匹配的绑定（已按modifier数量降序排序）</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; binding : key_down_bindings_) {</div>
+<div class="line">      <span class="keywordflow">if</span> (binding.key != key) {</div>
+<div class="line">        <span class="keywordflow">continue</span>;</div>
+<div class="line">      }</div>
+<div class="line"> </div>
+<div class="line">      <span class="comment">// 检查modifier是否精确匹配</span></div>
+<div class="line">      <span class="comment">// 要求的modifier必须全部按下，且不能有额外的modifier</span></div>
+<div class="line">      <span class="keywordflow">if</span> (binding.required_modifiers == current_modifiers) {</div>
+<div class="line">        <span class="comment">// 精确匹配</span></div>
+<div class="line">        KeyEvent <span class="keyword">event</span>{key, current_modifiers, <a class="code hl_enumvalue" href="structrm_1_1modules_1_1KeyEvent.html#af6c653a4bdd0424812d3f85c2a7f5bbea059f5aea4edf03837eef762243e23599">KeyEvent::Type::kKeyDown</a>};</div>
+<div class="line">        binding.callback(event);</div>
+<div class="line">        matched = <span class="keyword">true</span>;</div>
+<div class="line">        <span class="keywordflow">break</span>;  <span class="comment">// 只触发第一个匹配的绑定（最具体的）</span></div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 如果没有精确匹配，并且当前有modifier键按下，</span></div>
+<div class="line">    <span class="comment">// 则不触发无modifier的单键回调（模仿桌面OS行为）</span></div>
+<div class="line">    <span class="comment">// 如果没有modifier键按下，且有无modifier的绑定，则触发它</span></div>
+<div class="line">    <span class="keywordflow">if</span> (!matched &amp;&amp; current_modifiers == 0) {</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; binding : key_down_bindings_) {</div>
+<div class="line">        <span class="keywordflow">if</span> (binding.key == key &amp;&amp; binding.required_modifiers == 0) {</div>
+<div class="line">          KeyEvent <span class="keyword">event</span>{key, 0, <a class="code hl_enumvalue" href="structrm_1_1modules_1_1KeyEvent.html#af6c653a4bdd0424812d3f85c2a7f5bbea059f5aea4edf03837eef762243e23599">KeyEvent::Type::kKeyDown</a>};</div>
+<div class="line">          binding.callback(event);</div>
+<div class="line">          <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">void</span> HandleKeyUp(<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> key) {</div>
+<div class="line">    <span class="comment">// 查找该键按下时的modifier状态</span></div>
+<div class="line">    <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> modifiers_when_pressed = 0;</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; state : pressed_key_modifiers_) {</div>
+<div class="line">      <span class="keywordflow">if</span> (state.key == key) {</div>
+<div class="line">        modifiers_when_pressed = state.modifiers;</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">bool</span> matched = <span class="keyword">false</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 查找匹配的绑定</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; binding : key_up_bindings_) {</div>
+<div class="line">      <span class="keywordflow">if</span> (binding.key != key) {</div>
+<div class="line">        <span class="keywordflow">continue</span>;</div>
+<div class="line">      }</div>
+<div class="line"> </div>
+<div class="line">      <span class="keywordflow">if</span> (binding.required_modifiers == modifiers_when_pressed) {</div>
+<div class="line">        KeyEvent <span class="keyword">event</span>{key, modifiers_when_pressed, <a class="code hl_enumvalue" href="structrm_1_1modules_1_1KeyEvent.html#af6c653a4bdd0424812d3f85c2a7f5bbeab16d2926a19014ec6072181539c58302">KeyEvent::Type::kKeyUp</a>};</div>
+<div class="line">        binding.callback(event);</div>
+<div class="line">        matched = <span class="keyword">true</span>;</div>
+<div class="line">        <span class="keywordflow">break</span>;</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (!matched &amp;&amp; modifiers_when_pressed == 0) {</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; binding : key_up_bindings_) {</div>
+<div class="line">        <span class="keywordflow">if</span> (binding.key == key &amp;&amp; binding.required_modifiers == 0) {</div>
+<div class="line">          KeyEvent <span class="keyword">event</span>{key, 0, <a class="code hl_enumvalue" href="structrm_1_1modules_1_1KeyEvent.html#af6c653a4bdd0424812d3f85c2a7f5bbeab16d2926a19014ec6072181539c58302">KeyEvent::Type::kKeyUp</a>};</div>
+<div class="line">          binding.callback(event);</div>
+<div class="line">          <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">void</span> UpdatePressedKeyModifiers(<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> newly_pressed, <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> modifiers) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> bit = 0; bit &lt; 32; ++bit) {</div>
+<div class="line">      <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> key_mask = 1U &lt;&lt; bit;</div>
+<div class="line">      <span class="keywordflow">if</span> ((newly_pressed &amp; key_mask) &amp;&amp; !pressed_key_modifiers_.full()) {</div>
+<div class="line">        pressed_key_modifiers_.push_back({key_mask, modifiers});</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">void</span> ClearReleasedKeyModifiers(<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> released) {</div>
+<div class="line">    <span class="keyword">auto</span> it = pressed_key_modifiers_.begin();</div>
+<div class="line">    <span class="keywordflow">while</span> (it != pressed_key_modifiers_.end()) {</div>
+<div class="line">      <span class="keywordflow">if</span> (it-&gt;key &amp; released) {</div>
+<div class="line">        it = pressed_key_modifiers_.erase(it);</div>
+<div class="line">      } <span class="keywordflow">else</span> {</div>
+<div class="line">        ++it;</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> modifier_mask_;                       </div>
+<div class="line">  <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> prev_keycode_{0};                     </div>
+<div class="line">  BindingVector key_down_bindings_;         </div>
+<div class="line">  BindingVector key_up_bindings_;           </div>
+<div class="line">  PressedKeyVector pressed_key_modifiers_;  </div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">}  <span class="comment">// namespace rm::modules</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_MODULES_KEYBOARD_HANDLER_HPP</span></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1KeyboardHandler_html_a341eb4a1760d3fe872bba81a812b1582"><div class="ttname"><a href="classrm_1_1modules_1_1KeyboardHandler.html#a341eb4a1760d3fe872bba81a812b1582">rm::modules::KeyboardHandler::Update</a></div><div class="ttdeci">void Update(u32 keycode)</div><div class="ttdoc">更新键盘状态并触发相应的回调</div><div class="ttdef"><b>Definition</b> keyboard_handler.hpp:165</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1KeyboardHandler_html_a3875bc6393f3408f81828fbd1d9ce7b0"><div class="ttname"><a href="classrm_1_1modules_1_1KeyboardHandler.html#a3875bc6393f3408f81828fbd1d9ce7b0">rm::modules::KeyboardHandler::SetModifierMask</a></div><div class="ttdeci">KeyboardHandler &amp; SetModifierMask(u32 mask)</div><div class="ttdoc">设置modifier掩码</div><div class="ttdef"><b>Definition</b> keyboard_handler.hpp:103</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1KeyboardHandler_html_a454fbbd2e509dda9c04e7a6438d43467"><div class="ttname"><a href="classrm_1_1modules_1_1KeyboardHandler.html#a454fbbd2e509dda9c04e7a6438d43467">rm::modules::KeyboardHandler::OnKeyDown</a></div><div class="ttdeci">KeyboardHandler &amp; OnKeyDown(u32 key, KeyCallback callback)</div><div class="ttdoc">注册按键按下回调（无modifier）</div><div class="ttdef"><b>Definition</b> keyboard_handler.hpp:114</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1KeyboardHandler_html_a89420ba27ea8b854c9573a0cb1f8124a"><div class="ttname"><a href="classrm_1_1modules_1_1KeyboardHandler.html#a89420ba27ea8b854c9573a0cb1f8124a">rm::modules::KeyboardHandler::operator=</a></div><div class="ttdeci">KeyboardHandler &amp; operator=(const KeyboardHandler &amp;)=default</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1KeyboardHandler_html_a9f97daca1e1585d5a041dfa20f21808f"><div class="ttname"><a href="classrm_1_1modules_1_1KeyboardHandler.html#a9f97daca1e1585d5a041dfa20f21808f">rm::modules::KeyboardHandler::Reset</a></div><div class="ttdeci">void Reset()</div><div class="ttdoc">重置键盘处理器状态</div><div class="ttdef"><b>Definition</b> keyboard_handler.hpp:217</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1KeyboardHandler_html_aa5896c9b1ecee57307fa0788db5574ea"><div class="ttname"><a href="classrm_1_1modules_1_1KeyboardHandler.html#aa5896c9b1ecee57307fa0788db5574ea">rm::modules::KeyboardHandler::~KeyboardHandler</a></div><div class="ttdeci">~KeyboardHandler()=default</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1KeyboardHandler_html_accac3bc7c11dfbe80409572c91273dad"><div class="ttname"><a href="classrm_1_1modules_1_1KeyboardHandler.html#accac3bc7c11dfbe80409572c91273dad">rm::modules::KeyboardHandler::modifier_mask</a></div><div class="ttdeci">u32 modifier_mask() const</div><div class="ttdoc">获取当前设置的modifier掩码</div><div class="ttdef"><b>Definition</b> keyboard_handler.hpp:96</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1KeyboardHandler_html_acea9f242bf2dc9ad6a8488e5e7cb9b46"><div class="ttname"><a href="classrm_1_1modules_1_1KeyboardHandler.html#acea9f242bf2dc9ad6a8488e5e7cb9b46">rm::modules::KeyboardHandler::ClearBindings</a></div><div class="ttdeci">void ClearBindings()</div><div class="ttdoc">清除所有已注册的回调</div><div class="ttdef"><b>Definition</b> keyboard_handler.hpp:225</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1KeyboardHandler_html_ae8b3e860c5baf066ea034e312f1efbba"><div class="ttname"><a href="classrm_1_1modules_1_1KeyboardHandler.html#ae8b3e860c5baf066ea034e312f1efbba">rm::modules::KeyboardHandler::OnKeyUp</a></div><div class="ttdeci">KeyboardHandler &amp; OnKeyUp(u32 key, KeyCallback callback)</div><div class="ttdoc">注册按键释放回调（无modifier）</div><div class="ttdef"><b>Definition</b> keyboard_handler.hpp:138</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1KeyboardHandler_html_af0ee221e4b45170e46808ebb860a6709"><div class="ttname"><a href="classrm_1_1modules_1_1KeyboardHandler.html#af0ee221e4b45170e46808ebb860a6709">rm::modules::KeyboardHandler::KeyCallback</a></div><div class="ttdeci">std::conditional_t&lt; UseStdFunction, std::function&lt; void(const KeyEvent &amp;)&gt;, etl::delegate&lt; void(const KeyEvent &amp;)&gt; &gt; KeyCallback</div><div class="ttdef"><b>Definition</b> keyboard_handler.hpp:67</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html"><div class="ttname"><a href="namespacerm_1_1modules.html">rm::modules</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:33</div></div>
+<div class="ttc" id="anamespacerm_html_aae5bb39b0da6b1cf1b7ed1c03342ec66"><div class="ttname"><a href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">rm::u32</a></div><div class="ttdeci">uint32_t u32</div><div class="ttdef"><b>Definition</b> typedefs.hpp:45</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1KeyEvent_html_a36e3c45fb950888ab0617463d7f393d3"><div class="ttname"><a href="structrm_1_1modules_1_1KeyEvent.html#a36e3c45fb950888ab0617463d7f393d3">rm::modules::KeyEvent::modifiers</a></div><div class="ttdeci">u32 modifiers</div><div class="ttdoc">当前按下的modifier键组合</div><div class="ttdef"><b>Definition</b> keyboard_handler.hpp:51</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1KeyEvent_html_a7c60ca4f9f53925b35970f5053922ef6"><div class="ttname"><a href="structrm_1_1modules_1_1KeyEvent.html#a7c60ca4f9f53925b35970f5053922ef6">rm::modules::KeyEvent::type</a></div><div class="ttdeci">Type type</div><div class="ttdoc">事件类型</div><div class="ttdef"><b>Definition</b> keyboard_handler.hpp:52</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1KeyEvent_html_aa4866bf5f7d8ba2c5f5a5c4553f5a3ee"><div class="ttname"><a href="structrm_1_1modules_1_1KeyEvent.html#aa4866bf5f7d8ba2c5f5a5c4553f5a3ee">rm::modules::KeyEvent::key</a></div><div class="ttdeci">u32 key</div><div class="ttdoc">触发的按键（单个键的掩码）</div><div class="ttdef"><b>Definition</b> keyboard_handler.hpp:50</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1KeyEvent_html_af6c653a4bdd0424812d3f85c2a7f5bbe"><div class="ttname"><a href="structrm_1_1modules_1_1KeyEvent.html#af6c653a4bdd0424812d3f85c2a7f5bbe">rm::modules::KeyEvent::Type</a></div><div class="ttdeci">Type</div><div class="ttdoc">键盘按键事件类型</div><div class="ttdef"><b>Definition</b> keyboard_handler.hpp:46</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1KeyEvent_html_af6c653a4bdd0424812d3f85c2a7f5bbea059f5aea4edf03837eef762243e23599"><div class="ttname"><a href="structrm_1_1modules_1_1KeyEvent.html#af6c653a4bdd0424812d3f85c2a7f5bbea059f5aea4edf03837eef762243e23599">rm::modules::KeyEvent::kKeyDown</a></div><div class="ttdeci">@ kKeyDown</div><div class="ttdoc">按键按下</div><div class="ttdef"><b>Definition</b> keyboard_handler.hpp:47</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1KeyEvent_html_af6c653a4bdd0424812d3f85c2a7f5bbeab16d2926a19014ec6072181539c58302"><div class="ttname"><a href="structrm_1_1modules_1_1KeyEvent.html#af6c653a4bdd0424812d3f85c2a7f5bbeab16d2926a19014ec6072181539c58302">rm::modules::KeyEvent::kKeyUp</a></div><div class="ttdeci">@ kKeyUp</div><div class="ttdoc">按键释放</div><div class="ttdef"><b>Definition</b> keyboard_handler.hpp:48</div></div>
+<div class="ttc" id="atypedefs_8hpp_html"><div class="ttname"><a href="typedefs_8hpp.html">typedefs.hpp</a></div><div class="ttdoc">全局数据类型定义</div></div>
+</div><!-- fragment --> </div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

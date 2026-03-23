@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('classrm_1_1device_1_1DmMotor.html','')
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
 <a href="#pub-methods">Public 成员函数</a> &#124;
 <a href="classrm_1_1device_1_1DmMotor-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">rm::device::DmMotor&lt; control_mode &gt; 模板类 参考<span class="mlabels"><span class="mlabel">final</span></span></div></div>
@@ -109,10 +110,23 @@ $(document).ready(function(){initNavTree('classrm_1_1device_1_1DmMotor.html','')
   <img src="classrm_1_1device_1_1DmMotor.png" usemap="#rm::device::DmMotor_3C_20control_5Fmode_20_3E_map" alt=""/>
   <map id="rm::device::DmMotor_3C_20control_5Fmode_20_3E_map" name="rm::device::DmMotor_3C_20control_5Fmode_20_3E_map">
 <area href="classrm_1_1device_1_1CanDevice.html" title="CAN设备的基类" alt="rm::device::CanDevice" shape="rect" coords="0,56,227,80"/>
-<area href="classrm_1_1device_1_1Device.html" title="驱动框架的设备基类，主要功能为监视设备在线状态" alt="rm::device::Device" shape="rect" coords="0,0,227,24"/>
+<area href="classrm_1_1device_1_1Device.html" title="驱动框架的设备基类，功能为监视设备状态" alt="rm::device::Device" shape="rect" coords="0,0,227,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a667e7454d199e17b099db4ea73cfc5fa" id="r_a667e7454d199e17b099db4ea73cfc5fa"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DmMotor.html#a667e7454d199e17b099db4ea73cfc5fa">Settings</a> = <a class="el" href="structrm_1_1device_1_1DmMotorSettings.html">DmMotorSettings</a>&lt; control_mode &gt;</td></tr>
+<tr class="separator:a667e7454d199e17b099db4ea73cfc5fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classrm_1_1device_1_1Device"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classrm_1_1device_1_1Device')"><img src="closed.png" alt="-"/>&#160;Public 类型 继承自 <a class="el" href="classrm_1_1device_1_1Device.html">rm::device::Device</a></td></tr>
+<tr class="memitem:a16a7bedc3fb137033e1537713d3626bc inherit pub_types_classrm_1_1device_1_1Device" id="r_a16a7bedc3fb137033e1537713d3626bc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Status</a> { <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5">kUnknown</a> = -1
+, <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca49868fdd51a9c221b3b9c076adc6d64e">kOffline</a>
+, <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca888af1cb59179c046f400d9fdd64dc0c">kFault</a>
+, <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21">kOk</a>
+ }</td></tr>
+<tr class="memdesc:a16a7bedc3fb137033e1537713d3626bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">设备状态  <a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">更多...</a><br /></td></tr>
+<tr class="separator:a16a7bedc3fb137033e1537713d3626bc inherit pub_types_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:a86932dce175299d27425fc34786e9bc8" id="r_a86932dce175299d27425fc34786e9bc8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DmMotor.html#a86932dce175299d27425fc34786e9bc8">DmMotor</a> ()=delete</td></tr>
@@ -121,22 +135,22 @@ Public 成员函数</h2></td></tr>
 <tr class="separator:afe4477624c1d5346c0c8a97ca708d241"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66a9b0721bdd77cb379feef51fabd76c" id="r_a66a9b0721bdd77cb379feef51fabd76c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DmMotor.html#a66a9b0721bdd77cb379feef51fabd76c">~DmMotor</a> () override=default</td></tr>
 <tr class="separator:a66a9b0721bdd77cb379feef51fabd76c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68b743793194904f8b7a39b50b99ed46" id="r_a68b743793194904f8b7a39b50b99ed46"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DmMotor.html#a68b743793194904f8b7a39b50b99ed46">DmMotor</a> (<a class="el" href="classrm_1_1hal_1_1CanInterface.html">hal::CanInterface</a> &amp;can, <a class="el" href="structrm_1_1device_1_1DmMotorSettings.html">DmMotorSettings</a>&lt; control_mode &gt; settings, bool reversed=false)</td></tr>
-<tr class="separator:a68b743793194904f8b7a39b50b99ed46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3265b87ab4b5a2bc13cababb1065e19d" id="r_a3265b87ab4b5a2bc13cababb1065e19d"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e">DmMotorControlMode</a> mode = control_mode, typename std::enable_if_t&lt; <a class="el" href="unitree__motor_8hpp.html#a7cea6ae40aa46b41e3806213a39718c6">mode</a>==<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea671bf1301da9c5f5da9a08002e6f89c4">DmMotorControlMode::kMit</a>, int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a3265b87ab4b5a2bc13cababb1065e19d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DmMotor.html#a3265b87ab4b5a2bc13cababb1065e19d">SetPosition</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> position_rad, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> max_speed_rad_per_sec, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> accel_torque_nm, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="unitree__motor_8hpp.html#a6e6ef3c3e462de6af7ec88300b717944">kp</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="unitree__motor_8hpp.html#adb4256549943047fac1ad204d895b1f6">kd</a>)</td></tr>
-<tr class="memdesc:a3265b87ab4b5a2bc13cababb1065e19d"><td class="mdescLeft">&#160;</td><td class="mdescRight">MIT模式的控制函数  <br /></td></tr>
-<tr class="separator:a3265b87ab4b5a2bc13cababb1065e19d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c4648a04f76ce9b3a95a3871928cf22" id="r_a2c4648a04f76ce9b3a95a3871928cf22"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e">DmMotorControlMode</a> mode = control_mode, typename std::enable_if_t&lt; <a class="el" href="unitree__motor_8hpp.html#a7cea6ae40aa46b41e3806213a39718c6">mode</a>==<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94eac423473711521422b9f206b311bca100">DmMotorControlMode::kSpeedPosition</a>, int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a2c4648a04f76ce9b3a95a3871928cf22"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DmMotor.html#a2c4648a04f76ce9b3a95a3871928cf22">SetPosition</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> position_rad, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> max_speed_rad_per_sec)</td></tr>
-<tr class="memdesc:a2c4648a04f76ce9b3a95a3871928cf22"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度位置模式的控制函数  <br /></td></tr>
-<tr class="separator:a2c4648a04f76ce9b3a95a3871928cf22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56691e7ae71d70ba1fd6196a195e23a3" id="r_a56691e7ae71d70ba1fd6196a195e23a3"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e">DmMotorControlMode</a> mode = control_mode, typename std::enable_if_t&lt; <a class="el" href="unitree__motor_8hpp.html#a7cea6ae40aa46b41e3806213a39718c6">mode</a>==<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea22f7e05f35e7f25d5f24304feb24bee8">DmMotorControlMode::kSpeed</a>, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a2d80009c734f3dd7b9acb91fad34b49f" id="r_a2d80009c734f3dd7b9acb91fad34b49f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DmMotor.html#a2d80009c734f3dd7b9acb91fad34b49f">DmMotor</a> (<a class="el" href="classrm_1_1hal_1_1CanInterface.html">hal::CanInterface</a> &amp;can, <a class="el" href="classrm_1_1device_1_1DmMotor.html#a667e7454d199e17b099db4ea73cfc5fa">Settings</a> settings, bool reversed=false)</td></tr>
+<tr class="separator:a2d80009c734f3dd7b9acb91fad34b49f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abef578abdd6b1216f0a3e3779976458a" id="r_abef578abdd6b1216f0a3e3779976458a"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e">DmMotorControlMode</a> mode = control_mode, typename std::enable_if_t&lt; mode==<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea671bf1301da9c5f5da9a08002e6f89c4">DmMotorControlMode::kMit</a>, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:abef578abdd6b1216f0a3e3779976458a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DmMotor.html#abef578abdd6b1216f0a3e3779976458a">SetMitCommand</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> position_rad, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> speed_rad_per_sec, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> torque_ff_nm, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> kp, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> kd)</td></tr>
+<tr class="memdesc:abef578abdd6b1216f0a3e3779976458a"><td class="mdescLeft">&#160;</td><td class="mdescRight">MIT模式下发送控制命令  <br /></td></tr>
+<tr class="separator:abef578abdd6b1216f0a3e3779976458a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f226a65730ca17cd66d6e1a77762762" id="r_a6f226a65730ca17cd66d6e1a77762762"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e">DmMotorControlMode</a> mode = control_mode, typename std::enable_if_t&lt; mode==<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94eac423473711521422b9f206b311bca100">DmMotorControlMode::kSpeedPosition</a>, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a6f226a65730ca17cd66d6e1a77762762"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DmMotor.html#a6f226a65730ca17cd66d6e1a77762762">SetPosition</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> position_rad, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> speed_rad_per_sec)</td></tr>
+<tr class="memdesc:a6f226a65730ca17cd66d6e1a77762762"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度位置模式下发送控制命令  <br /></td></tr>
+<tr class="separator:a6f226a65730ca17cd66d6e1a77762762"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56691e7ae71d70ba1fd6196a195e23a3" id="r_a56691e7ae71d70ba1fd6196a195e23a3"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e">DmMotorControlMode</a> mode = control_mode, typename std::enable_if_t&lt; mode==<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea22f7e05f35e7f25d5f24304feb24bee8">DmMotorControlMode::kSpeed</a>, int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a56691e7ae71d70ba1fd6196a195e23a3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DmMotor.html#a56691e7ae71d70ba1fd6196a195e23a3">SetSpeed</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> speed_rad_per_sec)</td></tr>
-<tr class="memdesc:a56691e7ae71d70ba1fd6196a195e23a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度模式的控制函数  <br /></td></tr>
+<tr class="memdesc:a56691e7ae71d70ba1fd6196a195e23a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度模式下发送控制命令  <br /></td></tr>
 <tr class="separator:a56691e7ae71d70ba1fd6196a195e23a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13b7808f826582a4a2089fad296873c9" id="r_a13b7808f826582a4a2089fad296873c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DmMotor.html#a13b7808f826582a4a2089fad296873c9">SendInstruction</a> (<a class="el" href="namespacerm_1_1device.html#ac288c43db8b896c0643f9a4d299d0d65">DmMotorInstructions</a> instruction)</td></tr>
-<tr class="memdesc:a13b7808f826582a4a2089fad296873c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">向电机发送功能指令  <br /></td></tr>
+<tr class="memdesc:a13b7808f826582a4a2089fad296873c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">向电机发送功能指令，可以发送的指令见DmMotorInstructions枚举定义  <br /></td></tr>
 <tr class="separator:a13b7808f826582a4a2089fad296873c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ddae8e761b5f879bcd6061e3913df8a" id="r_a2ddae8e761b5f879bcd6061e3913df8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DmMotor.html#a2ddae8e761b5f879bcd6061e3913df8a">status</a> () const</td></tr>
 <tr class="separator:a2ddae8e761b5f879bcd6061e3913df8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -170,28 +184,26 @@ Public 成员函数</h2></td></tr>
 <tr class="memdesc:a5b16cfbf366e32a4ddb6234f7739ff3f inherit pub_methods_classrm_1_1device_1_1CanDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">移动赋值  <br /></td></tr>
 <tr class="separator:a5b16cfbf366e32a4ddb6234f7739ff3f inherit pub_methods_classrm_1_1device_1_1CanDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classrm_1_1device_1_1Device"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrm_1_1device_1_1Device')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classrm_1_1device_1_1Device.html">rm::device::Device</a></td></tr>
-<tr class="memitem:a7cfac1f099daba6efea2fc462a5fa7c2 inherit pub_methods_classrm_1_1device_1_1Device" id="r_a7cfac1f099daba6efea2fc462a5fa7c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a7cfac1f099daba6efea2fc462a5fa7c2">Device</a> ()=default</td></tr>
-<tr class="separator:a7cfac1f099daba6efea2fc462a5fa7c2 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a769d2371dac57ae08f5a17948bbdefd6 inherit pub_methods_classrm_1_1device_1_1Device" id="r_a769d2371dac57ae08f5a17948bbdefd6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a> ()</td></tr>
+<tr class="separator:a769d2371dac57ae08f5a17948bbdefd6 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc47f697e77010da09e8449f3d5a9094 inherit pub_methods_classrm_1_1device_1_1Device" id="r_abc47f697e77010da09e8449f3d5a9094"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#abc47f697e77010da09e8449f3d5a9094">~Device</a> ()=default</td></tr>
 <tr class="separator:abc47f697e77010da09e8449f3d5a9094 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a227f58f357e464c7699866378a89b7dc inherit pub_methods_classrm_1_1device_1_1Device" id="r_a227f58f357e464c7699866378a89b7dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a227f58f357e464c7699866378a89b7dc">SetHeartbeatTimeout</a> (duration timeout)</td></tr>
 <tr class="memdesc:a227f58f357e464c7699866378a89b7dc inherit pub_methods_classrm_1_1device_1_1Device"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置心跳超时时间  <br /></td></tr>
 <tr class="separator:a227f58f357e464c7699866378a89b7dc inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae24e0283ae6acdb1856f2e5fcb2dc72f inherit pub_methods_classrm_1_1device_1_1Device" id="r_ae24e0283ae6acdb1856f2e5fcb2dc72f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#ae24e0283ae6acdb1856f2e5fcb2dc72f">Ok</a> ()</td></tr>
-<tr class="separator:ae24e0283ae6acdb1856f2e5fcb2dc72f inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f6f6615cf259068c236883523608332 inherit pub_methods_classrm_1_1device_1_1Device" id="r_a4f6f6615cf259068c236883523608332"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a4f6f6615cf259068c236883523608332">online_status</a> ()</td></tr>
+<tr class="separator:a4f6f6615cf259068c236883523608332 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f1b8eb171231fad7f23adac2879224b inherit pub_methods_classrm_1_1device_1_1Device" id="r_a0f1b8eb171231fad7f23adac2879224b"><td class="memItemLeft" align="right" valign="top">time_point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a0f1b8eb171231fad7f23adac2879224b">last_seen</a> () const</td></tr>
 <tr class="separator:a0f1b8eb171231fad7f23adac2879224b inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bbe2925440ed64a15987789a7cdca90 inherit pub_methods_classrm_1_1device_1_1Device" id="r_a8bbe2925440ed64a15987789a7cdca90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a8bbe2925440ed64a15987789a7cdca90">SetName</a> (etl::string&lt; kMaxNameLength &gt; <a class="el" href="classrm_1_1device_1_1Device.html#ada247da2f27c1e0c4862f526486c78f4">name</a>)</td></tr>
+<tr class="memdesc:a8bbe2925440ed64a15987789a7cdca90 inherit pub_methods_classrm_1_1device_1_1Device"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置设备名称  <br /></td></tr>
+<tr class="separator:a8bbe2925440ed64a15987789a7cdca90 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada247da2f27c1e0c4862f526486c78f4 inherit pub_methods_classrm_1_1device_1_1Device" id="r_ada247da2f27c1e0c4862f526486c78f4"><td class="memItemLeft" align="right" valign="top">etl::string&lt; kMaxNameLength &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#ada247da2f27c1e0c4862f526486c78f4">name</a> () const</td></tr>
+<tr class="memdesc:ada247da2f27c1e0c4862f526486c78f4 inherit pub_methods_classrm_1_1device_1_1Device"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备名称  <br /></td></tr>
+<tr class="separator:ada247da2f27c1e0c4862f526486c78f4 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 额外继承的成员函数</h2></td></tr>
-<tr class="inherit_header pro_types_classrm_1_1device_1_1Device"><td colspan="2" onclick="javascript:toggleInherit('pro_types_classrm_1_1device_1_1Device')"><img src="closed.png" alt="-"/>&#160;Protected 类型 继承自 <a class="el" href="classrm_1_1device_1_1Device.html">rm::device::Device</a></td></tr>
-<tr class="memitem:a16a7bedc3fb137033e1537713d3626bc inherit pro_types_classrm_1_1device_1_1Device" id="r_a16a7bedc3fb137033e1537713d3626bc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Status</a> { <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5">kUnknown</a> = -1
-, <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca49868fdd51a9c221b3b9c076adc6d64e">kOffline</a>
-, <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca888af1cb59179c046f400d9fdd64dc0c">kFault</a>
-, <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21">kOk</a>
- }</td></tr>
-<tr class="memdesc:a16a7bedc3fb137033e1537713d3626bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">设备状态  <a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">更多...</a><br /></td></tr>
-<tr class="separator:a16a7bedc3fb137033e1537713d3626bc inherit pro_types_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classrm_1_1device_1_1Device"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classrm_1_1device_1_1Device')"><img src="closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="classrm_1_1device_1_1Device.html">rm::device::Device</a></td></tr>
 <tr class="memitem:a7cc99f092ea347a682754478b34e489a inherit pro_methods_classrm_1_1device_1_1Device" id="r_a7cc99f092ea347a682754478b34e489a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a7cc99f092ea347a682754478b34e489a">ReportStatus</a> (<a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Status</a> status)</td></tr>
 <tr class="memdesc:a7cc99f092ea347a682754478b34e489a inherit pro_methods_classrm_1_1device_1_1Device"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新设备状态  <br /></td></tr>
@@ -211,7 +223,24 @@ class rm::device::DmMotor&lt; control_mode &gt;</div><p>达妙电机类库 </p>
   </table>
   </dd>
 </dl>
-</div><h2 class="groupheader">构造及析构函数说明</h2>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a667e7454d199e17b099db4ea73cfc5fa" name="a667e7454d199e17b099db4ea73cfc5fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a667e7454d199e17b099db4ea73cfc5fa">&#9670;&#160;</a></span>Settings</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e">DmMotorControlMode</a> control_mode&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrm_1_1device_1_1DmMotor.html">rm::device::DmMotor</a>&lt; control_mode &gt;::Settings =  <a class="el" href="structrm_1_1device_1_1DmMotorSettings.html">DmMotorSettings</a>&lt;control_mode&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
 <a id="a86932dce175299d27425fc34786e9bc8" name="a86932dce175299d27425fc34786e9bc8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a86932dce175299d27425fc34786e9bc8">&#9670;&#160;</a></span>DmMotor() <span class="overload">[1/3]</span></h2>
 
@@ -294,8 +323,8 @@ template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936
 
 </div>
 </div>
-<a id="a68b743793194904f8b7a39b50b99ed46" name="a68b743793194904f8b7a39b50b99ed46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68b743793194904f8b7a39b50b99ed46">&#9670;&#160;</a></span>DmMotor() <span class="overload">[3/3]</span></h2>
+<a id="a2d80009c734f3dd7b9acb91fad34b49f" name="a2d80009c734f3dd7b9acb91fad34b49f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d80009c734f3dd7b9acb91fad34b49f">&#9670;&#160;</a></span>DmMotor() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -314,7 +343,7 @@ template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structrm_1_1device_1_1DmMotorSettings.html">DmMotorSettings</a>&lt; control_mode &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classrm_1_1device_1_1DmMotor.html#a667e7454d199e17b099db4ea73cfc5fa">Settings</a>&#160;</td>
           <td class="paramname"><em>settings</em>, </td>
         </tr>
         <tr>
@@ -454,7 +483,7 @@ template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936
 </table>
 </div><div class="memdoc">
 
-<p>向电机发送功能指令 </p>
+<p>向电机发送功能指令，可以发送的指令见DmMotorInstructions枚举定义 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">instruction</td><td>要发送的指令 </td></tr>
@@ -464,21 +493,21 @@ template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936
 
 </div>
 </div>
-<a id="a2c4648a04f76ce9b3a95a3871928cf22" name="a2c4648a04f76ce9b3a95a3871928cf22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c4648a04f76ce9b3a95a3871928cf22">&#9670;&#160;</a></span>SetPosition() <span class="overload">[1/2]</span></h2>
+<a id="abef578abdd6b1216f0a3e3779976458a" name="abef578abdd6b1216f0a3e3779976458a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abef578abdd6b1216f0a3e3779976458a">&#9670;&#160;</a></span>SetMitCommand()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e">DmMotorControlMode</a> control_mode&gt; </div>
 <div class="memtemplate">
-template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e">DmMotorControlMode</a> mode = control_mode, typename std::enable_if_t&lt; <a class="el" href="unitree__motor_8hpp.html#a7cea6ae40aa46b41e3806213a39718c6">mode</a>==<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94eac423473711521422b9f206b311bca100">DmMotorControlMode::kSpeedPosition</a>, int &gt;  = 0&gt; </div>
+template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e">DmMotorControlMode</a> mode = control_mode, typename std::enable_if_t&lt; mode==<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea671bf1301da9c5f5da9a08002e6f89c4">DmMotorControlMode::kMit</a>, int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classrm_1_1device_1_1DmMotor.html">rm::device::DmMotor</a>&lt; control_mode &gt;::SetPosition </td>
+          <td class="memname">void <a class="el" href="classrm_1_1device_1_1DmMotor.html">rm::device::DmMotor</a>&lt; control_mode &gt;::SetMitCommand </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
           <td class="paramname"><em>position_rad</em>, </td>
@@ -487,68 +516,13 @@ template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
-          <td class="paramname"><em>max_speed_rad_per_sec</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>速度位置模式的控制函数 </p>
-<dl class="tparams"><dt>模板参数</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">mode</td><td>控制模式 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">position_rad</td><td>期望位置 </td></tr>
-    <tr><td class="paramname">max_speed_rad_per_sec</td><td>控制过程中的最大速度 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a3265b87ab4b5a2bc13cababb1065e19d" name="a3265b87ab4b5a2bc13cababb1065e19d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3265b87ab4b5a2bc13cababb1065e19d">&#9670;&#160;</a></span>SetPosition() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e">DmMotorControlMode</a> control_mode&gt; </div>
-<div class="memtemplate">
-template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e">DmMotorControlMode</a> mode = control_mode, typename std::enable_if_t&lt; <a class="el" href="unitree__motor_8hpp.html#a7cea6ae40aa46b41e3806213a39718c6">mode</a>==<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea671bf1301da9c5f5da9a08002e6f89c4">DmMotorControlMode::kMit</a>, int &gt;  = 0&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classrm_1_1device_1_1DmMotor.html">rm::device::DmMotor</a>&lt; control_mode &gt;::SetPosition </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
-          <td class="paramname"><em>position_rad</em>, </td>
+          <td class="paramname"><em>speed_rad_per_sec</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
-          <td class="paramname"><em>max_speed_rad_per_sec</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
-          <td class="paramname"><em>accel_torque_nm</em>, </td>
+          <td class="paramname"><em>torque_ff_nm</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -575,7 +549,7 @@ template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936
 </table>
 </div><div class="memdoc">
 
-<p>MIT模式的控制函数 </p>
+<p>MIT模式下发送控制命令 </p>
 <dl class="tparams"><dt>模板参数</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">mode</td><td>控制模式 </td></tr>
@@ -585,10 +559,65 @@ template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">position_rad</td><td>期望位置 </td></tr>
-    <tr><td class="paramname">max_speed_rad_per_sec</td><td>控制过程中的最大速度 </td></tr>
-    <tr><td class="paramname">accel_torque_nm</td><td>加速扭矩 </td></tr>
-    <tr><td class="paramname">kp</td><td>比例系数 </td></tr>
-    <tr><td class="paramname">kd</td><td>微分系数 </td></tr>
+    <tr><td class="paramname">speed_rad_per_sec</td><td>期望速度 </td></tr>
+    <tr><td class="paramname">torque_ff_nm</td><td>前馈力矩 </td></tr>
+    <tr><td class="paramname">kp</td><td>位置误差比例系数 </td></tr>
+    <tr><td class="paramname">kd</td><td>速度误差比例系数 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6f226a65730ca17cd66d6e1a77762762" name="a6f226a65730ca17cd66d6e1a77762762"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f226a65730ca17cd66d6e1a77762762">&#9670;&#160;</a></span>SetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e">DmMotorControlMode</a> control_mode&gt; </div>
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e">DmMotorControlMode</a> mode = control_mode, typename std::enable_if_t&lt; mode==<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94eac423473711521422b9f206b311bca100">DmMotorControlMode::kSpeedPosition</a>, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classrm_1_1device_1_1DmMotor.html">rm::device::DmMotor</a>&lt; control_mode &gt;::SetPosition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>position_rad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>speed_rad_per_sec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>速度位置模式下发送控制命令 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">mode</td><td>控制模式 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position_rad</td><td>期望位置 </td></tr>
+    <tr><td class="paramname">speed_rad_per_sec</td><td>期望速度 </td></tr>
   </table>
   </dd>
 </dl>
@@ -603,7 +632,7 @@ template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936
 <div class="memtemplate">
 template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e">DmMotorControlMode</a> control_mode&gt; </div>
 <div class="memtemplate">
-template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e">DmMotorControlMode</a> mode = control_mode, typename std::enable_if_t&lt; <a class="el" href="unitree__motor_8hpp.html#a7cea6ae40aa46b41e3806213a39718c6">mode</a>==<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea22f7e05f35e7f25d5f24304feb24bee8">DmMotorControlMode::kSpeed</a>, int &gt;  = 0&gt; </div>
+template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e">DmMotorControlMode</a> mode = control_mode, typename std::enable_if_t&lt; mode==<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea22f7e05f35e7f25d5f24304feb24bee8">DmMotorControlMode::kSpeed</a>, int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -623,7 +652,7 @@ template&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936
 </table>
 </div><div class="memdoc">
 
-<p>速度模式的控制函数 </p>
+<p>速度模式下发送控制命令 </p>
 <dl class="tparams"><dt>模板参数</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">mode</td><td>控制模式 </td></tr>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['refereerevision_0',['RefereeRevision',['../namespacerm_1_1device.html#a097a9fa7f69d2f1da75170c9c3bc2137',1,'rm::device']]]
+  ['lkmotortype_0',['LkMotorType',['../namespacerm_1_1device.html#aa4cc97668543529637aaf1b3c79dd336',1,'rm::device']]]
 ];

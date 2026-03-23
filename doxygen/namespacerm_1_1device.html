@@ -103,13 +103,13 @@ $(document).ready(function(){initNavTree('namespacerm_1_1device.html',''); initR
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 类</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1BMI088.html">BMI088</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">BMI088传感器类  <a href="classrm_1_1device_1_1BMI088.html#details">更多...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classrm_1_1device_1_1BMI088.html" title="BMI088 IMU">BMI088</a> IMU  <a href="classrm_1_1device_1_1BMI088.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1CanDevice.html">CanDevice</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CAN设备的基类  <a href="classrm_1_1device_1_1CanDevice.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html">Device</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">驱动框架的设备基类，主要功能为监视设备在线状态  <a href="classrm_1_1device_1_1Device.html#details">更多...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">驱动框架的设备基类，功能为监视设备状态  <a href="classrm_1_1device_1_1Device.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html">DeviceManager</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">设备管理器，用来维护多个设备的在线状态  <a href="classrm_1_1device_1_1DeviceManager.html#details">更多...</a><br /></td></tr>
@@ -119,15 +119,8 @@ $(document).ready(function(){initNavTree('namespacerm_1_1device.html',''); initR
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">大疆电机(GM6020, M3508, M2006)  <a href="classrm_1_1device_1_1DjiMotor.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DjiMotorProperties.html">DjiMotorProperties</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DjiMotorProperties_3_01DjiMotorType_1_1GM6020_01_4.html">DjiMotorProperties&lt; DjiMotorType::GM6020 &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DjiMotorProperties_3_01DjiMotorType_1_1M2006_01_4.html">DjiMotorProperties&lt; DjiMotorType::M2006 &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DjiMotorProperties_3_01DjiMotorType_1_1M3508_01_4.html">DjiMotorProperties&lt; DjiMotorType::M3508 &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DjiMotorTxBuffer.html">DjiMotorTxBuffer</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DjiMotorBase.html">DjiMotorBase</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">DjiMotor的非模板基类，用于存储所有DjiMotor实例共享的静态成员，以及提供发送控制消息的静态函数  <a href="classrm_1_1device_1_1DjiMotorBase.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DmMotor.html">DmMotor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">达妙电机类库  <a href="classrm_1_1device_1_1DmMotor.html#details">更多...</a><br /></td></tr>
@@ -152,8 +145,17 @@ $(document).ready(function(){initNavTree('namespacerm_1_1device.html',''); initR
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Go8010Motor.html">Go8010Motor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HipnucImu.html">HipnucImu</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">HiPNUC CH0x0 IMU模块  <a href="classrm_1_1device_1_1HipnucImu.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HipnucImuCan.html">HipnucImuCan</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">HiPNUC CH0x0 IMU模块，CANOPEN协议版本  <a href="classrm_1_1device_1_1HipnucImuCan.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1IST8310.html">IST8310</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">IST8310磁力计  <a href="classrm_1_1device_1_1IST8310.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1JyMe02Can.html">JyMe02Can</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">维特智能JY-ME02-CAN角度编码器，CAN协议版本  <a href="classrm_1_1device_1_1JyMe02Can.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1LkMotor.html">LkMotor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">瓴控电机类库  <a href="classrm_1_1device_1_1LkMotor.html#details">更多...</a><br /></td></tr>
@@ -164,6 +166,10 @@ $(document).ready(function(){initNavTree('namespacerm_1_1device.html',''); initR
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1RefereeCmdId.html">RefereeCmdId</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">裁判系统协议命令码  <a href="structrm_1_1device_1_1RefereeCmdId.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1RefereeCmdId_3_01RefereeRevision_1_1kNewV110_01_4.html">RefereeCmdId&lt; RefereeRevision::kNewV110 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1RefereeCmdId_3_01RefereeRevision_1_1kNewV120_01_4.html">RefereeCmdId&lt; RefereeRevision::kNewV120 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1RefereeCmdId_3_01RefereeRevision_1_1kV164_01_4.html">RefereeCmdId&lt; RefereeRevision::kV164 &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1RefereeCmdId_3_01RefereeRevision_1_1kV170_01_4.html">RefereeCmdId&lt; RefereeRevision::kV170 &gt;</a></td></tr>
@@ -171,17 +177,38 @@ $(document).ready(function(){initNavTree('namespacerm_1_1device.html',''); initR
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1RefereeProtocol.html">RefereeProtocol</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">裁判系统协议数据结构  <a href="structrm_1_1device_1_1RefereeProtocol.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV110_01_4.html">RefereeProtocol&lt; RefereeRevision::kNewV110 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html">RefereeProtocol&lt; RefereeRevision::kNewV120 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4.html">RefereeProtocol&lt; RefereeRevision::kV164 &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html">RefereeProtocol&lt; RefereeRevision::kV170 &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1RefereeProtocolMemoryMap.html">RefereeProtocolMemoryMap</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">裁判系统协议内存映射，记录了每个命令码对应的数据结构在 <a class="el" href="structrm_1_1device_1_1RefereeProtocol.html" title="裁判系统协议数据结构">RefereeProtocol</a> 中的偏移量  <a href="structrm_1_1device_1_1RefereeProtocolMemoryMap.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1RefereeProtocolMemoryMap_3_01RefereeRevision_1_1kNewV110_01_4.html">RefereeProtocolMemoryMap&lt; RefereeRevision::kNewV110 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1RefereeProtocolMemoryMap_3_01RefereeRevision_1_1kNewV120_01_4.html">RefereeProtocolMemoryMap&lt; RefereeRevision::kNewV120 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1RefereeProtocolMemoryMap_3_01RefereeRevision_1_1kV164_01_4.html">RefereeProtocolMemoryMap&lt; RefereeRevision::kV164 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1RefereeProtocolMemoryMap_3_01RefereeRevision_1_1kV170_01_4.html">RefereeProtocolMemoryMap&lt; RefereeRevision::kV170 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Sbus.html">Sbus</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">通用SBUS接收机  <a href="classrm_1_1device_1_1Sbus.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1STP23L.html">STP23L</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">STP23L激光测距传感器  <a href="classrm_1_1device_1_1STP23L.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1SuperCap.html">SuperCap</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">超级电容  <a href="classrm_1_1device_1_1SuperCap.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1UnitreeMotor.html">UnitreeMotor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1VirtualDevice.html">VirtualDevice</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">在某些需要监视软件状态的场景下可以使用这个类来充当一个简单的“虚拟设备”，比如监视某个算法模块的状态，或者监视一个硬件设备的子系统状态（比如电机的温度状态），等等  <a href="classrm_1_1device_1_1VirtualDevice.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1VT03.html">VT03</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">VT03图传发送端的遥控器数据解析器  <a href="classrm_1_1device_1_1VT03.html#details">更多...</a><br /></td></tr>
@@ -191,12 +218,18 @@ $(document).ready(function(){initNavTree('namespacerm_1_1device.html',''); initR
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 类型定义</h2></td></tr>
-<tr class="memitem:a7596f33b44756a54da20dd7205da8832" id="r_a7596f33b44756a54da20dd7205da8832"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a7596f33b44756a54da20dd7205da8832">GM6020</a> = <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt; DjiMotorType::GM6020 &gt;</td></tr>
-<tr class="separator:a7596f33b44756a54da20dd7205da8832"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b66ef73417ff0bd6e44f46e821c0942" id="r_a5b66ef73417ff0bd6e44f46e821c0942"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a5b66ef73417ff0bd6e44f46e821c0942">M3508</a> = <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt; DjiMotorType::M3508 &gt;</td></tr>
-<tr class="separator:a5b66ef73417ff0bd6e44f46e821c0942"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf91c24f686ca4f58d88b4a2c8c81acd" id="r_acf91c24f686ca4f58d88b4a2c8c81acd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#acf91c24f686ca4f58d88b4a2c8c81acd">M2006</a> = <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt; DjiMotorType::M2006 &gt;</td></tr>
-<tr class="separator:acf91c24f686ca4f58d88b4a2c8c81acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cb7f3dec7aafdb9806d488a7b4820e1" id="r_a6cb7f3dec7aafdb9806d488a7b4820e1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a6cb7f3dec7aafdb9806d488a7b4820e1">GM6020</a> = <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt; <a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a98d6242ecedc73c63a680ef118bed630">DjiMotorType::kGM6020</a> &gt;</td></tr>
+<tr class="separator:a6cb7f3dec7aafdb9806d488a7b4820e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af652c0a9781ff67ae0c79c72766e73f1" id="r_af652c0a9781ff67ae0c79c72766e73f1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#af652c0a9781ff67ae0c79c72766e73f1">M3508</a> = <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt; <a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a93e36269eaeb796f969adca34b7957b6">DjiMotorType::kM3508</a> &gt;</td></tr>
+<tr class="separator:af652c0a9781ff67ae0c79c72766e73f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae32b6a67fff29752d1e35d50f699c5f3" id="r_ae32b6a67fff29752d1e35d50f699c5f3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#ae32b6a67fff29752d1e35d50f699c5f3">M2006</a> = <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt; <a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57ac79f8fe34278ffdb418f6ee3b8316ed4">DjiMotorType::kM2006</a> &gt;</td></tr>
+<tr class="separator:ae32b6a67fff29752d1e35d50f699c5f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb7962cab98123f231295bc522d94199" id="r_afb7962cab98123f231295bc522d94199"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#afb7962cab98123f231295bc522d94199">DmMotorMit</a> = <a class="el" href="classrm_1_1device_1_1DmMotor.html">DmMotor</a>&lt; <a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea671bf1301da9c5f5da9a08002e6f89c4">DmMotorControlMode::kMit</a> &gt;</td></tr>
+<tr class="separator:afb7962cab98123f231295bc522d94199"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bd90b66d9b191f86a3ed8890a23a144" id="r_a2bd90b66d9b191f86a3ed8890a23a144"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a2bd90b66d9b191f86a3ed8890a23a144">DmMotorSpeedPosition</a> = <a class="el" href="classrm_1_1device_1_1DmMotor.html">DmMotor</a>&lt; <a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94eac423473711521422b9f206b311bca100">DmMotorControlMode::kSpeedPosition</a> &gt;</td></tr>
+<tr class="separator:a2bd90b66d9b191f86a3ed8890a23a144"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb6c3f9fa7319f4f5ab684a282a771b6" id="r_aeb6c3f9fa7319f4f5ab684a282a771b6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#aeb6c3f9fa7319f4f5ab684a282a771b6">DmMotorSpeed</a> = <a class="el" href="classrm_1_1device_1_1DmMotor.html">DmMotor</a>&lt; <a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea22f7e05f35e7f25d5f24304feb24bee8">DmMotorControlMode::kSpeed</a> &gt;</td></tr>
+<tr class="separator:aeb6c3f9fa7319f4f5ab684a282a771b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35672488999e6e2b517f2328928e0f07" id="r_a35672488999e6e2b517f2328928e0f07"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> encoder_bits&gt; </td></tr>
 <tr class="memitem:a35672488999e6e2b517f2328928e0f07"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a35672488999e6e2b517f2328928e0f07">LkMotorMS</a> = <a class="el" href="classrm_1_1device_1_1LkMotor.html">LkMotor</a>&lt; <a class="el" href="namespacerm_1_1device.html#aa4cc97668543529637aaf1b3c79dd336a506da0bb7a47e7742ae2fb56eb884871">LkMotorType::kMS</a>, encoder_bits &gt;</td></tr>
 <tr class="separator:a35672488999e6e2b517f2328928e0f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,14 +245,13 @@ $(document).ready(function(){initNavTree('namespacerm_1_1device.html',''); initR
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 枚举</h2></td></tr>
-<tr class="memitem:a896e2ecf76700ddd37a344204982af57" id="r_a896e2ecf76700ddd37a344204982af57"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57">DjiMotorType</a> { <a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a7a1920d61156abc05a60135aefe8bc67">Default</a>
-, <a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57acb80879d0cffef8dda7b49a4d234e7fa">GM6020</a>
-, <a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a2a11d96160e8fc87860f3f795e81b080">M3508</a>
-, <a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a93f5090472f646ad30fccecc43f7b2c7">M2006</a>
+<tr class="memitem:a896e2ecf76700ddd37a344204982af57" id="r_a896e2ecf76700ddd37a344204982af57"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57">DjiMotorType</a> { <a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a98d6242ecedc73c63a680ef118bed630">kGM6020</a>
+, <a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a93e36269eaeb796f969adca34b7957b6">kM3508</a>
+, <a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57ac79f8fe34278ffdb418f6ee3b8316ed4">kM2006</a>
  }</td></tr>
 <tr class="separator:a896e2ecf76700ddd37a344204982af57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6658bb67dd98e3397c3d30c3bf3229c5" id="r_a6658bb67dd98e3397c3d30c3bf3229c5"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a6658bb67dd98e3397c3d30c3bf3229c5">DmMotorStatus</a> { <br />
-&#160;&#160;<a class="el" href="namespacerm_1_1device.html#a6658bb67dd98e3397c3d30c3bf3229c5a613bcf3776943bf227b27b2bd5b74080">kUnable</a> = 0x0
+&#160;&#160;<a class="el" href="namespacerm_1_1device.html#a6658bb67dd98e3397c3d30c3bf3229c5a229bc0c46e45e1688bdb842b616fd8d2">kDisable</a> = 0x0
 , <a class="el" href="namespacerm_1_1device.html#a6658bb67dd98e3397c3d30c3bf3229c5a239d75756e4e52e4fff58dba82889b02">kEnable</a> = 0x1
 , <a class="el" href="namespacerm_1_1device.html#a6658bb67dd98e3397c3d30c3bf3229c5a5b899cabb290b99ccb0a20d0c76471fa">kOverVoltage</a> = 0x8
 , <a class="el" href="namespacerm_1_1device.html#a6658bb67dd98e3397c3d30c3bf3229c5a56696b8f72116b20b66cb8f3e312b139">kUnderVoltage</a> = 0x9
@@ -256,6 +288,8 @@ $(document).ready(function(){initNavTree('namespacerm_1_1device.html',''); initR
 <tr class="separator:aa4cc97668543529637aaf1b3c79dd336"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a097a9fa7f69d2f1da75170c9c3bc2137" id="r_a097a9fa7f69d2f1da75170c9c3bc2137"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a097a9fa7f69d2f1da75170c9c3bc2137">RefereeRevision</a> { <a class="el" href="namespacerm_1_1device.html#a097a9fa7f69d2f1da75170c9c3bc2137a7cd06295085975805e35f1d05cfbe21c">kV164</a>
 , <a class="el" href="namespacerm_1_1device.html#a097a9fa7f69d2f1da75170c9c3bc2137a73c38af9bce570ddd6d0f4a4322d66db">kV170</a>
+, <a class="el" href="namespacerm_1_1device.html#a097a9fa7f69d2f1da75170c9c3bc2137aadb7cc154ab0306517d098bb5c5698db">kNewV110</a>
+, <a class="el" href="namespacerm_1_1device.html#a097a9fa7f69d2f1da75170c9c3bc2137a417331857fc4c86abd6d12fd09af414d">kNewV120</a>
  }</td></tr>
 <tr class="memdesc:a097a9fa7f69d2f1da75170c9c3bc2137"><td class="mdescLeft">&#160;</td><td class="mdescRight">裁判系统协议版本  <a href="namespacerm_1_1device.html#a097a9fa7f69d2f1da75170c9c3bc2137">更多...</a><br /></td></tr>
 <tr class="separator:a097a9fa7f69d2f1da75170c9c3bc2137"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -324,32 +358,70 @@ $(document).ready(function(){initNavTree('namespacerm_1_1device.html',''); initR
 变量</h2></td></tr>
 <tr class="memitem:ac08ce60f45a779194f2ad543a544d38b" id="r_ac08ce60f45a779194f2ad543a544d38b"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="classrm_1_1hal_1_1SerialInterface.html">rm::hal::SerialInterface</a> *, std::unordered_map&lt; <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">rm::u8</a>, std::function&lt; void(const std::vector&lt; <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">rm::u8</a> &gt; &amp;, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">rm::u16</a>)&gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#ac08ce60f45a779194f2ad543a544d38b">rx_callback_map_emotor</a></td></tr>
 <tr class="separator:ac08ce60f45a779194f2ad543a544d38b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae24d9b479465a3d5c22eaa6ac48e5744" id="r_ae24d9b479465a3d5c22eaa6ac48e5744"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#ae24d9b479465a3d5c22eaa6ac48e5744">kRefProtocolHeaderSof</a> = 0xa5</td></tr>
-<tr class="separator:ae24d9b479465a3d5c22eaa6ac48e5744"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac14725632152fe09f59869931175d64d" id="r_ac14725632152fe09f59869931175d64d"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#ac14725632152fe09f59869931175d64d">kRefProtocolFrameMaxLen</a> = 128</td></tr>
-<tr class="separator:ac14725632152fe09f59869931175d64d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e6c6d20806adea8e5b4f09b2f90de7d" id="r_a5e6c6d20806adea8e5b4f09b2f90de7d"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a5e6c6d20806adea8e5b4f09b2f90de7d">kRefProtocolHeaderLen</a> = 5</td></tr>
-<tr class="separator:a5e6c6d20806adea8e5b4f09b2f90de7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a446a65e64cf80e3dde0a69feb01d203a" id="r_a446a65e64cf80e3dde0a69feb01d203a"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a446a65e64cf80e3dde0a69feb01d203a">kRefProtocolCmdIdLen</a> = 2</td></tr>
-<tr class="separator:a446a65e64cf80e3dde0a69feb01d203a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97c1a75e3ee9444fe965f54e81120149" id="r_a97c1a75e3ee9444fe965f54e81120149"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a97c1a75e3ee9444fe965f54e81120149">kRefProtocolCrc16Len</a> = 2</td></tr>
-<tr class="separator:a97c1a75e3ee9444fe965f54e81120149"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d0125fb13f830b17bbd70105bc15af3" id="r_a4d0125fb13f830b17bbd70105bc15af3"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a4d0125fb13f830b17bbd70105bc15af3">kRefProtocolAllMetadataLen</a> = <a class="el" href="namespacerm_1_1device.html#a5e6c6d20806adea8e5b4f09b2f90de7d">kRefProtocolHeaderLen</a> + <a class="el" href="namespacerm_1_1device.html#a446a65e64cf80e3dde0a69feb01d203a">kRefProtocolCmdIdLen</a> + <a class="el" href="namespacerm_1_1device.html#a97c1a75e3ee9444fe965f54e81120149">kRefProtocolCrc16Len</a></td></tr>
-<tr class="separator:a4d0125fb13f830b17bbd70105bc15af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae78b737085e20d95c002b0bcb5cdbc65" id="r_ae78b737085e20d95c002b0bcb5cdbc65"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespacerm_1_1device.html#a097a9fa7f69d2f1da75170c9c3bc2137">RefereeRevision</a> revision&gt; </td></tr>
-<tr class="memitem:ae78b737085e20d95c002b0bcb5cdbc65"><td class="memTemplItemLeft" align="right" valign="top">const std::unordered_map&lt; <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#ae78b737085e20d95c002b0bcb5cdbc65">referee_protocol_memory_map</a> {}</td></tr>
-<tr class="memdesc:ae78b737085e20d95c002b0bcb5cdbc65"><td class="mdescLeft">&#160;</td><td class="mdescRight">裁判系统协议内存映射，记录了每个操作码对应的数据结构在 <a class="el" href="structrm_1_1device_1_1RefereeProtocol.html" title="裁判系统协议数据结构">RefereeProtocol</a> 中的偏移量  <br /></td></tr>
-<tr class="separator:ae78b737085e20d95c002b0bcb5cdbc65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0c6e6d96348cc9c975ca338a3d74bc2" id="r_ab0c6e6d96348cc9c975ca338a3d74bc2"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#ab0c6e6d96348cc9c975ca338a3d74bc2">kRefProtocolHeaderSof</a> = 0xa5</td></tr>
+<tr class="separator:ab0c6e6d96348cc9c975ca338a3d74bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbe7387e1790e7f6abe48808605e870b" id="r_adbe7387e1790e7f6abe48808605e870b"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#adbe7387e1790e7f6abe48808605e870b">kRefProtocolFrameMaxLen</a> = 128</td></tr>
+<tr class="separator:adbe7387e1790e7f6abe48808605e870b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae901b119dde1ffa28221788d22ff284c" id="r_ae901b119dde1ffa28221788d22ff284c"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#ae901b119dde1ffa28221788d22ff284c">kRefProtocolHeaderLen</a> = 5</td></tr>
+<tr class="separator:ae901b119dde1ffa28221788d22ff284c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9704eea8e450ed43991826961aa5c67a" id="r_a9704eea8e450ed43991826961aa5c67a"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a9704eea8e450ed43991826961aa5c67a">kRefProtocolCmdIdLen</a> = 2</td></tr>
+<tr class="separator:a9704eea8e450ed43991826961aa5c67a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52dab83612f7dbac26a53b3e9a5f85d1" id="r_a52dab83612f7dbac26a53b3e9a5f85d1"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a52dab83612f7dbac26a53b3e9a5f85d1">kRefProtocolCrc16Len</a> = 2</td></tr>
+<tr class="separator:a52dab83612f7dbac26a53b3e9a5f85d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af62f90927eb4cb5f4a1adab69c4fc828" id="r_af62f90927eb4cb5f4a1adab69c4fc828"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#af62f90927eb4cb5f4a1adab69c4fc828">kRefProtocolAllMetadataLen</a> = <a class="el" href="namespacerm_1_1device.html#ae901b119dde1ffa28221788d22ff284c">kRefProtocolHeaderLen</a> + <a class="el" href="namespacerm_1_1device.html#a9704eea8e450ed43991826961aa5c67a">kRefProtocolCmdIdLen</a> + <a class="el" href="namespacerm_1_1device.html#a52dab83612f7dbac26a53b3e9a5f85d1">kRefProtocolCrc16Len</a></td></tr>
+<tr class="separator:af62f90927eb4cb5f4a1adab69c4fc828"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">类型定义说明</h2>
-<a id="a7596f33b44756a54da20dd7205da8832" name="a7596f33b44756a54da20dd7205da8832"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7596f33b44756a54da20dd7205da8832">&#9670;&#160;</a></span>GM6020</h2>
+<a id="afb7962cab98123f231295bc522d94199" name="afb7962cab98123f231295bc522d94199"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb7962cab98123f231295bc522d94199">&#9670;&#160;</a></span>DmMotorMit</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespacerm_1_1device.html#a7596f33b44756a54da20dd7205da8832">rm::device::GM6020</a> = typedef <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt;DjiMotorType::GM6020&gt;</td>
+          <td class="memname">using <a class="el" href="namespacerm_1_1device.html#afb7962cab98123f231295bc522d94199">rm::device::DmMotorMit</a> = typedef <a class="el" href="classrm_1_1device_1_1DmMotor.html">DmMotor</a>&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea671bf1301da9c5f5da9a08002e6f89c4">DmMotorControlMode::kMit</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeb6c3f9fa7319f4f5ab684a282a771b6" name="aeb6c3f9fa7319f4f5ab684a282a771b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb6c3f9fa7319f4f5ab684a282a771b6">&#9670;&#160;</a></span>DmMotorSpeed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacerm_1_1device.html#aeb6c3f9fa7319f4f5ab684a282a771b6">rm::device::DmMotorSpeed</a> = typedef <a class="el" href="classrm_1_1device_1_1DmMotor.html">DmMotor</a>&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea22f7e05f35e7f25d5f24304feb24bee8">DmMotorControlMode::kSpeed</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2bd90b66d9b191f86a3ed8890a23a144" name="a2bd90b66d9b191f86a3ed8890a23a144"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bd90b66d9b191f86a3ed8890a23a144">&#9670;&#160;</a></span>DmMotorSpeedPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacerm_1_1device.html#a2bd90b66d9b191f86a3ed8890a23a144">rm::device::DmMotorSpeedPosition</a> = typedef <a class="el" href="classrm_1_1device_1_1DmMotor.html">DmMotor</a>&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94eac423473711521422b9f206b311bca100">DmMotorControlMode::kSpeedPosition</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6cb7f3dec7aafdb9806d488a7b4820e1" name="a6cb7f3dec7aafdb9806d488a7b4820e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cb7f3dec7aafdb9806d488a7b4820e1">&#9670;&#160;</a></span>GM6020</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacerm_1_1device.html#a6cb7f3dec7aafdb9806d488a7b4820e1">rm::device::GM6020</a> = typedef <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt;<a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a98d6242ecedc73c63a680ef118bed630">DjiMotorType::kGM6020</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -420,28 +492,28 @@ template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf46
 
 </div>
 </div>
-<a id="acf91c24f686ca4f58d88b4a2c8c81acd" name="acf91c24f686ca4f58d88b4a2c8c81acd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf91c24f686ca4f58d88b4a2c8c81acd">&#9670;&#160;</a></span>M2006</h2>
+<a id="ae32b6a67fff29752d1e35d50f699c5f3" name="ae32b6a67fff29752d1e35d50f699c5f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae32b6a67fff29752d1e35d50f699c5f3">&#9670;&#160;</a></span>M2006</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespacerm_1_1device.html#acf91c24f686ca4f58d88b4a2c8c81acd">rm::device::M2006</a> = typedef <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt;DjiMotorType::M2006&gt;</td>
+          <td class="memname">using <a class="el" href="namespacerm_1_1device.html#ae32b6a67fff29752d1e35d50f699c5f3">rm::device::M2006</a> = typedef <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt;<a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57ac79f8fe34278ffdb418f6ee3b8316ed4">DjiMotorType::kM2006</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a5b66ef73417ff0bd6e44f46e821c0942" name="a5b66ef73417ff0bd6e44f46e821c0942"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b66ef73417ff0bd6e44f46e821c0942">&#9670;&#160;</a></span>M3508</h2>
+<a id="af652c0a9781ff67ae0c79c72766e73f1" name="af652c0a9781ff67ae0c79c72766e73f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af652c0a9781ff67ae0c79c72766e73f1">&#9670;&#160;</a></span>M3508</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespacerm_1_1device.html#a5b66ef73417ff0bd6e44f46e821c0942">rm::device::M3508</a> = typedef <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt;DjiMotorType::M3508&gt;</td>
+          <td class="memname">using <a class="el" href="namespacerm_1_1device.html#af652c0a9781ff67ae0c79c72766e73f1">rm::device::M3508</a> = typedef <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt;<a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a93e36269eaeb796f969adca34b7957b6">DjiMotorType::kM3508</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -573,10 +645,9 @@ template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf46
 </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a896e2ecf76700ddd37a344204982af57a7a1920d61156abc05a60135aefe8bc67" name="a896e2ecf76700ddd37a344204982af57a7a1920d61156abc05a60135aefe8bc67"></a>Default&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a896e2ecf76700ddd37a344204982af57acb80879d0cffef8dda7b49a4d234e7fa" name="a896e2ecf76700ddd37a344204982af57acb80879d0cffef8dda7b49a4d234e7fa"></a>GM6020&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a896e2ecf76700ddd37a344204982af57a2a11d96160e8fc87860f3f795e81b080" name="a896e2ecf76700ddd37a344204982af57a2a11d96160e8fc87860f3f795e81b080"></a>M3508&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a896e2ecf76700ddd37a344204982af57a93f5090472f646ad30fccecc43f7b2c7" name="a896e2ecf76700ddd37a344204982af57a93f5090472f646ad30fccecc43f7b2c7"></a>M2006&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a896e2ecf76700ddd37a344204982af57a98d6242ecedc73c63a680ef118bed630" name="a896e2ecf76700ddd37a344204982af57a98d6242ecedc73c63a680ef118bed630"></a>kGM6020&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a896e2ecf76700ddd37a344204982af57a93e36269eaeb796f969adca34b7957b6" name="a896e2ecf76700ddd37a344204982af57a93e36269eaeb796f969adca34b7957b6"></a>kM3508&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a896e2ecf76700ddd37a344204982af57ac79f8fe34278ffdb418f6ee3b8316ed4" name="a896e2ecf76700ddd37a344204982af57ac79f8fe34278ffdb418f6ee3b8316ed4"></a>kM2006&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -662,7 +733,7 @@ template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf46
 
 <p>达妙电机状态 </p>
 <table class="fieldtable">
-<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a6658bb67dd98e3397c3d30c3bf3229c5a613bcf3776943bf227b27b2bd5b74080" name="a6658bb67dd98e3397c3d30c3bf3229c5a613bcf3776943bf227b27b2bd5b74080"></a>kUnable&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a6658bb67dd98e3397c3d30c3bf3229c5a229bc0c46e45e1688bdb842b616fd8d2" name="a6658bb67dd98e3397c3d30c3bf3229c5a229bc0c46e45e1688bdb842b616fd8d2"></a>kDisable&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a6658bb67dd98e3397c3d30c3bf3229c5a239d75756e4e52e4fff58dba82889b02" name="a6658bb67dd98e3397c3d30c3bf3229c5a239d75756e4e52e4fff58dba82889b02"></a>kEnable&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a6658bb67dd98e3397c3d30c3bf3229c5a5b899cabb290b99ccb0a20d0c76471fa" name="a6658bb67dd98e3397c3d30c3bf3229c5a5b899cabb290b99ccb0a20d0c76471fa"></a>kOverVoltage&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a6658bb67dd98e3397c3d30c3bf3229c5a56696b8f72116b20b66cb8f3e312b139" name="a6658bb67dd98e3397c3d30c3bf3229c5a56696b8f72116b20b66cb8f3e312b139"></a>kUnderVoltage&#160;</td><td class="fielddoc"></td></tr>
@@ -763,6 +834,9 @@ template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf46
 </td></tr>
 <tr><td class="fieldname"><a id="a097a9fa7f69d2f1da75170c9c3bc2137a73c38af9bce570ddd6d0f4a4322d66db" name="a097a9fa7f69d2f1da75170c9c3bc2137a73c38af9bce570ddd6d0f4a4322d66db"></a>kV170&#160;</td><td class="fielddoc"><p>V1.7.0, 2024-12-25 </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a097a9fa7f69d2f1da75170c9c3bc2137aadb7cc154ab0306517d098bb5c5698db" name="a097a9fa7f69d2f1da75170c9c3bc2137aadb7cc154ab0306517d098bb5c5698db"></a>kNewV110&#160;</td><td class="fielddoc"><p>新通信协议V1.1.0, 2025-12-17 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a097a9fa7f69d2f1da75170c9c3bc2137a417331857fc4c86abd6d12fd09af414d" name="a097a9fa7f69d2f1da75170c9c3bc2137a417331857fc4c86abd6d12fd09af414d"></a>kNewV120&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -799,8 +873,8 @@ template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf46
 </div>
 </div>
 <h2 class="groupheader">变量说明</h2>
-<a id="a4d0125fb13f830b17bbd70105bc15af3" name="a4d0125fb13f830b17bbd70105bc15af3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d0125fb13f830b17bbd70105bc15af3">&#9670;&#160;</a></span>kRefProtocolAllMetadataLen</h2>
+<a id="af62f90927eb4cb5f4a1adab69c4fc828" name="af62f90927eb4cb5f4a1adab69c4fc828"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af62f90927eb4cb5f4a1adab69c4fc828">&#9670;&#160;</a></span>kRefProtocolAllMetadataLen</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -809,7 +883,7 @@ template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf46
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto rm::device::kRefProtocolAllMetadataLen = <a class="el" href="namespacerm_1_1device.html#a5e6c6d20806adea8e5b4f09b2f90de7d">kRefProtocolHeaderLen</a> + <a class="el" href="namespacerm_1_1device.html#a446a65e64cf80e3dde0a69feb01d203a">kRefProtocolCmdIdLen</a> + <a class="el" href="namespacerm_1_1device.html#a97c1a75e3ee9444fe965f54e81120149">kRefProtocolCrc16Len</a></td>
+          <td class="memname">constexpr int rm::device::kRefProtocolAllMetadataLen = <a class="el" href="namespacerm_1_1device.html#ae901b119dde1ffa28221788d22ff284c">kRefProtocolHeaderLen</a> + <a class="el" href="namespacerm_1_1device.html#a9704eea8e450ed43991826961aa5c67a">kRefProtocolCmdIdLen</a> + <a class="el" href="namespacerm_1_1device.html#a52dab83612f7dbac26a53b3e9a5f85d1">kRefProtocolCrc16Len</a></td>
         </tr>
       </table>
   </td>
@@ -821,8 +895,8 @@ template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf46
 
 </div>
 </div>
-<a id="a446a65e64cf80e3dde0a69feb01d203a" name="a446a65e64cf80e3dde0a69feb01d203a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a446a65e64cf80e3dde0a69feb01d203a">&#9670;&#160;</a></span>kRefProtocolCmdIdLen</h2>
+<a id="a9704eea8e450ed43991826961aa5c67a" name="a9704eea8e450ed43991826961aa5c67a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9704eea8e450ed43991826961aa5c67a">&#9670;&#160;</a></span>kRefProtocolCmdIdLen</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -831,7 +905,7 @@ template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf46
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto rm::device::kRefProtocolCmdIdLen = 2</td>
+          <td class="memname">constexpr int rm::device::kRefProtocolCmdIdLen = 2</td>
         </tr>
       </table>
   </td>
@@ -843,8 +917,8 @@ template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf46
 
 </div>
 </div>
-<a id="a97c1a75e3ee9444fe965f54e81120149" name="a97c1a75e3ee9444fe965f54e81120149"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97c1a75e3ee9444fe965f54e81120149">&#9670;&#160;</a></span>kRefProtocolCrc16Len</h2>
+<a id="a52dab83612f7dbac26a53b3e9a5f85d1" name="a52dab83612f7dbac26a53b3e9a5f85d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52dab83612f7dbac26a53b3e9a5f85d1">&#9670;&#160;</a></span>kRefProtocolCrc16Len</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -853,7 +927,7 @@ template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf46
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto rm::device::kRefProtocolCrc16Len = 2</td>
+          <td class="memname">constexpr int rm::device::kRefProtocolCrc16Len = 2</td>
         </tr>
       </table>
   </td>
@@ -865,8 +939,8 @@ template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf46
 
 </div>
 </div>
-<a id="ac14725632152fe09f59869931175d64d" name="ac14725632152fe09f59869931175d64d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac14725632152fe09f59869931175d64d">&#9670;&#160;</a></span>kRefProtocolFrameMaxLen</h2>
+<a id="adbe7387e1790e7f6abe48808605e870b" name="adbe7387e1790e7f6abe48808605e870b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbe7387e1790e7f6abe48808605e870b">&#9670;&#160;</a></span>kRefProtocolFrameMaxLen</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -875,7 +949,7 @@ template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf46
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto rm::device::kRefProtocolFrameMaxLen = 128</td>
+          <td class="memname">constexpr int rm::device::kRefProtocolFrameMaxLen = 128</td>
         </tr>
       </table>
   </td>
@@ -887,8 +961,8 @@ template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf46
 
 </div>
 </div>
-<a id="a5e6c6d20806adea8e5b4f09b2f90de7d" name="a5e6c6d20806adea8e5b4f09b2f90de7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e6c6d20806adea8e5b4f09b2f90de7d">&#9670;&#160;</a></span>kRefProtocolHeaderLen</h2>
+<a id="ae901b119dde1ffa28221788d22ff284c" name="ae901b119dde1ffa28221788d22ff284c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae901b119dde1ffa28221788d22ff284c">&#9670;&#160;</a></span>kRefProtocolHeaderLen</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -897,7 +971,7 @@ template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf46
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto rm::device::kRefProtocolHeaderLen = 5</td>
+          <td class="memname">constexpr int rm::device::kRefProtocolHeaderLen = 5</td>
         </tr>
       </table>
   </td>
@@ -909,8 +983,8 @@ template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf46
 
 </div>
 </div>
-<a id="ae24d9b479465a3d5c22eaa6ac48e5744" name="ae24d9b479465a3d5c22eaa6ac48e5744"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae24d9b479465a3d5c22eaa6ac48e5744">&#9670;&#160;</a></span>kRefProtocolHeaderSof</h2>
+<a id="ab0c6e6d96348cc9c975ca338a3d74bc2" name="ab0c6e6d96348cc9c975ca338a3d74bc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0c6e6d96348cc9c975ca338a3d74bc2">&#9670;&#160;</a></span>kRefProtocolHeaderSof</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -919,7 +993,7 @@ template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf46
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto rm::device::kRefProtocolHeaderSof = 0xa5</td>
+          <td class="memname">constexpr <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> rm::device::kRefProtocolHeaderSof = 0xa5</td>
         </tr>
       </table>
   </td>
@@ -928,24 +1002,6 @@ template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf46
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae78b737085e20d95c002b0bcb5cdbc65" name="ae78b737085e20d95c002b0bcb5cdbc65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae78b737085e20d95c002b0bcb5cdbc65">&#9670;&#160;</a></span>referee_protocol_memory_map</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="namespacerm_1_1device.html#a097a9fa7f69d2f1da75170c9c3bc2137">RefereeRevision</a> revision&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::unordered_map&lt;<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&gt; rm::device::referee_protocol_memory_map {}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>裁判系统协议内存映射，记录了每个操作码对应的数据结构在 <a class="el" href="structrm_1_1device_1_1RefereeProtocol.html" title="裁判系统协议数据结构">RefereeProtocol</a> 中的偏移量 </p>
 
 </div>
 </div>

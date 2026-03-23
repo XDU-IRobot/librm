@@ -1,6 +1,6 @@
 var dir_873c52db97cd763a6a91f2234950780f =
 [
-    [ "bxcan.cc", "bxcan_8cc.html", null ],
+    [ "bxcan.cc", "bxcan_8cc.html", "bxcan_8cc" ],
     [ "bxcan.hpp", "bxcan_8hpp.html", "bxcan_8hpp" ],
     [ "check_register_callbacks.hpp", "check__register__callbacks_8hpp.html", null ],
     [ "exception.hpp", "hal_2stm32_2exception_8hpp.html", "hal_2stm32_2exception_8hpp" ],

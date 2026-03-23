@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('fdcan_8hpp_source.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 <a href="fdcan_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2025 XDU-IRobot</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2026 XDU-IRobot</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
@@ -133,50 +133,55 @@ $(document).ready(function(){initNavTree('fdcan_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1hal_1_1stm32.html">rm::hal::stm32</a> {</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">class </span>FdCan : <span class="keyword">public</span> CanInterface, detail::NonCopyable {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keyword">explicit</span> FdCan(FDCAN_HandleTypeDef &amp;hfdcan);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  FdCan() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  ~FdCan() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordtype">void</span> SetFilter(u16 <span class="keywordtype">id</span>, u16 mask) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordtype">void</span> Write(u16 <span class="keywordtype">id</span>, <span class="keyword">const</span> u8 *<a class="code hl_variable" href="unitree__motor_8hpp.html#a7ea4cf5640b96ae38ed53527f508183a">data</a>, usize size) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordtype">void</span> Begin() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordtype">void</span> Stop() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">class </span>FdCan final : <span class="keyword">public</span> CanInterface, detail::NonCopyable {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="comment">// 声明静态回调函数为友元，使其可以访问private方法</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keyword">friend</span> <span class="keywordtype">void</span> FdCanRxFifo0MsgPendingCallback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keyword">friend</span> <span class="keywordtype">void</span> FdCanErrorStatusCallback(FDCAN_HandleTypeDef *hfdcan, uint32_t ErrorStatusITs);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">explicit</span> FdCan(FDCAN_HandleTypeDef &amp;hfdcan);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  ~FdCan() <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordtype">void</span> Fifo0MsgPendingCallback();</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> tx_mailbox_{0};</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  CanFrame rx_buffer_{};</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  FDCAN_HandleTypeDef *hfdcan_{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keyword">const</span> <span class="keywordtype">bool</span> fd_mode_{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  FDCAN_TxHeaderTypeDef hal_tx_header_ = {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      0,</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      FDCAN_STANDARD_ID,</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      FDCAN_DATA_FRAME,</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>      FDCAN_DLC_BYTES_0,</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      FDCAN_ESI_PASSIVE,</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      FDCAN_BRS_OFF,</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      FDCAN_CLASSIC_CAN,</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      FDCAN_STORE_TX_EVENTS,</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      0,</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  };</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>};</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}  <span class="comment">// namespace rm::hal::stm32</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HAL_STM32_FDCAN_H</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="comment">// 移动构造</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  FdCan(FdCan &amp;&amp;other) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  FdCan &amp;operator=(FdCan &amp;&amp;other) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordtype">void</span> SetFilter(u16 <span class="keywordtype">id</span>, u16 mask) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordtype">void</span> Write(u16 <span class="keywordtype">id</span>, <span class="keyword">const</span> u8 *data, usize size) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordtype">void</span> Begin() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keywordtype">void</span> Stop() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordtype">void</span> Fifo0MsgPendingCallback() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordtype">void</span> Restart() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> tx_mailbox_{0};</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  FDCAN_HandleTypeDef *hfdcan_{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keyword">const</span> <span class="keywordtype">bool</span> fd_mode_{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  FDCAN_TxHeaderTypeDef hal_tx_header_ = {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      0,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      FDCAN_STANDARD_ID,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      FDCAN_DATA_FRAME,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      FDCAN_DLC_BYTES_0,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      FDCAN_ESI_PASSIVE,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      FDCAN_BRS_OFF,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      FDCAN_CLASSIC_CAN,</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      FDCAN_STORE_TX_EVENTS,</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      0,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  };</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>};</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}  <span class="comment">// namespace rm::hal::stm32</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HAL_STM32_FDCAN_H</span></div>
 <div class="ttc" id="acan__device_8hpp_html"><div class="ttname"><a href="can__device_8hpp.html">can_device.hpp</a></div><div class="ttdoc">CAN设备抽象类</div></div>
 <div class="ttc" id="acan__interface_8hpp_html"><div class="ttname"><a href="can__interface_8hpp.html">can_interface.hpp</a></div><div class="ttdoc">CAN的接口类</div></div>
 <div class="ttc" id="ahal_8hpp_html"><div class="ttname"><a href="hal_8hpp.html">hal.hpp</a></div></div>
-<div class="ttc" id="anamespacerm_1_1hal_1_1stm32_html"><div class="ttname"><a href="namespacerm_1_1hal_1_1stm32.html">rm::hal::stm32</a></div><div class="ttdef"><b>Definition</b> bxcan.cc:69</div></div>
+<div class="ttc" id="anamespacerm_1_1hal_1_1stm32_html"><div class="ttname"><a href="namespacerm_1_1hal_1_1stm32.html">rm::hal::stm32</a></div><div class="ttdef"><b>Definition</b> bxcan.cc:38</div></div>
 <div class="ttc" id="anamespacerm_html_aae5bb39b0da6b1cf1b7ed1c03342ec66"><div class="ttname"><a href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">rm::u32</a></div><div class="ttdeci">uint32_t u32</div><div class="ttdef"><b>Definition</b> typedefs.hpp:45</div></div>
 <div class="ttc" id="atraits_8hpp_html"><div class="ttname"><a href="traits_8hpp.html">traits.hpp</a></div><div class="ttdoc">类型特征定义</div></div>
-<div class="ttc" id="aunitree__motor_8hpp_html_a7ea4cf5640b96ae38ed53527f508183a"><div class="ttname"><a href="unitree__motor_8hpp.html#a7ea4cf5640b96ae38ed53527f508183a">data</a></div><div class="ttdeci">ComDataSend data</div><div class="ttdef"><b>Definition</b> unitree_motor.hpp:1</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['key_0',['Key',['../classrm_1_1device_1_1DR16.html#a23a3c718dcd0530f5b17685af2fc8d97',1,'rm::device::DR16']]],
-  ['keyboardkey_1',['KeyboardKey',['../classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588e',1,'rm::device::VT03']]]
+  ['instruction_0',['Instruction',['../classrm_1_1device_1_1LkMotor.html#adb0db91fd81c4e3f1a82ff3f8aff8275',1,'rm::device::LkMotor']]],
+  ['ist8310status_1',['IST8310Status',['../namespacerm_1_1device.html#ac030a1d78c560386284d254d95259166',1,'rm::device']]]
 ];

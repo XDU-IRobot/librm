@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('timer_8hpp_source.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 <a href="timer_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2025 XDU-IRobot</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2026 XDU-IRobot</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('timer_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;<a class="code" href="timer__interface_8hpp.html">librm/hal/timer_interface.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">// TODO</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;<a class="code" href="hal_8hpp.html">librm/hal/stm32/hal.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX)</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;<a class="code" href="timerfd_8hpp.html">librm/hal/linux/timerfd.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#endif</span></div>
@@ -179,7 +179,7 @@ $(document).ready(function(){initNavTree('timer_8hpp_source.html',''); initResiz
 </div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#if defined(HAL_TIMER_MODULE_ENABLED)</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#if defined(HAL_TIM_MODULE_ENABLED)</span></div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">// TODO</span></div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="preprocessor">#warning &quot;No HAL timer module found, using polling timer as fallback.&quot;</span></div>
@@ -200,6 +200,7 @@ $(document).ready(function(){initNavTree('timer_8hpp_source.html',''); initResiz
 <div class="ttc" id="aclassrm_1_1hal_1_1PollingTimer_html_ad89b5f29685b3a233f1e10eeab68312f"><div class="ttname"><a href="classrm_1_1hal_1_1PollingTimer.html#ad89b5f29685b3a233f1e10eeab68312f">rm::hal::PollingTimer::running</a></div><div class="ttdeci">bool running() const override</div><div class="ttdoc">查询定时器是否正在运行。</div><div class="ttdef"><b>Definition</b> timer.hpp:77</div></div>
 <div class="ttc" id="aclassrm_1_1hal_1_1PollingTimer_html_adbc7c12093cacb0d50b62d99b8d72efe"><div class="ttname"><a href="classrm_1_1hal_1_1PollingTimer.html#adbc7c12093cacb0d50b62d99b8d72efe">rm::hal::PollingTimer::AttachCallback</a></div><div class="ttdeci">void AttachCallback(etl::delegate&lt; void()&gt; callback) override</div><div class="ttdoc">绑定定时器超时回调函数。</div><div class="ttdef"><b>Definition</b> timer.hpp:83</div></div>
 <div class="ttc" id="aclassrm_1_1hal_1_1TimerInterface_html"><div class="ttname"><a href="classrm_1_1hal_1_1TimerInterface.html">rm::hal::TimerInterface</a></div><div class="ttdoc">定时器接口类，定义了定时器的基本操作。</div><div class="ttdef"><b>Definition</b> timer_interface.hpp:45</div></div>
+<div class="ttc" id="ahal_8hpp_html"><div class="ttname"><a href="hal_8hpp.html">hal.hpp</a></div></div>
 <div class="ttc" id="anamespacerm_1_1hal_html"><div class="ttname"><a href="namespacerm_1_1hal.html">rm::hal</a></div><div class="ttdef"><b>Definition</b> can.hpp:40</div></div>
 <div class="ttc" id="atimer__interface_8hpp_html"><div class="ttname"><a href="timer__interface_8hpp.html">timer_interface.hpp</a></div><div class="ttdoc">定时器的接口类</div></div>
 <div class="ttc" id="atimerfd_8hpp_html"><div class="ttname"><a href="timerfd_8hpp.html">timerfd.hpp</a></div><div class="ttdoc">基于内核定时器实现的Timer</div></div>

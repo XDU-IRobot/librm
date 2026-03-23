@@ -1,0 +1,26 @@
+var classrm_1_1device_1_1HipnucImuCan =
+[
+    [ "~HipnucImuCan", "classrm_1_1device_1_1HipnucImuCan.html#a856232785191166fbb29c4eda25832ac", null ],
+    [ "HipnucImuCan", "classrm_1_1device_1_1HipnucImuCan.html#aac56c2e6fcec498b02068481819b0c71", null ],
+    [ "HipnucImuCan", "classrm_1_1device_1_1HipnucImuCan.html#a1b6ed7e8bb394783c9fe4a62f3025495", null ],
+    [ "accel_x", "classrm_1_1device_1_1HipnucImuCan.html#a175ce4c2cc13ccec8cd93dbc4afc8691", null ],
+    [ "accel_y", "classrm_1_1device_1_1HipnucImuCan.html#a5b20f8c3d880d1294c3cb84a785e9d40", null ],
+    [ "accel_z", "classrm_1_1device_1_1HipnucImuCan.html#a3e43c5ec9a76f2f09d2309379137a2b1", null ],
+    [ "gyro_x", "classrm_1_1device_1_1HipnucImuCan.html#a685faa87672b0439237440191b79fa6e", null ],
+    [ "gyro_y", "classrm_1_1device_1_1HipnucImuCan.html#a09a7b7a8e6b15ebdd7a212e966b15c8b", null ],
+    [ "gyro_z", "classrm_1_1device_1_1HipnucImuCan.html#abf31ef858349dd4d7d73a622f8a625e1", null ],
+    [ "incli_x", "classrm_1_1device_1_1HipnucImuCan.html#ac87bc05d64167970f4c24921f0b74622", null ],
+    [ "incli_y", "classrm_1_1device_1_1HipnucImuCan.html#ac1b16ea23c770b10d84af5b118099d33", null ],
+    [ "last_msg_type", "classrm_1_1device_1_1HipnucImuCan.html#aa6a3a3c5cdef7b8ba2f6be3ba30cabc9", null ],
+    [ "node_id", "classrm_1_1device_1_1HipnucImuCan.html#aa8914fa3d42bce63bfca54b01f1e8ea6", null ],
+    [ "pitch", "classrm_1_1device_1_1HipnucImuCan.html#aea949f07e8d38a4acb2c6a84ad087e5a", null ],
+    [ "pressure", "classrm_1_1device_1_1HipnucImuCan.html#a4fdc6badf9a5be4ca9ac8783c0383577", null ],
+    [ "quat_w", "classrm_1_1device_1_1HipnucImuCan.html#a12326b10c7e422d7d666b1eb8fc03018", null ],
+    [ "quat_x", "classrm_1_1device_1_1HipnucImuCan.html#ad25d4f4b33b010bd130cc6466c560a70", null ],
+    [ "quat_y", "classrm_1_1device_1_1HipnucImuCan.html#af72ca8f6fcc82df57404c160509a1751", null ],
+    [ "quat_z", "classrm_1_1device_1_1HipnucImuCan.html#a88f2ad1d8dca08d4b37e6871bc58128e", null ],
+    [ "raw_data", "classrm_1_1device_1_1HipnucImuCan.html#a796f777126a8805cd53f88ff6eefc1e3", null ],
+    [ "roll", "classrm_1_1device_1_1HipnucImuCan.html#a6c9ff46162fa6a6c379d9d430f8302d7", null ],
+    [ "RxCallback", "classrm_1_1device_1_1HipnucImuCan.html#a24def0210abf7d2c06620b6e68d5b39d", null ],
+    [ "yaw", "classrm_1_1device_1_1HipnucImuCan.html#a02a4649ddafc31fba7beff111a86a513", null ]
+];

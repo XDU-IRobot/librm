@@ -120,12 +120,12 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a0ef66205fe9f8998be82fd76826dd67c" id="r_a0ef66205fe9f8998be82fd76826dd67c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SerialInterface.html#a0ef66205fe9f8998be82fd76826dd67c">Begin</a> ()=0</td></tr>
 <tr class="memdesc:a0ef66205fe9f8998be82fd76826dd67c"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化串口  <br /></td></tr>
 <tr class="separator:a0ef66205fe9f8998be82fd76826dd67c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdd15c25c7cac91b5004226052ba373b" id="r_afdd15c25c7cac91b5004226052ba373b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SerialInterface.html#afdd15c25c7cac91b5004226052ba373b">Write</a> (const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *<a class="el" href="unitree__motor_8hpp.html#a7ea4cf5640b96ae38ed53527f508183a">data</a>, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size)=0</td></tr>
+<tr class="memitem:afdd15c25c7cac91b5004226052ba373b" id="r_afdd15c25c7cac91b5004226052ba373b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SerialInterface.html#afdd15c25c7cac91b5004226052ba373b">Write</a> (const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *data, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size)=0</td></tr>
 <tr class="memdesc:afdd15c25c7cac91b5004226052ba373b"><td class="mdescLeft">&#160;</td><td class="mdescRight">发送数据  <br /></td></tr>
 <tr class="separator:afdd15c25c7cac91b5004226052ba373b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0effd395a7e48799afa117e15c774b0" id="r_ab0effd395a7e48799afa117e15c774b0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SerialInterface.html#ab0effd395a7e48799afa117e15c774b0">AttachRxCallback</a> (<a class="el" href="namespacerm_1_1hal.html#ab6c25fb295d0b957ffb1181fa48b787c">SerialRxCallbackFunction</a> &amp;callback)=0</td></tr>
-<tr class="memdesc:ab0effd395a7e48799afa117e15c774b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">绑定接收完成回调函数  <br /></td></tr>
-<tr class="separator:ab0effd395a7e48799afa117e15c774b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b7f352d4c41b7f56b59a47d4777218d" id="r_a3b7f352d4c41b7f56b59a47d4777218d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SerialInterface.html#a3b7f352d4c41b7f56b59a47d4777218d">AttachRxCallback</a> (<a class="el" href="namespacerm_1_1hal.html#ab6c25fb295d0b957ffb1181fa48b787c">SerialRxCallbackFunction</a> callback)=0</td></tr>
+<tr class="memdesc:a3b7f352d4c41b7f56b59a47d4777218d"><td class="mdescLeft">&#160;</td><td class="mdescRight">绑定接收完成回调函数  <br /></td></tr>
+<tr class="separator:a3b7f352d4c41b7f56b59a47d4777218d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59801589f9ebc7068336b8376c6a074d" id="r_a59801589f9ebc7068336b8376c6a074d"><td class="memItemLeft" align="right" valign="top">virtual const std::vector&lt; <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SerialInterface.html#a59801589f9ebc7068336b8376c6a074d">rx_buffer</a> () const =0</td></tr>
 <tr class="memdesc:a59801589f9ebc7068336b8376c6a074d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取接收缓冲区  <br /></td></tr>
 <tr class="separator:a59801589f9ebc7068336b8376c6a074d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,8 +159,8 @@ Public 成员函数</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">成员函数说明</h2>
-<a id="ab0effd395a7e48799afa117e15c774b0" name="ab0effd395a7e48799afa117e15c774b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0effd395a7e48799afa117e15c774b0">&#9670;&#160;</a></span>AttachRxCallback()</h2>
+<a id="a3b7f352d4c41b7f56b59a47d4777218d" name="a3b7f352d4c41b7f56b59a47d4777218d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b7f352d4c41b7f56b59a47d4777218d">&#9670;&#160;</a></span>AttachRxCallback()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,7 +171,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">virtual void rm::hal::SerialInterface::AttachRxCallback </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm_1_1hal.html#ab6c25fb295d0b957ffb1181fa48b787c">SerialRxCallbackFunction</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacerm_1_1hal.html#ab6c25fb295d0b957ffb1181fa48b787c">SerialRxCallbackFunction</a>&#160;</td>
           <td class="paramname"><em>callback</em></td><td>)</td>
           <td></td>
         </tr>
@@ -191,7 +191,7 @@ Public 成员函数</h2></td></tr>
   </dd>
 </dl>
 
-<p>在 <a class="el" href="classrm_1_1hal_1_1linux___1_1Serial.html#aecfec7377bb345f1db6e084d66aff3a9">rm::hal::linux_::Serial</a> , 以及 <a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a7742c67f1918c7ba007ab7e83986c953">rm::hal::stm32::Uart</a> 内被实现.</p>
+<p>在 <a class="el" href="classrm_1_1hal_1_1linux___1_1Serial.html#abb92ddd59cce1aa0b58bb1333efbd92d">rm::hal::linux_::Serial</a> , 以及 <a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a344ad952ffe7c07cf2b04ff6f1d6d365">rm::hal::stm32::Uart</a> 内被实现.</p>
 
 </div>
 </div>

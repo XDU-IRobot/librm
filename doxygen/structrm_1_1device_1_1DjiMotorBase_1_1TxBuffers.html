@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: rm::device::DjiMotorBase::TxBuffers结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structrm_1_1device_1_1DjiMotorBase_1_1TxBuffers.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="structrm_1_1device_1_1DjiMotorBase_1_1TxBuffers-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">rm::device::DjiMotorBase::TxBuffers结构体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>对DJI电机来说，一条CAN总线上可以用帧id区分三条Tx通道：0x200、0x1ff、0x2ff，这个结构体就用来表示这三条通道的缓冲区。  
+ <a href="structrm_1_1device_1_1DjiMotorBase_1_1TxBuffers.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="dji__motor_8hpp_source.html">dji_motor.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:ae442474e4587e237f6c727d382adf7cd" id="r_ae442474e4587e237f6c727d382adf7cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DjiMotorBase_1_1TxBuffers.html#ae442474e4587e237f6c727d382adf7cd">data_200</a> [8]</td></tr>
+<tr class="memdesc:ae442474e4587e237f6c727d382adf7cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">0x200通道的发送缓冲区  <br /></td></tr>
+<tr class="separator:ae442474e4587e237f6c727d382adf7cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca41cfc58a356b51c2b328010b6cd82a" id="r_aca41cfc58a356b51c2b328010b6cd82a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DjiMotorBase_1_1TxBuffers.html#aca41cfc58a356b51c2b328010b6cd82a">data_1ff</a> [8]</td></tr>
+<tr class="memdesc:aca41cfc58a356b51c2b328010b6cd82a"><td class="mdescLeft">&#160;</td><td class="mdescRight">同上  <br /></td></tr>
+<tr class="separator:aca41cfc58a356b51c2b328010b6cd82a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a491aaa0bd6270742d9aeb7549a5a583a" id="r_a491aaa0bd6270742d9aeb7549a5a583a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DjiMotorBase_1_1TxBuffers.html#a491aaa0bd6270742d9aeb7549a5a583a">data_2ff</a> [8]</td></tr>
+<tr class="memdesc:a491aaa0bd6270742d9aeb7549a5a583a"><td class="mdescLeft">&#160;</td><td class="mdescRight">同上  <br /></td></tr>
+<tr class="separator:a491aaa0bd6270742d9aeb7549a5a583a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24e5587a3a0e8f8da5928d13271c4788" id="r_a24e5587a3a0e8f8da5928d13271c4788"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DjiMotorBase_1_1TxBuffers.html#a24e5587a3a0e8f8da5928d13271c4788">dirty_200</a> {false}</td></tr>
+<tr class="memdesc:a24e5587a3a0e8f8da5928d13271c4788"><td class="mdescLeft">&#160;</td><td class="mdescRight">0x200通道的发送缓冲区是否已修改，是true的话就说明SendCommand函数需要发送这条消息  <br /></td></tr>
+<tr class="separator:a24e5587a3a0e8f8da5928d13271c4788"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe910db92919fb3f6585a5a1c437f8fc" id="r_afe910db92919fb3f6585a5a1c437f8fc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DjiMotorBase_1_1TxBuffers.html#afe910db92919fb3f6585a5a1c437f8fc">dirty_1ff</a> {false}</td></tr>
+<tr class="memdesc:afe910db92919fb3f6585a5a1c437f8fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">同上  <br /></td></tr>
+<tr class="separator:afe910db92919fb3f6585a5a1c437f8fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab466a53e8a494c8a0190a103400221e8" id="r_ab466a53e8a494c8a0190a103400221e8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DjiMotorBase_1_1TxBuffers.html#ab466a53e8a494c8a0190a103400221e8">dirty_2ff</a> {false}</td></tr>
+<tr class="memdesc:ab466a53e8a494c8a0190a103400221e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">同上  <br /></td></tr>
+<tr class="separator:ab466a53e8a494c8a0190a103400221e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>对DJI电机来说，一条CAN总线上可以用帧id区分三条Tx通道：0x200、0x1ff、0x2ff，这个结构体就用来表示这三条通道的缓冲区。 </p>
+</div><h2 class="groupheader">类成员变量说明</h2>
+<a id="aca41cfc58a356b51c2b328010b6cd82a" name="aca41cfc58a356b51c2b328010b6cd82a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca41cfc58a356b51c2b328010b6cd82a">&#9670;&#160;</a></span>data_1ff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> rm::device::DjiMotorBase::TxBuffers::data_1ff[8]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>同上 </p>
+
+</div>
+</div>
+<a id="ae442474e4587e237f6c727d382adf7cd" name="ae442474e4587e237f6c727d382adf7cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae442474e4587e237f6c727d382adf7cd">&#9670;&#160;</a></span>data_200</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> rm::device::DjiMotorBase::TxBuffers::data_200[8]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>0x200通道的发送缓冲区 </p>
+
+</div>
+</div>
+<a id="a491aaa0bd6270742d9aeb7549a5a583a" name="a491aaa0bd6270742d9aeb7549a5a583a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a491aaa0bd6270742d9aeb7549a5a583a">&#9670;&#160;</a></span>data_2ff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> rm::device::DjiMotorBase::TxBuffers::data_2ff[8]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>同上 </p>
+
+</div>
+</div>
+<a id="afe910db92919fb3f6585a5a1c437f8fc" name="afe910db92919fb3f6585a5a1c437f8fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe910db92919fb3f6585a5a1c437f8fc">&#9670;&#160;</a></span>dirty_1ff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rm::device::DjiMotorBase::TxBuffers::dirty_1ff {false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>同上 </p>
+
+</div>
+</div>
+<a id="a24e5587a3a0e8f8da5928d13271c4788" name="a24e5587a3a0e8f8da5928d13271c4788"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24e5587a3a0e8f8da5928d13271c4788">&#9670;&#160;</a></span>dirty_200</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rm::device::DjiMotorBase::TxBuffers::dirty_200 {false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>0x200通道的发送缓冲区是否已修改，是true的话就说明SendCommand函数需要发送这条消息 </p>
+
+</div>
+</div>
+<a id="ab466a53e8a494c8a0190a103400221e8" name="ab466a53e8a494c8a0190a103400221e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab466a53e8a494c8a0190a103400221e8">&#9670;&#160;</a></span>dirty_2ff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rm::device::DjiMotorBase::TxBuffers::dirty_2ff {false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>同上 </p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>src/librm/device/actuator/<a class="el" href="dji__motor_8hpp_source.html">dji_motor.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1device.html">device</a></li><li class="navelem"><a class="el" href="classrm_1_1device_1_1DjiMotorBase.html">DjiMotorBase</a></li><li class="navelem"><a class="el" href="structrm_1_1device_1_1DjiMotorBase_1_1TxBuffers.html">TxBuffers</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -16,6 +16,9 @@ var hierarchy =
     [ "rm::device::UnitreeMotor::ComDataReceive", "structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html", null ],
     [ "rm::device::UnitreeMotor::ComDataSend", "structrm_1_1device_1_1UnitreeMotor_1_1ComDataSend.html", null ],
     [ "rm::device::UnitreeMotor::ComHead", "structrm_1_1device_1_1UnitreeMotor_1_1ComHead.html", null ],
+    [ "rpc_core::connection", null, [
+      [ "rm::modules::FdCanTransport", "classrm_1_1modules_1_1FdCanTransport.html", null ]
+    ] ],
     [ "rm::device::Go8010Motor::ControlData", "structrm_1_1device_1_1Go8010Motor_1_1ControlData.html", null ],
     [ "rm::device::Go8010Motor::ControlParam", "structrm_1_1device_1_1Go8010Motor_1_1ControlParam.html", null ],
     [ "rm::device::UnitreeMotor::ControlParam", "structrm_1_1device_1_1UnitreeMotor_1_1ControlParam.html", null ],
@@ -25,23 +28,26 @@ var hierarchy =
         [ "rm::device::DjiMotor< motor_type >", "classrm_1_1device_1_1DjiMotor.html", null ],
         [ "rm::device::DmMotor< control_mode >", "classrm_1_1device_1_1DmMotor.html", null ],
         [ "rm::device::GkSupercap", "classrm_1_1device_1_1GkSupercap.html", null ],
+        [ "rm::device::HipnucImuCan", "classrm_1_1device_1_1HipnucImuCan.html", null ],
+        [ "rm::device::JyMe02Can", "classrm_1_1device_1_1JyMe02Can.html", null ],
         [ "rm::device::LkMotor< type, encoder_bits >", "classrm_1_1device_1_1LkMotor.html", null ],
         [ "rm::device::SuperCap", "classrm_1_1device_1_1SuperCap.html", null ]
       ] ],
       [ "rm::device::DR16", "classrm_1_1device_1_1DR16.html", null ],
       [ "rm::device::Go8010Motor", "classrm_1_1device_1_1Go8010Motor.html", null ],
+      [ "rm::device::HipnucImu", "classrm_1_1device_1_1HipnucImu.html", null ],
       [ "rm::device::Referee< revision >", "classrm_1_1device_1_1Referee.html", null ],
+      [ "rm::device::STP23L", "classrm_1_1device_1_1STP23L.html", null ],
       [ "rm::device::Sbus", "classrm_1_1device_1_1Sbus.html", null ],
       [ "rm::device::UnitreeMotor", "classrm_1_1device_1_1UnitreeMotor.html", null ],
       [ "rm::device::VT03", "classrm_1_1device_1_1VT03.html", null ],
+      [ "rm::device::VirtualDevice", "classrm_1_1device_1_1VirtualDevice.html", null ],
       [ "rm::device::ZdtStepper", "classrm_1_1device_1_1ZdtStepper.html", null ]
     ] ],
-    [ "rm::device::DeviceManager< kMaxDevices, kUseStdFunctionCallback >", "classrm_1_1device_1_1DeviceManager.html", null ],
-    [ "rm::device::DjiMotorProperties< DjiMotorType >", "structrm_1_1device_1_1DjiMotorProperties.html", null ],
-    [ "rm::device::DjiMotorProperties< DjiMotorType::GM6020 >", "structrm_1_1device_1_1DjiMotorProperties_3_01DjiMotorType_1_1GM6020_01_4.html", null ],
-    [ "rm::device::DjiMotorProperties< DjiMotorType::M2006 >", "structrm_1_1device_1_1DjiMotorProperties_3_01DjiMotorType_1_1M2006_01_4.html", null ],
-    [ "rm::device::DjiMotorProperties< DjiMotorType::M3508 >", "structrm_1_1device_1_1DjiMotorProperties_3_01DjiMotorType_1_1M3508_01_4.html", null ],
-    [ "rm::device::DjiMotorTxBuffer", "structrm_1_1device_1_1DjiMotorTxBuffer.html", null ],
+    [ "rm::device::DeviceManager< kMaxDevices, kUseStdFunctionCallback, kMaxSummaryStringLength >", "classrm_1_1device_1_1DeviceManager.html", null ],
+    [ "rm::device::DjiMotorBase", "classrm_1_1device_1_1DjiMotorBase.html", [
+      [ "rm::device::DjiMotor< motor_type >", "classrm_1_1device_1_1DjiMotor.html", null ]
+    ] ],
     [ "rm::device::DmMotorSettings< control_mode >", "structrm_1_1device_1_1DmMotorSettings.html", null ],
     [ "rm::device::DmMotorSettings< DmMotorControlMode::kMit >", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kMit_01_4.html", null ],
     [ "rm::device::DmMotorSettings< DmMotorControlMode::kSpeed >", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeed_01_4.html", null ],
@@ -57,14 +63,20 @@ var hierarchy =
     ] ],
     [ "rm::modules::ImuData6Dof", "structrm_1_1modules_1_1ImuData6Dof.html", null ],
     [ "rm::modules::ImuData9Dof", "structrm_1_1modules_1_1ImuData9Dof.html", null ],
+    [ "rm::modules::KeyboardHandler< MaxBindings, MaxConcurrentKeys, UseStdFunction >", "classrm_1_1modules_1_1KeyboardHandler.html", null ],
+    [ "rm::modules::KeyEvent", "structrm_1_1modules_1_1KeyEvent.html", null ],
     [ "Kalman::LinearizedMeasurementModel", null, [
       [ "rm::modules::accelMeasurementModel< CovarianceBase >", "classrm_1_1modules_1_1accelMeasurementModel.html", null ]
     ] ],
     [ "Kalman::LinearizedSystemModel", null, [
       [ "rm::modules::SystemModel< CovarianceBase >", "classrm_1_1modules_1_1SystemModel.html", null ]
     ] ],
+    [ "rm::modules::M3508PowerModel", "classrm_1_1modules_1_1M3508PowerModel.html", null ],
     [ "rm::modules::MecanumChassis", "classrm_1_1modules_1_1MecanumChassis.html", null ],
+    [ "rm::modules::MotorCalibrator", "classrm_1_1modules_1_1MotorCalibrator.html", null ],
+    [ "rm::modules::MotorCalibrator::MotorConfig", "structrm_1_1modules_1_1MotorCalibrator_1_1MotorConfig.html", null ],
     [ "rm::device::Go8010Motor::MotorData", "structrm_1_1device_1_1Go8010Motor_1_1MotorData.html", null ],
+    [ "rm::modules::M3508PowerModel::MotorState", "structrm_1_1modules_1_1M3508PowerModel_1_1MotorState.html", null ],
     [ "rm::detail::NonCopyable", "classrm_1_1detail_1_1NonCopyable.html", [
       [ "rm::hal::linux_::SocketCan", "classrm_1_1hal_1_1linux___1_1SocketCan.html", null ],
       [ "rm::hal::stm32::BxCan", "classrm_1_1hal_1_1stm32_1_1BxCan.html", null ]
@@ -76,16 +88,31 @@ var hierarchy =
     [ "rm::hal::PinInterface", "classrm_1_1hal_1_1PinInterface.html", [
       [ "rm::hal::stm32::Pin", "classrm_1_1hal_1_1stm32_1_1Pin.html", null ]
     ] ],
+    [ "rm::device::STP23L::PointData", "structrm_1_1device_1_1STP23L_1_1PointData.html", null ],
+    [ "rm::modules::PollingTimer", "classrm_1_1modules_1_1PollingTimer.html", null ],
+    [ "rm::modules::M3508PowerModel::PowerInfo", "structrm_1_1modules_1_1M3508PowerModel_1_1PowerInfo.html", null ],
     [ "rm::modules::QuadOmniChassis", "classrm_1_1modules_1_1QuadOmniChassis.html", null ],
     [ "rm::modules::Quaternion", "structrm_1_1modules_1_1Quaternion.html", null ],
     [ "rm::device::Go8010Motor::ReceiveData", "structrm_1_1device_1_1Go8010Motor_1_1ReceiveData.html", null ],
     [ "rm::device::UnitreeMotor::ReceiveData", "structrm_1_1device_1_1UnitreeMotor_1_1ReceiveData.html", null ],
     [ "rm::device::RefereeCmdId< revision >", "structrm_1_1device_1_1RefereeCmdId.html", null ],
+    [ "rm::device::RefereeCmdId< RefereeRevision::kNewV110 >", "structrm_1_1device_1_1RefereeCmdId_3_01RefereeRevision_1_1kNewV110_01_4.html", null ],
+    [ "rm::device::RefereeCmdId< RefereeRevision::kNewV120 >", "structrm_1_1device_1_1RefereeCmdId_3_01RefereeRevision_1_1kNewV120_01_4.html", null ],
     [ "rm::device::RefereeCmdId< RefereeRevision::kV164 >", "structrm_1_1device_1_1RefereeCmdId_3_01RefereeRevision_1_1kV164_01_4.html", null ],
     [ "rm::device::RefereeCmdId< RefereeRevision::kV170 >", "structrm_1_1device_1_1RefereeCmdId_3_01RefereeRevision_1_1kV170_01_4.html", null ],
     [ "rm::device::RefereeProtocol< revision >", "structrm_1_1device_1_1RefereeProtocol.html", null ],
+    [ "rm::device::RefereeProtocol< RefereeRevision::kNewV110 >", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV110_01_4.html", null ],
+    [ "rm::device::RefereeProtocol< RefereeRevision::kNewV120 >", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html", null ],
     [ "rm::device::RefereeProtocol< RefereeRevision::kV164 >", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4.html", null ],
     [ "rm::device::RefereeProtocol< RefereeRevision::kV170 >", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html", null ],
+    [ "rm::device::RefereeProtocolMemoryMap< revision >", "structrm_1_1device_1_1RefereeProtocolMemoryMap.html", null ],
+    [ "rm::device::RefereeProtocolMemoryMap< RefereeRevision::kNewV110 >", "structrm_1_1device_1_1RefereeProtocolMemoryMap_3_01RefereeRevision_1_1kNewV110_01_4.html", null ],
+    [ "rm::device::RefereeProtocolMemoryMap< RefereeRevision::kNewV120 >", "structrm_1_1device_1_1RefereeProtocolMemoryMap_3_01RefereeRevision_1_1kNewV120_01_4.html", null ],
+    [ "rm::device::RefereeProtocolMemoryMap< RefereeRevision::kV164 >", "structrm_1_1device_1_1RefereeProtocolMemoryMap_3_01RefereeRevision_1_1kV164_01_4.html", null ],
+    [ "rm::device::RefereeProtocolMemoryMap< RefereeRevision::kV170 >", "structrm_1_1device_1_1RefereeProtocolMemoryMap_3_01RefereeRevision_1_1kV170_01_4.html", null ],
+    [ "rm::device::RefereeProtocol< RefereeRevision::kNewV110 >::RemoteControl", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV110_01_4_1_1RemoteControl.html", null ],
+    [ "rm::device::RefereeProtocol< RefereeRevision::kV164 >::RemoteControl", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4_1_1RemoteControl.html", null ],
+    [ "rm::device::RefereeProtocol< RefereeRevision::kV170 >::RemoteControl", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4_1_1RemoteControl.html", null ],
     [ "rm::device::Go8010Motor::RIS_Comd", "structrm_1_1device_1_1Go8010Motor_1_1RIS__Comd.html", null ],
     [ "rm::device::Go8010Motor::RIS_Fbk", "structrm_1_1device_1_1Go8010Motor_1_1RIS__Fbk.html", null ],
     [ "rm::device::Go8010Motor::RIS_Mode", "structrm_1_1device_1_1Go8010Motor_1_1RIS__Mode.html", null ],
@@ -136,9 +163,11 @@ var hierarchy =
       [ "rm::hal::linux_::TimerFd", "classrm_1_1hal_1_1linux___1_1TimerFd.html", null ]
     ] ],
     [ "rm::modules::TrajectoryLimiter", "classrm_1_1modules_1_1TrajectoryLimiter.html", null ],
+    [ "rm::modules::TriSteeringChassis", "classrm_1_1modules_1_1TriSteeringChassis.html", null ],
     [ "rm::modules::detail::tuple_element_index< T, Tuple >", "structrm_1_1modules_1_1detail_1_1tuple__element__index.html", null ],
     [ "rm::modules::detail::tuple_element_index< T, std::tuple< T, Ts... > >", "structrm_1_1modules_1_1detail_1_1tuple__element__index_3_01T_00_01std_1_1tuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html", null ],
     [ "rm::modules::detail::tuple_element_index< T, std::tuple< U, Ts... > >", "structrm_1_1modules_1_1detail_1_1tuple__element__index_3_01T_00_01std_1_1tuple_3_01U_00_01Ts_8_8_8_01_4_01_4.html", null ],
+    [ "rm::device::DjiMotorBase::TxBuffers", "structrm_1_1device_1_1DjiMotorBase_1_1TxBuffers.html", null ],
     [ "rm::device::DirectDriveMotor::TxBufferTable", "structrm_1_1device_1_1DirectDriveMotor_1_1TxBufferTable.html", null ],
     [ "Kalman::Vector", null, [
       [ "rm::modules::Control", "classrm_1_1modules_1_1Control.html", null ],

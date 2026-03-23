@@ -1,0 +1,758 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: rm::modules::KeyboardHandler&lt; MaxBindings, MaxConcurrentKeys, UseStdFunction &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classrm_1_1modules_1_1KeyboardHandler.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classrm_1_1modules_1_1KeyboardHandler-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">rm::modules::KeyboardHandler&lt; MaxBindings, MaxConcurrentKeys, UseStdFunction &gt; 模板类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>键盘输入处理器  
+ <a href="classrm_1_1modules_1_1KeyboardHandler.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="keyboard__handler_8hpp_source.html">keyboard_handler.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:af0ee221e4b45170e46808ebb860a6709" id="r_af0ee221e4b45170e46808ebb860a6709"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#af0ee221e4b45170e46808ebb860a6709">KeyCallback</a> = std::conditional_t&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a>, std::function&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>(<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1KeyEvent.html">KeyEvent</a> &amp;)&gt;, etl::delegate&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>(<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1KeyEvent.html">KeyEvent</a> &amp;)&gt; &gt;</td></tr>
+<tr class="separator:af0ee221e4b45170e46808ebb860a6709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a52285e0f2c4843dfb67e965ccf05e388" id="r_a52285e0f2c4843dfb67e965ccf05e388"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#a52285e0f2c4843dfb67e965ccf05e388">KeyboardHandler</a> (<a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#accac3bc7c11dfbe80409572c91273dad">modifier_mask</a>)</td></tr>
+<tr class="separator:a52285e0f2c4843dfb67e965ccf05e388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5896c9b1ecee57307fa0788db5574ea" id="r_aa5896c9b1ecee57307fa0788db5574ea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#aa5896c9b1ecee57307fa0788db5574ea">~KeyboardHandler</a> ()=<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">default</a></td></tr>
+<tr class="separator:aa5896c9b1ecee57307fa0788db5574ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cf9593d480fa9c398b8d9eb59b65a63" id="r_a8cf9593d480fa9c398b8d9eb59b65a63"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#a8cf9593d480fa9c398b8d9eb59b65a63">KeyboardHandler</a> (<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a> &amp;)=<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">default</a></td></tr>
+<tr class="separator:a8cf9593d480fa9c398b8d9eb59b65a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89420ba27ea8b854c9573a0cb1f8124a" id="r_a89420ba27ea8b854c9573a0cb1f8124a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#a89420ba27ea8b854c9573a0cb1f8124a">operator=</a> (<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a> &amp;)=<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">default</a></td></tr>
+<tr class="separator:a89420ba27ea8b854c9573a0cb1f8124a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a584fd1f79e979a814207e2cdb54078c2" id="r_a584fd1f79e979a814207e2cdb54078c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#a584fd1f79e979a814207e2cdb54078c2">KeyboardHandler</a> (<a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a> &amp;&amp;)=<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">delete</a></td></tr>
+<tr class="separator:a584fd1f79e979a814207e2cdb54078c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade8c75393f49a1261c0c022fadfded2d" id="r_ade8c75393f49a1261c0c022fadfded2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#ade8c75393f49a1261c0c022fadfded2d">operator=</a> (<a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a> &amp;&amp;)=<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">delete</a></td></tr>
+<tr class="separator:ade8c75393f49a1261c0c022fadfded2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accac3bc7c11dfbe80409572c91273dad" id="r_accac3bc7c11dfbe80409572c91273dad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#accac3bc7c11dfbe80409572c91273dad">modifier_mask</a> () <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a></td></tr>
+<tr class="memdesc:accac3bc7c11dfbe80409572c91273dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前设置的modifier掩码  <br /></td></tr>
+<tr class="separator:accac3bc7c11dfbe80409572c91273dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3875bc6393f3408f81828fbd1d9ce7b0" id="r_a3875bc6393f3408f81828fbd1d9ce7b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#a3875bc6393f3408f81828fbd1d9ce7b0">SetModifierMask</a> (<a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">mask</a>)</td></tr>
+<tr class="memdesc:a3875bc6393f3408f81828fbd1d9ce7b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置modifier掩码  <br /></td></tr>
+<tr class="separator:a3875bc6393f3408f81828fbd1d9ce7b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a454fbbd2e509dda9c04e7a6438d43467" id="r_a454fbbd2e509dda9c04e7a6438d43467"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#a454fbbd2e509dda9c04e7a6438d43467">OnKeyDown</a> (<a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> key, <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#af0ee221e4b45170e46808ebb860a6709">KeyCallback</a> callback)</td></tr>
+<tr class="memdesc:a454fbbd2e509dda9c04e7a6438d43467"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册按键按下回调（无modifier）  <br /></td></tr>
+<tr class="separator:a454fbbd2e509dda9c04e7a6438d43467"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9aabfae767eea49d956e9458bd05ccf" id="r_af9aabfae767eea49d956e9458bd05ccf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#af9aabfae767eea49d956e9458bd05ccf">OnKeyDown</a> (<a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> key, <a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> required_modifiers, <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#af0ee221e4b45170e46808ebb860a6709">KeyCallback</a> callback)</td></tr>
+<tr class="memdesc:af9aabfae767eea49d956e9458bd05ccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册按键按下回调（带modifier）  <br /></td></tr>
+<tr class="separator:af9aabfae767eea49d956e9458bd05ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8b3e860c5baf066ea034e312f1efbba" id="r_ae8b3e860c5baf066ea034e312f1efbba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#ae8b3e860c5baf066ea034e312f1efbba">OnKeyUp</a> (<a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> key, <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#af0ee221e4b45170e46808ebb860a6709">KeyCallback</a> callback)</td></tr>
+<tr class="memdesc:ae8b3e860c5baf066ea034e312f1efbba"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册按键释放回调（无modifier）  <br /></td></tr>
+<tr class="separator:ae8b3e860c5baf066ea034e312f1efbba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a113e554367d77c79e18e8844bd00f4b1" id="r_a113e554367d77c79e18e8844bd00f4b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#a113e554367d77c79e18e8844bd00f4b1">OnKeyUp</a> (<a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> key, <a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> required_modifiers, <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#af0ee221e4b45170e46808ebb860a6709">KeyCallback</a> callback)</td></tr>
+<tr class="memdesc:a113e554367d77c79e18e8844bd00f4b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册按键释放回调（带modifier）  <br /></td></tr>
+<tr class="separator:a113e554367d77c79e18e8844bd00f4b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a341eb4a1760d3fe872bba81a812b1582" id="r_a341eb4a1760d3fe872bba81a812b1582"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#a341eb4a1760d3fe872bba81a812b1582">Update</a> (<a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">keycode</a>)</td></tr>
+<tr class="memdesc:a341eb4a1760d3fe872bba81a812b1582"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新键盘状态并触发相应的回调  <br /></td></tr>
+<tr class="separator:a341eb4a1760d3fe872bba81a812b1582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f97daca1e1585d5a041dfa20f21808f" id="r_a9f97daca1e1585d5a041dfa20f21808f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#a9f97daca1e1585d5a041dfa20f21808f">Reset</a> ()</td></tr>
+<tr class="memdesc:a9f97daca1e1585d5a041dfa20f21808f"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置键盘处理器状态  <br /></td></tr>
+<tr class="separator:a9f97daca1e1585d5a041dfa20f21808f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acea9f242bf2dc9ad6a8488e5e7cb9b46" id="r_acea9f242bf2dc9ad6a8488e5e7cb9b46"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#acea9f242bf2dc9ad6a8488e5e7cb9b46">ClearBindings</a> ()</td></tr>
+<tr class="memdesc:acea9f242bf2dc9ad6a8488e5e7cb9b46"><td class="mdescLeft">&#160;</td><td class="mdescRight">清除所有已注册的回调  <br /></td></tr>
+<tr class="separator:acea9f242bf2dc9ad6a8488e5e7cb9b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxBindings = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxConcurrentKeys = 8, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = true&gt;<br />
+class rm::modules::KeyboardHandler&lt; MaxBindings, MaxConcurrentKeys, UseStdFunction &gt;</div><p>键盘输入处理器 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">MaxBindings</td><td>最大绑定数量（KeyDown和KeyUp各自的上限） </td></tr>
+    <tr><td class="paramname">MaxConcurrentKeys</td><td>最大同时按下的普通键数量 </td></tr>
+    <tr><td class="paramname">UseStdFunction</td><td>是否使用std::function作为回调类型（否则使用etl::delegate） </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="af0ee221e4b45170e46808ebb860a6709" name="af0ee221e4b45170e46808ebb860a6709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0ee221e4b45170e46808ebb860a6709">&#9670;&#160;</a></span>KeyCallback</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxBindings = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxConcurrentKeys = 8, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = true&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a> <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">rm::modules::KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::KeyCallback =  std::conditional_t&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a>, std::function&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>(<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1KeyEvent.html">KeyEvent</a>&amp;)&gt;, etl::delegate&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>(<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1KeyEvent.html">KeyEvent</a>&amp;)&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section examples"><dt>示例</dt><dd><a class="el" href="_2home_2runner_2work_2librm_2librm_2src_2librm_2modules_2keyboard_handler_8hpp-example.html#a7">/home/runner/work/librm/librm/src/librm/modules/keyboard_handler.hpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a52285e0f2c4843dfb67e965ccf05e388" name="a52285e0f2c4843dfb67e965ccf05e388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52285e0f2c4843dfb67e965ccf05e388">&#9670;&#160;</a></span>KeyboardHandler() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxBindings = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxConcurrentKeys = 8, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">rm::modules::KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::KeyboardHandler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td>
+          <td class="paramname"><em>modifier_mask</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa5896c9b1ecee57307fa0788db5574ea" name="aa5896c9b1ecee57307fa0788db5574ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5896c9b1ecee57307fa0788db5574ea">&#9670;&#160;</a></span>~KeyboardHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxBindings = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxConcurrentKeys = 8, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">rm::modules::KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::~<a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section examples"><dt>示例</dt><dd><a class="el" href="_2home_2runner_2work_2librm_2librm_2src_2librm_2modules_2keyboard_handler_8hpp-example.html#a9">/home/runner/work/librm/librm/src/librm/modules/keyboard_handler.hpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a8cf9593d480fa9c398b8d9eb59b65a63" name="a8cf9593d480fa9c398b8d9eb59b65a63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cf9593d480fa9c398b8d9eb59b65a63">&#9670;&#160;</a></span>KeyboardHandler() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxBindings = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxConcurrentKeys = 8, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">rm::modules::KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::KeyboardHandler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a584fd1f79e979a814207e2cdb54078c2" name="a584fd1f79e979a814207e2cdb54078c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a584fd1f79e979a814207e2cdb54078c2">&#9670;&#160;</a></span>KeyboardHandler() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxBindings = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxConcurrentKeys = 8, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">rm::modules::KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::KeyboardHandler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="acea9f242bf2dc9ad6a8488e5e7cb9b46" name="acea9f242bf2dc9ad6a8488e5e7cb9b46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acea9f242bf2dc9ad6a8488e5e7cb9b46">&#9670;&#160;</a></span>ClearBindings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxBindings = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxConcurrentKeys = 8, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a> <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">rm::modules::KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::ClearBindings </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>清除所有已注册的回调 </p>
+<dl class="section examples"><dt>示例</dt><dd><a class="el" href="_2home_2runner_2work_2librm_2librm_2src_2librm_2modules_2keyboard_handler_8hpp-example.html#a16">/home/runner/work/librm/librm/src/librm/modules/keyboard_handler.hpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="accac3bc7c11dfbe80409572c91273dad" name="accac3bc7c11dfbe80409572c91273dad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accac3bc7c11dfbe80409572c91273dad">&#9670;&#160;</a></span>modifier_mask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxBindings = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxConcurrentKeys = 8, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">rm::modules::KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::modifier_mask </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取当前设置的modifier掩码 </p>
+<dl class="section return"><dt>返回</dt><dd>modifier掩码 </dd></dl>
+<dl class="section examples"><dt>示例</dt><dd><a class="el" href="_2home_2runner_2work_2librm_2librm_2src_2librm_2modules_2keyboard_handler_8hpp-example.html#a8">/home/runner/work/librm/librm/src/librm/modules/keyboard_handler.hpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a454fbbd2e509dda9c04e7a6438d43467" name="a454fbbd2e509dda9c04e7a6438d43467"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a454fbbd2e509dda9c04e7a6438d43467">&#9670;&#160;</a></span>OnKeyDown() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxBindings = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxConcurrentKeys = 8, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a> &amp; <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">rm::modules::KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::OnKeyDown </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#af0ee221e4b45170e46808ebb860a6709">KeyCallback</a>&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>注册按键按下回调（无modifier） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>要监听的按键掩码（单个键） </td></tr>
+    <tr><td class="paramname">callback</td><td>回调函数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回自身引用以支持链式调用 </dd></dl>
+<dl class="section examples"><dt>示例</dt><dd><a class="el" href="_2home_2runner_2work_2librm_2librm_2src_2librm_2modules_2keyboard_handler_8hpp-example.html#a12">/home/runner/work/librm/librm/src/librm/modules/keyboard_handler.hpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="af9aabfae767eea49d956e9458bd05ccf" name="af9aabfae767eea49d956e9458bd05ccf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9aabfae767eea49d956e9458bd05ccf">&#9670;&#160;</a></span>OnKeyDown() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxBindings = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxConcurrentKeys = 8, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a> &amp; <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">rm::modules::KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::OnKeyDown </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td>
+          <td class="paramname"><em>required_modifiers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#af0ee221e4b45170e46808ebb860a6709">KeyCallback</a>&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>注册按键按下回调（带modifier） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>要监听的按键掩码（单个键） </td></tr>
+    <tr><td class="paramname">required_modifiers</td><td>要求的modifier键组合 </td></tr>
+    <tr><td class="paramname">callback</td><td>回调函数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回自身引用以支持链式调用 </dd></dl>
+
+</div>
+</div>
+<a id="ae8b3e860c5baf066ea034e312f1efbba" name="ae8b3e860c5baf066ea034e312f1efbba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8b3e860c5baf066ea034e312f1efbba">&#9670;&#160;</a></span>OnKeyUp() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxBindings = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxConcurrentKeys = 8, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a> &amp; <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">rm::modules::KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::OnKeyUp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#af0ee221e4b45170e46808ebb860a6709">KeyCallback</a>&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>注册按键释放回调（无modifier） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>要监听的按键掩码（单个键） </td></tr>
+    <tr><td class="paramname">callback</td><td>回调函数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回自身引用以支持链式调用 </dd></dl>
+<dl class="section examples"><dt>示例</dt><dd><a class="el" href="_2home_2runner_2work_2librm_2librm_2src_2librm_2modules_2keyboard_handler_8hpp-example.html#a13">/home/runner/work/librm/librm/src/librm/modules/keyboard_handler.hpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a113e554367d77c79e18e8844bd00f4b1" name="a113e554367d77c79e18e8844bd00f4b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a113e554367d77c79e18e8844bd00f4b1">&#9670;&#160;</a></span>OnKeyUp() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxBindings = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxConcurrentKeys = 8, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a> &amp; <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">rm::modules::KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::OnKeyUp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td>
+          <td class="paramname"><em>required_modifiers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#af0ee221e4b45170e46808ebb860a6709">KeyCallback</a>&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>注册按键释放回调（带modifier） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>要监听的按键掩码（单个键） </td></tr>
+    <tr><td class="paramname">required_modifiers</td><td>要求的modifier键组合（按下该键时的modifier状态） </td></tr>
+    <tr><td class="paramname">callback</td><td>回调函数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回自身引用以支持链式调用 </dd></dl>
+
+</div>
+</div>
+<a id="a89420ba27ea8b854c9573a0cb1f8124a" name="a89420ba27ea8b854c9573a0cb1f8124a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89420ba27ea8b854c9573a0cb1f8124a">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxBindings = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxConcurrentKeys = 8, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a> &amp; <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">rm::modules::KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section examples"><dt>示例</dt><dd><a class="el" href="_2home_2runner_2work_2librm_2librm_2src_2librm_2modules_2keyboard_handler_8hpp-example.html#a10">/home/runner/work/librm/librm/src/librm/modules/keyboard_handler.hpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="ade8c75393f49a1261c0c022fadfded2d" name="ade8c75393f49a1261c0c022fadfded2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade8c75393f49a1261c0c022fadfded2d">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxBindings = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxConcurrentKeys = 8, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a> &amp; <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">rm::modules::KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9f97daca1e1585d5a041dfa20f21808f" name="a9f97daca1e1585d5a041dfa20f21808f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f97daca1e1585d5a041dfa20f21808f">&#9670;&#160;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxBindings = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxConcurrentKeys = 8, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a> <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">rm::modules::KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::Reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重置键盘处理器状态 </p>
+<dl class="section examples"><dt>示例</dt><dd><a class="el" href="_2home_2runner_2work_2librm_2librm_2src_2librm_2modules_2keyboard_handler_8hpp-example.html#a15">/home/runner/work/librm/librm/src/librm/modules/keyboard_handler.hpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a3875bc6393f3408f81828fbd1d9ce7b0" name="a3875bc6393f3408f81828fbd1d9ce7b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3875bc6393f3408f81828fbd1d9ce7b0">&#9670;&#160;</a></span>SetModifierMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxBindings = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxConcurrentKeys = 8, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a> &amp; <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">rm::modules::KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::SetModifierMask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td>
+          <td class="paramname"><em>mask</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置modifier掩码 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mask</td><td>新的modifier掩码 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回自身引用以支持链式调用 </dd></dl>
+<dl class="section examples"><dt>示例</dt><dd><a class="el" href="_2home_2runner_2work_2librm_2librm_2src_2librm_2modules_2keyboard_handler_8hpp-example.html#a11">/home/runner/work/librm/librm/src/librm/modules/keyboard_handler.hpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a341eb4a1760d3fe872bba81a812b1582" name="a341eb4a1760d3fe872bba81a812b1582"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a341eb4a1760d3fe872bba81a812b1582">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxBindings = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxConcurrentKeys = 8, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a> <a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">rm::modules::KeyboardHandler</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxBindings</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxConcurrentKeys</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::Update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td>
+          <td class="paramname"><em>keycode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>更新键盘状态并触发相应的回调 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keycode</td><td>当前的keycode，每一位对应一个键的按下状态</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>处理逻辑：</p><ol type="1">
+<li>计算新按下的键和新释放的键</li>
+<li>处理modifier键状态更新</li>
+<li>对于新按下的普通键，检查是否满足组合键条件</li>
+<li>触发相应的KeyDown/KeyUp回调 </li>
+</ol>
+<dl class="section examples"><dt>示例</dt><dd><a class="el" href="_2home_2runner_2work_2librm_2librm_2src_2librm_2modules_2keyboard_handler_8hpp-example.html#a14">/home/runner/work/librm/librm/src/librm/modules/keyboard_handler.hpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/librm/modules/<a class="el" href="keyboard__handler_8hpp_source.html">keyboard_handler.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1modules.html">modules</a></li><li class="navelem"><a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html">KeyboardHandler</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

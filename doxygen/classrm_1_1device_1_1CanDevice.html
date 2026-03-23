@@ -109,13 +109,15 @@ $(document).ready(function(){initNavTree('classrm_1_1device_1_1CanDevice.html','
  <div class="center">
   <img src="classrm_1_1device_1_1CanDevice.png" usemap="#rm::device::CanDevice_map" alt=""/>
   <map id="rm::device::CanDevice_map" name="rm::device::CanDevice_map">
-<area href="classrm_1_1device_1_1Device.html" title="驱动框架的设备基类，主要功能为监视设备在线状态" alt="rm::device::Device" shape="rect" coords="655,0,907,24"/>
-<area href="classrm_1_1device_1_1DirectDriveMotor.html" alt="rm::device::DirectDriveMotor" shape="rect" coords="0,112,252,136"/>
-<area href="classrm_1_1device_1_1DjiMotor.html" title="大疆电机(GM6020, M3508, M2006)" alt="rm::device::DjiMotor&lt; motor_type &gt;" shape="rect" coords="262,112,514,136"/>
-<area href="classrm_1_1device_1_1DmMotor.html" title="达妙电机类库" alt="rm::device::DmMotor&lt; control_mode &gt;" shape="rect" coords="524,112,776,136"/>
-<area href="classrm_1_1device_1_1GkSupercap.html" title="港科超级电容" alt="rm::device::GkSupercap" shape="rect" coords="786,112,1038,136"/>
-<area href="classrm_1_1device_1_1LkMotor.html" title="瓴控电机类库" alt="rm::device::LkMotor&lt; type, encoder_bits &gt;" shape="rect" coords="1048,112,1300,136"/>
-<area href="classrm_1_1device_1_1SuperCap.html" title="超级电容" alt="rm::device::SuperCap" shape="rect" coords="1310,112,1562,136"/>
+<area href="classrm_1_1device_1_1Device.html" title="驱动框架的设备基类，功能为监视设备状态" alt="rm::device::Device" shape="rect" coords="0,0,252,24"/>
+<area href="classrm_1_1device_1_1DirectDriveMotor.html" alt="rm::device::DirectDriveMotor" shape="rect" coords="262,112,514,136"/>
+<area href="classrm_1_1device_1_1DjiMotor.html" title="大疆电机(GM6020, M3508, M2006)" alt="rm::device::DjiMotor&lt; motor_type &gt;" shape="rect" coords="262,168,514,192"/>
+<area href="classrm_1_1device_1_1DmMotor.html" title="达妙电机类库" alt="rm::device::DmMotor&lt; control_mode &gt;" shape="rect" coords="262,224,514,248"/>
+<area href="classrm_1_1device_1_1GkSupercap.html" title="港科超级电容" alt="rm::device::GkSupercap" shape="rect" coords="262,280,514,304"/>
+<area href="classrm_1_1device_1_1HipnucImuCan.html" title="HiPNUC CH0x0 IMU模块，CANOPEN协议版本" alt="rm::device::HipnucImuCan" shape="rect" coords="262,336,514,360"/>
+<area href="classrm_1_1device_1_1JyMe02Can.html" title="维特智能JY-ME02-CAN角度编码器，CAN协议版本" alt="rm::device::JyMe02Can" shape="rect" coords="262,392,514,416"/>
+<area href="classrm_1_1device_1_1LkMotor.html" title="瓴控电机类库" alt="rm::device::LkMotor&lt; type, encoder_bits &gt;" shape="rect" coords="262,448,514,472"/>
+<area href="classrm_1_1device_1_1SuperCap.html" title="超级电容" alt="rm::device::SuperCap" shape="rect" coords="262,504,514,528"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -142,17 +144,23 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:ad5bac1dc072cf0905bcbbe32ef3a7c25" id="r_ad5bac1dc072cf0905bcbbe32ef3a7c25"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1CanDevice.html#ad5bac1dc072cf0905bcbbe32ef3a7c25">RxCallback</a> (const <a class="el" href="structrm_1_1hal_1_1CanFrame.html">hal::CanFrame</a> *msg)=0</td></tr>
 <tr class="separator:ad5bac1dc072cf0905bcbbe32ef3a7c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classrm_1_1device_1_1Device"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrm_1_1device_1_1Device')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classrm_1_1device_1_1Device.html">rm::device::Device</a></td></tr>
-<tr class="memitem:a7cfac1f099daba6efea2fc462a5fa7c2 inherit pub_methods_classrm_1_1device_1_1Device" id="r_a7cfac1f099daba6efea2fc462a5fa7c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a7cfac1f099daba6efea2fc462a5fa7c2">Device</a> ()=default</td></tr>
-<tr class="separator:a7cfac1f099daba6efea2fc462a5fa7c2 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a769d2371dac57ae08f5a17948bbdefd6 inherit pub_methods_classrm_1_1device_1_1Device" id="r_a769d2371dac57ae08f5a17948bbdefd6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a> ()</td></tr>
+<tr class="separator:a769d2371dac57ae08f5a17948bbdefd6 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc47f697e77010da09e8449f3d5a9094 inherit pub_methods_classrm_1_1device_1_1Device" id="r_abc47f697e77010da09e8449f3d5a9094"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#abc47f697e77010da09e8449f3d5a9094">~Device</a> ()=default</td></tr>
 <tr class="separator:abc47f697e77010da09e8449f3d5a9094 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a227f58f357e464c7699866378a89b7dc inherit pub_methods_classrm_1_1device_1_1Device" id="r_a227f58f357e464c7699866378a89b7dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a227f58f357e464c7699866378a89b7dc">SetHeartbeatTimeout</a> (duration timeout)</td></tr>
 <tr class="memdesc:a227f58f357e464c7699866378a89b7dc inherit pub_methods_classrm_1_1device_1_1Device"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置心跳超时时间  <br /></td></tr>
 <tr class="separator:a227f58f357e464c7699866378a89b7dc inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae24e0283ae6acdb1856f2e5fcb2dc72f inherit pub_methods_classrm_1_1device_1_1Device" id="r_ae24e0283ae6acdb1856f2e5fcb2dc72f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#ae24e0283ae6acdb1856f2e5fcb2dc72f">Ok</a> ()</td></tr>
-<tr class="separator:ae24e0283ae6acdb1856f2e5fcb2dc72f inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f6f6615cf259068c236883523608332 inherit pub_methods_classrm_1_1device_1_1Device" id="r_a4f6f6615cf259068c236883523608332"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a4f6f6615cf259068c236883523608332">online_status</a> ()</td></tr>
+<tr class="separator:a4f6f6615cf259068c236883523608332 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f1b8eb171231fad7f23adac2879224b inherit pub_methods_classrm_1_1device_1_1Device" id="r_a0f1b8eb171231fad7f23adac2879224b"><td class="memItemLeft" align="right" valign="top">time_point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a0f1b8eb171231fad7f23adac2879224b">last_seen</a> () const</td></tr>
 <tr class="separator:a0f1b8eb171231fad7f23adac2879224b inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bbe2925440ed64a15987789a7cdca90 inherit pub_methods_classrm_1_1device_1_1Device" id="r_a8bbe2925440ed64a15987789a7cdca90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a8bbe2925440ed64a15987789a7cdca90">SetName</a> (etl::string&lt; kMaxNameLength &gt; <a class="el" href="classrm_1_1device_1_1Device.html#ada247da2f27c1e0c4862f526486c78f4">name</a>)</td></tr>
+<tr class="memdesc:a8bbe2925440ed64a15987789a7cdca90 inherit pub_methods_classrm_1_1device_1_1Device"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置设备名称  <br /></td></tr>
+<tr class="separator:a8bbe2925440ed64a15987789a7cdca90 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada247da2f27c1e0c4862f526486c78f4 inherit pub_methods_classrm_1_1device_1_1Device" id="r_ada247da2f27c1e0c4862f526486c78f4"><td class="memItemLeft" align="right" valign="top">etl::string&lt; kMaxNameLength &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#ada247da2f27c1e0c4862f526486c78f4">name</a> () const</td></tr>
+<tr class="memdesc:ada247da2f27c1e0c4862f526486c78f4 inherit pub_methods_classrm_1_1device_1_1Device"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备名称  <br /></td></tr>
+<tr class="separator:ada247da2f27c1e0c4862f526486c78f4 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected 属性</h2></td></tr>
@@ -163,14 +171,14 @@ Protected 属性</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 额外继承的成员函数</h2></td></tr>
-<tr class="inherit_header pro_types_classrm_1_1device_1_1Device"><td colspan="2" onclick="javascript:toggleInherit('pro_types_classrm_1_1device_1_1Device')"><img src="closed.png" alt="-"/>&#160;Protected 类型 继承自 <a class="el" href="classrm_1_1device_1_1Device.html">rm::device::Device</a></td></tr>
-<tr class="memitem:a16a7bedc3fb137033e1537713d3626bc inherit pro_types_classrm_1_1device_1_1Device" id="r_a16a7bedc3fb137033e1537713d3626bc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Status</a> { <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5">kUnknown</a> = -1
+<tr class="inherit_header pub_types_classrm_1_1device_1_1Device"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classrm_1_1device_1_1Device')"><img src="closed.png" alt="-"/>&#160;Public 类型 继承自 <a class="el" href="classrm_1_1device_1_1Device.html">rm::device::Device</a></td></tr>
+<tr class="memitem:a16a7bedc3fb137033e1537713d3626bc inherit pub_types_classrm_1_1device_1_1Device" id="r_a16a7bedc3fb137033e1537713d3626bc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Status</a> { <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5">kUnknown</a> = -1
 , <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca49868fdd51a9c221b3b9c076adc6d64e">kOffline</a>
 , <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca888af1cb59179c046f400d9fdd64dc0c">kFault</a>
 , <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21">kOk</a>
  }</td></tr>
 <tr class="memdesc:a16a7bedc3fb137033e1537713d3626bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">设备状态  <a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">更多...</a><br /></td></tr>
-<tr class="separator:a16a7bedc3fb137033e1537713d3626bc inherit pro_types_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a16a7bedc3fb137033e1537713d3626bc inherit pub_types_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classrm_1_1device_1_1Device"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classrm_1_1device_1_1Device')"><img src="closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="classrm_1_1device_1_1Device.html">rm::device::Device</a></td></tr>
 <tr class="memitem:a7cc99f092ea347a682754478b34e489a inherit pro_methods_classrm_1_1device_1_1Device" id="r_a7cc99f092ea347a682754478b34e489a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a7cc99f092ea347a682754478b34e489a">ReportStatus</a> (<a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Status</a> status)</td></tr>
 <tr class="memdesc:a7cc99f092ea347a682754478b34e489a inherit pro_methods_classrm_1_1device_1_1Device"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新设备状态  <br /></td></tr>
@@ -399,7 +407,7 @@ template&lt;typename... IdList&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>在 <a class="el" href="classrm_1_1device_1_1GkSupercap.html#aa064441864d23e407e3639a99be77a79">rm::device::GkSupercap</a> , 以及 <a class="el" href="classrm_1_1device_1_1SuperCap.html#a4473d852de2f157153d4a2298ad89a20">rm::device::SuperCap</a> 内被实现.</p>
+<p>在 <a class="el" href="classrm_1_1device_1_1HipnucImuCan.html#a24def0210abf7d2c06620b6e68d5b39d">rm::device::HipnucImuCan</a>, <a class="el" href="classrm_1_1device_1_1JyMe02Can.html#ac6f537f9174d0847d4da0eee2a82f363">rm::device::JyMe02Can</a>, <a class="el" href="classrm_1_1device_1_1GkSupercap.html#aa064441864d23e407e3639a99be77a79">rm::device::GkSupercap</a> , 以及 <a class="el" href="classrm_1_1device_1_1SuperCap.html#a4473d852de2f157153d4a2298ad89a20">rm::device::SuperCap</a> 内被实现.</p>
 
 </div>
 </div>

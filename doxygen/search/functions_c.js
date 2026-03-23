@@ -1,21 +1,11 @@
 var searchData=
 [
-  ['mag_5fx_0',['mag_x',['../classrm_1_1device_1_1IST8310.html#af92bab1ccfebd2f13e2085dd82c762f6',1,'rm::device::IST8310']]],
-  ['mag_5fy_1',['mag_y',['../classrm_1_1device_1_1IST8310.html#a0709a04bb93a3cbeb3c9bf92774de9f2',1,'rm::device::IST8310']]],
-  ['mag_5fz_2',['mag_z',['../classrm_1_1device_1_1IST8310.html#ae2d520eaf423ed4fd956d6c91f2b02c4',1,'rm::device::IST8310']]],
-  ['mahonyahrs_3',['MahonyAhrs',['../classrm_1_1modules_1_1MahonyAhrs.html#a3a546e4b7fd177748ea679ea5cc646eb',1,'rm::modules::MahonyAhrs']]],
-  ['map_4',['Map',['../namespacerm_1_1modules.html#a96230949b340336eb705ecaaf30a6cb0',1,'rm::modules']]],
-  ['master_5fvoltage_5',['master_voltage',['../classrm_1_1device_1_1DirectDriveMotor.html#a2b16ff2ffc64f610e0e2c3f707f76d11',1,'rm::device::DirectDriveMotor']]],
-  ['max_5fiout_6',['max_iout',['../classrm_1_1modules_1_1PID.html#a04ba2c8982833fb0e0da157a6f88592b',1,'rm::modules::PID']]],
-  ['max_5fout_7',['max_out',['../classrm_1_1modules_1_1PID.html#a5f34dd2a4f398560d4acc794ea6f19a5',1,'rm::modules::PID']]],
-  ['mecanumchassis_8',['mecanumchassis',['../classrm_1_1modules_1_1MecanumChassis.html#add41f14494a099474b1efcd2408d6007',1,'rm::modules::MecanumChassis::MecanumChassis()=delete'],['../classrm_1_1modules_1_1MecanumChassis.html#aed1f1da8cd2f508a1b419dfd794e9b64',1,'rm::modules::MecanumChassis::MecanumChassis(f32 wheel_base, f32 wheel_track)']]],
-  ['mos_5ftemperature_9',['mos_temperature',['../classrm_1_1device_1_1DmMotor.html#a0749dcfef7ef261879221af2cc74e039',1,'rm::device::DmMotor']]],
-  ['motorposctrl_10',['MotorPosCtrl',['../classrm_1_1device_1_1ZdtStepper.html#a215106bc16f85e0e9eed47f8799c4081',1,'rm::device::ZdtStepper']]],
-  ['motorsyncctrl_11',['MotorSyncCtrl',['../classrm_1_1device_1_1ZdtStepper.html#a116d0ed8b48f5f586098cab7962c93f9',1,'rm::device::ZdtStepper']]],
-  ['motorvelctrl_12',['MotorVelCtrl',['../classrm_1_1device_1_1ZdtStepper.html#a156271cf6f9937e411ee38e5b1e7f654',1,'rm::device::ZdtStepper']]],
-  ['mouse_5fbutton_5fleft_13',['mouse_button_left',['../classrm_1_1device_1_1DR16.html#afba5900247c4f28df12b08a5ebd686cd',1,'rm::device::DR16']]],
-  ['mouse_5fbutton_5fright_14',['mouse_button_right',['../classrm_1_1device_1_1DR16.html#a2e0280b3d651ec0c6908664db2fba93f',1,'rm::device::DR16']]],
-  ['mouse_5fx_15',['mouse_x',['../classrm_1_1device_1_1DR16.html#a1f9f1b60bd62e201aca0b85b54fc28f8',1,'rm::device::DR16']]],
-  ['mouse_5fy_16',['mouse_y',['../classrm_1_1device_1_1DR16.html#a7930c4fddf439df4f387c3b98c1f6da2',1,'rm::device::DR16']]],
-  ['mouse_5fz_17',['mouse_z',['../classrm_1_1device_1_1DR16.html#a978f064bf36f6ce36ca4b17dc467174e',1,'rm::device::DR16']]]
+  ['last_5fmsg_5ftype_0',['last_msg_type',['../classrm_1_1device_1_1HipnucImuCan.html#aa6a3a3c5cdef7b8ba2f6be3ba30cabc9',1,'rm::device::HipnucImuCan']]],
+  ['last_5fpacket_5ftype_1',['last_packet_type',['../classrm_1_1device_1_1HipnucImu.html#aec7c08076788b0115ba2dce16f0f70ea',1,'rm::device::HipnucImu']]],
+  ['last_5fseen_2',['last_seen',['../classrm_1_1device_1_1Device.html#a0f1b8eb171231fad7f23adac2879224b',1,'rm::device::Device']]],
+  ['left_5fx_3',['left_x',['../classrm_1_1device_1_1DR16.html#aad94708d49f54ad3517d64610c262043',1,'rm::device::DR16']]],
+  ['left_5fy_4',['left_y',['../classrm_1_1device_1_1DR16.html#a665c214c9334b95e342b1ea57c4f54ab',1,'rm::device::DR16']]],
+  ['lkmotor_5',['lkmotor',['../classrm_1_1device_1_1LkMotor.html#a3942be5c1b5a9ac64ca34b2a34b565c2',1,'rm::device::LkMotor::LkMotor()=delete'],['../classrm_1_1device_1_1LkMotor.html#a4cf079fbc15153076738da42b06495d5',1,'rm::device::LkMotor::LkMotor(LkMotor &amp;&amp;other) noexcept=default'],['../classrm_1_1device_1_1LkMotor.html#a4e9256e50bdc21806eec98a4a70b30af',1,'rm::device::LkMotor::LkMotor(hal::CanInterface &amp;can, usize id, bool reversed=false)']]],
+  ['logicaltoreal_6',['LogicalToReal',['../classrm_1_1modules_1_1MotorCalibrator.html#a4bf56b601b7b83f9e5126b1bafa74dc2',1,'rm::modules::MotorCalibrator']]],
+  ['loss_5frate_7',['loss_rate',['../classrm_1_1device_1_1Referee.html#a528458514bc299aaec290c28663ce578',1,'rm::device::Referee']]]
 ];

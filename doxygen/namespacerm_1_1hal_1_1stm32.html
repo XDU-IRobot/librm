@@ -93,7 +93,8 @@ $(document).ready(function(){initNavTree('namespacerm_1_1hal_1_1stm32.html','');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">类</a> &#124;
-<a href="#enum-members">枚举</a>  </div>
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
   <div class="headertitle"><div class="title">rm::hal::stm32 命名空间参考</div></div>
 </div><!--header-->
 <div class="contents">
@@ -125,6 +126,15 @@ $(document).ready(function(){initNavTree('namespacerm_1_1hal_1_1stm32.html','');
 , <a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6ca1d17438b16d76f9f506107eab4a24b10">kDma</a>
  }</td></tr>
 <tr class="separator:a01295957e2d8ae5396aa87eb94041b6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:aec4aab6c7a6c8e98e4068e4130b92f8b" id="r_aec4aab6c7a6c8e98e4068e4130b92f8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1hal_1_1stm32.html#aec4aab6c7a6c8e98e4068e4130b92f8b">__attribute__</a> ((always_inline)) static inline int GetCanIndex(CAN_HandleTypeDef *hcan)</td></tr>
+<tr class="memdesc:aec4aab6c7a6c8e98e4068e4130b92f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据CAN实例地址获取bxcan_instances数组索引  <br /></td></tr>
+<tr class="separator:aec4aab6c7a6c8e98e4068e4130b92f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48ed7a3622bd56bb9a20571ba1cc61e2" id="r_a48ed7a3622bd56bb9a20571ba1cc61e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1hal_1_1stm32.html#a48ed7a3622bd56bb9a20571ba1cc61e2">CanRxFifo0MsgPendingCallback</a> (CAN_HandleTypeDef *hcan)</td></tr>
+<tr class="memdesc:a48ed7a3622bd56bb9a20571ba1cc61e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册给HAL库的CAN接收回调函数  <br /></td></tr>
+<tr class="separator:a48ed7a3622bd56bb9a20571ba1cc61e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">枚举类型说明</h2>
 <a id="a01295957e2d8ae5396aa87eb94041b6c" name="a01295957e2d8ae5396aa87eb94041b6c"></a>
@@ -151,6 +161,60 @@ $(document).ready(function(){initNavTree('namespacerm_1_1hal_1_1stm32.html','');
 <tr><td class="fieldname"><a id="a01295957e2d8ae5396aa87eb94041b6ca5226558f5ccca12b5009c9e2f97d50ae" name="a01295957e2d8ae5396aa87eb94041b6ca5226558f5ccca12b5009c9e2f97d50ae"></a>kInterrupt&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a01295957e2d8ae5396aa87eb94041b6ca1d17438b16d76f9f506107eab4a24b10" name="a01295957e2d8ae5396aa87eb94041b6ca1d17438b16d76f9f506107eab4a24b10"></a>kDma&#160;</td><td class="fielddoc"></td></tr>
 </table>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="aec4aab6c7a6c8e98e4068e4130b92f8b" name="aec4aab6c7a6c8e98e4068e4130b92f8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec4aab6c7a6c8e98e4068e4130b92f8b">&#9670;&#160;</a></span>__attribute__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rm::hal::stm32::__attribute__ </td>
+          <td>(</td>
+          <td class="paramtype">(always_inline)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>根据CAN实例地址获取bxcan_instances数组索引 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hcan</td><td>HAL库的CAN_HandleTypeDef </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>数组索引（0或1），如果不是有效的CAN实例则返回-1 </dd></dl>
+
+</div>
+</div>
+<a id="a48ed7a3622bd56bb9a20571ba1cc61e2" name="a48ed7a3622bd56bb9a20571ba1cc61e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48ed7a3622bd56bb9a20571ba1cc61e2">&#9670;&#160;</a></span>CanRxFifo0MsgPendingCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rm::hal::stm32::CanRxFifo0MsgPendingCallback </td>
+          <td>(</td>
+          <td class="paramtype">CAN_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>hcan</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>注册给HAL库的CAN接收回调函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hcan</td><td>HAL库的CAN_HandleTypeDef </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

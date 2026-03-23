@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('threshold__trigger_8hpp_source.html','
 </div><!--header-->
 <div class="contents">
 <a href="threshold__trigger_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2025 XDU-IRobot</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2026 XDU-IRobot</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
@@ -156,15 +156,15 @@ $(document).ready(function(){initNavTree('threshold__trigger_8hpp_source.html','
 </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
 <div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1ThresholdTrigger.html#a1cf32aacc31ace4e3f4f54a4a92bc6b6">   56</a></span>  <a class="code hl_class" href="classrm_1_1modules_1_1ThresholdTrigger.html">ThresholdTrigger</a>&amp; <a class="code hl_function" href="classrm_1_1modules_1_1ThresholdTrigger.html#a1cf32aacc31ace4e3f4f54a4a92bc6b6">OnRising</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">callback</a>) {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    rising_edge_callbacks_.push_back(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">callback</a>);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1ThresholdTrigger.html#a1cf32aacc31ace4e3f4f54a4a92bc6b6">   56</a></span>  <a class="code hl_class" href="classrm_1_1modules_1_1ThresholdTrigger.html">ThresholdTrigger</a>&amp; <a class="code hl_function" href="classrm_1_1modules_1_1ThresholdTrigger.html#a1cf32aacc31ace4e3f4f54a4a92bc6b6">OnRising</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; callback) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    rising_edge_callbacks_.push_back(callback);</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  }</div>
 </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
 <div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1ThresholdTrigger.html#afe941f763269a45a9d79f871d458c3f4">   61</a></span>  <a class="code hl_class" href="classrm_1_1modules_1_1ThresholdTrigger.html">ThresholdTrigger</a>&amp; <a class="code hl_function" href="classrm_1_1modules_1_1ThresholdTrigger.html#afe941f763269a45a9d79f871d458c3f4">OnFalling</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">callback</a>) {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    falling_edge_callbacks_.push_back(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">callback</a>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1ThresholdTrigger.html#afe941f763269a45a9d79f871d458c3f4">   61</a></span>  <a class="code hl_class" href="classrm_1_1modules_1_1ThresholdTrigger.html">ThresholdTrigger</a>&amp; <a class="code hl_function" href="classrm_1_1modules_1_1ThresholdTrigger.html#afe941f763269a45a9d79f871d458c3f4">OnFalling</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; callback) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    falling_edge_callbacks_.push_back(callback);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  }</div>
 </div>
@@ -173,13 +173,13 @@ $(document).ready(function(){initNavTree('threshold__trigger_8hpp_source.html','
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1ThresholdTrigger.html#a84ad54922bc7910b1c5c9b53af8b32ab">   66</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1modules_1_1ThresholdTrigger.html#a84ad54922bc7910b1c5c9b53af8b32ab">Update</a>() {</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> (variable_ &gt;= rising_threshold_ &amp;&amp; !state_) {</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      state_ = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">callback</a> : rising_edge_callbacks_) {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">callback</a>();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; callback : rising_edge_callbacks_) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        callback();</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      }</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (variable_ &lt;= falling_threshold_ &amp;&amp; state_) {</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      state_ = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">callback</a> : falling_edge_callbacks_) {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">callback</a>();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; callback : falling_edge_callbacks_) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        callback();</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      }</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  }</div>

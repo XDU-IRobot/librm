@@ -1,13 +1,18 @@
 var dir_9bd6aa59caad6cbef13c0eefdd946af0 =
 [
     [ "ahrs", "dir_15311b616e9958c3958366363e9fbff5.html", "dir_15311b616e9958c3958366363e9fbff5" ],
+    [ "rpc", "dir_a52d8477b6e5aa6652c637e1032e16fc.html", "dir_a52d8477b6e5aa6652c637e1032e16fc" ],
     [ "angle.hpp", "angle_8hpp.html", "angle_8hpp" ],
     [ "buzzer_controller.hpp", "buzzer__controller_8hpp.html", "buzzer__controller_8hpp" ],
     [ "chassis_fkik.hpp", "chassis__fkik_8hpp.html", "chassis__fkik_8hpp" ],
     [ "crc.cc", "crc_8cc.html", "crc_8cc" ],
     [ "crc.hpp", "crc_8hpp.html", "crc_8hpp" ],
+    [ "dsp_filters.hpp", "dsp__filters_8hpp.html", "dsp__filters_8hpp" ],
     [ "float16.cc", "float16_8cc.html", "float16_8cc" ],
     [ "float16.hpp", "float16_8hpp.html", "float16_8hpp" ],
+    [ "keyboard_handler.hpp", "keyboard__handler_8hpp.html", "keyboard__handler_8hpp" ],
+    [ "m3508_power_model.hpp", "m3508__power__model_8hpp.html", "m3508__power__model_8hpp" ],
+    [ "motor_calibrator.hpp", "motor__calibrator_8hpp.html", "motor__calibrator_8hpp" ],
     [ "pid.cc", "pid_8cc.html", null ],
     [ "pid.hpp", "pid_8hpp.html", "pid_8hpp" ],
     [ "rgb_led_controller.hpp", "rgb__led__controller_8hpp.html", "rgb__led__controller_8hpp" ],

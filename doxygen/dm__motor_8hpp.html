@@ -94,6 +94,7 @@ $(document).ready(function(){initNavTree('dm__motor_8hpp.html',''); initResizabl
   <div class="summary">
 <a href="#nested-classes">类</a> &#124;
 <a href="#namespaces">命名空间</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
 <a href="#enum-members">枚举</a>  </div>
   <div class="headertitle"><div class="title">dm_motor.hpp 文件参考</div></div>
 </div><!--header-->
@@ -134,10 +135,19 @@ $(document).ready(function(){initNavTree('dm__motor_8hpp.html',''); initResizabl
 <tr class="memitem:namespacerm_1_1device" id="r_namespacerm_1_1device"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html">rm::device</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:afb7962cab98123f231295bc522d94199" id="r_afb7962cab98123f231295bc522d94199"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#afb7962cab98123f231295bc522d94199">rm::device::DmMotorMit</a> = <a class="el" href="classrm_1_1device_1_1DmMotor.html">DmMotor</a>&lt; <a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea671bf1301da9c5f5da9a08002e6f89c4">DmMotorControlMode::kMit</a> &gt;</td></tr>
+<tr class="separator:afb7962cab98123f231295bc522d94199"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bd90b66d9b191f86a3ed8890a23a144" id="r_a2bd90b66d9b191f86a3ed8890a23a144"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a2bd90b66d9b191f86a3ed8890a23a144">rm::device::DmMotorSpeedPosition</a> = <a class="el" href="classrm_1_1device_1_1DmMotor.html">DmMotor</a>&lt; <a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94eac423473711521422b9f206b311bca100">DmMotorControlMode::kSpeedPosition</a> &gt;</td></tr>
+<tr class="separator:a2bd90b66d9b191f86a3ed8890a23a144"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb6c3f9fa7319f4f5ab684a282a771b6" id="r_aeb6c3f9fa7319f4f5ab684a282a771b6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#aeb6c3f9fa7319f4f5ab684a282a771b6">rm::device::DmMotorSpeed</a> = <a class="el" href="classrm_1_1device_1_1DmMotor.html">DmMotor</a>&lt; <a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea22f7e05f35e7f25d5f24304feb24bee8">DmMotorControlMode::kSpeed</a> &gt;</td></tr>
+<tr class="separator:aeb6c3f9fa7319f4f5ab684a282a771b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 枚举</h2></td></tr>
 <tr class="memitem:a6658bb67dd98e3397c3d30c3bf3229c5" id="r_a6658bb67dd98e3397c3d30c3bf3229c5"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a6658bb67dd98e3397c3d30c3bf3229c5">rm::device::DmMotorStatus</a> { <br />
-&#160;&#160;<a class="el" href="namespacerm_1_1device.html#a6658bb67dd98e3397c3d30c3bf3229c5a613bcf3776943bf227b27b2bd5b74080">rm::device::kUnable</a> = 0x0
+&#160;&#160;<a class="el" href="namespacerm_1_1device.html#a6658bb67dd98e3397c3d30c3bf3229c5a229bc0c46e45e1688bdb842b616fd8d2">rm::device::kDisable</a> = 0x0
 , <a class="el" href="namespacerm_1_1device.html#a6658bb67dd98e3397c3d30c3bf3229c5a239d75756e4e52e4fff58dba82889b02">rm::device::kEnable</a> = 0x1
 , <a class="el" href="namespacerm_1_1device.html#a6658bb67dd98e3397c3d30c3bf3229c5a5b899cabb290b99ccb0a20d0c76471fa">rm::device::kOverVoltage</a> = 0x8
 , <a class="el" href="namespacerm_1_1device.html#a6658bb67dd98e3397c3d30c3bf3229c5a56696b8f72116b20b66cb8f3e312b139">rm::device::kUnderVoltage</a> = 0x9

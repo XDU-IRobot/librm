@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('thread__pool_8hpp_source.html',''); in
 </div><!--header-->
 <div class="contents">
 <a href="thread__pool_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2025 XDU-IRobot</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2026 XDU-IRobot</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
@@ -190,7 +190,7 @@ $(document).ready(function(){initNavTree('thread__pool_8hpp_source.html',''); in
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keyword">auto</span> task =</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      std::make_shared&lt;std::packaged_task&lt;return_type()&gt;&gt;(std::bind(std::forward&lt;F&gt;(f), std::forward&lt;Args&gt;(args)...));</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  std::future&lt;return_type&gt; <a class="code hl_variable" href="unitree__motor_8hpp.html#aa20e9bed3e6c21a8b09ebb720a6b8bab">res</a> = task-&gt;get_future();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  std::future&lt;return_type&gt; res = task-&gt;get_future();</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  {</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    std::unique_lock&lt;std::mutex&gt; lock(queue_mutex);</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
@@ -200,7 +200,7 @@ $(document).ready(function(){initNavTree('thread__pool_8hpp_source.html',''); in
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    tasks.emplace([task]() { (*task)(); });</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  }</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  condition.notify_one();</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="unitree__motor_8hpp.html#aa20e9bed3e6c21a8b09ebb720a6b8bab">res</a>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
 </div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
@@ -224,8 +224,7 @@ $(document).ready(function(){initNavTree('thread__pool_8hpp_source.html',''); in
 <div class="ttc" id="aclassrm_1_1ThreadPool_html_a3932421209c7d1babc319718ea8308f0"><div class="ttname"><a href="classrm_1_1ThreadPool.html#a3932421209c7d1babc319718ea8308f0">rm::ThreadPool::ThreadPool</a></div><div class="ttdeci">ThreadPool(size_t)</div><div class="ttdef"><b>Definition</b> thread_pool.hpp:66</div></div>
 <div class="ttc" id="aclassrm_1_1ThreadPool_html_a3cb2fe05ed96b48f41c7c26c5a29b5d9"><div class="ttname"><a href="classrm_1_1ThreadPool.html#a3cb2fe05ed96b48f41c7c26c5a29b5d9">rm::ThreadPool::~ThreadPool</a></div><div class="ttdeci">~ThreadPool()</div><div class="ttdef"><b>Definition</b> thread_pool.hpp:107</div></div>
 <div class="ttc" id="aclassrm_1_1ThreadPool_html_af4b07a9592ce6ce654c8a9b12a396d80"><div class="ttname"><a href="classrm_1_1ThreadPool.html#af4b07a9592ce6ce654c8a9b12a396d80">rm::ThreadPool::enqueue</a></div><div class="ttdeci">auto enqueue(F &amp;&amp;f, Args &amp;&amp;... args) -&gt; std::future&lt; typename std::result_of&lt; F(Args...)&gt;::type &gt;</div><div class="ttdef"><b>Definition</b> thread_pool.hpp:87</div></div>
-<div class="ttc" id="anamespacerm_html"><div class="ttname"><a href="namespacerm.html">rm</a></div><div class="ttdef"><b>Definition</b> exception.hpp:37</div></div>
-<div class="ttc" id="aunitree__motor_8hpp_html_aa20e9bed3e6c21a8b09ebb720a6b8bab"><div class="ttname"><a href="unitree__motor_8hpp.html#aa20e9bed3e6c21a8b09ebb720a6b8bab">res</a></div><div class="ttdeci">i8 res[1]</div><div class="ttdef"><b>Definition</b> unitree_motor.hpp:33</div></div>
+<div class="ttc" id="anamespacerm_html"><div class="ttname"><a href="namespacerm.html">rm</a></div><div class="ttdef"><b>Definition</b> exception.hpp:38</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

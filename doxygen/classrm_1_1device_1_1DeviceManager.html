@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>librm: rm::device::DeviceManager&lt; kMaxDevices, kUseStdFunctionCallback &gt; 模板类 参考</title>
+<title>librm: rm::device::DeviceManager&lt; kMaxDevices, kUseStdFunctionCallback, kMaxSummaryStringLength &gt; 模板类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -92,9 +92,10 @@ $(document).ready(function(){initNavTree('classrm_1_1device_1_1DeviceManager.htm
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">类</a> &#124;
 <a href="#pub-methods">Public 成员函数</a> &#124;
 <a href="classrm_1_1device_1_1DeviceManager-members.html">所有成员列表</a>  </div>
-  <div class="headertitle"><div class="title">rm::device::DeviceManager&lt; kMaxDevices, kUseStdFunctionCallback &gt; 模板类 参考</div></div>
+  <div class="headertitle"><div class="title">rm::device::DeviceManager&lt; kMaxDevices, kUseStdFunctionCallback, kMaxSummaryStringLength &gt; 模板类 参考</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -105,45 +106,52 @@ $(document).ready(function(){initNavTree('classrm_1_1device_1_1DeviceManager.htm
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a028d1a34e435a947241fef7e1c18dcbd" id="r_a028d1a34e435a947241fef7e1c18dcbd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#a028d1a34e435a947241fef7e1c18dcbd">DeviceManager</a> ()=default</td></tr>
-<tr class="separator:a028d1a34e435a947241fef7e1c18dcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a860e6398d4a4d0c04b2ef5f853d28e00" id="r_a860e6398d4a4d0c04b2ef5f853d28e00"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#a860e6398d4a4d0c04b2ef5f853d28e00">DeviceManager</a> (std::initializer_list&lt; <a class="el" href="classrm_1_1device_1_1Device.html">Device</a> * &gt; devices)</td></tr>
-<tr class="separator:a860e6398d4a4d0c04b2ef5f853d28e00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22459fd6171f9d231c9f7736fe7ffbc3" id="r_a22459fd6171f9d231c9f7736fe7ffbc3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1device_1_1DeviceManager.html">DeviceManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#a22459fd6171f9d231c9f7736fe7ffbc3">operator&lt;&lt;</a> (<a class="el" href="classrm_1_1device_1_1Device.html">Device</a> *device)</td></tr>
-<tr class="separator:a22459fd6171f9d231c9f7736fe7ffbc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cb8238051a0b07445bde3f7d7894409" id="r_a8cb8238051a0b07445bde3f7d7894409"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#a8cb8238051a0b07445bde3f7d7894409">Update</a> ()</td></tr>
-<tr class="memdesc:a8cb8238051a0b07445bde3f7d7894409"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新所有设备的在线状态  <br /></td></tr>
-<tr class="separator:a8cb8238051a0b07445bde3f7d7894409"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaea4f336ab87673234dfc2bd83eb3901" id="r_aaea4f336ab87673234dfc2bd83eb3901"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#aaea4f336ab87673234dfc2bd83eb3901">OnDeviceFaultOrOffline</a> (CallbackType callback)</td></tr>
-<tr class="memdesc:aaea4f336ab87673234dfc2bd83eb3901"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册设备故障或离线回调  <br /></td></tr>
-<tr class="separator:aaea4f336ab87673234dfc2bd83eb3901"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91de39c2ba38e6dab33c9cbe3df54ed8" id="r_a91de39c2ba38e6dab33c9cbe3df54ed8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#a91de39c2ba38e6dab33c9cbe3df54ed8">all_device_ok</a> () const</td></tr>
-<tr class="separator:a91de39c2ba38e6dab33c9cbe3df54ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2caaeee6038b3eb2a25796a54732f052" id="r_a2caaeee6038b3eb2a25796a54732f052"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#a2caaeee6038b3eb2a25796a54732f052">DeviceManager</a> ()=default</td></tr>
+<tr class="separator:a2caaeee6038b3eb2a25796a54732f052"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17ecd8a83e0167051339898180cf662b" id="r_a17ecd8a83e0167051339898180cf662b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#a17ecd8a83e0167051339898180cf662b">DeviceManager</a> (std::initializer_list&lt; <a class="el" href="classrm_1_1device_1_1Device.html">Device</a> * &gt; devices)</td></tr>
+<tr class="separator:a17ecd8a83e0167051339898180cf662b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae608f46a9d7f2ee136b84c5e0222b03c" id="r_ae608f46a9d7f2ee136b84c5e0222b03c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1device_1_1DeviceManager.html">DeviceManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#ae608f46a9d7f2ee136b84c5e0222b03c">operator&lt;&lt;</a> (<a class="el" href="classrm_1_1device_1_1Device.html">Device</a> *device)</td></tr>
+<tr class="separator:ae608f46a9d7f2ee136b84c5e0222b03c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a888ce23bee4e77ddfedf190a36b5632e" id="r_a888ce23bee4e77ddfedf190a36b5632e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#a888ce23bee4e77ddfedf190a36b5632e">Update</a> ()</td></tr>
+<tr class="memdesc:a888ce23bee4e77ddfedf190a36b5632e"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新所有设备的在线状态  <br /></td></tr>
+<tr class="separator:a888ce23bee4e77ddfedf190a36b5632e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae97601cb93c501f36cd7334c72335763" id="r_ae97601cb93c501f36cd7334c72335763"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#ae97601cb93c501f36cd7334c72335763">OnDeviceStatusChange</a> (CallbackType callback)</td></tr>
+<tr class="memdesc:ae97601cb93c501f36cd7334c72335763"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册设备状态变化回调  <br /></td></tr>
+<tr class="separator:ae97601cb93c501f36cd7334c72335763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a7d79216b01c6d721eb346dbb85f89f" id="r_a4a7d79216b01c6d721eb346dbb85f89f"><td class="memItemLeft" align="right" valign="top">const etl::vector&lt; <a class="el" href="classrm_1_1device_1_1Device.html">Device</a> *, kMaxDevices &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#a4a7d79216b01c6d721eb346dbb85f89f">GetDeviceListByStatus</a> (<a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Device::Status</a> status) const</td></tr>
+<tr class="memdesc:a4a7d79216b01c6d721eb346dbb85f89f"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据状态获取设备列表  <br /></td></tr>
+<tr class="separator:a4a7d79216b01c6d721eb346dbb85f89f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a016eb7bed7f5f1dc50a4ee1f310262be" id="r_a016eb7bed7f5f1dc50a4ee1f310262be"><td class="memItemLeft" align="right" valign="top">etl::string&lt; kMaxSummaryStringLength &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#a016eb7bed7f5f1dc50a4ee1f310262be">GetSummaryString</a> () const</td></tr>
+<tr class="memdesc:a016eb7bed7f5f1dc50a4ee1f310262be"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备状态摘要字符串  <br /></td></tr>
+<tr class="separator:a016eb7bed7f5f1dc50a4ee1f310262be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8915913710283e7057e7e734221711f2" id="r_a8915913710283e7057e7e734221711f2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DeviceManager.html#a8915913710283e7057e7e734221711f2">all_device_ok</a> () const</td></tr>
+<tr class="separator:a8915913710283e7057e7e734221711f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true&gt;<br />
-class rm::device::DeviceManager&lt; kMaxDevices, kUseStdFunctionCallback &gt;</div><p>设备管理器，用来维护多个设备的在线状态 </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true, size_t kMaxSummaryStringLength = 512&gt;<br />
+class rm::device::DeviceManager&lt; kMaxDevices, kUseStdFunctionCallback, kMaxSummaryStringLength &gt;</div><p>设备管理器，用来维护多个设备的在线状态 </p>
 <dl class="tparams"><dt>模板参数</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">kMaxDevices</td><td>最大容纳的设备数量，按需设置 </td></tr>
-    <tr><td class="paramname">kUseStdFunctionCallback</td><td>是否使用 std::function 作为回调类型，默认为 true </td></tr>
+    <tr><td class="paramname">kUseStdFunctionCallback</td><td>是否使用 std::function 作为回调类型，默认为 true。如果设置为 false 则使用 etl::delegate（类似C++26 std::function_ref），无动态内存分配但使用起来不如 std::function 方便 </td></tr>
+    <tr><td class="paramname">kMaxSummaryStringLength</td><td>设备状态摘要字符串的最大长度，默认为512字节 </td></tr>
   </table>
   </dd>
 </dl>
 </div><h2 class="groupheader">构造及析构函数说明</h2>
-<a id="a028d1a34e435a947241fef7e1c18dcbd" name="a028d1a34e435a947241fef7e1c18dcbd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a028d1a34e435a947241fef7e1c18dcbd">&#9670;&#160;</a></span>DeviceManager() <span class="overload">[1/2]</span></h2>
+<a id="a2caaeee6038b3eb2a25796a54732f052" name="a2caaeee6038b3eb2a25796a54732f052"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2caaeee6038b3eb2a25796a54732f052">&#9670;&#160;</a></span>DeviceManager() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true&gt; </div>
+template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true, size_t kMaxSummaryStringLength = 512&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrm_1_1device_1_1DeviceManager.html">rm::device::DeviceManager</a>&lt; kMaxDevices, kUseStdFunctionCallback &gt;::DeviceManager </td>
+          <td class="memname"><a class="el" href="classrm_1_1device_1_1DeviceManager.html">rm::device::DeviceManager</a>&lt; kMaxDevices, kUseStdFunctionCallback, kMaxSummaryStringLength &gt;::DeviceManager </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -158,19 +166,19 @@ template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true&gt; </div>
 
 </div>
 </div>
-<a id="a860e6398d4a4d0c04b2ef5f853d28e00" name="a860e6398d4a4d0c04b2ef5f853d28e00"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a860e6398d4a4d0c04b2ef5f853d28e00">&#9670;&#160;</a></span>DeviceManager() <span class="overload">[2/2]</span></h2>
+<a id="a17ecd8a83e0167051339898180cf662b" name="a17ecd8a83e0167051339898180cf662b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17ecd8a83e0167051339898180cf662b">&#9670;&#160;</a></span>DeviceManager() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true&gt; </div>
+template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true, size_t kMaxSummaryStringLength = 512&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrm_1_1device_1_1DeviceManager.html">rm::device::DeviceManager</a>&lt; kMaxDevices, kUseStdFunctionCallback &gt;::DeviceManager </td>
+          <td class="memname"><a class="el" href="classrm_1_1device_1_1DeviceManager.html">rm::device::DeviceManager</a>&lt; kMaxDevices, kUseStdFunctionCallback, kMaxSummaryStringLength &gt;::DeviceManager </td>
           <td>(</td>
           <td class="paramtype">std::initializer_list&lt; <a class="el" href="classrm_1_1device_1_1Device.html">Device</a> * &gt;&#160;</td>
           <td class="paramname"><em>devices</em></td><td>)</td>
@@ -187,19 +195,19 @@ template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">成员函数说明</h2>
-<a id="a91de39c2ba38e6dab33c9cbe3df54ed8" name="a91de39c2ba38e6dab33c9cbe3df54ed8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91de39c2ba38e6dab33c9cbe3df54ed8">&#9670;&#160;</a></span>all_device_ok()</h2>
+<a id="a8915913710283e7057e7e734221711f2" name="a8915913710283e7057e7e734221711f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8915913710283e7057e7e734221711f2">&#9670;&#160;</a></span>all_device_ok()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true&gt; </div>
+template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true, size_t kMaxSummaryStringLength = 512&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classrm_1_1device_1_1DeviceManager.html">rm::device::DeviceManager</a>&lt; kMaxDevices, kUseStdFunctionCallback &gt;::all_device_ok </td>
+          <td class="memname">bool <a class="el" href="classrm_1_1device_1_1DeviceManager.html">rm::device::DeviceManager</a>&lt; kMaxDevices, kUseStdFunctionCallback, kMaxSummaryStringLength &gt;::all_device_ok </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -215,19 +223,87 @@ template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true&gt; </div>
 
 </div>
 </div>
-<a id="aaea4f336ab87673234dfc2bd83eb3901" name="aaea4f336ab87673234dfc2bd83eb3901"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaea4f336ab87673234dfc2bd83eb3901">&#9670;&#160;</a></span>OnDeviceFaultOrOffline()</h2>
+<a id="a4a7d79216b01c6d721eb346dbb85f89f" name="a4a7d79216b01c6d721eb346dbb85f89f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a7d79216b01c6d721eb346dbb85f89f">&#9670;&#160;</a></span>GetDeviceListByStatus()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true&gt; </div>
+template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true, size_t kMaxSummaryStringLength = 512&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classrm_1_1device_1_1DeviceManager.html">rm::device::DeviceManager</a>&lt; kMaxDevices, kUseStdFunctionCallback &gt;::OnDeviceFaultOrOffline </td>
+          <td class="memname">const etl::vector&lt; <a class="el" href="classrm_1_1device_1_1Device.html">Device</a> *, kMaxDevices &gt; &amp; <a class="el" href="classrm_1_1device_1_1DeviceManager.html">rm::device::DeviceManager</a>&lt; kMaxDevices, kUseStdFunctionCallback, kMaxSummaryStringLength &gt;::GetDeviceListByStatus </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Device::Status</a>&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>根据状态获取设备列表 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>设备状态 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>处于指定状态的设备列表（只读） </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>该列表在每次调用 <a class="el" href="classrm_1_1device_1_1DeviceManager.html#a888ce23bee4e77ddfedf190a36b5632e" title="更新所有设备的在线状态">Update()</a> 时更新 </dd></dl>
+
+</div>
+</div>
+<a id="a016eb7bed7f5f1dc50a4ee1f310262be" name="a016eb7bed7f5f1dc50a4ee1f310262be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a016eb7bed7f5f1dc50a4ee1f310262be">&#9670;&#160;</a></span>GetSummaryString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true, size_t kMaxSummaryStringLength = 512&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">etl::string&lt; kMaxSummaryStringLength &gt; <a class="el" href="classrm_1_1device_1_1DeviceManager.html">rm::device::DeviceManager</a>&lt; kMaxDevices, kUseStdFunctionCallback, kMaxSummaryStringLength &gt;::GetSummaryString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取设备状态摘要字符串 </p>
+<dl class="section return"><dt>返回</dt><dd>如果所有设备都正常，返回 "All devices OK." 否则返回各个状态分类的设备列表，例如 "Offline: motor1, motor2; Fault: sensor1; " 字符串默认长度限制为 512 字节，超出部分会被截断并添加 "..." 标记， 如果需要更长的摘要字符串可以调整模板参数 kMaxSummaryStringLength </dd></dl>
+
+</div>
+</div>
+<a id="ae97601cb93c501f36cd7334c72335763" name="ae97601cb93c501f36cd7334c72335763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae97601cb93c501f36cd7334c72335763">&#9670;&#160;</a></span>OnDeviceStatusChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true, size_t kMaxSummaryStringLength = 512&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classrm_1_1device_1_1DeviceManager.html">rm::device::DeviceManager</a>&lt; kMaxDevices, kUseStdFunctionCallback, kMaxSummaryStringLength &gt;::OnDeviceStatusChange </td>
           <td>(</td>
           <td class="paramtype">CallbackType&#160;</td>
           <td class="paramname"><em>callback</em></td><td>)</td>
@@ -241,29 +317,30 @@ template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>注册设备故障或离线回调 </p>
+<p>注册设备状态变化回调 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">callback</td><td>回调函数，参数为发生故障或离线的设备指针 </td></tr>
+    <tr><td class="paramname">callback</td><td>回调函数，参数为状态发生变化的设备指针 </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>注解</dt><dd>当设备的状态发生任何变化时都会触发此回调，包括：在线&lt;-&gt;离线、在线&lt;-&gt;故障、离线&lt;-&gt;故障等所有状态转换 </dd></dl>
 
 </div>
 </div>
-<a id="a22459fd6171f9d231c9f7736fe7ffbc3" name="a22459fd6171f9d231c9f7736fe7ffbc3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22459fd6171f9d231c9f7736fe7ffbc3">&#9670;&#160;</a></span>operator&lt;&lt;()</h2>
+<a id="ae608f46a9d7f2ee136b84c5e0222b03c" name="ae608f46a9d7f2ee136b84c5e0222b03c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae608f46a9d7f2ee136b84c5e0222b03c">&#9670;&#160;</a></span>operator&lt;&lt;()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true&gt; </div>
+template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true, size_t kMaxSummaryStringLength = 512&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrm_1_1device_1_1DeviceManager.html">DeviceManager</a> &amp; <a class="el" href="classrm_1_1device_1_1DeviceManager.html">rm::device::DeviceManager</a>&lt; kMaxDevices, kUseStdFunctionCallback &gt;::operator&lt;&lt; </td>
+          <td class="memname"><a class="el" href="classrm_1_1device_1_1DeviceManager.html">DeviceManager</a> &amp; <a class="el" href="classrm_1_1device_1_1DeviceManager.html">rm::device::DeviceManager</a>&lt; kMaxDevices, kUseStdFunctionCallback, kMaxSummaryStringLength &gt;::operator&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classrm_1_1device_1_1Device.html">Device</a> *&#160;</td>
           <td class="paramname"><em>device</em></td><td>)</td>
@@ -279,19 +356,19 @@ template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true&gt; </div>
 
 </div>
 </div>
-<a id="a8cb8238051a0b07445bde3f7d7894409" name="a8cb8238051a0b07445bde3f7d7894409"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8cb8238051a0b07445bde3f7d7894409">&#9670;&#160;</a></span>Update()</h2>
+<a id="a888ce23bee4e77ddfedf190a36b5632e" name="a888ce23bee4e77ddfedf190a36b5632e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a888ce23bee4e77ddfedf190a36b5632e">&#9670;&#160;</a></span>Update()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true&gt; </div>
+template&lt;size_t kMaxDevices, bool kUseStdFunctionCallback = true, size_t kMaxSummaryStringLength = 512&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classrm_1_1device_1_1DeviceManager.html">rm::device::DeviceManager</a>&lt; kMaxDevices, kUseStdFunctionCallback &gt;::Update </td>
+          <td class="memname">bool <a class="el" href="classrm_1_1device_1_1DeviceManager.html">rm::device::DeviceManager</a>&lt; kMaxDevices, kUseStdFunctionCallback, kMaxSummaryStringLength &gt;::Update </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>

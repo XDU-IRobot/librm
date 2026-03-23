@@ -18,5 +18,5 @@ var namespacerm =
     [ "u8", "namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34", null ],
     [ "usize", "namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630", null ],
     [ "Sleep", "namespacerm.html#a4f8a1bdc2c9b56c0f7607a4e5b9a1453", null ],
-    [ "Throw", "namespacerm.html#af69326a719d5dfef55cdbe321f815a44", null ]
+    [ "Throw", "namespacerm.html#ac948acc594f27343ce59b3ac31c2cacd", null ]
 ];

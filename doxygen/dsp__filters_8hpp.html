@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: src/librm/modules/dsp_filters.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('dsp__filters_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#typedef-members">类型定义</a>  </div>
+  <div class="headertitle"><div class="title">dsp_filters.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>一些常用的信号处理滤波器，来自Ardupilot的Filter模块，本文件对其进行了简单的封装和类型别名定义。  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;ap_filters/Filter.h&gt;</code><br />
+<code>#include &lt;ap_filters/FilterClass.h&gt;</code><br />
+<code>#include &lt;ap_filters/FilterWithBuffer.h&gt;</code><br />
+<code>#include &lt;ap_filters/AverageFilter.h&gt;</code><br />
+<code>#include &lt;ap_filters/LowPassFilter.h&gt;</code><br />
+<code>#include &lt;ap_filters/LowPassFilter2p.h&gt;</code><br />
+<code>#include &lt;ap_filters/NotchFilter.h&gt;</code><br />
+<code>#include &lt;ap_filters/HarmonicNotchFilter.h&gt;</code><br />
+<code>#include &lt;ap_filters/DerivativeFilter.h&gt;</code><br />
+<code>#include &lt;ap_filters/ModeFilter.h&gt;</code><br />
+<code>#include &lt;ap_filters/SlewLimiter.h&gt;</code><br />
+<code>#include &lt;ap_filters/Butter.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="typedefs_8hpp_source.html">librm/core/typedefs.hpp</a>&quot;</code><br />
+</div>
+<p><a href="dsp__filters_8hpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:namespacerm" id="r_namespacerm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm.html">rm</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacerm_1_1modules" id="r_namespacerm_1_1modules"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html">rm::modules</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:aeb0199dcd97ecf4f55809e0944b5738c" id="r_aeb0199dcd97ecf4f55809e0944b5738c"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &gt; </td></tr>
+<tr class="memitem:aeb0199dcd97ecf4f55809e0944b5738c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#aeb0199dcd97ecf4f55809e0944b5738c">rm::modules::Filter</a> = ::Filter&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &gt;</td></tr>
+<tr class="memdesc:aeb0199dcd97ecf4f55809e0944b5738c"><td class="mdescLeft">&#160;</td><td class="mdescRight">滤波器基类  <br /></td></tr>
+<tr class="separator:aeb0199dcd97ecf4f55809e0944b5738c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb92c7e0337276f041d3f4efeee3d194" id="r_abb92c7e0337276f041d3f4efeee3d194"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> FILTER_SIZE&gt; </td></tr>
+<tr class="memitem:abb92c7e0337276f041d3f4efeee3d194"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#abb92c7e0337276f041d3f4efeee3d194">rm::modules::FilterWithBuffer</a> = ::FilterWithBuffer&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">FILTER_SIZE</a> &gt;</td></tr>
+<tr class="memdesc:abb92c7e0337276f041d3f4efeee3d194"><td class="mdescLeft">&#160;</td><td class="mdescRight">带缓冲区的滤波器基类  <br /></td></tr>
+<tr class="separator:abb92c7e0337276f041d3f4efeee3d194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5866c84d2152925a7f3f793ba88ab05" id="r_ac5866c84d2152925a7f3f793ba88ab05"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">U</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> FILTER_SIZE&gt; </td></tr>
+<tr class="memitem:ac5866c84d2152925a7f3f793ba88ab05"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#ac5866c84d2152925a7f3f793ba88ab05">rm::modules::AverageFilter</a> = ::AverageFilter&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">U</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">FILTER_SIZE</a> &gt;</td></tr>
+<tr class="separator:ac5866c84d2152925a7f3f793ba88ab05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a036bf550088aa109be8df2b7414c1018" id="r_a036bf550088aa109be8df2b7414c1018"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">U</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> FILTER_SIZE&gt; </td></tr>
+<tr class="memitem:a036bf550088aa109be8df2b7414c1018"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a036bf550088aa109be8df2b7414c1018">rm::modules::AverageIntegralFilter</a> = ::AverageIntegralFilter&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">U</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">FILTER_SIZE</a> &gt;</td></tr>
+<tr class="memdesc:a036bf550088aa109be8df2b7414c1018"><td class="mdescLeft">&#160;</td><td class="mdescRight">积分平均滤波器  <br /></td></tr>
+<tr class="separator:a036bf550088aa109be8df2b7414c1018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a5e6b8ba53c6e214bed15f3e330d053" id="r_a4a5e6b8ba53c6e214bed15f3e330d053"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a4a5e6b8ba53c6e214bed15f3e330d053">rm::modules::AverageFilterInt8_Size2</a> = ::AverageFilterInt8_Size2</td></tr>
+<tr class="separator:a4a5e6b8ba53c6e214bed15f3e330d053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5ebe804c18327c73c42325bddbfae7a" id="r_af5ebe804c18327c73c42325bddbfae7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#af5ebe804c18327c73c42325bddbfae7a">rm::modules::AverageFilterInt8_Size3</a> = ::AverageFilterInt8_Size3</td></tr>
+<tr class="separator:af5ebe804c18327c73c42325bddbfae7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23cb43fc31cd0e16f82afb7cf0878d98" id="r_a23cb43fc31cd0e16f82afb7cf0878d98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a23cb43fc31cd0e16f82afb7cf0878d98">rm::modules::AverageFilterInt8_Size4</a> = ::AverageFilterInt8_Size4</td></tr>
+<tr class="separator:a23cb43fc31cd0e16f82afb7cf0878d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ecb373b46ddc10fb18aff63ac6c2ef2" id="r_a5ecb373b46ddc10fb18aff63ac6c2ef2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a5ecb373b46ddc10fb18aff63ac6c2ef2">rm::modules::AverageFilterInt8_Size5</a> = ::AverageFilterInt8_Size5</td></tr>
+<tr class="separator:a5ecb373b46ddc10fb18aff63ac6c2ef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3905504ad3997cd0eec07745696823ec" id="r_a3905504ad3997cd0eec07745696823ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a3905504ad3997cd0eec07745696823ec">rm::modules::AverageFilterUInt8_Size2</a> = ::AverageFilterUInt8_Size2</td></tr>
+<tr class="separator:a3905504ad3997cd0eec07745696823ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90ee231d3259ac07fd2fa983f803905e" id="r_a90ee231d3259ac07fd2fa983f803905e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a90ee231d3259ac07fd2fa983f803905e">rm::modules::AverageFilterUInt8_Size3</a> = ::AverageFilterUInt8_Size3</td></tr>
+<tr class="separator:a90ee231d3259ac07fd2fa983f803905e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ff5fd9de9835085d06ed5b0f037201e" id="r_a7ff5fd9de9835085d06ed5b0f037201e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a7ff5fd9de9835085d06ed5b0f037201e">rm::modules::AverageFilterUInt8_Size4</a> = ::AverageFilterUInt8_Size4</td></tr>
+<tr class="separator:a7ff5fd9de9835085d06ed5b0f037201e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8bc21d60b6f32de57368873f15d96a8" id="r_ac8bc21d60b6f32de57368873f15d96a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#ac8bc21d60b6f32de57368873f15d96a8">rm::modules::AverageFilterUInt8_Size5</a> = ::AverageFilterUInt8_Size5</td></tr>
+<tr class="separator:ac8bc21d60b6f32de57368873f15d96a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4016667ef4178673672e39c1ad33cae2" id="r_a4016667ef4178673672e39c1ad33cae2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a4016667ef4178673672e39c1ad33cae2">rm::modules::AverageFilterUInt16_Size2</a> = ::AverageFilterUInt16_Size2</td></tr>
+<tr class="separator:a4016667ef4178673672e39c1ad33cae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1140ecc07dad25f5bd5b4dffba6538f3" id="r_a1140ecc07dad25f5bd5b4dffba6538f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a1140ecc07dad25f5bd5b4dffba6538f3">rm::modules::AverageFilterUInt16_Size3</a> = ::AverageFilterUInt16_Size3</td></tr>
+<tr class="separator:a1140ecc07dad25f5bd5b4dffba6538f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09dd093216fae5675b284251c36ddc09" id="r_a09dd093216fae5675b284251c36ddc09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a09dd093216fae5675b284251c36ddc09">rm::modules::AverageFilterUInt16_Size4</a> = ::AverageFilterUInt16_Size4</td></tr>
+<tr class="separator:a09dd093216fae5675b284251c36ddc09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45638adac71f4a0ea340d6e01d6c8ca2" id="r_a45638adac71f4a0ea340d6e01d6c8ca2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a45638adac71f4a0ea340d6e01d6c8ca2">rm::modules::AverageFilterUInt16_Size5</a> = ::AverageFilterUInt16_Size5</td></tr>
+<tr class="separator:a45638adac71f4a0ea340d6e01d6c8ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af12a3e5df0aeaa899b78304708010077" id="r_af12a3e5df0aeaa899b78304708010077"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#af12a3e5df0aeaa899b78304708010077">rm::modules::AverageFilterInt16_Size2</a> = ::AverageFilterInt16_Size2</td></tr>
+<tr class="separator:af12a3e5df0aeaa899b78304708010077"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe367806631f9b624fa240f057ce6c69" id="r_abe367806631f9b624fa240f057ce6c69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#abe367806631f9b624fa240f057ce6c69">rm::modules::AverageFilterInt16_Size3</a> = ::AverageFilterInt16_Size3</td></tr>
+<tr class="separator:abe367806631f9b624fa240f057ce6c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6235c018357c0178c2ebfa179af71300" id="r_a6235c018357c0178c2ebfa179af71300"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a6235c018357c0178c2ebfa179af71300">rm::modules::AverageFilterInt16_Size4</a> = ::AverageFilterInt16_Size4</td></tr>
+<tr class="separator:a6235c018357c0178c2ebfa179af71300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfb571928b0d7576246e15473d1aa33e" id="r_adfb571928b0d7576246e15473d1aa33e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#adfb571928b0d7576246e15473d1aa33e">rm::modules::AverageFilterInt16_Size5</a> = ::AverageFilterInt16_Size5</td></tr>
+<tr class="separator:adfb571928b0d7576246e15473d1aa33e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d1ee7e387ef30af98427f0dcd3aebd4" id="r_a2d1ee7e387ef30af98427f0dcd3aebd4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a2d1ee7e387ef30af98427f0dcd3aebd4">rm::modules::AverageFilterInt32_Size2</a> = ::AverageFilterInt32_Size2</td></tr>
+<tr class="separator:a2d1ee7e387ef30af98427f0dcd3aebd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a0968642cf5f321908272c270307a2c" id="r_a0a0968642cf5f321908272c270307a2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a0a0968642cf5f321908272c270307a2c">rm::modules::AverageFilterInt32_Size3</a> = ::AverageFilterInt32_Size3</td></tr>
+<tr class="separator:a0a0968642cf5f321908272c270307a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7b75c4750451b22a6fc87d53ef7215a" id="r_ae7b75c4750451b22a6fc87d53ef7215a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#ae7b75c4750451b22a6fc87d53ef7215a">rm::modules::AverageFilterInt32_Size4</a> = ::AverageFilterInt32_Size4</td></tr>
+<tr class="separator:ae7b75c4750451b22a6fc87d53ef7215a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65c9d728c5e54f3cd772a9cbf577112a" id="r_a65c9d728c5e54f3cd772a9cbf577112a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a65c9d728c5e54f3cd772a9cbf577112a">rm::modules::AverageFilterInt32_Size5</a> = ::AverageFilterInt32_Size5</td></tr>
+<tr class="separator:a65c9d728c5e54f3cd772a9cbf577112a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39f21bf2b3fec6eb7c54129b6bd36332" id="r_a39f21bf2b3fec6eb7c54129b6bd36332"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a39f21bf2b3fec6eb7c54129b6bd36332">rm::modules::AverageFilterUInt32_Size2</a> = ::AverageFilterUInt32_Size2</td></tr>
+<tr class="separator:a39f21bf2b3fec6eb7c54129b6bd36332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45b780cdc26d89896e402f50990a7ac7" id="r_a45b780cdc26d89896e402f50990a7ac7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a45b780cdc26d89896e402f50990a7ac7">rm::modules::AverageFilterUInt32_Size3</a> = ::AverageFilterUInt32_Size3</td></tr>
+<tr class="separator:a45b780cdc26d89896e402f50990a7ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2ae1d001c1dd311539e4d5ad056ff8d" id="r_ae2ae1d001c1dd311539e4d5ad056ff8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#ae2ae1d001c1dd311539e4d5ad056ff8d">rm::modules::AverageFilterUInt32_Size4</a> = ::AverageFilterUInt32_Size4</td></tr>
+<tr class="separator:ae2ae1d001c1dd311539e4d5ad056ff8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbf0a7e2ce2e62ddb97d835fef623a62" id="r_afbf0a7e2ce2e62ddb97d835fef623a62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#afbf0a7e2ce2e62ddb97d835fef623a62">rm::modules::AverageFilterUInt32_Size5</a> = ::AverageFilterUInt32_Size5</td></tr>
+<tr class="separator:afbf0a7e2ce2e62ddb97d835fef623a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51f9a38da37b2859cb5f744c0ea390cb" id="r_a51f9a38da37b2859cb5f744c0ea390cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a51f9a38da37b2859cb5f744c0ea390cb">rm::modules::AverageFilterFloat_Size5</a> = ::AverageFilterFloat_Size5</td></tr>
+<tr class="separator:a51f9a38da37b2859cb5f744c0ea390cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf7be88d572c6f683b8486d15fafd24d" id="r_adf7be88d572c6f683b8486d15fafd24d"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &gt; </td></tr>
+<tr class="memitem:adf7be88d572c6f683b8486d15fafd24d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#adf7be88d572c6f683b8486d15fafd24d">rm::modules::DigitalLPF</a> = ::DigitalLPF&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &gt;</td></tr>
+<tr class="memdesc:adf7be88d572c6f683b8486d15fafd24d"><td class="mdescLeft">&#160;</td><td class="mdescRight">数字低通滤波器基础实现  <br /></td></tr>
+<tr class="separator:adf7be88d572c6f683b8486d15fafd24d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ff2de611341a765460778e4b8dc6341" id="r_a7ff2de611341a765460778e4b8dc6341"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &gt; </td></tr>
+<tr class="memitem:a7ff2de611341a765460778e4b8dc6341"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a7ff2de611341a765460778e4b8dc6341">rm::modules::LowPassFilterConstDt</a> = ::LowPassFilterConstDt&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &gt;</td></tr>
+<tr class="separator:a7ff2de611341a765460778e4b8dc6341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1839380f6d4d7601348bb879649dc040" id="r_a1839380f6d4d7601348bb879649dc040"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &gt; </td></tr>
+<tr class="memitem:a1839380f6d4d7601348bb879649dc040"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a1839380f6d4d7601348bb879649dc040">rm::modules::LowPassFilter</a> = ::LowPassFilter&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &gt;</td></tr>
+<tr class="separator:a1839380f6d4d7601348bb879649dc040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ddffda1ba2ab8868ef627f577fd0103" id="r_a9ddffda1ba2ab8868ef627f577fd0103"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &gt; </td></tr>
+<tr class="memitem:a9ddffda1ba2ab8868ef627f577fd0103"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a9ddffda1ba2ab8868ef627f577fd0103">rm::modules::DigitalBiquadFilter</a> = ::DigitalBiquadFilter&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &gt;</td></tr>
+<tr class="memdesc:a9ddffda1ba2ab8868ef627f577fd0103"><td class="mdescLeft">&#160;</td><td class="mdescRight">数字双二阶滤波器  <br /></td></tr>
+<tr class="separator:a9ddffda1ba2ab8868ef627f577fd0103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a707ac2a1c0545f48209d450adf5bfbb7" id="r_a707ac2a1c0545f48209d450adf5bfbb7"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &gt; </td></tr>
+<tr class="memitem:a707ac2a1c0545f48209d450adf5bfbb7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a707ac2a1c0545f48209d450adf5bfbb7">rm::modules::LowPassFilter2p</a> = ::LowPassFilter2p&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &gt;</td></tr>
+<tr class="memdesc:a707ac2a1c0545f48209d450adf5bfbb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">二阶低通滤波器  <br /></td></tr>
+<tr class="separator:a707ac2a1c0545f48209d450adf5bfbb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0104eae3218fe3a2d478629400f6f3e3" id="r_a0104eae3218fe3a2d478629400f6f3e3"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &gt; </td></tr>
+<tr class="memitem:a0104eae3218fe3a2d478629400f6f3e3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a0104eae3218fe3a2d478629400f6f3e3">rm::modules::NotchFilter</a> = ::NotchFilter&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &gt;</td></tr>
+<tr class="memdesc:a0104eae3218fe3a2d478629400f6f3e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">陷波滤波器  <br /></td></tr>
+<tr class="separator:a0104eae3218fe3a2d478629400f6f3e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebae432d52ba33dad513c67b17e49c18" id="r_aebae432d52ba33dad513c67b17e49c18"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &gt; </td></tr>
+<tr class="memitem:aebae432d52ba33dad513c67b17e49c18"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#aebae432d52ba33dad513c67b17e49c18">rm::modules::HarmonicNotchFilter</a> = ::HarmonicNotchFilter&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &gt;</td></tr>
+<tr class="memdesc:aebae432d52ba33dad513c67b17e49c18"><td class="mdescLeft">&#160;</td><td class="mdescRight">谐波陷波滤波器  <br /></td></tr>
+<tr class="separator:aebae432d52ba33dad513c67b17e49c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa48f07454184f656201c24ea9f4b8de0" id="r_aa48f07454184f656201c24ea9f4b8de0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#aa48f07454184f656201c24ea9f4b8de0">rm::modules::NotchFilterFloat</a> = ::NotchFilterFloat</td></tr>
+<tr class="separator:aa48f07454184f656201c24ea9f4b8de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05dc5b7904940894bba7484dd822d1ef" id="r_a05dc5b7904940894bba7484dd822d1ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a05dc5b7904940894bba7484dd822d1ef">rm::modules::NotchFilterVector2f</a> = ::NotchFilterVector2f</td></tr>
+<tr class="separator:a05dc5b7904940894bba7484dd822d1ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2003346100a8fb5208aed4e9bf082c58" id="r_a2003346100a8fb5208aed4e9bf082c58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a2003346100a8fb5208aed4e9bf082c58">rm::modules::NotchFilterVector3f</a> = ::NotchFilterVector3f</td></tr>
+<tr class="separator:a2003346100a8fb5208aed4e9bf082c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85e21657188c571baf3afb1fcd7645ea" id="r_a85e21657188c571baf3afb1fcd7645ea"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> FILTER_SIZE&gt; </td></tr>
+<tr class="memitem:a85e21657188c571baf3afb1fcd7645ea"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a85e21657188c571baf3afb1fcd7645ea">rm::modules::DerivativeFilter</a> = ::DerivativeFilter&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">FILTER_SIZE</a> &gt;</td></tr>
+<tr class="memdesc:a85e21657188c571baf3afb1fcd7645ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">导数滤波器  <br /></td></tr>
+<tr class="separator:a85e21657188c571baf3afb1fcd7645ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14c71c0565bf1b830e3c31f3db1c269e" id="r_a14c71c0565bf1b830e3c31f3db1c269e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a14c71c0565bf1b830e3c31f3db1c269e">rm::modules::DerivativeFilterFloat_Size7</a> = ::DerivativeFilterFloat_Size7</td></tr>
+<tr class="separator:a14c71c0565bf1b830e3c31f3db1c269e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add0c77577d66450a23644e0f323a74a9" id="r_add0c77577d66450a23644e0f323a74a9"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> FILTER_SIZE&gt; </td></tr>
+<tr class="memitem:add0c77577d66450a23644e0f323a74a9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#add0c77577d66450a23644e0f323a74a9">rm::modules::ModeFilter</a> = ::ModeFilter&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">FILTER_SIZE</a> &gt;</td></tr>
+<tr class="memdesc:add0c77577d66450a23644e0f323a74a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">众数滤波器（Mode Filter）  <br /></td></tr>
+<tr class="separator:add0c77577d66450a23644e0f323a74a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a915e450f0e2feb3e8edf1e0a4a65bccb" id="r_a915e450f0e2feb3e8edf1e0a4a65bccb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a915e450f0e2feb3e8edf1e0a4a65bccb">rm::modules::ModeFilterUInt16_Size3</a> = ::ModeFilterUInt16_Size3</td></tr>
+<tr class="separator:a915e450f0e2feb3e8edf1e0a4a65bccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab102edf604fa5fa8f7b8bc1188b10e12" id="r_ab102edf604fa5fa8f7b8bc1188b10e12"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#ab102edf604fa5fa8f7b8bc1188b10e12">rm::modules::ModeFilterUInt16_Size4</a> = ::ModeFilterUInt16_Size4</td></tr>
+<tr class="separator:ab102edf604fa5fa8f7b8bc1188b10e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1ad81a80fbc8152fd8e97e93931f1e1" id="r_aa1ad81a80fbc8152fd8e97e93931f1e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#aa1ad81a80fbc8152fd8e97e93931f1e1">rm::modules::ModeFilterUInt16_Size5</a> = ::ModeFilterUInt16_Size5</td></tr>
+<tr class="separator:aa1ad81a80fbc8152fd8e97e93931f1e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39e3f9302a8199b2a81fa02796ce2781" id="r_a39e3f9302a8199b2a81fa02796ce2781"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a39e3f9302a8199b2a81fa02796ce2781">rm::modules::ModeFilterInt16_Size3</a> = ::ModeFilterInt16_Size3</td></tr>
+<tr class="separator:a39e3f9302a8199b2a81fa02796ce2781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab66b0a049098ca5a2088fad570100243" id="r_ab66b0a049098ca5a2088fad570100243"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#ab66b0a049098ca5a2088fad570100243">rm::modules::ModeFilterInt16_Size4</a> = ::ModeFilterInt16_Size4</td></tr>
+<tr class="separator:ab66b0a049098ca5a2088fad570100243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ada756c8977ca01f514ad13d35ff244" id="r_a3ada756c8977ca01f514ad13d35ff244"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a3ada756c8977ca01f514ad13d35ff244">rm::modules::ModeFilterInt16_Size5</a> = ::ModeFilterInt16_Size5</td></tr>
+<tr class="separator:a3ada756c8977ca01f514ad13d35ff244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdde4eadf42314fbaa664c9ceeb156e9" id="r_afdde4eadf42314fbaa664c9ceeb156e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#afdde4eadf42314fbaa664c9ceeb156e9">rm::modules::SlewLimiter</a> = ::SlewLimiter</td></tr>
+<tr class="separator:afdde4eadf42314fbaa664c9ceeb156e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6549b4352feda86f3f1f267804c994b" id="r_ae6549b4352feda86f3f1f267804c994b"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &gt; </td></tr>
+<tr class="memitem:ae6549b4352feda86f3f1f267804c994b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#ae6549b4352feda86f3f1f267804c994b">rm::modules::Butter2</a> = ::Butter2&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &gt;</td></tr>
+<tr class="memdesc:ae6549b4352feda86f3f1f267804c994b"><td class="mdescLeft">&#160;</td><td class="mdescRight">二阶Butterworth滤波器  <br /></td></tr>
+<tr class="separator:ae6549b4352feda86f3f1f267804c994b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>一些常用的信号处理滤波器，来自Ardupilot的Filter模块，本文件对其进行了简单的封装和类型别名定义。 </p>
+<p>使用示例： </p><div class="fragment"><div class="line"><a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">rm::modules::LowPassFilter&lt;float&gt;</a> lpf;</div>
+<div class="line">lpf.set_cutoff_frequency(10.0f);</div>
+<div class="line"><span class="keywordtype">float</span> filtered = lpf.apply(raw_value, dt);</div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html">rm::modules::NoteFreq</a></div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:93</div></div>
+</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_9bd6aa59caad6cbef13c0eefdd946af0.html">modules</a></li><li class="navelem"><a class="el" href="dsp__filters_8hpp.html">dsp_filters.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

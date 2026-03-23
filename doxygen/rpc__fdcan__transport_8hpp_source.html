@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: src/librm/modules/rpc/rpc_fdcan_transport.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rpc__fdcan__transport_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rpc_fdcan_transport.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rpc__fdcan__transport_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2026 XDU-IRobot</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">  copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"></span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">  copies or substantial portions of the Software.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"></span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef LIBRM_MODULES_RPC_RPC_FDCAN_TRANSPORT_HPP</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_MODULES_RPC_RPC_FDCAN_TRANSPORT_HPP</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;cstring&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;etl/random.h&gt;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;etl/circular_buffer.h&gt;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &lt;etl/unordered_map.h&gt;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &lt;rpc_core/connection.hpp&gt;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;<a class="code" href="can__device_8hpp.html">librm/device/can_device.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1modules.html">rm::modules</a> {</div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1FdCanTransport.html">   45</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1modules_1_1FdCanTransport.html">FdCanTransport</a> : <span class="keyword">public</span> rpc_core::connection {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keyword">class </span>Impl : <span class="keyword">public</span> <a class="code hl_class" href="classrm_1_1device_1_1CanDevice.html">device::CanDevice</a> {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">struct </span>StdIdOffset {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        kFrameStart = 0,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        kFrameEnd,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        kPayload,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        kHeartbeat = 40,  <span class="comment">// 给一个很低的优先级，防止数据帧被同时发送的心跳仲裁掉</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      };</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    };</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>   <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint32_t</a> kMaxPayloadBytes = 4096;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint32_t</a> kHeartbeatIntervalMs = 200;  </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    Impl(<a class="code hl_class" href="classrm_1_1hal_1_1CanInterface.html">hal::CanInterface</a> &amp;<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">can</a>, <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint16_t</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">rx_stdid_base</a>, <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint16_t</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">tx_stdid_base</a>)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        : <a class="code hl_function" href="classrm_1_1device_1_1CanDevice.html#a58bd02230756c0dd4a865284bbbe9650">CanDevice</a>(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">can</a>, <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">rx_stdid_base</a> + StdIdOffset::kFrameStart, <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">rx_stdid_base</a> + StdIdOffset::kPayload,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                    <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">rx_stdid_base</a> + StdIdOffset::kFrameEnd, <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">rx_stdid_base</a> + StdIdOffset::kHeartbeat),</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>          tx_buf_{},</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>          rx_state_{},</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>          rx_stdid_base_{<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">rx_stdid_base</a>},</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>          tx_stdid_base_{<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">tx_stdid_base</a>},</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>          last_tx_time_{std::chrono::steady_clock::now()} {}</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">void</span> Send(<span class="keyword">const</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> *data, <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint32_t</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">size</a>) {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      <span class="comment">// 更新最后发送时间，数据帧本身就能维持连接</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      last_tx_time_ = std::chrono::steady_clock::now();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      <span class="comment">// 1. 生成一个随机的帧ID，用于标识本次传输的所有分片</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      tx_buf_.frame_start.frame_id = <span class="keyword">static_cast&lt;</span><a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a><span class="keyword">&gt;</span>(rng_() &amp; 0xff);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      <span class="comment">// 2. 准备起始帧，包含元数据：帧ID、总载荷长度和CRC8校验值</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>      tx_buf_.frame_start.payload_len = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">size</a>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      tx_buf_.frame_start.payload_crc8 = <a class="code hl_function" href="namespacerm_1_1modules.html#a4400b568ae5366a5e76bba418dc1d9d8">modules::Crc8</a>(data, <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">size</a>, <a class="code hl_variable" href="namespacerm_1_1modules.html#a7eaccc980241d90f55474549b8ea0dd7">modules::CRC8_INIT</a>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      <span class="comment">// 发送起始帧</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      <a class="code hl_variable" href="classrm_1_1device_1_1CanDevice.html#ad2f1fe1d83dd5901dce4c469c8c2efb1">can_</a>-&gt;<a class="code hl_function" href="classrm_1_1hal_1_1CanInterface.html#af5cfc29d748a66e6b0a7290beca694c0">Write</a>(tx_stdid_base_ + StdIdOffset::kFrameStart, <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> *<span class="keyword">&gt;</span>(&amp;tx_buf_.frame_start),</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                  <span class="keyword">sizeof</span>(tx_buf_.frame_start));</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>      <span class="comment">// 3. 循环发送数据分片</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint16_t</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">fragment_seq</a> = 0;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint32_t</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">bytes_sent</a> = 0;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      <span class="keywordflow">while</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">bytes_sent</a> &lt; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">size</a>) {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        tx_buf_.payload.frame_id = tx_buf_.frame_start.frame_id;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        tx_buf_.payload.fragment_seq = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">fragment_seq</a>++;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="comment">// 计算当前分片的数据大小</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">fragment_size</a> =</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            std::min(<span class="keyword">static_cast&lt;</span><a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint32_t</a><span class="keyword">&gt;</span>(<span class="keyword">sizeof</span>(tx_buf_.payload.fragment_data)), <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">size</a> - <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">bytes_sent</a>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        tx_buf_.payload.fragment_len = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">fragment_size</a>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        std::memcpy(tx_buf_.payload.fragment_data, data + <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">bytes_sent</a>, <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">fragment_size</a>);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="comment">// 发送数据分片，DLC固定为64</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <a class="code hl_variable" href="classrm_1_1device_1_1CanDevice.html#ad2f1fe1d83dd5901dce4c469c8c2efb1">can_</a>-&gt;<a class="code hl_function" href="classrm_1_1hal_1_1CanInterface.html#af5cfc29d748a66e6b0a7290beca694c0">Write</a>(tx_stdid_base_ + StdIdOffset::kPayload, <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> *<span class="keyword">&gt;</span>(&amp;tx_buf_.payload), 64);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">bytes_sent</a> += <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">fragment_size</a>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      <span class="comment">// 4. 发送结束帧，标识数据传输完成</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      tx_buf_.frame_end.frame_id = tx_buf_.frame_start.frame_id;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>      <a class="code hl_variable" href="classrm_1_1device_1_1CanDevice.html#ad2f1fe1d83dd5901dce4c469c8c2efb1">can_</a>-&gt;<a class="code hl_function" href="classrm_1_1hal_1_1CanInterface.html#af5cfc29d748a66e6b0a7290beca694c0">Write</a>(tx_stdid_base_ + StdIdOffset::kFrameEnd, <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> *<span class="keyword">&gt;</span>(&amp;tx_buf_.frame_end),</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                  <span class="keyword">sizeof</span>(tx_buf_.frame_end));</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordtype">void</span> SendHeartbeatIfNeeded() {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      <span class="keyword">auto</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">now</a> = std::chrono::steady_clock::now();</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      <span class="keyword">auto</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">elapsed_ms</a> = std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">now</a> - last_tx_time_).count();</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      <span class="keywordflow">if</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">elapsed_ms</a> &gt;= kHeartbeatIntervalMs) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <a class="code hl_variable" href="classrm_1_1device_1_1CanDevice.html#ad2f1fe1d83dd5901dce4c469c8c2efb1">can_</a>-&gt;<a class="code hl_function" href="classrm_1_1hal_1_1CanInterface.html#af5cfc29d748a66e6b0a7290beca694c0">Write</a>(tx_stdid_base_ + StdIdOffset::kHeartbeat, <span class="keyword">nullptr</span>, 0);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        last_tx_time_ = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">now</a>;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>      }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordtype">void</span> OnFrameRecv(std::function&lt;<span class="keywordtype">void</span>(std::string &amp;)&gt; callback) { frame_recv_callback_ = std::move(callback); }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>   <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordtype">void</span> RxCallback(<span class="keyword">const</span> <a class="code hl_struct" href="structrm_1_1hal_1_1CanFrame.html">hal::CanFrame</a> *<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">msg</a>)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>      <span class="comment">// 收到任何帧都更新连接状态，因为任何帧都能证明对方在线</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>      <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a7cc99f092ea347a682754478b34e489a">ReportStatus</a>(<a class="code hl_enumvalue" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21">kOk</a>);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>      <span class="comment">// 判断帧类型</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>      <span class="keywordflow">if</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">msg</a>-&gt;rx_std_id == rx_stdid_base_ + StdIdOffset::kHeartbeat) {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="comment">// 心跳帧，已在上面更新状态</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">msg</a>-&gt;rx_std_id == rx_stdid_base_ + StdIdOffset::kFrameStart) {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="comment">// 1. 收到起始帧，开始一个新的数据帧接收会话</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keyword">const</span> <span class="keyword">auto</span> *frame_start = <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">decltype</a>(tx_buf_.frame_start) *<span class="keyword">&gt;</span>(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">msg</a>-&gt;data.data());</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordflow">if</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">msg</a>-&gt;dlc != <span class="keyword">sizeof</span>(*frame_start)) {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>          <span class="keywordflow">return</span>;  <span class="comment">// 帧长度错误，直接丢弃</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keywordflow">if</span> (frame_start-&gt;payload_len &gt; kMaxPayloadBytes) {</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>          <span class="comment">// 载荷超出单帧允许的最大长度，直接丢弃该会话</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>          rx_sessions_.erase(frame_start-&gt;frame_id);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>          <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        }</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="comment">// 检查会话池是否已满，如果满了且是新会话，则淘汰最不活跃的会话</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keywordflow">if</span> (rx_sessions_.find(frame_start-&gt;frame_id) == rx_sessions_.end() &amp;&amp; rx_sessions_.full()) {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>          EvictLeastRecentlyUsedSession();</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        }</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="keyword">auto</span> &amp;<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a> = rx_sessions_[frame_start-&gt;frame_id];</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.payload_len = frame_start-&gt;payload_len;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.payload_crc8 = frame_start-&gt;payload_crc8;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.next_fragment_seq = 0;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.last_active_time = std::chrono::steady_clock::now();  <span class="comment">// 更新活跃时间</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.buffer.clear();</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.buffer.reserve(frame_start-&gt;payload_len);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">msg</a>-&gt;rx_std_id == rx_stdid_base_ + StdIdOffset::kPayload) {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="comment">// 2. 收到数据分片</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="keyword">const</span> <span class="keyword">auto</span> *payload = <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">decltype</a>(tx_buf_.payload) *<span class="keyword">&gt;</span>(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">msg</a>-&gt;data.data());</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keyword">auto</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session_it</a> = rx_sessions_.find(payload-&gt;frame_id);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="keywordflow">if</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session_it</a> == rx_sessions_.end()) {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>          <span class="keywordflow">return</span>;  <span class="comment">// 未找到对应会话，说明起始帧缺失</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        }</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <span class="keyword">auto</span> &amp;<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a> = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session_it</a>-&gt;second;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <span class="comment">// 校验分片序号确保顺序正确</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        <span class="keywordflow">if</span> (payload-&gt;fragment_seq != <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.next_fragment_seq) {</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>          rx_sessions_.erase(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session_it</a>);  <span class="comment">// 顺序错误，丢弃该会话</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>          <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        }</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <span class="keyword">const</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint32_t</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">data_len</a> = payload-&gt;fragment_len;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keywordflow">if</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.buffer.size() + <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">data_len</a> &gt; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.payload_len) {</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>          rx_sessions_.erase(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session_it</a>);  <span class="comment">// 数据超长，丢弃该会话</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>          <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        }</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.buffer.insert(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.buffer.end(), payload-&gt;fragment_data, payload-&gt;fragment_data + <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">data_len</a>);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.next_fragment_seq++;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.last_active_time = std::chrono::steady_clock::now();  <span class="comment">// 更新活跃时间</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">msg</a>-&gt;rx_std_id == rx_stdid_base_ + StdIdOffset::kFrameEnd) {</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        <span class="comment">// 3. 收到结束帧</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <span class="keyword">const</span> <span class="keyword">auto</span> *frame_end = <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">decltype</a>(tx_buf_.frame_end) *<span class="keyword">&gt;</span>(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">msg</a>-&gt;data.data());</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <span class="keyword">auto</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session_it</a> = rx_sessions_.find(frame_end-&gt;frame_id);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <span class="keywordflow">if</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session_it</a> == rx_sessions_.end()) {</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>          <span class="keywordflow">return</span>;  <span class="comment">// 没有对应的会话，忽略</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        }</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <span class="keyword">auto</span> &amp;<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a> = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session_it</a>-&gt;second;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <span class="keywordflow">if</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.buffer.size() != <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.payload_len) {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>          rx_sessions_.erase(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session_it</a>);  <span class="comment">// 长度不一致，放弃接收</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>          <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        }</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="comment">// 4. 数据重组和CRC校验</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">calculated_crc</a> = <a class="code hl_function" href="namespacerm_1_1modules.html#a4400b568ae5366a5e76bba418dc1d9d8">modules::Crc8</a>(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.buffer.empty() ? <span class="keyword">nullptr</span> : <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.buffer.data(),</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                                               <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.buffer.size(), <a class="code hl_variable" href="namespacerm_1_1modules.html#a7eaccc980241d90f55474549b8ea0dd7">modules::CRC8_INIT</a>);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <span class="keywordflow">if</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">calculated_crc</a> == <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.payload_crc8) {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>          <span class="comment">// 5. CRC校验通过，调用回调函数处理完整的数据帧</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>          <span class="keywordflow">if</span> (frame_recv_callback_) {</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>            std::string <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">received_data</a>(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.buffer.begin(), <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session</a>.buffer.end());</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            frame_recv_callback_(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">received_data</a>);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>          }</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        }</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        rx_sessions_.erase(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">session_it</a>);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>      }</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    }</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>      <span class="keyword">struct </span><a class="code hl_function" href="namespacerm_1_1modules.html#aa7d4d0759cc6406efe21d811902fc3f7">__attribute__</a>((<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">packed</a>)) {</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> frame_id;      </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint16_t</a> payload_len;  </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> payload_crc8;  </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>      } frame_start;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>      <span class="keyword">struct </span><a class="code hl_function" href="namespacerm_1_1modules.html#aa7d4d0759cc6406efe21d811902fc3f7">__attribute__</a>((<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">packed</a>)) {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> frame_id;           </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint16_t</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">fragment_seq</a>;      </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">fragment_len</a>;       </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">fragment_data</a>[60];  </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>      } payload;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>      <span class="keyword">struct </span><a class="code hl_function" href="namespacerm_1_1modules.html#aa7d4d0759cc6406efe21d811902fc3f7">__attribute__</a>((<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">packed</a>)) {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> frame_id;  </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>      } frame_end;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>      <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(frame_start) == 4);</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>      <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(payload) == 64);</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>      <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(frame_end) == 1);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    } tx_buf_;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>      <span class="keywordtype">bool</span> is_receiving = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>      <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> frame_id;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>      <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint16_t</a> payload_len;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>      <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> payload_crc8;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>      <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint16_t</a> received_len;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>      <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint16_t</a> next_fragment_seq;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    } rx_state_;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint16_t</a> rx_stdid_base_;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint16_t</a> tx_stdid_base_;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    std::chrono::steady_clock::time_point last_tx_time_;  </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    std::function&lt;<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">void</a>(std::string &amp;)&gt; frame_recv_callback_;  </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="keyword">struct </span>RxSession {</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>      <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint16_t</a> payload_len = 0;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>      <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> payload_crc8 = 0;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>      <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint16_t</a> next_fragment_seq = 0;</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>      std::chrono::steady_clock::time_point last_active_time;  </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>      etl::vector&lt;uint8_t, kMaxPayloadBytes&gt; buffer;           </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    };</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    etl::unordered_map&lt;<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a>,  </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                       RxSession,</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                       5&gt;                </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        rx_sessions_;                    </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    etl::random_xorshift rng_{114514u};  </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="keywordtype">void</span> EvictLeastRecentlyUsedSession() {</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>      <span class="keywordflow">if</span> (rx_sessions_.empty()) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>      <span class="keyword">auto</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">oldest_it</a> = rx_sessions_.begin();</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>      <span class="keyword">auto</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">oldest_time</a> = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">oldest_it</a>-&gt;second.last_active_time;</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">it</a> = rx_sessions_.begin(); <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">it</a> != rx_sessions_.end(); ++<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">it</a>) {</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        <span class="keywordflow">if</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">it</a>-&gt;second.last_active_time &lt; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">oldest_time</a>) {</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>          <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">oldest_time</a> = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">it</a>-&gt;second.last_active_time;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>          <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">oldest_it</a> = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">it</a>;</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        }</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>      }</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>      rx_sessions_.erase(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">oldest_it</a>);</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    }</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  } impl_;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00282" data-start="{" data-end="}">
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1FdCanTransport.html#aa5137a2e1f0aa313bc80b696cdc86596">  282</a></span>  <a class="code hl_function" href="classrm_1_1modules_1_1FdCanTransport.html#aa5137a2e1f0aa313bc80b696cdc86596">FdCanTransport</a>(<a class="code hl_class" href="classrm_1_1hal_1_1CanInterface.html">hal::CanInterface</a> &amp;<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">can</a>, <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint16_t</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">rx_stdid_base</a>, <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint16_t</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">tx_stdid_base</a>)</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>      : impl_{<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">can</a>, <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">rx_stdid_base</a>, <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">tx_stdid_base</a>} {</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">send_package_impl</a> = [<span class="keyword">this</span>](<span class="keyword">const</span> std::string &amp;payload) {</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>      impl_.Send(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">uint8_t</a> *<span class="keyword">&gt;</span>(payload.data()), payload.size());</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    };</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    impl_.OnFrameRecv([<span class="keyword">this</span>](std::string &amp;payload) {</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>      <span class="keywordflow">if</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">on_recv_package</a>) {</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">on_recv_package</a>(payload);</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>      }</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    });</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>  }</div>
+</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1FdCanTransport.html#ad55a8332045199df96f7446ea85476ee">  294</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="classrm_1_1modules_1_1FdCanTransport.html#ad55a8332045199df96f7446ea85476ee">~FdCanTransport</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span> </div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1FdCanTransport.html#a0e10bb32848c4fadb9cc6854e8ed7b0f">  302</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1modules_1_1FdCanTransport.html#a0e10bb32848c4fadb9cc6854e8ed7b0f">SendHeartbeat</a>() { impl_.SendHeartbeatIfNeeded(); }</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1FdCanTransport.html#acd81f48ef537048acf4f500ab0cbc0c5">  304</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classrm_1_1modules_1_1FdCanTransport.html#acd81f48ef537048acf4f500ab0cbc0c5">Connected</a>() { <span class="keywordflow">return</span> impl_.online_status() == <a class="code hl_enumvalue" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21">device::Device::kOk</a>; }</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>};</div>
+</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>}  <span class="comment">// namespace rm::modules</span></div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_MODULES_RPC_RPC_FDCAN_TRANSPORT_HPP</span></div>
+<div class="ttc" id="acan__device_8hpp_html"><div class="ttname"><a href="can__device_8hpp.html">can_device.hpp</a></div><div class="ttdoc">CAN设备抽象类</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1CanDevice_html"><div class="ttname"><a href="classrm_1_1device_1_1CanDevice.html">rm::device::CanDevice</a></div><div class="ttdoc">CAN设备的基类</div><div class="ttdef"><b>Definition</b> can_device.hpp:49</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1CanDevice_html_a58bd02230756c0dd4a865284bbbe9650"><div class="ttname"><a href="classrm_1_1device_1_1CanDevice.html#a58bd02230756c0dd4a865284bbbe9650">rm::device::CanDevice::CanDevice</a></div><div class="ttdeci">CanDevice(hal::CanInterface &amp;can, IdList... rx_std_ids)</div><div class="ttdef"><b>Definition</b> can_device.hpp:56</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1CanDevice_html_ad2f1fe1d83dd5901dce4c469c8c2efb1"><div class="ttname"><a href="classrm_1_1device_1_1CanDevice.html#ad2f1fe1d83dd5901dce4c469c8c2efb1">rm::device::CanDevice::can_</a></div><div class="ttdeci">hal::CanInterface * can_</div><div class="ttdef"><b>Definition</b> can_device.hpp:124</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21">rm::device::Device::kOk</a></div><div class="ttdeci">@ kOk</div><div class="ttdoc">在线且正常工作</div><div class="ttdef"><b>Definition</b> device.hpp:71</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a7cc99f092ea347a682754478b34e489a"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a7cc99f092ea347a682754478b34e489a">rm::device::Device::ReportStatus</a></div><div class="ttdeci">void ReportStatus(Status status)</div><div class="ttdoc">更新设备状态</div><div class="ttdef"><b>Definition</b> device.cc:54</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1CanInterface_html"><div class="ttname"><a href="classrm_1_1hal_1_1CanInterface.html">rm::hal::CanInterface</a></div><div class="ttdoc">CAN接口类</div><div class="ttdef"><b>Definition</b> can_interface.hpp:54</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1CanInterface_html_af5cfc29d748a66e6b0a7290beca694c0"><div class="ttname"><a href="classrm_1_1hal_1_1CanInterface.html#af5cfc29d748a66e6b0a7290beca694c0">rm::hal::CanInterface::Write</a></div><div class="ttdeci">virtual void Write(u16 id, const u8 *data, usize size)=0</div><div class="ttdoc">立即向总线上发送数据</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1FdCanTransport_html"><div class="ttname"><a href="classrm_1_1modules_1_1FdCanTransport.html">rm::modules::FdCanTransport</a></div><div class="ttdoc">基于CAN FD实现的一种rpc_core框架的传输层</div><div class="ttdef"><b>Definition</b> rpc_fdcan_transport.hpp:45</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1FdCanTransport_html_a0e10bb32848c4fadb9cc6854e8ed7b0f"><div class="ttname"><a href="classrm_1_1modules_1_1FdCanTransport.html#a0e10bb32848c4fadb9cc6854e8ed7b0f">rm::modules::FdCanTransport::SendHeartbeat</a></div><div class="ttdeci">void SendHeartbeat()</div><div class="ttdoc">智能心跳维护：仅在必要时发送心跳包</div><div class="ttdef"><b>Definition</b> rpc_fdcan_transport.hpp:302</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1FdCanTransport_html_aa5137a2e1f0aa313bc80b696cdc86596"><div class="ttname"><a href="classrm_1_1modules_1_1FdCanTransport.html#aa5137a2e1f0aa313bc80b696cdc86596">rm::modules::FdCanTransport::FdCanTransport</a></div><div class="ttdeci">FdCanTransport(hal::CanInterface &amp;can, uint16_t rx_stdid_base, uint16_t tx_stdid_base)</div><div class="ttdef"><b>Definition</b> rpc_fdcan_transport.hpp:282</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1FdCanTransport_html_acd81f48ef537048acf4f500ab0cbc0c5"><div class="ttname"><a href="classrm_1_1modules_1_1FdCanTransport.html#acd81f48ef537048acf4f500ab0cbc0c5">rm::modules::FdCanTransport::Connected</a></div><div class="ttdeci">bool Connected()</div><div class="ttdef"><b>Definition</b> rpc_fdcan_transport.hpp:304</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1FdCanTransport_html_ad55a8332045199df96f7446ea85476ee"><div class="ttname"><a href="classrm_1_1modules_1_1FdCanTransport.html#ad55a8332045199df96f7446ea85476ee">rm::modules::FdCanTransport::~FdCanTransport</a></div><div class="ttdeci">virtual ~FdCanTransport()=default</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html"><div class="ttname"><a href="namespacerm_1_1modules.html">rm::modules</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:33</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a4400b568ae5366a5e76bba418dc1d9d8"><div class="ttname"><a href="namespacerm_1_1modules.html#a4400b568ae5366a5e76bba418dc1d9d8">rm::modules::Crc8</a></div><div class="ttdeci">u8 Crc8(const u8 *input, usize len, u8 init)</div><div class="ttdoc">calculate crc8</div><div class="ttdef"><b>Definition</b> crc.cc:99</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a7eaccc980241d90f55474549b8ea0dd7"><div class="ttname"><a href="namespacerm_1_1modules.html#a7eaccc980241d90f55474549b8ea0dd7">rm::modules::CRC8_INIT</a></div><div class="ttdeci">constexpr u8 CRC8_INIT</div><div class="ttdef"><b>Definition</b> crc.hpp:37</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_aa7d4d0759cc6406efe21d811902fc3f7"><div class="ttname"><a href="namespacerm_1_1modules.html#aa7d4d0759cc6406efe21d811902fc3f7">rm::modules::__attribute__</a></div><div class="ttdeci">__attribute__((always_inline)) f32 Clamp(f32 input</div><div class="ttdoc">限幅函数(std::clamp)</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html">rm::hal::CanFrame</a></div><div class="ttdef"><b>Definition</b> can_interface.hpp:44</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html">rm::modules::NoteFreq</a></div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:93</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_9bd6aa59caad6cbef13c0eefdd946af0.html">modules</a></li><li class="navelem"><a class="el" href="dir_a52d8477b6e5aa6652c637e1032e16fc.html">rpc</a></li><li class="navelem"><a class="el" href="rpc__fdcan__transport_8hpp.html">rpc_fdcan_transport.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

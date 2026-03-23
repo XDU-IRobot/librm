@@ -8,5 +8,6 @@ var searchData=
   ['dji_5fmotor_2ehpp_5',['dji_motor.hpp',['../dji__motor_8hpp.html',1,'']]],
   ['dm_5fmotor_2ehpp_6',['dm_motor.hpp',['../dm__motor_8hpp.html',1,'']]],
   ['dr16_2ecc_7',['dr16.cc',['../dr16_8cc.html',1,'']]],
-  ['dr16_2ehpp_8',['dr16.hpp',['../dr16_8hpp.html',1,'']]]
+  ['dr16_2ehpp_8',['dr16.hpp',['../dr16_8hpp.html',1,'']]],
+  ['dsp_5ffilters_2ehpp_9',['dsp_filters.hpp',['../dsp__filters_8hpp.html',1,'']]]
 ];

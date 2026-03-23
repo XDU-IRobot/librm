@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('raspi_2gpio_8hpp_source.html',''); ini
 </div><!--header-->
 <div class="contents">
 <a href="raspi_2gpio_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2025 XDU-IRobot</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2026 XDU-IRobot</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
@@ -138,25 +138,25 @@ $(document).ready(function(){initNavTree('raspi_2gpio_8hpp_source.html',''); ini
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">class </span>Pin final : <span class="keyword">public</span> PinInterface {</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  Pin(usize pin) : pin_{pin} {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">static_assert</span>(<a class="code hl_variable" href="unitree__motor_8hpp.html#a7cea6ae40aa46b41e3806213a39718c6">mode</a> == OUTPUT || <a class="code hl_variable" href="unitree__motor_8hpp.html#a7cea6ae40aa46b41e3806213a39718c6">mode</a> == INPUT, <span class="stringliteral">&quot;unsupported pin mode!&quot;</span>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">static_assert</span>(mode == OUTPUT || mode == INPUT, <span class="stringliteral">&quot;unsupported pin mode!&quot;</span>);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    InitWiringPi();</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    pinMode(pin, <a class="code hl_variable" href="unitree__motor_8hpp.html#a7cea6ae40aa46b41e3806213a39718c6">mode</a>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    pinMode(pin, mode);</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  }</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  Pin() = <span class="keyword">delete</span>;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  ~Pin() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordtype">void</span> Write(<span class="keywordtype">bool</span> state)<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="unitree__motor_8hpp.html#a7cea6ae40aa46b41e3806213a39718c6">mode</a> == OUTPUT) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (mode == OUTPUT) {</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      digitalWrite(pin_, state);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      state_ = state;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  }</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  [[nodiscard]] <span class="keywordtype">bool</span> Read()<span class="keyword"> const override </span>{</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="unitree__motor_8hpp.html#a7cea6ae40aa46b41e3806213a39718c6">mode</a> == OUTPUT) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (mode == OUTPUT) {</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      <span class="keywordflow">return</span> state_;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="unitree__motor_8hpp.html#a7cea6ae40aa46b41e3806213a39718c6">mode</a> == INPUT) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (mode == INPUT) {</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      <span class="keywordflow">return</span> digitalRead(pin_);</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  }</div>
@@ -173,7 +173,6 @@ $(document).ready(function(){initNavTree('raspi_2gpio_8hpp_source.html',''); ini
 <div class="ttc" id="agpio__interface_8hpp_html"><div class="ttname"><a href="gpio__interface_8hpp.html">gpio_interface.hpp</a></div><div class="ttdoc">GPIO的接口类</div></div>
 <div class="ttc" id="anamespacerm_html_a1df35482f4a88e1fe1450c7eb4cf4630"><div class="ttname"><a href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">rm::usize</a></div><div class="ttdeci">size_t usize</div><div class="ttdef"><b>Definition</b> typedefs.hpp:51</div></div>
 <div class="ttc" id="atypedefs_8hpp_html"><div class="ttname"><a href="typedefs_8hpp.html">typedefs.hpp</a></div><div class="ttdoc">全局数据类型定义</div></div>
-<div class="ttc" id="aunitree__motor_8hpp_html_a7cea6ae40aa46b41e3806213a39718c6"><div class="ttname"><a href="unitree__motor_8hpp.html#a7cea6ae40aa46b41e3806213a39718c6">mode</a></div><div class="ttdeci">u8 mode</div><div class="ttdef"><b>Definition</b> unitree_motor.hpp:0</div></div>
 <div class="ttc" id="awiringpi__init_8hpp_html"><div class="ttname"><a href="wiringpi__init_8hpp.html">wiringpi_init.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
