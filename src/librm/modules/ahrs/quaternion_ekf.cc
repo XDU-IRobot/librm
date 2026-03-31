@@ -17,8 +17,9 @@ const f32 QuaternionEkfAhrs::IMU_QuaternionEKF_F[36] = {
     0, 0, 0, 0, 0, 1
 };
 
-void QuaternionEkfAhrs::Init(const f32 *init_quaternion, f32 process_noise1, f32 process_noise2, f32 measure_noise,
-                             f32 lambda, f32 lpf) {
+QuaternionEkfAhrs::QuaternionEkfAhrs(f32 sample_freq, const f32 *init_quaternion, f32 process_noise1, f32 process_noise2,
+                                     f32 measure_noise, f32 lambda, f32 lpf) {
+  dt = 1.0f / sample_freq;
   Initialized = 1;
   Q1 = process_noise1;
   Q2 = process_noise2;
@@ -47,7 +48,7 @@ void QuaternionEkfAhrs::Init(const f32 *init_quaternion, f32 process_noise1, f32
   Matrix_Init(&ChiSquare, 1, 1, ChiSquare_Data);
 
   for (int i = 0; i < 4; i++) {
-    IMU_QuaternionEKF->xhat_data[i] = init_quaternion[i];
+    IMU_QuaternionEKF->xhat_data[i] = init_quaternion != nullptr ? init_quaternion[i] : (i == 0 ? 1.0f : 0.0f);
   }
 
   if (init_quaternion != nullptr) {
@@ -55,6 +56,11 @@ void QuaternionEkfAhrs::Init(const f32 *init_quaternion, f32 process_noise1, f32
     quaternion_.x = init_quaternion[1];
     quaternion_.y = init_quaternion[2];
     quaternion_.z = init_quaternion[3];
+  } else {
+    quaternion_.w = 1.0f;
+    quaternion_.x = 0.0f;
+    quaternion_.y = 0.0f;
+    quaternion_.z = 0.0f;
   }
 
   IMU_QuaternionEKF->User_Func0_f = [this](KalmanFilter* kf) { this->Observe(kf); };
@@ -67,10 +73,6 @@ void QuaternionEkfAhrs::Init(const f32 *init_quaternion, f32 process_noise1, f32
 
   std::memcpy(IMU_QuaternionEKF->F_data, IMU_QuaternionEKF_F, sizeof(IMU_QuaternionEKF_F));
   std::memcpy(IMU_QuaternionEKF->P_data, IMU_QuaternionEKF_P, sizeof(IMU_QuaternionEKF_P));
-}
-
-void QuaternionEkfAhrs::SetUpdatePeriod(f32 dt) {
-  this->dt = dt;
 }
 
 void QuaternionEkfAhrs::Update(const ImuData9Dof &data) {

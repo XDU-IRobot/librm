@@ -20,24 +20,18 @@ namespace rm::modules {
 
 class QuaternionEkfAhrs : public AhrsInterface {
 public:
-  QuaternionEkfAhrs() = default;
-  ~QuaternionEkfAhrs() override = default;
+  explicit QuaternionEkfAhrs(f32 sample_freq = 1000.0f,
+                             const f32* init_quaternion = nullptr,
+                             f32 process_noise1 = 1e-5f,
+                             f32 process_noise2 = 1e-6f,
+                             f32 measure_noise = 1e-2f,
+                             f32 lambda = 1.0f,
+                             f32 lpf = 0.001f);
+  ~QuaternionEkfAhrs() override = default;void SetUpdatePeriod(float x);
 
   // 禁用拷贝构造和赋值
   QuaternionEkfAhrs(const QuaternionEkfAhrs&) = delete;
   QuaternionEkfAhrs& operator=(const QuaternionEkfAhrs&) = delete;
-
-  /**
-   * @brief 初始化AHRS姿态和EKF参数
-   * @param init_quaternion 初始四元数
-   * @param process_noise1 过程噪声1(四元数)
-   * @param process_noise2 过程噪声2(陀螺仪零偏)
-   * @param measure_noise 观测噪声
-   * @param lambda 渐消因子
-   * @param lpf 加速度计低通滤波系数
-   */
-  void Init(const f32* init_quaternion, f32 process_noise1, f32 process_noise2, f32 measure_noise,
-            f32 lambda, f32 lpf);
 
   /**
    * @brief 更新AHRS (6DOF)
@@ -48,12 +42,6 @@ public:
    * @brief 更新AHRS (9DOF) 不支持，内部将等同于6DOF调用但忽略磁力计
    */
   void Update(const ImuData9Dof &data) override;
-
-  /**
-   * @brief 获取更新间隔设定
-   * @param dt 设定的每次update的时间间隔
-   */
-  void SetUpdatePeriod(f32 dt);
 
   [[nodiscard]] const EulerAngle &euler_angle() const override;
   [[nodiscard]] const Quaternion &quaternion() const override;
