@@ -8,17 +8,11 @@
 
 namespace rm::modules {
 
-const f32 QuaternionEkfAhrs::IMU_QuaternionEKF_F[36] = {
-    1, 0, 0, 0, 0, 0,
-    0, 1, 0, 0, 0, 0,
-    0, 0, 1, 0, 0, 0,
-    0, 0, 0, 1, 0, 0,
-    0, 0, 0, 0, 1, 0,
-    0, 0, 0, 0, 0, 1
-};
+const f32 QuaternionEkfAhrs::IMU_QuaternionEKF_F[36] = {1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+                                                        0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1};
 
-QuaternionEkfAhrs::QuaternionEkfAhrs(f32 sample_freq, const f32 *init_quaternion, f32 process_noise1, f32 process_noise2,
-                                     f32 measure_noise, f32 lambda, f32 lpf) {
+QuaternionEkfAhrs::QuaternionEkfAhrs(f32 sample_freq, const f32 *init_quaternion, f32 process_noise1,
+                                     f32 process_noise2, f32 measure_noise, f32 lambda, f32 lpf) {
   dt = 1.0f / sample_freq;
   Initialized = 1;
   Q1 = process_noise1;
@@ -34,12 +28,9 @@ QuaternionEkfAhrs::QuaternionEkfAhrs(f32 sample_freq, const f32 *init_quaternion
   this->lambda = lambda;
   accLPFcoef = lpf;
 
-  f32 init_P[36] = {100000, 0.1, 0.1,    0.1, 0.1, 0.1,
-                    0.1, 100000, 0.1, 0.1,    0.1, 0.1,
-                    0.1,    0.1, 100000, 0.1, 0.1, 0.1,
-                    0.1, 0.1,    0.1, 100000, 0.1, 0.1,
-                    0.1,    0.1, 0.1,    0.1, 100, 0.1,
-                    0.1, 0.1,    0.1, 0.1,    0.1, 100};
+  f32 init_P[36] = {100000, 0.1, 0.1,    0.1, 0.1, 0.1, 0.1, 100000, 0.1, 0.1,    0.1, 0.1,
+                    0.1,    0.1, 100000, 0.1, 0.1, 0.1, 0.1, 0.1,    0.1, 100000, 0.1, 0.1,
+                    0.1,    0.1, 0.1,    0.1, 100, 0.1, 0.1, 0.1,    0.1, 0.1,    0.1, 100};
   std::memcpy(IMU_QuaternionEKF_P, init_P, sizeof(init_P));
   std::memset(IMU_QuaternionEKF_K, 0, sizeof(IMU_QuaternionEKF_K));
   std::memset(IMU_QuaternionEKF_H, 0, sizeof(IMU_QuaternionEKF_H));
@@ -63,10 +54,10 @@ QuaternionEkfAhrs::QuaternionEkfAhrs(f32 sample_freq, const f32 *init_quaternion
     quaternion_.z = 0.0f;
   }
 
-  IMU_QuaternionEKF->User_Func0_f = [this](KalmanFilter* kf) { this->Observe(kf); };
-  IMU_QuaternionEKF->User_Func1_f = [this](KalmanFilter* kf) { this->F_Linearization_P_Fading(kf); };
-  IMU_QuaternionEKF->User_Func2_f = [this](KalmanFilter* kf) { this->SetH(kf); };
-  IMU_QuaternionEKF->User_Func3_f = [this](KalmanFilter* kf) { this->xhatUpdate(kf); };
+  IMU_QuaternionEKF->User_Func0_f = [this](KalmanFilter *kf) { this->Observe(kf); };
+  IMU_QuaternionEKF->User_Func1_f = [this](KalmanFilter *kf) { this->F_Linearization_P_Fading(kf); };
+  IMU_QuaternionEKF->User_Func2_f = [this](KalmanFilter *kf) { this->SetH(kf); };
+  IMU_QuaternionEKF->User_Func3_f = [this](KalmanFilter *kf) { this->xhatUpdate(kf); };
 
   IMU_QuaternionEKF->SkipEq3 = true;
   IMU_QuaternionEKF->SkipEq4 = true;
@@ -166,12 +157,12 @@ void QuaternionEkfAhrs::Update(const ImuData6Dof &data) {
   euler_ypr_.pitch = std::atan2(sinp, cosp) * 57.295779513f;
 
   f32 yaw_angle = std::atan2(2.0f * (quaternion_.w * quaternion_.z + quaternion_.x * quaternion_.y),
-                   2.0f * (quaternion_.w * quaternion_.w + quaternion_.x * quaternion_.x) - 1.0f) *
-        57.295779513f;
+                             2.0f * (quaternion_.w * quaternion_.w + quaternion_.x * quaternion_.x) - 1.0f) *
+                  57.295779513f;
   euler_ypr_.yaw = yaw_angle;
   euler_ypr_.roll = std::atan2(2.0f * (quaternion_.w * quaternion_.x + quaternion_.y * quaternion_.z),
-                    2.0f * (quaternion_.w * quaternion_.w + quaternion_.z * quaternion_.z) - 1.0f) *
-         57.295779513f;
+                               2.0f * (quaternion_.w * quaternion_.w + quaternion_.z * quaternion_.z) - 1.0f) *
+                    57.295779513f;
 
   if (yaw_angle - YawAngleLast > 180.0f) {
     YawRoundCount--;
@@ -321,8 +312,7 @@ void QuaternionEkfAhrs::xhatUpdate(KalmanFilter *kf) {
     }
   } else {
     if (ChiSquare_Data[0] > 0.1f * ChiSquareTestThreshold && ConvergeFlag) {
-      AdaptiveGainScale =
-          (ChiSquareTestThreshold - ChiSquare_Data[0]) / (0.9f * ChiSquareTestThreshold);
+      AdaptiveGainScale = (ChiSquareTestThreshold - ChiSquare_Data[0]) / (0.9f * ChiSquareTestThreshold);
     } else {
       AdaptiveGainScale = 1.0f;
     }
@@ -379,13 +369,8 @@ f32 QuaternionEkfAhrs::invSqrt(f32 x) {
   return y;
 }
 
-const EulerAngle &QuaternionEkfAhrs::euler_angle() const {
-  return euler_ypr_;
-}
+const EulerAngle &QuaternionEkfAhrs::euler_angle() const { return euler_ypr_; }
 
-const Quaternion &QuaternionEkfAhrs::quaternion() const {
-  return quaternion_;
-}
+const Quaternion &QuaternionEkfAhrs::quaternion() const { return quaternion_; }
 
 }  // namespace rm::modules
-

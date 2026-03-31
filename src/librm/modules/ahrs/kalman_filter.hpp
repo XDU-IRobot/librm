@@ -33,7 +33,7 @@ namespace rm::modules {
 #define Matrix_Inverse arm_mat_inverse_f32
 
 class KalmanFilter {
-public:
+ public:
   KalmanFilter(u8 xhatSize, u8 uSize, u8 zSize);
   ~KalmanFilter();
 
@@ -60,7 +60,7 @@ public:
   u8 UseAutoAdjustment;
   u8 MeasurementValidNum;
 
-  u8* MeasurementMap;       // 量测与状态的关系
+  u8* MeasurementMap;          // 量测与状态的关系
   f32* MeasurementDegree;      // 测量值对应H矩阵元素值
   f32* MatR_DiagonalElements;  // 量测方差
   f32* StateMinVariance;       // 最小方差
@@ -98,7 +98,7 @@ public:
   f32* K_data;
   f32 *S_data, *temp_matrix_data, *temp_matrix_data1, *temp_vector_data, *temp_vector_data1;
 
-private:
+ private:
   void HKRAdjustment();
 };
 
@@ -107,4 +107,3 @@ private:
 #endif
 
 #endif  // LIBRM_MODULES_AHRS_KALMAN_FILTER_HPP
-

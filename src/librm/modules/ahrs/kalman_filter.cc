@@ -22,10 +22,18 @@ static void FreeArray(T* ptr) {
 }
 
 KalmanFilter::KalmanFilter(u8 xhatSize, u8 uSize, u8 zSize)
-    : xhatSize(xhatSize), uSize(uSize), zSize(zSize), UseAutoAdjustment(0), MeasurementValidNum(0),
-      SkipEq1(false), SkipEq2(false), SkipEq3(false), SkipEq4(false), SkipEq5(false),
-      u_data(nullptr), B_data(nullptr) {
-
+    : xhatSize(xhatSize),
+      uSize(uSize),
+      zSize(zSize),
+      UseAutoAdjustment(0),
+      MeasurementValidNum(0),
+      SkipEq1(false),
+      SkipEq2(false),
+      SkipEq3(false),
+      SkipEq4(false),
+      SkipEq5(false),
+      u_data(nullptr),
+      B_data(nullptr) {
   MeasurementMap = AllocateArray<u8>(zSize);
   MeasurementDegree = AllocateArray<f32>(zSize);
   MatR_DiagonalElements = AllocateArray<f32>(zSize);
@@ -300,4 +308,3 @@ void KalmanFilter::HKRAdjustment() {
 }
 
 }  // namespace rm::modules
-

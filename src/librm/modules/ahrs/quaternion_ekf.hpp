@@ -19,19 +19,16 @@
 namespace rm::modules {
 
 class QuaternionEkfAhrs : public AhrsInterface {
-public:
-  explicit QuaternionEkfAhrs(f32 sample_freq = 1000.0f,
-                             const f32* init_quaternion = nullptr,
-                             f32 process_noise1 = 1e-5f,
-                             f32 process_noise2 = 1e-6f,
-                             f32 measure_noise = 1e-2f,
-                             f32 lambda = 1.0f,
-                             f32 lpf = 0.001f);
-  ~QuaternionEkfAhrs() override = default;void SetUpdatePeriod(float x);
+ public:
+  explicit QuaternionEkfAhrs(f32 sample_freq = 1000.0f, const f32 *init_quaternion = nullptr,
+                             f32 process_noise1 = 1e-5f, f32 process_noise2 = 1e-6f, f32 measure_noise = 1e-2f,
+                             f32 lambda = 1.0f, f32 lpf = 0.001f);
+  ~QuaternionEkfAhrs() override = default;
+  void SetUpdatePeriod(float x);
 
   // 禁用拷贝构造和赋值
-  QuaternionEkfAhrs(const QuaternionEkfAhrs&) = delete;
-  QuaternionEkfAhrs& operator=(const QuaternionEkfAhrs&) = delete;
+  QuaternionEkfAhrs(const QuaternionEkfAhrs &) = delete;
+  QuaternionEkfAhrs &operator=(const QuaternionEkfAhrs &) = delete;
 
   /**
    * @brief 更新AHRS (6DOF)
@@ -82,7 +79,7 @@ public:
   i16 YawRoundCount{0};
   f32 YawAngleLast{0};
 
-private:
+ private:
   void Observe(KalmanFilter *kf);
   void F_Linearization_P_Fading(KalmanFilter *kf);
   void SetH(KalmanFilter *kf);
@@ -99,4 +96,3 @@ private:
 }  // namespace rm::modules
 
 #endif  // LIBRM_MODULES_AHRS_QUATERNION_EKF_HPP
-
