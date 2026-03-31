@@ -29,7 +29,33 @@
 
 #include <cmath>
 
+#if defined(LIBRM_PLATFORM_STM32)
+#include "librm/hal/stm32/hal.hpp"
+
+#if !defined(__FPU_PRESENT)
+#define __FPU_PRESENT 1  // fallback to use sqrtf if we can't determine if FPU is present
+#endif
+
+#endif
+
 namespace rm::modules {
+
+f32 InvSqrt(f32 x) {
+#if defined(LIBRM_PLATFORM_STM32) && __FPU_PRESENT == 0
+  // Fast inverse square-root
+  // See: http://en.wikipedia.org/wiki/Fast_inverse_square_root
+  // 对于没有FPU的STM32芯片，使用快速倒数平方根算法来计算1/sqrt(x)，这样可以提高性能
+  f32 halfx = 0.5f * x;
+  f32 y = x;
+  long i = *reinterpret_cast<long *>(&y);
+  i = 0x5f3759df - (i >> 1);
+  y = *reinterpret_cast<f32 *>(&i);
+  y = y * (1.5f - (halfx * y * y));
+  return y;
+#else
+  return 1.f / sqrtf(x);
+#endif
+}
 
 f32 Deadline(f32 value, f32 min_value, f32 max_value) {
   if (value < min_value || value > max_value) {

@@ -22,6 +22,7 @@
 find_package(GTest REQUIRED)
 
 add_executable(librm_tests
+  throttled_prio_queue.cc
   trajectory_limiter.cc
   keyboard_handler.cc
   pid.cc

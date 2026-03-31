@@ -35,6 +35,13 @@
 namespace rm::modules {
 
 /**
+ * @brief  快速求平方根的倒数
+ * @param  x 输入值
+ * @return x的平方根的倒数
+ */
+f32 InvSqrt(f32 x);
+
+/**
  * @brief  符号函数
  * @tparam T 输入值类型
  * @param  value 输入值

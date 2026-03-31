@@ -84,6 +84,7 @@
 #include "librm/modules/rgb_led_controller.hpp"
 #include "librm/modules/sequence_player.hpp"
 #include "librm/modules/sparse_value_watcher.hpp"
+#include "librm/modules/throttled_prio_queue.hpp"
 #include "librm/modules/trajectory_limiter.hpp"
 #include "librm/modules/threshold_trigger.hpp"
 #include "librm/modules/utils.hpp"

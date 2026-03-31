@@ -31,33 +31,7 @@
 
 #include "librm/modules/utils.hpp"
 
-#if defined(LIBRM_PLATFORM_STM32)
-#include "librm/hal/stm32/hal.hpp"
-
-#if !defined(__FPU_PRESENT)
-#define __FPU_PRESENT 1  // fallback to use sqrtf if we can't determine if FPU is present
-#endif
-
-#endif
-
 namespace rm::modules {
-
-inline f32 InvSqrt(f32 x) {
-#if defined(LIBRM_PLATFORM_STM32) && __FPU_PRESENT == 0
-  // Fast inverse square-root
-  // See: http://en.wikipedia.org/wiki/Fast_inverse_square_root
-  // for stm32 models that do not have a fpu, we use this algorithm
-  f32 halfx = 0.5f * x;
-  f32 y = x;
-  long i = *reinterpret_cast<long *>(&y);
-  i = 0x5f3759df - (i >> 1);
-  y = *reinterpret_cast<f32 *>(&i);
-  y = y * (1.5f - (halfx * y * y));
-  return y;
-#else
-  return 1.f / sqrtf(x);
-#endif
-}
 
 /**
  * @param sample_freq 采样频率(Hz)，默认值1000Hz
