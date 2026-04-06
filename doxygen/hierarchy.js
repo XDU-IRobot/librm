@@ -10,7 +10,9 @@ var hierarchy =
     [ "rm::hal::CanFrame", "structrm_1_1hal_1_1CanFrame.html", null ],
     [ "rm::hal::CanInterface", "classrm_1_1hal_1_1CanInterface.html", [
       [ "rm::hal::linux_::SocketCan", "classrm_1_1hal_1_1linux___1_1SocketCan.html", null ],
-      [ "rm::hal::stm32::BxCan", "classrm_1_1hal_1_1stm32_1_1BxCan.html", null ]
+      [ "rm::hal::stm32::BxCan", "classrm_1_1hal_1_1stm32_1_1BxCan.html", [
+        [ "rm::hal::stm32::ThrottledBxCan< MaxQueueSize >", "classrm_1_1hal_1_1stm32_1_1ThrottledBxCan.html", null ]
+      ] ]
     ] ],
     [ "rm::device::UnitreeMotor::ComData32", "unionrm_1_1device_1_1UnitreeMotor_1_1ComData32.html", null ],
     [ "rm::device::UnitreeMotor::ComDataReceive", "structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html", null ],
@@ -19,8 +21,6 @@ var hierarchy =
     [ "rpc_core::connection", null, [
       [ "rm::modules::FdCanTransport", "classrm_1_1modules_1_1FdCanTransport.html", null ]
     ] ],
-    [ "rm::device::Go8010Motor::ControlData", "structrm_1_1device_1_1Go8010Motor_1_1ControlData.html", null ],
-    [ "rm::device::Go8010Motor::ControlParam", "structrm_1_1device_1_1Go8010Motor_1_1ControlParam.html", null ],
     [ "rm::device::UnitreeMotor::ControlParam", "structrm_1_1device_1_1UnitreeMotor_1_1ControlParam.html", null ],
     [ "rm::device::Device", "classrm_1_1device_1_1Device.html", [
       [ "rm::device::CanDevice", "classrm_1_1device_1_1CanDevice.html", [
@@ -71,12 +71,11 @@ var hierarchy =
     [ "Kalman::LinearizedSystemModel", null, [
       [ "rm::modules::SystemModel< CovarianceBase >", "classrm_1_1modules_1_1SystemModel.html", null ]
     ] ],
-    [ "rm::modules::M3508PowerModel", "classrm_1_1modules_1_1M3508PowerModel.html", null ],
     [ "rm::modules::MecanumChassis", "classrm_1_1modules_1_1MecanumChassis.html", null ],
     [ "rm::modules::MotorCalibrator", "classrm_1_1modules_1_1MotorCalibrator.html", null ],
     [ "rm::modules::MotorCalibrator::MotorConfig", "structrm_1_1modules_1_1MotorCalibrator_1_1MotorConfig.html", null ],
-    [ "rm::device::Go8010Motor::MotorData", "structrm_1_1device_1_1Go8010Motor_1_1MotorData.html", null ],
-    [ "rm::modules::M3508PowerModel::MotorState", "structrm_1_1modules_1_1M3508PowerModel_1_1MotorState.html", null ],
+    [ "rm::modules::MotorPowerModel", "classrm_1_1modules_1_1MotorPowerModel.html", null ],
+    [ "rm::modules::MotorPowerModel::MotorState", "structrm_1_1modules_1_1MotorPowerModel_1_1MotorState.html", null ],
     [ "rm::detail::NonCopyable", "classrm_1_1detail_1_1NonCopyable.html", [
       [ "rm::hal::linux_::SocketCan", "classrm_1_1hal_1_1linux___1_1SocketCan.html", null ],
       [ "rm::hal::stm32::BxCan", "classrm_1_1hal_1_1stm32_1_1BxCan.html", null ]
@@ -84,16 +83,17 @@ var hierarchy =
     [ "rm::modules::NoteDuration< Bpm >", "structrm_1_1modules_1_1NoteDuration.html", null ],
     [ "rm::modules::NoteFreq< A4Freq >", "structrm_1_1modules_1_1NoteFreq.html", null ],
     [ "rm::device::DirectDriveMotor::Parameters", "structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html", null ],
+    [ "rm::modules::MotorPowerModel::Params", "structrm_1_1modules_1_1MotorPowerModel_1_1Params.html", null ],
     [ "rm::modules::PID", "classrm_1_1modules_1_1PID.html", null ],
     [ "rm::hal::PinInterface", "classrm_1_1hal_1_1PinInterface.html", [
       [ "rm::hal::stm32::Pin", "classrm_1_1hal_1_1stm32_1_1Pin.html", null ]
     ] ],
     [ "rm::device::STP23L::PointData", "structrm_1_1device_1_1STP23L_1_1PointData.html", null ],
     [ "rm::modules::PollingTimer", "classrm_1_1modules_1_1PollingTimer.html", null ],
-    [ "rm::modules::M3508PowerModel::PowerInfo", "structrm_1_1modules_1_1M3508PowerModel_1_1PowerInfo.html", null ],
+    [ "rm::modules::MotorPowerModel::PowerInfo", "structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html", null ],
     [ "rm::modules::QuadOmniChassis", "classrm_1_1modules_1_1QuadOmniChassis.html", null ],
     [ "rm::modules::Quaternion", "structrm_1_1modules_1_1Quaternion.html", null ],
-    [ "rm::device::Go8010Motor::ReceiveData", "structrm_1_1device_1_1Go8010Motor_1_1ReceiveData.html", null ],
+    [ "rm::modules::ThrottledPrioQueue< T, MaxQueueSize >::QueueItem", "structrm_1_1modules_1_1ThrottledPrioQueue_1_1QueueItem.html", null ],
     [ "rm::device::UnitreeMotor::ReceiveData", "structrm_1_1device_1_1UnitreeMotor_1_1ReceiveData.html", null ],
     [ "rm::device::RefereeCmdId< revision >", "structrm_1_1device_1_1RefereeCmdId.html", null ],
     [ "rm::device::RefereeCmdId< RefereeRevision::kNewV110 >", "structrm_1_1device_1_1RefereeCmdId_3_01RefereeRevision_1_1kNewV110_01_4.html", null ],
@@ -113,10 +113,6 @@ var hierarchy =
     [ "rm::device::RefereeProtocol< RefereeRevision::kNewV110 >::RemoteControl", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV110_01_4_1_1RemoteControl.html", null ],
     [ "rm::device::RefereeProtocol< RefereeRevision::kV164 >::RemoteControl", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4_1_1RemoteControl.html", null ],
     [ "rm::device::RefereeProtocol< RefereeRevision::kV170 >::RemoteControl", "structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4_1_1RemoteControl.html", null ],
-    [ "rm::device::Go8010Motor::RIS_Comd", "structrm_1_1device_1_1Go8010Motor_1_1RIS__Comd.html", null ],
-    [ "rm::device::Go8010Motor::RIS_Fbk", "structrm_1_1device_1_1Go8010Motor_1_1RIS__Fbk.html", null ],
-    [ "rm::device::Go8010Motor::RIS_Mode", "structrm_1_1device_1_1Go8010Motor_1_1RIS__Mode.html", null ],
-    [ "rm::device::Go8010Motor::SendData", "structrm_1_1device_1_1Go8010Motor_1_1SendData.html", null ],
     [ "rm::device::UnitreeMotor::SendData", "structrm_1_1device_1_1UnitreeMotor_1_1SendData.html", null ],
     [ "rm::modules::SequenceGenerator< OutputType >", "classrm_1_1modules_1_1SequenceGenerator.html", null ],
     [ "rm::modules::SequenceGenerator< BuzzerNote >", "classrm_1_1modules_1_1SequenceGenerator.html", [
@@ -158,6 +154,8 @@ var hierarchy =
     [ "rm::modules::SteeringChassis", "classrm_1_1modules_1_1SteeringChassis.html", null ],
     [ "rm::ThreadPool", "classrm_1_1ThreadPool.html", null ],
     [ "rm::modules::ThresholdTrigger< T >", "classrm_1_1modules_1_1ThresholdTrigger.html", null ],
+    [ "rm::modules::ThrottledPrioQueue< T, MaxQueueSize >", "classrm_1_1modules_1_1ThrottledPrioQueue.html", null ],
+    [ "rm::modules::ThrottledPrioQueue< TxRequest, 128 >", "classrm_1_1modules_1_1ThrottledPrioQueue.html", null ],
     [ "rm::hal::TimerInterface", "classrm_1_1hal_1_1TimerInterface.html", [
       [ "rm::hal::PollingTimer", "classrm_1_1hal_1_1PollingTimer.html", null ],
       [ "rm::hal::linux_::TimerFd", "classrm_1_1hal_1_1linux___1_1TimerFd.html", null ]

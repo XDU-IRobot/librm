@@ -11,7 +11,7 @@ var searchData=
   ['lf_5fspeed_8',['lf_speed',['../classrm_1_1modules_1_1MecanumChassis.html#a71f024c1d34b27fb2ff7ca2ec067ee8c',1,'rm::modules::MecanumChassis::lf_speed'],['../classrm_1_1modules_1_1QuadOmniChassis.html#a288cfeab62833224e99f16c1e82f90fc',1,'rm::modules::QuadOmniChassis::lf_speed']]],
   ['lf_5fsteer_5fposition_9',['lf_steer_position',['../classrm_1_1modules_1_1SteeringChassis.html#a519381c241b6b91ea41c31d08993ad3c',1,'rm::modules::SteeringChassis']]],
   ['lf_5fwheel_5fspeed_10',['lf_wheel_speed',['../classrm_1_1modules_1_1SteeringChassis.html#a9135230fb816f82f8665682476aaf02b',1,'rm::modules::SteeringChassis']]],
-  ['loss_5fpower_11',['loss_power',['../structrm_1_1modules_1_1M3508PowerModel_1_1PowerInfo.html#aa6415bd5587160f24e5c7fcc206fd2db',1,'rm::modules::M3508PowerModel::PowerInfo']]],
+  ['loss_5fpower_11',['loss_power',['../structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html#a33e61717c8bc4702cf5af207227c463f',1,'rm::modules::MotorPowerModel::PowerInfo']]],
   ['low_5fvel_12',['low_vel',['../structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html#ab3f0b8ca5e7786ba33ee0445eb03c3f3',1,'rm::device::UnitreeMotor::ComDataReceive']]],
   ['low_5fvel_5fref_13',['low_vel_ref',['../structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html#af78788763c45aa44d55486db1badd892',1,'rm::device::UnitreeMotor::ComDataReceive']]],
   ['low_5fvoltage_14',['low_voltage',['../classrm_1_1device_1_1LkMotor.html#ac71e3d3750301dc89d9c26ce54d95de1',1,'rm::device::LkMotor']]],

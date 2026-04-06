@@ -2,7 +2,7 @@ var searchData=
 [
   ['sbus_0',['Sbus',['../classrm_1_1device_1_1Sbus.html',1,'rm::device']]],
   ['seeuagain_1',['SeeUAgain',['../classrm_1_1modules_1_1buzzer__melody_1_1SeeUAgain.html',1,'rm::modules::buzzer_melody']]],
-  ['senddata_2',['senddata',['../structrm_1_1device_1_1Go8010Motor_1_1SendData.html',1,'rm::device::Go8010Motor::SendData'],['../structrm_1_1device_1_1UnitreeMotor_1_1SendData.html',1,'rm::device::UnitreeMotor::SendData']]],
+  ['senddata_2',['SendData',['../structrm_1_1device_1_1UnitreeMotor_1_1SendData.html',1,'rm::device::UnitreeMotor']]],
   ['sequencegenerator_3',['SequenceGenerator',['../classrm_1_1modules_1_1SequenceGenerator.html',1,'rm::modules']]],
   ['sequencegenerator_3c_20buzzernote_20_3e_4',['SequenceGenerator&lt; BuzzerNote &gt;',['../classrm_1_1modules_1_1SequenceGenerator.html',1,'rm::modules']]],
   ['sequencegenerator_3c_20std_3a_3atuple_3c_20u8_2c_20u8_2c_20u8_20_3e_20_3e_5',['SequenceGenerator&lt; std::tuple&lt; u8, u8, u8 &gt; &gt;',['../classrm_1_1modules_1_1SequenceGenerator.html',1,'rm::modules']]],

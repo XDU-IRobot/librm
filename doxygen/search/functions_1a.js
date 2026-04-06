@@ -11,7 +11,7 @@ var searchData=
   ['_7eekfahrs_8',['~EkfAhrs',['../classrm_1_1modules_1_1EkfAhrs.html#a006ac9d3b5a32bd09415123064831eb8',1,'rm::modules::EkfAhrs']]],
   ['_7efdcantransport_9',['~FdCanTransport',['../classrm_1_1modules_1_1FdCanTransport.html#ad55a8332045199df96f7446ea85476ee',1,'rm::modules::FdCanTransport']]],
   ['_7egksupercap_10',['~GkSupercap',['../classrm_1_1device_1_1GkSupercap.html#a70b56c08f1127d875d95f488e4d4ba51',1,'rm::device::GkSupercap']]],
-  ['_7ego8010motor_11',['~Go8010Motor',['../classrm_1_1device_1_1Go8010Motor.html#a6ed2d51709163c7b3acda379b6aa18fe',1,'rm::device::Go8010Motor']]],
+  ['_7ego8010motor_11',['~Go8010Motor',['../classrm_1_1device_1_1Go8010Motor.html#a7e889f7a91c598c89c7336349caaac76',1,'rm::device::Go8010Motor']]],
   ['_7ehipnucimucan_12',['~HipnucImuCan',['../classrm_1_1device_1_1HipnucImuCan.html#a856232785191166fbb29c4eda25832ac',1,'rm::device::HipnucImuCan']]],
   ['_7ei2cdevice_13',['~I2cDevice',['../classrm_1_1hal_1_1stm32_1_1I2cDevice.html#afb24e78c9bbf73eebf48b400f70c7e72',1,'rm::hal::stm32::I2cDevice']]],
   ['_7ejyme02can_14',['~JyMe02Can',['../classrm_1_1device_1_1JyMe02Can.html#a119cc31c03280442106fbf8e2cb95f76',1,'rm::device::JyMe02Can']]],
@@ -35,10 +35,11 @@ var searchData=
   ['_7esteeringchassis_32',['~SteeringChassis',['../classrm_1_1modules_1_1SteeringChassis.html#ac5786440de51aa1c01ffcf7496a2d901',1,'rm::modules::SteeringChassis']]],
   ['_7esupercap_33',['~SuperCap',['../classrm_1_1device_1_1SuperCap.html#aca3a762d601d49264a8aea928cf09cc5',1,'rm::device::SuperCap']]],
   ['_7ethreadpool_34',['~ThreadPool',['../classrm_1_1ThreadPool.html#a3cb2fe05ed96b48f41c7c26c5a29b5d9',1,'rm::ThreadPool']]],
-  ['_7etimerfd_35',['~TimerFd',['../classrm_1_1hal_1_1linux___1_1TimerFd.html#a2724161c588ac7dfbaa547a14b39795e',1,'rm::hal::linux_::TimerFd']]],
-  ['_7etimerinterface_36',['~TimerInterface',['../classrm_1_1hal_1_1TimerInterface.html#a1bef017e0108d003db1824cae45596a6',1,'rm::hal::TimerInterface']]],
-  ['_7etristeeringchassis_37',['~TriSteeringChassis',['../classrm_1_1modules_1_1TriSteeringChassis.html#a8101a1155f7f0e2ef625bb2b0604646c',1,'rm::modules::TriSteeringChassis']]],
-  ['_7eunitreemotor_38',['~UnitreeMotor',['../classrm_1_1device_1_1UnitreeMotor.html#a5456104a56c4443a587d92b01c1e2d04',1,'rm::device::UnitreeMotor']]],
-  ['_7evirtualdevice_39',['~VirtualDevice',['../classrm_1_1device_1_1VirtualDevice.html#aa188bb36d49f7f48d0a98f9849f83c71',1,'rm::device::VirtualDevice']]],
-  ['_7ezdtstepper_40',['~ZdtStepper',['../classrm_1_1device_1_1ZdtStepper.html#a1c7b26483b80aea71bcd58bd5465bffb',1,'rm::device::ZdtStepper']]]
+  ['_7ethrottledbxcan_35',['~ThrottledBxCan',['../classrm_1_1hal_1_1stm32_1_1ThrottledBxCan.html#af8d51d3dcfdcb8b4d11d914cf0b49b11',1,'rm::hal::stm32::ThrottledBxCan']]],
+  ['_7etimerfd_36',['~TimerFd',['../classrm_1_1hal_1_1linux___1_1TimerFd.html#a2724161c588ac7dfbaa547a14b39795e',1,'rm::hal::linux_::TimerFd']]],
+  ['_7etimerinterface_37',['~TimerInterface',['../classrm_1_1hal_1_1TimerInterface.html#a1bef017e0108d003db1824cae45596a6',1,'rm::hal::TimerInterface']]],
+  ['_7etristeeringchassis_38',['~TriSteeringChassis',['../classrm_1_1modules_1_1TriSteeringChassis.html#a8101a1155f7f0e2ef625bb2b0604646c',1,'rm::modules::TriSteeringChassis']]],
+  ['_7eunitreemotor_39',['~UnitreeMotor',['../classrm_1_1device_1_1UnitreeMotor.html#a5456104a56c4443a587d92b01c1e2d04',1,'rm::device::UnitreeMotor']]],
+  ['_7evirtualdevice_40',['~VirtualDevice',['../classrm_1_1device_1_1VirtualDevice.html#aa188bb36d49f7f48d0a98f9849f83c71',1,'rm::device::VirtualDevice']]],
+  ['_7ezdtstepper_41',['~ZdtStepper',['../classrm_1_1device_1_1ZdtStepper.html#a1c7b26483b80aea71bcd58bd5465bffb',1,'rm::device::ZdtStepper']]]
 ];

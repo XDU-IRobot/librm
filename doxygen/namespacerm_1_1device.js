@@ -47,6 +47,7 @@ var namespacerm_1_1device =
     [ "DmMotorSpeed", "namespacerm_1_1device.html#aeb6c3f9fa7319f4f5ab684a282a771b6", null ],
     [ "DmMotorSpeedPosition", "namespacerm_1_1device.html#a2bd90b66d9b191f86a3ed8890a23a144", null ],
     [ "GM6020", "namespacerm_1_1device.html#a6cb7f3dec7aafdb9806d488a7b4820e1", null ],
+    [ "GM6020Current", "namespacerm_1_1device.html#a10f1c3bdb0cedf93dbc48e0f709515ef", null ],
     [ "LkMotorMF", "namespacerm_1_1device.html#a2e202349ccaec8021fc2d8711d53064f", null ],
     [ "LkMotorMG", "namespacerm_1_1device.html#ac0fb993d33e860e66978227f48e37247", null ],
     [ "LkMotorMH", "namespacerm_1_1device.html#a93b31625fbc148073434bfe0be23f06c", null ],
@@ -88,7 +89,8 @@ var namespacerm_1_1device =
     [ "DjiMotorType", "namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57", [
       [ "kGM6020", "namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a98d6242ecedc73c63a680ef118bed630", null ],
       [ "kM3508", "namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a93e36269eaeb796f969adca34b7957b6", null ],
-      [ "kM2006", "namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57ac79f8fe34278ffdb418f6ee3b8316ed4", null ]
+      [ "kM2006", "namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57ac79f8fe34278ffdb418f6ee3b8316ed4", null ],
+      [ "kGM6020Current", "namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a268ca16eb22ce8e2283093d352f06aa2", null ]
     ] ],
     [ "DmMotorControlMode", "namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e", [
       [ "kMit", "namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea671bf1301da9c5f5da9a08002e6f89c4", null ],

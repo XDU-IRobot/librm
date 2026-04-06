@@ -1,0 +1,360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: src/librm/modules/motor_power_model.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('motor__power__model_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">motor_power_model.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="motor__power__model_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2026 XDU-IRobot</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">  copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"></span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">  copies or substantial portions of the Software.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"></span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#ifndef LIBRM_MODULES_M3508_POWER_MODEL_HPP</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#define LIBRM_MODULES_M3508_POWER_MODEL_HPP</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;<a class="code" href="core_2exception_8hpp.html">librm/core/exception.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="typedefs_8hpp.html">librm/core/typedefs.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1modules.html">rm::modules</a> {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="};">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1MotorPowerModel.html">   47</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1modules_1_1MotorPowerModel.html">MotorPowerModel</a> {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="};">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1MotorPowerModel.html#ad09c389849a7ae0fc0f977957074dc2c">   49</a></span>  <span class="keyword">enum</span> <a class="code hl_enumeration" href="classrm_1_1modules_1_1MotorPowerModel.html#ad09c389849a7ae0fc0f977957074dc2c">MotorType</a> {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1MotorPowerModel.html#ad09c389849a7ae0fc0f977957074dc2cafb9a79af9d860aefac8534523707923b">   50</a></span>    <a class="code hl_enumvalue" href="classrm_1_1modules_1_1MotorPowerModel.html#ad09c389849a7ae0fc0f977957074dc2cafb9a79af9d860aefac8534523707923b">kM3508</a>,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  };</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="};">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html">   53</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html">Params</a> {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">// 电机参数常量</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#ad005f90cf051e731844248ee9fddd37f">   55</a></span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#ad005f90cf051e731844248ee9fddd37f">kt</a>;            </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#a858b6696ae03450784f308fab8cafb7b">   56</a></span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#a858b6696ae03450784f308fab8cafb7b">ke</a>;            </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#ab5ce8aa227222388e57f7d84f10375d5">   57</a></span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#ab5ce8aa227222388e57f7d84f10375d5">torque_coeff</a>;  </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">// 拟合模型系数</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#aa637c9be6b21c6e77a81f4b1f6960b8c">   60</a></span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#aa637c9be6b21c6e77a81f4b1f6960b8c">k1</a>;        </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#a39864737fd706bbd39ed233877c6aeab">   61</a></span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#a39864737fd706bbd39ed233877c6aeab">k2</a>;        </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#aee5e17469f5c371d20b174df37e7ca87">   62</a></span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#aee5e17469f5c371d20b174df37e7ca87">constant</a>;  </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#a14abde3708366ab46e6413fade44eb1f">   64</a></span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#a14abde3708366ab46e6413fade44eb1f">current_to_torque_current</a>;  </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#a91b52440948755f3328bcb7d3054c61c">   65</a></span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#a91b52440948755f3328bcb7d3054c61c">speed_to_mechanical_power</a>;  </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#ae205b23f01eb470322ead68702aad6bc">   66</a></span>    <a class="code hl_typedef" href="namespacerm.html#ab0024293c4410554bd98c9bb792c8afb">i16</a> <a class="code hl_variable" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#ae205b23f01eb470322ead68702aad6bc">max_current</a>;                </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  };</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="};">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1MotorPowerModel_1_1MotorState.html">   72</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structrm_1_1modules_1_1MotorPowerModel_1_1MotorState.html">MotorState</a> {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1MotorPowerModel_1_1MotorState.html#aaa32eb7d6e6f3d2bf0708d0981b09515">   73</a></span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1MotorPowerModel_1_1MotorState.html#aaa32eb7d6e6f3d2bf0708d0981b09515">speed_rpm</a>;         </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1MotorPowerModel_1_1MotorState.html#ab9be85b880f038808afb77434d5ac0d5">   74</a></span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1MotorPowerModel_1_1MotorState.html#ab9be85b880f038808afb77434d5ac0d5">give_current</a>;      </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1MotorPowerModel_1_1MotorState.html#a58a5cd24f39b868ef20e7ec1a5cc497a">   75</a></span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1MotorPowerModel_1_1MotorState.html#a58a5cd24f39b868ef20e7ec1a5cc497a">measured_current</a>;  </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  };</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="};">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html">   81</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html">PowerInfo</a> {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html#a35729994bc06268ecce2f9ac723fcf37">   82</a></span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html#a35729994bc06268ecce2f9ac723fcf37">mechanical_power</a>;  </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html#a33e61717c8bc4702cf5af207227c463f">   83</a></span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html#a33e61717c8bc4702cf5af207227c463f">loss_power</a>;        </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html#a362b08528e9bb8336de01827e6d14ed5">   84</a></span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html#a362b08528e9bb8336de01827e6d14ed5">total_power</a>;       </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html#adb617479107dfbad9fb9a09ba669a770">   85</a></span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html#adb617479107dfbad9fb9a09ba669a770">torque</a>;            </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  };</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1MotorPowerModel.html#a2c3577be9f083d95b5173e0112351500">   88</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classrm_1_1modules_1_1MotorPowerModel.html#a2c3577be9f083d95b5173e0112351500">MotorPowerModel</a>(<a class="code hl_enumeration" href="classrm_1_1modules_1_1MotorPowerModel.html#ad09c389849a7ae0fc0f977957074dc2c">MotorType</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">model_type</a>) : params_(CreateParams(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">model_type</a>)) {}</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1MotorPowerModel.html#ab9ee1aa6b5686a146278fef5d9fff0c1">   95</a></span>  <a class="code hl_struct" href="structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html">PowerInfo</a> <a class="code hl_function" href="classrm_1_1modules_1_1MotorPowerModel.html#ab9ee1aa6b5686a146278fef5d9fff0c1">CalculatePower</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrm_1_1modules_1_1MotorPowerModel_1_1MotorState.html">MotorState</a>&amp; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">state</a>)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <a class="code hl_struct" href="structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html">PowerInfo</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">info</a>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="comment">// 计算输出转矩:  τ = KT * I_torque</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">torque_current</a> = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">state</a>.give_current * params_.current_to_torque_current;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">info</a>.torque = params_.kt * <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">torque_current</a>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="comment">// 计算机械功率: P_mech = τ·ω / 9.55</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">info</a>.mechanical_power = (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">info</a>.torque * <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">state</a>.speed_rpm) * params_.speed_to_mechanical_power;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="comment">// 计算损耗功率: P_loss = k1·ω² + k2·I² + C</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">speed_squared</a> = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">state</a>.speed_rpm * <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">state</a>.speed_rpm;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">current_squared</a> = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">state</a>.give_current * <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">state</a>.give_current;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">info</a>.loss_power = params_.k1 * <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">speed_squared</a> + params_.k2 * <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">current_squared</a> + params_.constant;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="comment">// 总功率</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">info</a>.total_power = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">info</a>.mechanical_power + <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">info</a>.loss_power;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">info</a>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  }</div>
+</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1MotorPowerModel.html#ab2485a216af7d169c5ecabe3e0952722">  123</a></span>  <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_function" href="classrm_1_1modules_1_1MotorPowerModel.html#ab2485a216af7d169c5ecabe3e0952722">CalculateCtrlForPower</a>(<a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">target_power</a>, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> speed_rpm, <span class="keywordtype">bool</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">is_positive_direction</a>)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="comment">// 求解二次方程: a·I² + b·I + c = 0</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="comment">// 其中功率模型为: P = (KT·I_torque)·ω/9.55 + k1·ω² + k2·I² + C</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="comment">//              P = TORQUE_COEFFICIENT·I·ω + k1·ω² + k2·I² + C</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">a</a> = params_.k2;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">b</a> = params_.torque_coeff * speed_rpm;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">c</a> = params_.k1 * speed_rpm * speed_rpm - <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">target_power</a> + params_.constant;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="comment">// 判别式</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">discriminant</a> = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">b</a> * <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">b</a> - 4.0f * <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">a</a> * <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">c</a>;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">if</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">discriminant</a> &lt; 0) {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>      <span class="comment">// 无实数解，目标功率无法达到</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      <span class="keywordflow">return</span> 0.0f;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">sqrt_discriminant</a> = std::sqrt(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">discriminant</a>);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> current;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="comment">// 根据转矩方向选择解</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordflow">if</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">is_positive_direction</a>) {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>      current = (-<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">b</a> + <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">sqrt_discriminant</a>) / (2.0f * <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">a</a>);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>      current = (-<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">b</a> - <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">sqrt_discriminant</a>) / (2.0f * <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">a</a>);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="comment">// 限幅</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordflow">if</span> (current &gt; params_.max_current) {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>      current = params_.max_current;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (current &lt; -params_.max_current) {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>      current = -params_.max_current;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    }</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordflow">return</span> current;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  }</div>
+</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  <span class="keyword">template</span> &lt;usize NMotors&gt;</div>
+<div class="foldopen" id="foldopen00168" data-start="{" data-end="}">
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="classrm_1_1modules_1_1MotorPowerModel.html#af1118b40649eb36896684b0fbc93ca6c">  168</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1modules_1_1MotorPowerModel.html#af1118b40649eb36896684b0fbc93ca6c">DistributePower</a>(<span class="keyword">const</span> std::array&lt;MotorState, NMotors&gt; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">motor_states</a>, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>* <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">initial_currents</a>,</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                       <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">max_total_power</a>, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>* <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">output_currents</a>)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="comment">// 计算初始总功率</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">initial_total_power</a> = 0.0f;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">initial_powers</a>[<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">NMotors</a>];</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a> = 0; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a> &lt; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">NMotors</a>; ++<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a>) {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>      <a class="code hl_struct" href="structrm_1_1modules_1_1MotorPowerModel_1_1MotorState.html">MotorState</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">state</a> = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">motor_states</a>[<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a>];</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>      <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">state</a>.give_current = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">initial_currents</a>[<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a>];</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>      <span class="keyword">const</span> <a class="code hl_struct" href="structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html">PowerInfo</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">info</a> = <a class="code hl_function" href="classrm_1_1modules_1_1MotorPowerModel.html#ab9ee1aa6b5686a146278fef5d9fff0c1">CalculatePower</a>(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">state</a>);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>      <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">initial_powers</a>[<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a>] = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">info</a>.total_power;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>      <span class="comment">// 负功率不计入（过渡状态）</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>      <span class="keywordflow">if</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">initial_powers</a>[<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a>] &gt; 0) {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">initial_total_power</a> += <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">initial_powers</a>[<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a>];</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>      }</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    }</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="comment">// 如果超过最大功率，按比例缩放</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordflow">if</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">initial_total_power</a> &gt; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">max_total_power</a>) {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">power_scale</a> = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">max_total_power</a> / <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">initial_total_power</a>;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a> = 0; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a> &lt; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">NMotors</a>; ++<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a>) {</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">scaled_power</a> = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">initial_powers</a>[<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a>] * <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">power_scale</a>;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <span class="keywordflow">if</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">scaled_power</a> &lt; 0) {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>          <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">output_currents</a>[<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a>] = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">initial_currents</a>[<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a>];</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>          <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        }</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <span class="comment">// 根据缩放后的功率重新计算电流</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">is_positive</a> = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">initial_currents</a>[<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a>] &gt; 0;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">output_currents</a>[<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a>] = <a class="code hl_function" href="classrm_1_1modules_1_1MotorPowerModel.html#ab2485a216af7d169c5ecabe3e0952722">CalculateCtrlForPower</a>(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">scaled_power</a>, <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">motor_states</a>[<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a>].speed_rpm, <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">is_positive</a>);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>      }</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      <span class="comment">// 不超过功率限制，直接使用初始电流</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a> = 0; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a> &lt; <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">NMotors</a>; ++<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a>) {</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">output_currents</a>[<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a>] = <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">initial_currents</a>[<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">i</a>];</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>      }</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    }</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  }</div>
+</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  <span class="keyword">static</span> Params CreateParams(<a class="code hl_enumeration" href="classrm_1_1modules_1_1MotorPowerModel.html#ad09c389849a7ae0fc0f977957074dc2c">MotorType</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">model_type</a>) {</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="keywordflow">switch</span> (<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">model_type</a>) {</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classrm_1_1modules_1_1MotorPowerModel.html#ad09c389849a7ae0fc0f977957074dc2cafb9a79af9d860aefac8534523707923b">kM3508</a>: {</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        <span class="keywordflow">return</span> Params{0.3f / (3591.0f / 187.0f),</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                      (60.0f / (2.0f * <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">M_PI</a> * 24.48f)) / (3591.0f / 187.0f),</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>                      1.99688994e-6f,</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                      1.453e-07f,</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                      1.23e-07f,</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                      4.081f,</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                      20.0f / 16384.0f,</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                      1.0f / 9.55f,</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                      16000};</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>      }</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>      <span class="comment">// add more models here</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>      <span class="keywordflow">default</span>: {</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        <a class="code hl_function" href="namespacerm.html#ac948acc594f27343ce59b3ac31c2cacd">rm::Throw</a>(std::invalid_argument(<span class="stringliteral">&quot;Unsupported MotorPowerModelType&quot;</span>));</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>      }</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    }</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  }</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>  <span class="keyword">const</span> Params params_;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>};</div>
+</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>}  <span class="comment">// namespace rm::modules</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_MODULES_M3508_POWER_MODEL_HPP</span></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1MotorPowerModel_html"><div class="ttname"><a href="classrm_1_1modules_1_1MotorPowerModel.html">rm::modules::MotorPowerModel</a></div><div class="ttdoc">电机功率模型</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:47</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1MotorPowerModel_html_a2c3577be9f083d95b5173e0112351500"><div class="ttname"><a href="classrm_1_1modules_1_1MotorPowerModel.html#a2c3577be9f083d95b5173e0112351500">rm::modules::MotorPowerModel::MotorPowerModel</a></div><div class="ttdeci">MotorPowerModel(MotorType model_type)</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:88</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1MotorPowerModel_html_ab2485a216af7d169c5ecabe3e0952722"><div class="ttname"><a href="classrm_1_1modules_1_1MotorPowerModel.html#ab2485a216af7d169c5ecabe3e0952722">rm::modules::MotorPowerModel::CalculateCtrlForPower</a></div><div class="ttdeci">f32 CalculateCtrlForPower(f32 target_power, f32 speed_rpm, bool is_positive_direction) const</div><div class="ttdoc">根据目标功率计算所需的给定电流</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:123</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1MotorPowerModel_html_ab9ee1aa6b5686a146278fef5d9fff0c1"><div class="ttname"><a href="classrm_1_1modules_1_1MotorPowerModel.html#ab9ee1aa6b5686a146278fef5d9fff0c1">rm::modules::MotorPowerModel::CalculatePower</a></div><div class="ttdeci">PowerInfo CalculatePower(const MotorState &amp;state) const</div><div class="ttdoc">计算电机当前功率</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:95</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1MotorPowerModel_html_ad09c389849a7ae0fc0f977957074dc2c"><div class="ttname"><a href="classrm_1_1modules_1_1MotorPowerModel.html#ad09c389849a7ae0fc0f977957074dc2c">rm::modules::MotorPowerModel::MotorType</a></div><div class="ttdeci">MotorType</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:49</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1MotorPowerModel_html_ad09c389849a7ae0fc0f977957074dc2cafb9a79af9d860aefac8534523707923b"><div class="ttname"><a href="classrm_1_1modules_1_1MotorPowerModel.html#ad09c389849a7ae0fc0f977957074dc2cafb9a79af9d860aefac8534523707923b">rm::modules::MotorPowerModel::kM3508</a></div><div class="ttdeci">@ kM3508</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:50</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1MotorPowerModel_html_af1118b40649eb36896684b0fbc93ca6c"><div class="ttname"><a href="classrm_1_1modules_1_1MotorPowerModel.html#af1118b40649eb36896684b0fbc93ca6c">rm::modules::MotorPowerModel::DistributePower</a></div><div class="ttdeci">void DistributePower(const std::array&lt; MotorState, NMotors &gt; motor_states, const f32 *initial_currents, f32 max_total_power, f32 *output_currents) const</div><div class="ttdoc">计算多电机功率分配（用于底盘功率控制）</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:168</div></div>
+<div class="ttc" id="acore_2exception_8hpp_html"><div class="ttname"><a href="core_2exception_8hpp.html">exception.hpp</a></div><div class="ttdoc">异常处理</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html"><div class="ttname"><a href="namespacerm_1_1modules.html">rm::modules</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:33</div></div>
+<div class="ttc" id="anamespacerm_html_ab0024293c4410554bd98c9bb792c8afb"><div class="ttname"><a href="namespacerm.html#ab0024293c4410554bd98c9bb792c8afb">rm::i16</a></div><div class="ttdeci">int16_t i16</div><div class="ttdef"><b>Definition</b> typedefs.hpp:48</div></div>
+<div class="ttc" id="anamespacerm_html_abe438454936420638776f339c29718b1"><div class="ttname"><a href="namespacerm.html#abe438454936420638776f339c29718b1">rm::f32</a></div><div class="ttdeci">float f32</div><div class="ttdef"><b>Definition</b> typedefs.hpp:52</div></div>
+<div class="ttc" id="anamespacerm_html_ac948acc594f27343ce59b3ac31c2cacd"><div class="ttname"><a href="namespacerm.html#ac948acc594f27343ce59b3ac31c2cacd">rm::Throw</a></div><div class="ttdeci">void Throw(__attribute__((__unused__)) const T &amp;e)</div><div class="ttdoc">抛出异常</div><div class="ttdef"><b>Definition</b> exception.hpp:46</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1MotorPowerModel_1_1MotorState_html"><div class="ttname"><a href="structrm_1_1modules_1_1MotorPowerModel_1_1MotorState.html">rm::modules::MotorPowerModel::MotorState</a></div><div class="ttdoc">电机状态结构体</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:72</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1MotorPowerModel_1_1MotorState_html_a58a5cd24f39b868ef20e7ec1a5cc497a"><div class="ttname"><a href="structrm_1_1modules_1_1MotorPowerModel_1_1MotorState.html#a58a5cd24f39b868ef20e7ec1a5cc497a">rm::modules::MotorPowerModel::MotorState::measured_current</a></div><div class="ttdeci">f32 measured_current</div><div class="ttdoc">实际测量电流</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:75</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1MotorPowerModel_1_1MotorState_html_aaa32eb7d6e6f3d2bf0708d0981b09515"><div class="ttname"><a href="structrm_1_1modules_1_1MotorPowerModel_1_1MotorState.html#aaa32eb7d6e6f3d2bf0708d0981b09515">rm::modules::MotorPowerModel::MotorState::speed_rpm</a></div><div class="ttdeci">f32 speed_rpm</div><div class="ttdoc">当前转速 (rpm)</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:73</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1MotorPowerModel_1_1MotorState_html_ab9be85b880f038808afb77434d5ac0d5"><div class="ttname"><a href="structrm_1_1modules_1_1MotorPowerModel_1_1MotorState.html#ab9be85b880f038808afb77434d5ac0d5">rm::modules::MotorPowerModel::MotorState::give_current</a></div><div class="ttdeci">f32 give_current</div><div class="ttdoc">当前给定电流 (控制值，范围 -16384~16384)</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:74</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1MotorPowerModel_1_1Params_html"><div class="ttname"><a href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html">rm::modules::MotorPowerModel::Params</a></div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:53</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1MotorPowerModel_1_1Params_html_a14abde3708366ab46e6413fade44eb1f"><div class="ttname"><a href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#a14abde3708366ab46e6413fade44eb1f">rm::modules::MotorPowerModel::Params::current_to_torque_current</a></div><div class="ttdeci">f32 current_to_torque_current</div><div class="ttdoc">控制电流到力矩电流转换</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:64</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1MotorPowerModel_1_1Params_html_a39864737fd706bbd39ed233877c6aeab"><div class="ttname"><a href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#a39864737fd706bbd39ed233877c6aeab">rm::modules::MotorPowerModel::Params::k2</a></div><div class="ttdeci">f32 k2</div><div class="ttdoc">电流平方项系数 (其他损耗-电流相关)</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:61</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1MotorPowerModel_1_1Params_html_a858b6696ae03450784f308fab8cafb7b"><div class="ttname"><a href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#a858b6696ae03450784f308fab8cafb7b">rm::modules::MotorPowerModel::Params::ke</a></div><div class="ttdeci">f32 ke</div><div class="ttdoc">反电动势系数</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:56</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1MotorPowerModel_1_1Params_html_a91b52440948755f3328bcb7d3054c61c"><div class="ttname"><a href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#a91b52440948755f3328bcb7d3054c61c">rm::modules::MotorPowerModel::Params::speed_to_mechanical_power</a></div><div class="ttdeci">f32 speed_to_mechanical_power</div><div class="ttdoc">rpm·N·m 到 W 的转换</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:65</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1MotorPowerModel_1_1Params_html_aa637c9be6b21c6e77a81f4b1f6960b8c"><div class="ttname"><a href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#aa637c9be6b21c6e77a81f4b1f6960b8c">rm::modules::MotorPowerModel::Params::k1</a></div><div class="ttdeci">f32 k1</div><div class="ttdoc">转速平方项系数 (其他损耗-转速相关)</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:60</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1MotorPowerModel_1_1Params_html_ab5ce8aa227222388e57f7d84f10375d5"><div class="ttname"><a href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#ab5ce8aa227222388e57f7d84f10375d5">rm::modules::MotorPowerModel::Params::torque_coeff</a></div><div class="ttdeci">f32 torque_coeff</div><div class="ttdoc">(20/16384)*(0.3)*(187/3591)/9.55</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:57</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1MotorPowerModel_1_1Params_html_ad005f90cf051e731844248ee9fddd37f"><div class="ttname"><a href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#ad005f90cf051e731844248ee9fddd37f">rm::modules::MotorPowerModel::Params::kt</a></div><div class="ttdeci">f32 kt</div><div class="ttdoc">转矩系数</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:55</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1MotorPowerModel_1_1Params_html_ae205b23f01eb470322ead68702aad6bc"><div class="ttname"><a href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#ae205b23f01eb470322ead68702aad6bc">rm::modules::MotorPowerModel::Params::max_current</a></div><div class="ttdeci">i16 max_current</div><div class="ttdoc">最大控制电流限幅</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:66</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1MotorPowerModel_1_1Params_html_aee5e17469f5c371d20b174df37e7ca87"><div class="ttname"><a href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#aee5e17469f5c371d20b174df37e7ca87">rm::modules::MotorPowerModel::Params::constant</a></div><div class="ttdeci">f32 constant</div><div class="ttdoc">常数项 (固定损耗)</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:62</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo_html"><div class="ttname"><a href="structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html">rm::modules::MotorPowerModel::PowerInfo</a></div><div class="ttdoc">功率信息结构体</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:81</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo_html_a33e61717c8bc4702cf5af207227c463f"><div class="ttname"><a href="structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html#a33e61717c8bc4702cf5af207227c463f">rm::modules::MotorPowerModel::PowerInfo::loss_power</a></div><div class="ttdeci">f32 loss_power</div><div class="ttdoc">损耗功率 (W)</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:83</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo_html_a35729994bc06268ecce2f9ac723fcf37"><div class="ttname"><a href="structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html#a35729994bc06268ecce2f9ac723fcf37">rm::modules::MotorPowerModel::PowerInfo::mechanical_power</a></div><div class="ttdeci">f32 mechanical_power</div><div class="ttdoc">机械功率 (W)</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:82</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo_html_a362b08528e9bb8336de01827e6d14ed5"><div class="ttname"><a href="structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html#a362b08528e9bb8336de01827e6d14ed5">rm::modules::MotorPowerModel::PowerInfo::total_power</a></div><div class="ttdeci">f32 total_power</div><div class="ttdoc">总功率 (W)</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:84</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo_html_adb617479107dfbad9fb9a09ba669a770"><div class="ttname"><a href="structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html#adb617479107dfbad9fb9a09ba669a770">rm::modules::MotorPowerModel::PowerInfo::torque</a></div><div class="ttdeci">f32 torque</div><div class="ttdoc">输出转矩 (N·m)</div><div class="ttdef"><b>Definition</b> motor_power_model.hpp:85</div></div>
+<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html">rm::modules::NoteFreq</a></div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:93</div></div>
+<div class="ttc" id="atypedefs_8hpp_html"><div class="ttname"><a href="typedefs_8hpp.html">typedefs.hpp</a></div><div class="ttdoc">全局数据类型定义</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_9bd6aa59caad6cbef13c0eefdd946af0.html">modules</a></li><li class="navelem"><a class="el" href="motor__power__model_8hpp.html">motor_power_model.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

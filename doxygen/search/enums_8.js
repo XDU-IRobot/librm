@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['refereerevision_0',['RefereeRevision',['../namespacerm_1_1device.html#a097a9fa7f69d2f1da75170c9c3bc2137',1,'rm::device']]]
+  ['motortype_0',['MotorType',['../classrm_1_1modules_1_1MotorPowerModel.html#ad09c389849a7ae0fc0f977957074dc2c',1,'rm::modules::MotorPowerModel']]]
 ];

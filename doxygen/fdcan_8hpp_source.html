@@ -133,7 +133,7 @@ $(document).ready(function(){initNavTree('fdcan_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1hal_1_1stm32.html">rm::hal::stm32</a> {</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">class </span>FdCan final : <span class="keyword">public</span> CanInterface, detail::NonCopyable {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">class </span>FdCan : <span class="keyword">public</span> CanInterface, detail::NonCopyable {</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="comment">// 声明静态回调函数为友元，使其可以访问private方法</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keyword">friend</span> <span class="keywordtype">void</span> FdCanRxFifo0MsgPendingCallback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keyword">friend</span> <span class="keywordtype">void</span> FdCanErrorStatusCallback(FDCAN_HandleTypeDef *hfdcan, uint32_t ErrorStatusITs);</div>

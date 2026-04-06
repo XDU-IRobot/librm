@@ -2,7 +2,7 @@ var classrm_1_1modules_1_1TriSteeringChassis =
 [
     [ "TriSteeringChassis", "classrm_1_1modules_1_1TriSteeringChassis.html#ae1f5bd103e6a91ab3d9d739d9ad397fb", null ],
     [ "~TriSteeringChassis", "classrm_1_1modules_1_1TriSteeringChassis.html#a8101a1155f7f0e2ef625bb2b0604646c", null ],
-    [ "TriSteeringChassis", "classrm_1_1modules_1_1TriSteeringChassis.html#a58e866d901da9f31a01f72d6efd720aa", null ],
+    [ "TriSteeringChassis", "classrm_1_1modules_1_1TriSteeringChassis.html#a2f6b99912d6f89a2f4ad86112caafc83", null ],
     [ "Forward", "classrm_1_1modules_1_1TriSteeringChassis.html#a6cfd769e27746bb32299c9a0d1885cc9", null ],
     [ "Forward", "classrm_1_1modules_1_1TriSteeringChassis.html#aa5ca5c7638e00ba07aa603aa606a1fd7", null ],
     [ "forward_result", "classrm_1_1modules_1_1TriSteeringChassis.html#a7645085389b772632c6bad871e8061da", null ],

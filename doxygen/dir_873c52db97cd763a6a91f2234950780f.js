@@ -17,6 +17,8 @@ var dir_873c52db97cd763a6a91f2234950780f =
     [ "spi.hpp", "stm32_2spi_8hpp.html", "stm32_2spi_8hpp" ],
     [ "spi_device.cc", "spi__device_8cc.html", null ],
     [ "spi_device.hpp", "spi__device_8hpp.html", "spi__device_8hpp" ],
+    [ "throttled_bxcan.hpp", "throttled__bxcan_8hpp.html", "throttled__bxcan_8hpp" ],
+    [ "throttled_fdcan.hpp", "throttled__fdcan_8hpp.html", null ],
     [ "uart.cc", "uart_8cc.html", null ],
     [ "uart.hpp", "uart_8hpp.html", "uart_8hpp" ]
 ];

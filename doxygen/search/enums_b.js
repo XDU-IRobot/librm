@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uartmode_0',['UartMode',['../namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6c',1,'rm::hal::stm32']]]
+  ['type_0',['Type',['../structrm_1_1modules_1_1KeyEvent.html#af6c653a4bdd0424812d3f85c2a7f5bbe',1,'rm::modules::KeyEvent']]]
 ];

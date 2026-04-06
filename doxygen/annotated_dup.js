@@ -61,6 +61,7 @@ var annotated_dup =
           [ "Pin", "classrm_1_1hal_1_1stm32_1_1Pin.html", "classrm_1_1hal_1_1stm32_1_1Pin" ],
           [ "Spi", "classrm_1_1hal_1_1stm32_1_1Spi.html", "classrm_1_1hal_1_1stm32_1_1Spi" ],
           [ "SpiDevice", "classrm_1_1hal_1_1stm32_1_1SpiDevice.html", "classrm_1_1hal_1_1stm32_1_1SpiDevice" ],
+          [ "ThrottledBxCan", "classrm_1_1hal_1_1stm32_1_1ThrottledBxCan.html", "classrm_1_1hal_1_1stm32_1_1ThrottledBxCan" ],
           [ "Uart", "classrm_1_1hal_1_1stm32_1_1Uart.html", "classrm_1_1hal_1_1stm32_1_1Uart" ]
         ] ],
         [ "CanFrame", "structrm_1_1hal_1_1CanFrame.html", "structrm_1_1hal_1_1CanFrame" ],
@@ -108,10 +109,10 @@ var annotated_dup =
         [ "ImuData9Dof", "structrm_1_1modules_1_1ImuData9Dof.html", "structrm_1_1modules_1_1ImuData9Dof" ],
         [ "KeyboardHandler", "classrm_1_1modules_1_1KeyboardHandler.html", "classrm_1_1modules_1_1KeyboardHandler" ],
         [ "KeyEvent", "structrm_1_1modules_1_1KeyEvent.html", "structrm_1_1modules_1_1KeyEvent" ],
-        [ "M3508PowerModel", "classrm_1_1modules_1_1M3508PowerModel.html", "classrm_1_1modules_1_1M3508PowerModel" ],
         [ "MahonyAhrs", "classrm_1_1modules_1_1MahonyAhrs.html", "classrm_1_1modules_1_1MahonyAhrs" ],
         [ "MecanumChassis", "classrm_1_1modules_1_1MecanumChassis.html", "classrm_1_1modules_1_1MecanumChassis" ],
         [ "MotorCalibrator", "classrm_1_1modules_1_1MotorCalibrator.html", "classrm_1_1modules_1_1MotorCalibrator" ],
+        [ "MotorPowerModel", "classrm_1_1modules_1_1MotorPowerModel.html", "classrm_1_1modules_1_1MotorPowerModel" ],
         [ "NoteDuration", "structrm_1_1modules_1_1NoteDuration.html", null ],
         [ "NoteFreq", "structrm_1_1modules_1_1NoteFreq.html", null ],
         [ "PID", "classrm_1_1modules_1_1PID.html", "classrm_1_1modules_1_1PID" ],
@@ -127,6 +128,7 @@ var annotated_dup =
         [ "SteeringChassis", "classrm_1_1modules_1_1SteeringChassis.html", "classrm_1_1modules_1_1SteeringChassis" ],
         [ "SystemModel", "classrm_1_1modules_1_1SystemModel.html", "classrm_1_1modules_1_1SystemModel" ],
         [ "ThresholdTrigger", "classrm_1_1modules_1_1ThresholdTrigger.html", "classrm_1_1modules_1_1ThresholdTrigger" ],
+        [ "ThrottledPrioQueue", "classrm_1_1modules_1_1ThrottledPrioQueue.html", "classrm_1_1modules_1_1ThrottledPrioQueue" ],
         [ "TrajectoryLimiter", "classrm_1_1modules_1_1TrajectoryLimiter.html", "classrm_1_1modules_1_1TrajectoryLimiter" ],
         [ "TriSteeringChassis", "classrm_1_1modules_1_1TriSteeringChassis.html", "classrm_1_1modules_1_1TriSteeringChassis" ],
         [ "VofaPlotter", "classrm_1_1modules_1_1VofaPlotter.html", "classrm_1_1modules_1_1VofaPlotter" ]

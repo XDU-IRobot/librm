@@ -26,7 +26,7 @@ var searchData=
   ['lkmotorms_23',['LkMotorMS',['../namespacerm_1_1device.html#a35672488999e6e2b517f2328928e0f07',1,'rm::device']]],
   ['lkmotortype_24',['LkMotorType',['../namespacerm_1_1device.html#aa4cc97668543529637aaf1b3c79dd336',1,'rm::device']]],
   ['logicaltoreal_25',['LogicalToReal',['../classrm_1_1modules_1_1MotorCalibrator.html#a4bf56b601b7b83f9e5126b1bafa74dc2',1,'rm::modules::MotorCalibrator']]],
-  ['loss_5fpower_26',['loss_power',['../structrm_1_1modules_1_1M3508PowerModel_1_1PowerInfo.html#aa6415bd5587160f24e5c7fcc206fd2db',1,'rm::modules::M3508PowerModel::PowerInfo']]],
+  ['loss_5fpower_26',['loss_power',['../structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html#a33e61717c8bc4702cf5af207227c463f',1,'rm::modules::MotorPowerModel::PowerInfo']]],
   ['loss_5frate_27',['loss_rate',['../classrm_1_1device_1_1Referee.html#a528458514bc299aaec290c28663ce578',1,'rm::device::Referee']]],
   ['low_5fvel_28',['low_vel',['../structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html#ab3f0b8ca5e7786ba33ee0445eb03c3f3',1,'rm::device::UnitreeMotor::ComDataReceive']]],
   ['low_5fvel_5fref_29',['low_vel_ref',['../structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html#af78788763c45aa44d55486db1badd892',1,'rm::device::UnitreeMotor::ComDataReceive']]],

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['i_5fout_5f_0',['i_out_',['../classrm_1_1modules_1_1PID.html#a799e689ef7cfdff35e1fbb7ab80ba605',1,'rm::modules::PID']]],
-  ['id_1',['id',['../structrm_1_1device_1_1Go8010Motor_1_1RIS__Mode.html#a5e48ccdcc4a89fd113eac03a106ac6ef',1,'rm::device::Go8010Motor::RIS_Mode::id'],['../structrm_1_1device_1_1Go8010Motor_1_1ReceiveData.html#a0274c9b9b7d3217372b01e36efc3b483',1,'rm::device::Go8010Motor::ReceiveData::id'],['../structrm_1_1device_1_1Go8010Motor_1_1SendData.html#ae9cf21f366e361a46380e4553a914bc3',1,'rm::device::Go8010Motor::SendData::id']]],
+  ['id_1',['id',['../classrm_1_1device_1_1Go8010Motor.html#a47cff91e100ce1f42f8a6e0f1059234a',1,'rm::device::Go8010Motor']]],
   ['infantry_5f3_5fposition_5fx_2',['infantry_3_position_x',['../structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html#a0b1045e8136ac2a692dff1b4a89c40d5',1,'rm::device::RefereeProtocol&lt; RefereeRevision::kNewV120 &gt;']]],
   ['infantry_5f3_5fposition_5fy_3',['infantry_3_position_y',['../structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html#a0cde71b8a842323bb923b4fbe04e1b76',1,'rm::device::RefereeProtocol&lt; RefereeRevision::kNewV120 &gt;']]],
   ['infantry_5f4_5fposition_5fx_4',['infantry_4_position_x',['../structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html#add0d4a1a2a3eaa6d9b5a5f0cb866f32e',1,'rm::device::RefereeProtocol&lt; RefereeRevision::kNewV120 &gt;']]],
@@ -15,7 +15,7 @@ var searchData=
   ['input_5ftorque_5flimit_12',['input_torque_limit',['../classrm_1_1device_1_1LkMotor.html#a0c518c2ab36832e03ee4dfa2ecedb8f6',1,'rm::device::LkMotor']]],
   ['intention_13',['intention',['../structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html#afed11b3c8c662106fc7f34fb34e200da',1,'rm::device::RefereeProtocol&lt; RefereeRevision::kNewV120 &gt;']]],
   ['intg_14',['intg',['../structrm_1_1device_1_1STP23L_1_1PointData.html#ac7a6c34eede0e5a6dfae1d63d95fb9c0',1,'rm::device::STP23L::PointData']]],
-  ['inverse_5fresult_5f_15',['inverse_result_',['../classrm_1_1modules_1_1QuadOmniChassis.html#a7896493334d2d875a3e46b61a0c4f4ff',1,'rm::modules::QuadOmniChassis']]],
+  ['inverse_5fresult_5f_15',['inverse_result_',['../classrm_1_1modules_1_1QuadOmniChassis.html#a08d1ecc93d5dcde9ebfeff2ec1f7ad0d',1,'rm::modules::QuadOmniChassis']]],
   ['iq_16',['iq',['../classrm_1_1device_1_1DirectDriveMotor.html#a904e5ac67c2d5a2a1321fa7bb8d10e7d',1,'rm::device::DirectDriveMotor::iq'],['../classrm_1_1device_1_1LkMotor.html#ac366ca217d967f8550d00db1e8e612a1',1,'rm::device::LkMotor::iq']]],
   ['is_5ffd_5fframe_17',['is_fd_frame',['../structrm_1_1hal_1_1CanFrame.html#a825031bac625cba43e18bec8515e7caf',1,'rm::hal::CanFrame']]],
   ['ist8310_5fcomm_5fwait_5ftime_5flong_18',['IST8310_COMM_WAIT_TIME_LONG',['../ist8310__const_8hpp.html#afa3b56684b2696dea3af076c9c074715',1,'ist8310_const.hpp']]],

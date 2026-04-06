@@ -1,14 +1,14 @@
 var searchData=
 [
   ['calcmembership_0',['CalcMembership',['../classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#af797eee0d98f54900a3196396b9e4778',1,'rm::modules::PID::FuzzyInfer']]],
-  ['calculatectrlforpower_1',['CalculateCtrlForPower',['../classrm_1_1modules_1_1M3508PowerModel.html#a700e50db5bcff6d4b35ba026ce13696e',1,'rm::modules::M3508PowerModel']]],
+  ['calculatectrlforpower_1',['CalculateCtrlForPower',['../classrm_1_1modules_1_1MotorPowerModel.html#ab2485a216af7d169c5ecabe3e0952722',1,'rm::modules::MotorPowerModel']]],
   ['calculatenotefreq_2',['CalculateNoteFreq',['../namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582',1,'rm::modules']]],
-  ['calculatepower_3',['CalculatePower',['../classrm_1_1modules_1_1M3508PowerModel.html#a14d5ee3301ffd2433fcdc6f541c9bbc4',1,'rm::modules::M3508PowerModel']]],
+  ['calculatepower_3',['CalculatePower',['../classrm_1_1modules_1_1MotorPowerModel.html#ab9ee1aa6b5686a146278fef5d9fff0c1',1,'rm::modules::MotorPowerModel']]],
   ['candevice_4',['candevice',['../classrm_1_1device_1_1CanDevice.html#a58bd02230756c0dd4a865284bbbe9650',1,'rm::device::CanDevice::CanDevice(hal::CanInterface &amp;can, IdList... rx_std_ids)'],['../classrm_1_1device_1_1CanDevice.html#ae17905b5caa82b9e11158b5f93372deb',1,'rm::device::CanDevice::CanDevice(CanDevice &amp;&amp;old) noexcept'],['../classrm_1_1device_1_1CanDevice.html#a950120e0c8d3317e7f722b0ac7618d13',1,'rm::device::CanDevice::CanDevice(const CanDevice &amp;old)']]],
   ['canrxfifo0msgpendingcallback_5',['CanRxFifo0MsgPendingCallback',['../namespacerm_1_1hal_1_1stm32.html#a48ed7a3622bd56bb9a20571ba1cc61e2',1,'rm::hal::stm32']]],
   ['channel_6',['channel',['../classrm_1_1device_1_1Sbus.html#a03fe35eb8ffc946ed88eb282a130b227',1,'rm::device::Sbus']]],
   ['circular_5fcycle_7',['circular_cycle',['../classrm_1_1modules_1_1PID.html#aeab8811d4150fe845e7ef19ca57a0519',1,'rm::modules::PID']]],
-  ['clear_8',['Clear',['../classrm_1_1modules_1_1PID.html#aa42d32e9ee39eee445866dbce3c67843',1,'rm::modules::PID']]],
+  ['clear_8',['clear',['../classrm_1_1modules_1_1PID.html#aa42d32e9ee39eee445866dbce3c67843',1,'rm::modules::PID::Clear()'],['../classrm_1_1modules_1_1ThrottledPrioQueue.html#a6e0317940fccd98d6f4f52b9c7ca1bd0',1,'rm::modules::ThrottledPrioQueue::Clear()']]],
   ['clearbindings_9',['ClearBindings',['../classrm_1_1modules_1_1KeyboardHandler.html#acea9f242bf2dc9ad6a8488e5e7cb9b46',1,'rm::modules::KeyboardHandler']]],
   ['coil_5ftemperature_10',['coil_temperature',['../classrm_1_1device_1_1DmMotor.html#a9ed359a1b53023204a6ac3c40b6fc180',1,'rm::device::DmMotor']]],
   ['confidence_11',['confidence',['../classrm_1_1device_1_1STP23L.html#a0970dc81a5f74eeb6183835c5827fd16',1,'rm::device::STP23L']]],

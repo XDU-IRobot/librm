@@ -108,14 +108,26 @@ $(document).ready(function(){initNavTree('posix__complement_8cc.html',''); initR
 函数</h2></td></tr>
 <tr class="memitem:a83e33830d13db492dab0ec9518cb8509" id="r_a83e33830d13db492dab0ec9518cb8509"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posix__complement_8cc.html#a83e33830d13db492dab0ec9518cb8509">__attribute__</a> ((weak)) int gettimeofday(struct timeval *tv</td></tr>
 <tr class="separator:a83e33830d13db492dab0ec9518cb8509"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a712949b1adbf08a47c59c5d2955fd90a" id="r_a712949b1adbf08a47c59c5d2955fd90a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posix__complement_8cc.html#a712949b1adbf08a47c59c5d2955fd90a">while</a> (<a class="el" href="posix__complement_8cc.html#a381c0eb10051e51fb36ed9c6e84bdb79">ms</a> !=HAL_GetTick())</td></tr>
+<tr class="separator:a712949b1adbf08a47c59c5d2955fd90a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 变量</h2></td></tr>
 <tr class="memitem:ab164f3dc5ff8f211acf01fd8e5557f9d" id="r_ab164f3dc5ff8f211acf01fd8e5557f9d"><td class="memItemLeft" align="right" valign="top">struct timezone *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posix__complement_8cc.html#ab164f3dc5ff8f211acf01fd8e5557f9d">tz</a></td></tr>
 <tr class="separator:ab164f3dc5ff8f211acf01fd8e5557f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62b052d849dec47e98446629ceee4204" id="r_a62b052d849dec47e98446629ceee4204"><td class="memItemLeft" align="right" valign="top">tv&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posix__complement_8cc.html#a62b052d849dec47e98446629ceee4204">tv_sec</a> = millis / 1000</td></tr>
+<tr class="memitem:a381c0eb10051e51fb36ed9c6e84bdb79" id="r_a381c0eb10051e51fb36ed9c6e84bdb79"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posix__complement_8cc.html#a381c0eb10051e51fb36ed9c6e84bdb79">ms</a></td></tr>
+<tr class="separator:a381c0eb10051e51fb36ed9c6e84bdb79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb95f3a7edb4ddd39e9f9641ace6f04c" id="r_adb95f3a7edb4ddd39e9f9641ace6f04c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posix__complement_8cc.html#adb95f3a7edb4ddd39e9f9641ace6f04c">systick_val</a> = SysTick-&gt;VAL</td></tr>
+<tr class="separator:adb95f3a7edb4ddd39e9f9641ace6f04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a721c6ff80a6d3e4ad4ffa52a04c60085" id="r_a721c6ff80a6d3e4ad4ffa52a04c60085"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posix__complement_8cc.html#a721c6ff80a6d3e4ad4ffa52a04c60085">do</a></td></tr>
+<tr class="separator:a721c6ff80a6d3e4ad4ffa52a04c60085"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40da1c90b65d38a89b865908a3ac16b0" id="r_a40da1c90b65d38a89b865908a3ac16b0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posix__complement_8cc.html#a40da1c90b65d38a89b865908a3ac16b0">us_fraction</a> = (load - <a class="el" href="posix__complement_8cc.html#adb95f3a7edb4ddd39e9f9641ace6f04c">systick_val</a>) * 1000u / (load + 1u)</td></tr>
+<tr class="separator:a40da1c90b65d38a89b865908a3ac16b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3a64cb71b94fc9d359e32fc870c81be" id="r_af3a64cb71b94fc9d359e32fc870c81be"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posix__complement_8cc.html#af3a64cb71b94fc9d359e32fc870c81be">total_us</a> = (uint64_t)<a class="el" href="posix__complement_8cc.html#a381c0eb10051e51fb36ed9c6e84bdb79">ms</a> * 1000u + <a class="el" href="posix__complement_8cc.html#a40da1c90b65d38a89b865908a3ac16b0">us_fraction</a></td></tr>
+<tr class="separator:af3a64cb71b94fc9d359e32fc870c81be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62b052d849dec47e98446629ceee4204" id="r_a62b052d849dec47e98446629ceee4204"><td class="memItemLeft" align="right" valign="top">tv&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posix__complement_8cc.html#a62b052d849dec47e98446629ceee4204">tv_sec</a> = (time_t)(<a class="el" href="posix__complement_8cc.html#af3a64cb71b94fc9d359e32fc870c81be">total_us</a> / 1000000u)</td></tr>
 <tr class="separator:a62b052d849dec47e98446629ceee4204"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2cac231bc2174ed30c0c98a4136c76d" id="r_ad2cac231bc2174ed30c0c98a4136c76d"><td class="memItemLeft" align="right" valign="top">tv&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posix__complement_8cc.html#ad2cac231bc2174ed30c0c98a4136c76d">tv_usec</a> = (millis % 1000) * 1000</td></tr>
+<tr class="memitem:ad2cac231bc2174ed30c0c98a4136c76d" id="r_ad2cac231bc2174ed30c0c98a4136c76d"><td class="memItemLeft" align="right" valign="top">tv&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posix__complement_8cc.html#ad2cac231bc2174ed30c0c98a4136c76d">tv_usec</a> = (suseconds_t)(<a class="el" href="posix__complement_8cc.html#af3a64cb71b94fc9d359e32fc870c81be">total_us</a> % 1000000u)</td></tr>
 <tr class="separator:ad2cac231bc2174ed30c0c98a4136c76d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9717e7bbecb906637e86cef6da3d83c2" id="r_a9717e7bbecb906637e86cef6da3d83c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="posix__complement_8cc.html#a9717e7bbecb906637e86cef6da3d83c2">return</a></td></tr>
 <tr class="separator:a9717e7bbecb906637e86cef6da3d83c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,7 +153,56 @@ $(document).ready(function(){initNavTree('posix__complement_8cc.html',''); initR
 
 </div>
 </div>
+<a id="a712949b1adbf08a47c59c5d2955fd90a" name="a712949b1adbf08a47c59c5d2955fd90a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a712949b1adbf08a47c59c5d2955fd90a">&#9670;&#160;</a></span>while()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">while </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="posix__complement_8cc.html#a381c0eb10051e51fb36ed9c6e84bdb79">ms</a> !&#160;</td>
+          <td class="paramname"> = <code>HAL_GetTick()</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">变量说明</h2>
+<a id="a721c6ff80a6d3e4ad4ffa52a04c60085" name="a721c6ff80a6d3e4ad4ffa52a04c60085"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a721c6ff80a6d3e4ad4ffa52a04c60085">&#9670;&#160;</a></span>do</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">do</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code hl_variable" href="posix__complement_8cc.html#a381c0eb10051e51fb36ed9c6e84bdb79">ms</a> = HAL_GetTick()</div>
+<div class="ttc" id="aposix__complement_8cc_html_a381c0eb10051e51fb36ed9c6e84bdb79"><div class="ttname"><a href="posix__complement_8cc.html#a381c0eb10051e51fb36ed9c6e84bdb79">ms</a></div><div class="ttdeci">uint32_t ms</div><div class="ttdef"><b>Definition</b> posix_complement.cc:36</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a381c0eb10051e51fb36ed9c6e84bdb79" name="a381c0eb10051e51fb36ed9c6e84bdb79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a381c0eb10051e51fb36ed9c6e84bdb79">&#9670;&#160;</a></span>ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ms</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a9717e7bbecb906637e86cef6da3d83c2" name="a9717e7bbecb906637e86cef6da3d83c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9717e7bbecb906637e86cef6da3d83c2">&#9670;&#160;</a></span>return</h2>
 
@@ -156,6 +217,34 @@ $(document).ready(function(){initNavTree('posix__complement_8cc.html',''); initR
 
 </div>
 </div>
+<a id="adb95f3a7edb4ddd39e9f9641ace6f04c" name="adb95f3a7edb4ddd39e9f9641ace6f04c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb95f3a7edb4ddd39e9f9641ace6f04c">&#9670;&#160;</a></span>systick_val</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">systick_val = SysTick-&gt;VAL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af3a64cb71b94fc9d359e32fc870c81be" name="af3a64cb71b94fc9d359e32fc870c81be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3a64cb71b94fc9d359e32fc870c81be">&#9670;&#160;</a></span>total_us</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t total_us = (uint64_t)<a class="el" href="posix__complement_8cc.html#a381c0eb10051e51fb36ed9c6e84bdb79">ms</a> * 1000u + <a class="el" href="posix__complement_8cc.html#a40da1c90b65d38a89b865908a3ac16b0">us_fraction</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a62b052d849dec47e98446629ceee4204" name="a62b052d849dec47e98446629ceee4204"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a62b052d849dec47e98446629ceee4204">&#9670;&#160;</a></span>tv_sec</h2>
 
@@ -163,7 +252,7 @@ $(document).ready(function(){initNavTree('posix__complement_8cc.html',''); initR
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">tv tv_sec = millis / 1000</td>
+          <td class="memname">tv tv_sec = (time_t)(<a class="el" href="posix__complement_8cc.html#af3a64cb71b94fc9d359e32fc870c81be">total_us</a> / 1000000u)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -177,7 +266,7 @@ $(document).ready(function(){initNavTree('posix__complement_8cc.html',''); initR
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">tv tv_usec = (millis % 1000) * 1000</td>
+          <td class="memname">tv tv_usec = (suseconds_t)(<a class="el" href="posix__complement_8cc.html#af3a64cb71b94fc9d359e32fc870c81be">total_us</a> % 1000000u)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -196,8 +285,22 @@ $(document).ready(function(){initNavTree('posix__complement_8cc.html',''); initR
       </table>
 </div><div class="memdoc">
 <b>初始值:</b><div class="fragment"><div class="line">{</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> millis = HAL_GetTick()</div>
+<div class="line">  <span class="keyword">const</span> uint32_t load = SysTick-&gt;LOAD</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="a40da1c90b65d38a89b865908a3ac16b0" name="a40da1c90b65d38a89b865908a3ac16b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40da1c90b65d38a89b865908a3ac16b0">&#9670;&#160;</a></span>us_fraction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t us_fraction = (load - <a class="el" href="posix__complement_8cc.html#adb95f3a7edb4ddd39e9f9641ace6f04c">systick_val</a>) * 1000u / (load + 1u)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 </div>
 </div>
 </div><!-- contents -->

@@ -5,6 +5,7 @@ var namespacerm_1_1hal_1_1stm32 =
     [ "Pin", "classrm_1_1hal_1_1stm32_1_1Pin.html", "classrm_1_1hal_1_1stm32_1_1Pin" ],
     [ "Spi", "classrm_1_1hal_1_1stm32_1_1Spi.html", "classrm_1_1hal_1_1stm32_1_1Spi" ],
     [ "SpiDevice", "classrm_1_1hal_1_1stm32_1_1SpiDevice.html", "classrm_1_1hal_1_1stm32_1_1SpiDevice" ],
+    [ "ThrottledBxCan", "classrm_1_1hal_1_1stm32_1_1ThrottledBxCan.html", "classrm_1_1hal_1_1stm32_1_1ThrottledBxCan" ],
     [ "Uart", "classrm_1_1hal_1_1stm32_1_1Uart.html", "classrm_1_1hal_1_1stm32_1_1Uart" ],
     [ "UartMode", "namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6c", [
       [ "kNormal", "namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6ca07fa7a19aa722c635a15e94cb7f50416", null ],

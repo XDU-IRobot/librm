@@ -7,5 +7,5 @@ var searchData=
   ['dmmotormit_4',['DmMotorMit',['../namespacerm_1_1device.html#afb7962cab98123f231295bc522d94199',1,'rm::device']]],
   ['dmmotorspeed_5',['DmMotorSpeed',['../namespacerm_1_1device.html#aeb6c3f9fa7319f4f5ab684a282a771b6',1,'rm::device']]],
   ['dmmotorspeedposition_6',['DmMotorSpeedPosition',['../namespacerm_1_1device.html#a2bd90b66d9b191f86a3ed8890a23a144',1,'rm::device']]],
-  ['duration_7',['Duration',['../classrm_1_1modules_1_1SequenceGenerator.html#a7ee8dbdddcd5c174cbfbac2346044380',1,'rm::modules::SequenceGenerator']]]
+  ['duration_7',['duration',['../classrm_1_1modules_1_1SequenceGenerator.html#a7ee8dbdddcd5c174cbfbac2346044380',1,'rm::modules::SequenceGenerator::Duration'],['../classrm_1_1hal_1_1stm32_1_1ThrottledBxCan.html#ae7667b6621ddb666a2ea3beeb2185057',1,'rm::hal::stm32::ThrottledBxCan::duration'],['../classrm_1_1modules_1_1ThrottledPrioQueue.html#af727a2ee6da8b3c9615af41bfba282be',1,'rm::modules::ThrottledPrioQueue::duration']]]
 ];
