@@ -39,7 +39,7 @@ namespace rm::hal::stm32 {
 /**
  * @brief bxCAN类库
  */
-class BxCan final : public CanInterface, detail::NonCopyable {
+class BxCan : public CanInterface, detail::NonCopyable {
   // 声明静态回调函数为友元，使其可以访问private方法
   friend void CanRxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan);
 

@@ -40,7 +40,7 @@ namespace rm::hal::stm32 {
 /**
  * @brief fdCAN类库
  */
-class FdCan final : public CanInterface, detail::NonCopyable {
+class FdCan : public CanInterface, detail::NonCopyable {
   // 声明静态回调函数为友元，使其可以访问private方法
   friend void FdCanRxFifo0MsgPendingCallback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs);
   friend void FdCanErrorStatusCallback(FDCAN_HandleTypeDef *hfdcan, uint32_t ErrorStatusITs);

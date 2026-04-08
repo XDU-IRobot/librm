@@ -33,6 +33,8 @@
 #if defined(LIBRM_PLATFORM_STM32)
 #include "librm/hal/stm32/bxcan.hpp"
 #include "librm/hal/stm32/fdcan.hpp"
+#include "librm/hal/stm32/throttled_bxcan.hpp"
+#include "librm/hal/stm32/throttled_fdcan.hpp"
 #elif defined(LIBRM_PLATFORM_LINUX)
 #include "librm/hal/linux/socketcan.hpp"
 #endif
@@ -41,8 +43,12 @@ namespace rm::hal {
 #if defined(LIBRM_PLATFORM_STM32)
 #if defined(HAL_CAN_MODULE_ENABLED)
 using Can = stm32::BxCan;
+template <size_t MaxQueueSize = 32>
+using ThrottledCan = stm32::ThrottledBxCan<MaxQueueSize>;
 #elif defined(HAL_FDCAN_MODULE_ENABLED)
-using Can = stm32::FdCan;  // TODO: 实现FdCan类
+using Can = stm32::FdCan;
+template <size_t MaxQueueSize = 32>
+using ThrottledCan = stm32::ThrottledFdCan<MaxQueueSize>;
 #endif
 #elif defined(LIBRM_PLATFORM_LINUX)
 using Can = linux_::SocketCan;

@@ -182,7 +182,7 @@ struct {
 
 ## 三舵轮底盘 TriSteeringChassis
 
-三角形排列的三舵轮底盘（前、左后、右后）。
+等腰三角形排列的三舵轮底盘（前、左后、右后），旋转中心为等腰三角形的外心（外接圆圆心）。
 
 ### 基础用法
 
@@ -190,8 +190,8 @@ struct {
 #include <librm.hpp>
 
 extern "C" void TriSteeringTask(const void *pv_arg) {
-  // 创建三舵轮底盘运动学解算器
-  rm::modules::TriSteeringChassis chassis(0.25f);
+  // 创建三舵轮底盘运动学解算器，传入底边长（两后轮间距）和高（前轮到两后轮连线的垂直距离）
+  rm::modules::TriSteeringChassis chassis(0.40f, 0.35f);
 
   for (;;) {
     float vx = GetTargetVx();
@@ -199,9 +199,7 @@ extern "C" void TriSteeringTask(const void *pv_arg) {
     float w = GetTargetW();
 
     // 360度模式
-    // ready_for_spin = true: 静止时舵摆成圆周，方便随时开始小陀螺
-    // ready_for_spin = false: 静止时舵指向中心，增加抗推动能力
-    auto result = chassis.Forward(vx, vy, w, true);
+    auto result = chassis.Forward(vx, vy, w);
 
     SetSteerPosition(FRONT, result.front_steer_position);
     SetSteerPosition(LR, result.lr_steer_position);
@@ -222,7 +220,7 @@ extern "C" void TriSteeringTask(const void *pv_arg) {
 #include <librm.hpp>
 
 extern "C" void TriSteering180Task(const void *pv_arg) {
-  rm::modules::TriSteeringChassis chassis(0.25f);
+  rm::modules::TriSteeringChassis chassis(0.40f, 0.35f);
 
   for (;;) {
     float vx = GetTargetVx();
@@ -235,7 +233,7 @@ extern "C" void TriSteering180Task(const void *pv_arg) {
     float current_rr = GetCurrentSteerAngle(RR);
 
     // 180度模式
-    auto result = chassis.Forward(vx, vy, w, current_front, current_lr, current_rr, true);
+    auto result = chassis.Forward(vx, vy, w, current_front, current_lr, current_rr);
 
     SetSteerPosition(FRONT, result.front_steer_position);
     SetSteerPosition(LR, result.lr_steer_position);
@@ -255,10 +253,11 @@ extern "C" void TriSteering180Task(const void *pv_arg) {
 #### 构造函数
 
 ```cpp
-explicit TriSteeringChassis(f32 chassis_radius);
+TriSteeringChassis(f32 base_len, f32 height);
 ```
 
-- `chassis_radius`: 底盘中心到轮子的距离
+- `base_len`: 等腰三角形的底边长度（两后轮间距）
+- `height`: 等腰三角形的高（前轮到两后轮连线的垂直距离）
 
 #### 主要方法
 

@@ -22,109 +22,97 @@
 
 /**
  * @file  librm/device/actuator/go8010_motor.hpp
- * @brief GO8010电机类库
- * @todo  补充注释
+ * @brief 宇树GO-M8010-6电机类库
  */
 
 #ifndef LIBRM_DEVICE_ACTUATOR_GO8010_MOTOR_HPP
 #define LIBRM_DEVICE_ACTUATOR_GO8010_MOTOR_HPP
 
-#include "librm/device/actuator/unitree_motor.hpp"
 #include "librm/core/typedefs.hpp"
+#include "librm/device/device.hpp"
 #include "librm/hal/serial_interface.hpp"
 
 namespace rm::device {
 
 class Go8010Motor : public Device {
- public:
-  struct ControlParam {
-    f32 tau;
-    f32 vel;
-    f32 pos;
-    f32 kp;
-    f32 kd;
-  };
-
 #pragma pack(1)
 
   /**
    * @brief 电机模式控制信息
    *
    */
-  struct RIS_Mode {
-    uint8_t id : 4;      // 电机ID: 0,1...,14 15表示向所有电机广播数据(此时无返回)
-    uint8_t status : 3;  // 工作模式: 0.锁定 1.FOC闭环 2.编码器校准 3.保留
-    uint8_t none : 1;    // 保留位
-  };  // 控制模式 1Byte
+  struct RISMode {
+    u8 id : 4;      ///< 电机ID: 0,1...,14 15表示向所有电机广播数据(此时无返回)
+    u8 status : 3;  ///< 工作模式: 0.锁定 1.FOC闭环 2.编码器校准 3.保留
+    u8 none : 1;    ///< 保留位
+  };  ///< 控制模式 1Byte
 
   /**
    * @brief 电机状态控制信息
    *
    */
-  struct RIS_Comd {
-    int16_t tau_des;  // 期望关节输出扭矩 unit: N.m     (q8)
-    int16_t vel_des;  // 期望关节输出速度 unit: rad/s   (q7)
-    int32_t pos_des;  // 期望关节输出位置 unit: rad     (q15)
-    uint16_t k_pos;   // 期望关节刚度系数 unit: 0.0-1.0 (q15)
-    uint16_t k_spd;   // 期望关节阻尼系数 unit: 0.0-1.0 (q15)
-  };  // 控制参数 12Byte
+  struct RISComd {
+    int16_t tau_des;  ///< 期望关节输出扭矩 unit: N.m     (q8)
+    int16_t vel_des;  ///< 期望关节输出速度 unit: rad/s   (q7)
+    int32_t pos_des;  ///< 期望关节输出位置 unit: rad     (q15)
+    u16 k_pos;        ///< 期望关节刚度系数 unit: 0.0-1.0 (q15)
+    u16 k_spd;        ///< 期望关节阻尼系数 unit: 0.0-1.0 (q15)
+  };  ///< 控制参数 12Byte
 
   /**
    * @brief 电机状态反馈信息
    *
    */
-  struct RIS_Fbk {
-    int16_t tau;          // 实际关节输出扭矩 unit: N.m     (q8)
-    int16_t vel;          // 实际关节输出速度 unit: rad/s   (q7)
-    int32_t pos;          // 实际关节输出位置 unit: W       (q15)
-    int8_t temp;          // 电机温度: -128~127°C 90°C时触发温度保护
-    uint8_t MError : 3;   // 电机错误标识: 0.正常 1.过热 2.过流 3.过压 4.编码器故障 5-7.保留
-    uint16_t force : 12;  // 足端气压传感器数据 12bit (0-4095)
-    uint8_t none : 1;     // 保留位
-  };  // 状态数据 11Byte
-
-#pragma pack()
-
-#pragma pack(1)
+  struct RISFbk {
+    int16_t tau;     ///< 实际关节输出扭矩 unit: N.m     (q8)
+    int16_t vel;     ///< 实际关节输出速度 unit: rad/s   (q7)
+    int32_t pos;     ///< 实际关节输出位置 unit: W       (q15)
+    int8_t temp;     ///< 电机温度: -128~127°C 90°C时触发温度保护
+    u8 MError : 3;   ///< 电机错误标识: 0.正常 1.过热 2.过流 3.过压 4.编码器故障 5-7.保留
+    u16 force : 12;  ///< 足端气压传感器数据 12bit (0-4095)
+    u8 none : 1;     ///< 保留位
+  };  ///< 状态数据 11Byte
 
   /**
    * @brief 控制数据包格式
    *
    */
   struct ControlData {
-    uint8_t head[2];  // 包头         2Byte
-    RIS_Mode mode;    // 电机控制模式  1Byte
-    RIS_Comd comd;    // 电机期望数据 12Byte
-    uint16_t CRC16;   // CRC          2Byte
-  };  // 主机控制命令     17Byte
+    u8 head[2];    ///< 包头         2Byte
+    RISMode mode;  ///< 电机控制模式  1Byte
+    RISComd comd;  ///< 电机期望数据 12Byte
+    u16 crc16;     ///< CRC          2Byte
+  };  ///< 主机控制命令     17Byte
 
   /**
    * @brief 电机反馈数据包格式
    *
    */
   struct MotorData {
-    uint8_t head[2];  // 包头         2Byte
-    RIS_Mode mode;    // 电机控制模式  1Byte
-    RIS_Fbk fbk;      // 电机反馈数据 11Byte
-    uint16_t CRC16;   // CRC          2Byte
-  };  // 电机返回数据     16Byte
+    u8 head[2];       ///< 包头         2Byte
+    RISMode mode;     ///< 电机控制模式  1Byte
+    RISFbk feedback;  ///< 电机反馈数据 11Byte
+    u16 crc16;        ///< CRC          2Byte
+  };  ///< 电机返回数据     16Byte
 
-  struct SendData {
-    ControlData motor_send_data;
+#pragma pack()
 
-    unsigned short id;
-    unsigned short mode;
+ public:
+  Go8010Motor(hal::SerialInterface &serial, u8 motor_id);
+  ~Go8010Motor() override = default;
 
-    float tau;
-    float vel;
-    float pos;
-    float kp;
-    float kd;
-  };
+  void SetMitCommand(f32 position_rad, f32 speed_rad_per_sec, f32 torque_ff_nm, f32 kp, f32 kd);
 
-  struct ReceiveData {
-    MotorData motor_recv_data;
+  void RxCallback(const std::vector<u8> &data, u16 rx_len);
 
+  [[nodiscard]] f32 tau() const { return this->recv_data_.tau / 6.33f; }
+  [[nodiscard]] f32 vel() const { return this->recv_data_.vel / 6.33f; }
+  [[nodiscard]] f32 pos() const { return this->recv_data_.pos / 6.33f; }
+
+ private:
+  hal::SerialInterface *serial_;
+  u16 id_;
+  struct {
     bool correct;
 
     unsigned short id;
@@ -136,34 +124,7 @@ class Go8010Motor : public Device {
     float temp;
     unsigned short MError;
     unsigned short force;
-  };
-
-#pragma pack()
-
- public:
-  Go8010Motor(hal::SerialInterface &serial, u8 motor_id = 0x0);
-  ~Go8010Motor() = default;
-
-  void SetTau(f32 tau);
-
-  void SendCommend();
-
-  void RxCallback(const std::vector<u8> &data, u16 rx_len);
-
-  [[nodiscard]] f32 tau() { return this->recv_data_.tau / 6.33f; }
-  [[nodiscard]] f32 vel() { return this->recv_data_.vel / 6.33f; }
-  [[nodiscard]] f32 pos() { return this->recv_data_.pos / 6.33f; }
-
- private:
-  void SetParam(const SendData &send_data);
-
- private:
-  hal::SerialInterface *serial_;
-
-  SendData send_data_;
-  ReceiveData recv_data_;
-
-  u8 tx_buffer_[17]{0};
+  } recv_data_{};
 };
 
 }  // namespace rm::device

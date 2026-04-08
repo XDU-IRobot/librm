@@ -22,12 +22,13 @@
 
 /**
  * @file  librm/modules/throttled_prio_queue.hpp
- * @brief 轨迹限制器
+ * @brief 限流优先级调度队列
  */
 
 #ifndef LIBRM_MODULES_THROTTLED_PRIO_QUEUE_HPP
 #define LIBRM_MODULES_THROTTLED_PRIO_QUEUE_HPP
 
+#include <chrono>
 #include <optional>
 
 #include <etl/priority_queue.h>
@@ -44,51 +45,62 @@ namespace rm::modules {
 template <typename T, size_t MaxQueueSize>
 class ThrottledPrioQueue {
  public:
+  using clock = std::chrono::steady_clock;
+  using time_point = clock::time_point;
+  using duration = clock::duration;
+
   struct QueueItem {
     T payload;
-    u8 priority;      ///< 软件优先级 (数值越大，优先级越高)
-    u32 deadline_ms;  ///< 绝对截止时间戳，超过此时间未发送则丢弃
+    u8 priority;          ///< 软件优先级 (数值越大，优先级越高)
+    time_point deadline;  ///< 绝对截止时间点，超过此时间未发送则丢弃
 
     // etl::priority_queue 默认是大顶堆，通过重载 < 决定谁在堆顶
     bool operator<(const QueueItem& other) const {
       if (priority == other.priority) {
-        // 优先级相同时，deadline 越早 (数值越小)，越需要优先处理
+        // 优先级相同时，deadline 越早，越需要优先处理
         // 因为是大顶堆，返回 true 会让 other 浮到堆顶
-        return deadline_ms > other.deadline_ms;
+        return deadline > other.deadline;
       }
       return priority < other.priority;  // 优先级高的在堆顶
     }
   };
 
   /**
-   * @param tx_interval_ms 处理/发送的最小间隔时间（毫秒），用于限频
+   * @param tx_frequency_hz 处理/发送的频率上限（Hz），用于限频
    */
-  explicit ThrottledPrioQueue(u32 tx_interval_ms) : interval_ms_(tx_interval_ms) {}
+  explicit ThrottledPrioQueue(double tx_frequency_hz)
+      : interval_(std::chrono::duration_cast<duration>(std::chrono::duration<double>(1.0 / tx_frequency_hz))) {}
 
   /**
    * @brief 数据入队
-   * @param payload 业务数据
+   * @param payload  业务数据
    * @param priority 优先级
-   * @param deadline_ms 绝对截止时间戳 (如：当前时间 + 50ms)
+   * @param deadline 绝对截止时间点 (如：clock::now() + 50ms)
    * @return true 入队成功, false 队列已满
    */
-  bool Push(const T& payload, u8 priority, u32 deadline_ms) {
+  bool Push(const T& payload, u8 priority, time_point deadline) {
     if (queue_.full()) {
       return false;
     }
-    queue_.push({payload, priority, deadline_ms});
+    queue_.push({payload, priority, deadline});
     return true;
   }
 
   /**
-   * @brief 尝试从队列中提取一个待处理的消息
-   * @param current_time_ms 当前系统时间戳
+   * @brief 尝试从队列中提取一个待处理的消息（自动获取当前时间）
    * @return std::optional<T> 如果满足限流条件且有有效消息，返回消息内容；否则返回 std::nullopt
    */
-  std::optional<T> Process(u32 current_time_ms) {
+  std::optional<T> Process() { return Process(clock::now()); }
+
+  /**
+   * @brief 尝试从队列中提取一个待处理的消息
+   * @param now 当前时间点
+   * @return std::optional<T> 如果满足限流条件且有有效消息，返回消息内容；否则返回 std::nullopt
+   */
+  std::optional<T> Process(time_point now) {
     // 1. 清理已超时的过期消息
     while (!queue_.empty()) {
-      if (current_time_ms >= queue_.top().deadline_ms) {
+      if (now >= queue_.top().deadline) {
         queue_.pop();
       } else {
         break;
@@ -96,14 +108,14 @@ class ThrottledPrioQueue {
     }
 
     // 2. 检查队列是否为空或是否未到限频间隔
-    if (queue_.empty() || (current_time_ms - last_process_time_ < interval_ms_)) {
+    if (queue_.empty() || (now - last_process_time_ < interval_)) {
       return std::nullopt;
     }
 
     // 3. 提取消息并更新状态
     T payload = queue_.top().payload;
     queue_.pop();
-    last_process_time_ = current_time_ms;
+    last_process_time_ = now;
 
     return payload;
   }
@@ -119,8 +131,8 @@ class ThrottledPrioQueue {
 
  private:
   etl::priority_queue<QueueItem, MaxQueueSize> queue_;
-  u32 interval_ms_;           ///< 定频发送周期
-  u32 last_process_time_{0};  ///< 上一次成功处理的时间戳
+  duration interval_;               ///< 定频发送周期
+  time_point last_process_time_{};  ///< 上一次成功处理的时间点
 };
 }  // namespace rm::modules
 

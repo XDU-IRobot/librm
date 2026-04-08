@@ -78,7 +78,7 @@
 #include "librm/modules/dsp_filters.hpp"
 #include "librm/modules/float16.hpp"
 #include "librm/modules/keyboard_handler.hpp"
-#include "librm/modules/m3508_power_model.hpp"
+#include "librm/modules/motor_power_model.hpp"
 #include "librm/modules/motor_calibrator.hpp"
 #include "librm/modules/pid.hpp"
 #include "librm/modules/rgb_led_controller.hpp"

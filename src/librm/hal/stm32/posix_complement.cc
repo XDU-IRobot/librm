@@ -32,9 +32,21 @@
 
 extern "C" {
 __attribute__((weak)) int gettimeofday(struct timeval *tv, struct timezone *tz) {
-  const auto millis = HAL_GetTick();
-  tv->tv_sec = millis / 1000;
-  tv->tv_usec = (millis % 1000) * 1000;
+  const uint32_t load = SysTick->LOAD;
+  uint32_t ms, systick_val;
+  // 避免在读取 HAL_GetTick() 和 SysTick->VAL 之间发生 tick 中断导致不一致
+  do {
+    ms = HAL_GetTick();
+    systick_val = SysTick->VAL;
+  } while (ms != HAL_GetTick());
+
+  // SysTick 从 LOAD 递减到 0，周期 = LOAD + 1 个 tick
+  // 当前毫秒内已经过的微秒数 = (LOAD - VAL) * 1000 / (LOAD + 1)
+  uint32_t us_fraction = (load - systick_val) * 1000u / (load + 1u);
+
+  uint64_t total_us = (uint64_t)ms * 1000u + us_fraction;
+  tv->tv_sec = (time_t)(total_us / 1000000u);
+  tv->tv_usec = (suseconds_t)(total_us % 1000000u);
   return 0;
 }
 

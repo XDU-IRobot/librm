@@ -26,24 +26,10 @@
  */
 
 #include "go8010_motor.hpp"
-#include <cstdint>
 
 #include "librm/core/typedefs.hpp"
 #include "librm/hal/serial_interface.hpp"
 #include "librm/modules/crc.hpp"
-
-/**
- * @brief 串口接收回调函数键值对
- * @note  用于存储串口接收回调函数
- * @note  key: 串口对象指针
- * @note  value: 电机ID和回调函数的键值对
- * @note  key: 电机ID
- * @note  value: 回调函数
- * 解释：相当于两个键对应一个值，第一个键是串口对象指针，第二个键是电机ID，值是回调函数，用于实现多个电机的回调函数
- */
-std::unordered_map<rm::hal::SerialInterface *,
-                   std::unordered_map<rm::u8, std::function<void(const std::vector<rm::u8> &, rm::u16)>>>
-    rx_callback_map_go8010;
 
 namespace rm::device {
 
@@ -52,36 +38,33 @@ namespace rm::device {
  * @param[in]      motor_id   电机ID
  * @returns        None
  */
-Go8010Motor::Go8010Motor(hal::SerialInterface &serial, u8 motor_id) : serial_(&serial) {
-  rx_callback_map_go8010[&serial][motor_id] =
-      std::bind(&Go8010Motor::RxCallback, this, std::placeholders::_1, std::placeholders::_2);
-  serial_->AttachRxCallback(rx_callback_map_go8010[&serial][motor_id]);
-
-  send_data_.id = motor_id;
+Go8010Motor::Go8010Motor(hal::SerialInterface &serial, u8 motor_id) : serial_(&serial), id_{motor_id} {
+  serial_->AttachRxCallback(std::bind(&Go8010Motor::RxCallback, this, std::placeholders::_1, std::placeholders::_2));
 }
 
 /**
- * @brief          设置电机力矩
- * @param[in]      tau    力矩
- * @returns        None
+ * @brief  FOC模式下发送MIT控制命令
+ * @param  position_rad           期望位置
+ * @param  speed_rad_per_sec      期望速度
+ * @param  torque_ff_nm           前馈力矩
+ * @param  kp                     位置误差比例系数
+ * @param  kd                     速度误差比例系数
  */
-void Go8010Motor::SetTau(f32 tau) {
-  send_data_.mode = 1;
+void Go8010Motor::SetMitCommand(f32 position_rad, f32 speed_rad_per_sec, f32 torque_ff_nm, f32 kp, f32 kd) {
+  ControlData tx;
+  tx.head[0] = 0xfe;
+  tx.head[1] = 0xee;
+  tx.mode.id = id_;
+  tx.mode.status = 1;
+  tx.comd.tau_des = torque_ff_nm * 256.f;
+  tx.comd.vel_des = speed_rad_per_sec / 6.2831f * 256.f;
+  tx.comd.pos_des = position_rad / 6.2831f * 32768.f;
+  tx.comd.k_pos = kp * 1280;
+  tx.comd.k_spd = kd * 1280;
+  tx.crc16 = modules::CrcCcitt((u8 *)&tx, sizeof(tx) - 2, 0);
 
-  send_data_.tau = tau;
-  send_data_.vel = 0;
-  send_data_.pos = 0;
-  send_data_.kp = 0;
-  send_data_.kd = 0;
-
-  SetParam(send_data_);
+  serial_->Write(reinterpret_cast<u8 *>(&tx), sizeof(tx));
 }
-
-/**
- * @brief          发送电机控制指令
- * @returns        None
- */
-void Go8010Motor::SendCommend() { serial_->Write(tx_buffer_, sizeof(tx_buffer_)); }
 
 /**
  * @brief          串口接收完成回调函数，解包电机发回来的反馈数据
@@ -94,47 +77,21 @@ void Go8010Motor::RxCallback(const std::vector<u8> &data, u16 rx_len) {
   if (rx_len != 16) {
     return;
   }
+  const MotorData *rx_data = reinterpret_cast<const MotorData *>(data.data());
 
-  std::copy(data.begin(), data.end(), reinterpret_cast<u8 *>(&recv_data_.motor_recv_data));
-
-  // if (recv_data_.motor_recv_data.head[0] != 0xFE || recv_data_.motor_recv_data.head[1] != 0xEE) {
-  //   return;
-  // }
-
-  if (recv_data_.motor_recv_data.mode.id == send_data_.motor_send_data.mode.id) {
-    ReportStatus(kOk);
-    recv_data_.id = recv_data_.motor_recv_data.mode.id;
-    recv_data_.mode = recv_data_.motor_recv_data.mode.status;
-    recv_data_.tau = recv_data_.motor_recv_data.fbk.tau / 256.f;
-    recv_data_.vel = recv_data_.motor_recv_data.fbk.vel * 2.f * 3.1415926f / 256.f;
-    recv_data_.pos = recv_data_.motor_recv_data.fbk.pos * 2.f * 3.1415926f / 32768.f;
-    recv_data_.temp = recv_data_.motor_recv_data.fbk.temp;
-    recv_data_.MError = recv_data_.motor_recv_data.fbk.MError;
-    recv_data_.force = recv_data_.motor_recv_data.fbk.force;
-    recv_data_.correct = true;
+  if (rx_data->mode.id != id_) {
+    return;
   }
-}
-
-/**
- * @brief          设置电机控制参数
- * @param[in]      send_data    电机控制参数
- * @returns        None
- */
-void Go8010Motor::SetParam(const SendData &send_data) {
-  send_data_.motor_send_data.head[0] = 0xFE;
-  send_data_.motor_send_data.head[1] = 0xEE;
-  send_data_.motor_send_data.mode.id = send_data.id;
-  send_data_.motor_send_data.mode.status = send_data.mode;
-  send_data_.motor_send_data.comd.tau_des = send_data.tau * 256.f;
-  send_data_.motor_send_data.comd.vel_des = send_data.vel / 6.2831f * 256.f;
-  send_data_.motor_send_data.comd.pos_des = send_data.pos / 6.2831f * 32768.f;
-  send_data_.motor_send_data.comd.k_pos = send_data.kp * 1280;
-  send_data_.motor_send_data.comd.k_spd = send_data.kd * 1280;
-
-  send_data_.motor_send_data.CRC16 = rm::modules::CrcCcitt((rm::u8 *)&send_data_.motor_send_data, 15, 0x0);
-
-  std::copy(reinterpret_cast<u8 *>(&send_data_.motor_send_data),
-            reinterpret_cast<u8 *>(&send_data_.motor_send_data) + sizeof(send_data_.motor_send_data), tx_buffer_);
+  ReportStatus(kOk);
+  recv_data_.id = rx_data->mode.id;
+  recv_data_.mode = rx_data->mode.status;
+  recv_data_.tau = rx_data->feedback.tau / 256.f;
+  recv_data_.vel = rx_data->feedback.vel * 2.f * 3.1415926f / 256.f;
+  recv_data_.pos = rx_data->feedback.pos * 2.f * 3.1415926f / 32768.f;
+  recv_data_.temp = rx_data->feedback.temp;
+  recv_data_.MError = rx_data->feedback.MError;
+  recv_data_.force = rx_data->feedback.force;
+  recv_data_.correct = true;
 }
 
 }  // namespace rm::device

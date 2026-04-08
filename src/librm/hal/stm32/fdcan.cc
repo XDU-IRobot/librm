@@ -210,20 +210,28 @@ void FdCan::Write(u16 id, const u8 *data, usize size) {
     return;  // 这一帧放弃发送
   }
 
-  // 等待TX FIFO有空闲位置，增加超时保护
-  u32 timeout_counter = 0;
+  // 等待TX FIFO有空闲位置并入队，若入队失败则继续等待重试，增加超时保护
   constexpr u32 kTimeoutLimit = 100000;
-  while (HAL_FDCAN_GetTxFifoFreeLevel(hfdcan_) == 0) {
-    if (++timeout_counter > kTimeoutLimit) {
-      // 超时，可能是Bus-Off或其他错误，尝试恢复
-      HAL_FDCAN_GetProtocolStatus(hfdcan_, &protocol_status);
-      if (protocol_status.BusOff) {
-        Restart();
+  constexpr u32 kMaxRetries = 10;
+  u32 retry_count = 0;
+  while (true) {
+    u32 timeout_counter = 0;
+    while (HAL_FDCAN_GetTxFifoFreeLevel(hfdcan_) == 0) {
+      if (++timeout_counter > kTimeoutLimit) {
+        HAL_FDCAN_GetProtocolStatus(hfdcan_, &protocol_status);
+        if (protocol_status.BusOff) {
+          Restart();
+        }
+        return;  // 放弃这一帧
       }
-      return;  // 放弃这一帧
+    }
+    if (HAL_FDCAN_AddMessageToTxFifoQ(hfdcan_, &hal_tx_header_, data) == HAL_OK) {
+      break;  // 入队成功
+    }
+    if (++retry_count >= kMaxRetries) {
+      return;  // 超过最大重试次数，放弃这一帧
     }
   }
-  LIBRM_STM32_HAL_ASSERT(HAL_FDCAN_AddMessageToTxFifoQ(hfdcan_, &hal_tx_header_, const_cast<u8 *>(data)));
 }
 
 /**
@@ -254,10 +262,10 @@ void FdCan::Stop() { LIBRM_STM32_HAL_ASSERT(HAL_FDCAN_Stop(hfdcan_)); }
  * @note  停止外设、重新激活中断通知、再启动外设
  */
 void FdCan::Restart() const {
-  HAL_FDCAN_Stop(hfdcan_);
-  HAL_FDCAN_ActivateNotification(hfdcan_, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0);
-  HAL_FDCAN_ActivateNotification(hfdcan_, FDCAN_IT_BUS_OFF, 0);
-  HAL_FDCAN_Start(hfdcan_);
+  LIBRM_STM32_HAL_ASSERT(HAL_FDCAN_Stop(hfdcan_));
+  LIBRM_STM32_HAL_ASSERT(HAL_FDCAN_ActivateNotification(hfdcan_, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0));
+  LIBRM_STM32_HAL_ASSERT(HAL_FDCAN_ActivateNotification(hfdcan_, FDCAN_IT_BUS_OFF, 0));
+  LIBRM_STM32_HAL_ASSERT(HAL_FDCAN_Start(hfdcan_));
 }
 
 /**

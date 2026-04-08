@@ -176,13 +176,23 @@ class SteeringChassis {
 };
 
 /**
- * @brief 三角形排列的三舵轮底盘（前、左后、右后）
+ * @brief 等腰三角形排列的三舵轮底盘（前、左后、右后）
  */
 class TriSteeringChassis {
  public:
   TriSteeringChassis() = delete;
   ~TriSteeringChassis() = default;
-  explicit TriSteeringChassis(f32 chassis_radius) : chassis_radius_(chassis_radius) {}
+
+  /**
+   * @brief 构造函数
+   * @param base_len 两后轮的间距（等腰三角形底边长）
+   * @param height   前轮到两后轮连线的垂直距离（等腰三角形高）
+   */
+  TriSteeringChassis(f32 base_len, f32 height) {
+    rear_x_ = base_len / 2.0f;
+    chassis_radius_ = (base_len * base_len + 4.0f * height * height) / (8.0f * height);
+    rear_y_ = chassis_radius_ - height;
+  }
 
   /**
    * @brief 360度三舵轮正运动学
@@ -190,43 +200,32 @@ class TriSteeringChassis {
    * @param vy                前后方向速度
    * @param w                 旋转速度，从上向下看顺时针为正
    * @note
-   * 三舵轮排列为等边三角形：
-   *   - 前轮(front)：位于底盘正前方，角度 π/2（90°）
-   *   - 左后轮(left rear)：位于底盘左后方，角度 7π/6（210°）
-   *   - 右后轮(right rear)：位于底盘右后方，角度 11π/6（330°或-30°）
+   * 三舵轮排列为等腰三角形，旋转中心为三角形外接圆圆心：
    * 这个函数不考虑当前舵角与目标角度是否大于90度而反转舵
    */
   auto Forward(f32 vx, f32 vy, f32 w) {
-    // 三个轮子在底盘坐标系下的位置（以底盘中心为原点）
-    // 前轮：(0, R)，左后轮：(-R*sqrt(3)/2, -R/2)，右后轮：(R*sqrt(3)/2, -R/2)
-    constexpr f32 sqrt3_2 = 0.866025403784f;  // sqrt(3)/2
-
     using modules::IsNear;
-    using namespace angle_literals;
-    if (IsNear(vx, 0.f, 1e-6) &&  //
-        IsNear(vy, 0.f, 1e-6) &&  //
-        IsNear(w, 0.f, 1e-6)) {
-      // 三个舵摆成一个圆周，这样可以随时开始小陀螺
-      forward_result_.front_steer_position = 0.f;            // 前轮朝右
-      forward_result_.rr_steer_position = (240._deg).rad();  // 右后轮朝左后
-      forward_result_.lr_steer_position = (120._deg).rad();  // 左后轮朝左前
+    if (IsNear(vx, 0.f, 1e-6f) &&  //
+        IsNear(vy, 0.f, 1e-6f) &&  //
+        IsNear(w, 0.f, 1e-6f)) {
+      // 三个舵摆成一个圆周阵型（各轮切线方向），这样可以随时开始小陀螺旋转
+      forward_result_.front_steer_position = 0.f;                     // 前轮朝右
+      forward_result_.lr_steer_position = atan2f(rear_x_, rear_y_);   // 左后轮朝左前
+      forward_result_.rr_steer_position = atan2f(-rear_x_, rear_y_);  // 右后轮朝左后
     } else {
-      // 前轮位于 (0, R)
-      // 旋转分量：切向速度 = w × 位置向量 = (w * (-R), w * 0) = (-wR, 0)
+      // 前轮位于 (0, chassis_radius_)
       const f32 front_vx = vx - w * chassis_radius_;
       const f32 front_vy = vy;
       forward_result_.front_steer_position = atan2f(front_vy, front_vx);
 
-      // 左后轮位于 (-R*sqrt3/2, -R/2)
-      // 旋转分量：切向速度 = w × 位置向量 = (w * R/2, w * (-R*sqrt3/2))
-      const f32 lr_vx = vx + w * chassis_radius_ * 0.5f;
-      const f32 lr_vy = vy - w * chassis_radius_ * sqrt3_2;
+      // 左后轮位于 (-rear_x_, rear_y_)
+      const f32 lr_vx = vx - w * rear_y_;
+      const f32 lr_vy = vy - w * rear_x_;
       forward_result_.lr_steer_position = atan2f(lr_vy, lr_vx);
 
-      // 右后轮位于 (R*sqrt3/2, -R/2)
-      // 旋转分量：切向速度 = w × 位置向量 = (w * R/2, w * R*sqrt3/2)
-      const f32 rr_vx = vx + w * chassis_radius_ * 0.5f;
-      const f32 rr_vy = vy + w * chassis_radius_ * sqrt3_2;
+      // 右后轮位于 (rear_x_, rear_y_)
+      const f32 rr_vx = vx - w * rear_y_;
+      const f32 rr_vy = vy + w * rear_x_;
       forward_result_.rr_steer_position = atan2f(rr_vy, rr_vx);
     }
 
@@ -235,12 +234,12 @@ class TriSteeringChassis {
     const f32 front_vy = vy;
     forward_result_.front_wheel_speed = sqrtf(front_vx * front_vx + front_vy * front_vy);
 
-    const f32 lr_vx = vx + w * chassis_radius_ * 0.5f;
-    const f32 lr_vy = vy - w * chassis_radius_ * sqrt3_2;
+    const f32 lr_vx = vx - w * rear_y_;
+    const f32 lr_vy = vy - w * rear_x_;
     forward_result_.lr_wheel_speed = sqrtf(lr_vx * lr_vx + lr_vy * lr_vy);
 
-    const f32 rr_vx = vx + w * chassis_radius_ * 0.5f;
-    const f32 rr_vy = vy + w * chassis_radius_ * sqrt3_2;
+    const f32 rr_vx = vx - w * rear_y_;
+    const f32 rr_vy = vy + w * rear_x_;
     forward_result_.rr_wheel_speed = sqrtf(rr_vx * rr_vx + rr_vy * rr_vy);
 
     return forward_result_;
@@ -283,7 +282,9 @@ class TriSteeringChassis {
     f32 front_steer_position, lr_steer_position, rr_steer_position;
     f32 front_wheel_speed, lr_wheel_speed, rr_wheel_speed;
   } forward_result_{};
-  f32 chassis_radius_;
+  f32 chassis_radius_;  // 旋转中心到各轮子的距离（也是前轮的 y 坐标）
+  f32 rear_x_;          // 后轮 x 坐标的绝对值
+  f32 rear_y_;          // 后轮 y 坐标
 };
 
 /**

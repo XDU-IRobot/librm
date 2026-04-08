@@ -1,0 +1,150 @@
+# 限流 CAN 发送
+
+本例程演示如何使用 `ThrottledCan` 替代普通 `Can`，实现对 CAN 总线发送频率的精确控制。
+
+## 背景
+
+普通的 `Can`（`BxCan` / `FdCan`）调用 `Write()` 时会**立即**将帧提交到硬件 TX FIFO 发送。当多个设备在同一控制循环中频繁调用 `Write()`，实际发送速率取决于调用方，容易造成总线拥塞或发送速率不稳定。
+
+`ThrottledCan` 在 `Can` 的基础上引入了一个[限流优先级队列](https://github.com/XDU-IRobot/librm)，`Write()` 只负责**入队**，实际发送由主循环显式调用 `Process()` 驱动。每次调用 `Process()` 最多发出一帧，发送间隔由构造时指定的频率上限控制。
+
+其余用法与普通的 `Can` 类完全一致。
+
+:::info
+`ThrottledCan` 仅在 STM32 平台下可用，Linux 平台没有对应实现。
+
+Linux 内核已在驱动层提供等效的流量控制机制：通过 `ip link set can0 txqueuelen <N>` 可以限制 TX 队列深度（队列满时 `write()` 返回 `ENOBUFS`），通过 `tc qdisc` 令牌桶可以在比特率层面整形流量。对于 Linux 端的应用场景，这些系统级手段已经足够，无需在应用层再叠加一层软件队列。
+:::
+
+## 基础用法
+
+将代码中的 `rm::hal::Can` 替换为 `rm::hal::ThrottledCan`，并主动以尽量高的频率调用 `Process()`（至少比你指定的发送频率要高）
+
+```cpp
+#include <librm.hpp>
+
+// 替换为 ThrottledCan，指定发送频率上限为 1000 Hz
+// 第二个模板参数为队列最大深度，默认 32
+rm::hal::ThrottledCan<> motor_can{hfdcan1, 1000.0};
+
+rm::device::M3508 motor{motor_can, 1};
+
+motor_can.SetFilter(0, 0);
+motor_can.Begin();
+
+// 主循环
+for (;;) {
+  // Write() 只入队，不立即发送
+  motor.SetCurrent(5000);
+  rm::device::DjiMotorBase::SendCommand(motor_can);
+
+  // Process() 按限频策略出队并实际发送，每次最多发一帧
+  // 通常放在一个尽量高频的裸循环中调用
+  motor_can.Process();
+}
+```
+
+## 自定义队列深度
+
+队列深度决定了最多可以缓存多少帧待发送数据，默认为 32。可以通过模板参数调整：
+
+```cpp
+// 队列深度 128
+rm::hal::ThrottledCan<128> motor_can{hfdcan1, 7000.0};
+```
+
+## 设置发送频率
+
+构造函数第二个参数为发送频率上限（Hz），内部自动换算为帧间最小间隔：
+
+```cpp
+rm::hal::ThrottledCan<> can_1khz{hfdcan1, 1000.0};  // 1000 Hz，间隔约 1 ms
+rm::hal::ThrottledCan<> can_7khz{hfdcan2, 7000.0};  // 7000 Hz，间隔约 143 µs
+```
+
+:::warning
+亚毫秒级的发送间隔依赖微秒精度的系统时钟。librm 在 STM32 平台上通过读取 `SysTick->VAL` 寄存器实现微秒级的 `gettimeofday()`，`std::chrono::steady_clock` 的精度因此可达微秒级。务必确认 SysTick 已正确配置（HAL 库初始化后默认已配置为 1 ms Tick）。
+:::
+
+## 优先级与截止时间
+
+当多个模块同时向同一总线发帧时，可以通过扩展 `Write()` 重载指定优先级和截止时间，实现精细的调度控制：
+
+```cpp
+using namespace std::chrono_literals;
+using clock = rm::hal::ThrottledCan<>::clock;
+
+// 普通 Write()：使用默认优先级（128）和默认 deadline（当前时间 + 50 ms）
+motor_can.Write(0x200, data, 8);
+
+// 扩展 Write()：高优先级帧，20 ms 内未发出则丢弃
+motor_can.Write(0x200, data, 8, 255, clock::now() + 20ms);
+
+// 低优先级帧，允许等待更长时间
+motor_can.Write(0x201, data, 8, 64, clock::now() + 200ms);
+```
+
+优先级规则：
+- 数值越大，优先级越高（范围 0–255）
+- 优先级相同时，deadline 越早的帧越先发出
+- 超过 deadline 时间点仍未发出的帧会在下次 `Process()` 调用时被自动丢弃
+
+## 自定义 deadline 偏移
+
+构造函数第三个可选参数控制普通 `Write()` override 使用的默认 deadline 偏移量，默认为 50 ms：
+
+```cpp
+using namespace std::chrono_literals;
+
+// 默认 deadline 改为 20 ms（更激进地丢弃过时帧）
+rm::hal::ThrottledCan<> motor_can{hfdcan1, 1000.0, 20ms};
+```
+
+## 查看队列状态
+
+通过 `Queue()` 可以访问底层队列的只读视图：
+
+```cpp
+size_t pending = motor_can.Queue().size();  // 当前等待发送的帧数
+bool is_empty  = motor_can.Queue().empty(); // 队列是否为空
+```
+
+## 完整示例
+
+```cpp
+#include <librm.hpp>
+
+// 两条电机总线，各限频 7000 Hz，队列深度 128
+rm::hal::ThrottledCan<128> lower_motor_can{hfdcan1, 7000.0};
+rm::hal::ThrottledCan<128> upper_motor_can{hfdcan2, 7000.0};
+
+// 电机设备照常注册到对应总线
+rm::device::DmMotor<rm::device::DmMotorControlMode::kMit> m1{lower_motor_can, ...};
+rm::device::DmMotor<rm::device::DmMotorControlMode::kMit> m2{upper_motor_can, ...};
+
+lower_motor_can.SetFilter(0, 0);
+upper_motor_can.SetFilter(0, 0);
+lower_motor_can.Begin();
+upper_motor_can.Begin();
+
+// 帧率统计
+volatile uint32_t lower_can_fps = 0;
+volatile uint32_t upper_can_fps = 0;
+
+// 高频主循环
+uint32_t lower_count = 0, upper_count = 0;
+auto fps_last_time = std::chrono::steady_clock::now();
+
+for (;;) {
+  if (lower_motor_can.Process()) ++lower_count;
+  if (upper_motor_can.Process()) ++upper_count;
+
+  const auto now = std::chrono::steady_clock::now();
+  if (now - fps_last_time >= std::chrono::seconds(1)) {
+    lower_can_fps = lower_count;
+    upper_can_fps = upper_count;
+    lower_count = upper_count = 0;
+    fps_last_time = now;
+  }
+}
+```
