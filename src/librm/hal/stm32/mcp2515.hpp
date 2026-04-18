@@ -41,7 +41,7 @@ namespace rm::hal::stm32 {
  * @brief 基于HAL SPI + EXTI中断的MCP2515 CAN控制器封装
  * @note  INT引脚低电平有效，外部在EXTI中断触发并清除pending后调用ExtiIrqHandler()
  */
-class Mcp2515 : public CanInterface, detail::NonCopyable {
+class Mcp2515 : public CanInterface, rm::detail::NonCopyable {
  public:
   /**
    * @brief CAN波特率（基于8MHz晶振）
