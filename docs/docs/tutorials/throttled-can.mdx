@@ -4,16 +4,38 @@
 
 ## 背景
 
-普通的 `Can`（`BxCan` / `FdCan`）调用 `Write()` 时会**立即**将帧提交到硬件 TX FIFO 发送。当多个设备在同一控制循环中频繁调用 `Write()`，实际发送速率取决于调用方，容易造成总线拥塞或发送速率不稳定。
+普通的 `Can`（`BxCan` / `FdCan` / `SocketCan`）调用 `Write()` 时会**立即**将帧提交到硬件 TX FIFO（或内核发送队列）发送。当多个设备在同一控制循环中频繁调用 `Write()`，实际发送速率取决于调用方，容易造成总线拥塞或发送速率不稳定。
 
-`ThrottledCan` 在 `Can` 的基础上引入了一个[限流优先级队列](https://github.com/XDU-IRobot/librm)，`Write()` 只负责**入队**，实际发送由主循环显式调用 `Process()` 驱动。每次调用 `Process()` 最多发出一帧，发送间隔由构造时指定的频率上限控制。
+`ThrottledCan` 在底层 CAN 实现的基础上引入了一个[限流优先级队列](https://github.com/XDU-IRobot/librm)，`Write()` 只负责**入队**，实际发送由主循环显式调用 `Process()` 驱动。每次调用 `Process()` 最多发出一帧，发送间隔由构造时指定的频率上限控制。
 
 其余用法与普通的 `Can` 类完全一致。
 
-:::info
-`ThrottledCan` 仅在 STM32 平台下可用，Linux 平台没有对应实现。
+## 架构
 
-Linux 内核已在驱动层提供等效的流量控制机制：通过 `ip link set can0 txqueuelen <N>` 可以限制 TX 队列深度（队列满时 `write()` 返回 `ENOBUFS`），通过 `tc qdisc` 令牌桶可以在比特率层面整形流量。对于 Linux 端的应用场景，这些系统级手段已经足够，无需在应用层再叠加一层软件队列。
+`ThrottledCan` 是一个平台无关的模板类（位于 `librm/hal/throttled_can.hpp`），通过模板参数 `Base` 接受任意 `CanInterface` 子类作为底层实现：
+
+| 便捷别名 | 底层实现 | 平台 | 最大帧数据长度 |
+|---------|---------|------|------------|
+| `rm::hal::ThrottledCan` | `BxCan` / `FdCan`（自动选择） | STM32 | 8 / 64 |
+| `rm::hal::ThrottledMcp2515` | `Mcp2515` | STM32 | 8 |
+| `rm::hal::ThrottledCan` | `SocketCan` | Linux | 8 |
+
+对于 STM32 平台，`rm::hal::ThrottledCan` 会根据 HAL 宏自动选择 `BxCan`（经典 CAN）或 `FdCan`（CAN FD）作为底层实现。
+
+如果需要显式指定底层实现，也可以直接使用完整模板：
+
+```cpp
+#include "librm/hal/throttled_can.hpp"
+
+// 显式指定底层为 BxCan，经典 CAN 8 字节
+rm::hal::detail::ThrottledCan<rm::hal::stm32::BxCan, 8, 128> can{3000.0, hcan1};
+
+// 显式指定底层为 Mcp2515
+rm::hal::detail::ThrottledCan<rm::hal::stm32::Mcp2515, 8, 64> can{1000.0, hspi1, GPIOA, GPIO_PIN_4};
+```
+
+:::info
+亚毫秒级的发送间隔依赖微秒精度的系统时钟。librm 在 STM32 平台上通过读取 `SysTick->VAL` 寄存器实现微秒级的 `gettimeofday()`，`std::chrono::steady_clock` 的精度因此可达微秒级。务必确认 SysTick 已正确配置（HAL 库初始化后默认已配置为 1 ms Tick）。Linux 平台下 `steady_clock` 本身即具备纳秒精度，无需额外配置。
 :::
 
 ## 基础用法
@@ -24,8 +46,8 @@ Linux 内核已在驱动层提供等效的流量控制机制：通过 `ip link s
 #include <librm.hpp>
 
 // 替换为 ThrottledCan，指定发送频率上限为 1000 Hz
-// 第二个模板参数为队列最大深度，默认 32
-rm::hal::ThrottledCan<> motor_can{hfdcan1, 1000.0};
+// 第一个模板参数为队列最大深度，默认 32
+rm::hal::ThrottledCan<> motor_can{1000.0, hfdcan1};
 
 rm::device::M3508 motor{motor_can, 1};
 
@@ -44,31 +66,90 @@ for (;;) {
 }
 ```
 
+## MCP2515 外挂 CAN 控制器
+
+对于通过 SPI 连接的 MCP2515，使用 `ThrottledMcp2515` 别名：
+
+```cpp
+#include <librm.hpp>
+
+// MCP2515 限频 500 Hz，队列深度 64
+rm::hal::ThrottledMcp2515<64> ext_can{500.0, hspi1, GPIOA, GPIO_PIN_4};
+
+ext_can.Begin();
+
+for (;;) {
+  ext_can.Write(0x100, data, 8);
+  ext_can.Process();
+}
+```
+
+## Linux SocketCAN
+
+在 Linux 平台（如树莓派）上，`rm::hal::ThrottledCan` 自动使用 `SocketCan` 作为底层实现：
+
+```cpp
+#include <librm.hpp>
+
+// SocketCAN 限频 1000 Hz
+rm::hal::ThrottledCan<> motor_can{1000.0, "can0"};
+
+motor_can.Begin();
+
+for (;;) {
+  motor_can.Write(0x200, data, 8);
+  motor_can.Process();
+}
+```
+
 ## 自定义队列深度
 
 队列深度决定了最多可以缓存多少帧待发送数据，默认为 32。可以通过模板参数调整：
 
 ```cpp
 // 队列深度 128
-rm::hal::ThrottledCan<128> motor_can{hfdcan1, 7000.0};
+rm::hal::ThrottledCan<128> motor_can{7000.0, hfdcan1};
 ```
 
 ## 设置发送频率
 
-构造函数第二个参数为发送频率上限（Hz），内部自动换算为帧间最小间隔：
+构造函数第一个参数为发送频率上限（Hz），内部自动换算为帧间最小间隔：
 
 ```cpp
-rm::hal::ThrottledCan<> can_1khz{hfdcan1, 1000.0};  // 1000 Hz，间隔约 1 ms
-rm::hal::ThrottledCan<> can_7khz{hfdcan2, 7000.0};  // 7000 Hz，间隔约 143 µs
+rm::hal::ThrottledCan<> can_1khz{1000.0, hfdcan1};  // 1000 Hz，间隔约 1 ms
+rm::hal::ThrottledCan<> can_7khz{7000.0, hfdcan2};  // 7000 Hz，间隔约 143 µs
 ```
 
-:::warning
-亚毫秒级的发送间隔依赖微秒精度的系统时钟。librm 在 STM32 平台上通过读取 `SysTick->VAL` 寄存器实现微秒级的 `gettimeofday()`，`std::chrono::steady_clock` 的精度因此可达微秒级。务必确认 SysTick 已正确配置（HAL 库初始化后默认已配置为 1 ms Tick）。
+## 调度策略
+
+`ThrottledCan` 提供三种调度策略，通过第二个模板参数选择，默认为 `kPriorityFifo`：
+
+```cpp
+// 默认：优先级 + FIFO，优先级高的先发；同优先级时按入队顺序
+rm::hal::ThrottledCan<128> motor_can{3000, hcan1};
+
+// 严格 FIFO，完全按入队顺序发出（忽略 priority 参数）
+rm::hal::ThrottledCan<128, rm::modules::SchedulingPolicy::kFifo> motor_can{3000, hcan1};
+
+// EDF：优先级大的先发，同优先级时 deadline 最早的先发
+rm::hal::ThrottledCan<128, rm::modules::SchedulingPolicy::kEdf> motor_can{3000, hcan1};
+```
+
+| 策略                  | 出队顺序                        | `priority` 参数 | 适用场景                       |
+|---------------------|-----------------------------|---------------|----------------------------|
+| `kPriorityFifo`（默认） | 优先级高的先出；同优先级时按入队顺序          | 生效            | 多类型消息混发，既需优先级区分又需同优先级内时序保证 |
+| `kFifo`             | 完全按入队顺序                     | 忽略            | 所有消息同等重要，严格保证时序            |
+| `kEdf`              | 优先级大的先出；同优先级时 deadline 早的先出 | 生效            | 实时性要求严格、需要按截止时间调度的场景       |
+
+:::info
+所有策略下 deadline 过期检查均有效——在队列中等待超过 deadline 的帧会在下次 `Process()` 时被自动丢弃。
 :::
 
 ## 优先级与截止时间
 
-当多个模块同时向同一总线发帧时，可以通过扩展 `Write()` 重载指定优先级和截止时间，实现精细的调度控制：
+> 优先级参数仅在 **`kEdf` 策略**下生效；`kFifo`（默认）模式下传入的 `priority` 值会被忽略。
+
+当使用 `kEdf` 策略且多个模块同时向同一总线发帧时，可以通过扩展 `Write()` 重载指定优先级和截止时间：
 
 ```cpp
 using namespace std::chrono_literals;
@@ -89,25 +170,32 @@ motor_can.Write(0x201, data, 8, 64, clock::now() + 200ms);
 - 优先级相同时，deadline 越早的帧越先发出
 - 超过 deadline 时间点仍未发出的帧会在下次 `Process()` 调用时被自动丢弃
 
-## 自定义 deadline 偏移
-
-构造函数第三个可选参数控制普通 `Write()` override 使用的默认 deadline 偏移量，默认为 50 ms：
-
-```cpp
-using namespace std::chrono_literals;
-
-// 默认 deadline 改为 20 ms（更激进地丢弃过时帧）
-rm::hal::ThrottledCan<> motor_can{hfdcan1, 1000.0, 20ms};
-```
-
 ## 查看队列状态
 
-通过 `Queue()` 可以访问底层队列的只读视图：
+通过 `queue()` 可以访问底层队列的只读视图：
 
 ```cpp
-size_t pending = motor_can.Queue().size();  // 当前等待发送的帧数
-bool is_empty  = motor_can.Queue().empty(); // 队列是否为空
+size_t pending = motor_can.queue().size();  // 当前等待发送的帧数
+bool is_empty  = motor_can.queue().empty(); // 队列是否为空
 ```
+
+## 流量监控
+
+`stats()` 返回最近一个统计周期（1 秒）内的流量快照，由 `Process()` 驱动自动刷新，getter 本身为 `const`，不触发任何副作用。
+
+```cpp
+const auto &s = motor_can.stats();
+```
+
+| 字段                 | 类型       | 含义                                            |
+|--------------------|----------|-----------------------------------------------|
+| `tx_fps`           | `float`  | 实际发送帧率（帧/秒）                                   |
+| `enqueue_fps`      | `float`  | 入队请求帧率（含成功 + 因队满丢弃的）                          |
+| `drop_full_fps`    | `float`  | 因队列已满被丢弃的帧率（帧/秒）                              |
+| `drop_expired_fps` | `float`  | 因超过 deadline 被自动丢弃的帧率（帧/秒）                    |
+| `drop_total_fps`   | `float`  | 总丢弃帧率（= `drop_full_fps` + `drop_expired_fps`） |
+| `peak_queue_depth` | `size_t` | 统计周期内队列深度峰值                                   |
+| `avg_queue_depth`  | `float`  | 统计周期内队列深度均值（采样点为每次 `Process()` 调用）            |
 
 ## 完整示例
 
@@ -115,8 +203,11 @@ bool is_empty  = motor_can.Queue().empty(); // 队列是否为空
 #include <librm.hpp>
 
 // 两条电机总线，各限频 7000 Hz，队列深度 128
-rm::hal::ThrottledCan<128> lower_motor_can{hfdcan1, 7000.0};
-rm::hal::ThrottledCan<128> upper_motor_can{hfdcan2, 7000.0};
+rm::hal::ThrottledCan<128> lower_motor_can{7000.0, hfdcan1};
+rm::hal::ThrottledCan<128> upper_motor_can{7000.0, hfdcan2};
+
+// MCP2515 外挂总线，限频 500 Hz
+rm::hal::ThrottledMcp2515<64> ext_can{500.0, hspi1, GPIOA, GPIO_PIN_4};
 
 // 电机设备照常注册到对应总线
 rm::device::DmMotor<rm::device::DmMotorControlMode::kMit> m1{lower_motor_can, ...};
@@ -124,27 +215,25 @@ rm::device::DmMotor<rm::device::DmMotorControlMode::kMit> m2{upper_motor_can, ..
 
 lower_motor_can.SetFilter(0, 0);
 upper_motor_can.SetFilter(0, 0);
+ext_can.SetFilter(0, 0);
 lower_motor_can.Begin();
 upper_motor_can.Begin();
-
-// 帧率统计
-volatile uint32_t lower_can_fps = 0;
-volatile uint32_t upper_can_fps = 0;
+ext_can.Begin();
 
 // 高频主循环
-uint32_t lower_count = 0, upper_count = 0;
-auto fps_last_time = std::chrono::steady_clock::now();
-
 for (;;) {
-  if (lower_motor_can.Process()) ++lower_count;
-  if (upper_motor_can.Process()) ++upper_count;
+  lower_motor_can.Process();
+  upper_motor_can.Process();
+  ext_can.Process();
 
-  const auto now = std::chrono::steady_clock::now();
-  if (now - fps_last_time >= std::chrono::seconds(1)) {
-    lower_can_fps = lower_count;
-    upper_can_fps = upper_count;
-    lower_count = upper_count = 0;
-    fps_last_time = now;
-  }
+  // stats() 每秒自动刷新，直接读取即可
+  const auto &ls = lower_motor_can.stats();
+  const auto &us = upper_motor_can.stats();
+
+  // 示例：通过调试器 / 串口输出关键指标
+  // printf("lower: tx=%.0f fps, drop_exp=%.0f fps, q_peak=%u\n",
+  //        ls.tx_fps, ls.drop_expired_fps, ls.peak_queue_depth);
+  // printf("upper: tx=%.0f fps, drop_exp=%.0f fps, q_peak=%u\n",
+  //        us.tx_fps, us.drop_expired_fps, us.peak_queue_depth);
 }
 ```

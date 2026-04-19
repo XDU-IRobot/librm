@@ -57,12 +57,35 @@ auto r1 = queue_a.Process(now);
 auto r2 = queue_b.Process(now);
 ```
 
-## 优先级调度规则
+## 调度策略
+
+`ThrottledPrioQueue` 通过第三个模板参数选择调度策略，默认为 `kPriorityFifo`：
+
+```cpp
+// 默认：优先级 + FIFO（优先级高的先出；同优先级时按入队顺序）
+rm::modules::ThrottledPrioQueue<Message, 16> queue{10.0};
+
+// 严格 FIFO（忽略 priority，完全按入队顺序）
+rm::modules::ThrottledPrioQueue<Message, 16, rm::modules::SchedulingPolicy::kFifo> queue{10.0};
+
+// EDF（优先级高的先出；同优先级时 deadline 最早的先出）
+rm::modules::ThrottledPrioQueue<Message, 16, rm::modules::SchedulingPolicy::kEdf> queue{10.0};
+```
+
+| 策略 | 出队顺序 | `priority` 参数 |
+|------|----------|-----------------|
+| `kPriorityFifo`（默认） | 优先级高的先出；同优先级时按入队序号升序 | 生效 |
+| `kFifo` | 完全按入队序号升序 | 忽略 |
+| `kEdf` | 优先级高的先出；同优先级时 deadline 最早的先出 | 生效 |
+
+## 优先级调度规则（kPriorityFifo / kEdf）
 
 出队顺序遵循以下规则（大顶堆）：
 
 1. **优先级数值越大，越先出队**（范围 0–255）
-2. **优先级相同时，deadline 越早的越先出队**（EDF，最早截止时间优先）
+2. **优先级相同时**：
+   - `kPriorityFifo`：入队越早的越先出队（FIFO）
+   - `kEdf`：deadline 越早的越先出队
 
 ```cpp
 using namespace std::chrono_literals;

@@ -29,12 +29,12 @@
 #define LIBRM_HAL_CAN_HPP
 
 #include "librm/hal/can_interface.hpp"
+#include "librm/hal/throttled_can.hpp"
 
 #if defined(LIBRM_PLATFORM_STM32)
 #include "librm/hal/stm32/bxcan.hpp"
 #include "librm/hal/stm32/fdcan.hpp"
-#include "librm/hal/stm32/throttled_bxcan.hpp"
-#include "librm/hal/stm32/throttled_fdcan.hpp"
+#include "stm32/mcp2515.hpp"
 #elif defined(LIBRM_PLATFORM_LINUX)
 #include "librm/hal/linux/socketcan.hpp"
 #endif
@@ -43,15 +43,23 @@ namespace rm::hal {
 #if defined(LIBRM_PLATFORM_STM32)
 #if defined(HAL_CAN_MODULE_ENABLED)
 using Can = stm32::BxCan;
-template <size_t MaxQueueSize = 32>
-using ThrottledCan = stm32::ThrottledBxCan<MaxQueueSize>;
+template <size_t MaxQueueSize = 32, modules::SchedulingPolicy Policy = modules::SchedulingPolicy::kPriorityFifo>
+using ThrottledCan = detail::ThrottledCan<stm32::BxCan, 8, MaxQueueSize, Policy>;
 #elif defined(HAL_FDCAN_MODULE_ENABLED)
 using Can = stm32::FdCan;
-template <size_t MaxQueueSize = 32>
-using ThrottledCan = stm32::ThrottledFdCan<MaxQueueSize>;
+template <size_t MaxQueueSize = 32, modules::SchedulingPolicy Policy = modules::SchedulingPolicy::kPriorityFifo>
+using ThrottledCan = detail::ThrottledCan<stm32::FdCan, 64, MaxQueueSize, Policy>;
 #endif
+
+#if defined(HAL_SPI_MODULE_ENABLED) && defined(HAL_GPIO_MODULE_ENABLED)
+template <size_t MaxQueueSize = 32, modules::SchedulingPolicy Policy = modules::SchedulingPolicy::kPriorityFifo>
+using ThrottledMcp2515 = detail::ThrottledCan<stm32::Mcp2515, 8, MaxQueueSize, Policy>;
+#endif
+
 #elif defined(LIBRM_PLATFORM_LINUX)
 using Can = linux_::SocketCan;
+template <size_t MaxQueueSize = 32, modules::SchedulingPolicy Policy = modules::SchedulingPolicy::kPriorityFifo>
+using ThrottledCan = detail::ThrottledCan<linux_::SocketCan, 8, MaxQueueSize, Policy>;
 #endif
 }  // namespace rm::hal
 

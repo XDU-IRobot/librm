@@ -30,6 +30,7 @@
 
 #include <chrono>
 #include <optional>
+#include <type_traits>
 
 #include <etl/priority_queue.h>
 
@@ -38,11 +39,21 @@
 namespace rm::modules {
 
 /**
- * @brief 限流优先级调度队列，用于处理CAN总线定频发送以及类似逻辑
- * @tparam T 负载数据类型 (如CanFrame)
- * @tparam MaxQueueSize 队列最大深度
+ * @brief 调度策略
  */
-template <typename T, size_t MaxQueueSize>
+enum class SchedulingPolicy {
+  kEdf,   ///< Earliest Deadline First：优先级数值越大越先出队；同优先级时 deadline 越早越先出队
+  kFifo,  ///< 严格 FIFO：完全按入队顺序出队（priority 参数被忽略）；deadline 过期仍然丢弃
+  kPriorityFifo,  ///< 优先级 + FIFO：优先级高的先出队；同优先级时严格按入队顺序出队
+};
+
+/**
+ * @brief 限流优先级调度队列，用于处理CAN总线定频发送以及类似逻辑
+ * @tparam T               负载数据类型 (如CanFrame)
+ * @tparam MaxQueueSize    队列最大深度
+ * @tparam Policy          调度策略，默认 kFifo
+ */
+template <typename T, usize MaxQueueSize, SchedulingPolicy Policy = SchedulingPolicy::kPriorityFifo>
 class ThrottledPrioQueue {
  public:
   using clock = std::chrono::steady_clock;
@@ -51,17 +62,33 @@ class ThrottledPrioQueue {
 
   struct QueueItem {
     T payload;
-    u8 priority;          ///< 软件优先级 (数值越大，优先级越高)
-    time_point deadline;  ///< 绝对截止时间点，超过此时间未发送则丢弃
+    u8 priority;           ///< EDF 模式下的软件优先级（数值越大越高）；FIFO 模式下忽略
+    time_point deadline;   ///< 绝对截止时间点，超过此时间未发送则丢弃
+    usize enqueue_seq{0};  ///< 入队序号，FIFO 模式下用于保证时序
 
-    // etl::priority_queue 默认是大顶堆，通过重载 < 决定谁在堆顶
     bool operator<(const QueueItem& other) const {
-      if (priority == other.priority) {
-        // 优先级相同时，deadline 越早，越需要优先处理
-        // 因为是大顶堆，返回 true 会让 other 浮到堆顶
-        return deadline > other.deadline;
+      // 使用有符号差值比较序号，正确处理 enqueue_seq 上溢回绕
+      // 只要队列中同时存在的最大序号跨度 < usize 范围的一半，此方法即可正确工作
+      using signed_seq = std::make_signed_t<usize>;
+      const auto seq_after = [](usize a, usize b) -> bool { return static_cast<signed_seq>(a - b) > 0; };
+
+      if constexpr (Policy == SchedulingPolicy::kFifo) {
+        // FIFO：序号越小（越早入队）越应先出队
+        // 大顶堆中返回 true 表示 other 优先，故序号较晚（seq_after）的返回 true
+        return seq_after(enqueue_seq, other.enqueue_seq);
+      } else if constexpr (Policy == SchedulingPolicy::kPriorityFifo) {
+        // 优先级 + FIFO：优先级高的先出；同优先级时序号小的（早入队的）先出
+        if (priority == other.priority) {
+          return seq_after(enqueue_seq, other.enqueue_seq);
+        }
+        return priority < other.priority;
+      } else {
+        // EDF：优先级数值大的先出；同优先级时 deadline 早的先出
+        if (priority == other.priority) {
+          return deadline > other.deadline;
+        }
+        return priority < other.priority;
       }
-      return priority < other.priority;  // 优先级高的在堆顶
     }
   };
 
@@ -74,7 +101,7 @@ class ThrottledPrioQueue {
   /**
    * @brief 数据入队
    * @param payload  业务数据
-   * @param priority 优先级
+   * @param priority 优先级（kFifo 模式下忽略此参数）
    * @param deadline 绝对截止时间点 (如：clock::now() + 50ms)
    * @return true 入队成功, false 队列已满
    */
@@ -82,7 +109,7 @@ class ThrottledPrioQueue {
     if (queue_.full()) {
       return false;
     }
-    queue_.push({payload, priority, deadline});
+    queue_.push({payload, priority, deadline, enqueue_seq_++});
     return true;
   }
 
@@ -98,10 +125,11 @@ class ThrottledPrioQueue {
    * @return std::optional<T> 如果满足限流条件且有有效消息，返回消息内容；否则返回 std::nullopt
    */
   std::optional<T> Process(time_point now) {
-    // 1. 清理已超时的过期消息
+    // 1. 清理已超时的过期消息，精确计数
     while (!queue_.empty()) {
       if (now >= queue_.top().deadline) {
         queue_.pop();
+        ++expired_count_;
       } else {
         break;
       }
@@ -120,9 +148,12 @@ class ThrottledPrioQueue {
     return payload;
   }
 
-  // 实用接口
-  size_t size() const { return queue_.size(); }
+  /// @brief 获取当前队列中的消息数
+  usize size() const { return queue_.size(); }
+  /// @brief 队列是否为空
   bool empty() const { return queue_.empty(); }
+  /// @brief 累计过期丢弃帧数（单调递增）
+  usize expired_count() const { return expired_count_; }
   void Clear() {
     while (!queue_.empty()) {
       queue_.pop();
@@ -133,6 +164,8 @@ class ThrottledPrioQueue {
   etl::priority_queue<QueueItem, MaxQueueSize> queue_;
   duration interval_;               ///< 定频发送周期
   time_point last_process_time_{};  ///< 上一次成功处理的时间点
+  usize expired_count_{0};          ///< 累计过期丢弃帧数（单调递增）
+  usize enqueue_seq_{0};            ///< 入队序号计数器（FIFO 模式使用）
 };
 }  // namespace rm::modules
 

@@ -118,6 +118,27 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 
 在 `# Add user defined libraries` 之后另起一行，添加`rm`。
 
+## HAL 时基配置
+
+librm 内部补充了一个基于 SysTick 或 TIM 的 `gettimeofday` 实现来提供亚毫秒级的时间基准。该函数的精度取决于 CubeMX 中设置的 Timebase Source：
+
+![](assets/timebase_source.png)
+
+若这里设置为 SysTick，则什么都不用配置，放心使用即可；
+
+**若你把 Timebase Source 改为了某个 TIM，则务必按照下面的说明进行配置，否则系统时钟将退化为毫秒级精度，导致 librm 的一些时间相关功能出现异常。**
+
+通过编译宏告诉 librm 使用哪个定时器作为 Timebase Source：
+
+```cmake
+# 例如，在 CubeMX 中设置了 TIM7 作为 Timebase Source，则添加以下行
+add_definitions(-DLIBRM_STM32_TIMEBASE_SOURCE=TIM7)
+```
+
+:::note
+librm 通过读取该 TIM 的计数值来实现微秒级的 `gettimeofday()`。CubeMX 在生成 HAL Tick 时基代码时会自动将对应 TIM 配置为：递增计数、计数频率 1 MHz（每 count = 1 µs）、ARR = 999（每 1 ms 溢出一次），因此只要保持 `LIBRM_STM32_TIMEBASE_SOURCE` 与 CubeMX 中的 Timebase Source 设置一致即可，无需额外配置定时器。
+:::
+
 ## 开始使用
 
 之后，在你的项目代码里 `#include <librm.hpp>` 即可开始使用 librm。
