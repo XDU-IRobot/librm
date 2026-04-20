@@ -34,6 +34,8 @@ KalmanFilter::KalmanFilter(u8 xhatSize, u8 uSize, u8 zSize)
       SkipEq5(false),
       u_data(nullptr),
       B_data(nullptr) {
+  const u16 max_dim = (xhatSize > zSize) ? xhatSize : zSize;
+
   MeasurementMap = AllocateArray<u8>(zSize);
   MeasurementDegree = AllocateArray<f32>(zSize);
   MatR_DiagonalElements = AllocateArray<f32>(zSize);
@@ -85,17 +87,17 @@ KalmanFilter::KalmanFilter(u8 xhatSize, u8 uSize, u8 zSize)
   K_data = AllocateArray<f32>(xhatSize * zSize);
   Matrix_Init(&K, xhatSize, zSize, K_data);
 
-  S_data = AllocateArray<f32>(xhatSize * xhatSize);
-  temp_matrix_data = AllocateArray<f32>(xhatSize * xhatSize);
-  temp_matrix_data1 = AllocateArray<f32>(xhatSize * xhatSize);
-  temp_vector_data = AllocateArray<f32>(xhatSize);
-  temp_vector_data1 = AllocateArray<f32>(xhatSize);
+  S_data = AllocateArray<f32>(max_dim * max_dim);
+  temp_matrix_data = AllocateArray<f32>(max_dim * max_dim);
+  temp_matrix_data1 = AllocateArray<f32>(max_dim * max_dim);
+  temp_vector_data = AllocateArray<f32>(max_dim);
+  temp_vector_data1 = AllocateArray<f32>(max_dim);
 
-  Matrix_Init(&S, xhatSize, xhatSize, S_data);
-  Matrix_Init(&temp_matrix, xhatSize, xhatSize, temp_matrix_data);
-  Matrix_Init(&temp_matrix1, xhatSize, xhatSize, temp_matrix_data1);
-  Matrix_Init(&temp_vector, xhatSize, 1, temp_vector_data);
-  Matrix_Init(&temp_vector1, xhatSize, 1, temp_vector_data1);
+  Matrix_Init(&S, max_dim, max_dim, S_data);
+  Matrix_Init(&temp_matrix, max_dim, max_dim, temp_matrix_data);
+  Matrix_Init(&temp_matrix1, max_dim, max_dim, temp_matrix_data1);
+  Matrix_Init(&temp_vector, max_dim, 1, temp_vector_data);
+  Matrix_Init(&temp_vector1, max_dim, 1, temp_vector_data1);
 }
 
 KalmanFilter::~KalmanFilter() {
