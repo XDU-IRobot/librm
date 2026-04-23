@@ -32,25 +32,22 @@ namespace rm::device {
 /**
  * @param serial 串口对象
  */
-DR16::DR16(hal::SerialInterface &serial) : serial_(&serial) {
-  static hal::SerialRxCallbackFunction rx_callback =
-      std::bind(&DR16::RxCallback, this, std::placeholders::_1, std::placeholders::_2);
-  this->serial_->AttachRxCallback(rx_callback);
+DR16::DR16(hal::AsyncReadable &serial) : serial_(&serial) {
+  this->serial_->AttachRxCallback([this](etl::span<const u8> data) { RxCallback(data); });
 }
 
 /**
  * @brief 开始接收遥控器数据
  */
-void DR16::Begin() { this->serial_->Begin(); }
+void DR16::Begin() { this->serial_->Start(); }
 
 /**
  * @brief 串口接收完成中断回调函数
  * @param data      接收到的数据
- * @param rx_len    接收到的数据长度
  */
-void DR16::RxCallback(const std::vector<u8> &data, u16 rx_len) {
+void DR16::RxCallback(etl::span<const u8> data) {
   // 长度不等于18说明接收不完整，丢弃这一帧
-  if (rx_len != 18) {
+  if (data.size() != 18) {
     return;
   }
   ReportStatus(kOk);

@@ -28,6 +28,8 @@
 #ifndef LIBRM_DEVICE_ACTUATOR_GO8010_MOTOR_HPP
 #define LIBRM_DEVICE_ACTUATOR_GO8010_MOTOR_HPP
 
+#include <etl/span.h>
+
 #include "librm/core/typedefs.hpp"
 #include "librm/device/device.hpp"
 #include "librm/hal/serial_interface.hpp"
@@ -103,7 +105,7 @@ class Go8010Motor : public Device {
 
   void SetMitCommand(f32 position_rad, f32 speed_rad_per_sec, f32 torque_ff_nm, f32 kp, f32 kd);
 
-  void RxCallback(const std::vector<u8> &data, u16 rx_len);
+  void RxCallback(etl::span<const u8> data);
 
   [[nodiscard]] f32 tau() const { return this->recv_data_.tau / 6.33f; }
   [[nodiscard]] f32 vel() const { return this->recv_data_.vel / 6.33f; }

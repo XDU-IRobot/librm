@@ -29,6 +29,8 @@
 #ifndef LIBRM_DEVICE_ACTUATOR_UNITREE_MOTOR_HPP
 #define LIBRM_DEVICE_ACTUATOR_UNITREE_MOTOR_HPP
 
+#include <etl/span.h>
+
 #include "librm/device/device.hpp"
 #include "librm/hal/serial.hpp"
 #include "librm/core/typedefs.hpp"
@@ -154,7 +156,7 @@ class UnitreeMotor : public Device {
 
   void SendCommend();
 
-  void RxCallback(const std::vector<u8> &data, u16 rx_len);
+  void RxCallback(etl::span<const u8> data);
 
   [[nodiscard]] f32 tau() { return this->fb_param_.tau / 9.1f; }
   [[nodiscard]] f32 vel() { return this->fb_param_.vel / 9.1f; }

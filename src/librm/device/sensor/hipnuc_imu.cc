@@ -36,29 +36,26 @@ namespace rm::device {
  * @brief 构造函数
  * @param serial 串口对象
  */
-HipnucImu::HipnucImu(hal::SerialInterface &serial) : serial_(&serial) {
+HipnucImu::HipnucImu(hal::AsyncReadable &serial) : serial_(&serial) {
   // 初始化解码器
   std::memset(&raw_, 0, sizeof(hipnuc_raw_t));
 
   // 绑定串口接收回调
-  static hal::SerialRxCallbackFunction rx_callback =
-      std::bind(&HipnucImu::RxCallback, this, std::placeholders::_1, std::placeholders::_2);
-  this->serial_->AttachRxCallback(rx_callback);
+  this->serial_->AttachRxCallback([this](etl::span<const u8> data) { RxCallback(data); });
 }
 
 /**
  * @brief 开始接收IMU数据
  */
-void HipnucImu::Begin() { this->serial_->Begin(); }
+void HipnucImu::Begin() { this->serial_->Start(); }
 
 /**
  * @brief 串口接收完成中断回调函数
  * @param data      接收到的数据
- * @param rx_len    接收到的数据长度
  */
-void HipnucImu::RxCallback(const std::vector<u8> &data, u16 rx_len) {
+void HipnucImu::RxCallback(etl::span<const u8> data) {
   // 将接收到的数据追加到滑动窗口
-  for (u16 i = 0; i < rx_len && window_data_len_ < kSlidingWindowSize; i++) {
+  for (u16 i = 0; i < data.size() && window_data_len_ < kSlidingWindowSize; i++) {
     sliding_window_[window_data_len_++] = data[i];
   }
 

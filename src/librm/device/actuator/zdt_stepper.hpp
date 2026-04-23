@@ -28,7 +28,9 @@
 #ifndef LIBRM_DEVICE_ACTUATOR_ZDT_STEPPER_HPP
 #define LIBRM_DEVICE_ACTUATOR_ZDT_STEPPER_HPP
 
-#include "librm/core/typedefs.hpp"
+#include <etl/span.h>
+
+#include "librm/core/time.hpp"
 #include "librm/hal/serial_interface.hpp"
 #include "librm/device/device.hpp"
 
@@ -36,7 +38,7 @@ namespace rm::device {
 
 class ZdtStepper : public Device {
  public:
-  ZdtStepper(hal::SerialInterface &serial, u8 motor_id, bool reversed = false);
+  explicit ZdtStepper(hal::SerialInterface &serial, u8 motor_id, bool reversed = false);
   ~ZdtStepper() = default;
 
   /**
@@ -82,7 +84,7 @@ class ZdtStepper : public Device {
   [[nodiscard]] auto feedback() { return feedback_; }
 
  private:
-  void RxCallback(const std::vector<u8> &data, u16 rx_len);
+  void RxCallback(etl::span<const u8> data);
 
  private:
   hal::SerialInterface *serial_;

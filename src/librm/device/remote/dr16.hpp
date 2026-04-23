@@ -28,7 +28,7 @@
 #ifndef LIBRM_DEVICE_REMOTE_DR16_HPP
 #define LIBRM_DEVICE_REMOTE_DR16_HPP
 
-#include <vector>
+#include <etl/span.h>
 
 #include "librm/core/typedefs.hpp"
 #include "librm/hal/serial.hpp"
@@ -74,10 +74,10 @@ class DR16 : public Device {
   };
 
   DR16() = delete;
-  explicit DR16(hal::SerialInterface &serial);
+  explicit DR16(hal::AsyncReadable &serial);
 
   void Begin();
-  void RxCallback(const std::vector<u8> &data, u16 rx_len);
+  void RxCallback(etl::span<const u8> data);
 
   [[nodiscard]] i16 left_x() const;
   [[nodiscard]] i16 left_y() const;
@@ -94,7 +94,7 @@ class DR16 : public Device {
   [[nodiscard]] bool key(Key key) const;
 
  private:
-  hal::SerialInterface *serial_;
+  hal::AsyncReadable *serial_;
 
   i16 axes_[5]{0};   // [0]: right_x, [1]: right_y, [2]: left_x, [3]: left_y, [4]: dial; 取值范围:-660~660;
   i16 mouse_[3]{0};  // [0]: x, [1]: y, [2]: z; 取值范围:-32768~32767;

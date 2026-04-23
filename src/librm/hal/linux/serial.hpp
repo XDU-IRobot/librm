@@ -28,16 +28,25 @@
 #ifndef LIBRM_HAL_LINUX_SERIAL_HPP
 #define LIBRM_HAL_LINUX_SERIAL_HPP
 
+#include <atomic>
 #include <thread>
+#include <vector>
 
 #include <boost/asio.hpp>
+#include <etl/vector.h>
 
 #include "librm/hal/serial_interface.hpp"
 
 namespace rm::hal::linux_ {
 
 /**
- * @brief 基于boost::asio::serial_port的串口二次封装
+ * @brief 基于 boost::asio::serial_port 的串口封装
+ *
+ * 实现 SerialInterface（SyncWritable + AsyncReadable）:
+ *   - Write()  : 同步写，blocking
+ *   - Start()  : 启动后台接收线程
+ *   - Stop()   : 停止后台接收线程
+ *   - AttachRxCallback : 支持注册多个回调
  */
 class Serial : public hal::SerialInterface {
  public:
@@ -61,25 +70,13 @@ class Serial : public hal::SerialInterface {
    */
   Serial(boost::asio::serial_port &&boost_serial_port_object, usize rx_buffer_size);
 
-  /**
-   * @brief 打开串口，开始接收
-   */
-  void Begin() override;
+  // SyncWritable
+  void Write(const u8 *data, usize size, u32 timeout_ms) override;
 
-  /**
-   * @brief 向串口写入数据
-   * @param data  数据指针
-   * @param size  数据长度
-   */
-  void Write(const u8 *data, usize size) override;
-
-  /**
-   * @brief 注册接收完成回调函数
-   * @note  出现缓冲区满、超时未收到数据两种情况时，这个回调函数会被调用
-   * @param callback  接收完成回调函数
-   */
+  // AsyncReadable
   void AttachRxCallback(SerialRxCallbackFunction callback) override;
-  [[nodiscard]] const std::vector<u8> &rx_buffer() const override;
+  void Start() override;
+  void Stop() override;
 
   /**
    * @brief   获取这个Serial接管的 boost::asio::serial_port 对象
@@ -88,9 +85,9 @@ class Serial : public hal::SerialInterface {
   auto &boost_serial_port_object() { return serial_port_; }
 
  private:
-  boost::asio::serial_port serial_port_;           ///< 接管的boost::asio::serial_port对象
-  SerialRxCallbackFunction rx_callback_{nullptr};  ///< 接收完成回调函数
-  std::thread rx_thread_{};                        ///< 接收线程
+  boost::asio::serial_port serial_port_;                ///< 接管的boost::asio::serial_port对象
+  std::vector<SerialRxCallbackFunction> rx_callbacks_;  ///< Linux 平台保留 std::vector（非嵌入式）
+  std::thread rx_thread_{};                             ///< 接收线程
   std::atomic<bool> rx_thread_running_{
       false};  ///< 控制接收线程是否运行，Serial对象析构时会将其设置为false，从而结束接收线程
   std::vector<u8> rx_buffer_;  ///< 接收缓冲区

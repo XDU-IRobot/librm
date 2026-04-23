@@ -28,7 +28,7 @@
 #ifndef LIBRM_DEVICE_REMOTE_SBUS_HPP
 #define LIBRM_DEVICE_REMOTE_SBUS_HPP
 
-#include <vector>
+#include <etl/span.h>
 
 #include "librm/core/typedefs.hpp"
 #include "librm/device/device.hpp"
@@ -42,10 +42,10 @@ namespace rm::device {
 class Sbus : public Device {
  public:
   Sbus() = delete;
-  explicit Sbus(hal::SerialInterface &serial);
+  explicit Sbus(hal::AsyncReadable &serial);
 
-  void Begin();
-  void RxCallback(const std::vector<u8> &data, u16 rx_len);
+  void Begin();  ///< 调用串口的 Start()，开始接收
+  void RxCallback(etl::span<const u8> data);
 
   [[nodiscard]] i16 channel(int channel_num) const;
   [[nodiscard]] bool digital_channel_1() const;
@@ -59,7 +59,7 @@ class Sbus : public Device {
   static constexpr u16 kSbusFrameSize = 25;
   static constexpr int kNumChannels = 16;
 
-  hal::SerialInterface *serial_;
+  hal::AsyncReadable *serial_;
 
   i16 channels_[kNumChannels]{0};
   bool digital_channel_1_{false};
