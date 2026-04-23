@@ -27,76 +27,40 @@
 
 #include "unitree_motor.hpp"
 
+#include <etl/span.h>
+
 #include "librm/hal/serial_interface.hpp"
 #include "librm/modules/crc.hpp"
 
-/**
- * @brief 串口接收回调函数键值对
- * @note  用于存储串口接收回调函数
- * @note  key: 串口对象指针
- * @note  value: 电机ID和回调函数的键值对
- * @note  key: 电机ID
- * @note  value: 回调函数
- * 解释：相当于两个键对应一个值，第一个键是串口对象指针，第二个键是电机ID，值是回调函数，用于实现多个电机的回调函数
- */
-std::unordered_map<rm::hal::SerialInterface *,
-                   std::unordered_map<rm::u8, std::function<void(const std::vector<rm::u8> &, rm::u16)>>>
-    rx_callback_map;
-
 namespace rm::device {
 
-/**
- * @param[in]      serial     串口对象
- * @param[in]      motor_id   电机ID
- * @returns        None
- */
-
 UnitreeMotor::UnitreeMotor(hal::SerialInterface &serial, u8 motor_id) : serial_(&serial) {
-  rx_callback_map[&serial][motor_id] =
-      std::bind(&UnitreeMotor::RxCallback, this, std::placeholders::_1, std::placeholders::_2);
-  serial_->AttachRxCallback(rx_callback_map[&serial][motor_id]);
+  // 直接用 lambda 捕获 this，在 RxCallback 内部按 motor_id 过滤
+  // 不再使用全局 map：多个 UnitreeMotor 共享同一串口时，
+  // 每个实例各自注册一个回调，各自在回调内判断 motor_id 是否匹配
+  serial_->AttachRxCallback([this](etl::span<const u8> data) { RxCallback(data); });
 
   send_data_.head.motor_id = motor_id;
   send_data_.head.reserved = 0x0;
 }
 
-/**
- * @brief          设置电机力矩
- * @param[in]      tau    力矩
- * @returns        None
- */
 void UnitreeMotor::SetTau(f32 tau) {
   ctrl_param_.tau = tau;
   ctrl_param_.vel = 0;
   ctrl_param_.pos = 0;
   ctrl_param_.kp = 0;
   ctrl_param_.kd = 0;
-
   SetParam(ctrl_param_);
 }
 
-/**
- * @brief          发送电机控制指令
- * @returns        None
- */
 void UnitreeMotor::SendCommend() { serial_->Write(tx_buffer_, sizeof(tx_buffer_)); }
 
-/**
- * @brief          串口接收完成回调函数，解包电机发回来的反馈数据
- * @note           不要手动调用
- * @param[in]      data    串口接收到的数据
- * @param[in]      rx_len  数据长度
- * @returns        None
- */
-void UnitreeMotor::RxCallback(const std::vector<u8> &data, u16 rx_len) {
-  if (rx_len != 78) {
-    return;
-  }
+void UnitreeMotor::RxCallback(etl::span<const u8> data) {
+  if (data.size() != 78) return;
+
   std::copy(data.begin(), data.end(), reinterpret_cast<u8 *>(&recv_data_));
 
-  if (recv_data_.head.head[0] != 0xFE || recv_data_.head.head[1] != 0xEE) {
-    return;
-  }
+  if (recv_data_.head.head[0] != 0xFE || recv_data_.head.head[1] != 0xEE) return;
 
   if (recv_data_.head.motor_id == send_data_.head.motor_id) {
     ReportStatus(kOk);
@@ -104,27 +68,21 @@ void UnitreeMotor::RxCallback(const std::vector<u8> &data, u16 rx_len) {
     fb_param_.temp = recv_data_.data.temp;
     fb_param_.m_error = recv_data_.data.m_error;
 
-    fb_param_.tau = (f32)((f32)recv_data_.data.tau / 256.0f);
-    fb_param_.vel = (f32)((f32)recv_data_.data.vel / 128.0f);
-
+    fb_param_.tau = (f32)recv_data_.data.tau / 256.0f;
+    fb_param_.vel = (f32)recv_data_.data.vel / 128.0f;
     fb_param_.acc = (i16)recv_data_.data.acc;
-    fb_param_.pos = (f32)((f32)recv_data_.data.pos * 6.2832f / 16384.0f);
+    fb_param_.pos = (f32)recv_data_.data.pos * 6.2832f / 16384.0f;
 
-    fb_param_.gyro[0] = (f32)(((f32)recv_data_.data.gyro[0]) * 0.00107993176f);
-    fb_param_.gyro[1] = (f32)(((f32)recv_data_.data.gyro[1]) * 0.00107993176f);
-    fb_param_.gyro[2] = (f32)(((f32)recv_data_.data.gyro[2]) * 0.00107993176f);
+    fb_param_.gyro[0] = (f32)recv_data_.data.gyro[0] * 0.00107993176f;
+    fb_param_.gyro[1] = (f32)recv_data_.data.gyro[1] * 0.00107993176f;
+    fb_param_.gyro[2] = (f32)recv_data_.data.gyro[2] * 0.00107993176f;
 
-    fb_param_.accel[0] = (f32)(((f32)recv_data_.data.accel[0]) * 0.0023911132f);
-    fb_param_.accel[1] = (f32)(((f32)recv_data_.data.accel[1]) * 0.0023911132f);
-    fb_param_.accel[2] = (f32)(((f32)recv_data_.data.accel[2]) * 0.0023911132f);
+    fb_param_.accel[0] = (f32)recv_data_.data.accel[0] * 0.0023911132f;
+    fb_param_.accel[1] = (f32)recv_data_.data.accel[1] * 0.0023911132f;
+    fb_param_.accel[2] = (f32)recv_data_.data.accel[2] * 0.0023911132f;
   }
 }
 
-/**
- * @brief          设置电机控制参数
- * @param[in]      ctrl_param    控制参数
- * @returns        None
- */
 void UnitreeMotor::SetParam(const ControlParam &ctrl_param) {
   send_data_.data.mode = 10;
   send_data_.data.modify_bit = 0xFF;
@@ -136,12 +94,10 @@ void UnitreeMotor::SetParam(const ControlParam &ctrl_param) {
   send_data_.data.pos = (f32)((ctrl_param.pos / 6.2832) * 16384.f);
   send_data_.data.kp = ctrl_param.kp * 2048;
   send_data_.data.kd = ctrl_param.kd * 1024;
-
   send_data_.data.LowHzMotorCmdIndex = 0;
   send_data_.data.LowHzMotorCmdByte = 0;
 
   send_data_.crc.ku32 = modules::Crc32((u32 *)(&send_data_), 7, modules::CRC32_INIT);
-
   std::copy(reinterpret_cast<u8 *>(&send_data_), reinterpret_cast<u8 *>(&send_data_) + sizeof(send_data_), tx_buffer_);
 }
 

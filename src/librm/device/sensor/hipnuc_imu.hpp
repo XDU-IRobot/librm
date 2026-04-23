@@ -29,6 +29,7 @@
 #define LIBRM_DEVICE_SENSOR_HIPNUC_IMU_HPP
 
 #include <hipnuc/hipnuc_dec.h>
+#include <etl/span.h>
 
 #include "librm/core/typedefs.hpp"
 #include "librm/hal/serial.hpp"
@@ -57,10 +58,10 @@ class HipnucImu : public Device {
 
  public:
   HipnucImu() = delete;
-  explicit HipnucImu(hal::SerialInterface &serial);
+  explicit HipnucImu(hal::AsyncReadable &serial);
 
   void Begin();
-  void RxCallback(const std::vector<u8> &data, u16 rx_len);
+  void RxCallback(etl::span<const u8> data);
 
   // 数据包类型
   [[nodiscard]] HipnucPacketType last_packet_type() const { return last_packet_type_; }
@@ -115,7 +116,7 @@ class HipnucImu : public Device {
 
   void FindAndDecodePackets();
 
-  hal::SerialInterface *serial_;
+  hal::AsyncReadable *serial_;
   hipnuc_raw_t raw_{};  ///< HiPNUC SDK里定义的原始数据
 
   // 滑动窗口缓冲区（线性缓冲区，简化实现）

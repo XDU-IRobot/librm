@@ -27,6 +27,8 @@
 
 #include "go8010_motor.hpp"
 
+#include <etl/span.h>
+
 #include "librm/core/typedefs.hpp"
 #include "librm/hal/serial_interface.hpp"
 #include "librm/modules/crc.hpp"
@@ -39,7 +41,7 @@ namespace rm::device {
  * @returns        None
  */
 Go8010Motor::Go8010Motor(hal::SerialInterface &serial, u8 motor_id) : serial_(&serial), id_{motor_id} {
-  serial_->AttachRxCallback(std::bind(&Go8010Motor::RxCallback, this, std::placeholders::_1, std::placeholders::_2));
+  serial_->AttachRxCallback([this](etl::span<const u8> data) { RxCallback(data); });
 }
 
 /**
@@ -73,8 +75,8 @@ void Go8010Motor::SetMitCommand(f32 position_rad, f32 speed_rad_per_sec, f32 tor
  * @param[in]      rx_len  数据长度
  * @returns        None
  */
-void Go8010Motor::RxCallback(const std::vector<u8> &data, u16 rx_len) {
-  if (rx_len != 16) {
+void Go8010Motor::RxCallback(etl::span<const u8> data) {
+  if (data.size() != 16) {
     return;
   }
   const MotorData *rx_data = reinterpret_cast<const MotorData *>(data.data());

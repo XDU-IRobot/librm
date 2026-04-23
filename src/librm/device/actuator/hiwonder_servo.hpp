@@ -31,6 +31,8 @@
 #ifndef LIBRM_DEVICE_ACTUATOR_HTS35H_SERVO_HPP
 #define LIBRM_DEVICE_ACTUATOR_HTS35H_SERVO_HPP
 
+#include <etl/span.h>
+
 #include "librm/core/typedefs.hpp"
 #include "librm/device/device.hpp"
 #include "librm/hal/serial_interface.hpp"
@@ -296,7 +298,7 @@ class HiWonderServo : public Device {
   /**
    * @brief 串口接收回调函数，解析舵机返回的数据包
    */
-  void RxCallback(const std::vector<u8> &data, u16 rx_len);
+  void RxCallback(etl::span<const u8> data);
 
   /**
    * @brief 切换到发送模式（TX_EN=1, RX_EN=0）

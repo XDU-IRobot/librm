@@ -27,6 +27,8 @@
 
 #include "sbus.hpp"
 
+#include <etl/span.h>
+
 #include "librm/device/actuator/directdrive_motor.hpp"
 
 namespace rm::device {
@@ -34,19 +36,18 @@ namespace rm::device {
 /**
  * @param serial 串口对象
  */
-Sbus::Sbus(hal::SerialInterface &serial) : serial_(&serial) {
-  static hal::SerialRxCallbackFunction rx_callback =
-      std::bind(&Sbus::RxCallback, this, std::placeholders::_1, std::placeholders::_2);
-  this->serial_->AttachRxCallback(rx_callback);
+Sbus::Sbus(hal::AsyncReadable &serial) : serial_(&serial) {
+  // 直接用 lambda 捕获 this，避免 static 局部变量导致多实例时回调被覆盖的 bug
+  serial_->AttachRxCallback([this](etl::span<const u8> data) { RxCallback(data); });
 }
 
 /**
  * @brief 开始接收遥控器数据
  */
-void Sbus::Begin() { this->serial_->Begin(); }
+void Sbus::Begin() { serial_->Start(); }
 
-void Sbus::RxCallback(const std::vector<u8> &data, u16 rx_len) {
-  if (rx_len != kSbusFrameSize || data[0] != kSbusStartByte || data[24] != kSbusEndByte) {
+void Sbus::RxCallback(etl::span<const u8> data) {
+  if (data.size() != kSbusFrameSize || data[0] != kSbusStartByte || data[24] != kSbusEndByte) {
     return;
   }
 

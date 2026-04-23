@@ -32,10 +32,10 @@ namespace rm::device {
 HiWonderServo::HiWonderServo(hal::SerialInterface &serial, hal::PinInterface &tx_en, hal::PinInterface &rx_en,
                              u8 servo_id)
     : serial_(&serial), tx_en_(&tx_en), rx_en_(&rx_en), servo_id_(servo_id) {
-  serial_->AttachRxCallback(std::bind(&HiWonderServo::RxCallback, this, std::placeholders::_1, std::placeholders::_2));
+  serial_->AttachRxCallback([this](etl::span<const u8> data) { RxCallback(data); });
 
   // 设置初始状态为接收模式
-  SetRxMode();
+  // SetRxMode();
 }
 
 void HiWonderServo::SetTxMode() const {
@@ -188,7 +188,8 @@ void HiWonderServo::ReadMoveTimeWait() { SendReadCmd(Cmd::kMoveTimeWaitRead); }
 void HiWonderServo::ReadLedCtrl() { SendReadCmd(Cmd::kLedCtrlRead); }
 void HiWonderServo::ReadLedError() { SendReadCmd(Cmd::kLedErrorRead); }
 
-void HiWonderServo::RxCallback(const std::vector<u8> &data, u16 rx_len) {
+void HiWonderServo::RxCallback(etl::span<const u8> data) {
+  const u16 rx_len = static_cast<u16>(data.size());
   // 最小合法包: 帧头(2) + ID(1) + Length(1) + Cmd(1) + Checksum(1) = 6 字节
   if (rx_len < 6) {
     return;

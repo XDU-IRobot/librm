@@ -28,6 +28,8 @@
 #ifndef LIBRM_DEVICE_SENSOR_STP23L_HPP
 #define LIBRM_DEVICE_SENSOR_STP23L_HPP
 
+#include <etl/span.h>
+
 #include "librm/core/typedefs.hpp"
 #include "librm/hal/serial.hpp"
 #include "librm/device/device.hpp"
@@ -53,7 +55,7 @@ class STP23L : public Device {
   };
 
   STP23L() = delete;
-  explicit STP23L(hal::SerialInterface &serial);
+  explicit STP23L(hal::AsyncReadable &serial);
 
   void Begin() const;
 
@@ -78,7 +80,7 @@ class STP23L : public Device {
    * @param data   接收到的数据
    * @param rx_len 接收到的数据长度
    */
-  void RxCallback(const std::vector<u8> &data, u16 rx_len);
+  void RxCallback(etl::span<const u8> data);
 
   /**
    * @brief 逐字节处理接收到的数据
@@ -96,7 +98,7 @@ class STP23L : public Device {
    */
   void ProcessData();
 
-  hal::SerialInterface *serial_;
+  hal::AsyncReadable *serial_;
 
   // 协议常量
   static constexpr u8 kHeader = 0xAA;           ///< 帧头

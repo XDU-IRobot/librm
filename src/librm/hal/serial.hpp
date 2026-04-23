@@ -22,7 +22,7 @@
 
 /**
  * @file    librm/hal/serial.hpp
- * @brief   根据平台宏定义决定具体实现，并且在serial_interface.h里提供一个接口类SerialInterface实现多态
+ * @brief   根据平台宏决定具体实现
  */
 
 #ifndef LIBRM_HAL_UART_HPP
@@ -37,11 +37,22 @@
 #endif
 
 namespace rm::hal {
+
 #if defined(LIBRM_PLATFORM_STM32) && defined(HAL_UART_MODULE_ENABLED)
-using Serial = stm32::Uart;
+/**
+ * @brief STM32 串口类型别名
+ *
+ * 模板参数 RxBufSize 决定双缓冲每块的大小（字节），编译时确定，无堆分配。
+ * 典型用法：
+ *   rm::hal::Serial<50> sbus_serial{huart5, UartMode::kNormal, UartMode::kInterrupt};
+ */
+template <rm::usize RxBufSize>
+using Serial = stm32::Uart<RxBufSize>;
+
 #elif defined(LIBRM_PLATFORM_LINUX)
 using Serial = linux_::Serial;
 #endif
+
 }  // namespace rm::hal
 
 #endif  // LIBRM_HAL_UART_HPP

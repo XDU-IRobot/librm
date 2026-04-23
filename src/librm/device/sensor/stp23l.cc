@@ -32,19 +32,17 @@ namespace rm::device {
 /**
  * @param serial 串口对象
  */
-STP23L::STP23L(hal::SerialInterface &serial) : serial_(&serial) {
-  static hal::SerialRxCallbackFunction rx_callback =
-      std::bind(&STP23L::RxCallback, this, std::placeholders::_1, std::placeholders::_2);
-  this->serial_->AttachRxCallback(rx_callback);
+STP23L::STP23L(hal::AsyncReadable &serial) : serial_(&serial) {
+  this->serial_->AttachRxCallback([this](etl::span<const u8> data) { RxCallback(data); });
 }
 
 /**
  * @brief 开始接收数据
  */
-void STP23L::Begin() const { this->serial_->Begin(); }
+void STP23L::Begin() const { this->serial_->Start(); }
 
-void STP23L::RxCallback(const std::vector<u8> &data, u16 rx_len) {
-  for (u16 i = 0; i < rx_len; i++) {
+void STP23L::RxCallback(etl::span<const u8> data) {
+  for (u16 i = 0; i < data.size(); i++) {
     ProcessByte(data[i]);
   }
 }

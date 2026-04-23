@@ -29,14 +29,12 @@
 
 namespace rm::device {
 
-std::unordered_map<rm::hal::SerialInterface *,
-                   std::unordered_map<rm::u8, std::function<void(const std::vector<rm::u8> &, rm::u16)>>>
+std::unordered_map<rm::hal::SerialInterface *, std::unordered_map<rm::u8, std::function<void(etl::span<const rm::u8>)>>>
     rx_callback_map_emotor;
 
 ZdtStepper::ZdtStepper(hal::SerialInterface &serial, u8 motor_id, bool reversed)
     : serial_{&serial}, reversed_{reversed}, motor_id_{motor_id} {
-  rx_callback_map_emotor[&serial][motor_id] =
-      std::bind(&ZdtStepper::RxCallback, this, std::placeholders::_1, std::placeholders::_2);
+  rx_callback_map_emotor[&serial][motor_id] = [this](etl::span<const u8> data) { RxCallback(data); };
   serial_->AttachRxCallback(rx_callback_map_emotor[&serial][motor_id]);
 }
 
@@ -126,8 +124,8 @@ void ZdtStepper::ReadVel() {
   serial_->Write(cmd, 3);
 }
 
-void ZdtStepper::RxCallback(const std::vector<rm::u8> &data, rm::u16 rx_len) {
-  if (data[0] == motor_id_ && data[1] == 0x36 && rx_len == 8) {
+void ZdtStepper::RxCallback(etl::span<const rm::u8> data) {
+  if (data[0] == motor_id_ && data[1] == 0x36 && data.size() == 8) {
     ReportStatus(kOk);
     const u32 pos_raw =
         static_cast<uint32_t>((static_cast<uint32_t>(data[3]) << 24) | (static_cast<uint32_t>(data[4]) << 16) |
@@ -136,7 +134,7 @@ void ZdtStepper::RxCallback(const std::vector<rm::u8> &data, rm::u16 rx_len) {
     if (data[2]) {
       feedback_.pos = -feedback_.pos;
     }
-  } else if (data[0] == motor_id_ && data[1] == 0x35 && rx_len == 6) {
+  } else if (data[0] == motor_id_ && data[1] == 0x35 && data.size() == 6) {
     ReportStatus(kOk);
     const u16 vel_raw =
         static_cast<uint16_t>((static_cast<uint16_t>(data[3]) << 8) | (static_cast<uint16_t>(data[4]) << 0));
