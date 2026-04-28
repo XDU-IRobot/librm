@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>librm: rm::hal::stm32::Uart类 参考</title>
+<title>librm: rm::hal::stm32::Uart&lt; RxBufSize &gt; 模板类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -94,54 +94,116 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1stm32_1_1Uart.html',
   <div class="summary">
 <a href="#pub-methods">Public 成员函数</a> &#124;
 <a href="classrm_1_1hal_1_1stm32_1_1Uart-members.html">所有成员列表</a>  </div>
-  <div class="headertitle"><div class="title">rm::hal::stm32::Uart类 参考</div></div>
+  <div class="headertitle"><div class="title">rm::hal::stm32::Uart&lt; RxBufSize &gt; 模板类 参考</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>UART类  
+<p>UART 类（模板参数 RxBufSize 决定双缓冲每块的字节数）  
  <a href="classrm_1_1hal_1_1stm32_1_1Uart.html#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="uart_8hpp_source.html">uart.hpp</a>&gt;</code></p>
 <div class="dynheader">
-类 rm::hal::stm32::Uart 继承关系图:</div>
+类 rm::hal::stm32::Uart&lt; RxBufSize &gt; 继承关系图:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classrm_1_1hal_1_1stm32_1_1Uart.png" usemap="#rm::hal::stm32::Uart_map" alt=""/>
-  <map id="rm::hal::stm32::Uart_map" name="rm::hal::stm32::Uart_map">
-<area href="classrm_1_1hal_1_1SerialInterface.html" title="串口接口类" alt="rm::hal::SerialInterface" shape="rect" coords="0,0,138,24"/>
+  <img src="classrm_1_1hal_1_1stm32_1_1Uart.png" usemap="#rm::hal::stm32::Uart_3C_20RxBufSize_20_3E_map" alt=""/>
+  <map id="rm::hal::stm32::Uart_3C_20RxBufSize_20_3E_map" name="rm::hal::stm32::Uart_3C_20RxBufSize_20_3E_map">
+<area href="classrm_1_1hal_1_1SyncSerialInterface.html" title="同步写 + 同步读" alt="rm::hal::SyncSerialInterface" shape="rect" coords="0,112,230,136"/>
+<area href="classrm_1_1hal_1_1SerialInterface.html" title="同步写 + 异步读（最常用的嵌入式串口组合）" alt="rm::hal::SerialInterface" shape="rect" coords="480,112,710,136"/>
+<area href="classrm_1_1hal_1_1AsyncTxSyncRxSerialInterface.html" title="异步写 + 同步读" alt="rm::hal::AsyncTxSyncRxSerialInterface" shape="rect" coords="960,112,1190,136"/>
+<area href="classrm_1_1hal_1_1AsyncSerialInterface.html" title="异步写 + 异步读" alt="rm::hal::AsyncSerialInterface" shape="rect" coords="1440,112,1670,136"/>
+<area href="classrm_1_1hal_1_1stm32_1_1UartBase.html" alt="rm::hal::stm32::UartBase" shape="rect" coords="1680,112,1910,136"/>
+<area href="classrm_1_1hal_1_1AsyncReadable.html" title="异步读接口" alt="rm::hal::AsyncReadable" shape="rect" coords="1680,56,1910,80"/>
+<area href="classrm_1_1hal_1_1AsyncWritable.html" title="异步写接口" alt="rm::hal::AsyncWritable" shape="rect" coords="1680,0,1910,24"/>
+<area href="classrm_1_1hal_1_1SyncReadable.html" title="同步读接口" alt="rm::hal::SyncReadable" shape="rect" coords="1200,56,1430,80"/>
+<area href="classrm_1_1hal_1_1AsyncWritable.html" title="异步写接口" alt="rm::hal::AsyncWritable" shape="rect" coords="1200,0,1430,24"/>
+<area href="classrm_1_1hal_1_1AsyncReadable.html" title="异步读接口" alt="rm::hal::AsyncReadable" shape="rect" coords="720,56,950,80"/>
+<area href="classrm_1_1hal_1_1SyncWritable.html" title="同步写接口" alt="rm::hal::SyncWritable" shape="rect" coords="720,0,950,24"/>
+<area href="classrm_1_1hal_1_1SyncReadable.html" title="同步读接口" alt="rm::hal::SyncReadable" shape="rect" coords="240,56,470,80"/>
+<area href="classrm_1_1hal_1_1SyncWritable.html" title="同步写接口" alt="rm::hal::SyncWritable" shape="rect" coords="240,0,470,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a9afc14515c45a7e1ec287787218887ce" id="r_a9afc14515c45a7e1ec287787218887ce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a9afc14515c45a7e1ec287787218887ce">Uart</a> (UART_HandleTypeDef &amp;huart, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> rx_buffer_size, <a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6c">UartMode</a> tx_mode=<a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6ca07fa7a19aa722c635a15e94cb7f50416">UartMode::kNormal</a>, <a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6c">UartMode</a> rx_mode=<a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6ca07fa7a19aa722c635a15e94cb7f50416">UartMode::kNormal</a>)</td></tr>
-<tr class="separator:a9afc14515c45a7e1ec287787218887ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8afba8aefbe343327ff65e2a0149364a" id="r_a8afba8aefbe343327ff65e2a0149364a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a8afba8aefbe343327ff65e2a0149364a">Begin</a> () override</td></tr>
-<tr class="memdesc:a8afba8aefbe343327ff65e2a0149364a"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化UART  <br /></td></tr>
-<tr class="separator:a8afba8aefbe343327ff65e2a0149364a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0ed3e4099c6009eae37508cf28420d1" id="r_ac0ed3e4099c6009eae37508cf28420d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#ac0ed3e4099c6009eae37508cf28420d1">Write</a> (const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *data, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size) override</td></tr>
-<tr class="memdesc:ac0ed3e4099c6009eae37508cf28420d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">发送数据  <br /></td></tr>
-<tr class="separator:ac0ed3e4099c6009eae37508cf28420d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a344ad952ffe7c07cf2b04ff6f1d6d365" id="r_a344ad952ffe7c07cf2b04ff6f1d6d365"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a344ad952ffe7c07cf2b04ff6f1d6d365">AttachRxCallback</a> (<a class="el" href="namespacerm_1_1hal.html#ab6c25fb295d0b957ffb1181fa48b787c">SerialRxCallbackFunction</a> callback) override</td></tr>
-<tr class="memdesc:a344ad952ffe7c07cf2b04ff6f1d6d365"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册用户定义的接收完成回调函数  <br /></td></tr>
-<tr class="separator:a344ad952ffe7c07cf2b04ff6f1d6d365"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa6fdca9b4ddf3b6b039bfb0bd111f6f" id="r_afa6fdca9b4ddf3b6b039bfb0bd111f6f"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#afa6fdca9b4ddf3b6b039bfb0bd111f6f">rx_buffer</a> () const override</td></tr>
-<tr class="separator:afa6fdca9b4ddf3b6b039bfb0bd111f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classrm_1_1hal_1_1SerialInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrm_1_1hal_1_1SerialInterface')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classrm_1_1hal_1_1SerialInterface.html">rm::hal::SerialInterface</a></td></tr>
-<tr class="memitem:a67c00fc0181c2889d69f81996a961fe0 inherit pub_methods_classrm_1_1hal_1_1SerialInterface" id="r_a67c00fc0181c2889d69f81996a961fe0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SerialInterface.html#a67c00fc0181c2889d69f81996a961fe0">~SerialInterface</a> ()=default</td></tr>
-<tr class="separator:a67c00fc0181c2889d69f81996a961fe0 inherit pub_methods_classrm_1_1hal_1_1SerialInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b28457e92a4441f94c6c78f2d0eb58c" id="r_a4b28457e92a4441f94c6c78f2d0eb58c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a4b28457e92a4441f94c6c78f2d0eb58c">Uart</a> (UART_HandleTypeDef &amp;huart, bool async_tx_use_dma=false, bool async_rx_use_dma=false)</td></tr>
+<tr class="separator:a4b28457e92a4441f94c6c78f2d0eb58c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49bc10fe29c475a858f2fe31df1f9036" id="r_a49bc10fe29c475a858f2fe31df1f9036"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a49bc10fe29c475a858f2fe31df1f9036">~Uart</a> () override</td></tr>
+<tr class="separator:a49bc10fe29c475a858f2fe31df1f9036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bac01e11b13a8273522f36a039f07f4" id="r_a8bac01e11b13a8273522f36a039f07f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a8bac01e11b13a8273522f36a039f07f4">Write</a> (const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *data, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size, <a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> timeout_ms) override</td></tr>
+<tr class="memdesc:a8bac01e11b13a8273522f36a039f07f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">阻塞发送  <br /></td></tr>
+<tr class="separator:a8bac01e11b13a8273522f36a039f07f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a866157ef4abc32d7064cbae2534a6154" id="r_a866157ef4abc32d7064cbae2534a6154"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a866157ef4abc32d7064cbae2534a6154">WriteAsync</a> (const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *data, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size, std::function&lt; void()&gt; on_done) override</td></tr>
+<tr class="separator:a866157ef4abc32d7064cbae2534a6154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9045c5281f44dcfaa75dd4d3a2250f3" id="r_ad9045c5281f44dcfaa75dd4d3a2250f3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#ad9045c5281f44dcfaa75dd4d3a2250f3">IsTxBusy</a> () const override</td></tr>
+<tr class="memdesc:ad9045c5281f44dcfaa75dd4d3a2250f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">查询硬件当前是否正忙于上一次的异步写请求  <br /></td></tr>
+<tr class="separator:ad9045c5281f44dcfaa75dd4d3a2250f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e419af8f1b525124e27f843835c27a5" id="r_a1e419af8f1b525124e27f843835c27a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a1e419af8f1b525124e27f843835c27a5">Read</a> (<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *buf, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size, <a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> timeout_ms) override</td></tr>
+<tr class="memdesc:a1e419af8f1b525124e27f843835c27a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">阻塞接收  <br /></td></tr>
+<tr class="separator:a1e419af8f1b525124e27f843835c27a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa267408fe1593233062da929152b1af9" id="r_aa267408fe1593233062da929152b1af9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#aa267408fe1593233062da929152b1af9">AttachRxCallback</a> (<a class="el" href="namespacerm_1_1hal.html#a4258f0687c3c78d6b7c2b2399ac3febd">SerialRxCallbackFunction</a> callback) override</td></tr>
+<tr class="separator:aa267408fe1593233062da929152b1af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fc0623cc0697ef68b4691379cd7d7f0" id="r_a7fc0623cc0697ef68b4691379cd7d7f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a7fc0623cc0697ef68b4691379cd7d7f0">Start</a> () override</td></tr>
+<tr class="separator:a7fc0623cc0697ef68b4691379cd7d7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb4b30f58496cb9e1451b85f96af8073" id="r_abb4b30f58496cb9e1451b85f96af8073"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#abb4b30f58496cb9e1451b85f96af8073">Stop</a> () override</td></tr>
+<tr class="separator:abb4b30f58496cb9e1451b85f96af8073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classrm_1_1hal_1_1SyncWritable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrm_1_1hal_1_1SyncWritable')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classrm_1_1hal_1_1SyncWritable.html">rm::hal::SyncWritable</a></td></tr>
+<tr class="memitem:a97637f6fcf8d1d40ae4ef41885875af8 inherit pub_methods_classrm_1_1hal_1_1SyncWritable" id="r_a97637f6fcf8d1d40ae4ef41885875af8"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SyncWritable.html#a97637f6fcf8d1d40ae4ef41885875af8">~SyncWritable</a> ()=default</td></tr>
+<tr class="separator:a97637f6fcf8d1d40ae4ef41885875af8 inherit pub_methods_classrm_1_1hal_1_1SyncWritable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a4601aaf55b12036a44590b4c71b4cd inherit pub_methods_classrm_1_1hal_1_1SyncWritable" id="r_a2a4601aaf55b12036a44590b4c71b4cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SyncWritable.html#a2a4601aaf55b12036a44590b4c71b4cd">Write</a> (const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *data, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size)</td></tr>
+<tr class="memdesc:a2a4601aaf55b12036a44590b4c71b4cd inherit pub_methods_classrm_1_1hal_1_1SyncWritable"><td class="mdescLeft">&#160;</td><td class="mdescRight">无超时限制的便捷重载（不带 timeout_ms 的调用方无需修改）  <br /></td></tr>
+<tr class="separator:a2a4601aaf55b12036a44590b4c71b4cd inherit pub_methods_classrm_1_1hal_1_1SyncWritable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classrm_1_1hal_1_1SyncReadable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrm_1_1hal_1_1SyncReadable')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classrm_1_1hal_1_1SyncReadable.html">rm::hal::SyncReadable</a></td></tr>
+<tr class="memitem:a20481f3c4d3e6ed11db33958e0cb6245 inherit pub_methods_classrm_1_1hal_1_1SyncReadable" id="r_a20481f3c4d3e6ed11db33958e0cb6245"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SyncReadable.html#a20481f3c4d3e6ed11db33958e0cb6245">~SyncReadable</a> ()=default</td></tr>
+<tr class="separator:a20481f3c4d3e6ed11db33958e0cb6245 inherit pub_methods_classrm_1_1hal_1_1SyncReadable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7267d43147bf608525a844610edc199 inherit pub_methods_classrm_1_1hal_1_1SyncReadable" id="r_ab7267d43147bf608525a844610edc199"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SyncReadable.html#ab7267d43147bf608525a844610edc199">Read</a> (<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *buf, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size)</td></tr>
+<tr class="memdesc:ab7267d43147bf608525a844610edc199 inherit pub_methods_classrm_1_1hal_1_1SyncReadable"><td class="mdescLeft">&#160;</td><td class="mdescRight">无超时限制的便捷重载  <br /></td></tr>
+<tr class="separator:ab7267d43147bf608525a844610edc199 inherit pub_methods_classrm_1_1hal_1_1SyncReadable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classrm_1_1hal_1_1AsyncReadable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrm_1_1hal_1_1AsyncReadable')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classrm_1_1hal_1_1AsyncReadable.html">rm::hal::AsyncReadable</a></td></tr>
+<tr class="memitem:a28c974d09cd69714bedf690e9c710a94 inherit pub_methods_classrm_1_1hal_1_1AsyncReadable" id="r_a28c974d09cd69714bedf690e9c710a94"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1AsyncReadable.html#a28c974d09cd69714bedf690e9c710a94">~AsyncReadable</a> ()=default</td></tr>
+<tr class="separator:a28c974d09cd69714bedf690e9c710a94 inherit pub_methods_classrm_1_1hal_1_1AsyncReadable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classrm_1_1hal_1_1AsyncWritable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrm_1_1hal_1_1AsyncWritable')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classrm_1_1hal_1_1AsyncWritable.html">rm::hal::AsyncWritable</a></td></tr>
+<tr class="memitem:a13b04f7d5c4f085a67b067584b326a2c inherit pub_methods_classrm_1_1hal_1_1AsyncWritable" id="r_a13b04f7d5c4f085a67b067584b326a2c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1AsyncWritable.html#a13b04f7d5c4f085a67b067584b326a2c">~AsyncWritable</a> ()=default</td></tr>
+<tr class="separator:a13b04f7d5c4f085a67b067584b326a2c inherit pub_methods_classrm_1_1hal_1_1AsyncWritable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pub_static_attribs_classrm_1_1hal_1_1SyncWritable"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classrm_1_1hal_1_1SyncWritable')"><img src="closed.png" alt="-"/>&#160;静态 Public 属性 继承自 <a class="el" href="classrm_1_1hal_1_1SyncWritable.html">rm::hal::SyncWritable</a></td></tr>
+<tr class="memitem:aefabda3e26272e2f1d233ed7c627489d inherit pub_static_attribs_classrm_1_1hal_1_1SyncWritable" id="r_aefabda3e26272e2f1d233ed7c627489d"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SyncWritable.html#aefabda3e26272e2f1d233ed7c627489d">kNoTimeout</a> = 0xFFFFFFFFU</td></tr>
+<tr class="memdesc:aefabda3e26272e2f1d233ed7c627489d inherit pub_static_attribs_classrm_1_1hal_1_1SyncWritable"><td class="mdescLeft">&#160;</td><td class="mdescRight">无超时限制（等待到完成为止）  <br /></td></tr>
+<tr class="separator:aefabda3e26272e2f1d233ed7c627489d inherit pub_static_attribs_classrm_1_1hal_1_1SyncWritable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_attribs_classrm_1_1hal_1_1SyncReadable"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classrm_1_1hal_1_1SyncReadable')"><img src="closed.png" alt="-"/>&#160;静态 Public 属性 继承自 <a class="el" href="classrm_1_1hal_1_1SyncReadable.html">rm::hal::SyncReadable</a></td></tr>
+<tr class="memitem:ad520280e1338808a049b97d11c8a5291 inherit pub_static_attribs_classrm_1_1hal_1_1SyncReadable" id="r_ad520280e1338808a049b97d11c8a5291"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SyncReadable.html#ad520280e1338808a049b97d11c8a5291">kNoTimeout</a> = 0xFFFFFFFFU</td></tr>
+<tr class="memdesc:ad520280e1338808a049b97d11c8a5291 inherit pub_static_attribs_classrm_1_1hal_1_1SyncReadable"><td class="mdescLeft">&#160;</td><td class="mdescRight">无超时限制  <br /></td></tr>
+<tr class="separator:ad520280e1338808a049b97d11c8a5291 inherit pub_static_attribs_classrm_1_1hal_1_1SyncReadable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><p>UART类 </p>
-</div><h2 class="groupheader">构造及析构函数说明</h2>
-<a id="a9afc14515c45a7e1ec287787218887ce" name="a9afc14515c45a7e1ec287787218887ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9afc14515c45a7e1ec287787218887ce">&#9670;&#160;</a></span>Uart()</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> RxBufSize&gt;<br />
+class rm::hal::stm32::Uart&lt; RxBufSize &gt;</div><p>UART 类（模板参数 RxBufSize 决定双缓冲每块的字节数） </p>
+<p>同时继承全部四种组合接口，因此可隐式转为任意组合接口指针： </p><div class="fragment"><div class="line"><a class="code hl_class" href="classrm_1_1hal_1_1stm32_1_1Uart.html">Uart&lt;256&gt;</a> uart(huart1);</div>
+<div class="line"><a class="code hl_class" href="classrm_1_1hal_1_1SerialInterface.html">SerialInterface</a>             *p1 = &amp;uart;  <span class="comment">// 同步写 + 异步读</span></div>
+<div class="line"><a class="code hl_class" href="classrm_1_1hal_1_1AsyncSerialInterface.html">AsyncSerialInterface</a>        *p2 = &amp;uart;  <span class="comment">// 异步写 + 异步读</span></div>
+<div class="line"><a class="code hl_class" href="classrm_1_1hal_1_1SyncSerialInterface.html">SyncSerialInterface</a>         *p3 = &amp;uart;  <span class="comment">// 同步写 + 同步读</span></div>
+<div class="line"><a class="code hl_class" href="classrm_1_1hal_1_1AsyncTxSyncRxSerialInterface.html">AsyncTxSyncRxSerialInterface</a>*p4 = &amp;uart;  <span class="comment">// 异步写 + 同步读</span></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1AsyncSerialInterface_html"><div class="ttname"><a href="classrm_1_1hal_1_1AsyncSerialInterface.html">rm::hal::AsyncSerialInterface</a></div><div class="ttdoc">异步写 + 异步读</div><div class="ttdef"><b>Definition</b> serial_interface.hpp:155</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1AsyncTxSyncRxSerialInterface_html"><div class="ttname"><a href="classrm_1_1hal_1_1AsyncTxSyncRxSerialInterface.html">rm::hal::AsyncTxSyncRxSerialInterface</a></div><div class="ttdoc">异步写 + 同步读</div><div class="ttdef"><b>Definition</b> serial_interface.hpp:150</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1SerialInterface_html"><div class="ttname"><a href="classrm_1_1hal_1_1SerialInterface.html">rm::hal::SerialInterface</a></div><div class="ttdoc">同步写 + 异步读（最常用的嵌入式串口组合）</div><div class="ttdef"><b>Definition</b> serial_interface.hpp:145</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1SyncSerialInterface_html"><div class="ttname"><a href="classrm_1_1hal_1_1SyncSerialInterface.html">rm::hal::SyncSerialInterface</a></div><div class="ttdoc">同步写 + 同步读</div><div class="ttdef"><b>Definition</b> serial_interface.hpp:140</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1Uart_html"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1Uart.html">rm::hal::stm32::Uart</a></div><div class="ttdoc">UART 类（模板参数 RxBufSize 决定双缓冲每块的字节数）</div><div class="ttdef"><b>Definition</b> uart.hpp:134</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a4b28457e92a4441f94c6c78f2d0eb58c" name="a4b28457e92a4441f94c6c78f2d0eb58c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b28457e92a4441f94c6c78f2d0eb58c">&#9670;&#160;</a></span>Uart()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> RxBufSize&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">rm::hal::stm32::Uart::Uart </td>
+          <td class="memname"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html">rm::hal::stm32::Uart</a>&lt; RxBufSize &gt;::Uart </td>
           <td>(</td>
           <td class="paramtype">UART_HandleTypeDef &amp;&#160;</td>
           <td class="paramname"><em>huart</em>, </td>
@@ -149,20 +211,14 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td>
-          <td class="paramname"><em>rx_buffer_size</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>async_tx_use_dma</em> = <code>false</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6c">UartMode</a>&#160;</td>
-          <td class="paramname"><em>tx_mode</em> = <code><a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6ca07fa7a19aa722c635a15e94cb7f50416">UartMode::kNormal</a></code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6c">UartMode</a>&#160;</td>
-          <td class="paramname"><em>rx_mode</em> = <code><a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6ca07fa7a19aa722c635a15e94cb7f50416">UartMode::kNormal</a></code>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>async_rx_use_dma</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -170,67 +226,28 @@ Public 成员函数</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-</div><div class="memdoc">
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">huart</td><td>HAL库的UART句柄 </td></tr>
-    <tr><td class="paramname">rx_buffer_size</td><td>接收缓冲区大小 </td></tr>
-    <tr><td class="paramname">tx_mode</td><td>tx工作模式（正常、中断、DMA） </td></tr>
-    <tr><td class="paramname">rx_mode</td><td>rx工作模式（正常、中断、DMA） </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<h2 class="groupheader">成员函数说明</h2>
-<a id="a344ad952ffe7c07cf2b04ff6f1d6d365" name="a344ad952ffe7c07cf2b04ff6f1d6d365"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a344ad952ffe7c07cf2b04ff6f1d6d365">&#9670;&#160;</a></span>AttachRxCallback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rm::hal::stm32::Uart::AttachRxCallback </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm_1_1hal.html#ab6c25fb295d0b957ffb1181fa48b787c">SerialRxCallbackFunction</a>&#160;</td>
-          <td class="paramname"><em>callback</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>注册用户定义的接收完成回调函数 </p>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">callback</td><td>回调函数 </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>实现了 <a class="el" href="classrm_1_1hal_1_1SerialInterface.html#a3b7f352d4c41b7f56b59a47d4777218d">rm::hal::SerialInterface</a>.</p>
-
 </div>
 </div>
-<a id="a8afba8aefbe343327ff65e2a0149364a" name="a8afba8aefbe343327ff65e2a0149364a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8afba8aefbe343327ff65e2a0149364a">&#9670;&#160;</a></span>Begin()</h2>
+<a id="a49bc10fe29c475a858f2fe31df1f9036" name="a49bc10fe29c475a858f2fe31df1f9036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49bc10fe29c475a858f2fe31df1f9036">&#9670;&#160;</a></span>~Uart()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> RxBufSize&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void rm::hal::stm32::Uart::Begin </td>
+          <td class="memname"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html">rm::hal::stm32::Uart</a>&lt; RxBufSize &gt;::~<a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html">Uart</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -238,28 +255,57 @@ Public 成员函数</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>初始化UART </p>
-
-<p>实现了 <a class="el" href="classrm_1_1hal_1_1SerialInterface.html#a0ef66205fe9f8998be82fd76826dd67c">rm::hal::SerialInterface</a>.</p>
-
 </div>
 </div>
-<a id="afa6fdca9b4ddf3b6b039bfb0bd111f6f" name="afa6fdca9b4ddf3b6b039bfb0bd111f6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa6fdca9b4ddf3b6b039bfb0bd111f6f">&#9670;&#160;</a></span>rx_buffer()</h2>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aa267408fe1593233062da929152b1af9" name="aa267408fe1593233062da929152b1af9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa267408fe1593233062da929152b1af9">&#9670;&#160;</a></span>AttachRxCallback()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> RxBufSize&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt; <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> &gt; &amp; rm::hal::stm32::Uart::rx_buffer </td>
+          <td class="memname">void <a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html">rm::hal::stm32::Uart</a>&lt; RxBufSize &gt;::AttachRxCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm_1_1hal.html#a4258f0687c3c78d6b7c2b2399ac3febd">SerialRxCallbackFunction</a>&#160;</td>
+          <td class="paramname"><em>callback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classrm_1_1hal_1_1AsyncReadable.html#a8e3fd49530b625c1dc73d91b001f201f">rm::hal::AsyncReadable</a>.</p>
+
+</div>
+</div>
+<a id="ad9045c5281f44dcfaa75dd4d3a2250f3" name="ad9045c5281f44dcfaa75dd4d3a2250f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9045c5281f44dcfaa75dd4d3a2250f3">&#9670;&#160;</a></span>IsTxBusy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> RxBufSize&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html">rm::hal::stm32::Uart</a>&lt; RxBufSize &gt;::IsTxBusy </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -267,27 +313,148 @@ Public 成员函数</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>返回</dt><dd>接收缓冲区 </dd></dl>
 
-<p>实现了 <a class="el" href="classrm_1_1hal_1_1SerialInterface.html#a59801589f9ebc7068336b8376c6a074d">rm::hal::SerialInterface</a>.</p>
+<p>查询硬件当前是否正忙于上一次的异步写请求 </p>
+<dl class="section return"><dt>返回</dt><dd>true 上次 <a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a866157ef4abc32d7064cbae2534a6154">WriteAsync()</a> 尚未完成 </dd>
+<dd>
+false 空闲，可以发起新的 <a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a866157ef4abc32d7064cbae2534a6154">WriteAsync()</a> </dd></dl>
+
+<p>实现了 <a class="el" href="classrm_1_1hal_1_1AsyncWritable.html#ad07ab48c1b98a39a690fe95dedd21241">rm::hal::AsyncWritable</a>.</p>
 
 </div>
 </div>
-<a id="ac0ed3e4099c6009eae37508cf28420d1" name="ac0ed3e4099c6009eae37508cf28420d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0ed3e4099c6009eae37508cf28420d1">&#9670;&#160;</a></span>Write()</h2>
+<a id="a1e419af8f1b525124e27f843835c27a5" name="a1e419af8f1b525124e27f843835c27a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e419af8f1b525124e27f843835c27a5">&#9670;&#160;</a></span>Read()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> RxBufSize&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void rm::hal::stm32::Uart::Write </td>
+          <td class="memname"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> <a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html">rm::hal::stm32::Uart</a>&lt; RxBufSize &gt;::Read </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td>
+          <td class="paramname"><em>timeout_ms</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>阻塞接收 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>接收缓冲区 </td></tr>
+    <tr><td class="paramname">size</td><td>期望接收的字节数 </td></tr>
+    <tr><td class="paramname">timeout_ms</td><td>超时时间（毫秒），默认 kNoTimeout（永不超时） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>实际接收到的字节数 </dd></dl>
+
+<p>实现了 <a class="el" href="classrm_1_1hal_1_1SyncReadable.html#a03a745f35300233faa315543741aa5b4">rm::hal::SyncReadable</a>.</p>
+
+</div>
+</div>
+<a id="a7fc0623cc0697ef68b4691379cd7d7f0" name="a7fc0623cc0697ef68b4691379cd7d7f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fc0623cc0697ef68b4691379cd7d7f0">&#9670;&#160;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> RxBufSize&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html">rm::hal::stm32::Uart</a>&lt; RxBufSize &gt;::Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classrm_1_1hal_1_1AsyncReadable.html#a95f38f7146dc4dc56d32b41a093d45da">rm::hal::AsyncReadable</a>.</p>
+
+</div>
+</div>
+<a id="abb4b30f58496cb9e1451b85f96af8073" name="abb4b30f58496cb9e1451b85f96af8073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb4b30f58496cb9e1451b85f96af8073">&#9670;&#160;</a></span>Stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> RxBufSize&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html">rm::hal::stm32::Uart</a>&lt; RxBufSize &gt;::Stop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classrm_1_1hal_1_1AsyncReadable.html#aec322d4575336deedcd68a61d5291367">rm::hal::AsyncReadable</a>.</p>
+
+</div>
+</div>
+<a id="a8bac01e11b13a8273522f36a039f07f4" name="a8bac01e11b13a8273522f36a039f07f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bac01e11b13a8273522f36a039f07f4">&#9670;&#160;</a></span>Write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> RxBufSize&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html">rm::hal::stm32::Uart</a>&lt; RxBufSize &gt;::Write </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *&#160;</td>
           <td class="paramname"><em>data</em>, </td>
@@ -296,7 +463,13 @@ Public 成员函数</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td>
+          <td class="paramname"><em>timeout_ms</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -306,27 +479,73 @@ Public 成员函数</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>发送数据 </p>
+<p>阻塞发送 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>数据指针 </td></tr>
-    <tr><td class="paramname">size</td><td>数据大小 </td></tr>
+    <tr><td class="paramname">size</td><td>数据长度 </td></tr>
+    <tr><td class="paramname">timeout_ms</td><td>超时时间（毫秒），默认 kNoTimeout（永不超时） </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>实现了 <a class="el" href="classrm_1_1hal_1_1SerialInterface.html#afdd15c25c7cac91b5004226052ba373b">rm::hal::SerialInterface</a>.</p>
+<p>实现了 <a class="el" href="classrm_1_1hal_1_1SyncWritable.html#a051dfdc67553b3369f63e8f0fde79981">rm::hal::SyncWritable</a>.</p>
+
+</div>
+</div>
+<a id="a866157ef4abc32d7064cbae2534a6154" name="a866157ef4abc32d7064cbae2534a6154"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a866157ef4abc32d7064cbae2534a6154">&#9670;&#160;</a></span>WriteAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> RxBufSize&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html">rm::hal::stm32::Uart</a>&lt; RxBufSize &gt;::WriteAsync </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>on_done</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classrm_1_1hal_1_1AsyncWritable.html#ad414324f2efe34956e334a426fdb674c">rm::hal::AsyncWritable</a>.</p>
 
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>src/librm/hal/stm32/<a class="el" href="uart_8hpp_source.html">uart.hpp</a></li>
-<li>src/librm/hal/stm32/<a class="el" href="uart_8cc.html">uart.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

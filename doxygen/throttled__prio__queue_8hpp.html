@@ -93,7 +93,8 @@ $(document).ready(function(){initNavTree('throttled__prio__queue_8hpp.html','');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">类</a> &#124;
-<a href="#namespaces">命名空间</a>  </div>
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#enum-members">枚举</a>  </div>
   <div class="headertitle"><div class="title">throttled_prio_queue.hpp 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
@@ -102,6 +103,7 @@ $(document).ready(function(){initNavTree('throttled__prio__queue_8hpp.html','');
 <a href="#details">更多...</a></p>
 <div class="textblock"><code>#include &lt;chrono&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
 <code>#include &lt;etl/priority_queue.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="typedefs_8hpp_source.html">librm/core/typedefs.hpp</a>&quot;</code><br />
 </div>
@@ -109,10 +111,10 @@ $(document).ready(function(){initNavTree('throttled__prio__queue_8hpp.html','');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 类</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1ThrottledPrioQueue.html">rm::modules::ThrottledPrioQueue&lt; T, MaxQueueSize &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1ThrottledPrioQueue.html">rm::modules::ThrottledPrioQueue&lt; T, MaxQueueSize, Policy &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">限流优先级调度队列，用于处理CAN总线定频发送以及类似逻辑  <a href="classrm_1_1modules_1_1ThrottledPrioQueue.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1modules_1_1ThrottledPrioQueue_1_1QueueItem.html">rm::modules::ThrottledPrioQueue&lt; T, MaxQueueSize &gt;::QueueItem</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1modules_1_1ThrottledPrioQueue_1_1QueueItem.html">rm::modules::ThrottledPrioQueue&lt; T, MaxQueueSize, Policy &gt;::QueueItem</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -121,6 +123,15 @@ $(document).ready(function(){initNavTree('throttled__prio__queue_8hpp.html','');
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacerm_1_1modules" id="r_namespacerm_1_1modules"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html">rm::modules</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:ac6c1e591979feaa4b5b310e6a14f4916" id="r_ac6c1e591979feaa4b5b310e6a14f4916"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">rm::modules::SchedulingPolicy</a> { <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916a8b7c09bac3103269d320283b5ff573b0">rm::modules::kEdf</a>
+, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916a917b247c383f7b313975f83906d80a2d">rm::modules::kFifo</a>
+, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916a8b33fa5d9c9a10a7a474d112d87ff21e">rm::modules::kPriorityFifo</a>
+ }</td></tr>
+<tr class="memdesc:ac6c1e591979feaa4b5b310e6a14f4916"><td class="mdescLeft">&#160;</td><td class="mdescRight">调度策略  <a href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">更多...</a><br /></td></tr>
+<tr class="separator:ac6c1e591979feaa4b5b310e6a14f4916"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>限流优先级调度队列 </p>

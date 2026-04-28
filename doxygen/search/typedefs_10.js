@@ -5,7 +5,7 @@ var searchData=
   ['secondspeedloopki_2',['SecondSpeedLoopKi',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a96c2c533f467bcddae4ec6611832c4f8',1,'rm::device::DirectDriveMotor::Parameters']]],
   ['secondspeedloopkp_3',['SecondSpeedLoopKp',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a6e887e90a79132e0c160b58f5d2c0d4e',1,'rm::device::DirectDriveMotor::Parameters']]],
   ['serialnumber_4',['SerialNumber',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a1ad1017c340c641d856ddccc57905070',1,'rm::device::DirectDriveMotor::Parameters']]],
-  ['serialrxcallbackfunction_5',['SerialRxCallbackFunction',['../namespacerm_1_1hal.html#ab6c25fb295d0b957ffb1181fa48b787c',1,'rm::hal']]],
+  ['serialrxcallbackfunction_5',['SerialRxCallbackFunction',['../namespacerm_1_1hal.html#a4258f0687c3c78d6b7c2b2399ac3febd',1,'rm::hal']]],
   ['settings_6',['Settings',['../classrm_1_1device_1_1DmMotor.html#a667e7454d199e17b099db4ea73cfc5fa',1,'rm::device::DmMotor']]],
   ['slewlimiter_7',['SlewLimiter',['../namespacerm_1_1modules.html#afdde4eadf42314fbaa664c9ceeb156e9',1,'rm::modules']]],
   ['speedcontroller_8',['SpeedController',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a3ec6b3d451e0ae739efb19214f1db78c',1,'rm::device::DirectDriveMotor::Parameters']]],

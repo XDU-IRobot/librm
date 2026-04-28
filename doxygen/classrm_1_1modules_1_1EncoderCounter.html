@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: rm::modules::EncoderCounter类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classrm_1_1modules_1_1EncoderCounter.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classrm_1_1modules_1_1EncoderCounter-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">rm::modules::EncoderCounter类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>编码器圈数计数器。 通过检测编码器读数跨越周期边界来累计圈数，计算只有单圈编码器的电机驱动关节的实际累计位置。  
+ <a href="classrm_1_1modules_1_1EncoderCounter.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="encoder__counter_8hpp_source.html">encoder_counter.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a48a49599ed84a74b41300c43cc9ae73f" id="r_a48a49599ed84a74b41300c43cc9ae73f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1EncoderCounter.html#a48a49599ed84a74b41300c43cc9ae73f">EncoderCounter</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">encoder_cycle</a>)</td></tr>
+<tr class="memdesc:a48a49599ed84a74b41300c43cc9ae73f"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:a48a49599ed84a74b41300c43cc9ae73f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73415642ea4732f5a9cd0bf2ad5229dd" id="r_a73415642ea4732f5a9cd0bf2ad5229dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1EncoderCounter.html#a73415642ea4732f5a9cd0bf2ad5229dd">real_position</a> () <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a></td></tr>
+<tr class="memdesc:a73415642ea4732f5a9cd0bf2ad5229dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取关节实际累计位置  <br /></td></tr>
+<tr class="separator:a73415642ea4732f5a9cd0bf2ad5229dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3373aa39a309adc070cfdbc0aec26d7a" id="r_a3373aa39a309adc070cfdbc0aec26d7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1EncoderCounter.html#a3373aa39a309adc070cfdbc0aec26d7a">Update</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> encoder)</td></tr>
+<tr class="memdesc:a3373aa39a309adc070cfdbc0aec26d7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新编码器读数，自动检测并累计跨圈  <br /></td></tr>
+<tr class="separator:a3373aa39a309adc070cfdbc0aec26d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad312add888b0a23191dcd5d27db7dd33" id="r_ad312add888b0a23191dcd5d27db7dd33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1EncoderCounter.html#ad312add888b0a23191dcd5d27db7dd33">Reset</a> ()</td></tr>
+<tr class="memdesc:ad312add888b0a23191dcd5d27db7dd33"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置计数器，清除圈数与编码器读数  <br /></td></tr>
+<tr class="separator:ad312add888b0a23191dcd5d27db7dd33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>编码器圈数计数器。 通过检测编码器读数跨越周期边界来累计圈数，计算只有单圈编码器的电机驱动关节的实际累计位置。 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a48a49599ed84a74b41300c43cc9ae73f" name="a48a49599ed84a74b41300c43cc9ae73f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48a49599ed84a74b41300c43cc9ae73f">&#9670;&#160;</a></span>EncoderCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rm::modules::EncoderCounter::EncoderCounter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>encoder_cycle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">encoder_cycle</td><td>编码器单圈的量程（周期） </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a73415642ea4732f5a9cd0bf2ad5229dd" name="a73415642ea4732f5a9cd0bf2ad5229dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73415642ea4732f5a9cd0bf2ad5229dd">&#9670;&#160;</a></span>real_position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::modules::EncoderCounter::real_position </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取关节实际累计位置 </p>
+<dl class="section return"><dt>返回</dt><dd>电机累计位置 = 圈数 × 编码器周期 + 当前编码器读数 </dd></dl>
+
+</div>
+</div>
+<a id="ad312add888b0a23191dcd5d27db7dd33" name="ad312add888b0a23191dcd5d27db7dd33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad312add888b0a23191dcd5d27db7dd33">&#9670;&#160;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a> rm::modules::EncoderCounter::Reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重置计数器，清除圈数与编码器读数 </p>
+
+</div>
+</div>
+<a id="a3373aa39a309adc070cfdbc0aec26d7a" name="a3373aa39a309adc070cfdbc0aec26d7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3373aa39a309adc070cfdbc0aec26d7a">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a> rm::modules::EncoderCounter::Update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>encoder</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>更新编码器读数，自动检测并累计跨圈 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">encoder</td><td>当前编码器读数 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/librm/modules/<a class="el" href="encoder__counter_8hpp_source.html">encoder_counter.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1modules.html">modules</a></li><li class="navelem"><a class="el" href="classrm_1_1modules_1_1EncoderCounter.html">EncoderCounter</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

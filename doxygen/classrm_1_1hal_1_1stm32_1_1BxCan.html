@@ -109,9 +109,8 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1stm32_1_1BxCan.html'
  <div class="center">
   <img src="classrm_1_1hal_1_1stm32_1_1BxCan.png" usemap="#rm::hal::stm32::BxCan_map" alt=""/>
   <map id="rm::hal::stm32::BxCan_map" name="rm::hal::stm32::BxCan_map">
-<area href="classrm_1_1hal_1_1CanInterface.html" title="CAN接口类" alt="rm::hal::CanInterface" shape="rect" coords="0,0,289,24"/>
-<area href="classrm_1_1detail_1_1NonCopyable.html" alt="rm::detail::NonCopyable" shape="rect" coords="299,0,588,24"/>
-<area href="classrm_1_1hal_1_1stm32_1_1ThrottledBxCan.html" title="基于限流优先级队列的bxCAN发送封装" alt="rm::hal::stm32::ThrottledBxCan&lt; MaxQueueSize &gt;" shape="rect" coords="149,112,438,136"/>
+<area href="classrm_1_1hal_1_1CanInterface.html" title="CAN接口类" alt="rm::hal::CanInterface" shape="rect" coords="0,0,145,24"/>
+<area href="classrm_1_1detail_1_1NonCopyable.html" alt="rm::detail::NonCopyable" shape="rect" coords="155,0,300,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -157,6 +156,7 @@ Public 成员函数</h2></td></tr>
 <tr class="memdesc:a287a91895e5e8db4ade610ef9508e611 inherit pro_methods_classrm_1_1hal_1_1CanInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">取消注册CAN设备  <br /></td></tr>
 <tr class="separator:a287a91895e5e8db4ade610ef9508e611 inherit pro_methods_classrm_1_1hal_1_1CanInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a960c5c8ab51c4bf361a5b2e7a4f00e85 inherit pro_methods_classrm_1_1hal_1_1CanInterface" id="r_a960c5c8ab51c4bf361a5b2e7a4f00e85"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classrm_1_1device_1_1CanDevice.html">device::CanDevice</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1CanInterface.html#a960c5c8ab51c4bf361a5b2e7a4f00e85">GetDeviceListByRxStdid</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> rx_stdid) const</td></tr>
+<tr class="memdesc:a960c5c8ab51c4bf361a5b2e7a4f00e85 inherit pro_methods_classrm_1_1hal_1_1CanInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据接收ID获取已注册的设备列表  <br /></td></tr>
 <tr class="separator:a960c5c8ab51c4bf361a5b2e7a4f00e85 inherit pro_methods_classrm_1_1hal_1_1CanInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
@@ -375,8 +375,6 @@ Public 成员函数</h2></td></tr>
 
 <p>实现了 <a class="el" href="classrm_1_1hal_1_1CanInterface.html#aa80af0ccc4a34ee9623112d6838d5f7c">rm::hal::CanInterface</a>.</p>
 
-<p>被 <a class="el" href="classrm_1_1hal_1_1stm32_1_1ThrottledBxCan.html#a8ffc15b3690dc2e61d8eb1167af98391">rm::hal::stm32::ThrottledBxCan&lt; MaxQueueSize &gt;</a> 重载.</p>
-
 </div>
 </div>
 <a id="a0b1950fdac0da23de0f609259af2aa48" name="a0b1950fdac0da23de0f609259af2aa48"></a>
@@ -430,8 +428,6 @@ Public 成员函数</h2></td></tr>
 </dl>
 
 <p>实现了 <a class="el" href="classrm_1_1hal_1_1CanInterface.html#af5cfc29d748a66e6b0a7290beca694c0">rm::hal::CanInterface</a>.</p>
-
-<p>被 <a class="el" href="classrm_1_1hal_1_1stm32_1_1ThrottledBxCan.html#a116bbfa6e9c4b74cd810e37dc134c61a">rm::hal::stm32::ThrottledBxCan&lt; MaxQueueSize &gt;</a> 重载.</p>
 
 </div>
 </div>

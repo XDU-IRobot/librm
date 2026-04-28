@@ -93,22 +93,32 @@ $(document).ready(function(){initNavTree('uart_8hpp.html',''); initResizable(); 
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">类</a> &#124;
-<a href="#namespaces">命名空间</a> &#124;
-<a href="#enum-members">枚举</a>  </div>
+<a href="#namespaces">命名空间</a>  </div>
   <div class="headertitle"><div class="title">uart.hpp 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>UART 类库  
+<a href="#details">更多...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="hal_8hpp_source.html">librm/hal/stm32/hal.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="check__register__callbacks_8hpp_source.html">librm/hal/stm32/check_register_callbacks.hpp</a>&quot;</code><br />
+<code>#include &lt;array&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+<code>#include &lt;etl/span.h&gt;</code><br />
 <code>#include &lt;etl/vector.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="serial__interface_8hpp_source.html">librm/hal/serial_interface.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="helper__macro_8hpp_source.html">librm/hal/stm32/helper_macro.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="core_2exception_8hpp_source.html">librm/core/exception.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="typedefs_8hpp_source.html">librm/core/typedefs.hpp</a>&quot;</code><br />
 </div>
 <p><a href="uart_8hpp_source.html">浏览源代码.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 类</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html">rm::hal::stm32::Uart</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART类  <a href="classrm_1_1hal_1_1stm32_1_1Uart.html#details">更多...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1UartBase.html">rm::hal::stm32::UartBase</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html">rm::hal::stm32::Uart&lt; RxBufSize &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART 类（模板参数 RxBufSize 决定双缓冲每块的字节数）  <a href="classrm_1_1hal_1_1stm32_1_1Uart.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -119,16 +129,14 @@ $(document).ready(function(){initNavTree('uart_8hpp.html',''); initResizable(); 
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacerm_1_1hal_1_1stm32" id="r_namespacerm_1_1hal_1_1stm32"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1hal_1_1stm32.html">rm::hal::stm32</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-枚举</h2></td></tr>
-<tr class="memitem:a01295957e2d8ae5396aa87eb94041b6c" id="r_a01295957e2d8ae5396aa87eb94041b6c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6c">rm::hal::stm32::UartMode</a> { <a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6ca07fa7a19aa722c635a15e94cb7f50416">rm::hal::stm32::kNormal</a>
-, <a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6ca5226558f5ccca12b5009c9e2f97d50ae">rm::hal::stm32::kInterrupt</a>
-, <a class="el" href="namespacerm_1_1hal_1_1stm32.html#a01295957e2d8ae5396aa87eb94041b6ca1d17438b16d76f9f506107eab4a24b10">rm::hal::stm32::kDma</a>
- }</td></tr>
-<tr class="separator:a01295957e2d8ae5396aa87eb94041b6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacerm_1_1hal_1_1stm32_1_1detail" id="r_namespacerm_1_1hal_1_1stm32_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1hal_1_1stm32_1_1detail.html">rm::hal::stm32::detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>UART 类库 </p>
+<p>Uart&lt;RxBufSize&gt; 是一个模板类，RxBufSize 在编译时确定接收缓冲区大小， 双缓冲 (rx_buf_[2]) 使用 std::array 分配在对象所在的存储区（通常为 BSS）， 不涉及堆分配。</p>
+<p>HAL 回调通过无捕获 lambda（可隐式转换为函数指针）+ 内联注册表转发， 注册表本身也使用 std::array，零堆分配。 </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

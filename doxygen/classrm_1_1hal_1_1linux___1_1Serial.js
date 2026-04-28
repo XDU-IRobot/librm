@@ -6,10 +6,12 @@ var classrm_1_1hal_1_1linux___1_1Serial =
     [ "Serial", "classrm_1_1hal_1_1linux___1_1Serial.html#a0609bff9bdbf30f9cd72c4c3cf9894b1", null ],
     [ "Serial", "classrm_1_1hal_1_1linux___1_1Serial.html#aab46e96a9075c22efb29739dd40c0f23", null ],
     [ "AttachRxCallback", "classrm_1_1hal_1_1linux___1_1Serial.html#abb92ddd59cce1aa0b58bb1333efbd92d", null ],
-    [ "Begin", "classrm_1_1hal_1_1linux___1_1Serial.html#a8520bf7503134309808c42d52f5d7db4", null ],
     [ "boost_serial_port_object", "classrm_1_1hal_1_1linux___1_1Serial.html#a22ad90c3186c80883f7dfc33ec2cc930", null ],
+    [ "IsTxBusy", "classrm_1_1hal_1_1linux___1_1Serial.html#a7828fa3a80db91737c4ad14aec808e93", null ],
     [ "operator=", "classrm_1_1hal_1_1linux___1_1Serial.html#a61f7d48190e1e6ede24cadabdc794d9d", null ],
     [ "operator=", "classrm_1_1hal_1_1linux___1_1Serial.html#aaaeffe863c0806fbe36919ef615d3d3f", null ],
-    [ "rx_buffer", "classrm_1_1hal_1_1linux___1_1Serial.html#a130ee017171b88d25fe7f4b44b39d0f9", null ],
-    [ "Write", "classrm_1_1hal_1_1linux___1_1Serial.html#ab652c6698e2e31dbcdbd6933563b6e9d", null ]
+    [ "Start", "classrm_1_1hal_1_1linux___1_1Serial.html#a42b16d3fe2f987bbd6a6d733a904bc39", null ],
+    [ "Stop", "classrm_1_1hal_1_1linux___1_1Serial.html#ae468a9486bf6f69527b7a03347f02845", null ],
+    [ "Write", "classrm_1_1hal_1_1linux___1_1Serial.html#af1f4e9337c8a8b0b654a0df93aa2c81c", null ],
+    [ "WriteAsync", "classrm_1_1hal_1_1linux___1_1Serial.html#af8c26d95ea33ea684e0fe69ad5e8ed5d", null ]
 ];

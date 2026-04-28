@@ -125,12 +125,12 @@ $(document).ready(function(){initNavTree('can_8hpp_source.html',''); initResizab
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_HAL_CAN_HPP</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;<a class="code" href="can__interface_8hpp.html">librm/hal/can_interface.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;<a class="code" href="bxcan_8hpp.html">librm/hal/stm32/bxcan.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="fdcan_8hpp.html">librm/hal/stm32/fdcan.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;<a class="code" href="throttled__bxcan_8hpp.html">librm/hal/stm32/throttled_bxcan.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="throttled__fdcan_8hpp.html">librm/hal/stm32/throttled_fdcan.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;<a class="code" href="throttled__can_8hpp.html">librm/hal/throttled_can.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="bxcan_8hpp.html">librm/hal/stm32/bxcan.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;<a class="code" href="fdcan_8hpp.html">librm/hal/stm32/fdcan.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="mcp2515_8hpp.html">stm32/mcp2515.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX)</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;<a class="code" href="socketcan_8hpp.html">librm/hal/linux/socketcan.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
@@ -140,30 +140,38 @@ $(document).ready(function(){initNavTree('can_8hpp_source.html',''); initResizab
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#if defined(HAL_CAN_MODULE_ENABLED)</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">using </span>Can = <a class="code hl_class" href="classrm_1_1hal_1_1stm32_1_1BxCan.html">stm32::BxCan</a>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> MaxQueueSize = 32&gt;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">using </span>ThrottledCan = <a class="code hl_class" href="classrm_1_1hal_1_1stm32_1_1ThrottledBxCan.html">stm32::ThrottledBxCan&lt;MaxQueueSize&gt;</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> MaxQueueSize = 32, modules::SchedulingPolicy Policy = modules::SchedulingPolicy::kPriorityFifo&gt;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">using </span>ThrottledCan = <a class="code hl_class" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">detail::ThrottledCan&lt;stm32::BxCan, 8, MaxQueueSize, Policy&gt;</a>;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#elif defined(HAL_FDCAN_MODULE_ENABLED)</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">using </span>Can = stm32::FdCan;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> MaxQueueSize = 32&gt;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">using </span>ThrottledCan = stm32::ThrottledFdCan&lt;MaxQueueSize&gt;;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> MaxQueueSize = 32, modules::SchedulingPolicy Policy = modules::SchedulingPolicy::kPriorityFifo&gt;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">using </span>ThrottledCan = <a class="code hl_class" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">detail::ThrottledCan&lt;stm32::FdCan, 64, MaxQueueSize, Policy&gt;</a>;</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX)</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">using </span>Can = <a class="code hl_class" href="classrm_1_1hal_1_1linux___1_1SocketCan.html">linux_::SocketCan</a>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}  <span class="comment">// namespace rm::hal</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#if defined(HAL_SPI_MODULE_ENABLED) &amp;&amp; defined(HAL_GPIO_MODULE_ENABLED)</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> MaxQueueSize = 32, modules::SchedulingPolicy Policy = modules::SchedulingPolicy::kPriorityFifo&gt;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">using </span>ThrottledMcp2515 = <a class="code hl_class" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">detail::ThrottledCan&lt;stm32::Mcp2515, 8, MaxQueueSize, Policy&gt;</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX)</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">using </span>Can = <a class="code hl_class" href="classrm_1_1hal_1_1linux___1_1SocketCan.html">linux_::SocketCan</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> MaxQueueSize = 32, modules::SchedulingPolicy Policy = modules::SchedulingPolicy::kPriorityFifo&gt;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">using </span>ThrottledCan = <a class="code hl_class" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">detail::ThrottledCan&lt;linux_::SocketCan, 8, MaxQueueSize, Policy&gt;</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}  <span class="comment">// namespace rm::hal</span></div>
 </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HAL_CAN_HPP</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HAL_CAN_HPP</span></div>
 <div class="ttc" id="abxcan_8hpp_html"><div class="ttname"><a href="bxcan_8hpp.html">bxcan.hpp</a></div><div class="ttdoc">bxCAN类库</div></div>
 <div class="ttc" id="acan__interface_8hpp_html"><div class="ttname"><a href="can__interface_8hpp.html">can_interface.hpp</a></div><div class="ttdoc">CAN的接口类</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1detail_1_1ThrottledCan_html"><div class="ttname"><a href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a></div><div class="ttdoc">基于限流优先级队列的通用CAN发送封装</div><div class="ttdef"><b>Definition</b> throttled_can.hpp:55</div></div>
 <div class="ttc" id="aclassrm_1_1hal_1_1linux___1_1SocketCan_html"><div class="ttname"><a href="classrm_1_1hal_1_1linux___1_1SocketCan.html">rm::hal::linux_::SocketCan</a></div><div class="ttdef"><b>Definition</b> socketcan.hpp:52</div></div>
 <div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1BxCan_html"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1BxCan.html">rm::hal::stm32::BxCan</a></div><div class="ttdoc">bxCAN类库</div><div class="ttdef"><b>Definition</b> bxcan.hpp:42</div></div>
-<div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1ThrottledBxCan_html"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1ThrottledBxCan.html">rm::hal::stm32::ThrottledBxCan</a></div><div class="ttdoc">基于限流优先级队列的bxCAN发送封装</div><div class="ttdef"><b>Definition</b> throttled_bxcan.hpp:46</div></div>
 <div class="ttc" id="afdcan_8hpp_html"><div class="ttname"><a href="fdcan_8hpp.html">fdcan.hpp</a></div></div>
+<div class="ttc" id="amcp2515_8hpp_html"><div class="ttname"><a href="mcp2515_8hpp.html">mcp2515.hpp</a></div><div class="ttdoc">MCP2515 CAN控制器封装</div></div>
 <div class="ttc" id="anamespacerm_1_1hal_html"><div class="ttname"><a href="namespacerm_1_1hal.html">rm::hal</a></div><div class="ttdef"><b>Definition</b> can.hpp:42</div></div>
 <div class="ttc" id="asocketcan_8hpp_html"><div class="ttname"><a href="socketcan_8hpp.html">socketcan.hpp</a></div><div class="ttdoc">SocketCAN类库</div></div>
-<div class="ttc" id="athrottled__bxcan_8hpp_html"><div class="ttname"><a href="throttled__bxcan_8hpp.html">throttled_bxcan.hpp</a></div><div class="ttdoc">基于限流优先级队列的bxCAN发送封装</div></div>
-<div class="ttc" id="athrottled__fdcan_8hpp_html"><div class="ttname"><a href="throttled__fdcan_8hpp.html">throttled_fdcan.hpp</a></div><div class="ttdoc">基于限流优先级队列的fdCAN发送封装</div></div>
+<div class="ttc" id="athrottled__can_8hpp_html"><div class="ttname"><a href="throttled__can_8hpp.html">throttled_can.hpp</a></div><div class="ttdoc">基于限流优先级队列的通用CAN发送封装（平台无关）</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

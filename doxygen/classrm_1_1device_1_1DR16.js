@@ -25,7 +25,7 @@ var classrm_1_1device_1_1DR16 =
       [ "kMid", "classrm_1_1device_1_1DR16.html#af353b5210d971aadb9bcb66dae5ef854a46d517fe446a90c5afd2e1f8e7def864", null ]
     ] ],
     [ "DR16", "classrm_1_1device_1_1DR16.html#a9b435ba9e30d2cb4d32b06fb18f46ae0", null ],
-    [ "DR16", "classrm_1_1device_1_1DR16.html#aef504c911289ffc466c54c721cfd95fa", null ],
+    [ "DR16", "classrm_1_1device_1_1DR16.html#ab700611474f8f716a220fe0a3753903c", null ],
     [ "Begin", "classrm_1_1device_1_1DR16.html#aabba4180e6a154cd8cbde59573239448", null ],
     [ "dial", "classrm_1_1device_1_1DR16.html#ab1d22e71cad9b4b5b545df32bb5ae681", null ],
     [ "key", "classrm_1_1device_1_1DR16.html#a479656738b0f75abd9f172bc666b2870", null ],
@@ -38,7 +38,7 @@ var classrm_1_1device_1_1DR16 =
     [ "mouse_z", "classrm_1_1device_1_1DR16.html#a978f064bf36f6ce36ca4b17dc467174e", null ],
     [ "right_x", "classrm_1_1device_1_1DR16.html#abbc93a5324f2930544b78623185b7ae7", null ],
     [ "right_y", "classrm_1_1device_1_1DR16.html#abfae86b1448d6b047113b5dbcee53e70", null ],
-    [ "RxCallback", "classrm_1_1device_1_1DR16.html#a1949a050a674fb187cf80109a21c50cd", null ],
+    [ "RxCallback", "classrm_1_1device_1_1DR16.html#a24245d0b7f381e42567cc8ec1d090519", null ],
     [ "switch_l", "classrm_1_1device_1_1DR16.html#a4019f13c93492bf878ff229180f93b18", null ],
     [ "switch_r", "classrm_1_1device_1_1DR16.html#a4151378f638be8301f714a6480549048", null ]
 ];

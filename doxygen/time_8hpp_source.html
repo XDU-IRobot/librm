@@ -138,15 +138,15 @@ $(document).ready(function(){initNavTree('time_8hpp_source.html',''); initResiza
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">// STM32平台的延时比较复杂，所以专门实现两个函数</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">inline</span> <span class="keywordtype">void</span> SleepMs(<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> <a class="code hl_variable" href="posix__complement_8cc.html#a381c0eb10051e51fb36ed9c6e84bdb79">ms</a>) {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">inline</span> <span class="keywordtype">void</span> SleepMs(<a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> ms) {</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#ifdef LIBRM_FREERTOS_AVAILABLE</span></div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordflow">if</span> (__get_IPSR()) {  <span class="comment">// 检测当前是否在中断里，如果在中断里则调用HAL_Delay，否则调用osDelay</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    HAL_Delay(<a class="code hl_variable" href="posix__complement_8cc.html#a381c0eb10051e51fb36ed9c6e84bdb79">ms</a>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    HAL_Delay(ms);</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    osDelay(<a class="code hl_variable" href="posix__complement_8cc.html#a381c0eb10051e51fb36ed9c6e84bdb79">ms</a>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    osDelay(ms);</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  }</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  HAL_Delay(<a class="code hl_variable" href="posix__complement_8cc.html#a381c0eb10051e51fb36ed9c6e84bdb79">ms</a>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  HAL_Delay(ms);</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
@@ -188,7 +188,6 @@ $(document).ready(function(){initNavTree('time_8hpp_source.html',''); initResiza
 <div class="ttc" id="anamespacerm_html"><div class="ttname"><a href="namespacerm.html">rm</a></div><div class="ttdef"><b>Definition</b> exception.hpp:38</div></div>
 <div class="ttc" id="anamespacerm_html_a4f8a1bdc2c9b56c0f7607a4e5b9a1453"><div class="ttname"><a href="namespacerm.html#a4f8a1bdc2c9b56c0f7607a4e5b9a1453">rm::Sleep</a></div><div class="ttdeci">void Sleep(const std::chrono::duration&lt; Rep, Period &gt; &amp;duration)</div><div class="ttdef"><b>Definition</b> time.hpp:86</div></div>
 <div class="ttc" id="anamespacerm_html_aae5bb39b0da6b1cf1b7ed1c03342ec66"><div class="ttname"><a href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">rm::u32</a></div><div class="ttdeci">uint32_t u32</div><div class="ttdef"><b>Definition</b> typedefs.hpp:45</div></div>
-<div class="ttc" id="aposix__complement_8cc_html_a381c0eb10051e51fb36ed9c6e84bdb79"><div class="ttname"><a href="posix__complement_8cc.html#a381c0eb10051e51fb36ed9c6e84bdb79">ms</a></div><div class="ttdeci">uint32_t ms</div><div class="ttdef"><b>Definition</b> posix_complement.cc:36</div></div>
 <div class="ttc" id="atypedefs_8hpp_html"><div class="ttname"><a href="typedefs_8hpp.html">typedefs.hpp</a></div><div class="ttdoc">全局数据类型定义</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

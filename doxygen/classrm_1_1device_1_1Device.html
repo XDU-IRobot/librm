@@ -110,17 +110,18 @@ $(document).ready(function(){initNavTree('classrm_1_1device_1_1Device.html','');
  <div class="center">
   <img src="classrm_1_1device_1_1Device.png" usemap="#rm::device::Device_map" alt=""/>
   <map id="rm::device::Device_map" name="rm::device::Device_map">
-<area href="classrm_1_1device_1_1CanDevice.html" title="CAN设备的基类" alt="rm::device::CanDevice" shape="rect" coords="200,56,390,80"/>
-<area href="classrm_1_1device_1_1DR16.html" title="DR16接收机" alt="rm::device::DR16" shape="rect" coords="200,112,390,136"/>
-<area href="classrm_1_1device_1_1Go8010Motor.html" alt="rm::device::Go8010Motor" shape="rect" coords="200,168,390,192"/>
-<area href="classrm_1_1device_1_1HipnucImu.html" title="HiPNUC CH0x0 IMU模块" alt="rm::device::HipnucImu" shape="rect" coords="200,224,390,248"/>
-<area href="classrm_1_1device_1_1Referee.html" title="裁判系统" alt="rm::device::Referee&lt; revision &gt;" shape="rect" coords="200,280,390,304"/>
-<area href="classrm_1_1device_1_1STP23L.html" title="STP23L激光测距传感器" alt="rm::device::STP23L" shape="rect" coords="200,336,390,360"/>
-<area href="classrm_1_1device_1_1Sbus.html" title="通用SBUS接收机" alt="rm::device::Sbus" shape="rect" coords="200,392,390,416"/>
-<area href="classrm_1_1device_1_1UnitreeMotor.html" alt="rm::device::UnitreeMotor" shape="rect" coords="200,448,390,472"/>
-<area href="classrm_1_1device_1_1VT03.html" title="VT03图传发送端的遥控器数据解析器" alt="rm::device::VT03" shape="rect" coords="200,504,390,528"/>
-<area href="classrm_1_1device_1_1VirtualDevice.html" title="在某些需要监视软件状态的场景下可以使用这个类来充当一个简单的“虚拟设备”，比如监视某个算法模块的状态，或者监视一个硬件设备的子系统状态（比如电机的温度状态），等等" alt="rm::device::VirtualDevice" shape="rect" coords="200,560,390,584"/>
-<area href="classrm_1_1device_1_1ZdtStepper.html" alt="rm::device::ZdtStepper" shape="rect" coords="200,616,390,640"/>
+<area href="classrm_1_1device_1_1CanDevice.html" title="CAN设备的基类" alt="rm::device::CanDevice" shape="rect" coords="302,56,594,80"/>
+<area href="classrm_1_1device_1_1DR16.html" title="DR16接收机" alt="rm::device::DR16" shape="rect" coords="302,112,594,136"/>
+<area href="classrm_1_1device_1_1Go8010Motor.html" alt="rm::device::Go8010Motor" shape="rect" coords="302,168,594,192"/>
+<area href="classrm_1_1device_1_1HiWonderServo.html" title="幻尔串口总线舵机驱动类" alt="rm::device::HiWonderServo" shape="rect" coords="302,224,594,248"/>
+<area href="classrm_1_1device_1_1HipnucImu.html" title="HiPNUC CH0x0 IMU模块" alt="rm::device::HipnucImu" shape="rect" coords="302,280,594,304"/>
+<area href="classrm_1_1device_1_1Referee.html" title="裁判系统" alt="rm::device::Referee&lt; revision, MaxRxCallbacks &gt;" shape="rect" coords="302,336,594,360"/>
+<area href="classrm_1_1device_1_1STP23L.html" title="STP23L激光测距传感器" alt="rm::device::STP23L" shape="rect" coords="302,392,594,416"/>
+<area href="classrm_1_1device_1_1Sbus.html" title="通用SBUS接收机" alt="rm::device::Sbus" shape="rect" coords="302,448,594,472"/>
+<area href="classrm_1_1device_1_1UnitreeMotor.html" alt="rm::device::UnitreeMotor" shape="rect" coords="302,504,594,528"/>
+<area href="classrm_1_1device_1_1VT03.html" title="VT03图传发送端的遥控器数据解析器" alt="rm::device::VT03" shape="rect" coords="302,560,594,584"/>
+<area href="classrm_1_1device_1_1VirtualDevice.html" title="在某些需要监视软件状态的场景下可以使用这个类来充当一个简单的“虚拟设备”，比如监视某个算法模块的状态，或者监视一个硬件设备的子系统状态（比如电机的温度状态），等等" alt="rm::device::VirtualDevice" shape="rect" coords="302,616,594,640"/>
+<area href="classrm_1_1device_1_1ZdtStepper.html" alt="rm::device::ZdtStepper" shape="rect" coords="302,672,594,696"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -140,6 +141,18 @@ Public 成员函数</h2></td></tr>
 <tr class="separator:a769d2371dac57ae08f5a17948bbdefd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc47f697e77010da09e8449f3d5a9094" id="r_abc47f697e77010da09e8449f3d5a9094"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#abc47f697e77010da09e8449f3d5a9094">~Device</a> ()=default</td></tr>
 <tr class="separator:abc47f697e77010da09e8449f3d5a9094"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22e0f01c25af7b2249c60764c190a60e" id="r_a22e0f01c25af7b2249c60764c190a60e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a22e0f01c25af7b2249c60764c190a60e">Device</a> (const <a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;other)</td></tr>
+<tr class="memdesc:a22e0f01c25af7b2249c60764c190a60e"><td class="mdescLeft">&#160;</td><td class="mdescRight">拷贝构造：新设备获得全新UUID（拷贝产生独立设备），状态重置为未知  <br /></td></tr>
+<tr class="separator:a22e0f01c25af7b2249c60764c190a60e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2e07a67e6895a52cd8fdc47230d8e26" id="r_af2e07a67e6895a52cd8fdc47230d8e26"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#af2e07a67e6895a52cd8fdc47230d8e26">operator=</a> (const <a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;other)</td></tr>
+<tr class="memdesc:af2e07a67e6895a52cd8fdc47230d8e26"><td class="mdescLeft">&#160;</td><td class="mdescRight">拷贝赋值：UUID不变（对象身份已确立），更新配置并重置运行状态  <br /></td></tr>
+<tr class="separator:af2e07a67e6895a52cd8fdc47230d8e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d145a85f46dee7d3c94d4a9066c869c" id="r_a5d145a85f46dee7d3c94d4a9066c869c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a5d145a85f46dee7d3c94d4a9066c869c">Device</a> (<a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="memdesc:a5d145a85f46dee7d3c94d4a9066c869c"><td class="mdescLeft">&#160;</td><td class="mdescRight">移动构造：新设备继承源的UUID（身份随对象转移），源UUID置0（无效）  <br /></td></tr>
+<tr class="separator:a5d145a85f46dee7d3c94d4a9066c869c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6da81afd52002bc5b90e25599432951d" id="r_a6da81afd52002bc5b90e25599432951d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a6da81afd52002bc5b90e25599432951d">operator=</a> (<a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="memdesc:a6da81afd52002bc5b90e25599432951d"><td class="mdescLeft">&#160;</td><td class="mdescRight">移动赋值：UUID继承自源，源UUID置0（无效）  <br /></td></tr>
+<tr class="separator:a6da81afd52002bc5b90e25599432951d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a227f58f357e464c7699866378a89b7dc" id="r_a227f58f357e464c7699866378a89b7dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a227f58f357e464c7699866378a89b7dc">SetHeartbeatTimeout</a> (duration timeout)</td></tr>
 <tr class="memdesc:a227f58f357e464c7699866378a89b7dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置心跳超时时间  <br /></td></tr>
 <tr class="separator:a227f58f357e464c7699866378a89b7dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,6 +166,15 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:ada247da2f27c1e0c4862f526486c78f4" id="r_ada247da2f27c1e0c4862f526486c78f4"><td class="memItemLeft" align="right" valign="top">etl::string&lt; kMaxNameLength &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#ada247da2f27c1e0c4862f526486c78f4">name</a> () const</td></tr>
 <tr class="memdesc:ada247da2f27c1e0c4862f526486c78f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备名称  <br /></td></tr>
 <tr class="separator:ada247da2f27c1e0c4862f526486c78f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afba35a1dcfa7345a26ace72fa058c379" id="r_afba35a1dcfa7345a26ace72fa058c379"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#a0863ccbdab2c54f662053f0496ed09f4">u64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#afba35a1dcfa7345a26ace72fa058c379">uuid</a> () const</td></tr>
+<tr class="memdesc:afba35a1dcfa7345a26ace72fa058c379"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备唯一标识符  <br /></td></tr>
+<tr class="separator:afba35a1dcfa7345a26ace72fa058c379"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabf4f42581be1e528ff795b4954d9a58" id="r_aabf4f42581be1e528ff795b4954d9a58"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#aabf4f42581be1e528ff795b4954d9a58">operator==</a> (const <a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;other) const</td></tr>
+<tr class="memdesc:aabf4f42581be1e528ff795b4954d9a58"><td class="mdescLeft">&#160;</td><td class="mdescRight">相等比较：两个设备对象的UUID相同则视为同一设备  <br /></td></tr>
+<tr class="separator:aabf4f42581be1e528ff795b4954d9a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6762266bdd191a7f70f2a7e4d3a03412" id="r_a6762266bdd191a7f70f2a7e4d3a03412"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a6762266bdd191a7f70f2a7e4d3a03412">operator!=</a> (const <a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;other) const</td></tr>
+<tr class="memdesc:a6762266bdd191a7f70f2a7e4d3a03412"><td class="mdescLeft">&#160;</td><td class="mdescRight">不等比较  <br /></td></tr>
+<tr class="separator:a6762266bdd191a7f70f2a7e4d3a03412"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected 成员函数</h2></td></tr>
@@ -191,7 +213,7 @@ Protected 成员函数</h2></td></tr>
 </div>
 <h2 class="groupheader">构造及析构函数说明</h2>
 <a id="a769d2371dac57ae08f5a17948bbdefd6" name="a769d2371dac57ae08f5a17948bbdefd6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a769d2371dac57ae08f5a17948bbdefd6">&#9670;&#160;</a></span>Device()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a769d2371dac57ae08f5a17948bbdefd6">&#9670;&#160;</a></span>Device() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -229,6 +251,54 @@ Protected 成员函数</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22e0f01c25af7b2249c60764c190a60e" name="a22e0f01c25af7b2249c60764c190a60e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22e0f01c25af7b2249c60764c190a60e">&#9670;&#160;</a></span>Device() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rm::device::Device::Device </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>拷贝构造：新设备获得全新UUID（拷贝产生独立设备），状态重置为未知 </p>
+
+</div>
+</div>
+<a id="a5d145a85f46dee7d3c94d4a9066c869c" name="a5d145a85f46dee7d3c94d4a9066c869c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d145a85f46dee7d3c94d4a9066c869c">&#9670;&#160;</a></span>Device() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rm::device::Device::Device </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>移动构造：新设备继承源的UUID（身份随对象转移），源UUID置0（无效） </p>
 
 </div>
 </div>
@@ -286,6 +356,94 @@ Protected 成员函数</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>返回</dt><dd>设备的当前状态 </dd></dl>
+
+</div>
+</div>
+<a id="a6762266bdd191a7f70f2a7e4d3a03412" name="a6762266bdd191a7f70f2a7e4d3a03412"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6762266bdd191a7f70f2a7e4d3a03412">&#9670;&#160;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rm::device::Device::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>不等比较 </p>
+
+</div>
+</div>
+<a id="af2e07a67e6895a52cd8fdc47230d8e26" name="af2e07a67e6895a52cd8fdc47230d8e26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2e07a67e6895a52cd8fdc47230d8e26">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp; rm::device::Device::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>拷贝赋值：UUID不变（对象身份已确立），更新配置并重置运行状态 </p>
+
+</div>
+</div>
+<a id="a6da81afd52002bc5b90e25599432951d" name="a6da81afd52002bc5b90e25599432951d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6da81afd52002bc5b90e25599432951d">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp; rm::device::Device::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>移动赋值：UUID继承自源，源UUID置0（无效） </p>
+
+</div>
+</div>
+<a id="aabf4f42581be1e528ff795b4954d9a58" name="aabf4f42581be1e528ff795b4954d9a58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabf4f42581be1e528ff795b4954d9a58">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rm::device::Device::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>相等比较：两个设备对象的UUID相同则视为同一设备 </p>
 
 </div>
 </div>
@@ -368,6 +526,26 @@ Protected 成员函数</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="afba35a1dcfa7345a26ace72fa058c379" name="afba35a1dcfa7345a26ace72fa058c379"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afba35a1dcfa7345a26ace72fa058c379">&#9670;&#160;</a></span>uuid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#a0863ccbdab2c54f662053f0496ed09f4">u64</a> rm::device::Device::uuid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取设备唯一标识符 </p>
+<dl class="section return"><dt>返回</dt><dd>设备UUID，每个设备对象在构造时自动分配，全局唯一且不重复 </dd></dl>
 
 </div>
 </div>

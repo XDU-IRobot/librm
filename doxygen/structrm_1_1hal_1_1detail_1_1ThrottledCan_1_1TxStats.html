@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: rm::hal::detail::ThrottledCan&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::TxStats结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structrm_1_1hal_1_1detail_1_1ThrottledCan_1_1TxStats.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="structrm_1_1hal_1_1detail_1_1ThrottledCan_1_1TxStats-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">rm::hal::detail::ThrottledCan&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::TxStats结构体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>流量统计快照（每秒刷新一次）  
+ <a href="structrm_1_1hal_1_1detail_1_1ThrottledCan_1_1TxStats.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="throttled__can_8hpp_source.html">throttled_can.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a545d8401b46da9086f5653a5079136b3" id="r_a545d8401b46da9086f5653a5079136b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1hal_1_1detail_1_1ThrottledCan_1_1TxStats.html#a545d8401b46da9086f5653a5079136b3">tx_fps</a> {0.0f}</td></tr>
+<tr class="memdesc:a545d8401b46da9086f5653a5079136b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">实际发送帧率（帧/秒）  <br /></td></tr>
+<tr class="separator:a545d8401b46da9086f5653a5079136b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24e9c3953e9dd0e433eda28507fb8195" id="r_a24e9c3953e9dd0e433eda28507fb8195"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1hal_1_1detail_1_1ThrottledCan_1_1TxStats.html#a24e9c3953e9dd0e433eda28507fb8195">enqueue_fps</a> {0.0f}</td></tr>
+<tr class="memdesc:a24e9c3953e9dd0e433eda28507fb8195"><td class="mdescLeft">&#160;</td><td class="mdescRight">入队帧率（帧/秒，含成功+被丢弃的）  <br /></td></tr>
+<tr class="separator:a24e9c3953e9dd0e433eda28507fb8195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25e82e9dea041a611eaa0e473b71d815" id="r_a25e82e9dea041a611eaa0e473b71d815"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1hal_1_1detail_1_1ThrottledCan_1_1TxStats.html#a25e82e9dea041a611eaa0e473b71d815">drop_full_fps</a> {0.0f}</td></tr>
+<tr class="memdesc:a25e82e9dea041a611eaa0e473b71d815"><td class="mdescLeft">&#160;</td><td class="mdescRight">因队列满被丢弃的帧率（帧/秒）  <br /></td></tr>
+<tr class="separator:a25e82e9dea041a611eaa0e473b71d815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf7759a6a74f3779cf2d6ccfadbcd0fe" id="r_acf7759a6a74f3779cf2d6ccfadbcd0fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1hal_1_1detail_1_1ThrottledCan_1_1TxStats.html#acf7759a6a74f3779cf2d6ccfadbcd0fe">drop_expired_fps</a> {0.0f}</td></tr>
+<tr class="memdesc:acf7759a6a74f3779cf2d6ccfadbcd0fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">因超过 deadline 被丢弃的帧率（帧/秒）  <br /></td></tr>
+<tr class="separator:acf7759a6a74f3779cf2d6ccfadbcd0fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf3b71234b98c6802da7570439229f11" id="r_abf3b71234b98c6802da7570439229f11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1hal_1_1detail_1_1ThrottledCan_1_1TxStats.html#abf3b71234b98c6802da7570439229f11">drop_total_fps</a> {0.0f}</td></tr>
+<tr class="memdesc:abf3b71234b98c6802da7570439229f11"><td class="mdescLeft">&#160;</td><td class="mdescRight">总丢弃帧率（帧/秒）  <br /></td></tr>
+<tr class="separator:abf3b71234b98c6802da7570439229f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdb15f9ab7cf602b9da4772e125201d0" id="r_abdb15f9ab7cf602b9da4772e125201d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1hal_1_1detail_1_1ThrottledCan_1_1TxStats.html#abdb15f9ab7cf602b9da4772e125201d0">peak_queue_depth</a> {0}</td></tr>
+<tr class="memdesc:abdb15f9ab7cf602b9da4772e125201d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">统计周期内队列深度峰值  <br /></td></tr>
+<tr class="separator:abdb15f9ab7cf602b9da4772e125201d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae29ea981193e80a32e4a4be97c030003" id="r_ae29ea981193e80a32e4a4be97c030003"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1hal_1_1detail_1_1ThrottledCan_1_1TxStats.html#ae29ea981193e80a32e4a4be97c030003">avg_queue_depth</a> {0.0f}</td></tr>
+<tr class="memdesc:ae29ea981193e80a32e4a4be97c030003"><td class="mdescLeft">&#160;</td><td class="mdescRight">统计周期内队列深度均值  <br /></td></tr>
+<tr class="separator:ae29ea981193e80a32e4a4be97c030003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt;<br />
+struct rm::hal::detail::ThrottledCan&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::TxStats</div><p>流量统计快照（每秒刷新一次） </p>
+</div><h2 class="groupheader">类成员变量说明</h2>
+<a id="ae29ea981193e80a32e4a4be97c030003" name="ae29ea981193e80a32e4a4be97c030003"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae29ea981193e80a32e4a4be97c030003">&#9670;&#160;</a></span>avg_queue_depth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::TxStats::avg_queue_depth {0.0f}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>统计周期内队列深度均值 </p>
+
+</div>
+</div>
+<a id="acf7759a6a74f3779cf2d6ccfadbcd0fe" name="acf7759a6a74f3779cf2d6ccfadbcd0fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf7759a6a74f3779cf2d6ccfadbcd0fe">&#9670;&#160;</a></span>drop_expired_fps</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::TxStats::drop_expired_fps {0.0f}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>因超过 deadline 被丢弃的帧率（帧/秒） </p>
+
+</div>
+</div>
+<a id="a25e82e9dea041a611eaa0e473b71d815" name="a25e82e9dea041a611eaa0e473b71d815"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25e82e9dea041a611eaa0e473b71d815">&#9670;&#160;</a></span>drop_full_fps</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::TxStats::drop_full_fps {0.0f}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>因队列满被丢弃的帧率（帧/秒） </p>
+
+</div>
+</div>
+<a id="abf3b71234b98c6802da7570439229f11" name="abf3b71234b98c6802da7570439229f11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf3b71234b98c6802da7570439229f11">&#9670;&#160;</a></span>drop_total_fps</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::TxStats::drop_total_fps {0.0f}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>总丢弃帧率（帧/秒） </p>
+
+</div>
+</div>
+<a id="a24e9c3953e9dd0e433eda28507fb8195" name="a24e9c3953e9dd0e433eda28507fb8195"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24e9c3953e9dd0e433eda28507fb8195">&#9670;&#160;</a></span>enqueue_fps</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::TxStats::enqueue_fps {0.0f}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>入队帧率（帧/秒，含成功+被丢弃的） </p>
+
+</div>
+</div>
+<a id="abdb15f9ab7cf602b9da4772e125201d0" name="abdb15f9ab7cf602b9da4772e125201d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdb15f9ab7cf602b9da4772e125201d0">&#9670;&#160;</a></span>peak_queue_depth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::TxStats::peak_queue_depth {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>统计周期内队列深度峰值 </p>
+
+</div>
+</div>
+<a id="a545d8401b46da9086f5653a5079136b3" name="a545d8401b46da9086f5653a5079136b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a545d8401b46da9086f5653a5079136b3">&#9670;&#160;</a></span>tx_fps</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::TxStats::tx_fps {0.0f}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>实际发送帧率（帧/秒） </p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>src/librm/hal/<a class="el" href="throttled__can_8hpp_source.html">throttled_can.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1hal.html">hal</a></li><li class="navelem"><a class="el" href="namespacerm_1_1hal_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">ThrottledCan</a></li><li class="navelem"><a class="el" href="structrm_1_1hal_1_1detail_1_1ThrottledCan_1_1TxStats.html">TxStats</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -17,6 +17,8 @@ var namespacerm_1_1device =
     [ "Go8010Motor", "classrm_1_1device_1_1Go8010Motor.html", "classrm_1_1device_1_1Go8010Motor" ],
     [ "HipnucImu", "classrm_1_1device_1_1HipnucImu.html", "classrm_1_1device_1_1HipnucImu" ],
     [ "HipnucImuCan", "classrm_1_1device_1_1HipnucImuCan.html", "classrm_1_1device_1_1HipnucImuCan" ],
+    [ "HiWonderServo", "classrm_1_1device_1_1HiWonderServo.html", "classrm_1_1device_1_1HiWonderServo" ],
+    [ "Ht04Motor", "classrm_1_1device_1_1Ht04Motor.html", "classrm_1_1device_1_1Ht04Motor" ],
     [ "IST8310", "classrm_1_1device_1_1IST8310.html", "classrm_1_1device_1_1IST8310" ],
     [ "JyMe02Can", "classrm_1_1device_1_1JyMe02Can.html", "classrm_1_1device_1_1JyMe02Can" ],
     [ "LkMotor", "classrm_1_1device_1_1LkMotor.html", "classrm_1_1device_1_1LkMotor" ],
@@ -144,5 +146,5 @@ var namespacerm_1_1device =
     [ "kRefProtocolFrameMaxLen", "namespacerm_1_1device.html#adbe7387e1790e7f6abe48808605e870b", null ],
     [ "kRefProtocolHeaderLen", "namespacerm_1_1device.html#ae901b119dde1ffa28221788d22ff284c", null ],
     [ "kRefProtocolHeaderSof", "namespacerm_1_1device.html#ab0c6e6d96348cc9c975ca338a3d74bc2", null ],
-    [ "rx_callback_map_emotor", "namespacerm_1_1device.html#ac08ce60f45a779194f2ad543a544d38b", null ]
+    [ "rx_callback_map_emotor", "namespacerm_1_1device.html#ae43d4e3386f456812c87d0b250749529", null ]
 ];

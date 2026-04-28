@@ -3,7 +3,7 @@ var classrm_1_1device_1_1Go8010Motor =
     [ "Go8010Motor", "classrm_1_1device_1_1Go8010Motor.html#a2da8770e0eb72a1e6ac3eefec924a880", null ],
     [ "~Go8010Motor", "classrm_1_1device_1_1Go8010Motor.html#a7e889f7a91c598c89c7336349caaac76", null ],
     [ "pos", "classrm_1_1device_1_1Go8010Motor.html#a58472e7ecdf2f413a1d5f9bb00d3d5f0", null ],
-    [ "RxCallback", "classrm_1_1device_1_1Go8010Motor.html#a05fab4ab3ea31b33ccc485ff31481ffb", null ],
+    [ "RxCallback", "classrm_1_1device_1_1Go8010Motor.html#a6d1278316d8d833988e157adf772360b", null ],
     [ "SetMitCommand", "classrm_1_1device_1_1Go8010Motor.html#aca99616177ae078807d0c9bcc7d62321", null ],
     [ "tau", "classrm_1_1device_1_1Go8010Motor.html#ad206b8af7ebdfb66aedf22b7a1a55047", null ],
     [ "vel", "classrm_1_1device_1_1Go8010Motor.html#a7288469f59f2af9b130f3faf8138ab1a", null ],

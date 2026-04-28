@@ -22,6 +22,8 @@ var annotated_dup =
         [ "Go8010Motor", "classrm_1_1device_1_1Go8010Motor.html", "classrm_1_1device_1_1Go8010Motor" ],
         [ "HipnucImu", "classrm_1_1device_1_1HipnucImu.html", "classrm_1_1device_1_1HipnucImu" ],
         [ "HipnucImuCan", "classrm_1_1device_1_1HipnucImuCan.html", "classrm_1_1device_1_1HipnucImuCan" ],
+        [ "HiWonderServo", "classrm_1_1device_1_1HiWonderServo.html", "classrm_1_1device_1_1HiWonderServo" ],
+        [ "Ht04Motor", "classrm_1_1device_1_1Ht04Motor.html", "classrm_1_1device_1_1Ht04Motor" ],
         [ "IST8310", "classrm_1_1device_1_1IST8310.html", "classrm_1_1device_1_1IST8310" ],
         [ "JyMe02Can", "classrm_1_1device_1_1JyMe02Can.html", "classrm_1_1device_1_1JyMe02Can" ],
         [ "LkMotor", "classrm_1_1device_1_1LkMotor.html", "classrm_1_1device_1_1LkMotor" ],
@@ -50,6 +52,9 @@ var annotated_dup =
         [ "ZdtStepper", "classrm_1_1device_1_1ZdtStepper.html", "classrm_1_1device_1_1ZdtStepper" ]
       ] ],
       [ "hal", "namespacerm_1_1hal.html", [
+        [ "detail", "namespacerm_1_1hal_1_1detail.html", [
+          [ "ThrottledCan", "classrm_1_1hal_1_1detail_1_1ThrottledCan.html", "classrm_1_1hal_1_1detail_1_1ThrottledCan" ]
+        ] ],
         [ "linux_", "namespacerm_1_1hal_1_1linux__.html", [
           [ "Serial", "classrm_1_1hal_1_1linux___1_1Serial.html", "classrm_1_1hal_1_1linux___1_1Serial" ],
           [ "SocketCan", "classrm_1_1hal_1_1linux___1_1SocketCan.html", "classrm_1_1hal_1_1linux___1_1SocketCan" ],
@@ -58,18 +63,26 @@ var annotated_dup =
         [ "stm32", "namespacerm_1_1hal_1_1stm32.html", [
           [ "BxCan", "classrm_1_1hal_1_1stm32_1_1BxCan.html", "classrm_1_1hal_1_1stm32_1_1BxCan" ],
           [ "I2cDevice", "classrm_1_1hal_1_1stm32_1_1I2cDevice.html", "classrm_1_1hal_1_1stm32_1_1I2cDevice" ],
+          [ "Mcp2515", "classrm_1_1hal_1_1stm32_1_1Mcp2515.html", "classrm_1_1hal_1_1stm32_1_1Mcp2515" ],
           [ "Pin", "classrm_1_1hal_1_1stm32_1_1Pin.html", "classrm_1_1hal_1_1stm32_1_1Pin" ],
           [ "Spi", "classrm_1_1hal_1_1stm32_1_1Spi.html", "classrm_1_1hal_1_1stm32_1_1Spi" ],
           [ "SpiDevice", "classrm_1_1hal_1_1stm32_1_1SpiDevice.html", "classrm_1_1hal_1_1stm32_1_1SpiDevice" ],
-          [ "ThrottledBxCan", "classrm_1_1hal_1_1stm32_1_1ThrottledBxCan.html", "classrm_1_1hal_1_1stm32_1_1ThrottledBxCan" ],
-          [ "Uart", "classrm_1_1hal_1_1stm32_1_1Uart.html", "classrm_1_1hal_1_1stm32_1_1Uart" ]
+          [ "Uart", "classrm_1_1hal_1_1stm32_1_1Uart.html", "classrm_1_1hal_1_1stm32_1_1Uart" ],
+          [ "UartBase", "classrm_1_1hal_1_1stm32_1_1UartBase.html", "classrm_1_1hal_1_1stm32_1_1UartBase" ]
         ] ],
+        [ "AsyncReadable", "classrm_1_1hal_1_1AsyncReadable.html", "classrm_1_1hal_1_1AsyncReadable" ],
+        [ "AsyncSerialInterface", "classrm_1_1hal_1_1AsyncSerialInterface.html", null ],
+        [ "AsyncTxSyncRxSerialInterface", "classrm_1_1hal_1_1AsyncTxSyncRxSerialInterface.html", null ],
+        [ "AsyncWritable", "classrm_1_1hal_1_1AsyncWritable.html", "classrm_1_1hal_1_1AsyncWritable" ],
         [ "CanFrame", "structrm_1_1hal_1_1CanFrame.html", "structrm_1_1hal_1_1CanFrame" ],
         [ "CanInterface", "classrm_1_1hal_1_1CanInterface.html", "classrm_1_1hal_1_1CanInterface" ],
         [ "PinInterface", "classrm_1_1hal_1_1PinInterface.html", "classrm_1_1hal_1_1PinInterface" ],
         [ "PollingTimer", "classrm_1_1hal_1_1PollingTimer.html", "classrm_1_1hal_1_1PollingTimer" ],
-        [ "SerialInterface", "classrm_1_1hal_1_1SerialInterface.html", "classrm_1_1hal_1_1SerialInterface" ],
+        [ "SerialInterface", "classrm_1_1hal_1_1SerialInterface.html", null ],
         [ "SpiInterface", "classrm_1_1hal_1_1SpiInterface.html", "classrm_1_1hal_1_1SpiInterface" ],
+        [ "SyncReadable", "classrm_1_1hal_1_1SyncReadable.html", "classrm_1_1hal_1_1SyncReadable" ],
+        [ "SyncSerialInterface", "classrm_1_1hal_1_1SyncSerialInterface.html", null ],
+        [ "SyncWritable", "classrm_1_1hal_1_1SyncWritable.html", "classrm_1_1hal_1_1SyncWritable" ],
         [ "TimerInterface", "classrm_1_1hal_1_1TimerInterface.html", "classrm_1_1hal_1_1TimerInterface" ]
       ] ],
       [ "modules", "namespacerm_1_1modules.html", [
@@ -103,6 +116,7 @@ var annotated_dup =
         [ "BuzzerNote", "structrm_1_1modules_1_1BuzzerNote.html", "structrm_1_1modules_1_1BuzzerNote" ],
         [ "Control", "classrm_1_1modules_1_1Control.html", null ],
         [ "EkfAhrs", "classrm_1_1modules_1_1EkfAhrs.html", "classrm_1_1modules_1_1EkfAhrs" ],
+        [ "EncoderCounter", "classrm_1_1modules_1_1EncoderCounter.html", "classrm_1_1modules_1_1EncoderCounter" ],
         [ "EulerAngle", "structrm_1_1modules_1_1EulerAngle.html", "structrm_1_1modules_1_1EulerAngle" ],
         [ "FdCanTransport", "classrm_1_1modules_1_1FdCanTransport.html", "classrm_1_1modules_1_1FdCanTransport" ],
         [ "ImuData6Dof", "structrm_1_1modules_1_1ImuData6Dof.html", "structrm_1_1modules_1_1ImuData6Dof" ],

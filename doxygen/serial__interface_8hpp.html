@@ -99,18 +99,39 @@ $(document).ready(function(){initNavTree('serial__interface_8hpp.html',''); init
 </div><!--header-->
 <div class="contents">
 
-<p>串口的接口类  
+<p>串口 HAL 能力接口定义  
 <a href="#details">更多...</a></p>
 <div class="textblock"><code>#include &lt;functional&gt;</code><br />
-<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;etl/span.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="typedefs_8hpp_source.html">librm/core/typedefs.hpp</a>&quot;</code><br />
 </div>
 <p><a href="serial__interface_8hpp_source.html">浏览源代码.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SyncWritable.html">rm::hal::SyncWritable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">同步写接口  <a href="classrm_1_1hal_1_1SyncWritable.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1AsyncWritable.html">rm::hal::AsyncWritable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">异步写接口  <a href="classrm_1_1hal_1_1AsyncWritable.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SyncReadable.html">rm::hal::SyncReadable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">同步读接口  <a href="classrm_1_1hal_1_1SyncReadable.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1AsyncReadable.html">rm::hal::AsyncReadable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">异步读接口  <a href="classrm_1_1hal_1_1AsyncReadable.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SyncSerialInterface.html">rm::hal::SyncSerialInterface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">同步写 + 同步读  <a href="classrm_1_1hal_1_1SyncSerialInterface.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SerialInterface.html">rm::hal::SerialInterface</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">串口接口类  <a href="classrm_1_1hal_1_1SerialInterface.html#details">更多...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">同步写 + 异步读（最常用的嵌入式串口组合）  <a href="classrm_1_1hal_1_1SerialInterface.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1AsyncTxSyncRxSerialInterface.html">rm::hal::AsyncTxSyncRxSerialInterface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">异步写 + 同步读  <a href="classrm_1_1hal_1_1AsyncTxSyncRxSerialInterface.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1AsyncSerialInterface.html">rm::hal::AsyncSerialInterface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">异步写 + 异步读  <a href="classrm_1_1hal_1_1AsyncSerialInterface.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -122,12 +143,12 @@ $(document).ready(function(){initNavTree('serial__interface_8hpp.html',''); init
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 类型定义</h2></td></tr>
-<tr class="memitem:ab6c25fb295d0b957ffb1181fa48b787c" id="r_ab6c25fb295d0b957ffb1181fa48b787c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1hal.html#ab6c25fb295d0b957ffb1181fa48b787c">rm::hal::SerialRxCallbackFunction</a> = std::function&lt; void(const std::vector&lt; <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> &gt; &amp;, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>)&gt;</td></tr>
-<tr class="memdesc:ab6c25fb295d0b957ffb1181fa48b787c"><td class="mdescLeft">&#160;</td><td class="mdescRight">串口接收完成回调函数类型，传入的参数分别为接收到的数据和数据长度  <br /></td></tr>
-<tr class="separator:ab6c25fb295d0b957ffb1181fa48b787c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4258f0687c3c78d6b7c2b2399ac3febd" id="r_a4258f0687c3c78d6b7c2b2399ac3febd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1hal.html#a4258f0687c3c78d6b7c2b2399ac3febd">rm::hal::SerialRxCallbackFunction</a> = std::function&lt; void(etl::span&lt; const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> &gt;)&gt;</td></tr>
+<tr class="memdesc:a4258f0687c3c78d6b7c2b2399ac3febd"><td class="mdescLeft">&#160;</td><td class="mdescRight">串口接收完成回调函数类型  <br /></td></tr>
+<tr class="separator:a4258f0687c3c78d6b7c2b2399ac3febd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><p>串口的接口类 </p>
+<div class="textblock"><p>串口 HAL 能力接口定义 </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

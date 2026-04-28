@@ -2,7 +2,7 @@ var classrm_1_1device_1_1STP23L =
 [
     [ "PointData", "structrm_1_1device_1_1STP23L_1_1PointData.html", "structrm_1_1device_1_1STP23L_1_1PointData" ],
     [ "STP23L", "classrm_1_1device_1_1STP23L.html#aa5a3d7040d57512efda5d2c43b9526ca", null ],
-    [ "STP23L", "classrm_1_1device_1_1STP23L.html#a015fc0637e58aa4daf19154dee21ef83", null ],
+    [ "STP23L", "classrm_1_1device_1_1STP23L.html#a369d338cb42ed871eb0605ea3ccae6ff", null ],
     [ "Begin", "classrm_1_1device_1_1STP23L.html#a12c107e2011aeb5a427693f7ca3bfe20", null ],
     [ "confidence", "classrm_1_1device_1_1STP23L.html#a0970dc81a5f74eeb6183835c5827fd16", null ],
     [ "distance", "classrm_1_1device_1_1STP23L.html#a14b06cedf3e25c39e3e9633c8ce36242", null ],

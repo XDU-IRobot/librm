@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>librm: rm::modules::ThrottledPrioQueue&lt; T, MaxQueueSize &gt;::QueueItem结构体 参考</title>
+<title>librm: rm::modules::ThrottledPrioQueue&lt; T, MaxQueueSize, Policy &gt;::QueueItem结构体 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('structrm_1_1modules_1_1ThrottledPrioQu
 <a href="#pub-methods">Public 成员函数</a> &#124;
 <a href="#pub-attribs">Public 属性</a> &#124;
 <a href="structrm_1_1modules_1_1ThrottledPrioQueue_1_1QueueItem-members.html">所有成员列表</a>  </div>
-  <div class="headertitle"><div class="title">rm::modules::ThrottledPrioQueue&lt; T, MaxQueueSize &gt;::QueueItem结构体 参考</div></div>
+  <div class="headertitle"><div class="title">rm::modules::ThrottledPrioQueue&lt; T, MaxQueueSize, Policy &gt;::QueueItem结构体 参考</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -103,34 +103,37 @@ $(document).ready(function(){initNavTree('structrm_1_1modules_1_1ThrottledPrioQu
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a8e6554a110dd0faef132831d7a2b0a72" id="r_a8e6554a110dd0faef132831d7a2b0a72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1modules_1_1ThrottledPrioQueue_1_1QueueItem.html#a8e6554a110dd0faef132831d7a2b0a72">operator&lt;</a> (<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1ThrottledPrioQueue_1_1QueueItem.html">QueueItem</a> &amp;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">other</a>) <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a></td></tr>
-<tr class="separator:a8e6554a110dd0faef132831d7a2b0a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a110f5fa6945b0704394b7d7d3bf6171e" id="r_a110f5fa6945b0704394b7d7d3bf6171e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1modules_1_1ThrottledPrioQueue_1_1QueueItem.html#a110f5fa6945b0704394b7d7d3bf6171e">operator&lt;</a> (<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1ThrottledPrioQueue_1_1QueueItem.html">QueueItem</a> &amp;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">other</a>) <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a></td></tr>
+<tr class="separator:a110f5fa6945b0704394b7d7d3bf6171e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public 属性</h2></td></tr>
-<tr class="memitem:addc95b41d53545766a357c890a9a6d68" id="r_addc95b41d53545766a357c890a9a6d68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1modules_1_1ThrottledPrioQueue_1_1QueueItem.html#addc95b41d53545766a357c890a9a6d68">payload</a></td></tr>
-<tr class="separator:addc95b41d53545766a357c890a9a6d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23739de82065be25d11bcc0b606fb87a" id="r_a23739de82065be25d11bcc0b606fb87a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1modules_1_1ThrottledPrioQueue_1_1QueueItem.html#a23739de82065be25d11bcc0b606fb87a">priority</a></td></tr>
-<tr class="memdesc:a23739de82065be25d11bcc0b606fb87a"><td class="mdescLeft">&#160;</td><td class="mdescRight">软件优先级 (数值越大，优先级越高)  <br /></td></tr>
-<tr class="separator:a23739de82065be25d11bcc0b606fb87a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b2644e16e8182b3c419a8bc5e6425ea" id="r_a7b2644e16e8182b3c419a8bc5e6425ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1modules_1_1ThrottledPrioQueue.html#a40bf74d87188eb3b0ef6138414cabcb6">time_point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1modules_1_1ThrottledPrioQueue_1_1QueueItem.html#a7b2644e16e8182b3c419a8bc5e6425ea">deadline</a></td></tr>
-<tr class="memdesc:a7b2644e16e8182b3c419a8bc5e6425ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">绝对截止时间点，超过此时间未发送则丢弃  <br /></td></tr>
-<tr class="separator:a7b2644e16e8182b3c419a8bc5e6425ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76d44c03c200fcae1f78364e60f7f7e6" id="r_a76d44c03c200fcae1f78364e60f7f7e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1modules_1_1ThrottledPrioQueue_1_1QueueItem.html#a76d44c03c200fcae1f78364e60f7f7e6">payload</a></td></tr>
+<tr class="separator:a76d44c03c200fcae1f78364e60f7f7e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1d6e84dc252fc6d903624c239a88ae3" id="r_af1d6e84dc252fc6d903624c239a88ae3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1modules_1_1ThrottledPrioQueue_1_1QueueItem.html#af1d6e84dc252fc6d903624c239a88ae3">priority</a></td></tr>
+<tr class="memdesc:af1d6e84dc252fc6d903624c239a88ae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">EDF 模式下的软件优先级（数值越大越高）；FIFO 模式下忽略  <br /></td></tr>
+<tr class="separator:af1d6e84dc252fc6d903624c239a88ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7223fc2c1dded60c8db8edae91a8ab4" id="r_ad7223fc2c1dded60c8db8edae91a8ab4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1modules_1_1ThrottledPrioQueue.html#a14982e99c31444c7351aead1878e904f">time_point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1modules_1_1ThrottledPrioQueue_1_1QueueItem.html#ad7223fc2c1dded60c8db8edae91a8ab4">deadline</a></td></tr>
+<tr class="memdesc:ad7223fc2c1dded60c8db8edae91a8ab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">绝对截止时间点，超过此时间未发送则丢弃  <br /></td></tr>
+<tr class="separator:ad7223fc2c1dded60c8db8edae91a8ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45e500b251e29cebaef5781dfd04fb11" id="r_a45e500b251e29cebaef5781dfd04fb11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1modules_1_1ThrottledPrioQueue_1_1QueueItem.html#a45e500b251e29cebaef5781dfd04fb11">enqueue_seq</a> {0}</td></tr>
+<tr class="memdesc:a45e500b251e29cebaef5781dfd04fb11"><td class="mdescLeft">&#160;</td><td class="mdescRight">入队序号，FIFO 模式下用于保证时序  <br /></td></tr>
+<tr class="separator:a45e500b251e29cebaef5781dfd04fb11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">成员函数说明</h2>
-<a id="a8e6554a110dd0faef132831d7a2b0a72" name="a8e6554a110dd0faef132831d7a2b0a72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e6554a110dd0faef132831d7a2b0a72">&#9670;&#160;</a></span>operator&lt;()</h2>
+<a id="a110f5fa6945b0704394b7d7d3bf6171e" name="a110f5fa6945b0704394b7d7d3bf6171e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a110f5fa6945b0704394b7d7d3bf6171e">&#9670;&#160;</a></span>operator&lt;()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">size_t</a> MaxQueueSize&gt; </div>
+template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">SchedulingPolicy</a> Policy = SchedulingPolicy::kPriorityFifo&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> <a class="el" href="classrm_1_1modules_1_1ThrottledPrioQueue.html">rm::modules::ThrottledPrioQueue</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxQueueSize</a> &gt;::QueueItem::operator&lt; </td>
+          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> <a class="el" href="classrm_1_1modules_1_1ThrottledPrioQueue.html">rm::modules::ThrottledPrioQueue</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxQueueSize</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">Policy</a> &gt;::QueueItem::operator&lt; </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1ThrottledPrioQueue_1_1QueueItem.html">QueueItem</a> &amp;&#160;</td>
           <td class="paramname"><em>other</em></td><td>)</td>
@@ -147,16 +150,16 @@ template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</
 </div>
 </div>
 <h2 class="groupheader">类成员变量说明</h2>
-<a id="a7b2644e16e8182b3c419a8bc5e6425ea" name="a7b2644e16e8182b3c419a8bc5e6425ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b2644e16e8182b3c419a8bc5e6425ea">&#9670;&#160;</a></span>deadline</h2>
+<a id="ad7223fc2c1dded60c8db8edae91a8ab4" name="ad7223fc2c1dded60c8db8edae91a8ab4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7223fc2c1dded60c8db8edae91a8ab4">&#9670;&#160;</a></span>deadline</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">size_t</a> MaxQueueSize&gt; </div>
+template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">SchedulingPolicy</a> Policy = SchedulingPolicy::kPriorityFifo&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrm_1_1modules_1_1ThrottledPrioQueue.html#a40bf74d87188eb3b0ef6138414cabcb6">time_point</a> <a class="el" href="classrm_1_1modules_1_1ThrottledPrioQueue.html">rm::modules::ThrottledPrioQueue</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxQueueSize</a> &gt;::QueueItem::deadline</td>
+          <td class="memname"><a class="el" href="classrm_1_1modules_1_1ThrottledPrioQueue.html#a14982e99c31444c7351aead1878e904f">time_point</a> <a class="el" href="classrm_1_1modules_1_1ThrottledPrioQueue.html">rm::modules::ThrottledPrioQueue</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxQueueSize</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">Policy</a> &gt;::QueueItem::deadline</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -165,37 +168,55 @@ template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</
 
 </div>
 </div>
-<a id="addc95b41d53545766a357c890a9a6d68" name="addc95b41d53545766a357c890a9a6d68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#addc95b41d53545766a357c890a9a6d68">&#9670;&#160;</a></span>payload</h2>
+<a id="a45e500b251e29cebaef5781dfd04fb11" name="a45e500b251e29cebaef5781dfd04fb11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45e500b251e29cebaef5781dfd04fb11">&#9670;&#160;</a></span>enqueue_seq</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">size_t</a> MaxQueueSize&gt; </div>
+template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">SchedulingPolicy</a> Policy = SchedulingPolicy::kPriorityFifo&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> <a class="el" href="classrm_1_1modules_1_1ThrottledPrioQueue.html">rm::modules::ThrottledPrioQueue</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxQueueSize</a> &gt;::QueueItem::payload</td>
+          <td class="memname"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> <a class="el" href="classrm_1_1modules_1_1ThrottledPrioQueue.html">rm::modules::ThrottledPrioQueue</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxQueueSize</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">Policy</a> &gt;::QueueItem::enqueue_seq {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>入队序号，FIFO 模式下用于保证时序 </p>
+
+</div>
+</div>
+<a id="a76d44c03c200fcae1f78364e60f7f7e6" name="a76d44c03c200fcae1f78364e60f7f7e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76d44c03c200fcae1f78364e60f7f7e6">&#9670;&#160;</a></span>payload</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">SchedulingPolicy</a> Policy = SchedulingPolicy::kPriorityFifo&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> <a class="el" href="classrm_1_1modules_1_1ThrottledPrioQueue.html">rm::modules::ThrottledPrioQueue</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxQueueSize</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">Policy</a> &gt;::QueueItem::payload</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a23739de82065be25d11bcc0b606fb87a" name="a23739de82065be25d11bcc0b606fb87a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23739de82065be25d11bcc0b606fb87a">&#9670;&#160;</a></span>priority</h2>
+<a id="af1d6e84dc252fc6d903624c239a88ae3" name="af1d6e84dc252fc6d903624c239a88ae3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1d6e84dc252fc6d903624c239a88ae3">&#9670;&#160;</a></span>priority</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">size_t</a> MaxQueueSize&gt; </div>
+template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">SchedulingPolicy</a> Policy = SchedulingPolicy::kPriorityFifo&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> <a class="el" href="classrm_1_1modules_1_1ThrottledPrioQueue.html">rm::modules::ThrottledPrioQueue</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxQueueSize</a> &gt;::QueueItem::priority</td>
+          <td class="memname"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> <a class="el" href="classrm_1_1modules_1_1ThrottledPrioQueue.html">rm::modules::ThrottledPrioQueue</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">MaxQueueSize</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">Policy</a> &gt;::QueueItem::priority</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>软件优先级 (数值越大，优先级越高) </p>
+<p>EDF 模式下的软件优先级（数值越大越高）；FIFO 模式下忽略 </p>
 
 </div>
 </div>

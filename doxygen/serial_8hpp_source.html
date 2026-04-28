@@ -133,18 +133,22 @@ $(document).ready(function(){initNavTree('serial_8hpp_source.html',''); initResi
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1hal.html">rm::hal</a> {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32) &amp;&amp; defined(HAL_UART_MODULE_ENABLED)</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">using </span>Serial = stm32::Uart;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX)</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">using </span>Serial = linux_::Serial;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}  <span class="comment">// namespace rm::hal</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HAL_UART_HPP</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32) &amp;&amp; defined(HAL_UART_MODULE_ENABLED)</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">template</span> &lt;rm::usize RxBufSize&gt;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">using </span>Serial = stm32::Uart&lt;RxBufSize&gt;;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#elif defined(LIBRM_PLATFORM_LINUX)</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">using </span>Serial = linux_::Serial;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}  <span class="comment">// namespace rm::hal</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HAL_UART_HPP</span></div>
 <div class="ttc" id="alinux_2serial_8hpp_html"><div class="ttname"><a href="linux_2serial_8hpp.html">serial.hpp</a></div><div class="ttdoc">串口类库</div></div>
 <div class="ttc" id="anamespacerm_1_1hal_html"><div class="ttname"><a href="namespacerm_1_1hal.html">rm::hal</a></div><div class="ttdef"><b>Definition</b> can.hpp:42</div></div>
-<div class="ttc" id="aserial__interface_8hpp_html"><div class="ttname"><a href="serial__interface_8hpp.html">serial_interface.hpp</a></div><div class="ttdoc">串口的接口类</div></div>
-<div class="ttc" id="auart_8hpp_html"><div class="ttname"><a href="uart_8hpp.html">uart.hpp</a></div></div>
+<div class="ttc" id="aserial__interface_8hpp_html"><div class="ttname"><a href="serial__interface_8hpp.html">serial_interface.hpp</a></div><div class="ttdoc">串口 HAL 能力接口定义</div></div>
+<div class="ttc" id="auart_8hpp_html"><div class="ttname"><a href="uart_8hpp.html">uart.hpp</a></div><div class="ttdoc">UART 类库</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,9 +1,9 @@
 var classrm_1_1device_1_1Referee =
 [
-    [ "RxCallback", "classrm_1_1device_1_1Referee.html#a18a2fa478031d27865ac165fc6001d2a", null ],
-    [ "Referee", "classrm_1_1device_1_1Referee.html#af9bb3f3aa18272c3e0054813256d8211", null ],
-    [ "AttachCallback", "classrm_1_1device_1_1Referee.html#a0b9ea6cedfddc1ccc1bc13d17a63347d", null ],
-    [ "data", "classrm_1_1device_1_1Referee.html#a4c1bf654d72f57a945d7f47afcbb54a3", null ],
-    [ "loss_rate", "classrm_1_1device_1_1Referee.html#a528458514bc299aaec290c28663ce578", null ],
-    [ "operator<<", "classrm_1_1device_1_1Referee.html#a33e0b343b424bd2a3d0a1f06120a591c", null ]
+    [ "RxCallback", "classrm_1_1device_1_1Referee.html#a6ecd860dccbeaf482ff4e6ed58c8c385", null ],
+    [ "Referee", "classrm_1_1device_1_1Referee.html#ae4c05dfc5d4b762de6b4f3ea2d452437", null ],
+    [ "AttachCallback", "classrm_1_1device_1_1Referee.html#ac133db7e0cefdab4851858a3a41bab53", null ],
+    [ "data", "classrm_1_1device_1_1Referee.html#a394c00939d348d7d89deea42ced9e906", null ],
+    [ "loss_rate", "classrm_1_1device_1_1Referee.html#a1e45efc697ea9a20a21a1f68c14e6d16", null ],
+    [ "operator<<", "classrm_1_1device_1_1Referee.html#a16fe501f6f0360f824b617a2532113d3", null ]
 ];

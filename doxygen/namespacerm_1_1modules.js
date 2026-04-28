@@ -13,6 +13,7 @@ var namespacerm_1_1modules =
     [ "BuzzerNote", "structrm_1_1modules_1_1BuzzerNote.html", "structrm_1_1modules_1_1BuzzerNote" ],
     [ "Control", "classrm_1_1modules_1_1Control.html", null ],
     [ "EkfAhrs", "classrm_1_1modules_1_1EkfAhrs.html", "classrm_1_1modules_1_1EkfAhrs" ],
+    [ "EncoderCounter", "classrm_1_1modules_1_1EncoderCounter.html", "classrm_1_1modules_1_1EncoderCounter" ],
     [ "EulerAngle", "structrm_1_1modules_1_1EulerAngle.html", "structrm_1_1modules_1_1EulerAngle" ],
     [ "FdCanTransport", "classrm_1_1modules_1_1FdCanTransport.html", "classrm_1_1modules_1_1FdCanTransport" ],
     [ "ImuData6Dof", "structrm_1_1modules_1_1ImuData6Dof.html", "structrm_1_1modules_1_1ImuData6Dof" ],
@@ -104,6 +105,11 @@ var namespacerm_1_1modules =
     [ "NoteFreqStandard", "namespacerm_1_1modules.html#aaa060bd699023f8871ba2f797ec96966", null ],
     [ "SlewLimiter", "namespacerm_1_1modules.html#afdde4eadf42314fbaa664c9ceeb156e9", null ],
     [ "VariableVariant", "namespacerm_1_1modules.html#a505824a195cc668747a2d3da18476445", null ],
+    [ "SchedulingPolicy", "namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916", [
+      [ "kEdf", "namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916a8b7c09bac3103269d320283b5ff573b0", null ],
+      [ "kFifo", "namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916a917b247c383f7b313975f83906d80a2d", null ],
+      [ "kPriorityFifo", "namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916a8b33fa5d9c9a10a7a474d112d87ff21e", null ]
+    ] ],
     [ "__attribute__", "namespacerm_1_1modules.html#aa7d4d0759cc6406efe21d811902fc3f7", null ],
     [ "CalculateNoteFreq", "namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582", null ],
     [ "Crc16", "namespacerm_1_1modules.html#ab851174228cf45480bd5b5ac0cadc0c0", null ],

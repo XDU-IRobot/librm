@@ -8,6 +8,7 @@ var dir_9bd6aa59caad6cbef13c0eefdd946af0 =
     [ "crc.cc", "crc_8cc.html", "crc_8cc" ],
     [ "crc.hpp", "crc_8hpp.html", "crc_8hpp" ],
     [ "dsp_filters.hpp", "dsp__filters_8hpp.html", "dsp__filters_8hpp" ],
+    [ "encoder_counter.hpp", "encoder__counter_8hpp.html", "encoder__counter_8hpp" ],
     [ "float16.cc", "float16_8cc.html", "float16_8cc" ],
     [ "float16.hpp", "float16_8hpp.html", "float16_8hpp" ],
     [ "keyboard_handler.hpp", "keyboard__handler_8hpp.html", "keyboard__handler_8hpp" ],

@@ -92,8 +92,7 @@ $(document).ready(function(){initNavTree('unitree__motor_8cc.html',''); initResi
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">命名空间</a> &#124;
-<a href="#var-members">变量</a>  </div>
+<a href="#namespaces">命名空间</a>  </div>
   <div class="headertitle"><div class="title">unitree_motor.cc 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
@@ -101,6 +100,7 @@ $(document).ready(function(){initNavTree('unitree__motor_8cc.html',''); initResi
 <p>宇树电机类库  
 <a href="#details">更多...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="unitree__motor_8hpp_source.html">unitree_motor.hpp</a>&quot;</code><br />
+<code>#include &lt;etl/span.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="serial__interface_8hpp_source.html">librm/hal/serial_interface.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="crc_8hpp_source.html">librm/modules/crc.hpp</a>&quot;</code><br />
 </div><table class="memberdecls">
@@ -110,42 +110,10 @@ $(document).ready(function(){initNavTree('unitree__motor_8cc.html',''); initResi
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacerm_1_1device" id="r_namespacerm_1_1device"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html">rm::device</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-变量</h2></td></tr>
-<tr class="memitem:ac4f31145ffceb4a2b87eb1e392b93373" id="r_ac4f31145ffceb4a2b87eb1e392b93373"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="classrm_1_1hal_1_1SerialInterface.html">rm::hal::SerialInterface</a> *, std::unordered_map&lt; <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">rm::u8</a>, std::function&lt; void(const std::vector&lt; <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">rm::u8</a> &gt; &amp;, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">rm::u16</a>)&gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unitree__motor_8cc.html#ac4f31145ffceb4a2b87eb1e392b93373">rx_callback_map</a></td></tr>
-<tr class="memdesc:ac4f31145ffceb4a2b87eb1e392b93373"><td class="mdescLeft">&#160;</td><td class="mdescRight">串口接收回调函数键值对  <br /></td></tr>
-<tr class="separator:ac4f31145ffceb4a2b87eb1e392b93373"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>宇树电机类库 </p>
-</div><h2 class="groupheader">变量说明</h2>
-<a id="ac4f31145ffceb4a2b87eb1e392b93373" name="ac4f31145ffceb4a2b87eb1e392b93373"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4f31145ffceb4a2b87eb1e392b93373">&#9670;&#160;</a></span>rx_callback_map</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unordered_map&lt;<a class="el" href="classrm_1_1hal_1_1SerialInterface.html">rm::hal::SerialInterface</a> *, std::unordered_map&lt;<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">rm::u8</a>, std::function&lt;void(const std::vector&lt;<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">rm::u8</a>&gt; &amp;, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">rm::u16</a>)&gt; &gt; &gt; rx_callback_map</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>串口接收回调函数键值对 </p>
-<dl class="section note"><dt>注解</dt><dd>用于存储串口接收回调函数 </dd>
-<dd>
-key: 串口对象指针 </dd>
-<dd>
-value: 电机ID和回调函数的键值对 </dd>
-<dd>
-key: 电机ID </dd>
-<dd>
-value: 回调函数 解释：相当于两个键对应一个值，第一个键是串口对象指针，第二个键是电机ID，值是回调函数，用于实现多个电机的回调函数 </dd></dl>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

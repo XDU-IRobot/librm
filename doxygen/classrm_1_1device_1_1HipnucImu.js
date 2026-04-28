@@ -1,7 +1,7 @@
 var classrm_1_1device_1_1HipnucImu =
 [
     [ "HipnucImu", "classrm_1_1device_1_1HipnucImu.html#afa101d2e593b3ef97e0b7524e8688eba", null ],
-    [ "HipnucImu", "classrm_1_1device_1_1HipnucImu.html#abd350ff11c5a31e69c3a5e5779caab05", null ],
+    [ "HipnucImu", "classrm_1_1device_1_1HipnucImu.html#a55c3b0c524ea9464cbcbca30492c9e0a", null ],
     [ "acc_x", "classrm_1_1device_1_1HipnucImu.html#a5ef2aaa358e5e90e5bb979b6c5abfad5", null ],
     [ "acc_y", "classrm_1_1device_1_1HipnucImu.html#a838c38322eda07786a89aa6fb54cc5a3", null ],
     [ "acc_z", "classrm_1_1device_1_1HipnucImu.html#afb8b1cacdbece367591d1455d62bf488", null ],
@@ -22,7 +22,7 @@ var classrm_1_1device_1_1HipnucImu =
     [ "quat_z", "classrm_1_1device_1_1HipnucImu.html#aaf0c6cff774a3096ef605a0831f5f05c", null ],
     [ "raw_data", "classrm_1_1device_1_1HipnucImu.html#ac8fb577ccdd4471f939be7abf498742c", null ],
     [ "roll", "classrm_1_1device_1_1HipnucImu.html#a97ea25c1abaadb756d8154fde939c69c", null ],
-    [ "RxCallback", "classrm_1_1device_1_1HipnucImu.html#a1a0c2df39a877de36a5698d3ea0deeaf", null ],
+    [ "RxCallback", "classrm_1_1device_1_1HipnucImu.html#aaa9169827bd3941991be4bac39f2b9e4", null ],
     [ "system_time", "classrm_1_1device_1_1HipnucImu.html#adb1bb314a50e9691e97fed7b7bf4b665", null ],
     [ "temperature", "classrm_1_1device_1_1HipnucImu.html#aad4f1080788fa78995efe0bc169e443d", null ],
     [ "yaw", "classrm_1_1device_1_1HipnucImu.html#a301e3a505caaabc9cef426c74f78b6de", null ]
