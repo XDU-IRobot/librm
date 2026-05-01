@@ -1,22 +1,22 @@
 var classrm_1_1device_1_1VT03 =
 [
     [ "KeyboardKey", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588e", [
-      [ "kW", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea27963ec968c1e151c78a1d7c8a97b178", null ],
-      [ "kS", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eac65dfb11fc5387999d90b7a3e1b70653", null ],
-      [ "kA", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea30f767aa191cd5d261e767fd78393607", null ],
-      [ "kD", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea64fa0b7138d2992f2e7daa5080eb5ed0", null ],
-      [ "kShift", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eaa754a0f863e3fadd8098162c48468399", null ],
-      [ "kCtrl", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eadcffe669929b11331740fc64036dc697", null ],
-      [ "kQ", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea1121352101e67451e27b8544fdc6575e", null ],
-      [ "kE", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eaa7db8559fb81d9b4a5b7cb3439f2f401", null ],
-      [ "kR", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eade41bdfe82600cdcf4e4ac08a10c7889", null ],
-      [ "kF", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea2e4b5626d52f8ce6e31680b40f2c9778", null ],
-      [ "kG", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea091eb6206c7543b67256e7dc4bf2dc48", null ],
-      [ "kZ", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eaca4d7439951bc76061bedb523255ff3d", null ],
-      [ "kX", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea0ac0dd65e82e143ab04d378a0133bf9e", null ],
-      [ "kC", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eaf73b7a14626c25aa554e2437ea3fc1df", null ],
-      [ "kV", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea63b39853c60d1092c257c1ab898bad0a", null ],
-      [ "kB", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea3e56c011b37f0bc78fb9eb175c1181c6", null ]
+      [ "kW", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eab71f6a9e8b96379c73396f4bcfaa1a43", null ],
+      [ "kS", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eac7cc35ee3871016ef0ff6c81c1326b1a", null ],
+      [ "kA", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eaf93ea68f42acc6084eaacf2f80c86c3d", null ],
+      [ "kD", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea16de5aa267cee3a3ca31a4e9fdbae6f3", null ],
+      [ "kShift", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eab3e70da9b94000cb939e5885db088ffb", null ],
+      [ "kCtrl", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea4987db34476ee4fe5bd27745bdae8684", null ],
+      [ "kQ", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea989a9d9c5fa48f73c6e6adcdfc095260", null ],
+      [ "kE", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea875e2b80041fe36a3e1ad8ada080c8c3", null ],
+      [ "kR", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea914fb9e6b3015e4c4af6598d8ddfd6a7", null ],
+      [ "kF", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eaa6ca22c5de57db86b5f07c4235b88232", null ],
+      [ "kG", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ead79572811d92a7ff5100f5a42bc83b46", null ],
+      [ "kZ", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea5939edf8a801ff7244df3221688f7f09", null ],
+      [ "kX", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea911405b0b8fe32a8415256ac66e30c1d", null ],
+      [ "kC", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eaee04f20a661c69ba8ce988528854bf16", null ],
+      [ "kV", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea58a5d0c2e5f5de7b9711f117a81d26a0", null ],
+      [ "kB", "classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588ea0664b0df4cd41406dd5194ab969381c4", null ]
     ] ],
     [ "SwitchPosition", "classrm_1_1device_1_1VT03.html#a808fdce243f40b7297501d3da15cfb75", [
       [ "C", "classrm_1_1device_1_1VT03.html#a808fdce243f40b7297501d3da15cfb75a0d61f8370cad1d412f80b84d143e1257", null ],

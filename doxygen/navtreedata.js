@@ -71,7 +71,7 @@ var NAVTREEINDEX =
 "classrm_1_1device_1_1DirectDriveMotor.html#accc943190a00ccb07ea2035785ad443a",
 "classrm_1_1device_1_1HiWonderServo.html#aebb13800204b5893fa546ba83ccefcdd",
 "classrm_1_1device_1_1LkMotor.html#acfb1982263eb9da04442e5d855d42f9e",
-"classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eac65dfb11fc5387999d90b7a3e1b70653",
+"classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eab71f6a9e8b96379c73396f4bcfaa1a43",
 "classrm_1_1hal_1_1linux___1_1TimerFd.html#ae87f46ded5daec691e51c0f6e1b3558f",
 "classrm_1_1modules_1_1FdCanTransport.html#ad55a8332045199df96f7446ea85476ee",
 "classrm_1_1modules_1_1PID.html#af993d4160e745ee8203047d93938b359",
