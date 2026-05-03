@@ -240,6 +240,11 @@ class DmMotor final : public CanDevice {
     torque_ = IntToFloat(t_int, -settings_.t_max, settings_.t_max, 12);
     mos_temperature_ = msg->data[6];
     coil_temperature_ = msg->data[7];
+    if (reversed_) {
+      position_ = -position_;
+      speed_ = -speed_;
+      torque_ = -torque_;
+    }
   }
 
   DmMotorSettings<control_mode> settings_{};

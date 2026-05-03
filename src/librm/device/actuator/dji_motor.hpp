@@ -294,6 +294,11 @@ class DjiMotor : public CanDevice, protected DjiMotorBase {
     this->rpm_ = (msg->data[2] << 8) | msg->data[3];
     this->current_ = (msg->data[4] << 8) | msg->data[5];
     this->temperature_ = msg->data[6];
+    if (reversed_) {
+      this->encoder = this->kMaxEncoderValue - this->encoder;
+      this->rpm_ = -this->rpm_;
+      this->current = -this->current_;
+    }
   }
 
   u16 id_{};         ///< 电机ID
