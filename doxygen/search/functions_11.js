@@ -11,5 +11,5 @@ var searchData=
   ['quat_5fz_8',['quat_z',['../classrm_1_1device_1_1HipnucImu.html#aaf0c6cff774a3096ef605a0831f5f05c',1,'rm::device::HipnucImu::quat_z()'],['../classrm_1_1device_1_1HipnucImuCan.html#a88f2ad1d8dca08d4b37e6871bc58128e',1,'rm::device::HipnucImuCan::quat_z()']]],
   ['quaternion_9',['quaternion',['../classrm_1_1modules_1_1AhrsInterface.html#aab7f1c60cd1e465e47f8b945275549c7',1,'rm::modules::AhrsInterface::quaternion()'],['../classrm_1_1modules_1_1EkfAhrs.html#ae80bafdf9134035d584943c2d41ea24c',1,'rm::modules::EkfAhrs::quaternion()'],['../classrm_1_1modules_1_1MahonyAhrs.html#a50ae6252fe2c32bbeba6145a7842d642',1,'rm::modules::MahonyAhrs::quaternion()']]],
   ['quattoeuler_10',['QuatToEuler',['../namespacerm_1_1modules.html#ac1abcdc63fe24c52620c5895231de53c',1,'rm::modules']]],
-  ['queue_11',['queue',['../classrm_1_1hal_1_1detail_1_1ThrottledCan.html#af605bba3e1cf93e6bbe89e9d50c8072e',1,'rm::hal::detail::ThrottledCan']]]
+  ['queue_11',['queue',['../classrm_1_1hal_1_1detail_1_1ThrottledCan.html#ae302236c2df8922dbea2bcc703363dd1',1,'rm::hal::detail::ThrottledCan']]]
 ];

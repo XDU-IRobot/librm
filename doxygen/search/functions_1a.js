@@ -8,7 +8,7 @@ var searchData=
   ['_7ecandevice_5',['~CanDevice',['../classrm_1_1device_1_1CanDevice.html#a4229c701dd205e1e847560c885e65560',1,'rm::device::CanDevice']]],
   ['_7ecaninterface_6',['~CanInterface',['../classrm_1_1hal_1_1CanInterface.html#a25b2c5d757a5abfd69c86d56c32a4e58',1,'rm::hal::CanInterface']]],
   ['_7edevice_7',['~Device',['../classrm_1_1device_1_1Device.html#abc47f697e77010da09e8449f3d5a9094',1,'rm::device::Device']]],
-  ['_7edjimotor_8',['~DjiMotor',['../classrm_1_1device_1_1DjiMotor.html#a93fbd992ad96f1b6166eba43dec93bd6',1,'rm::device::DjiMotor']]],
+  ['_7edjimotor_8',['~DjiMotor',['../classrm_1_1device_1_1DjiMotor.html#a6a16984ef12c17ca2b2e14ec3d0fd04d',1,'rm::device::DjiMotor']]],
   ['_7edmmotor_9',['~DmMotor',['../classrm_1_1device_1_1DmMotor.html#a66a9b0721bdd77cb379feef51fabd76c',1,'rm::device::DmMotor']]],
   ['_7eekfahrs_10',['~EkfAhrs',['../classrm_1_1modules_1_1EkfAhrs.html#a006ac9d3b5a32bd09415123064831eb8',1,'rm::modules::EkfAhrs']]],
   ['_7efdcantransport_11',['~FdCanTransport',['../classrm_1_1modules_1_1FdCanTransport.html#ad55a8332045199df96f7446ea85476ee',1,'rm::modules::FdCanTransport']]],

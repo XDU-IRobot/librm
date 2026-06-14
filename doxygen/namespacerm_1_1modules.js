@@ -111,6 +111,7 @@ var namespacerm_1_1modules =
       [ "kPriorityFifo", "namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916a8b33fa5d9c9a10a7a474d112d87ff21e", null ]
     ] ],
     [ "__attribute__", "namespacerm_1_1modules.html#aa7d4d0759cc6406efe21d811902fc3f7", null ],
+    [ "AngleDelta", "namespacerm_1_1modules.html#a0fb2837b6117b9c5ca6123caacf82efb", null ],
     [ "CalculateNoteFreq", "namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582", null ],
     [ "Crc16", "namespacerm_1_1modules.html#ab851174228cf45480bd5b5ac0cadc0c0", null ],
     [ "Crc16", "namespacerm_1_1modules.html#aa75c9a62f4cd63b20ff7ae88fb32b117", null ],
@@ -125,6 +126,7 @@ var namespacerm_1_1modules =
     [ "CrcCcitt", "namespacerm_1_1modules.html#a42f13c22a095339f81591cba82b05842", null ],
     [ "CrcCcitt", "namespacerm_1_1modules.html#ad203f8e650d17c6caa5abfe3baed437b", null ],
     [ "Deadline", "namespacerm_1_1modules.html#a3aa4906b062bec00809a1a171e840647", null ],
+    [ "Deadzone", "namespacerm_1_1modules.html#a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae", null ],
     [ "F16ToF32", "namespacerm_1_1modules.html#a93db9bcf6668458e04decaa8a6b2c94c", null ],
     [ "F32ToF16", "namespacerm_1_1modules.html#aeee0650b70e2b8a7eec52f4ca98df9e8", null ],
     [ "FloatToInt", "namespacerm_1_1modules.html#afd7996d2a8e6184242c411f05a94cd65", null ],

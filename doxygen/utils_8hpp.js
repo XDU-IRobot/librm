@@ -1,7 +1,9 @@
 var utils_8hpp =
 [
     [ "__attribute__", "utils_8hpp.html#aa7d4d0759cc6406efe21d811902fc3f7", null ],
+    [ "AngleDelta", "utils_8hpp.html#a0fb2837b6117b9c5ca6123caacf82efb", null ],
     [ "Deadline", "utils_8hpp.html#a3aa4906b062bec00809a1a171e840647", null ],
+    [ "Deadzone", "utils_8hpp.html#a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae", null ],
     [ "FloatToInt", "utils_8hpp.html#afd7996d2a8e6184242c411f05a94cd65", null ],
     [ "IntToFloat", "utils_8hpp.html#ae1c8ace454cb97b65558feb94d5f9eaf", null ],
     [ "InvSqrt", "utils_8hpp.html#a66277a3c6147831ea573519977117e82", null ],

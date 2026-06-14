@@ -8,7 +8,7 @@ var searchData=
   ['enable_5fdiff_5ffirst_5',['enable_diff_first',['../classrm_1_1modules_1_1PID.html#ae3262f8b4ac857e3fdb7b789b34c0a54',1,'rm::modules::PID']]],
   ['enable_5fdynamic_5fki_6',['enable_dynamic_ki',['../classrm_1_1modules_1_1PID.html#af56e19accdfe0b520f5a68cae6c20097',1,'rm::modules::PID']]],
   ['enable_5ffuzzy_7',['enable_fuzzy',['../classrm_1_1modules_1_1PID.html#a5937c94066ef5d11be2e59c2e14a26e3',1,'rm::modules::PID']]],
-  ['encoder_8',['encoder',['../classrm_1_1device_1_1DirectDriveMotor.html#accc943190a00ccb07ea2035785ad443a',1,'rm::device::DirectDriveMotor::encoder()'],['../classrm_1_1device_1_1DjiMotor.html#a54683b4b02ff069ba24cdf092e5c7795',1,'rm::device::DjiMotor::encoder()']]],
+  ['encoder_8',['encoder',['../classrm_1_1device_1_1DirectDriveMotor.html#accc943190a00ccb07ea2035785ad443a',1,'rm::device::DirectDriveMotor::encoder()'],['../classrm_1_1device_1_1DjiMotor.html#a2b9751783306931d614d22096bc5d3f5',1,'rm::device::DjiMotor::encoder()']]],
   ['encodercounter_9',['EncoderCounter',['../classrm_1_1modules_1_1EncoderCounter.html#a48a49599ed84a74b41300c43cc9ae73f',1,'rm::modules::EncoderCounter']]],
   ['enqueue_10',['enqueue',['../classrm_1_1ThreadPool.html#af4b07a9592ce6ce654c8a9b12a396d80',1,'rm::ThreadPool']]],
   ['error_11',['error',['../classrm_1_1modules_1_1buzzer__melody_1_1Error.html#acb424d4ffa59fafd76ec9d3606ae24c7',1,'rm::modules::buzzer_melody::Error::Error()'],['../classrm_1_1device_1_1DirectDriveMotor.html#a6c478ecece7a518f37f3a12346521c24',1,'rm::device::DirectDriveMotor::error()'],['../classrm_1_1device_1_1SuperCap.html#ad1045518c98cd732608c18df9902922c',1,'rm::device::SuperCap::error()'],['../classrm_1_1modules_1_1PID.html#a565265f92018fdfe20688341669d3eb4',1,'rm::modules::PID::error()']]],

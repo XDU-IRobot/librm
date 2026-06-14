@@ -1,6 +1,8 @@
 var utils_8cc =
 [
+    [ "AngleDelta", "utils_8cc.html#a0fb2837b6117b9c5ca6123caacf82efb", null ],
     [ "Deadline", "utils_8cc.html#a3aa4906b062bec00809a1a171e840647", null ],
+    [ "Deadzone", "utils_8cc.html#a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae", null ],
     [ "FloatToInt", "utils_8cc.html#afd7996d2a8e6184242c411f05a94cd65", null ],
     [ "IntToFloat", "utils_8cc.html#ae1c8ace454cb97b65558feb94d5f9eaf", null ],
     [ "InvSqrt", "utils_8cc.html#a66277a3c6147831ea573519977117e82", null ],

@@ -440,6 +440,12 @@ $(document).ready(function(){initNavTree('namespacerm_1_1modules.html',''); init
 <tr class="memitem:a3aa4906b062bec00809a1a171e840647" id="r_a3aa4906b062bec00809a1a171e840647"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a3aa4906b062bec00809a1a171e840647">Deadline</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> value, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="namespacerm_1_1modules.html#a0c0739d0b71abdf1e9075d83224cc6f0">min_value</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="namespacerm_1_1modules.html#a3388cb33fcd0c0796f9e71edcaaed63f">max_value</a>)</td></tr>
 <tr class="memdesc:a3aa4906b062bec00809a1a171e840647"><td class="mdescLeft">&#160;</td><td class="mdescRight">deadband函数  <br /></td></tr>
 <tr class="separator:a3aa4906b062bec00809a1a171e840647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae" id="r_a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae">Deadzone</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> value, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="namespacerm_1_1modules.html#a0c0739d0b71abdf1e9075d83224cc6f0">min_value</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="namespacerm_1_1modules.html#a3388cb33fcd0c0796f9e71edcaaed63f">max_value</a>)</td></tr>
+<tr class="memdesc:a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">死区函数  <br /></td></tr>
+<tr class="separator:a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fb2837b6117b9c5ca6123caacf82efb" id="r_a0fb2837b6117b9c5ca6123caacf82efb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a0fb2837b6117b9c5ca6123caacf82efb">AngleDelta</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> q1, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> q2)</td></tr>
+<tr class="memdesc:a0fb2837b6117b9c5ca6123caacf82efb"><td class="mdescLeft">&#160;</td><td class="mdescRight">角度差函数，计算两个角度之间的最小差值  <br /></td></tr>
+<tr class="separator:a0fb2837b6117b9c5ca6123caacf82efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a100d87f5474f84209b6eec46491c85aa" id="r_a100d87f5474f84209b6eec46491c85aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a100d87f5474f84209b6eec46491c85aa">Wrap</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">input</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="namespacerm_1_1modules.html#a0c0739d0b71abdf1e9075d83224cc6f0">min_value</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="namespacerm_1_1modules.html#a3388cb33fcd0c0796f9e71edcaaed63f">max_value</a>)</td></tr>
 <tr class="memdesc:a100d87f5474f84209b6eec46491c85aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">把输入值循环限制在区间 [min_value, max_value] 内  <br /></td></tr>
 <tr class="separator:a100d87f5474f84209b6eec46491c85aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1529,6 +1535,44 @@ template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</
 
 </div>
 </div>
+<a id="a0fb2837b6117b9c5ca6123caacf82efb" name="a0fb2837b6117b9c5ca6123caacf82efb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fb2837b6117b9c5ca6123caacf82efb">&#9670;&#160;</a></span>AngleDelta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::modules::AngleDelta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>q1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>q2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>角度差函数，计算两个角度之间的最小差值 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q1</td><td>输入角度1，单位为度 </td></tr>
+    <tr><td class="paramname">q2</td><td>输入角度2，单位为度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>两个角度之间的最小差值，范围为[-180, 180]度 </dd></dl>
+
+</div>
+</div>
 <a id="a5c36d51256a29d06abd3da9aaaddf582" name="a5c36d51256a29d06abd3da9aaaddf582"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5c36d51256a29d06abd3da9aaaddf582">&#9670;&#160;</a></span>CalculateNoteFreq()</h2>
 
@@ -2101,6 +2145,51 @@ template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</
   </dd>
 </dl>
 <dl class="section return"><dt>返回</dt><dd>若输入值在规定的范围内，就返回输入值，否则返回0 </dd></dl>
+
+</div>
+</div>
+<a id="a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae" name="a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae">&#9670;&#160;</a></span>Deadzone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::modules::Deadzone </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>min_value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
+          <td class="paramname"><em>max_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>死区函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>输入值 </td></tr>
+    <tr><td class="paramname">min_value</td><td>下限 </td></tr>
+    <tr><td class="paramname">max_value</td><td>上限 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>若输入值在死区范围内，就返回0，否则返回输入值 </dd></dl>
 
 </div>
 </div>

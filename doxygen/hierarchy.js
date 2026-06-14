@@ -43,7 +43,7 @@ var hierarchy =
     [ "rm::device::Device", "classrm_1_1device_1_1Device.html", [
       [ "rm::device::CanDevice", "classrm_1_1device_1_1CanDevice.html", [
         [ "rm::device::DirectDriveMotor", "classrm_1_1device_1_1DirectDriveMotor.html", null ],
-        [ "rm::device::DjiMotor< motor_type >", "classrm_1_1device_1_1DjiMotor.html", null ],
+        [ "rm::device::DjiMotor< MotorType >", "classrm_1_1device_1_1DjiMotor.html", null ],
         [ "rm::device::DmMotor< control_mode >", "classrm_1_1device_1_1DmMotor.html", null ],
         [ "rm::device::GkSupercap", "classrm_1_1device_1_1GkSupercap.html", null ],
         [ "rm::device::HipnucImuCan", "classrm_1_1device_1_1HipnucImuCan.html", null ],
@@ -62,11 +62,12 @@ var hierarchy =
       [ "rm::device::UnitreeMotor", "classrm_1_1device_1_1UnitreeMotor.html", null ],
       [ "rm::device::VT03", "classrm_1_1device_1_1VT03.html", null ],
       [ "rm::device::VirtualDevice", "classrm_1_1device_1_1VirtualDevice.html", null ],
-      [ "rm::device::ZdtStepper", "classrm_1_1device_1_1ZdtStepper.html", null ]
+      [ "rm::device::ZdtStepper", "classrm_1_1device_1_1ZdtStepper.html", null ],
+      [ "rm::device::Znsv6T1", "classrm_1_1device_1_1Znsv6T1.html", null ]
     ] ],
     [ "rm::device::DeviceManager< MaxDevices, UseStdFunctionCallback, MaxSummaryStringLength >", "classrm_1_1device_1_1DeviceManager.html", null ],
     [ "rm::device::DjiMotorBase", "classrm_1_1device_1_1DjiMotorBase.html", [
-      [ "rm::device::DjiMotor< motor_type >", "classrm_1_1device_1_1DjiMotor.html", null ]
+      [ "rm::device::DjiMotor< MotorType >", "classrm_1_1device_1_1DjiMotor.html", null ]
     ] ],
     [ "rm::device::DmMotorSettings< control_mode >", "structrm_1_1device_1_1DmMotorSettings.html", null ],
     [ "rm::device::DmMotorSettings< DmMotorControlMode::kMit >", "structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kMit_01_4.html", null ],
@@ -147,7 +148,8 @@ var hierarchy =
         [ "rm::modules::buzzer_melody::Startup", "classrm_1_1modules_1_1buzzer__melody_1_1Startup.html", null ],
         [ "rm::modules::buzzer_melody::Success", "classrm_1_1modules_1_1buzzer__melody_1_1Success.html", null ],
         [ "rm::modules::buzzer_melody::SuperMario", "classrm_1_1modules_1_1buzzer__melody_1_1SuperMario.html", null ],
-        [ "rm::modules::buzzer_melody::TheLick", "classrm_1_1modules_1_1buzzer__melody_1_1TheLick.html", null ]
+        [ "rm::modules::buzzer_melody::TheLick", "classrm_1_1modules_1_1buzzer__melody_1_1TheLick.html", null ],
+        [ "rm::modules::buzzer_melody::Tone< NoteFrequency >", "classrm_1_1modules_1_1buzzer__melody_1_1Tone.html", null ]
       ] ]
     ] ],
     [ "rm::modules::SequenceGenerator< std::tuple< u8, u8, u8 > >", "classrm_1_1modules_1_1SequenceGenerator.html", [

@@ -11,5 +11,7 @@ var dir_9fcfdcb111b6ce4c5fa85a7697dddfab =
     [ "ist8310_const.hpp", "ist8310__const_8hpp.html", "ist8310__const_8hpp" ],
     [ "jy_me02_can.hpp", "jy__me02__can_8hpp.html", "jy__me02__can_8hpp" ],
     [ "stp23l.cc", "stp23l_8cc.html", null ],
-    [ "stp23l.hpp", "stp23l_8hpp.html", "stp23l_8hpp" ]
+    [ "stp23l.hpp", "stp23l_8hpp.html", "stp23l_8hpp" ],
+    [ "znsv6t1.cc", "znsv6t1_8cc.html", null ],
+    [ "znsv6t1.hpp", "znsv6t1_8hpp.html", "znsv6t1_8hpp" ]
 ];

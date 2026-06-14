@@ -7,5 +7,6 @@ var namespacerm_1_1modules_1_1buzzer__melody =
     [ "Startup", "classrm_1_1modules_1_1buzzer__melody_1_1Startup.html", "classrm_1_1modules_1_1buzzer__melody_1_1Startup" ],
     [ "Success", "classrm_1_1modules_1_1buzzer__melody_1_1Success.html", "classrm_1_1modules_1_1buzzer__melody_1_1Success" ],
     [ "SuperMario", "classrm_1_1modules_1_1buzzer__melody_1_1SuperMario.html", "classrm_1_1modules_1_1buzzer__melody_1_1SuperMario" ],
-    [ "TheLick", "classrm_1_1modules_1_1buzzer__melody_1_1TheLick.html", "classrm_1_1modules_1_1buzzer__melody_1_1TheLick" ]
+    [ "TheLick", "classrm_1_1modules_1_1buzzer__melody_1_1TheLick.html", "classrm_1_1modules_1_1buzzer__melody_1_1TheLick" ],
+    [ "Tone", "classrm_1_1modules_1_1buzzer__melody_1_1Tone.html", "classrm_1_1modules_1_1buzzer__melody_1_1Tone" ]
 ];

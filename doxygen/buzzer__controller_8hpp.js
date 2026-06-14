@@ -12,6 +12,7 @@ var buzzer__controller_8hpp =
     [ "rm::modules::buzzer_melody::SuperMario", "classrm_1_1modules_1_1buzzer__melody_1_1SuperMario.html", "classrm_1_1modules_1_1buzzer__melody_1_1SuperMario" ],
     [ "rm::modules::buzzer_melody::TheLick", "classrm_1_1modules_1_1buzzer__melody_1_1TheLick.html", "classrm_1_1modules_1_1buzzer__melody_1_1TheLick" ],
     [ "rm::modules::buzzer_melody::SeeUAgain", "classrm_1_1modules_1_1buzzer__melody_1_1SeeUAgain.html", "classrm_1_1modules_1_1buzzer__melody_1_1SeeUAgain" ],
+    [ "rm::modules::buzzer_melody::Tone< NoteFrequency >", "classrm_1_1modules_1_1buzzer__melody_1_1Tone.html", "classrm_1_1modules_1_1buzzer__melody_1_1Tone" ],
     [ "rm::modules::BuzzerController< MelodyTypes >", "classrm_1_1modules_1_1BuzzerController.html", "classrm_1_1modules_1_1BuzzerController" ],
     [ "NoteDuration100", "buzzer__controller_8hpp.html#a21562849517d17620e3c1af08f6b53b8", null ],
     [ "NoteDuration120", "buzzer__controller_8hpp.html#ae66d390d4c6d646316961d77d586f887", null ],

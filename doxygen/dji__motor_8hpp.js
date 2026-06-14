@@ -2,7 +2,7 @@ var dji__motor_8hpp =
 [
     [ "rm::device::DjiMotorBase", "classrm_1_1device_1_1DjiMotorBase.html", "classrm_1_1device_1_1DjiMotorBase" ],
     [ "rm::device::DjiMotorBase::TxBuffers", "structrm_1_1device_1_1DjiMotorBase_1_1TxBuffers.html", "structrm_1_1device_1_1DjiMotorBase_1_1TxBuffers" ],
-    [ "rm::device::DjiMotor< motor_type >", "classrm_1_1device_1_1DjiMotor.html", "classrm_1_1device_1_1DjiMotor" ],
+    [ "rm::device::DjiMotor< MotorType >", "classrm_1_1device_1_1DjiMotor.html", "classrm_1_1device_1_1DjiMotor" ],
     [ "GM6020", "dji__motor_8hpp.html#a6cb7f3dec7aafdb9806d488a7b4820e1", null ],
     [ "GM6020Current", "dji__motor_8hpp.html#a10f1c3bdb0cedf93dbc48e0f709515ef", null ],
     [ "M2006", "dji__motor_8hpp.html#ae32b6a67fff29752d1e35d50f699c5f3", null ],

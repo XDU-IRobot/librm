@@ -1,13 +1,13 @@
 var classrm_1_1device_1_1DjiMotor =
 [
-    [ "DjiMotor", "classrm_1_1device_1_1DjiMotor.html#a886506a8f47c92b01ef9bda7e99a93a8", null ],
-    [ "~DjiMotor", "classrm_1_1device_1_1DjiMotor.html#a93fbd992ad96f1b6166eba43dec93bd6", null ],
-    [ "DjiMotor", "classrm_1_1device_1_1DjiMotor.html#a23cac6728e82dfea4b37c034f4ae3194", null ],
-    [ "current", "classrm_1_1device_1_1DjiMotor.html#a02fcdb19ff9618355ed9a660f95b0e5d", null ],
-    [ "encoder", "classrm_1_1device_1_1DjiMotor.html#a54683b4b02ff069ba24cdf092e5c7795", null ],
-    [ "pos_degree", "classrm_1_1device_1_1DjiMotor.html#a0924aa76edcfc6f31e8bd901aba8eb78", null ],
-    [ "pos_rad", "classrm_1_1device_1_1DjiMotor.html#ac07e5cd49cee29928699e495d7ac22c8", null ],
-    [ "rpm", "classrm_1_1device_1_1DjiMotor.html#a14a1533e1f26afea088da76dd4ce0ca6", null ],
-    [ "SetCurrent", "classrm_1_1device_1_1DjiMotor.html#a14852c61bb012c2426acf2bb261d6dd0", null ],
-    [ "temperature", "classrm_1_1device_1_1DjiMotor.html#a9989d1a831860e16ae3476359e95b302", null ]
+    [ "DjiMotor", "classrm_1_1device_1_1DjiMotor.html#a5d520da512f8140fb3713352b534cbcc", null ],
+    [ "~DjiMotor", "classrm_1_1device_1_1DjiMotor.html#a6a16984ef12c17ca2b2e14ec3d0fd04d", null ],
+    [ "DjiMotor", "classrm_1_1device_1_1DjiMotor.html#a66c6c848867e9745bba5fd62d6c619db", null ],
+    [ "current", "classrm_1_1device_1_1DjiMotor.html#af54daaa9e25401c0e9c29b3c411053de", null ],
+    [ "encoder", "classrm_1_1device_1_1DjiMotor.html#a2b9751783306931d614d22096bc5d3f5", null ],
+    [ "pos_degree", "classrm_1_1device_1_1DjiMotor.html#a09d71f68d99d579d9b9f14c478412235", null ],
+    [ "pos_rad", "classrm_1_1device_1_1DjiMotor.html#a6996836d2dc6676372a48c84f82243db", null ],
+    [ "rpm", "classrm_1_1device_1_1DjiMotor.html#a085acaeb9e6b135cf595fd208a1086d7", null ],
+    [ "SetCurrent", "classrm_1_1device_1_1DjiMotor.html#aad3fcc6a93f27bb189bc24c693aac38a", null ],
+    [ "temperature", "classrm_1_1device_1_1DjiMotor.html#a845da97dcd754ee172f634cd9b90512b", null ]
 ];

@@ -1,0 +1,389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: src/librm/device/sensor/znsv6t1.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('znsv6t1_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">znsv6t1.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="znsv6t1_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  Copyright (c) 2026 XDU-IRobot</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">  copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"></span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  The above copyright notice and this permission notice shall be included in all</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">  copies or substantial portions of the Software.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"></span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef LIBRM_DEVICE_SENSOR_ZNSV6T1_HPP</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_DEVICE_SENSOR_ZNSV6T1_HPP</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;etl/span.h&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;<a class="code" href="typedefs_8hpp.html">librm/core/typedefs.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;<a class="code" href="device_8hpp.html">librm/device/device.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="serial_8hpp.html">librm/hal/serial.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1device.html">rm::device</a> {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Znsv6T1.html">   45</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1device_1_1Znsv6T1.html">Znsv6T1</a> : <span class="keyword">public</span> <a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="};">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Znsv6T1.html#ace4b43d9d3b3c07cf61aee07bbc7b0d8">   50</a></span>  <span class="keyword">enum class</span> <a class="code hl_enumeration" href="classrm_1_1device_1_1Znsv6T1.html#ace4b43d9d3b3c07cf61aee07bbc7b0d8">SamplingRate</a> : <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#ace4b43d9d3b3c07cf61aee07bbc7b0d8ab34d0b96337eacfd044f343c48e43d95">k10Hz</a> = 0,    </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#ace4b43d9d3b3c07cf61aee07bbc7b0d8ae146feea71b4745f8e226dc5e057cc0c">k40Hz</a> = 1,    </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#ace4b43d9d3b3c07cf61aee07bbc7b0d8a8b1fd827b2bebce0c1b5d1320b29dadd">k640Hz</a> = 2,   </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#ace4b43d9d3b3c07cf61aee07bbc7b0d8a70254b2544a05033f22c11acecd31c2d">k1280Hz</a> = 3,  </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  };</div>
+</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="};">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11">   60</a></span>  <span class="keyword">enum class</span> <a class="code hl_enumeration" href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11">BaudRate</a> : <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11a35fc81176ee2637042279cda449005e6">k2400</a> = 1,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11a31b7a88ee6daaf02cd65826c6b9bad6d">k4800</a> = 2,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11a17030fa8b1b9bed3e1dc47e51004c0b7">k9600</a> = 3,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11a150d4fed078c82645b4fbf5106149aea">k19200</a> = 4,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11a20921a3ff2fbd15a4f88db7981f23e63">k28800</a> = 5,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11a4bc3738fce383757c285ae42b03ca182">k38400</a> = 6,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11a86e78d7ae3c67d4669944cc80105c731">k57600</a> = 7,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11a06bff352faa59065830f11928f3ddc02">k115200</a> = 8,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11a03b55ecd87a6081c2ae11a00cd03a9ab">k256000</a> = 9,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11abec7fdba22308f5823013a4642652ea4">k500000</a> = 10,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  };</div>
+</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="};">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Znsv6T1.html#af6ccad22bfc2381dcca6ba971a8616a4">   76</a></span>  <span class="keyword">enum class</span> <a class="code hl_enumeration" href="classrm_1_1device_1_1Znsv6T1.html#af6ccad22bfc2381dcca6ba971a8616a4">Division</a> : <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#af6ccad22bfc2381dcca6ba971a8616a4ab637b17af08aced8850c18cccde915da">k1</a> = 1,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#af6ccad22bfc2381dcca6ba971a8616a4a61620957a1443c946a143cf99a7d24fa">k2</a> = 2,</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#af6ccad22bfc2381dcca6ba971a8616a4a97b2f1edf640580f66056cc4bfcf6335">k5</a> = 5,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#af6ccad22bfc2381dcca6ba971a8616a4ae2586f3a475714f9959f74986e64ee13">k10</a> = 10,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#af6ccad22bfc2381dcca6ba971a8616a4a3caa85db42b2089e2bb7c45a02715df8">k20</a> = 20,</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#af6ccad22bfc2381dcca6ba971a8616a4aef004b05fb85e34dfe8d1afa3efa1806">k50</a> = 50,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#af6ccad22bfc2381dcca6ba971a8616a4a503a712e3ec20f7f580117355c300e87">k100</a> = 100,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  };</div>
+</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="foldopen" id="foldopen00089" data-start="{" data-end="};">
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Znsv6T1.html#ade89c9d7a2a9fc96230dbffe2199fe06">   89</a></span>  <span class="keyword">enum class</span> <a class="code hl_enumeration" href="classrm_1_1device_1_1Znsv6T1.html#ade89c9d7a2a9fc96230dbffe2199fe06">ZeroTrackingMode</a> : <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#ade89c9d7a2a9fc96230dbffe2199fe06acc9ab5e60ac2a9a675ba64bf4bb49dc8">kOff</a> = 0,          </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#ade89c9d7a2a9fc96230dbffe2199fe06a64872aa5eec6efb5f0492109aab8037e">kPowerOnOnly</a> = 1,  </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#ade89c9d7a2a9fc96230dbffe2199fe06a214ed4cf2fb6f30440b90f67a01322fd">kDynamicOnly</a> = 2,  </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Znsv6T1.html#ade89c9d7a2a9fc96230dbffe2199fe06a4f968049bc5e5f7c6e0d89946366fff2">kBoth</a> = 3,         </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  };</div>
+</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <a class="code hl_class" href="classrm_1_1device_1_1Znsv6T1.html">Znsv6T1</a>(<a class="code hl_class" href="classrm_1_1hal_1_1SerialInterface.html">hal::SerialInterface</a> &amp;serial, <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#a34f7642c6fefc80814bf303eca2c3570">modbus_addr</a> = 1);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#aaaf39eae6d35d96f2d63c7956db4048a">Begin</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="comment">// ========== 读取数据 ==========</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#a8fb4fbb53b55e721a8b2df9098bcca86">RequestWeight</a>();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#a13d7d19823b8e67d24c03c684a20d34d">RequestRawAd</a>();</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#a924f2b6330968b095d2852f0e1f25f27">RequestZeroPosition</a>();</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Znsv6T1.html#a9359b4d91e50828d0f75304c72627de8">  131</a></span>  [[nodiscard]] <a class="code hl_typedef" href="namespacerm.html#ab8f625f2805bcf404373221600ada840">i32</a> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#a9359b4d91e50828d0f75304c72627de8">weight</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> weight_; }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Znsv6T1.html#af724b2ef34b1770a63e95b1418dde70a">  136</a></span>  [[nodiscard]] <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#af724b2ef34b1770a63e95b1418dde70a">raw_ad</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> raw_ad_; }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Znsv6T1.html#a4603664337886cf3d2f5af9953cd68cc">  141</a></span>  [[nodiscard]] <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#a4603664337886cf3d2f5af9953cd68cc">zero_position</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> zero_position_; }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <span class="comment">// ========== 控制指令 ==========</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#a13ec13aec3b9c9d64a12094bcdf0f6a8">SetZeroCalibration</a>();</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#a3927db2676e52184495fee4c2756e4db">RestoreFactorySettings</a>();</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#aecb2faa5aa22c3a628802847bd6da6a2">Tare</a>();</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#a30d621bd3d46b073938d76b7242f9a54">CancelTare</a>();</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  <span class="comment">// ========== 参数配置 ==========</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#abcffbb9db42e8b422202a3db9b5810e3">SetCalibrationWeight</a>(<a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#a9359b4d91e50828d0f75304c72627de8">weight</a>);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#a9aaf73776d8e552435096999ce547274">SetZeroTrackingStrength</a>(<a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> strength);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#aace2ca90a08edb4f85beeadb4462580a">SetDynamicZeroRange</a>(<a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> range);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#a3c6d6facb5504eff063656544179e0b9">SetZeroTrackingMode</a>(<a class="code hl_enumeration" href="classrm_1_1device_1_1Znsv6T1.html#ade89c9d7a2a9fc96230dbffe2199fe06">ZeroTrackingMode</a> mode);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#a3dffbf5519f39904b35979219320c61f">SetDivision</a>(<a class="code hl_enumeration" href="classrm_1_1device_1_1Znsv6T1.html#af6ccad22bfc2381dcca6ba971a8616a4">Division</a> div);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#ae482dd9c8c5408d4117525506f28d9fe">SetMedianFilter</a>(<a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> filter);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#a16cc65d946eea2ab01c59a430327ba0b">SetSamplingRate</a>(<a class="code hl_enumeration" href="classrm_1_1device_1_1Znsv6T1.html#ace4b43d9d3b3c07cf61aee07bbc7b0d8">SamplingRate</a> rate);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#ac93e91cb625e45d905b5877a6c160531">SetModuleAddress</a>(<a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> addr);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#a6cfc43a2164bb59938131e335945e6de">SetBaudRate</a>(<a class="code hl_enumeration" href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11">BaudRate</a> rate);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#a845e510cfc223f3b7ec9ec3600d3c009">SetAverageFilter</a>(<a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> count);</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#aea244f1678492daeb887c454285edb82">SetDynamicTrackingRange</a>(<a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> range);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#ace030e5b57de3582102eca4fb7ad0fed">SetCreepTrackingRange</a>(<a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> range);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#a1d835fa42a9499c2b6f7be950b45f3b7">SetStableWeightOutput</a>(<span class="keywordtype">bool</span> on);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  <span class="comment">// ========== 写保护管理 ==========</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#a79ddc992b61fb7f9d07459d7bbe05d85">OpenWriteProtect</a>();</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#aa69840a8950b437705f4caf022c293dd">CloseWriteProtect</a>();</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Znsv6T1.html#a34f7642c6fefc80814bf303eca2c3570">  276</a></span>  [[nodiscard]] <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> <a class="code hl_function" href="classrm_1_1device_1_1Znsv6T1.html#a34f7642c6fefc80814bf303eca2c3570">modbus_addr</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> modbus_addr_; }</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> kFuncRead = 0x03;   </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> kFuncWrite = 0x06;  </div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kRegWeight = 0x0000;            </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kRegRawAd = 0x0002;             </div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kRegZeroPosition = 0x0004;      </div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kRegCalibWeight = 0x0006;       </div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kRegZeroStrength = 0x0009;      </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kRegDynamicZeroRange = 0x000A;  </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kRegZeroEnable = 0x000B;        </div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kRegDivision = 0x000C;          </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kRegMedianFilter = 0x000D;      </div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kRegSamplingRate = 0x000E;      </div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kRegModuleAddr = 0x000F;        </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kRegBaudRate = 0x0010;          </div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kRegAvgFilter = 0x0011;         </div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kRegDynamicTrack = 0x0012;      </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kRegCreepTrack = 0x0013;        </div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kRegStableOutput = 0x0014;      </div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kRegTare = 0x0015;              </div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kRegCommand = 0x0016;           </div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kRegWriteProtect = 0x0017;      </div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kCmdZeroCalib = 1;     </div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kCmdFactoryReset = 9;  </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kTareEnable = 1;  </div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> kTareCancel = 2;  </div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span> </div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> kMaxRxFrameLen = 32;</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span> </div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>  <span class="keyword">enum class</span> PendingRequest : <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> {</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    kNone,</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    kReadWeight,</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    kReadRawAd,</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    kReadZeroPosition,</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    kWrite,</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>  };</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>  <span class="keywordtype">void</span> RxCallback(etl::span&lt;const u8&gt; data);</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>  <span class="keywordtype">void</span> SendRequest03(<a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> reg_addr, <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> reg_count);</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>  <span class="keywordtype">void</span> SendRequest06(<a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> reg_addr, <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> value);</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span> </div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>  <a class="code hl_typedef" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> AppendCrc16(<a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *buf, <a class="code hl_typedef" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> len);</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span> </div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>  <a class="code hl_class" href="classrm_1_1hal_1_1SerialInterface.html">hal::SerialInterface</a> *serial_;</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>  <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> modbus_addr_;</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span> </div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>  PendingRequest pending_{PendingRequest::kNone};</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span> </div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>  <a class="code hl_typedef" href="namespacerm.html#ab8f625f2805bcf404373221600ada840">i32</a> weight_{0};</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>  <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> raw_ad_{0};</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>  <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> zero_position_{0};</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span> </div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>  <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> tx_buffer_[16]{};  </div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>};</div>
+</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span> </div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>}  <span class="comment">// namespace rm::device</span></div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span> </div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_DEVICE_SENSOR_ZNSV6T1_HPP</span></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html"><div class="ttname"><a href="classrm_1_1device_1_1Device.html">rm::device::Device</a></div><div class="ttdoc">驱动框架的设备基类，功能为监视设备状态</div><div class="ttdef"><b>Definition</b> device.hpp:47</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html">rm::device::Znsv6T1</a></div><div class="ttdoc">Znsv6T1 数字称重变送器</div><div class="ttdef"><b>Definition</b> znsv6t1.hpp:45</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a13d7d19823b8e67d24c03c684a20d34d"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a13d7d19823b8e67d24c03c684a20d34d">rm::device::Znsv6T1::RequestRawAd</a></div><div class="ttdeci">void RequestRawAd()</div><div class="ttdoc">发送读取 AD 内码值请求（寄存器 0x0002~0x0003，32 位无符号）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:151</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a13ec13aec3b9c9d64a12094bcdf0f6a8"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a13ec13aec3b9c9d64a12094bcdf0f6a8">rm::device::Znsv6T1::SetZeroCalibration</a></div><div class="ttdeci">void SetZeroCalibration()</div><div class="ttdoc">零点校准（将 1 写入命令寄存器 0x0016）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:163</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a16cc65d946eea2ab01c59a430327ba0b"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a16cc65d946eea2ab01c59a430327ba0b">rm::device::Znsv6T1::SetSamplingRate</a></div><div class="ttdeci">void SetSamplingRate(SamplingRate rate)</div><div class="ttdoc">设置采样速率（寄存器 0x000E）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:215</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a1d835fa42a9499c2b6f7be950b45f3b7"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a1d835fa42a9499c2b6f7be950b45f3b7">rm::device::Znsv6T1::SetStableWeightOutput</a></div><div class="ttdeci">void SetStableWeightOutput(bool on)</div><div class="ttdoc">设置稳定重量输出开关（寄存器 0x0014）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:245</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a30d621bd3d46b073938d76b7242f9a54"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a30d621bd3d46b073938d76b7242f9a54">rm::device::Znsv6T1::CancelTare</a></div><div class="ttdeci">void CancelTare()</div><div class="ttdoc">取消去皮（将 2 写入去皮寄存器 0x0015）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:178</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a34f7642c6fefc80814bf303eca2c3570"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a34f7642c6fefc80814bf303eca2c3570">rm::device::Znsv6T1::modbus_addr</a></div><div class="ttdeci">u8 modbus_addr() const</div><div class="ttdoc">获取模块地址</div><div class="ttdef"><b>Definition</b> znsv6t1.hpp:276</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a3927db2676e52184495fee4c2756e4db"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a3927db2676e52184495fee4c2756e4db">rm::device::Znsv6T1::RestoreFactorySettings</a></div><div class="ttdeci">void RestoreFactorySettings()</div><div class="ttdoc">恢复出厂设置（将 9 写入命令寄存器 0x0016）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:168</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a3c6d6facb5504eff063656544179e0b9"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a3c6d6facb5504eff063656544179e0b9">rm::device::Znsv6T1::SetZeroTrackingMode</a></div><div class="ttdeci">void SetZeroTrackingMode(ZeroTrackingMode mode)</div><div class="ttdoc">设置追零使能模式（寄存器 0x000B）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:200</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a3dffbf5519f39904b35979219320c61f"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a3dffbf5519f39904b35979219320c61f">rm::device::Znsv6T1::SetDivision</a></div><div class="ttdeci">void SetDivision(Division div)</div><div class="ttdoc">设置分度值（寄存器 0x000C）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:205</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a4603664337886cf3d2f5af9953cd68cc"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a4603664337886cf3d2f5af9953cd68cc">rm::device::Znsv6T1::zero_position</a></div><div class="ttdeci">u32 zero_position() const</div><div class="ttdoc">获取最近一次读取的零位 AD 内码值</div><div class="ttdef"><b>Definition</b> znsv6t1.hpp:141</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a6cfc43a2164bb59938131e335945e6de"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a6cfc43a2164bb59938131e335945e6de">rm::device::Znsv6T1::SetBaudRate</a></div><div class="ttdeci">void SetBaudRate(BaudRate rate)</div><div class="ttdoc">修改波特率（寄存器 0x0010）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:225</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a79ddc992b61fb7f9d07459d7bbe05d85"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a79ddc992b61fb7f9d07459d7bbe05d85">rm::device::Znsv6T1::OpenWriteProtect</a></div><div class="ttdeci">void OpenWriteProtect()</div><div class="ttdoc">关闭写保护（写 0 到寄存器 0x0017）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:252</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a80c34c9dae86fe18cf619f1c86f1ed11"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11">rm::device::Znsv6T1::BaudRate</a></div><div class="ttdeci">BaudRate</div><div class="ttdoc">波特率枚举（寄存器值 → 实际波特率）</div><div class="ttdef"><b>Definition</b> znsv6t1.hpp:60</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a80c34c9dae86fe18cf619f1c86f1ed11a03b55ecd87a6081c2ae11a00cd03a9ab"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11a03b55ecd87a6081c2ae11a00cd03a9ab">rm::device::Znsv6T1::BaudRate::k256000</a></div><div class="ttdeci">@ k256000</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a80c34c9dae86fe18cf619f1c86f1ed11a06bff352faa59065830f11928f3ddc02"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11a06bff352faa59065830f11928f3ddc02">rm::device::Znsv6T1::BaudRate::k115200</a></div><div class="ttdeci">@ k115200</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a80c34c9dae86fe18cf619f1c86f1ed11a150d4fed078c82645b4fbf5106149aea"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11a150d4fed078c82645b4fbf5106149aea">rm::device::Znsv6T1::BaudRate::k19200</a></div><div class="ttdeci">@ k19200</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a80c34c9dae86fe18cf619f1c86f1ed11a17030fa8b1b9bed3e1dc47e51004c0b7"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11a17030fa8b1b9bed3e1dc47e51004c0b7">rm::device::Znsv6T1::BaudRate::k9600</a></div><div class="ttdeci">@ k9600</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a80c34c9dae86fe18cf619f1c86f1ed11a20921a3ff2fbd15a4f88db7981f23e63"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11a20921a3ff2fbd15a4f88db7981f23e63">rm::device::Znsv6T1::BaudRate::k28800</a></div><div class="ttdeci">@ k28800</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a80c34c9dae86fe18cf619f1c86f1ed11a31b7a88ee6daaf02cd65826c6b9bad6d"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11a31b7a88ee6daaf02cd65826c6b9bad6d">rm::device::Znsv6T1::BaudRate::k4800</a></div><div class="ttdeci">@ k4800</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a80c34c9dae86fe18cf619f1c86f1ed11a35fc81176ee2637042279cda449005e6"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11a35fc81176ee2637042279cda449005e6">rm::device::Znsv6T1::BaudRate::k2400</a></div><div class="ttdeci">@ k2400</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a80c34c9dae86fe18cf619f1c86f1ed11a4bc3738fce383757c285ae42b03ca182"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11a4bc3738fce383757c285ae42b03ca182">rm::device::Znsv6T1::BaudRate::k38400</a></div><div class="ttdeci">@ k38400</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a80c34c9dae86fe18cf619f1c86f1ed11a86e78d7ae3c67d4669944cc80105c731"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11a86e78d7ae3c67d4669944cc80105c731">rm::device::Znsv6T1::BaudRate::k57600</a></div><div class="ttdeci">@ k57600</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a80c34c9dae86fe18cf619f1c86f1ed11abec7fdba22308f5823013a4642652ea4"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11abec7fdba22308f5823013a4642652ea4">rm::device::Znsv6T1::BaudRate::k500000</a></div><div class="ttdeci">@ k500000</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a845e510cfc223f3b7ec9ec3600d3c009"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a845e510cfc223f3b7ec9ec3600d3c009">rm::device::Znsv6T1::SetAverageFilter</a></div><div class="ttdeci">void SetAverageFilter(u8 count)</div><div class="ttdoc">设置平均滤波强度（寄存器 0x0011）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:230</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a8fb4fbb53b55e721a8b2df9098bcca86"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a8fb4fbb53b55e721a8b2df9098bcca86">rm::device::Znsv6T1::RequestWeight</a></div><div class="ttdeci">void RequestWeight()</div><div class="ttdoc">发送读取实时重量请求（寄存器 0x0000~0x0001，32 位有符号）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:146</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a924f2b6330968b095d2852f0e1f25f27"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a924f2b6330968b095d2852f0e1f25f27">rm::device::Znsv6T1::RequestZeroPosition</a></div><div class="ttdeci">void RequestZeroPosition()</div><div class="ttdoc">发送读取当前零位 AD 内码值请求（寄存器 0x0004~0x0005，32 位无符号）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:156</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a9359b4d91e50828d0f75304c72627de8"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a9359b4d91e50828d0f75304c72627de8">rm::device::Znsv6T1::weight</a></div><div class="ttdeci">i32 weight() const</div><div class="ttdoc">获取最近一次读取的实时重量值（原始整数，不含小数点）</div><div class="ttdef"><b>Definition</b> znsv6t1.hpp:131</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_a9aaf73776d8e552435096999ce547274"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#a9aaf73776d8e552435096999ce547274">rm::device::Znsv6T1::SetZeroTrackingStrength</a></div><div class="ttdeci">void SetZeroTrackingStrength(u8 strength)</div><div class="ttdoc">设置追零强度（寄存器 0x0009）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:190</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_aa69840a8950b437705f4caf022c293dd"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#aa69840a8950b437705f4caf022c293dd">rm::device::Znsv6T1::CloseWriteProtect</a></div><div class="ttdeci">void CloseWriteProtect()</div><div class="ttdoc">开启写保护（写 1 到寄存器 0x0017）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:257</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_aaaf39eae6d35d96f2d63c7956db4048a"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#aaaf39eae6d35d96f2d63c7956db4048a">rm::device::Znsv6T1::Begin</a></div><div class="ttdeci">void Begin() const</div><div class="ttdoc">启动异步接收</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:38</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_aace2ca90a08edb4f85beeadb4462580a"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#aace2ca90a08edb4f85beeadb4462580a">rm::device::Znsv6T1::SetDynamicZeroRange</a></div><div class="ttdeci">void SetDynamicZeroRange(u8 range)</div><div class="ttdoc">设置动态追零范围（寄存器 0x000A）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:195</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_abcffbb9db42e8b422202a3db9b5810e3"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#abcffbb9db42e8b422202a3db9b5810e3">rm::device::Znsv6T1::SetCalibrationWeight</a></div><div class="ttdeci">void SetCalibrationWeight(u16 weight)</div><div class="ttdoc">设置砝码值用于单点标定（写入寄存器 0x0006）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:185</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_ac93e91cb625e45d905b5877a6c160531"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#ac93e91cb625e45d905b5877a6c160531">rm::device::Znsv6T1::SetModuleAddress</a></div><div class="ttdeci">void SetModuleAddress(u8 addr)</div><div class="ttdoc">修改模块软件地址（寄存器 0x000F）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:220</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_ace030e5b57de3582102eca4fb7ad0fed"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#ace030e5b57de3582102eca4fb7ad0fed">rm::device::Znsv6T1::SetCreepTrackingRange</a></div><div class="ttdeci">void SetCreepTrackingRange(u8 range)</div><div class="ttdoc">设置蠕变跟踪范围（寄存器 0x0013）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:240</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_ace4b43d9d3b3c07cf61aee07bbc7b0d8"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#ace4b43d9d3b3c07cf61aee07bbc7b0d8">rm::device::Znsv6T1::SamplingRate</a></div><div class="ttdeci">SamplingRate</div><div class="ttdoc">采样速率枚举</div><div class="ttdef"><b>Definition</b> znsv6t1.hpp:50</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_ace4b43d9d3b3c07cf61aee07bbc7b0d8a70254b2544a05033f22c11acecd31c2d"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#ace4b43d9d3b3c07cf61aee07bbc7b0d8a70254b2544a05033f22c11acecd31c2d">rm::device::Znsv6T1::SamplingRate::k1280Hz</a></div><div class="ttdeci">@ k1280Hz</div><div class="ttdoc">1280Hz</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_ace4b43d9d3b3c07cf61aee07bbc7b0d8a8b1fd827b2bebce0c1b5d1320b29dadd"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#ace4b43d9d3b3c07cf61aee07bbc7b0d8a8b1fd827b2bebce0c1b5d1320b29dadd">rm::device::Znsv6T1::SamplingRate::k640Hz</a></div><div class="ttdeci">@ k640Hz</div><div class="ttdoc">640Hz</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_ace4b43d9d3b3c07cf61aee07bbc7b0d8ab34d0b96337eacfd044f343c48e43d95"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#ace4b43d9d3b3c07cf61aee07bbc7b0d8ab34d0b96337eacfd044f343c48e43d95">rm::device::Znsv6T1::SamplingRate::k10Hz</a></div><div class="ttdeci">@ k10Hz</div><div class="ttdoc">10Hz</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_ace4b43d9d3b3c07cf61aee07bbc7b0d8ae146feea71b4745f8e226dc5e057cc0c"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#ace4b43d9d3b3c07cf61aee07bbc7b0d8ae146feea71b4745f8e226dc5e057cc0c">rm::device::Znsv6T1::SamplingRate::k40Hz</a></div><div class="ttdeci">@ k40Hz</div><div class="ttdoc">40Hz</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_ade89c9d7a2a9fc96230dbffe2199fe06"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#ade89c9d7a2a9fc96230dbffe2199fe06">rm::device::Znsv6T1::ZeroTrackingMode</a></div><div class="ttdeci">ZeroTrackingMode</div><div class="ttdoc">零位跟踪使能模式</div><div class="ttdef"><b>Definition</b> znsv6t1.hpp:89</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_ade89c9d7a2a9fc96230dbffe2199fe06a214ed4cf2fb6f30440b90f67a01322fd"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#ade89c9d7a2a9fc96230dbffe2199fe06a214ed4cf2fb6f30440b90f67a01322fd">rm::device::Znsv6T1::ZeroTrackingMode::kDynamicOnly</a></div><div class="ttdeci">@ kDynamicOnly</div><div class="ttdoc">关闭开机置零，只开启动态追零</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_ade89c9d7a2a9fc96230dbffe2199fe06a4f968049bc5e5f7c6e0d89946366fff2"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#ade89c9d7a2a9fc96230dbffe2199fe06a4f968049bc5e5f7c6e0d89946366fff2">rm::device::Znsv6T1::ZeroTrackingMode::kBoth</a></div><div class="ttdeci">@ kBoth</div><div class="ttdoc">开启开机置零和动态追零</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_ade89c9d7a2a9fc96230dbffe2199fe06a64872aa5eec6efb5f0492109aab8037e"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#ade89c9d7a2a9fc96230dbffe2199fe06a64872aa5eec6efb5f0492109aab8037e">rm::device::Znsv6T1::ZeroTrackingMode::kPowerOnOnly</a></div><div class="ttdeci">@ kPowerOnOnly</div><div class="ttdoc">只开启开机置零，关闭动态追零</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_ade89c9d7a2a9fc96230dbffe2199fe06acc9ab5e60ac2a9a675ba64bf4bb49dc8"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#ade89c9d7a2a9fc96230dbffe2199fe06acc9ab5e60ac2a9a675ba64bf4bb49dc8">rm::device::Znsv6T1::ZeroTrackingMode::kOff</a></div><div class="ttdeci">@ kOff</div><div class="ttdoc">关闭开机置零和动态追零</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_ae482dd9c8c5408d4117525506f28d9fe"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#ae482dd9c8c5408d4117525506f28d9fe">rm::device::Znsv6T1::SetMedianFilter</a></div><div class="ttdeci">void SetMedianFilter(u8 filter)</div><div class="ttdoc">设置中值滤波强度（寄存器 0x000D）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:210</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_aea244f1678492daeb887c454285edb82"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#aea244f1678492daeb887c454285edb82">rm::device::Znsv6T1::SetDynamicTrackingRange</a></div><div class="ttdeci">void SetDynamicTrackingRange(u8 range)</div><div class="ttdoc">设置动态跟踪范围（寄存器 0x0012）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:235</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_aecb2faa5aa22c3a628802847bd6da6a2"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#aecb2faa5aa22c3a628802847bd6da6a2">rm::device::Znsv6T1::Tare</a></div><div class="ttdeci">void Tare()</div><div class="ttdoc">去皮（将 1 写入去皮寄存器 0x0015）</div><div class="ttdef"><b>Definition</b> znsv6t1.cc:173</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_af6ccad22bfc2381dcca6ba971a8616a4"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#af6ccad22bfc2381dcca6ba971a8616a4">rm::device::Znsv6T1::Division</a></div><div class="ttdeci">Division</div><div class="ttdoc">分度值枚举</div><div class="ttdef"><b>Definition</b> znsv6t1.hpp:76</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_af6ccad22bfc2381dcca6ba971a8616a4a3caa85db42b2089e2bb7c45a02715df8"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#af6ccad22bfc2381dcca6ba971a8616a4a3caa85db42b2089e2bb7c45a02715df8">rm::device::Znsv6T1::Division::k20</a></div><div class="ttdeci">@ k20</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_af6ccad22bfc2381dcca6ba971a8616a4a503a712e3ec20f7f580117355c300e87"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#af6ccad22bfc2381dcca6ba971a8616a4a503a712e3ec20f7f580117355c300e87">rm::device::Znsv6T1::Division::k100</a></div><div class="ttdeci">@ k100</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_af6ccad22bfc2381dcca6ba971a8616a4a61620957a1443c946a143cf99a7d24fa"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#af6ccad22bfc2381dcca6ba971a8616a4a61620957a1443c946a143cf99a7d24fa">rm::device::Znsv6T1::Division::k2</a></div><div class="ttdeci">@ k2</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_af6ccad22bfc2381dcca6ba971a8616a4a97b2f1edf640580f66056cc4bfcf6335"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#af6ccad22bfc2381dcca6ba971a8616a4a97b2f1edf640580f66056cc4bfcf6335">rm::device::Znsv6T1::Division::k5</a></div><div class="ttdeci">@ k5</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_af6ccad22bfc2381dcca6ba971a8616a4ab637b17af08aced8850c18cccde915da"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#af6ccad22bfc2381dcca6ba971a8616a4ab637b17af08aced8850c18cccde915da">rm::device::Znsv6T1::Division::k1</a></div><div class="ttdeci">@ k1</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_af6ccad22bfc2381dcca6ba971a8616a4ae2586f3a475714f9959f74986e64ee13"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#af6ccad22bfc2381dcca6ba971a8616a4ae2586f3a475714f9959f74986e64ee13">rm::device::Znsv6T1::Division::k10</a></div><div class="ttdeci">@ k10</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_af6ccad22bfc2381dcca6ba971a8616a4aef004b05fb85e34dfe8d1afa3efa1806"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#af6ccad22bfc2381dcca6ba971a8616a4aef004b05fb85e34dfe8d1afa3efa1806">rm::device::Znsv6T1::Division::k50</a></div><div class="ttdeci">@ k50</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Znsv6T1_html_af724b2ef34b1770a63e95b1418dde70a"><div class="ttname"><a href="classrm_1_1device_1_1Znsv6T1.html#af724b2ef34b1770a63e95b1418dde70a">rm::device::Znsv6T1::raw_ad</a></div><div class="ttdeci">u32 raw_ad() const</div><div class="ttdoc">获取最近一次读取的 AD 内码值</div><div class="ttdef"><b>Definition</b> znsv6t1.hpp:136</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1SerialInterface_html"><div class="ttname"><a href="classrm_1_1hal_1_1SerialInterface.html">rm::hal::SerialInterface</a></div><div class="ttdoc">同步写 + 异步读（最常用的嵌入式串口组合）</div><div class="ttdef"><b>Definition</b> serial_interface.hpp:145</div></div>
+<div class="ttc" id="adevice_8hpp_html"><div class="ttname"><a href="device_8hpp.html">device.hpp</a></div><div class="ttdoc">驱动框架的设备基类，主要功能为监视设备在线状态</div></div>
+<div class="ttc" id="anamespacerm_1_1device_html"><div class="ttname"><a href="namespacerm_1_1device.html">rm::device</a></div><div class="ttdef"><b>Definition</b> directdrive_motor.cc:37</div></div>
+<div class="ttc" id="anamespacerm_html_a1df35482f4a88e1fe1450c7eb4cf4630"><div class="ttname"><a href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">rm::usize</a></div><div class="ttdeci">size_t usize</div><div class="ttdef"><b>Definition</b> typedefs.hpp:51</div></div>
+<div class="ttc" id="anamespacerm_html_a287a55f70760f2a0c8cfdacddd9b2d34"><div class="ttname"><a href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">rm::u8</a></div><div class="ttdeci">uint8_t u8</div><div class="ttdef"><b>Definition</b> typedefs.hpp:43</div></div>
+<div class="ttc" id="anamespacerm_html_a8f3662a01c5fa99494989944ee6c6157"><div class="ttname"><a href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">rm::u16</a></div><div class="ttdeci">uint16_t u16</div><div class="ttdef"><b>Definition</b> typedefs.hpp:44</div></div>
+<div class="ttc" id="anamespacerm_html_aae5bb39b0da6b1cf1b7ed1c03342ec66"><div class="ttname"><a href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">rm::u32</a></div><div class="ttdeci">uint32_t u32</div><div class="ttdef"><b>Definition</b> typedefs.hpp:45</div></div>
+<div class="ttc" id="anamespacerm_html_ab8f625f2805bcf404373221600ada840"><div class="ttname"><a href="namespacerm.html#ab8f625f2805bcf404373221600ada840">rm::i32</a></div><div class="ttdeci">int32_t i32</div><div class="ttdef"><b>Definition</b> typedefs.hpp:49</div></div>
+<div class="ttc" id="aserial_8hpp_html"><div class="ttname"><a href="serial_8hpp.html">serial.hpp</a></div><div class="ttdoc">根据平台宏决定具体实现</div></div>
+<div class="ttc" id="atypedefs_8hpp_html"><div class="ttname"><a href="typedefs_8hpp.html">typedefs.hpp</a></div><div class="ttdoc">全局数据类型定义</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_e8cded2b3f09657169024877e246b3be.html">device</a></li><li class="navelem"><a class="el" href="dir_9fcfdcb111b6ce4c5fa85a7697dddfab.html">sensor</a></li><li class="navelem"><a class="el" href="znsv6t1_8hpp.html">znsv6t1.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

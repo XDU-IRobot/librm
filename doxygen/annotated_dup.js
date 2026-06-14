@@ -49,7 +49,8 @@ var annotated_dup =
         [ "UnitreeMotor", "classrm_1_1device_1_1UnitreeMotor.html", "classrm_1_1device_1_1UnitreeMotor" ],
         [ "VirtualDevice", "classrm_1_1device_1_1VirtualDevice.html", "classrm_1_1device_1_1VirtualDevice" ],
         [ "VT03", "classrm_1_1device_1_1VT03.html", "classrm_1_1device_1_1VT03" ],
-        [ "ZdtStepper", "classrm_1_1device_1_1ZdtStepper.html", "classrm_1_1device_1_1ZdtStepper" ]
+        [ "ZdtStepper", "classrm_1_1device_1_1ZdtStepper.html", "classrm_1_1device_1_1ZdtStepper" ],
+        [ "Znsv6T1", "classrm_1_1device_1_1Znsv6T1.html", "classrm_1_1device_1_1Znsv6T1" ]
       ] ],
       [ "hal", "namespacerm_1_1hal.html", [
         [ "detail", "namespacerm_1_1hal_1_1detail.html", [
@@ -94,7 +95,8 @@ var annotated_dup =
           [ "Startup", "classrm_1_1modules_1_1buzzer__melody_1_1Startup.html", "classrm_1_1modules_1_1buzzer__melody_1_1Startup" ],
           [ "Success", "classrm_1_1modules_1_1buzzer__melody_1_1Success.html", "classrm_1_1modules_1_1buzzer__melody_1_1Success" ],
           [ "SuperMario", "classrm_1_1modules_1_1buzzer__melody_1_1SuperMario.html", "classrm_1_1modules_1_1buzzer__melody_1_1SuperMario" ],
-          [ "TheLick", "classrm_1_1modules_1_1buzzer__melody_1_1TheLick.html", "classrm_1_1modules_1_1buzzer__melody_1_1TheLick" ]
+          [ "TheLick", "classrm_1_1modules_1_1buzzer__melody_1_1TheLick.html", "classrm_1_1modules_1_1buzzer__melody_1_1TheLick" ],
+          [ "Tone", "classrm_1_1modules_1_1buzzer__melody_1_1Tone.html", "classrm_1_1modules_1_1buzzer__melody_1_1Tone" ]
         ] ],
         [ "detail", "namespacerm_1_1modules_1_1detail.html", [
           [ "tuple_element_index", "structrm_1_1modules_1_1detail_1_1tuple__element__index.html", null ],

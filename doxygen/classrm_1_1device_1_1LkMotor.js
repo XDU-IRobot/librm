@@ -70,6 +70,7 @@ var classrm_1_1device_1_1LkMotor =
     [ "position_kd", "classrm_1_1device_1_1LkMotor.html#a6ac69af6bfed04909c7da3b584c5a4d2", null ],
     [ "position_ki", "classrm_1_1device_1_1LkMotor.html#a137d3d11133f41c7ca3541b586a7a932", null ],
     [ "position_kp", "classrm_1_1device_1_1LkMotor.html#aedfc2f12f30e9a6609e2daf1584360cd", null ],
+    [ "position_multi_rad", "classrm_1_1device_1_1LkMotor.html#a6aceb4a7b6ed90f0949f3ccfd5b92395", null ],
     [ "position_rad", "classrm_1_1device_1_1LkMotor.html#aa3a6d84ce3ee1d7959cf6e24ca244cc7", null ],
     [ "power", "classrm_1_1device_1_1LkMotor.html#a99ae472950bfe1a5882eeb8309248b43", null ],
     [ "short_circuit", "classrm_1_1device_1_1LkMotor.html#a0d417ccfae0303f8168044cab7134f97", null ],

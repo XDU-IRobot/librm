@@ -45,6 +45,7 @@ var namespacerm_1_1device =
     [ "VirtualDevice", "classrm_1_1device_1_1VirtualDevice.html", "classrm_1_1device_1_1VirtualDevice" ],
     [ "VT03", "classrm_1_1device_1_1VT03.html", "classrm_1_1device_1_1VT03" ],
     [ "ZdtStepper", "classrm_1_1device_1_1ZdtStepper.html", "classrm_1_1device_1_1ZdtStepper" ],
+    [ "Znsv6T1", "classrm_1_1device_1_1Znsv6T1.html", "classrm_1_1device_1_1Znsv6T1" ],
     [ "DmMotorMit", "namespacerm_1_1device.html#afb7962cab98123f231295bc522d94199", null ],
     [ "DmMotorSpeed", "namespacerm_1_1device.html#aeb6c3f9fa7319f4f5ab684a282a771b6", null ],
     [ "DmMotorSpeedPosition", "namespacerm_1_1device.html#a2bd90b66d9b191f86a3ed8890a23a144", null ],
