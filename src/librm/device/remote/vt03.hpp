@@ -123,8 +123,8 @@ class VT03 : public Device {
           std::memcpy(&raw_payload_data_, valid_data_so_far_.data(), sizeof(raw_payload_data_));
           data_.right_x = modules::Map(raw_payload_data_.ch_0, 364, 1684, -1.0f, 1.0f);
           data_.right_y = modules::Map(raw_payload_data_.ch_1, 364, 1684, -1.0f, 1.0f);
-          data_.left_x = modules::Map(raw_payload_data_.ch_2, 364, 1684, -1.0f, 1.0f);
-          data_.left_y = modules::Map(raw_payload_data_.ch_3, 364, 1684, -1.0f, 1.0f);
+          data_.left_y = modules::Map(raw_payload_data_.ch_2, 364, 1684, -1.0f, 1.0f);
+          data_.left_x = modules::Map(raw_payload_data_.ch_3, 364, 1684, -1.0f, 1.0f);
           data_.switch_position = static_cast<SwitchPosition>(raw_payload_data_.mode_sw);
           data_.pause_button = raw_payload_data_.pause;
           data_.left_button = raw_payload_data_.fn_1;

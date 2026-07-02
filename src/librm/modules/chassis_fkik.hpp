@@ -69,8 +69,8 @@ class MecanumChassis {
    */
   auto Forward(f32 vx, f32 vy, f32 wz) {
     forward_result_.lf_speed = vx - vy - (wheel_base_ + wheel_track_) * wz;
-    forward_result_.lr_speed = vx + vy + (wheel_base_ + wheel_track_) * wz;
-    forward_result_.rf_speed = vx + vy - (wheel_base_ + wheel_track_) * wz;
+    forward_result_.lr_speed = vx + vy - (wheel_base_ + wheel_track_) * wz;
+    forward_result_.rf_speed = vx + vy + (wheel_base_ + wheel_track_) * wz;
     forward_result_.rr_speed = vx - vy + (wheel_base_ + wheel_track_) * wz;
     return forward_result_;
   }
