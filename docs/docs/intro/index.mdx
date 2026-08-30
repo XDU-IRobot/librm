@@ -38,19 +38,19 @@ while (true) {
 
 | 需求                 | 不用 librm 你需要                                                                     | 用 librm                                                 |
 | -------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| 驱动一个电机         | 读电调/电机手册，写 CAN 收发、编码器解析、PID 控制                                    | [教程：电机驱动速查](../tutorials/motor-drivers)         |
-| 读取裁判系统数据     | 读串口协议手册（数十页），实现 SOF 分包、CRC8/16 校验、丢包检测，逐帧解析几十种结构体 | [教程：裁判系统串口](../tutorials/referee)               |
-| CAN 总线限频发送     | 手写定时器中断 + 手动管理发送队列，稍不注意就总线拥塞、电机掉线                       | [教程：限流 CAN 发送](../tutorials/throttled-can)         |
-| 对陀螺仪做陷波滤波   | 手写陷波器，再在 MATLAB 里手搓 Bode 图可视化                                          | [教程：数字信号处理滤波器](../tutorials/dsp-filters)     |
-| 姿态解算             | 推导 Mahony/EKF，处理四元数/欧拉角转换、磁力计融合                                    | [教程：姿态解算](../tutorials/imu-fusion)            |
-| 底盘运动学解算       | 推导麦轮/舵轮/全向轮的正逆运动学公式并编码                                            | [教程：底盘运动学解算](../tutorials/chassis-fkik)        |
-| 底盘功率限制         | 复现开源电机功率模型，配合裁判系统手动写分配算法                                      | [教程：M3508 功率模型](../tutorials/m3508-power-model)   |
+| 驱动一个电机         | 读电调/电机手册，写 CAN 收发、编码器解析、PID 控制                                    | [教程：电机驱动速查](../tutorials/motor-drivers.mdx)         |
+| 读取裁判系统数据     | 读串口协议手册（数十页），实现 SOF 分包、CRC8/16 校验、丢包检测，逐帧解析几十种结构体 | [教程：裁判系统串口](../tutorials/referee.mdx)               |
+| CAN 总线限频发送     | 手写定时器中断 + 手动管理发送队列，稍不注意就总线拥塞、电机掉线                       | [教程：限流 CAN 发送](../tutorials/throttled-can.mdx)         |
+| 对陀螺仪做陷波滤波   | 手写陷波器，再在 MATLAB 里手搓 Bode 图可视化                                          | [教程：数字信号处理滤波器](../tutorials/dsp-filters.mdx)     |
+| 姿态解算             | 推导 Mahony/EKF，处理四元数/欧拉角转换、磁力计融合                                    | [教程：姿态解算](../tutorials/imu-fusion.mdx)            |
+| 底盘运动学解算       | 推导麦轮/舵轮/全向轮的正逆运动学公式并编码                                            | [教程：底盘运动学解算](../tutorials/chassis-fkik.mdx)        |
+| 底盘功率限制         | 复现开源电机功率模型，配合裁判系统手动写分配算法                                      | [教程：M3508 功率模型](../tutorials/m3508-power-model.mdx)   |
 | DR16/遥控器接入      | -                                                                                     | `rm::device::Dr16`                                       |
-| 轨迹平滑/输入整形    | 手写S曲线/梯形速度规划，处理各种约束                                                  | [教程：轨迹限制器](../tutorials/trajectory-limiter)      |
-| CRC 校验             | -                                                                                     | [教程：CRC](../tutorials/crc)                            |
-| 给所有设备加心跳监控 | 每个设备手动维护 `last_update` 时间戳                                                 | [教程：设备状态监控](../tutorials/device-status-monitor) |
-| 蜂鸣器播放旋律       | -                                                                                     | [教程：蜂鸣器](../tutorials/buzzer)                      |
-| RGB LED 灯效         | -                                                                                     | [教程：RGB LED](../tutorials/rgb-led)                    |
+| 轨迹平滑/输入整形    | 手写S曲线/梯形速度规划，处理各种约束                                                  | [教程：轨迹限制器](../tutorials/trajectory-limiter.mdx)      |
+| CRC 校验             | -                                                                                     | [教程：CRC](../tutorials/crc.mdx)                            |
+| 给所有设备加心跳监控 | 每个设备手动维护 `last_update` 时间戳                                                 | [教程：设备状态监控](../tutorials/device-status-monitor.mdx) |
+| 蜂鸣器播放旋律       | -                                                                                     | [教程：蜂鸣器](../tutorials/buzzer.mdx)                      |
+| RGB LED 灯效         | -                                                                                     | [教程：RGB LED](../tutorials/rgb-led.mdx)                    |
 | Vofa+ / 串口绘图     | -                                                                                     | `rm::modules::VofaPlotter`                               |
 
 ### librm是一套可组合的构建块
