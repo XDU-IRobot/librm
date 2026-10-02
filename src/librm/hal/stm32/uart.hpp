@@ -232,8 +232,10 @@ class Uart : public SyncSerialInterface,
     if (!is_receiving_) {
       return;
     }
+    const bool completed_buffer = buffer_selector_;
+    buffer_selector_ = !buffer_selector_;
     RestartRx();  // 先重启接收，最小化数据丢失窗口
-    etl::span<const u8> received{rx_buf_[buffer_selector_].data(), rx_len};
+    etl::span<const u8> received{rx_buf_[completed_buffer].data(), rx_len};
     for (auto &cb : rx_callbacks_) {
       if (cb) {
         cb(received);
