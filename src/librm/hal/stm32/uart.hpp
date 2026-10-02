@@ -241,7 +241,6 @@ class Uart : public SyncSerialInterface,
         cb(received);
       }
     }
-    buffer_selector_ = !buffer_selector_;
   }
 
   void HalTxCpltCallback() override {
