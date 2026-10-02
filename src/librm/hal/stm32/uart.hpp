@@ -216,7 +216,7 @@ class Uart : public SyncSerialInterface,
 
  private:
   void RestartRx() {
-    auto &buf = rx_buf_[!buffer_selector_];
+    auto &buf = rx_buf_[buffer_selector_];
 #ifdef HAL_DMA_MODULE_ENABLED
     if (async_rx_use_dma_) {
       LIBRM_STM32_HAL_ASSERT(HAL_UARTEx_ReceiveToIdle_DMA(huart_, buf.data(), buf.size()));
