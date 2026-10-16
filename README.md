@@ -13,4 +13,4 @@ All-in-one、跨平台 Robomaster 嵌入式软件开发框架，为多种硬件�
 - [x] Raspberry Pi/Orange Pi
 - [x] Jetson
 
-# [文档/Documentation](https://librm.xduirobot.cc/)
+# [文档/Documentation](https://xdu-irobot.github.io/librm/)
