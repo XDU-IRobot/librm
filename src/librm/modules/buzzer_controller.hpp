@@ -618,23 +618,35 @@ class You : public BuzzerMelody {
 
     constexpr std::array<BuzzerNote, 26> kMelody = {
         // 第 1 小节
-        BuzzerNote(Freq::kG6, Duration::kDottedQuarter), BuzzerNote(Freq::kE6, Duration::kEighth),
-        BuzzerNote(Freq::kG6, Duration::kEighth),        BuzzerNote(Freq::kE6, Duration::kSixteenth),
-        BuzzerNote(Freq::kG6, Duration::kSixteenth),     BuzzerNote(Freq::kG6, Duration::kEighth),
+        BuzzerNote(Freq::kG6, Duration::kDottedQuarter),
+        BuzzerNote(Freq::kE6, Duration::kEighth),
+        BuzzerNote(Freq::kG6, Duration::kEighth),
+        BuzzerNote(Freq::kE6, Duration::kSixteenth),
+        BuzzerNote(Freq::kG6, Duration::kSixteenth),
+        BuzzerNote(Freq::kG6, Duration::kEighth),
         BuzzerNote(Freq::kB6, Duration::kEighth),
         // 第 2 小节：副歌的高音长音
-        BuzzerNote(Freq::kB6, Duration::kEighth), BuzzerNote(Freq::kC7, Duration::kDottedQuarter),
-        BuzzerNote(Freq::kC6, Duration::kEighth), BuzzerNote(Freq::kD6, Duration::kEighth),
-        BuzzerNote(Freq::kE6, Duration::kEighth), BuzzerNote(Freq::kG6, Duration::kEighth),
+        BuzzerNote(Freq::kB6, Duration::kEighth),
+        BuzzerNote(Freq::kC7, Duration::kDottedQuarter),
+        BuzzerNote(Freq::kC6, Duration::kEighth),
+        BuzzerNote(Freq::kD6, Duration::kEighth),
+        BuzzerNote(Freq::kE6, Duration::kEighth),
+        BuzzerNote(Freq::kG6, Duration::kEighth),
         // 第 3 小节：连续的十六分音符咬字
-        BuzzerNote(Freq::kG6, Duration::kEighth),    BuzzerNote(Freq::kA6, Duration::kEighth),
-        BuzzerNote(Freq::kG6, Duration::kSixteenth), BuzzerNote(Freq::kA6, Duration::kSixteenth),
-        BuzzerNote(Freq::kA6, Duration::kEighth),    BuzzerNote(Freq::kG6, Duration::kSixteenth),
-        BuzzerNote(Freq::kG6, Duration::kSixteenth), BuzzerNote(Freq::kG6, Duration::kEighth),
+        BuzzerNote(Freq::kG6, Duration::kEighth),
+        BuzzerNote(Freq::kA6, Duration::kEighth),
+        BuzzerNote(Freq::kG6, Duration::kSixteenth),
+        BuzzerNote(Freq::kA6, Duration::kSixteenth),
+        BuzzerNote(Freq::kA6, Duration::kEighth),
+        BuzzerNote(Freq::kG6, Duration::kSixteenth),
+        BuzzerNote(Freq::kG6, Duration::kSixteenth),
+        BuzzerNote(Freq::kG6, Duration::kEighth),
         BuzzerNote(Freq::kG6, Duration::kQuarter),
         // 第 4 小节：句尾
-        BuzzerNote(Freq::kG6, Duration::kEighth), BuzzerNote(Freq::kD6, Duration::kDottedQuarter),
-        BuzzerNote(Freq::kE6, Duration::kQuarter), BuzzerNote(Freq::kF6, Duration::kQuarter),
+        BuzzerNote(Freq::kG6, Duration::kEighth),
+        BuzzerNote(Freq::kD6, Duration::kDottedQuarter),
+        BuzzerNote(Freq::kE6, Duration::kQuarter),
+        BuzzerNote(Freq::kF6, Duration::kQuarter),
     };
 
     if (note_index_ >= kMelody.size()) {
