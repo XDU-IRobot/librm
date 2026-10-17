@@ -32,6 +32,9 @@ target_include_directories(eternal INTERFACE
     ${CMAKE_CURRENT_LIST_DIR}/eternal/include
 )
 
+# embedded_cli - https://github.com/funbiscuit/embedded-cli
+add_subdirectory(embedded_cli)
+
 # pack up all third party libraries to a single target
 add_library(third_party INTERFACE)
 target_compile_definitions(third_party INTERFACE RPC_CORE_LOG_DISABLE_ALL)
@@ -55,6 +58,7 @@ target_link_libraries(third_party INTERFACE
     ardupilot_filter
     rpc_core
     eternal
+    embedded_cli
 )
 
 set(BUILD_TESTS OFF)
