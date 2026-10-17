@@ -603,6 +603,66 @@ class SeeUAgain : public BuzzerMelody {
 };
 
 /**
+ * @brief RoboMaster 主题曲《你》（GALA，动画《机甲大师》片尾曲）副歌片段
+ * @note  取原曲副歌“我从来不会计代价……”的四小节，按 C 大调首调转写（1=C），
+ *        保留原谱的连音与十六分音符咬字；原曲 J=75，这里用 NoteDuration80 近似，
+ *        四小节约 12 秒，需要更长可继续接第 29 小节起（“为了你可以纵身无底崖……”）。
+ */
+class You : public BuzzerMelody {
+ public:
+  You() = default;
+
+  BuzzerNote Update(TimePoint now) override {
+    using Freq = NoteFreqStandard;
+    using Duration = NoteDuration80;
+
+    constexpr std::array<BuzzerNote, 26> kMelody = {
+        // 第 1 小节
+        BuzzerNote(Freq::kG6, Duration::kDottedQuarter), BuzzerNote(Freq::kE6, Duration::kEighth),
+        BuzzerNote(Freq::kG6, Duration::kEighth),        BuzzerNote(Freq::kE6, Duration::kSixteenth),
+        BuzzerNote(Freq::kG6, Duration::kSixteenth),     BuzzerNote(Freq::kG6, Duration::kEighth),
+        BuzzerNote(Freq::kB6, Duration::kEighth),
+        // 第 2 小节：副歌的高音长音
+        BuzzerNote(Freq::kB6, Duration::kEighth), BuzzerNote(Freq::kC7, Duration::kDottedQuarter),
+        BuzzerNote(Freq::kC6, Duration::kEighth), BuzzerNote(Freq::kD6, Duration::kEighth),
+        BuzzerNote(Freq::kE6, Duration::kEighth), BuzzerNote(Freq::kG6, Duration::kEighth),
+        // 第 3 小节：连续的十六分音符咬字
+        BuzzerNote(Freq::kG6, Duration::kEighth),    BuzzerNote(Freq::kA6, Duration::kEighth),
+        BuzzerNote(Freq::kG6, Duration::kSixteenth), BuzzerNote(Freq::kA6, Duration::kSixteenth),
+        BuzzerNote(Freq::kA6, Duration::kEighth),    BuzzerNote(Freq::kG6, Duration::kSixteenth),
+        BuzzerNote(Freq::kG6, Duration::kSixteenth), BuzzerNote(Freq::kG6, Duration::kEighth),
+        BuzzerNote(Freq::kG6, Duration::kQuarter),
+        // 第 4 小节：句尾
+        BuzzerNote(Freq::kG6, Duration::kEighth), BuzzerNote(Freq::kD6, Duration::kDottedQuarter),
+        BuzzerNote(Freq::kE6, Duration::kQuarter), BuzzerNote(Freq::kF6, Duration::kQuarter),
+    };
+
+    if (note_index_ >= kMelody.size()) {
+      return BuzzerNote(0, 0);  // 播放完毕
+    }
+
+    auto note = kMelody[note_index_];
+
+    auto elapsed = ElapsedMs(note_start_time_, now);
+    if (elapsed >= note.duration) {
+      note_index_++;
+      note_start_time_ = now;
+    }
+
+    return note;
+  }
+
+  void Reset(TimePoint now) override {
+    note_index_ = 0;
+    note_start_time_ = now;
+  }
+
+ private:
+  usize note_index_{0};
+  TimePoint note_start_time_;
+};
+
+/**
  * @brief 单音提示音，以指定音高响一声
  * @tparam NoteFrequency 音高（Hz），可使用NoteFreq中的常量
  */
