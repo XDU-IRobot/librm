@@ -43,7 +43,7 @@ namespace rm {
  * @param e 异常对象
  */
 template <typename T>
-inline void Throw(__attribute__((__unused__)) const T& e) {
+[[noreturn]] inline void Throw(__attribute__((__unused__)) const T& e) {
   static_assert(std::is_base_of<std::exception, T>::value, "Thrown type must be derived from std::exception");
 #if defined(LIBRM_PLATFORM_LINUX)
   throw e;

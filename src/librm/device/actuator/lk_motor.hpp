@@ -146,7 +146,7 @@ class LkMotor : public CanDevice {
 
   /**
    * @brief  力矩控制函数，MS型号电机不支持
-   * @param  torque     期望力矩，单位：Nm
+   * @param  torque_nm     期望力矩，单位：Nm
    */
   template <LkMotorType t = type, std::enable_if_t<t != LkMotorType::kMS, int> = 0>
   void SetTorque(f32 torque_nm) {
@@ -317,13 +317,18 @@ class LkMotor : public CanDevice {
         break;
       }
       case Instruction::kReadPositionMulti: {
-        int64_t pos_multi_raw = (                          //
-            msg->data[1] | (msg->data[2] << 8) |           //
-            (msg->data[3] << 16) | (msg->data[4] << 24) |  //
-            (msg->data[5] << 32) | (msg->data[6] << 40) |  //
-            (msg->data[7] << 48)                           //
+        // data 的元素类型是 u8，必须逐字节提升到 64 位再移位。
+        // 否则会被整型提升到 int，移位量 >= 32 属于未定义行为。
+        const u64 pos_multi_raw = (                                   //
+            static_cast<u64>(msg->data[1]) |                          //
+            (static_cast<u64>(msg->data[2]) << 8) |                   //
+            (static_cast<u64>(msg->data[3]) << 16) |                  //
+            (static_cast<u64>(msg->data[4]) << 24) |                  //
+            (static_cast<u64>(msg->data[5]) << 32) |                  //
+            (static_cast<u64>(msg->data[6]) << 40) |                  //
+            (static_cast<u64>(msg->data[7]) << 48)                    //
         );
-        feedback_.position_multi_rad = (pos_multi_raw / 100.f) / 180.f * M_PI;
+        feedback_.position_multi_rad = (static_cast<i64>(pos_multi_raw) / 100.f) / 180.f * M_PI;
         break;
       }
       // TODO: 其他反馈报文，暂时用不到

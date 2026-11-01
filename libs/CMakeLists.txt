@@ -38,6 +38,12 @@ add_subdirectory(embedded_cli)
 # pack up all third party libraries to a single target
 add_library(third_party INTERFACE)
 target_compile_definitions(third_party INTERFACE RPC_CORE_LOG_DISABLE_ALL)
+
+# ETL等第三方模板代码在GCC下会报 "parameter passing for argument of type ... changed in GCC 7.1"
+# 这类psabi提示，只是ABI说明、与功能无关，这里统一关掉
+if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    target_compile_options(third_party INTERFACE -Wno-psabi)
+endif ()
 if(LIBRM_PLATFORM STREQUAL "LINUX")
     target_link_libraries(third_party INTERFACE
         Boost::system

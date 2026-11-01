@@ -32,7 +32,10 @@
 #include "librm/hal/stm32/hal.hpp"
 
 #ifdef LIBRM_BYPASS_HAL_ASSERT  // 因为librm当前的错误处理系统还不够完善，所以暂时允许用户绕过HAL断言，后续会移除这个宏
-#define LIBRM_STM32_HAL_ASSERT(hal_api_call) (hal_api_call)
+#define LIBRM_STM32_HAL_ASSERT(hal_api_call) \
+  do {                                       \
+    (void)(hal_api_call);                    \
+  } while (0)
 #else
 #define LIBRM_STM32_HAL_ASSERT(hal_api_call)         \
   do {                                               \

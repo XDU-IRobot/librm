@@ -326,7 +326,8 @@ int hipnuc_dump_packet(hipnuc_raw_t *raw, char *buf, size_t buf_size) {
                    "  \"quat\": [%.3f, %.3f, %.3f, %.3f],\n"
                    "  \"air_pressure\": %.1f\n"
                    "}\n",
-                   raw->hi91.main_status, raw->hi91.system_time, raw->hi91.acc[0] * GRAVITY, raw->hi91.acc[1] * GRAVITY,
+                   raw->hi91.main_status, (unsigned int)raw->hi91.system_time, raw->hi91.acc[0] * GRAVITY,
+                   raw->hi91.acc[1] * GRAVITY,
                    raw->hi91.acc[2] * GRAVITY, raw->hi91.gyr[0], raw->hi91.gyr[1], raw->hi91.gyr[2], raw->hi91.mag[0],
                    raw->hi91.mag[1], raw->hi91.mag[2], raw->hi91.pitch, raw->hi91.roll, raw->hi91.yaw,
                    raw->hi91.quat[0], raw->hi91.quat[1], raw->hi91.quat[2], raw->hi91.quat[3], raw->hi91.air_pressure);
@@ -389,7 +390,8 @@ int hipnuc_dump_packet(hipnuc_raw_t *raw, char *buf, size_t buf_size) {
                    "  \"vel_enu\": [%.2f, %.2f, %.2f],\n"
                    "  \"acc_enu\": [%.2f, %.2f, %.2f],\n"
                    "}\n",
-                   raw->hi81.main_status, raw->hi81.ins_status, raw->hi81.gpst_wn, raw->hi81.gpst_tow,
+                   raw->hi81.main_status, raw->hi81.ins_status, raw->hi81.gpst_wn,
+                   (unsigned int)raw->hi81.gpst_tow,
                    raw->hi81.gyr_b[0] * (0.001 * R2D), raw->hi81.gyr_b[1] * (0.001 * R2D),
                    raw->hi81.gyr_b[2] * (0.001 * R2D), raw->hi81.acc_b[0] * 0.0048828, raw->hi81.acc_b[1] * 0.0048828,
                    raw->hi81.acc_b[2] * 0.0048828, raw->hi81.mag_b[0] * 0.030517, raw->hi81.mag_b[1] * 0.030517,

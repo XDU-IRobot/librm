@@ -131,7 +131,7 @@ class Uart : public SyncSerialInterface,
              public SerialInterface,
              public AsyncTxSyncRxSerialInterface,
              public AsyncSerialInterface,
-             private UartBase {
+             UartBase {
  public:
   explicit Uart(UART_HandleTypeDef &huart, bool async_tx_use_dma = false, bool async_rx_use_dma = false)
       : huart_(&huart), async_tx_use_dma_(async_tx_use_dma), async_rx_use_dma_(async_rx_use_dma) {}
@@ -220,7 +220,11 @@ class Uart : public SyncSerialInterface,
 #ifdef HAL_DMA_MODULE_ENABLED
     if (async_rx_use_dma_) {
       LIBRM_STM32_HAL_ASSERT(HAL_UARTEx_ReceiveToIdle_DMA(huart_, buf.data(), buf.size()));
-      __HAL_DMA_DISABLE_IT(huart_->hdmarx, DMA_IT_HT);
+      // 只要IDLE事件，关掉半传输中断避免HT回调过于频繁。
+      // NOTE:
+      // 直接调用__HAL_DMA_DISABLE_IT会触发 -Wunused-value，
+      // 而(void)转换对volatile左值无效，所以这里显式用一个变量接收返回值
+      [[maybe_unused]] const u32 cr_after_ht_disable = __HAL_DMA_DISABLE_IT(huart_->hdmarx, DMA_IT_HT);
     } else
 #endif
     {
