@@ -319,14 +319,14 @@ class LkMotor : public CanDevice {
       case Instruction::kReadPositionMulti: {
         // data 的元素类型是 u8，必须逐字节提升到 64 位再移位。
         // 否则会被整型提升到 int，移位量 >= 32 属于未定义行为。
-        const u64 pos_multi_raw = (                                   //
-            static_cast<u64>(msg->data[1]) |                          //
-            (static_cast<u64>(msg->data[2]) << 8) |                   //
-            (static_cast<u64>(msg->data[3]) << 16) |                  //
-            (static_cast<u64>(msg->data[4]) << 24) |                  //
-            (static_cast<u64>(msg->data[5]) << 32) |                  //
-            (static_cast<u64>(msg->data[6]) << 40) |                  //
-            (static_cast<u64>(msg->data[7]) << 48)                    //
+        const u64 pos_multi_raw = (                   //
+            static_cast<u64>(msg->data[1]) |          //
+            (static_cast<u64>(msg->data[2]) << 8) |   //
+            (static_cast<u64>(msg->data[3]) << 16) |  //
+            (static_cast<u64>(msg->data[4]) << 24) |  //
+            (static_cast<u64>(msg->data[5]) << 32) |  //
+            (static_cast<u64>(msg->data[6]) << 40) |  //
+            (static_cast<u64>(msg->data[7]) << 48)    //
         );
         feedback_.position_multi_rad = (static_cast<i64>(pos_multi_raw) / 100.f) / 180.f * M_PI;
         break;
