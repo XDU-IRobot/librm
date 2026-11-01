@@ -21,14 +21,11 @@
 */
 
 /**
- * @file  librm/hal/stm32/check_register_callbacks.h
+ * @file  librm/hal/stm32/check_register_callbacks.cc
  * @brief 由于对STM32的外设进行封装时，需要利用Register callback向HAL库注册回调函数，
  *        所以需要检查是否在CubeMX里启用了Register callback功能
  * @brief 本文件用于检查各个启用了的外设是否在CubeMX里启用了Register callback功能
  */
-
-#ifndef LIBRM_HAL_STM32_CHECK_REGISTER_CALLBACK_HPP
-#define LIBRM_HAL_STM32_CHECK_REGISTER_CALLBACK_HPP
 
 // UART
 #if defined(HAL_UART_MODULE_ENABLED)
@@ -63,4 +60,13 @@
 #endif
 #endif
 
-#endif  // LIBRM_HAL_STM32_CHECK_REGISTER_CALLBACK_HPP
+// TIM
+#if defined(HAL_TIM_MODULE_ENABLED)
+#if defined(USE_HAL_TIM_REGISTER_CALLBACKS)
+#if (USE_HAL_TIM_REGISTER_CALLBACKS != 1u)
+#error "TIM register callback must be enabled!"
+#endif
+#else
+#error "Whether TIM register callback is enabled or not is unknown!"
+#endif
+#endif

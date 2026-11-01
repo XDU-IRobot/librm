@@ -27,7 +27,6 @@
 
 #include "librm/hal/stm32/hal.hpp"
 #if defined(HAL_FDCAN_MODULE_ENABLED)
-#include "librm/hal/stm32/check_register_callbacks.hpp"
 
 #include "fdcan.hpp"
 

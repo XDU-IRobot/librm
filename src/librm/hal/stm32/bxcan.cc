@@ -28,7 +28,6 @@
 #include "librm/hal/stm32/hal.hpp"
 
 #if defined(HAL_CAN_MODULE_ENABLED)
-#include "librm/hal/stm32/check_register_callbacks.hpp"
 
 #include "bxcan.hpp"
 

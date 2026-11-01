@@ -37,7 +37,6 @@
 
 #include "librm/hal/stm32/hal.hpp"
 #ifdef HAL_UART_MODULE_ENABLED
-#include "librm/hal/stm32/check_register_callbacks.hpp"
 
 #include <array>
 #include <functional>
