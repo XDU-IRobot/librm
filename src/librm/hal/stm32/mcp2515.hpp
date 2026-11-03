@@ -67,6 +67,7 @@ class Mcp2515 : public CanInterface, rm::detail::NonCopyable {
   Mcp2515 &operator=(Mcp2515 &&other) noexcept;
 
   void Write(u16 id, const u8 *data, usize size) override;
+  void Write(const CanFrame &frame) override;
   void SetFilter(u16 id, u16 mask) override;
   void Begin() override;
   void Stop() override;
@@ -82,6 +83,7 @@ class Mcp2515 : public CanInterface, rm::detail::NonCopyable {
   void CheckAndRecover();
 
  private:
+  void WriteFrame(u16 id, const u8 *data, u8 dlc, bool is_fd_frame);
   void HandleRxInterrupt();
 
   // SPI指令

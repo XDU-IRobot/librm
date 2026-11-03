@@ -57,10 +57,12 @@ class SocketCan : public hal::CanInterface, rm::detail::NonCopyable {
 
   void SetFilter(u16 id, u16 mask) override;
   void Write(u16 id, const u8 *data, usize size) override;
+  void Write(const CanFrame &frame) override;
   void Begin() override;
   void Stop() override;
 
  private:
+  void WriteFrame(u16 id, const u8 *data, u8 dlc, bool is_fd_frame);
   void RecvThread();
 
   int socket_fd_{-1};                            ///< 当前使用的 CAN 套接字描述符

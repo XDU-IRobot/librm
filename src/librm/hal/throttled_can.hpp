@@ -36,7 +36,9 @@
 
 #include <etl/pseudo_moving_average.h>
 
+#include "librm/core/exception.hpp"
 #include "librm/core/typedefs.hpp"
+#include "librm/hal/can_interface.hpp"
 #include "librm/modules/throttled_prio_queue.hpp"
 
 namespace rm::hal::detail {
@@ -86,13 +88,24 @@ class ThrottledCan : public Base {
 
   /**
    * @brief 将数据帧入队（使用默认优先级和默认截止时间）
-   * @note  不会立即发送，需要定期调用 Process() 以实际发送
+   * @note  不会立即发送，需要定期调用 Process() 以实际发送。
+   *        帧类型沿用旧接口的隐式规则：大于 8 字节且底层支持 FD 时按 FD 帧发送
    * @param id    标准帧ID
    * @param data  数据指针
    * @param size  数据长度
    */
   void Write(u16 id, const u8 *data, usize size) override {
-    Write(id, data, size, kDefaultPriority, clock::now() + default_deadline_offset_);
+    Enqueue(id, data, size, kSupportsFdFrame && (size > 8), kDefaultPriority, clock::now() + default_deadline_offset_);
+  }
+
+  /**
+   * @brief 将数据帧入队（帧类型由 frame.is_fd_frame 显式指定）
+   * @note  不会立即发送，需要定期调用 Process() 以实际发送
+   * @param frame 数据帧，std_id 为发送的目标ID
+   */
+  void Write(const CanFrame &frame) override {
+    Enqueue(frame.std_id, frame.data.data(), static_cast<usize>(frame.dlc), frame.is_fd_frame, kDefaultPriority,
+            clock::now() + default_deadline_offset_);
   }
 
   /**
@@ -105,16 +118,7 @@ class ThrottledCan : public Base {
    * @return true 入队成功, false 队列已满
    */
   bool Write(u16 id, const u8 *data, usize size, u8 priority, time_point deadline) {
-    TxRequest req;
-    req.id = id;
-    req.size = (size <= MaxDataSize) ? size : MaxDataSize;
-    std::copy_n(data, req.size, req.data.begin());
-    ++stat_window_data_.enqueue_count;
-    if (!queue_.Push(req, priority, deadline)) {
-      ++stat_window_data_.drop_full_count;
-      return false;
-    }
-    return true;
+    return Enqueue(id, data, size, kSupportsFdFrame && (size > 8), priority, deadline);
   }
 
   /**
@@ -141,7 +145,13 @@ class ThrottledCan : public Base {
     const bool sent = result.has_value();
     if (sent) {
       const auto &req = result.value();
-      Base::Write(req.id, req.data.data(), req.size);
+      // 把队列项还原成CanFrame，帧类型按入队时记录的值显式透传
+      CanFrame frame{};
+      frame.std_id = req.id;
+      frame.dlc = static_cast<CanFrame::Dlc>(req.size);
+      frame.is_fd_frame = req.is_fd_frame;
+      std::copy_n(req.data.begin(), req.size, frame.data.begin());
+      Base::Write(frame);
       ++stat_window_data_.tx_count;
     }
 
@@ -205,13 +215,51 @@ class ThrottledCan : public Base {
   duration default_deadline_offset() const { return default_deadline_offset_; }
 
  private:
+  /**
+   * @brief 将数据帧入队的公共实现
+   * @param id          标准帧ID
+   * @param data        数据指针
+   * @param size        数据长度
+   * @param is_fd_frame 是否发送FD帧
+   * @param priority    软件优先级（数值越大，优先级越高）
+   * @param deadline    绝对截止时间点
+   * @return true 入队成功, false 队列已满
+   */
+  bool Enqueue(u16 id, const u8 *data, usize size, bool is_fd_frame, u8 priority, time_point deadline) {
+    // 先校验再入队，保证错误配置不会被静默丢弃或截断
+    if (!CanFrame::IsLegalLength(size)) {
+      Throw(rm::runtime_error("throttled_can: dlc is not a legal CAN frame length"));
+    }
+    if (size > MaxDataSize) {
+      Throw(rm::runtime_error("throttled_can: frame is too long for this queue"));
+    }
+    if (is_fd_frame && !kSupportsFdFrame) {
+      Throw(rm::runtime_error("throttled_can: CAN FD frame requested, but the underlying CAN does not support CAN FD"));
+    }
+
+    TxRequest req;
+    req.id = id;
+    req.size = size;
+    req.is_fd_frame = is_fd_frame;
+    std::copy_n(data, size, req.data.begin());
+    ++stat_window_data_.enqueue_count;
+    if (!queue_.Push(req, priority, deadline)) {
+      ++stat_window_data_.drop_full_count;
+      return false;
+    }
+    return true;
+  }
+
   struct TxRequest {
     u16 id;
     std::array<u8, MaxDataSize> data;
     usize size;
+    bool is_fd_frame{false};
   };
 
   static constexpr u8 kDefaultPriority = 128;
+  /// @brief 底层是否支持 FD 帧（由 MaxDataSize 推断）
+  static constexpr bool kSupportsFdFrame = (MaxDataSize > 8);
 
   modules::ThrottledPrioQueue<TxRequest, MaxQueueSize, Policy> queue_;
   duration default_deadline_offset_;

@@ -74,9 +74,9 @@ class HipnucImuCan final : public CanDevice {
   void RxCallback(const hal::CanFrame *msg) override {
     // 转换为HIPNUC SDK的帧格式
     hipnuc_can_frame_t frame;
-    frame.can_id = msg->rx_std_id;
-    frame.can_dlc = msg->dlc;
-    for (u8 i = 0; i < msg->dlc && i < 8; ++i) {
+    frame.can_id = msg->std_id;
+    frame.can_dlc = static_cast<u8>(msg->dlc);
+    for (u8 i = 0; (i < static_cast<u8>(msg->dlc)) && (i < 8); ++i) {
       frame.data[i] = msg->data[i];
     }
     frame.hw_ts_us = 0;  // 时间戳暂不使用

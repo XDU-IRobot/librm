@@ -53,11 +53,13 @@ class BxCan : public CanInterface, rm::detail::NonCopyable {
 
   void SetFilter(u16 id, u16 mask) override;
   void Write(u16 id, const u8 *data, usize size) override;
+  void Write(const CanFrame &frame) override;
   void Begin() override;
   void Stop() override;
 
  private:
   void Fifo0MsgPendingCallback();
+  void WriteFrame(u16 id, const u8 *data, u8 dlc, bool is_fd_frame);
 
   u32 tx_mailbox_{0};
   CanFrame rx_buffer_{};

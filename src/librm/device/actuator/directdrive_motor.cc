@@ -43,7 +43,7 @@ std::unordered_map<hal::CanInterface *, DirectDriveMotor::TxBufferTable> DirectD
  */
 void DirectDriveMotor::RxCallback(const hal::CanFrame *msg) {
   ReportStatus(kOk);
-  if (msg->rx_std_id == 0x50 + id_) {
+  if (msg->std_id == 0x50 + id_) {
     const u16 iq_temp = (msg->data[2] << 8) | msg->data[3];
     const u16 rpm_temp = (msg->data[0] << 8) | msg->data[1];
     feedback_.rpm = (*reinterpret_cast<const i16 *>(&rpm_temp)) / 10.f;
@@ -52,12 +52,12 @@ void DirectDriveMotor::RxCallback(const hal::CanFrame *msg) {
     feedback_.master_voltage = static_cast<f32>((msg->data[6] << 8) | msg->data[7]) / 10.f;
 
     // TODO
-  } else if (msg->rx_std_id == 0x60 + id_) {
-  } else if (msg->rx_std_id == 0x70 + id_) {
-  } else if (msg->rx_std_id == 0x80 + id_) {
-  } else if (msg->rx_std_id == 0x90 + id_) {
-  } else if (msg->rx_std_id == 0xa0 + id_) {
-  } else if (msg->rx_std_id == 0xb0 + id_) {
+  } else if (msg->std_id == 0x60 + id_) {
+  } else if (msg->std_id == 0x70 + id_) {
+  } else if (msg->std_id == 0x80 + id_) {
+  } else if (msg->std_id == 0x90 + id_) {
+  } else if (msg->std_id == 0xa0 + id_) {
+  } else if (msg->std_id == 0xb0 + id_) {
   }
 }
 

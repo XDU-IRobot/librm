@@ -155,25 +155,51 @@ void SocketCan::SetFilter(u16 id, u16 mask) {
  * @param id   数据帧ID
  * @param data 数据指针
  * @param size 数据长度/DLC
+ * @note  已废弃，请改用 Write(const CanFrame &)。为保持旧行为，长度大于8字节时按FD帧发送；
+ *        长度不合法时抛异常
  */
 void SocketCan::Write(u16 id, const u8 *data, usize size) {
+  WriteFrame(id, data, static_cast<u8>(size), size > CAN_MAX_DLEN);
+}
+
+/**
+ * @brief 立刻向总线上发送一帧
+ * @param frame 数据帧，std_id 为发送的目标ID，is_fd_frame 显式指定发FD帧还是经典CAN帧
+ */
+void SocketCan::Write(const CanFrame &frame) {
+  WriteFrame(frame.std_id, frame.data.data(), static_cast<u8>(frame.dlc), frame.is_fd_frame);
+}
+
+/**
+ * @brief 发送一帧的公共实现
+ * @param id          数据帧ID
+ * @param data        数据指针
+ * @param dlc         数据长度（字节）
+ * @param is_fd_frame 是否发送FD帧
+ * @note  长度必须是 CAN FD 规范允许的取值（0~8、12、16、20、24、32、48、64），否则直接抛异常，
+ *        不做向上取整，也不做补零。
+ */
+void SocketCan::WriteFrame(u16 id, const u8 *data, u8 dlc, bool is_fd_frame) {
   if (id > CAN_SFF_MASK) {
-    rm::Throw(std::runtime_error("invalid standard id"));
+    rm::Throw(rm::runtime_error("invalid standard id"));
   }
 
-  if (size > CANFD_MAX_DLEN) {
-    rm::Throw(std::runtime_error("payload too large"));
+  if (!CanFrame::IsLegalLength(dlc)) {
+    rm::Throw(rm::runtime_error("socketcan: dlc is not a legal CAN frame length"));
   }
 
-  const bool use_fd_frame = size > CAN_MAX_DLEN;
+  if (!is_fd_frame && (dlc > CAN_MAX_DLEN)) {
+    rm::Throw(rm::runtime_error("socketcan: data too long for a classic CAN frame"));
+  }
+
   constexpr int kMaxRetry = 50;  // 增加重试次数以应对缓冲区满的情况
 
-  if (use_fd_frame) {
+  if (is_fd_frame) {
     struct ::canfd_frame frame {};
     frame.can_id = id & CAN_SFF_MASK;
-    frame.len = static_cast<__u8>(size);
+    frame.len = dlc;
     frame.flags = 0;
-    std::copy_n(data, size, frame.data);
+    std::copy_n(data, dlc, frame.data);
     for (int attempt = 0; attempt < kMaxRetry; ++attempt) {
       if (::write(socket_fd_, &frame, sizeof(frame)) >= 0) {
         return;
@@ -191,8 +217,8 @@ void SocketCan::Write(u16 id, const u8 *data, usize size) {
   } else {
     struct ::can_frame frame {};
     frame.can_id = id & CAN_SFF_MASK;
-    frame.can_dlc = static_cast<__u8>(size);
-    std::copy_n(data, size, frame.data);
+    frame.can_dlc = dlc;
+    std::copy_n(data, dlc, frame.data);
     for (int attempt = 0; attempt < kMaxRetry; ++attempt) {
       if (::write(socket_fd_, &frame, sizeof(frame)) >= 0) {
         return;
@@ -210,8 +236,8 @@ void SocketCan::Write(u16 id, const u8 *data, usize size) {
   // 连续失败后抛出异常，交由上层处理
   int err = errno;
   std::string error_msg = netdev_ + " write error: " + std::strerror(err) + " (errno=" + std::to_string(err) +
-                          ", id=0x" + std::to_string(id) + ", size=" + std::to_string(size) + ")";
-  rm::Throw(std::runtime_error(error_msg));
+                          ", id=0x" + std::to_string(id) + ", size=" + std::to_string(dlc) + ")";
+  rm::Throw(rm::runtime_error(error_msg));
 }
 
 /**
@@ -273,12 +299,12 @@ void SocketCan::RecvThread() {
     // 将原始帧转换为 CanFrame 并分发给已注册设备
     const auto msg_packet = [&frame_storage, is_fd_frame, rx_id] {
       CanFrame msg_packet;
-      msg_packet.rx_std_id = rx_id;
+      msg_packet.std_id = rx_id;
       msg_packet.is_fd_frame = is_fd_frame;
       if (is_fd_frame) {
         const auto &frame = *reinterpret_cast<const ::canfd_frame *>(frame_storage.data());
         const auto payload_len = std::min(static_cast<usize>(frame.len), static_cast<usize>(CANFD_MAX_DLEN));
-        msg_packet.dlc = static_cast<u32>(payload_len);
+        msg_packet.dlc = static_cast<CanFrame::Dlc>(payload_len);
         std::copy_n(frame.data, payload_len, msg_packet.data.begin());
       } else {
         const auto &frame = *reinterpret_cast<const ::can_frame *>(frame_storage.data());
@@ -286,7 +312,7 @@ void SocketCan::RecvThread() {
         // 按规范 RTR 帧只声明 DLC 不携带数据
         const auto payload_len =
             is_remote_frame ? 0U : std::min(static_cast<usize>(frame.can_dlc & 0x0F), static_cast<usize>(CAN_MAX_DLEN));
-        msg_packet.dlc = static_cast<u32>(payload_len);
+        msg_packet.dlc = static_cast<CanFrame::Dlc>(payload_len);
         std::copy_n(frame.data, payload_len, msg_packet.data.begin());
       }
       return msg_packet;

@@ -371,11 +371,32 @@ void Mcp2515::SetFilter(u16 id, u16 mask) {
  * @param id    标准帧ID
  * @param data  数据指针
  * @param size  数据长度（最大8字节）
+ * @note  已废弃，请改用 Write(const CanFrame &)
  */
-void Mcp2515::Write(u16 id, const u8 *data, usize size) {
+void Mcp2515::Write(u16 id, const u8 *data, usize size) { WriteFrame(id, data, static_cast<u8>(size), false); }
+
+/**
+ * @brief 立刻向总线上发送一帧
+ * @param frame 数据帧，std_id 为发送的目标ID，is_fd_frame 必须为 false
+ */
+void Mcp2515::Write(const CanFrame &frame) {
+  WriteFrame(frame.std_id, frame.data.data(), static_cast<u8>(frame.dlc), frame.is_fd_frame);
+}
+
+/**
+ * @brief 发送一帧的公共实现
+ * @param id          标准帧ID
+ * @param data        数据指针
+ * @param dlc         数据长度（字节，0~8）
+ * @param is_fd_frame 是否发送FD帧；MCP2515不支持FD，传true会直接停机
+ */
+void Mcp2515::WriteFrame(u16 id, const u8 *data, u8 dlc, bool is_fd_frame) {
   if (hspi_ == nullptr) return;
-  if (size > 8) {
-    Throw(std::runtime_error("MCP2515: Data too long for std CAN frame!"));
+  if (is_fd_frame) {
+    Throw(rm::runtime_error("mcp2515: CAN FD frame requested, but MCP2515 does not support CAN FD"));
+  }
+  if (dlc > 8u) {
+    Throw(rm::runtime_error("mcp2515: data too long for a classic CAN frame"));
   }
 
   IdReg id_reg{};
@@ -390,13 +411,13 @@ void Mcp2515::Write(u16 id, const u8 *data, usize size) {
 
   // status bit2: TXB0REQ, bit4: TXB1REQ, bit6: TXB2REQ
   if (!(status & 0x04)) {
-    LoadTxSequence(kCmdLoadTxB0Sidh, &id_reg.sidh, static_cast<u8>(size), data);
+    LoadTxSequence(kCmdLoadTxB0Sidh, &id_reg.sidh, dlc, data);
     RequestToSend(kCmdRtsTx0);
   } else if (!(status & 0x10)) {
-    LoadTxSequence(kCmdLoadTxB1Sidh, &id_reg.sidh, static_cast<u8>(size), data);
+    LoadTxSequence(kCmdLoadTxB1Sidh, &id_reg.sidh, dlc, data);
     RequestToSend(kCmdRtsTx1);
   } else if (!(status & 0x40)) {
-    LoadTxSequence(kCmdLoadTxB2Sidh, &id_reg.sidh, static_cast<u8>(size), data);
+    LoadTxSequence(kCmdLoadTxB2Sidh, &id_reg.sidh, dlc, data);
     RequestToSend(kCmdRtsTx2);
   }
   // 三个TX Buffer均忙则丢弃本帧
@@ -443,8 +464,8 @@ void Mcp2515::HandleRxInterrupt() {
 
     const auto &device_list = GetDeviceListByRxStdid(static_cast<u16>(can_id));
     if (!device_list.empty()) {
-      rx_buffer_.rx_std_id = static_cast<u16>(can_id);
-      rx_buffer_.dlc = dlc;
+      rx_buffer_.std_id = static_cast<u16>(can_id);
+      rx_buffer_.dlc = static_cast<CanFrame::Dlc>(dlc);
       rx_buffer_.is_fd_frame = false;
       for (u8 i = 0; i < dlc; ++i) {
         rx_buffer_.data[i] = rx_reg[5 + i];

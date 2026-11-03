@@ -35,7 +35,7 @@ class BasicCanDevice : public rm::device::CanDevice {
  private:
   void RxCallback(const rm::hal::CanFrame *msg) override {
     // 在这里处理接收到的报文
-    std::printf("Received a message! stdid=%d, dlc=%d\n", msg->rx_std_id, msg->dlc);
+    std::printf("Received a message! stdid=%d, dlc=%d\n", msg->std_id, msg->dlc);
     for (int i = 0; i < msg->dlc; i++) {
       std::printf("%02X ", msg->data[i]);
     }

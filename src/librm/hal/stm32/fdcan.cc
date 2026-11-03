@@ -163,48 +163,77 @@ void FdCan::SetFilter(u16 id, u16 mask) {
   LIBRM_STM32_HAL_ASSERT(HAL_FDCAN_ConfigFilter(hfdcan_, &can_filter_st));
 }
 
+namespace {
+
+/// @brief 字节长度 -> STM32 HAL 使用的 FDCAN DLC 编码
+constexpr u32 ToFdcanDlcCode(u8 dlc) {
+  switch (dlc) {
+    case 12u:
+      return FDCAN_DLC_BYTES_12;
+    case 16u:
+      return FDCAN_DLC_BYTES_16;
+    case 20u:
+      return FDCAN_DLC_BYTES_20;
+    case 24u:
+      return FDCAN_DLC_BYTES_24;
+    case 32u:
+      return FDCAN_DLC_BYTES_32;
+    case 48u:
+      return FDCAN_DLC_BYTES_48;
+    case 64u:
+      return FDCAN_DLC_BYTES_64;
+    default:
+      return dlc;  // 0~8 字节时 DLC 编码与字节数相同
+  }
+}
+
+}  // namespace
+
 /**
  * @brief 立刻向总线上发送数据
  * @param id    标准帧ID
  * @param data  数据指针
  * @param size  数据长度
+ * @note  已废弃，请改用 Write(const CanFrame &)。为保持旧行为，长度大于8字节时按FD帧发送；
+ *        长度不合法或硬件不支持FD时抛异常
  */
 void FdCan::Write(u16 id, const u8 *data, usize size) {
   if (size > 64) {
-    Throw(rm::runtime_error("CAN frame too long!"));
+    Throw(rm::runtime_error("fdcan: CAN frame too long"));
   }
-  if (!fd_mode_available_ && size > 8) {
-    Throw(rm::runtime_error("Data is too long for a std CAN frame!"));
+  WriteFrame(id, data, static_cast<u8>(size), size > 8);
+}
+
+/**
+ * @brief 立刻向总线上发送一帧
+ * @param frame 数据帧，std_id 为发送的目标ID，is_fd_frame 显式指定发FD帧还是经典CAN帧
+ */
+void FdCan::Write(const CanFrame &frame) {
+  WriteFrame(frame.std_id, frame.data.data(), static_cast<u8>(frame.dlc), frame.is_fd_frame);
+}
+
+/**
+ * @brief 发送一帧的公共实现
+ * @param id          标准帧ID
+ * @param data        数据指针
+ * @param dlc         数据长度（字节）
+ * @param is_fd_frame 是否发送FD帧
+ * @note  长度必须是 CAN FD 规范允许的取值（0~8、12、16、20、24、32、48、64），否则直接抛异常，
+ *        不做向上取整，也不做补零。
+ */
+void FdCan::WriteFrame(u16 id, const u8 *data, u8 dlc, bool is_fd_frame) {
+  if (!CanFrame::IsLegalLength(dlc)) {
+    Throw(rm::runtime_error("fdcan: dlc is not a legal CAN frame length"));
+  }
+  if (!is_fd_frame && (dlc > 8u)) {
+    Throw(rm::runtime_error("fdcan: data too long for a classic CAN frame"));
+  }
+  if (is_fd_frame && !fd_mode_available_) {
+    Throw(rm::runtime_error("fdcan: CAN FD frame requested, but the peripheral is configured for classic CAN"));
   }
 
-  // 长度大于8字节的帧作为FD帧发，小于的作为经典2.0帧发
-  // 暂时没有设计显式指定帧类型的API，后续可能会有
-  hal_tx_header_.FDFormat = size > 8 ? FDCAN_FD_CAN : FDCAN_CLASSIC_CAN;
-  if (fd_mode_available_) {
-    // 将字节长度转换为FDCAN DLC码
-    u32 dlc_code;
-    if (size <= 8) {
-      dlc_code = size;  // 8字节以下DLC码和数据长度相同
-    } else if (size <= 12) {
-      dlc_code = FDCAN_DLC_BYTES_12;
-    } else if (size <= 16) {
-      dlc_code = FDCAN_DLC_BYTES_16;
-    } else if (size <= 20) {
-      dlc_code = FDCAN_DLC_BYTES_20;
-    } else if (size <= 24) {
-      dlc_code = FDCAN_DLC_BYTES_24;
-    } else if (size <= 32) {
-      dlc_code = FDCAN_DLC_BYTES_32;
-    } else if (size <= 48) {
-      dlc_code = FDCAN_DLC_BYTES_48;
-    } else {
-      dlc_code = FDCAN_DLC_BYTES_64;
-    }
-    hal_tx_header_.DataLength = dlc_code;
-  } else {
-    hal_tx_header_.DataLength = size;
-  }
-
+  hal_tx_header_.FDFormat = is_fd_frame ? FDCAN_FD_CAN : FDCAN_CLASSIC_CAN;
+  hal_tx_header_.DataLength = fd_mode_available_ ? ToFdcanDlcCode(dlc) : dlc;
   hal_tx_header_.Identifier = id;
 
   // 检查是否处于Bus-Off状态，如果是则尝试恢复
@@ -355,28 +384,28 @@ void FdCan::Fifo0MsgPendingCallback() const {
     return;
   }
   rx_frame.is_fd_frame = (rx_header.FDFormat == FDCAN_FD_CAN);
-  rx_frame.rx_std_id = rx_header.Identifier;
+  rx_frame.std_id = rx_header.Identifier;
   if (rx_frame.is_fd_frame) {
-    // 长于8字节的FD帧，DLC枚举值并不等于实际的字节数，需要做转换
+    // 长于8字节的FD帧，DLC编码值并不等于实际的字节数，需要做转换
     if (rx_header.DataLength <= FDCAN_DLC_BYTES_8) {
-      rx_frame.dlc = rx_header.DataLength;  // 8字节以下DLC码和数据长度相同
+      rx_frame.dlc = static_cast<CanFrame::Dlc>(rx_header.DataLength);  // 8字节以下DLC码和数据长度相同
     } else if (rx_header.DataLength == FDCAN_DLC_BYTES_12) {
-      rx_frame.dlc = 12;
+      rx_frame.dlc = CanFrame::kDlc12;
     } else if (rx_header.DataLength == FDCAN_DLC_BYTES_16) {
-      rx_frame.dlc = 16;
+      rx_frame.dlc = CanFrame::kDlc16;
     } else if (rx_header.DataLength == FDCAN_DLC_BYTES_20) {
-      rx_frame.dlc = 20;
+      rx_frame.dlc = CanFrame::kDlc20;
     } else if (rx_header.DataLength == FDCAN_DLC_BYTES_24) {
-      rx_frame.dlc = 24;
+      rx_frame.dlc = CanFrame::kDlc24;
     } else if (rx_header.DataLength == FDCAN_DLC_BYTES_32) {
-      rx_frame.dlc = 32;
+      rx_frame.dlc = CanFrame::kDlc32;
     } else if (rx_header.DataLength == FDCAN_DLC_BYTES_48) {
-      rx_frame.dlc = 48;
+      rx_frame.dlc = CanFrame::kDlc48;
     } else {
-      rx_frame.dlc = 64;
+      rx_frame.dlc = CanFrame::kDlc64;
     }
   } else {
-    rx_frame.dlc = rx_header.DataLength;
+    rx_frame.dlc = static_cast<CanFrame::Dlc>(rx_header.DataLength);
   }
   for (auto &device : device_list_) {
     device->RxCallback(&rx_frame);

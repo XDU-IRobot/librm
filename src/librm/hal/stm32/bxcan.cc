@@ -136,13 +136,35 @@ void BxCan::SetFilter(u16 id, u16 mask) {
  * @param id    标准帧ID
  * @param data  数据指针
  * @param size  数据长度
+ * @note  已废弃，请改用 Write(const CanFrame &)
  */
-void BxCan::Write(u16 id, const u8 *data, usize size) {
-  if (size > 8) {
-    Throw(std::runtime_error("Data is too long for a std CAN frame!"));
+void BxCan::Write(u16 id, const u8 *data, usize size) { WriteFrame(id, data, static_cast<u8>(size), false); }
+
+/**
+ * @brief 立刻向总线上发送一帧
+ * @param frame 数据帧，std_id 为发送的目标ID，is_fd_frame 必须为 false
+ */
+void BxCan::Write(const CanFrame &frame) {
+  WriteFrame(frame.std_id, frame.data.data(), static_cast<u8>(frame.dlc), frame.is_fd_frame);
+}
+
+/**
+ * @brief 发送一帧的公共实现
+ * @param id          标准帧ID
+ * @param data        数据指针
+ * @param dlc         数据长度（字节，0~8）
+ * @param is_fd_frame 是否发送FD帧；bxCAN不支持FD，传true会直接停机
+ */
+void BxCan::WriteFrame(u16 id, const u8 *data, u8 dlc, bool is_fd_frame) {
+  if (is_fd_frame) {
+    Throw(rm::runtime_error("bxcan: CAN FD frame requested, but bxCAN does not support CAN FD"));
   }
+  if (dlc > 8u) {
+    Throw(rm::runtime_error("bxcan: data too long for a classic CAN frame"));
+  }
+
   hal_tx_header_.StdId = id;
-  hal_tx_header_.DLC = size;
+  hal_tx_header_.DLC = dlc;
 
   // 等待CAN外设空闲
   while (HAL_CAN_GetTxMailboxesFreeLevel(hcan_) == 0) {
@@ -180,8 +202,8 @@ void BxCan::Fifo0MsgPendingCallback() {
   }
 
   // 设置rx_buffer_成员（只有在有设备监听时才需要）
-  rx_buffer_.rx_std_id = rx_header.StdId;
-  rx_buffer_.dlc = rx_header.DLC;
+  rx_buffer_.std_id = rx_header.StdId;
+  rx_buffer_.dlc = static_cast<CanFrame::Dlc>(rx_header.DLC);
 
   // 遍历并调用所有注册设备的回调
   for (auto &device : device_list) {
