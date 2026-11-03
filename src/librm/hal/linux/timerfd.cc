@@ -33,21 +33,47 @@
 
 namespace rm::hal::linux_ {
 
-TimerFd::TimerFd() : running_{false}, tfd_{-1}, is_periodic_{false} {}
+TimerFd::TimerFd() : running_{false}, tfd_{-1}, is_periodic_{true}, timeout_{}, timeout_set_{false} {}
 
 TimerFd::~TimerFd() { Stop(); }
 
-void TimerFd::Start(std::chrono::duration<f32> timeout) {
+bool TimerFd::SetTimeout(std::chrono::duration<f32> timeout) {
+  std::lock_guard<std::mutex> lock(mutex_);
+  if (running_) {
+    return false;
+  }
+  if (timeout <= std::chrono::duration<f32>::zero()) {
+    return false;
+  }
+  timeout_ = timeout;
+  timeout_set_ = true;
+  return true;
+}
+
+std::chrono::duration<f32> TimerFd::GetTimeout() const {
+  std::lock_guard<std::mutex> lock(mutex_);
+  if (!timeout_set_) {
+    return std::chrono::duration<f32>::zero();
+  }
+  // timerfd 以纳秒为刻度装载超时时间，相对 f32 的精度而言量化误差可以忽略，
+  // 因此这里直接返回设置时保存的值。
+  return timeout_;
+}
+
+bool TimerFd::Start() {
   Stop();
   {
-    std::lock_guard<std::mutex> lock(mutex_);
+    std::unique_lock<std::mutex> lock(mutex_);
+    if (!timeout_set_) {
+      return false;  // 还没有成功设置过超时时间，启动失败
+    }
     tfd_ = ::timerfd_create(CLOCK_MONOTONIC, 0);
     if (tfd_ == -1) {
       throw std::runtime_error("timerfd_create failed");
     }
     itimerspec new_value{};
-    auto sec = std::chrono::duration_cast<std::chrono::seconds>(timeout);
-    auto nsec = std::chrono::duration_cast<std::chrono::nanoseconds>(timeout - sec);
+    auto sec = std::chrono::duration_cast<std::chrono::seconds>(timeout_);
+    auto nsec = std::chrono::duration_cast<std::chrono::nanoseconds>(timeout_ - sec);
     new_value.it_value.tv_sec = sec.count();
     new_value.it_value.tv_nsec = nsec.count();
     if (is_periodic_) {
@@ -93,21 +119,28 @@ void TimerFd::Start(std::chrono::duration<f32> timeout) {
       }
     });
   }
+  return true;
 }
 
 /**
- * @brief 设置定时器为周期/单次模式。
- * @param periodic true为周期定时器，false为oneshot。
+ * @brief 设置定时器类型。
+ * @param type 定时器类型，循环或单次。
+ * @return 是否设置成功，定时器正在运行时设置失败并返回false。
  */
-void TimerFd::SetPeriodic(bool periodic) {
+bool TimerFd::SetTimerType(TimerType type) {
   std::lock_guard<std::mutex> lock(mutex_);
-  is_periodic_ = periodic;
+  if (running_) {
+    return false;
+  }
+  is_periodic_ = (type == TimerType::kPeriodic);
+  return true;
 }
 
-void TimerFd::Stop() {
+bool TimerFd::Stop() {
+  bool was_running = false;
   {
     std::lock_guard<std::mutex> lock(mutex_);
-    if (!running_) return;
+    was_running = running_;
     running_ = false;
     if (tfd_ != -1) {
       ::close(tfd_);
@@ -115,14 +148,21 @@ void TimerFd::Stop() {
     }
   }
   cv_.notify_all();
+  // 单次模式触发后工作线程会自行结束，此时 running_ 已经是 false，但仍然要把已经结束的线程 join 掉，
+  // 否则再次 Start() 时会覆盖一个可 join 的 std::thread 而终止进程，所以这里不能因为没在运行就提前返回
   if (worker_.joinable()) worker_.join();
+  return was_running;
 }
 
 bool TimerFd::running() const { return running_; }
 
-void TimerFd::AttachCallback(etl::delegate<void()> callback) {
+bool TimerFd::AttachCallback(etl::delegate<void()> callback) {
   std::lock_guard<std::mutex> lock(mutex_);
+  if (running_) {
+    return false;
+  }
   callback_ = callback;
+  return true;
 }
 
 }  // namespace rm::hal::linux_

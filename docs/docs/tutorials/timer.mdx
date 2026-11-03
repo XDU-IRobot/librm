@@ -1,0 +1,134 @@
+# 定时器
+
+本例程演示如何使用 librm 中的 `Timer` 接口在 STM32 上实现一个基于硬件 TIM 的定时器。
+
+`Timer` 在不同平台上有不同的后端，但接口是统一的：
+
+| 平台        | 后端                                     |
+| ----------- | ---------------------------------------- |
+| STM32       | HAL 库 TIM 外设的更新中断（update interrupt） |
+| Linux       | 内核 timerfd                             |
+| 无 TIM 的环境 | `PollingTimer`（轮询，需要手动调用 `Poll()`） |
+
+## 接口
+
+```cpp
+/// @brief 定时器类型：循环或单次
+enum class TimerType : u8 {
+  kPeriodic,
+  kOneShot,
+};
+
+class TimerInterface {
+ public:
+  virtual bool Start() = 0;                                    // 按当前配置启动定时器
+  virtual bool Stop() = 0;                                     // 停止定时器
+  virtual bool running() const = 0;                            // 查询是否在运行
+  virtual bool SetTimeout(std::chrono::duration<f32> timeout) = 0;  // 设置超时时间
+  virtual std::chrono::duration<f32> GetTimeout() const = 0;        // 查询实际超时时间
+  virtual bool AttachCallback(etl::delegate<void()> callback) = 0;  // 绑定超时回调
+  virtual bool SetTimerType(TimerType type) = 0;               // 设置循环/单次
+};
+```
+
+定时器对象创建后默认为**循环模式**，每次超时都会调用回调；调用 `SetTimerType(TimerType::kOneShot)`
+可以切换成**单次模式**，超时一次后自动停止。
+
+所有会改变状态的方法都通过返回值报告是否操作成功：
+
+- `SetTimeout` / `AttachCallback` / `SetTimerType` 都**只能在定时器未运行时**调用，运行时调用会失败并返回 `false`；
+- `Start()` 在**没有成功设置过超时时间**时会失败并返回 `false`；
+- `Stop()` 在**定时器本来就没有运行**时会返回 `false`。
+
+`GetTimeout()` 是唯一的查询型接口，返回**定时器实际生效的周期**（"从未设置过"时返回 0）：
+
+- STM32 后端返回由 PSC/ARR 决定的实际周期，可能与 `SetTimeout()` 传入的值相差不到一个计数周期；
+- `PollingTimer` 返回量化到整毫秒后的周期；
+- Linux timerfd 以纳秒为刻度，返回值和传入值基本一致。
+
+如果需要根据定时器周期反推频率（例如派生出按 tick 计数的任务调度器），应该用 `GetTimeout()`
+而不是缓存传给 `SetTimeout()` 的参数。
+
+典型的使用顺序是：
+
+```cpp
+timer.SetTimeout(std::chrono::milliseconds(100));           // 1. 设置超时时间
+timer.SetTimerType(rm::hal::TimerType::kOneShot);           // 2. 设置类型（可选）
+timer.AttachCallback(/* ... */);                            // 3. 绑定回调
+if (!timer.Start()) {                                       // 4. 启动
+  // 启动失败，检查一下前面几步是不是漏了
+}
+```
+
+:::tip
+单次模式下也可以在回调里重新调用 `Start()`，实现「触发一次、按需重启」的用法。
+:::
+
+## CubeMX 配置
+
+1. 打开 `Timers -> TIMx`，将 `Clock Source` 设为 `Internal Clock`。这个 TIM 只用来计时，不需要配置任何输出通道。
+2. 在 `Project Manager -> Advanced Settings` 中，勾选 TIM 的 `Register Callback` 功能（对应宏 `USE_HAL_TIM_REGISTER_CALLBACKS`，librm 会检查它）。
+
+:::warning
+`SetTimeout()` 会根据超时时间计算并写入该 TIM 的预分频器（PSC）和自动重装载值（ARR），
+因此一个 TIM 只能交给一个 `Timer` 对象独占使用，**不要**再把同一个 TIM 用于 PWM 输出等用途。
+:::
+
+## 代码示例
+
+默认的循环模式，启动一次后每 100ms 触发一次回调：
+
+```cpp
+#include "tim.h"
+
+#include <librm.hpp>
+
+class MyTask {
+ public:
+  MyTask() : timer_(htim2) {
+    // 设置超时时间并绑定回调（etl::delegate，无动态内存分配）
+    timer_.SetTimeout(std::chrono::milliseconds(100));
+    timer_.AttachCallback(etl::delegate<void()>::create<MyTask, &MyTask::OnTimeout>(*this));
+  }
+
+  void Loop() {
+    timer_.Start();  // 之后每 100ms 触发一次 OnTimeout
+
+    for (;;) {
+      rm::Sleep(std::chrono::milliseconds(1));
+    }
+  }
+
+ private:
+  void OnTimeout() {
+    // 这里在中断上下文中执行，不要做耗时操作
+    flag_ = true;
+  }
+
+  rm::hal::Timer timer_;
+  volatile bool flag_{false};
+};
+```
+
+单次模式，超时一次后自动停止：
+
+```cpp
+// 定时器未运行时才能设置成功
+timer_.SetTimerType(rm::hal::TimerType::kOneShot);
+timer_.SetTimeout(std::chrono::seconds(1));
+timer_.Start();  // 1s 后触发一次，随后自动停止
+```
+
+如果想在运行中改变超时时间，需要先 `Stop()`，设置之后再重新 `Start()`：
+
+```cpp
+timer_.Stop();
+if (timer_.SetTimeout(std::chrono::milliseconds(50))) {
+  timer_.Start();
+}
+```
+
+:::tip
+`std::chrono::duration` 可以直接传给 `SetTimeout()`，超时会换算成计数值，
+精度取决于该 TIM 的时钟频率，短超时下可以达到约 1 个计数周期的精度。
+:::

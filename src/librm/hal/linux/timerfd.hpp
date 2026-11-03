@@ -43,19 +43,19 @@ class TimerFd : public TimerInterface {
   TimerFd();
   ~TimerFd() override;
 
-  void Start(std::chrono::duration<f32> timeout) override;
+  bool Start() override;
 
-  /**
-   * @brief 设置定时器为周期/单次模式。
-   * @param periodic true为周期定时器，false为oneshot。
-   */
-  void SetPeriodic(bool periodic);
-
-  void Stop() override;
+  bool Stop() override;
 
   bool running() const override;
 
-  void AttachCallback(etl::delegate<void()> callback) override;
+  bool SetTimeout(std::chrono::duration<f32> timeout) override;
+
+  std::chrono::duration<f32> GetTimeout() const override;
+
+  bool AttachCallback(etl::delegate<void()> callback) override;
+
+  bool SetTimerType(TimerType type) override;
 
  private:
   mutable std::mutex mutex_;
@@ -65,6 +65,8 @@ class TimerFd : public TimerInterface {
   std::atomic<bool> running_;
   etl::delegate<void()> callback_;
   bool is_periodic_;
+  std::chrono::duration<f32> timeout_;
+  bool timeout_set_;
 };
 
 }  // namespace rm::hal::linux_
