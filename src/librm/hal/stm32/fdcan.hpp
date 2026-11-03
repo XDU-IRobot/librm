@@ -62,6 +62,8 @@ class FdCan : public CanInterface, rm::detail::NonCopyable {
   void Fifo0MsgPendingCallback() const;
   void Restart() const;
 
+  static void ValidateMessageRamLayout();
+
   u32 tx_mailbox_{0};
   FDCAN_HandleTypeDef *hfdcan_{nullptr};
   const bool fd_mode_available_{false};

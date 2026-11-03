@@ -30,6 +30,9 @@
 
 #include "fdcan.hpp"
 
+#include <etl/string.h>
+#include <etl/string_stream.h>
+
 #include "librm/device/can_device.hpp"
 #include "librm/hal/stm32/helper_macro.hpp"
 
@@ -168,10 +171,10 @@ void FdCan::SetFilter(u16 id, u16 mask) {
  */
 void FdCan::Write(u16 id, const u8 *data, usize size) {
   if (size > 64) {
-    Throw(std::runtime_error("CAN frame too long!"));
+    Throw(rm::runtime_error("CAN frame too long!"));
   }
   if (!fd_mode_available_ && size > 8) {
-    Throw(std::runtime_error("Data is too long for a std CAN frame!"));
+    Throw(rm::runtime_error("Data is too long for a std CAN frame!"));
   }
 
   // 长度大于8字节的帧作为FD帧发，小于的作为经典2.0帧发
@@ -237,9 +240,78 @@ void FdCan::Write(u16 id, const u8 *data, usize size) {
 }
 
 /**
+ * @brief     校验所有已注册的FDCAN实例的Message RAM区间互不重叠
+ *
+ * @warning   若此处检查未通过，请去CubeMX修正各FDCAN实例的Message RAM配置，确保它们的起始地址和结束地址不重叠。
+ *            不要尝试bypass这个检查强行运行程序。
+ *
+ * @note      H7系列上FDCAN1/2/3共享同一块10KB（0x2800字节）的Message RAM，各实例的
+ *            起始位置由Init.MessageRAMOffset决定。HAL_FDCAN_Init()内部只检查"本实例不
+ *            越过这块RAM的末尾"，并不检查实例之间的重叠；一旦配置重叠，多个FDCAN实例同时收发时就会静默出现数据错乱，难以排查。
+ *            这里直接使用HAL已经算好的msgRam.StandardFilterSA和msgRam.EndAddress做两两
+ *            区间检查（左闭右开，单位word），检测到异常就抛异常，不做降级、不做修正。
+ */
+void FdCan::ValidateMessageRamLayout() {
+  struct RamRange {
+    int index;
+    u32 begin;
+    u32 end;
+  };
+
+  constexpr int kInstanceCount = sizeof(fdcan_instances) / sizeof(fdcan_instances[0]);
+  RamRange ranges[kInstanceCount] = {};
+  int range_count = 0;
+
+  for (int i = 0; i < kInstanceCount; ++i) {
+    const FdCan *instance = fdcan_instances[i];
+    if (instance == nullptr) {
+      continue;
+    }
+    const FDCAN_HandleTypeDef *hfdcan = instance->hfdcan_;
+
+    // HAL_FDCAN_Init()因Message RAM溢出等原因失败时会把State置为ERROR，
+    // 此时msgRam里的地址不能反映实际配置，直接停机
+    if (hfdcan->State == HAL_FDCAN_STATE_ERROR) {
+      Throw(rm::runtime_error("fdcan: HAL_FDCAN_Init() failed, check MessageRAM element sizes and MessageRAMOffset"));
+    }
+
+    // 从未调用过HAL_FDCAN_Init()的句柄，其msgRam是零初始化的
+    if (hfdcan->msgRam.EndAddress == 0u) {
+      Throw(rm::runtime_error("fdcan: HAL_FDCAN_Init() has not been called for this handle"));
+    }
+
+    // 各元素数量均为0时区间为空，不参与重叠判断
+    if (hfdcan->msgRam.EndAddress <= hfdcan->msgRam.StandardFilterSA) {
+      continue;
+    }
+
+    ranges[range_count].index = i;
+    ranges[range_count].begin = (hfdcan->msgRam.StandardFilterSA - SRAMCAN_BASE) / 4u;
+    ranges[range_count].end = (hfdcan->msgRam.EndAddress - SRAMCAN_BASE) / 4u;
+    ++range_count;
+  }
+
+  // 两个区间 [a0,a1) 与 [b0,b1) 相交 <=> a0 < b1 且 b0 < a1
+  for (int i = 0; i < range_count; ++i) {
+    for (int j = i + 1; j < range_count; ++j) {
+      if ((ranges[i].begin < ranges[j].end) && (ranges[j].begin < ranges[i].end)) {
+        etl::string<96> message;
+        etl::string_stream stream(message);
+        stream << "fdcan: Message RAM overlap: FDCAN" << (ranges[i].index + 1) << " [" << ranges[i].begin << ","
+               << ranges[i].end << ") vs FDCAN" << (ranges[j].index + 1) << " [" << ranges[j].begin << ","
+               << ranges[j].end << ") words";
+        Throw(rm::runtime_error(message));
+      }
+    }
+  }
+}
+
+/**
  * @brief 启动CAN外设
  */
 void FdCan::Begin() {
+  ValidateMessageRamLayout();
+
   // 如果这个FDCAN外设处于FD模式，就把发送头设置为FD格式
   if (fd_mode_available_) {
     hal_tx_header_.FDFormat = FDCAN_FD_CAN;
