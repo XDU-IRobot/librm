@@ -21,7 +21,7 @@
 */
 
 /**
- * @file  librm/hal/stm32/exception.h
+ * @file  librm/hal/stm32/exception.hpp
  * @brief 对STM32 HAL库里异常枚举的封装
  */
 
@@ -36,7 +36,7 @@ namespace rm {
 
 class hal_error : public std::exception {
  public:
-  hal_error(HAL_StatusTypeDef status) {
+  explicit hal_error(HAL_StatusTypeDef status) {
     switch (status) {
       case HAL_OK:
         msg_ = "HAL_OK";
@@ -55,10 +55,10 @@ class hal_error : public std::exception {
         break;
     }
   }
-  const char* what() const noexcept override { return msg_; }
+  const char *what() const noexcept override { return msg_; }
 
  private:
-  const char* msg_;
+  const char *msg_;
 };
 
 }  // namespace rm

@@ -28,8 +28,10 @@
 #ifndef LIBRM_CORE_EXCEPTIONS_HPP
 #define LIBRM_CORE_EXCEPTIONS_HPP
 
-#include <stdexcept>
+#include <cstring>
 #include <type_traits>
+
+#include <etl/string.h>
 
 #if defined(LIBRM_PLATFORM_STM32)
 #include "librm/hal/stm32/exception.hpp"
@@ -37,13 +39,53 @@
 
 namespace rm {
 
+/// @brief rm::runtime_error 默认的消息缓冲区容量（字符数，不含结尾的 '\0'）
+inline constexpr size_t kExceptionMessageCapacity = 128;
+
+/**
+ * @brief 无堆分配的运行时错误异常，用于替代 std::runtime_error
+ *
+ * std::runtime_error 内部用 std::string 保存消息，一旦超过小字符串优化阈值就会从堆上分配。
+ * 本类型用 etl::string 的定长缓冲区代替，构造与析构都不会触碰堆，因此在中断上下文、
+ * 初始化早期以及 -fno-exceptions 的 STM32 构建里都可以安全使用。
+ *
+ * 消息超过 Capacity 时会被静默截断，不会断言，也不会在错误处理路径上再生出新的错误。
+ *
+ * @tparam Capacity 消息缓冲区容量（字符数，不含结尾的 '\0'）
+ */
+template <size_t Capacity = kExceptionMessageCapacity>
+class basic_runtime_error : public std::exception {
+ public:
+  explicit basic_runtime_error(const char *message) { SetMessage(message); }
+
+  explicit basic_runtime_error(const etl::istring &message) { SetMessage(message.c_str()); }
+
+  const char *what() const noexcept override { return message_.c_str(); }
+
+ private:
+  void SetMessage(const char *message) {
+    if (message == nullptr) {
+      message_.clear();
+      return;
+    }
+    // 先自行限制长度，保证 assign 不会走到截断分支（截断检查可能被配置为断言）
+    const size_t length = std::strlen(message);
+    message_.assign(message, (length < Capacity) ? length : Capacity);
+  }
+
+  etl::string<Capacity> message_;
+};
+
+/// @brief 默认容量的无堆分配运行时错误，可直接替换 std::runtime_error
+using runtime_error = basic_runtime_error<>;
+
 /**
  * @brief 抛出异常
  * @tparam T 异常类型（必须派生自 std::exception）
  * @param e 异常对象
  */
 template <typename T>
-[[noreturn]] inline void Throw(__attribute__((__unused__)) const T& e) {
+[[noreturn]] void Throw(__attribute__((__unused__)) const T &e) {
   static_assert(std::is_base_of<std::exception, T>::value, "Thrown type must be derived from std::exception");
 #if defined(LIBRM_PLATFORM_LINUX)
   throw e;
