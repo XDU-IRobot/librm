@@ -125,7 +125,7 @@ class LkMotor : public CanDevice {
    * @param reversed    是否反转
    */
   LkMotor(hal::CanInterface &can, usize id, bool reversed = false)
-      : CanDevice(can, 0x140 + id), id_{id}, reversed_{reversed} {}
+      : CanDevice(can), id_{id}, reversed_{reversed} {}
 
   /**
    * @brief  开环控制函数，仅MS型号电机支持
@@ -252,6 +252,10 @@ class LkMotor : public CanDevice {
    * @param msg   收到的报文
    */
   void RxCallback(const hal::CanFrame *msg) override {
+    // 只处理自己这一路反馈帧，其余报文一律忽略
+    if (msg->std_id != static_cast<u16>(0x140 + id_)) {
+      return;
+    }
     ReportStatus(kOk);
     switch (msg->data[0]) {
       case Instruction::kOpenLoopControl:

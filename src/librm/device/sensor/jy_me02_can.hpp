@@ -44,9 +44,13 @@ class JyMe02Can final : public CanDevice {
    * @param sample_time_s   角速度采样时间，在上位机中设置
    */
   JyMe02Can(hal::CanInterface &can, u16 rx_id, f32 sample_time_s = 0.2f)
-      : CanDevice(can, rx_id), sample_time_s_(sample_time_s) {}
+      : CanDevice(can), rx_id_(rx_id), sample_time_s_(sample_time_s) {}
 
   void RxCallback(const hal::CanFrame *msg) override {
+    // 只处理自己这一路反馈帧，其余报文一律忽略
+    if (msg->std_id != rx_id_) {
+      return;
+    }
     /**
      * 数据格式示例: 55 55 aa bb cc dd ee ff
      * - 角度寄存器 = (0xbb << 8) | 0xaa
@@ -76,6 +80,7 @@ class JyMe02Can final : public CanDevice {
   [[nodiscard]] u16 rotations() const { return rotations_; }
 
  private:
+  u16 rx_id_{};               ///< 接收报文ID
   f32 angle_deg_{};          ///< 角度(度)
   f32 angular_speed_dps_{};  ///< 角速度(°/s)
   u16 rotations_{};          ///< 圈数

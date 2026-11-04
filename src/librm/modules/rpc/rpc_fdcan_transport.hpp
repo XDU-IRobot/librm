@@ -64,8 +64,7 @@ class FdCanTransport : public rpc_core::connection {
     static constexpr uint32_t kHeartbeatIntervalMs = 200;  ///< 心跳间隔，小于超时时间的一半
 
     Impl(hal::CanInterface &can, uint16_t rx_stdid_base, uint16_t tx_stdid_base)
-        : CanDevice(can, rx_stdid_base + StdIdOffset::kFrameStart, rx_stdid_base + StdIdOffset::kPayload,
-                    rx_stdid_base + StdIdOffset::kFrameEnd, rx_stdid_base + StdIdOffset::kHeartbeat),
+        : CanDevice(can),
           tx_buf_{},
           rx_state_{},
           rx_stdid_base_{rx_stdid_base},
@@ -132,11 +131,21 @@ class FdCanTransport : public rpc_core::connection {
 
    private:
     void RxCallback(const hal::CanFrame *msg) override {
-      // 收到任何帧都更新连接状态，因为任何帧都能证明对方在线
+      // 只处理本通道的4种帧，其余报文一律忽略（否则总线上其他设备的报文会被误认为对方在线）
+      const uint16_t id = msg->std_id;
+      const bool is_own_frame = (id == rx_stdid_base_ + StdIdOffset::kHeartbeat) ||
+                                (id == rx_stdid_base_ + StdIdOffset::kFrameStart) ||
+                                (id == rx_stdid_base_ + StdIdOffset::kPayload) ||
+                                (id == rx_stdid_base_ + StdIdOffset::kFrameEnd);
+      if (!is_own_frame) {
+        return;
+      }
+
+      // 收到本通道的任何帧都更新连接状态，因为任何帧都能证明对方在线
       ReportStatus(kOk);
 
       // 判断帧类型
-      if (msg->std_id == rx_stdid_base_ + StdIdOffset::kHeartbeat) {
+      if (id == rx_stdid_base_ + StdIdOffset::kHeartbeat) {
         // 心跳帧，已在上面更新状态
       } else if (msg->std_id == rx_stdid_base_ + StdIdOffset::kFrameStart) {
         // 1. 收到起始帧，开始一个新的数据帧接收会话

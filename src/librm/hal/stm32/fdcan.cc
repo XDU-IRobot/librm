@@ -165,7 +165,7 @@ void FdCan::SetFilter(u16 id, u16 mask) {
 
 namespace {
 
-/// @brief 字节长度 -> STM32 HAL 使用的 FDCAN DLC 编码
+/// @brief 字节长度 -> HAL 使用的 FDCAN DLC 编码
 constexpr u32 ToFdcanDlcCode(u8 dlc) {
   switch (dlc) {
     case 12u:
@@ -375,14 +375,11 @@ void FdCan::Restart() const {
  * @brief 利用Register callbacks机制，用这个函数替代HAL_CAN_RxFifo0MsgPendingCallback
  * @note  这个函数替代了HAL_CAN_RxFifo0MsgPendingCallback，HAL库会调用这个函数，不要手动调用
  */
-void FdCan::Fifo0MsgPendingCallback() const {
+void FdCan::Fifo0MsgPendingCallback() {
   FDCAN_RxHeaderTypeDef rx_header;
   CanFrame rx_frame;
   LIBRM_STM32_HAL_ASSERT(HAL_FDCAN_GetRxMessage(hfdcan_, FDCAN_RX_FIFO0, &rx_header, rx_frame.data.data()));
-  auto &device_list_ = GetDeviceListByRxStdid(rx_header.Identifier);
-  if (device_list_.empty()) {
-    return;
-  }
+
   rx_frame.is_fd_frame = (rx_header.FDFormat == FDCAN_FD_CAN);
   rx_frame.std_id = rx_header.Identifier;
   if (rx_frame.is_fd_frame) {
@@ -407,9 +404,9 @@ void FdCan::Fifo0MsgPendingCallback() const {
   } else {
     rx_frame.dlc = static_cast<CanFrame::Dlc>(rx_header.DataLength);
   }
-  for (auto &device : device_list_) {
-    device->RxCallback(&rx_frame);
-  }
+
+  // 通知所有观察者
+  notify_observers(static_cast<const CanFrame &>(rx_frame));
 }
 
 }  // namespace rm::hal::stm32

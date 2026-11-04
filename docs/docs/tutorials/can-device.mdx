@@ -4,16 +4,17 @@
 
 librm 对 CAN 总线和设备的封装使用[观察者模式](https://refactoringguru.cn/design-patterns/observer)，如果不熟悉这种设计模式，建议先自行了解一下。
 
-CAN 设备向 CAN 总线类"注册"自己，并且告知自己要接收哪些 ID 的报文；
-CAN 总线类会处理对接硬件 API 接收报文的逻辑，每接收到一条报文，它就会寻找有没有注册过想要接收这条报文的设备，如果有，这个设备的 `RxCallback()` 函数就会被 CAN 总线类调用。
+CAN 设备构造时向 CAN 总线类注册自己，析构时自动注销；
+CAN 总线类负责对接硬件 API 接收报文，每接收到一条报文就交给全部设备，
+如何处理这条报文由设备自己在 `RxCallback()` 里决定。
 
 整个过程分为以下几个步骤：
 
 1. 继承`rm::device::CanDevice`
 
-2. 委托构造`CanDevice`，向 CAN 总线类表明自己要注册到这一条 CAN 总线上、列出自己要接收哪些 ID 的报文
+2. 委托构造`CanDevice`，向 CAN 总线类表明自己要注册到这一条 CAN 总线上
 
-3. 实现`private void RxCallback(const hal::CanFrame *msg)`成员函数，在这个回调函数中编写收到报文时的处理逻辑
+3. 实现`RxCallback(const hal::CanFrame *msg)`成员函数，在这个回调函数中编写收到报文时的处理逻辑
 
 :::warning
 Linux 下，`RxCallback()`函数会在一个单独的线程中被调用，因此请注意线程安全问题。
@@ -30,10 +31,15 @@ Linux 下，`RxCallback()`函数会在一个单独的线程中被调用，因此
 
 class BasicCanDevice : public rm::device::CanDevice {
  public:
-  BasicCanDevice(rm::hal::CanInterface &can, uint32_t rx_std_id) : CanDevice{can, rx_std_id} {}
+  explicit BasicCanDevice(rm::hal::CanInterface &can) : CanDevice{can}, rx_std_id_{0x123} {}
 
  private:
   void RxCallback(const rm::hal::CanFrame *msg) override {
+    // 只处理自己关心的帧，其余报文直接忽略
+    if (msg->std_id != rx_std_id_) {
+      return;
+    }
+
     // 在这里处理接收到的报文
     std::printf("Received a message! stdid=%d, dlc=%d\n", msg->std_id, msg->dlc);
     for (int i = 0; i < msg->dlc; i++) {
@@ -41,11 +47,13 @@ class BasicCanDevice : public rm::device::CanDevice {
     }
     std::printf("\n");
   }
+
+  uint16_t rx_std_id_;
 };
 
 int main() {
   rm::hal::Can can0{"can0"};
-  BasicCanDevice device{can0, 0x123};  // 我想要接收can0上的0x123标准帧ID的报文！
+  BasicCanDevice device{can0};  // 注册到can0，之后在回调里筛选0x123
 
   can0.Begin();
 

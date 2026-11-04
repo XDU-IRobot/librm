@@ -31,12 +31,9 @@
 #include "librm/core/typedefs.hpp"
 
 #include <array>
-#include <vector>
-#include <unordered_map>
+#include <cstddef>
 
-namespace rm::device {
-class CanDevice;
-}
+#include <etl/observer.h>
 
 namespace rm::hal {
 
@@ -76,11 +73,22 @@ struct CanFrame {
 };
 
 /**
- * @brief CAN接口类
+ * @brief 单条CAN总线上最多允许的观察者数量
+ * @note  包含所有CanDevice以及总线统计等非设备观察者，超出的注册会被忽略
  */
-class CanInterface {
-  friend class device::CanDevice;
+inline constexpr usize kMaxCanObservers = 64;
 
+/**
+ * @brief CAN帧观察者接口
+ * @note  总线收到任何报文都会通知所有已注册的观察者，由观察者自行决定要处理哪些报文
+ */
+using CanFrameObserver = etl::observer<const CanFrame &>;
+
+/**
+ * @brief CAN接口类
+ * @note  采用观察者模式：所有关心CAN报文的实体都向总线注册自己，注销时自动移除。
+ */
+class CanInterface : public etl::observable<CanFrameObserver, kMaxCanObservers> {
  public:
   virtual ~CanInterface() = default;
 
@@ -118,33 +126,6 @@ class CanInterface {
    * @brief 停止CAN外设
    */
   virtual void Stop() = 0;
-
-  // 设备注册机制相关
- protected:
-  /**
-   * @brief 注册CAN设备
-   * @param device    设备对象
-   * @param rx_stdid  该设备要接收的标准帧ID
-   * @note  同一设备在同一ID下只能注册一次（以UUID为准）
-   */
-  void RegisterDevice(device::CanDevice &device, u16 rx_stdid);
-
-  /**
-   * @brief 取消注册CAN设备
-   * @param device 要取消注册的设备对象
-   * @note  以UUID为准查找并移除，与设备对象的内存地址无关
-   */
-  void UnregisterDevice(device::CanDevice &device);
-
-  /**
-   * @brief 根据接收ID获取已注册的设备列表
-   */
-  const std::vector<device::CanDevice *> &GetDeviceListByRxStdid(u16 rx_stdid) const;
-
- private:
-  std::vector<device::CanDevice *> empty_device_list_{};  ///< 用于在GetDeviceList中返回空列表
-  std::unordered_map<u16, std::vector<device::CanDevice *>>
-      rx_id_to_device_list_map_{};  ///< 订阅ID到设备对象列表的映射
 };
 
 }  // namespace rm::hal

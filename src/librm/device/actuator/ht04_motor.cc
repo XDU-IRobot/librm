@@ -35,7 +35,7 @@
 namespace rm::device {
 
 Ht04Motor::Ht04Motor(hal::CanInterface &can, Settings settings, bool reversed)
-    : CanDevice(can, settings.master_id), settings_(settings), reversed_(reversed) {}
+    : CanDevice(can), settings_(settings), reversed_(reversed) {}
 
 void Ht04Motor::SetMitCommand(f32 position_rad, f32 speed_rad_per_sec, f32 torque_ff_nm, f32 kp, f32 kd) {
   if (reversed_) {
@@ -82,6 +82,10 @@ void Ht04Motor::SendInstruction(Instruction instruction) {
 }
 
 void Ht04Motor::RxCallback(const hal::CanFrame *msg) {
+  // 只处理自己这一路反馈帧，其余报文一律忽略
+  if (msg->std_id != settings_.master_id) {
+    return;
+  }
   ReportStatus(kOk);
 
   // 反馈报文格式：

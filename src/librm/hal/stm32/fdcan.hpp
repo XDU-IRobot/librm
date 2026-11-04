@@ -60,7 +60,7 @@ class FdCan : public CanInterface, rm::detail::NonCopyable {
   void Stop() override;
 
  private:
-  void Fifo0MsgPendingCallback() const;
+  void Fifo0MsgPendingCallback();
   void Restart() const;
   void WriteFrame(u16 id, const u8 *data, u8 dlc, bool is_fd_frame);
 

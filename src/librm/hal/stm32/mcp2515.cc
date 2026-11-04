@@ -462,18 +462,14 @@ void Mcp2515::HandleRxInterrupt() {
       dlc = 8;
     }
 
-    const auto &device_list = GetDeviceListByRxStdid(static_cast<u16>(can_id));
-    if (!device_list.empty()) {
-      rx_buffer_.std_id = static_cast<u16>(can_id);
-      rx_buffer_.dlc = static_cast<CanFrame::Dlc>(dlc);
-      rx_buffer_.is_fd_frame = false;
-      for (u8 i = 0; i < dlc; ++i) {
-        rx_buffer_.data[i] = rx_reg[5 + i];
-      }
-      for (const auto &device : device_list) {
-        device->RxCallback(&rx_buffer_);
-      }
+    rx_buffer_.std_id = static_cast<u16>(can_id);
+    rx_buffer_.dlc = static_cast<CanFrame::Dlc>(dlc);
+    rx_buffer_.is_fd_frame = false;
+    for (u8 i = 0; i < dlc; ++i) {
+      rx_buffer_.data[i] = rx_reg[5 + i];
     }
+    // 通知所有观察者
+    notify_observers(static_cast<const CanFrame &>(rx_buffer_));
 
     if ((rx_buffer == kMsgInRxB0) || (rx_buffer == kMsgInBothBuffers)) {
       BitModify(kRegCanIntf, 0x01, 0x00);  // 清RX0IF

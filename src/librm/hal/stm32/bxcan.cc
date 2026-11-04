@@ -196,19 +196,12 @@ void BxCan::Fifo0MsgPendingCallback() {
   CAN_RxHeaderTypeDef rx_header;
   LIBRM_STM32_HAL_ASSERT(HAL_CAN_GetRxMessage(hcan_, CAN_RX_FIFO0, &rx_header, rx_buffer_.data.data()));
 
-  auto &device_list = GetDeviceListByRxStdid(rx_header.StdId);
-  if (device_list.empty()) {
-    return;
-  }
-
-  // 设置rx_buffer_成员（只有在有设备监听时才需要）
   rx_buffer_.std_id = rx_header.StdId;
   rx_buffer_.dlc = static_cast<CanFrame::Dlc>(rx_header.DLC);
+  rx_buffer_.is_fd_frame = false;
 
-  // 遍历并调用所有注册设备的回调
-  for (auto &device : device_list) {
-    device->RxCallback(&rx_buffer_);
-  }
+  // 通知所有观察者
+  notify_observers(static_cast<const CanFrame &>(rx_buffer_));
 }
 
 }  // namespace rm::hal::stm32

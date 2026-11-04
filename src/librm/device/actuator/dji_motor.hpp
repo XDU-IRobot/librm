@@ -207,7 +207,7 @@ class DjiMotor : public CanDevice, protected DjiMotorBase {
    * @param reversed 是否反转
    */
   DjiMotor(hal::CanInterface &can, u16 id, bool reversed = false)
-      : CanDevice(can, GetRxIdBase() + id), id_(id), reversed_(reversed) {
+      : CanDevice(can), id_(id), reversed_(reversed) {
     // 检查id是否合法
     if (id_ < 1 || id_ > 8) {
       rm::Throw(std::runtime_error("DjiMotor: invalid motor id"));
@@ -289,6 +289,10 @@ class DjiMotor : public CanDevice, protected DjiMotorBase {
 
  private:
   void RxCallback(const hal::CanFrame *msg) override {
+    // 只处理自己这一路反馈帧，其余报文一律忽略
+    if (msg->std_id != static_cast<u16>(GetRxIdBase() + id_)) {
+      return;
+    }
     ReportStatus(kOk);
     encoder_ = (msg->data[0] << 8) | msg->data[1];
     rpm_ = (msg->data[2] << 8) | msg->data[3];

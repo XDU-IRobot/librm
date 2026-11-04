@@ -134,7 +134,7 @@ class DmMotor final : public CanDevice {
    * @param reversed    是否反转
    */
   DmMotor(hal::CanInterface &can, Settings settings, bool reversed = false)
-      : CanDevice(can, settings.master_id), settings_(settings), reversed_(reversed) {}
+      : CanDevice(can), settings_(settings), reversed_(reversed) {}
 
   /**
    * @brief  MIT模式下发送控制命令
@@ -229,6 +229,10 @@ class DmMotor final : public CanDevice {
    * @param msg   收到的报文
    */
   void RxCallback(const hal::CanFrame *msg) override {
+    // 只处理自己这一路反馈帧，其余报文一律忽略
+    if (msg->std_id != settings_.master_id) {
+      return;
+    }
     ReportStatus(kOk);
     const int p_int = (msg->data[1] << 8) | msg->data[2];
     const int v_int = (msg->data[3] << 4) | (msg->data[4] >> 4);

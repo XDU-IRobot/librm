@@ -57,21 +57,25 @@ class HipnucImuCan final : public CanDevice {
    * @param can       所属CAN总线
    * @param node_id   IMU的CANOPEN节点ID，默认为1
    */
-  explicit HipnucImuCan(hal::CanInterface &can, u8 node_id = 1)
-      : CanDevice(can,
-                  static_cast<u16>(0x180 + node_id),   // TPDO1: 加速度
-                  static_cast<u16>(0x280 + node_id),   // TPDO2: 角速度
-                  static_cast<u16>(0x380 + node_id),   // TPDO3: 欧拉角
-                  static_cast<u16>(0x480 + node_id),   // TPDO4: 四元数
-                  static_cast<u16>(0x680 + node_id),   // TPDO6: 气压
-                  static_cast<u16>(0x780 + node_id)),  // TPDO7: 倾角
-        node_id_(node_id) {}
+  explicit HipnucImuCan(hal::CanInterface &can, u8 node_id = 1) : CanDevice(can), node_id_(node_id) {}
 
   /**
    * @brief CAN接收回调函数
    * @param msg 接收到的CAN报文
    */
   void RxCallback(const hal::CanFrame *msg) override {
+    // 只处理本节点上报的6路TPDO，其余报文一律忽略
+    const u16 id = msg->std_id;
+    const bool is_own_tpdo = (id == static_cast<u16>(0x180 + node_id_)) ||  // TPDO1: 加速度
+                             (id == static_cast<u16>(0x280 + node_id_)) ||  // TPDO2: 角速度
+                             (id == static_cast<u16>(0x380 + node_id_)) ||  // TPDO3: 欧拉角
+                             (id == static_cast<u16>(0x480 + node_id_)) ||  // TPDO4: 四元数
+                             (id == static_cast<u16>(0x680 + node_id_)) ||  // TPDO6: 气压
+                             (id == static_cast<u16>(0x780 + node_id_));    // TPDO7: 倾角
+    if (!is_own_tpdo) {
+      return;
+    }
+
     // 转换为HIPNUC SDK的帧格式
     hipnuc_can_frame_t frame;
     frame.can_id = msg->std_id;

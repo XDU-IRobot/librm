@@ -291,12 +291,8 @@ void SocketCan::RecvThread() {
     }
 
     const auto rx_id = static_cast<u16>(base_frame.can_id & CAN_SFF_MASK);
-    auto receipient_devices = GetDeviceListByRxStdid(rx_id);
-    if (receipient_devices.empty()) {
-      continue;
-    }
 
-    // 将原始帧转换为 CanFrame 并分发给已注册设备
+    // 将原始帧转换为 CanFrame 并通知所有观察者
     const auto msg_packet = [&frame_storage, is_fd_frame, rx_id] {
       CanFrame msg_packet;
       msg_packet.std_id = rx_id;
@@ -318,9 +314,8 @@ void SocketCan::RecvThread() {
       return msg_packet;
     }();
 
-    for (auto &device : receipient_devices) {
-      device->RxCallback(&msg_packet);
-    }
+    // 是否需要这一帧由观察者自己判断
+    notify_observers(static_cast<const CanFrame &>(msg_packet));
   }
 }
 

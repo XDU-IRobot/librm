@@ -31,7 +31,7 @@
 
 namespace rm::device {
 
-GkSupercap::GkSupercap(hal::CanInterface &can) : CanDevice(can, 0x051) {}
+GkSupercap::GkSupercap(hal::CanInterface &can) : CanDevice(can) {}
 
 /**
  * @brief 更新超级电容设置
@@ -48,6 +48,10 @@ void GkSupercap::Update(const TxData &tx_data) {
  * @param msg 收到的消息
  */
 void GkSupercap::RxCallback(const hal::CanFrame *msg) {
+  // 只处理超电的反馈帧，其余报文一律忽略
+  if (msg->std_id != 0x051) {
+    return;
+  }
   ReportStatus(kOk);
   memcpy(&rx_data_, &msg->data[0], sizeof(RxData));
 }

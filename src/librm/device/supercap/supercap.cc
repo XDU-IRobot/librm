@@ -33,7 +33,7 @@
 
 namespace rm::device {
 
-SuperCap::SuperCap(hal::CanInterface &can) : CanDevice(can, 0x30) {}
+SuperCap::SuperCap(hal::CanInterface &can) : CanDevice(can) {}
 
 /**
  * @return 电容两端电压(V)
@@ -97,6 +97,10 @@ void SuperCap::UpdateSettings(i16 power_limit, i16 output_limit, i16 input_limit
  * @param msg 收到的消息
  */
 void SuperCap::RxCallback(const hal::CanFrame *msg) {
+  // 只处理超电的反馈帧，其余报文一律忽略
+  if (msg->std_id != 0x30) {
+    return;
+  }
   ReportStatus(kOk);
   i16 current_int16 = (msg->data[2] << 8) | msg->data[3];
   this->voltage_ = modules::Map((msg->data[0] << 8) | msg->data[1], -32000, 32000, 0, 30);
