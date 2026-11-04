@@ -133,10 +133,9 @@ class FdCanTransport : public rpc_core::connection {
     void RxCallback(const hal::CanFrame *msg) override {
       // 只处理本通道的4种帧，其余报文一律忽略（否则总线上其他设备的报文会被误认为对方在线）
       const uint16_t id = msg->std_id;
-      const bool is_own_frame = (id == rx_stdid_base_ + StdIdOffset::kHeartbeat) ||
-                                (id == rx_stdid_base_ + StdIdOffset::kFrameStart) ||
-                                (id == rx_stdid_base_ + StdIdOffset::kPayload) ||
-                                (id == rx_stdid_base_ + StdIdOffset::kFrameEnd);
+      const bool is_own_frame =
+          (id == rx_stdid_base_ + StdIdOffset::kHeartbeat) || (id == rx_stdid_base_ + StdIdOffset::kFrameStart) ||
+          (id == rx_stdid_base_ + StdIdOffset::kPayload) || (id == rx_stdid_base_ + StdIdOffset::kFrameEnd);
       if (!is_own_frame) {
         return;
       }

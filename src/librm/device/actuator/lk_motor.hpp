@@ -124,8 +124,7 @@ class LkMotor : public CanDevice {
    * @param id          电机ID
    * @param reversed    是否反转
    */
-  LkMotor(hal::CanInterface &can, usize id, bool reversed = false)
-      : CanDevice(can), id_{id}, reversed_{reversed} {}
+  LkMotor(hal::CanInterface &can, usize id, bool reversed = false) : CanDevice(can), id_{id}, reversed_{reversed} {}
 
   /**
    * @brief  开环控制函数，仅MS型号电机支持

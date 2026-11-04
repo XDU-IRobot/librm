@@ -80,7 +80,7 @@ class JyMe02Can final : public CanDevice {
   [[nodiscard]] u16 rotations() const { return rotations_; }
 
  private:
-  u16 rx_id_{};               ///< 接收报文ID
+  u16 rx_id_{};              ///< 接收报文ID
   f32 angle_deg_{};          ///< 角度(度)
   f32 angular_speed_dps_{};  ///< 角速度(°/s)
   u16 rotations_{};          ///< 圈数

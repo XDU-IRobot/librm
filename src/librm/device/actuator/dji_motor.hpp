@@ -206,8 +206,7 @@ class DjiMotor : public CanDevice, protected DjiMotorBase {
    * @param id       电机ID
    * @param reversed 是否反转
    */
-  DjiMotor(hal::CanInterface &can, u16 id, bool reversed = false)
-      : CanDevice(can), id_(id), reversed_(reversed) {
+  DjiMotor(hal::CanInterface &can, u16 id, bool reversed = false) : CanDevice(can), id_(id), reversed_(reversed) {
     // 检查id是否合法
     if (id_ < 1 || id_ > 8) {
       rm::Throw(std::runtime_error("DjiMotor: invalid motor id"));
