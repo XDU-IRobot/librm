@@ -5,55 +5,67 @@ slug: /
 
 # 简介
 
-librm 是一个面向 Robomaster 机器人开发的跨平台嵌入式软件框架，提供统一 Linux/STM32 HAL 的硬件抽象层（HAL）、各种基于HAL层的设备驱动和常用算法模块。
+librm 是一个面向 Robomaster 机器人电控开发的嵌入式软件框架。它最大的价值概括位四个字就是：省事好用。
+
+一台性能优异的机器人离不开大量花在尝试控制方案、调试算法、优化参数上的时间，但在此之前，开发者往往要花费大量时间在与控制逻辑无关的工作上：查手册、配外设、处理协议、移植驱动、写离线检测、等等。
+
+librm 把全部这些脏活用成体系且标准化的方式做好，提供稳定易用的底层能力，让开发者可以专注于算法和控制逻辑本身。librm 不能直接把一个队伍送到国赛八强，但坚实的基础让一个队伍有更多时间去做真正有价值的事情。
 
 本项目由西安电子科技大学 IRobot 战队在 2024 赛季启动开发，现以 MIT 协议开源。欢迎各参赛队和机器人开发者使用，如果有任何问题或建议，欢迎提交 issue 或 pull request。
 
 ## 你可以用 librm 做什么
 
-librm 不是又一个"封装 HAL 库"的项目。它解决了电控工作中会遇到的最基础、最高频的问题。
+### 把外设初始化那些坑替你踩完
 
-### 跨平台：一套代码，三端运行
+以 CAN 为例。STM32 HAL 的 `CAN_InitTypeDef` 有十来个字段，位时序、SJW、FIFO 锁定、自动重传各有各的语义；过滤器要按寄存器格式算 ID 和 mask；收发的 mailbox 数量、BUS-OFF 恢复、回调注册又各有讲究。这些配置单看文档都能配，但配错一项的现象往往只是"不通信"或"偶尔丢帧"，排查一次就够喝一壶。
+
+而机器人上一条 CAN 总线，绝大多数时候的需求就是一个波特率加上收发。librm 按这个假设封装了一层：
 
 ```cpp
-// 这段代码在 STM32、Linux PC、树莓派上完全一致
-rm::hal::Can can(&hcan1);                          // STM32: HAL CAN；Linux: SocketCAN
-rm::device::M3508 motor(can, 1);                    // M3508 电机，ID=1
-rm::modules::PID pid(10, 0.5, 0, 16384, 5000);     // 速度环 PID
+rm::hal::Can can(&hcan1);
+can.Begin();                                    // 注册回调、启动外设、使能中断
 
-can.Begin();
-while (true) {
-    pid.Update(target_rpm, motor.rpm());            // 速度闭环
-    motor.SetCurrent(pid.out());                    // 电流输出
-    rm::device::DjiMotorBase::SendCommand();        // 统一发送 CAN 帧
-    rm::core::SleepMs(1);
-}
+rm::hal::CanFrame frame{};
+frame.std_id = 0x200;
+frame.dlc = rm::hal::CanFrame::kDlc8;
+can.Write(frame);                               // 等待 mailbox / 处理 BUS-OFF 交给封装
 ```
 
-不管是[CubeMX工程](../integration/stm32_cubemx.mdx)还是[Linux](../integration/linux_cmake.mdx)，配置好CMake后上面的例程就可以编译运行。
+CubeMX 里选好外设和波特率，剩下的调用顺序和 corner case 由 librm 处理。需要更细的控制时，HAL 句柄还在你手里。
 
-这意味着你可以利用电脑灵活的调试能力去写电机驱动、测试算法，然后直接搬到STM32上运行。
+串口、GPIO、定时器同样遵循上述思想，提供相应的简易HAL封装。
 
-### 你要用的轮子，这里都有
+### 轮子齐全
 
-| 需求                 | 不用 librm 你需要                                                                     | 用 librm                                                 |
-| -------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+电机、裁判系统、遥控器、IMU、滤波器、PID、底盘运动学、功率模型，这些在 librm 里都有现成实现，不用从协议手册开始啃。设备驱动在 `rm::device::` 下，算法模块在 `rm::modules::` 下。
+
+| 需求                 | 不用 librm 你需要                                                                     | 用 librm                                                     |
+| -------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
 | 驱动一个电机         | 读电调/电机手册，写 CAN 收发、编码器解析、PID 控制                                    | [教程：电机驱动速查](../tutorials/motor-drivers.mdx)         |
 | 读取裁判系统数据     | 读串口协议手册（数十页），实现 SOF 分包、CRC8/16 校验、丢包检测，逐帧解析几十种结构体 | [教程：裁判系统串口](../tutorials/referee.mdx)               |
-| CAN 总线限频发送     | 手写定时器中断 + 手动管理发送队列，稍不注意就总线拥塞、电机掉线                       | [教程：限流 CAN 发送](../tutorials/throttled-can.mdx)         |
+| CAN 总线限频发送     | 手写定时器中断 + 手动管理发送队列                                                     | [教程：限流 CAN 发送](../tutorials/throttled-can.mdx)        |
 | 对陀螺仪做陷波滤波   | 手写陷波器，再在 MATLAB 里手搓 Bode 图可视化                                          | [教程：数字信号处理滤波器](../tutorials/dsp-filters.mdx)     |
-| 姿态解算             | 推导 Mahony/EKF，处理四元数/欧拉角转换、磁力计融合                                    | [教程：姿态解算](../tutorials/imu-fusion.mdx)            |
+| 姿态解算             | 推导 Mahony/EKF，处理四元数/欧拉角转换、磁力计融合                                    | [教程：姿态解算](../tutorials/imu-fusion.mdx)                |
 | 底盘运动学解算       | 推导麦轮/舵轮/全向轮的正逆运动学公式并编码                                            | [教程：底盘运动学解算](../tutorials/chassis-fkik.mdx)        |
 | 底盘功率限制         | 复现开源电机功率模型，配合裁判系统手动写分配算法                                      | [教程：M3508 功率模型](../tutorials/m3508-power-model.mdx)   |
-| DR16/遥控器接入      | -                                                                                     | `rm::device::Dr16`                                       |
+| DR16/遥控器接入      | -                                                                                     | `rm::device::Dr16`                                           |
 | 轨迹平滑/输入整形    | 手写S曲线/梯形速度规划，处理各种约束                                                  | [教程：轨迹限制器](../tutorials/trajectory-limiter.mdx)      |
 | CRC 校验             | -                                                                                     | [教程：CRC](../tutorials/crc.mdx)                            |
 | 给所有设备加心跳监控 | 每个设备手动维护 `last_update` 时间戳                                                 | [教程：设备状态监控](../tutorials/device-status-monitor.mdx) |
 | 蜂鸣器播放旋律       | -                                                                                     | [教程：蜂鸣器](../tutorials/buzzer.mdx)                      |
 | RGB LED 灯效         | -                                                                                     | [教程：RGB LED](../tutorials/rgb-led.mdx)                    |
-| Vofa+ / 串口绘图     | -                                                                                     | `rm::modules::VofaPlotter`                               |
+| Vofa+ / 串口绘图     | -                                                                                     | `rm::modules::VofaPlotter`                                   |
 
-### librm是一套可组合的构建块
+接进已有工程只需要在 CMakeLists 里加几行：
+
+```cmake
+add_subdirectory(librm)
+target_link_libraries(${PROJECT_NAME} PRIVATE rm)
+```
+
+不需要额外的构建系统，没有各种闹不清的配套工具。
+
+### 模块组合能力
 
 librm 的模块不是孤立的功能点，它们被设计为可以自由组合：
 
@@ -71,12 +83,28 @@ power_model.DistributePower<4>(states, currents, power_limit, output); // 功率
 
 这些模块之间的衔接是自然发生的。因为它们共享同一套类型定义、同一个CAN抽象、同一种错误处理方式。你不需要为每个组合写胶水代码。
 
-### 对队伍而言，这意味着什么
+### 跨平台能力
 
-- 新人第一周就能让电机转起来，而不是花一个月读完 CAN 协议手册
-- 退役队员的代码可以被继承，而不是随着毕业一起消失
-- 算法和驱动可以在PC上调好，再烧录到STM32上部署
-- 全队使用同一套基础代码，同步修改只需要 `git pull`，降低沟通成本
+外设接口统一之后，librm 顺带获得了跨平台能力。同一份上层代码可以同时编译到 STM32 和 Linux 上：
+
+```cpp
+// 这段代码在 STM32、Linux PC、树莓派上完全一致
+rm::hal::Can can(&hcan1);                          // STM32: HAL CAN；Linux: SocketCAN
+rm::device::M3508 motor(can, 1);                    // M3508 电机，ID=1
+rm::modules::PID pid(10, 0.5, 0, 16384, 5000);     // 速度环 PID
+
+can.Begin();
+while (true) {
+    pid.Update(target_rpm, motor.rpm());            // 速度闭环
+    motor.SetCurrent(pid.out());                    // 电流输出
+    rm::device::DjiMotorBase::SendCommand();        // 统一发送 CAN 帧
+    rm::core::SleepMs(1);
+}
+```
+
+不管是[STM32上的CubeMX工程](../integration/stm32_cubemx.mdx)还是[Linux板子](../integration/linux_cmake.mdx)，配置好CMake后上面的例程就可以让一个3508电机转起来。
+
+好处是可以利用电脑灵活的调试能力去写电机驱动、测试算法，调好之后直接搬到 STM32 上跑。
 
 ## Roadmap
 
@@ -220,6 +248,7 @@ power_model.DistributePower<4>(states, currents, power_limit, output); // 功率
   - [x] FloatToInt
   - [x] SafeDiv
   - [x] IsNear
+
 #### 通信中间件
 
 - [ ] RPC over FDCAN
