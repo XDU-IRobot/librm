@@ -45,11 +45,11 @@ namespace rm::modules {
  * @brief 单个CAN ID的统计结果
  */
 struct CanIdStats {
-  u16 id{0};            ///< 标准帧ID
-  u32 frame_count{0};   ///< 累计收到的帧数
-  f32 average_hz{0.0f}; ///< 平均频率，窗口内 (n-1)/(t_last-t_first)；样本不足时为0
-  f32 stddev_hz{0.0f};  ///< 窗口内周期抖动的标准差，按 sigma_rate=sigma_period/mean_period^2 换算
-  u8 dlc{0};            ///< 最近一帧的数据长度（字节）
+  u16 id{0};                ///< 标准帧ID
+  u32 frame_count{0};       ///< 累计收到的帧数
+  f32 average_hz{0.0f};     ///< 平均频率，窗口内 (n-1)/(t_last-t_first)；样本不足时为0
+  f32 stddev_hz{0.0f};      ///< 窗口内周期抖动的标准差，按 sigma_rate=sigma_period/mean_period^2 换算
+  u8 dlc{0};                ///< 最近一帧的数据长度（字节）
   bool is_fd_frame{false};  ///< 最近一帧是否为FD帧
 };
 
