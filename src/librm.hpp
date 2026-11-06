@@ -76,6 +76,7 @@
 #include "librm/modules/rpc/rpc_fdcan_transport.hpp"
 #include "librm/modules/angle.hpp"
 #include "librm/modules/buzzer_controller.hpp"
+#include "librm/modules/cansniffer.hpp"
 #include "librm/modules/chassis_fkik.hpp"
 #include "librm/modules/crc.hpp"
 #include "librm/modules/dsp_filters.hpp"

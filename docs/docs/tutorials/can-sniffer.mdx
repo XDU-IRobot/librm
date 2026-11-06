@@ -1,0 +1,97 @@
+# CAN 总线嗅探器
+
+`CanSniffer` 挂在 CAN 总线上，统计最近出现了哪些ID 的报文、每个 ID 的出现频率和抖动，作用类似 can-utils 的 `cansniffer`：
+
+![](assets/cansniffer.png)
+
+但与原版 `cansniffer` 不同的是，由于 MCU 上缺乏标准的字符输出手段，这个模块不打印终端表格，而是提供查询接口供应用读取。
+
+这项功能在走线空间狭小，不方便插外挂的 CAN 分析仪时非常有用。当怀疑 CAN 总线出现问题时，可以临时挂上这个模块快速获得一些有用的信息。
+
+## 基本用法
+
+```cpp
+#include "cmsis_os.h"
+#include <librm.hpp>
+
+extern "C" void CanSnifferTask(const void *pv_arg) {
+  rm::hal::Can can(hfdcan1);
+  rm::modules::CanSniffer<> sniffer(can);  // 构造时自动注册为总线观察者
+
+  can.SetFilter(0, 0);
+  can.Begin();
+
+  for (;;) {
+    sniffer.Update();  // 把中断里收到的报文并入统计
+
+    // 查询最近 500ms 内出现过的 ID
+    for (const rm::u16 id : sniffer.active_ids(std::chrono::milliseconds(500))) {
+      const auto stats = sniffer.stats(id);
+      if (stats) {
+        printf("%03X %.1f Hz\n", id, stats->average_hz);
+      }
+    }
+
+    osDelay(10);
+  }
+}
+```
+
+`Update()` 只做搬运和累加，不涉及浮点运算；`stats()` 系列才计算频率，按需调用即可。
+
+## preview: CLI
+
+这部分功能仍在开发中，但作为后续的一个展望。`cansniffer` 命令可以在终端里输出各种统计信息：
+
+![](assets/cansniffer_cli.png)
+
+## 查询接口
+
+| 接口                  | 说明                                        |
+| --------------------- | ------------------------------------------- |
+| `active_ids(timeout)` | 最近 `timeout` 内收到过报文的 ID，默认 1 秒 |
+| `stats()`             | 所有已统计 ID 的结果，按 ID 升序            |
+| `stats(id)`           | 单个 ID 的结果，没收到过返回 `std::nullopt` |
+| `dropped_frames()`    | 未能计入统计的帧数                          |
+
+`CanIdStats` 的字段：
+
+```cpp
+struct CanIdStats {
+  u16 id;            // 标准帧 ID
+  u32 frame_count;   // 累计帧数
+  f32 average_hz;    // 平均频率
+  f32 stddev_hz;     // 频率标准差
+  u8 dlc;            // 最近一帧的数据长度
+  bool is_fd_frame;  // 最近一帧是否为 FD 帧
+};
+```
+
+## 统计口径
+
+平均频率用窗口内首尾时间戳计算，即 $\bar f = (n-1) / (t_{last} - t_{first})$，和 `ros2 topic hz` 一致，不会因为个别长周期把平均值拉偏。
+
+标准差先算周期的标准差 $\sigma_T$，再按 $\sigma_f \approx \sigma_T / \bar{T}^2$ 换算到频率域。
+
+窗口大小由模板参数 `WindowSize` 决定，默认 16 个样本：
+
+```cpp
+rm::modules::CanSniffer<32, 32> sniffer(can);  // 32 个 ID，每个 ID 32 个样本
+```
+
+## 关于精度
+
+时间戳在消息接收回调里取，所以统计精度会受接收路径影响：
+
+- MCU 内置 CAN/FDCAN：中断里逐帧取时间戳，精度基本等于总线上的真实间隔。
+- 外挂CAN控制器（如 MCP2515）：驱动在一次中断里会连续读出 RXB0/RXB1 的帧，同批帧的时间差只有读寄存器的耗时（几十微秒），并不是真实间隔。这批样本把窗口总时长压缩了，平均频率会略微偏高，标准差也会偏大。
+
+`steady_clock` 在 STM32 上由 `gettimeofday()` 合成，读取 SysTick 时若恰好跨过重载点，时间戳可能回退 1ms。这种样本会被直接丢弃，不会污染统计，但该次间隔会漏算。
+
+## 注意事项
+
+- 默认配置下一个 `CanSniffer` 对象占用约 3KB RAM，对于资源紧张的 MCU，建议在调试时才挂上这个模块，平时注释掉。
+
+- `Update()` 必须在任务上下文周期调用，不要在中断里调用。总线回调只把报文压进无锁环形队列，队列深度由 `MaxPendingFrames`（默认 32）决定，溢出或 ID 数量超过 `MaxIds` 都会计入 `dropped_frames()`。
+
+- 硬件过滤器需要放行想观察的报文，否则统计不到。
