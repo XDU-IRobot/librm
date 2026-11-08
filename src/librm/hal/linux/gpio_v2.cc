@@ -42,9 +42,7 @@ namespace {
   throw std::runtime_error(std::string{what} + ": " + std::strerror(errno));
 }
 
-std::string ChipPath(const char *chip) {
-  return chip[0] == '/' ? chip : std::string{"/dev/"} + chip;
-}
+std::string ChipPath(const char *chip) { return chip[0] == '/' ? chip : std::string{"/dev/"} + chip; }
 
 }  // namespace
 
@@ -66,8 +64,7 @@ PinV2::PinV2(unsigned int offset, PinDirection direction, const char *chip)
     ThrowErrno("gpiod request config alloc");
   }
 
-  gpiod_line_settings_set_direction(settings, is_output_ ? GPIOD_LINE_DIRECTION_OUTPUT
-                                                         : GPIOD_LINE_DIRECTION_INPUT);
+  gpiod_line_settings_set_direction(settings, is_output_ ? GPIOD_LINE_DIRECTION_OUTPUT : GPIOD_LINE_DIRECTION_INPUT);
   if (is_output_) {
     gpiod_line_settings_set_output_value(settings, GPIOD_LINE_VALUE_INACTIVE);
   }
@@ -100,8 +97,8 @@ void PinV2::Write(bool state) {
   if (!is_output_) {
     return;
   }
-  if (gpiod_line_request_set_value(request_, offset_,
-                                   state ? GPIOD_LINE_VALUE_ACTIVE : GPIOD_LINE_VALUE_INACTIVE) < 0) {
+  if (gpiod_line_request_set_value(request_, offset_, state ? GPIOD_LINE_VALUE_ACTIVE : GPIOD_LINE_VALUE_INACTIVE) <
+      0) {
     ThrowErrno("gpiod_line_request_set_value");
   }
   state_ = state;

@@ -42,9 +42,7 @@ namespace {
   throw std::runtime_error(std::string{what} + ": " + std::strerror(errno));
 }
 
-std::string ChipPath(const char *chip) {
-  return chip[0] == '/' ? chip : std::string{"/dev/"} + chip;
-}
+std::string ChipPath(const char *chip) { return chip[0] == '/' ? chip : std::string{"/dev/"} + chip; }
 
 }  // namespace
 
@@ -63,8 +61,7 @@ PinV1::PinV1(unsigned int offset, PinDirection direction, const char *chip)
     ThrowErrno("gpiod_chip_get_line");
   }
 
-  const int ret = is_output_ ? gpiod_line_request_output(line_, "librm", 0)
-                             : gpiod_line_request_input(line_, "librm");
+  const int ret = is_output_ ? gpiod_line_request_output(line_, "librm", 0) : gpiod_line_request_input(line_, "librm");
   if (ret < 0) {
     const int err = errno;
     gpiod_chip_close(chip_);
