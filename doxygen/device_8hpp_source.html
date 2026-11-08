@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: src/librm/device/device.hpp 源文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,28 +36,22 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function() { init_codefold(0); });
-/* @license-end */
-</script>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -69,10 +64,9 @@ $(document).ready(function() { init_codefold(0); });
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('device_8hpp_source.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('device_8hpp_source.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -120,7 +114,8 @@ $(document).ready(function(){initNavTree('device_8hpp_source.html',''); initResi
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef LIBRM_DEVICE_DEVICE_HPP</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_DEVICE_DEVICE_HPP</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
@@ -136,9 +131,9 @@ $(document).ready(function(){initNavTree('device_8hpp_source.html',''); initResi
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;<a class="code" href="typedefs_8hpp.html">librm/core/typedefs.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1device.html">rm::device</a> {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
 <div class="foldopen" id="foldopen00047" data-start="{" data-end="};">
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Device.html">   47</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Device.html">   47</a></span><span class="keyword">class </span><a class="code hl_function" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a> {</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">using </span>time_point = std::chrono::time_point&lt;std::chrono::steady_clock&gt;;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">using </span>duration = std::chrono::steady_clock::duration;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
@@ -147,17 +142,17 @@ $(document).ready(function(){initNavTree('device_8hpp_source.html',''); initResi
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a>();</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Device.html#abc47f697e77010da09e8449f3d5a9094">   55</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="classrm_1_1device_1_1Device.html#abc47f697e77010da09e8449f3d5a9094">~Device</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a>(<span class="keyword">const</span> <a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> &amp;other);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> &amp;<a class="code hl_function" href="classrm_1_1device_1_1Device.html#af2e07a67e6895a52cd8fdc47230d8e26">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> &amp;other);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a>(<a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> &amp;&amp;other) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> &amp;<a class="code hl_function" href="classrm_1_1device_1_1Device.html#af2e07a67e6895a52cd8fdc47230d8e26">operator=</a>(<a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> &amp;&amp;other) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a>(<span class="keyword">const</span> <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a> &amp;other);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a> &amp;<a class="code hl_function" href="classrm_1_1device_1_1Device.html#af2e07a67e6895a52cd8fdc47230d8e26">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a> &amp;other);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a>(<a class="code hl_function" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a> &amp;&amp;other) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a> &amp;<a class="code hl_function" href="classrm_1_1device_1_1Device.html#af2e07a67e6895a52cd8fdc47230d8e26">operator=</a>(<a class="code hl_function" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a> &amp;&amp;other) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a227f58f357e464c7699866378a89b7dc">SetHeartbeatTimeout</a>(duration timeout);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
 <div class="foldopen" id="foldopen00087" data-start="{" data-end="};">
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">   87</a></span>  <span class="keyword">enum</span> <a class="code hl_enumeration" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Status</a> {</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5">   88</a></span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5">kUnknown</a> = -1,  </div>
@@ -166,19 +161,19 @@ $(document).ready(function(){initNavTree('device_8hpp_source.html',''); initResi
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21">   91</a></span>    <a class="code hl_enumvalue" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21">kOk</a>,            </div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  };</div>
 </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  [[nodiscard]] <a class="code hl_enumeration" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Status</a> <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a4f6f6615cf259068c236883523608332">online_status</a>();</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  [[nodiscard]] time_point <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a0f1b8eb171231fad7f23adac2879224b">last_seen</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a8bbe2925440ed64a15987789a7cdca90">SetName</a>(etl::string&lt;kMaxNameLength&gt; <a class="code hl_function" href="classrm_1_1device_1_1Device.html#ada247da2f27c1e0c4862f526486c78f4">name</a>);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  [[nodiscard]] etl::string&lt;kMaxNameLength&gt; <a class="code hl_function" href="classrm_1_1device_1_1Device.html#ada247da2f27c1e0c4862f526486c78f4">name</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  [[nodiscard]] <a class="code hl_typedef" href="namespacerm.html#a0863ccbdab2c54f662053f0496ed09f4">u64</a> <a class="code hl_function" href="classrm_1_1device_1_1Device.html#afba35a1dcfa7345a26ace72fa058c379">uuid</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classrm_1_1device_1_1Device.html#aabf4f42581be1e528ff795b4954d9a58">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> &amp;other) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span></div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a6762266bdd191a7f70f2a7e4d3a03412">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> &amp;other) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> <span class="keyword">protected</span>:</div>
@@ -192,19 +187,19 @@ $(document).ready(function(){initNavTree('device_8hpp_source.html',''); initResi
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  <a class="code hl_typedef" href="namespacerm.html#a0863ccbdab2c54f662053f0496ed09f4">u64</a> uuid_{};  </div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>};</div>
 </div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span></div>
 <div class="foldopen" id="foldopen00152" data-start="{" data-end="};">
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1VirtualDevice.html">  152</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1device_1_1VirtualDevice.html">VirtualDevice</a> : <span class="keyword">public</span> <a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1VirtualDevice.html">  152</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1device_1_1VirtualDevice.html">VirtualDevice</a> : <span class="keyword">public</span> <a class="code hl_function" href="classrm_1_1device_1_1VirtualDevice.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a> {</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <span class="keyword">using </span><a class="code hl_function" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device::Device</a>;</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="keyword">using </span><a class="code hl_function" href="classrm_1_1device_1_1Device.html#a7cc99f092ea347a682754478b34e489a">Device::ReportStatus</a>;</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1VirtualDevice.html#aa188bb36d49f7f48d0a98f9849f83c71">  156</a></span>  <a class="code hl_function" href="classrm_1_1device_1_1VirtualDevice.html#aa188bb36d49f7f48d0a98f9849f83c71">~VirtualDevice</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>};</div>
 </div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span></div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> MaxDevices, <span class="keywordtype">bool</span> UseStdFunctionCallback = true, <span class="keywordtype">size_t</span> MaxSummaryStringLength = 512&gt;</div>
 <div class="foldopen" id="foldopen00167" data-start="{" data-end="};">
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1DeviceManager.html">  167</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1device_1_1DeviceManager.html">DeviceManager</a> {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1DeviceManager.html">  167</a></span><span class="keyword">class </span><a class="code hl_function" href="classrm_1_1device_1_1DeviceManager.html#add762023b018255578bca6fe66b08c32">DeviceManager</a> {</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="keyword">using </span>CallbackType =                                   <span class="comment">//</span></div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>      std::conditional_t&lt;UseStdFunctionCallback,         <span class="comment">//</span></div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                         std::function&lt;void(<a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> *)&gt;,  <span class="comment">//</span></div>
@@ -216,8 +211,8 @@ $(document).ready(function(){initNavTree('device_8hpp_source.html',''); initResi
 <div class="foldopen" id="foldopen00176" data-start="{" data-end="}">
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1DeviceManager.html#a6865d8efef5b79852f116974a4df33f8">  176</a></span>  <a class="code hl_function" href="classrm_1_1device_1_1DeviceManager.html#a6865d8efef5b79852f116974a4df33f8">DeviceManager</a>(std::initializer_list&lt;Device *&gt; devices) {</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordflow">if</span> (devices.size() &lt;= MaxDevices) {</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> *device : devices) {</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        devices_.push_back({device, <a class="code hl_enumvalue" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5">Device::kUnknown</a>});  <span class="comment">// 初始状态为未知</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> *<a class="code hl_namespace" href="namespacerm_1_1device.html">device</a> : devices) {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        devices_.push_back({<a class="code hl_namespace" href="namespacerm_1_1device.html">device</a>, <a class="code hl_enumvalue" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5">Device::kUnknown</a>});  <span class="comment">// 初始状态为未知</span></div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>      }</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>      <a class="code hl_function" href="namespacerm.html#ac948acc594f27343ce59b3ac31c2cacd">Throw</a>(std::runtime_error(<span class="stringliteral">&quot;DeviceManager: Too many devices!&quot;</span>));</div>
@@ -226,16 +221,16 @@ $(document).ready(function(){initNavTree('device_8hpp_source.html',''); initResi
 </div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
 <div class="foldopen" id="foldopen00186" data-start="{" data-end="}">
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1DeviceManager.html#a6b272e39a4a2d23058fc84c3cf0f35f2">  186</a></span>  <a class="code hl_class" href="classrm_1_1device_1_1DeviceManager.html">DeviceManager</a> &amp;<a class="code hl_function" href="classrm_1_1device_1_1DeviceManager.html#a6b272e39a4a2d23058fc84c3cf0f35f2">operator&lt;&lt;</a>(<a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> *device) {</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1DeviceManager.html#a6b272e39a4a2d23058fc84c3cf0f35f2">  186</a></span>  <a class="code hl_function" href="classrm_1_1device_1_1DeviceManager.html#add762023b018255578bca6fe66b08c32">DeviceManager</a> &amp;<a class="code hl_function" href="classrm_1_1device_1_1DeviceManager.html#a6b272e39a4a2d23058fc84c3cf0f35f2">operator&lt;&lt;</a>(<a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> *<a class="code hl_namespace" href="namespacerm_1_1device.html">device</a>) {</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="keywordflow">if</span> (devices_.size() &lt; MaxDevices) {</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>      devices_.push_back({device, <a class="code hl_enumvalue" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5">Device::kUnknown</a>});  <span class="comment">// 初始状态为未知</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>      devices_.push_back({<a class="code hl_namespace" href="namespacerm_1_1device.html">device</a>, <a class="code hl_enumvalue" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5">Device::kUnknown</a>});  <span class="comment">// 初始状态为未知</span></div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>      <a class="code hl_function" href="namespacerm.html#ac948acc594f27343ce59b3ac31c2cacd">Throw</a>(std::runtime_error(<span class="stringliteral">&quot;DeviceManager: Too many devices!&quot;</span>));</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    }</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  }</div>
 </div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span></div>
 <div class="foldopen" id="foldopen00199" data-start="{" data-end="}">
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1DeviceManager.html#aea8f9ba1e65e723563ee19dac34bba4d">  199</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classrm_1_1device_1_1DeviceManager.html#aea8f9ba1e65e723563ee19dac34bba4d">Update</a>() {</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    all_device_ok_ = <span class="keyword">true</span>;</div>
@@ -279,7 +274,7 @@ $(document).ready(function(){initNavTree('device_8hpp_source.html',''); initResi
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keywordflow">return</span> all_device_ok_;</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  }</div>
 </div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span></div>
 <div class="foldopen" id="foldopen00246" data-start="{" data-end="}">
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1DeviceManager.html#af1fb1eb2e4449ea451e14133479fff62">  246</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1device_1_1DeviceManager.html#af1fb1eb2e4449ea451e14133479fff62">OnDeviceStatusChange</a>(CallbackType callback) {</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keywordflow">if</span> (status_change_callbacks_.size() &lt; 10) {</div>
@@ -289,7 +284,7 @@ $(document).ready(function(){initNavTree('device_8hpp_source.html',''); initResi
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    }</div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  }</div>
 </div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span></div>
 <div class="foldopen" id="foldopen00260" data-start="{" data-end="}">
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1DeviceManager.html#a14e3d01305a6c20aa54a8585edbf1d95">  260</a></span>  <span class="keyword">const</span> etl::vector&lt;Device *, MaxDevices&gt; &amp;<a class="code hl_function" href="classrm_1_1device_1_1DeviceManager.html#a14e3d01305a6c20aa54a8585edbf1d95">GetDeviceListByStatus</a>(<a class="code hl_enumeration" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Device::Status</a> status)<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <span class="keywordflow">switch</span> (status) {</div>
@@ -305,7 +300,7 @@ $(document).ready(function(){initNavTree('device_8hpp_source.html',''); initResi
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    }</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>  }</div>
 </div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span></div>
 <div class="foldopen" id="foldopen00281" data-start="{" data-end="}">
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1DeviceManager.html#a0a6c93c8e9dc8312ae38e7b92bce3330">  281</a></span>  etl::string&lt;MaxSummaryStringLength&gt; <a class="code hl_function" href="classrm_1_1device_1_1DeviceManager.html#a0a6c93c8e9dc8312ae38e7b92bce3330">GetSummaryString</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> kTruncationMarkLength = 3;  <span class="comment">// &quot;...&quot; 的长度</span></div>
@@ -366,12 +361,12 @@ $(document).ready(function(){initNavTree('device_8hpp_source.html',''); initResi
 <div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    <span class="keywordflow">return</span> summary;</div>
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>  }</div>
 </div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span> </div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span></div>
 <div class="line"><a id="l00343" name="l00343"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1DeviceManager.html#a6d6659766072d258fc8402006f77bffe">  343</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classrm_1_1device_1_1DeviceManager.html#a6d6659766072d258fc8402006f77bffe">all_device_ok</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> all_device_ok_; }</div>
 <div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span> </div>
 <div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>  <span class="keyword">struct </span>DeviceEntry {</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>    <a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> *device{<span class="keyword">nullptr</span>};                       </div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>    <a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> *<a class="code hl_namespace" href="namespacerm_1_1device.html">device</a>{<span class="keyword">nullptr</span>};                       </div>
 <div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>    <a class="code hl_enumeration" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Device::Status</a> prev_status{<a class="code hl_enumvalue" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5">Device::kUnknown</a>};  </div>
 <div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>  };</div>
 <div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span> </div>
@@ -392,48 +387,49 @@ $(document).ready(function(){initNavTree('device_8hpp_source.html',''); initResi
 <div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>}  <span class="comment">// namespace rm::device</span></div>
 <div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span> </div>
 <div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_DEVICE_DEVICE_HPP</span></div>
-<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html">rm::device::DeviceManager</a></div><div class="ttdoc">设备管理器，用来维护多个设备的在线状态</div><div class="ttdef"><b>Definition</b> device.hpp:167</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_a0a6c93c8e9dc8312ae38e7b92bce3330"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#a0a6c93c8e9dc8312ae38e7b92bce3330">rm::device::DeviceManager::GetSummaryString</a></div><div class="ttdeci">etl::string&lt; MaxSummaryStringLength &gt; GetSummaryString() const</div><div class="ttdoc">获取设备状态摘要字符串</div><div class="ttdef"><b>Definition</b> device.hpp:281</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_a14e3d01305a6c20aa54a8585edbf1d95"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#a14e3d01305a6c20aa54a8585edbf1d95">rm::device::DeviceManager::GetDeviceListByStatus</a></div><div class="ttdeci">const etl::vector&lt; Device *, MaxDevices &gt; &amp; GetDeviceListByStatus(Device::Status status) const</div><div class="ttdoc">根据状态获取设备列表</div><div class="ttdef"><b>Definition</b> device.hpp:260</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_a6865d8efef5b79852f116974a4df33f8"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#a6865d8efef5b79852f116974a4df33f8">rm::device::DeviceManager::DeviceManager</a></div><div class="ttdeci">DeviceManager(std::initializer_list&lt; Device * &gt; devices)</div><div class="ttdef"><b>Definition</b> device.hpp:176</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_a6b272e39a4a2d23058fc84c3cf0f35f2"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#a6b272e39a4a2d23058fc84c3cf0f35f2">rm::device::DeviceManager::operator&lt;&lt;</a></div><div class="ttdeci">DeviceManager &amp; operator&lt;&lt;(Device *device)</div><div class="ttdef"><b>Definition</b> device.hpp:186</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_a6d6659766072d258fc8402006f77bffe"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#a6d6659766072d258fc8402006f77bffe">rm::device::DeviceManager::all_device_ok</a></div><div class="ttdeci">bool all_device_ok() const</div><div class="ttdef"><b>Definition</b> device.hpp:343</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_a0a6c93c8e9dc8312ae38e7b92bce3330"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#a0a6c93c8e9dc8312ae38e7b92bce3330">rm::device::DeviceManager::GetSummaryString</a></div><div class="ttdeci">etl::string&lt; MaxSummaryStringLength &gt; GetSummaryString() const</div><div class="ttdoc">获取设备状态摘要字符串</div><div class="ttdef"><b>定义</b> device.hpp:281</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_a14e3d01305a6c20aa54a8585edbf1d95"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#a14e3d01305a6c20aa54a8585edbf1d95">rm::device::DeviceManager::GetDeviceListByStatus</a></div><div class="ttdeci">const etl::vector&lt; Device *, MaxDevices &gt; &amp; GetDeviceListByStatus(Device::Status status) const</div><div class="ttdoc">根据状态获取设备列表</div><div class="ttdef"><b>定义</b> device.hpp:260</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_a6865d8efef5b79852f116974a4df33f8"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#a6865d8efef5b79852f116974a4df33f8">rm::device::DeviceManager::DeviceManager</a></div><div class="ttdeci">DeviceManager(std::initializer_list&lt; Device * &gt; devices)</div><div class="ttdef"><b>定义</b> device.hpp:176</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_a6b272e39a4a2d23058fc84c3cf0f35f2"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#a6b272e39a4a2d23058fc84c3cf0f35f2">rm::device::DeviceManager::operator&lt;&lt;</a></div><div class="ttdeci">DeviceManager &amp; operator&lt;&lt;(Device *device)</div><div class="ttdef"><b>定义</b> device.hpp:186</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_a6d6659766072d258fc8402006f77bffe"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#a6d6659766072d258fc8402006f77bffe">rm::device::DeviceManager::all_device_ok</a></div><div class="ttdeci">bool all_device_ok() const</div><div class="ttdef"><b>定义</b> device.hpp:343</div></div>
 <div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_add762023b018255578bca6fe66b08c32"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#add762023b018255578bca6fe66b08c32">rm::device::DeviceManager::DeviceManager</a></div><div class="ttdeci">DeviceManager()=default</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_aea8f9ba1e65e723563ee19dac34bba4d"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#aea8f9ba1e65e723563ee19dac34bba4d">rm::device::DeviceManager::Update</a></div><div class="ttdeci">bool Update()</div><div class="ttdoc">更新所有设备的在线状态</div><div class="ttdef"><b>Definition</b> device.hpp:199</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_af1fb1eb2e4449ea451e14133479fff62"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#af1fb1eb2e4449ea451e14133479fff62">rm::device::DeviceManager::OnDeviceStatusChange</a></div><div class="ttdeci">void OnDeviceStatusChange(CallbackType callback)</div><div class="ttdoc">注册设备状态变化回调</div><div class="ttdef"><b>Definition</b> device.hpp:246</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1Device_html"><div class="ttname"><a href="classrm_1_1device_1_1Device.html">rm::device::Device</a></div><div class="ttdoc">驱动框架的设备基类，功能为监视设备状态</div><div class="ttdef"><b>Definition</b> device.hpp:47</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a0f1b8eb171231fad7f23adac2879224b"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a0f1b8eb171231fad7f23adac2879224b">rm::device::Device::last_seen</a></div><div class="ttdeci">time_point last_seen() const</div><div class="ttdef"><b>Definition</b> device.cc:107</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a16a7bedc3fb137033e1537713d3626bc"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">rm::device::Device::Status</a></div><div class="ttdeci">Status</div><div class="ttdoc">设备状态</div><div class="ttdef"><b>Definition</b> device.hpp:87</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5">rm::device::Device::kUnknown</a></div><div class="ttdeci">@ kUnknown</div><div class="ttdoc">未知</div><div class="ttdef"><b>Definition</b> device.hpp:88</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a16a7bedc3fb137033e1537713d3626bca49868fdd51a9c221b3b9c076adc6d64e"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca49868fdd51a9c221b3b9c076adc6d64e">rm::device::Device::kOffline</a></div><div class="ttdeci">@ kOffline</div><div class="ttdoc">离线</div><div class="ttdef"><b>Definition</b> device.hpp:89</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a16a7bedc3fb137033e1537713d3626bca888af1cb59179c046f400d9fdd64dc0c"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca888af1cb59179c046f400d9fdd64dc0c">rm::device::Device::kFault</a></div><div class="ttdeci">@ kFault</div><div class="ttdoc">在线但存在故障（比如电机过流）</div><div class="ttdef"><b>Definition</b> device.hpp:90</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21">rm::device::Device::kOk</a></div><div class="ttdeci">@ kOk</div><div class="ttdoc">在线且正常工作</div><div class="ttdef"><b>Definition</b> device.hpp:91</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a227f58f357e464c7699866378a89b7dc"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a227f58f357e464c7699866378a89b7dc">rm::device::Device::SetHeartbeatTimeout</a></div><div class="ttdeci">void SetHeartbeatTimeout(duration timeout)</div><div class="ttdoc">设置心跳超时时间</div><div class="ttdef"><b>Definition</b> device.cc:96</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a4f6f6615cf259068c236883523608332"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a4f6f6615cf259068c236883523608332">rm::device::Device::online_status</a></div><div class="ttdeci">Status online_status()</div><div class="ttdef"><b>Definition</b> device.cc:98</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a6762266bdd191a7f70f2a7e4d3a03412"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a6762266bdd191a7f70f2a7e4d3a03412">rm::device::Device::operator!=</a></div><div class="ttdeci">bool operator!=(const Device &amp;other) const</div><div class="ttdoc">不等比较</div><div class="ttdef"><b>Definition</b> device.cc:122</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a769d2371dac57ae08f5a17948bbdefd6"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">rm::device::Device::Device</a></div><div class="ttdeci">Device()</div><div class="ttdef"><b>Definition</b> device.cc:42</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a7cc99f092ea347a682754478b34e489a"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a7cc99f092ea347a682754478b34e489a">rm::device::Device::ReportStatus</a></div><div class="ttdeci">void ReportStatus(Status status)</div><div class="ttdoc">更新设备状态</div><div class="ttdef"><b>Definition</b> device.cc:109</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a8bbe2925440ed64a15987789a7cdca90"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a8bbe2925440ed64a15987789a7cdca90">rm::device::Device::SetName</a></div><div class="ttdeci">void SetName(etl::string&lt; kMaxNameLength &gt; name)</div><div class="ttdoc">设置设备名称</div><div class="ttdef"><b>Definition</b> device.cc:114</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1Device_html_aabf4f42581be1e528ff795b4954d9a58"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#aabf4f42581be1e528ff795b4954d9a58">rm::device::Device::operator==</a></div><div class="ttdeci">bool operator==(const Device &amp;other) const</div><div class="ttdoc">相等比较：两个设备对象的UUID相同则视为同一设备</div><div class="ttdef"><b>Definition</b> device.cc:120</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_aea8f9ba1e65e723563ee19dac34bba4d"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#aea8f9ba1e65e723563ee19dac34bba4d">rm::device::DeviceManager::Update</a></div><div class="ttdeci">bool Update()</div><div class="ttdoc">更新所有设备的在线状态</div><div class="ttdef"><b>定义</b> device.hpp:199</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1DeviceManager_html_af1fb1eb2e4449ea451e14133479fff62"><div class="ttname"><a href="classrm_1_1device_1_1DeviceManager.html#af1fb1eb2e4449ea451e14133479fff62">rm::device::DeviceManager::OnDeviceStatusChange</a></div><div class="ttdeci">void OnDeviceStatusChange(CallbackType callback)</div><div class="ttdoc">注册设备状态变化回调</div><div class="ttdef"><b>定义</b> device.hpp:246</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html"><div class="ttname"><a href="classrm_1_1device_1_1Device.html">rm::device::Device</a></div><div class="ttdoc">驱动框架的设备基类，功能为监视设备状态</div><div class="ttdef"><b>定义</b> device.hpp:47</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a0f1b8eb171231fad7f23adac2879224b"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a0f1b8eb171231fad7f23adac2879224b">rm::device::Device::last_seen</a></div><div class="ttdeci">time_point last_seen() const</div><div class="ttdef"><b>定义</b> device.cc:107</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a16a7bedc3fb137033e1537713d3626bc"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">rm::device::Device::Status</a></div><div class="ttdeci">Status</div><div class="ttdoc">设备状态</div><div class="ttdef"><b>定义</b> device.hpp:87</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5">rm::device::Device::kUnknown</a></div><div class="ttdeci">@ kUnknown</div><div class="ttdoc">未知</div><div class="ttdef"><b>定义</b> device.hpp:88</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a16a7bedc3fb137033e1537713d3626bca49868fdd51a9c221b3b9c076adc6d64e"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca49868fdd51a9c221b3b9c076adc6d64e">rm::device::Device::kOffline</a></div><div class="ttdeci">@ kOffline</div><div class="ttdoc">离线</div><div class="ttdef"><b>定义</b> device.hpp:89</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a16a7bedc3fb137033e1537713d3626bca888af1cb59179c046f400d9fdd64dc0c"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca888af1cb59179c046f400d9fdd64dc0c">rm::device::Device::kFault</a></div><div class="ttdeci">@ kFault</div><div class="ttdoc">在线但存在故障（比如电机过流）</div><div class="ttdef"><b>定义</b> device.hpp:90</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21">rm::device::Device::kOk</a></div><div class="ttdeci">@ kOk</div><div class="ttdoc">在线且正常工作</div><div class="ttdef"><b>定义</b> device.hpp:91</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a227f58f357e464c7699866378a89b7dc"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a227f58f357e464c7699866378a89b7dc">rm::device::Device::SetHeartbeatTimeout</a></div><div class="ttdeci">void SetHeartbeatTimeout(duration timeout)</div><div class="ttdoc">设置心跳超时时间</div><div class="ttdef"><b>定义</b> device.cc:96</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a4f6f6615cf259068c236883523608332"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a4f6f6615cf259068c236883523608332">rm::device::Device::online_status</a></div><div class="ttdeci">Status online_status()</div><div class="ttdef"><b>定义</b> device.cc:98</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a6762266bdd191a7f70f2a7e4d3a03412"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a6762266bdd191a7f70f2a7e4d3a03412">rm::device::Device::operator!=</a></div><div class="ttdeci">bool operator!=(const Device &amp;other) const</div><div class="ttdoc">不等比较</div><div class="ttdef"><b>定义</b> device.cc:122</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a769d2371dac57ae08f5a17948bbdefd6"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">rm::device::Device::Device</a></div><div class="ttdeci">Device()</div><div class="ttdef"><b>定义</b> device.cc:42</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a7cc99f092ea347a682754478b34e489a"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a7cc99f092ea347a682754478b34e489a">rm::device::Device::ReportStatus</a></div><div class="ttdeci">void ReportStatus(Status status)</div><div class="ttdoc">更新设备状态</div><div class="ttdef"><b>定义</b> device.cc:109</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a8bbe2925440ed64a15987789a7cdca90"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a8bbe2925440ed64a15987789a7cdca90">rm::device::Device::SetName</a></div><div class="ttdeci">void SetName(etl::string&lt; kMaxNameLength &gt; name)</div><div class="ttdoc">设置设备名称</div><div class="ttdef"><b>定义</b> device.cc:114</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_aabf4f42581be1e528ff795b4954d9a58"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#aabf4f42581be1e528ff795b4954d9a58">rm::device::Device::operator==</a></div><div class="ttdeci">bool operator==(const Device &amp;other) const</div><div class="ttdoc">相等比较：两个设备对象的UUID相同则视为同一设备</div><div class="ttdef"><b>定义</b> device.cc:120</div></div>
 <div class="ttc" id="aclassrm_1_1device_1_1Device_html_abc47f697e77010da09e8449f3d5a9094"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#abc47f697e77010da09e8449f3d5a9094">rm::device::Device::~Device</a></div><div class="ttdeci">virtual ~Device()=default</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1Device_html_ada247da2f27c1e0c4862f526486c78f4"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#ada247da2f27c1e0c4862f526486c78f4">rm::device::Device::name</a></div><div class="ttdeci">etl::string&lt; kMaxNameLength &gt; name() const</div><div class="ttdoc">获取设备名称</div><div class="ttdef"><b>Definition</b> device.cc:116</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1Device_html_af2e07a67e6895a52cd8fdc47230d8e26"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#af2e07a67e6895a52cd8fdc47230d8e26">rm::device::Device::operator=</a></div><div class="ttdeci">Device &amp; operator=(const Device &amp;other)</div><div class="ttdoc">拷贝赋值：UUID不变（对象身份已确立），更新配置并重置运行状态</div><div class="ttdef"><b>Definition</b> device.cc:58</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1Device_html_afba35a1dcfa7345a26ace72fa058c379"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#afba35a1dcfa7345a26ace72fa058c379">rm::device::Device::uuid</a></div><div class="ttdeci">u64 uuid() const</div><div class="ttdoc">获取设备唯一标识符</div><div class="ttdef"><b>Definition</b> device.cc:118</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1VirtualDevice_html"><div class="ttname"><a href="classrm_1_1device_1_1VirtualDevice.html">rm::device::VirtualDevice</a></div><div class="ttdoc">在某些需要监视软件状态的场景下可以使用这个类来充当一个简单的“虚拟设备”，比如监视某个算法模块的状态，或者监视一个硬件设备的子系统状态（比如电机的温度状态），等等</div><div class="ttdef"><b>Definition</b> device.hpp:152</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_ada247da2f27c1e0c4862f526486c78f4"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#ada247da2f27c1e0c4862f526486c78f4">rm::device::Device::name</a></div><div class="ttdeci">etl::string&lt; kMaxNameLength &gt; name() const</div><div class="ttdoc">获取设备名称</div><div class="ttdef"><b>定义</b> device.cc:116</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_af2e07a67e6895a52cd8fdc47230d8e26"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#af2e07a67e6895a52cd8fdc47230d8e26">rm::device::Device::operator=</a></div><div class="ttdeci">Device &amp; operator=(const Device &amp;other)</div><div class="ttdoc">拷贝赋值：UUID不变（对象身份已确立），更新配置并重置运行状态</div><div class="ttdef"><b>定义</b> device.cc:58</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_afba35a1dcfa7345a26ace72fa058c379"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#afba35a1dcfa7345a26ace72fa058c379">rm::device::Device::uuid</a></div><div class="ttdeci">u64 uuid() const</div><div class="ttdoc">获取设备唯一标识符</div><div class="ttdef"><b>定义</b> device.cc:118</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1VirtualDevice_html"><div class="ttname"><a href="classrm_1_1device_1_1VirtualDevice.html">rm::device::VirtualDevice</a></div><div class="ttdoc">在某些需要监视软件状态的场景下可以使用这个类来充当一个简单的“虚拟设备”，比如监视某个算法模块的状态，或者监视一个硬件设备的子系统状态（比如电机的温度状态），等等</div><div class="ttdef"><b>定义</b> device.hpp:152</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1VirtualDevice_html_a769d2371dac57ae08f5a17948bbdefd6"><div class="ttname"><a href="classrm_1_1device_1_1VirtualDevice.html#a769d2371dac57ae08f5a17948bbdefd6">rm::device::VirtualDevice::Device</a></div><div class="ttdeci">Device()</div><div class="ttdef"><b>定义</b> device.cc:42</div></div>
 <div class="ttc" id="aclassrm_1_1device_1_1VirtualDevice_html_aa188bb36d49f7f48d0a98f9849f83c71"><div class="ttname"><a href="classrm_1_1device_1_1VirtualDevice.html#aa188bb36d49f7f48d0a98f9849f83c71">rm::device::VirtualDevice::~VirtualDevice</a></div><div class="ttdeci">~VirtualDevice() override=default</div></div>
 <div class="ttc" id="acore_2exception_8hpp_html"><div class="ttname"><a href="core_2exception_8hpp.html">exception.hpp</a></div><div class="ttdoc">异常处理</div></div>
-<div class="ttc" id="anamespacerm_1_1device_html"><div class="ttname"><a href="namespacerm_1_1device.html">rm::device</a></div><div class="ttdef"><b>Definition</b> directdrive_motor.cc:37</div></div>
-<div class="ttc" id="anamespacerm_html_a0863ccbdab2c54f662053f0496ed09f4"><div class="ttname"><a href="namespacerm.html#a0863ccbdab2c54f662053f0496ed09f4">rm::u64</a></div><div class="ttdeci">uint64_t u64</div><div class="ttdef"><b>Definition</b> typedefs.hpp:46</div></div>
-<div class="ttc" id="anamespacerm_html_a1df35482f4a88e1fe1450c7eb4cf4630"><div class="ttname"><a href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">rm::usize</a></div><div class="ttdeci">size_t usize</div><div class="ttdef"><b>Definition</b> typedefs.hpp:51</div></div>
-<div class="ttc" id="anamespacerm_html_ac948acc594f27343ce59b3ac31c2cacd"><div class="ttname"><a href="namespacerm.html#ac948acc594f27343ce59b3ac31c2cacd">rm::Throw</a></div><div class="ttdeci">void Throw(__attribute__((__unused__)) const T &amp;e)</div><div class="ttdoc">抛出异常</div><div class="ttdef"><b>Definition</b> exception.hpp:46</div></div>
+<div class="ttc" id="anamespacerm_1_1device_html"><div class="ttname"><a href="namespacerm_1_1device.html">rm::device</a></div><div class="ttdef"><b>定义</b> directdrive_motor.cc:37</div></div>
+<div class="ttc" id="anamespacerm_html_a0863ccbdab2c54f662053f0496ed09f4"><div class="ttname"><a href="namespacerm.html#a0863ccbdab2c54f662053f0496ed09f4">rm::u64</a></div><div class="ttdeci">uint64_t u64</div><div class="ttdef"><b>定义</b> typedefs.hpp:46</div></div>
+<div class="ttc" id="anamespacerm_html_a1df35482f4a88e1fe1450c7eb4cf4630"><div class="ttname"><a href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">rm::usize</a></div><div class="ttdeci">size_t usize</div><div class="ttdef"><b>定义</b> typedefs.hpp:51</div></div>
+<div class="ttc" id="anamespacerm_html_ac948acc594f27343ce59b3ac31c2cacd"><div class="ttname"><a href="namespacerm.html#ac948acc594f27343ce59b3ac31c2cacd">rm::Throw</a></div><div class="ttdeci">void Throw(__attribute__((__unused__)) const T &amp;e)</div><div class="ttdoc">抛出异常</div><div class="ttdef"><b>定义</b> exception.hpp:88</div></div>
 <div class="ttc" id="atypedefs_8hpp_html"><div class="ttname"><a href="typedefs_8hpp.html">typedefs.hpp</a></div><div class="ttdoc">全局数据类型定义</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_e8cded2b3f09657169024877e246b3be.html">device</a></li><li class="navelem"><a class="el" href="device_8hpp.html">device.hpp</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a href="dir_e8cded2b3f09657169024877e246b3be.html">device</a></li><li class="navelem"><a href="device_8hpp.html">device.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

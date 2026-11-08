@@ -30,7 +30,7 @@ var NAVTREE =
     [ "命名空间", "namespaces.html", [
       [ "命名空间列表", "namespaces.html", "namespaces_dup" ],
       [ "命名空间成员", "namespacemembers.html", [
-        [ "全部", "namespacemembers.html", null ],
+        [ "全部", "namespacemembers.html", "namespacemembers_dup" ],
         [ "函数", "namespacemembers_func.html", null ],
         [ "变量", "namespacemembers_vars.html", null ],
         [ "类型定义", "namespacemembers_type.html", null ],
@@ -48,7 +48,7 @@ var NAVTREE =
         [ "类型定义", "functions_type.html", null ],
         [ "枚举", "functions_enum.html", null ],
         [ "枚举值", "functions_eval.html", null ],
-        [ "相关函数", "functions_rela.html", null ]
+        [ "相关符号", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "文件", "files.html", [
@@ -67,26 +67,27 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_2home_2runner_2work_2librm_2librm_2src_2librm_2modules_2buzzer_controller_8hpp-example.html",
-"classrm_1_1detail_1_1NonCopyable.html#a15b9909d1501bc4a410414665d7f3f20",
-"classrm_1_1device_1_1DirectDriveMotor.html#accc943190a00ccb07ea2035785ad443a",
-"classrm_1_1device_1_1HiWonderServo.html#aebb13800204b5893fa546ba83ccefcdd",
-"classrm_1_1device_1_1LkMotor.html#ac9c3d72322aa2b27649d5d573a01bdfc",
-"classrm_1_1device_1_1VT03.html#aeb2be5c02d37ad983aff694b1b41588eab3e70da9b94000cb939e5885db088ffb",
-"classrm_1_1hal_1_1SyncReadable.html#ab7267d43147bf608525a844610edc199",
-"classrm_1_1hal_1_1stm32_1_1SpiDevice.html#a9e561ca13f35a4c3a1b4f14191eb1d53",
-"classrm_1_1modules_1_1PID.html#a15fbbb71657b5c3ca8dbabd05d877a84aedba6d291369d75dc58f1beeb46ce56c",
-"classrm_1_1modules_1_1SparseValueWatcher.html#a9f276fabb6b29d789672097fc253172f",
-"classrm_1_1modules_1_1buzzer__melody_1_1SuperMario.html#a7b3b1d6fe191a315cddcb1a7dfca8118",
-"functions_func_s.html",
-"namespacerm_1_1device.html#af62f90927eb4cb5f4a1adab69c4fc828",
-"structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a863250990f1fed3c31dee7e45c1bfd22",
-"structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV110_01_4.html#a48f1014fec30e5af4ebf882cf76bd0c3",
-"structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html#a3d31edfcb688dc74bd7b56cff4e26802",
-"structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4.html#a6a4eeb3c57c78377c9c0ef37018916ad",
-"structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#a392e7d30aaffc73ab5f2fc234c1c9215",
-"structrm_1_1device_1_1UnitreeMotor_1_1ComDataSend.html#a78d404f8714dc7fff8decd44abfca32e",
-"throttled__prio__queue_8hpp.html"
+"classrm_1_1device_1_1BMI088.html#acdd4e732934f5984a53b7302eceb108b",
+"classrm_1_1device_1_1DmMotor.html#a13b7808f826582a4a2089fad296873c9",
+"classrm_1_1device_1_1HipnucImu.html#a838c38322eda07786a89aa6fb54cc5a3",
+"classrm_1_1device_1_1LkMotor.html#adb0db91fd81c4e3f1a82ff3f8aff8275a7e15d86986a9f5dd6c9df3af55baf822",
+"classrm_1_1device_1_1ZdtStepper.html#a1c7b26483b80aea71bcd58bd5465bffb",
+"classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a0e78237bd0f6ff08ddfedc4fc278b292",
+"classrm_1_1hal_1_1stm32_1_1Timer.html",
+"classrm_1_1modules_1_1MotorPowerModel.html#a2c3577be9f083d95b5173e0112351500",
+"classrm_1_1modules_1_1SequenceGenerator.html#a4af90e6484ede6dd935dc0d274f4d6e6",
+"classrm_1_1modules_1_1buzzer__melody_1_1SeeUAgain.html",
+"gpio__v1_8hpp_source.html",
+"namespacerm_1_1device.html#a8d0be41b3542f16d2eebcf4979222b31",
+"namespacerm_1_1modules.html#aeee41ceeaced7ee3f3b4398e6532a6fe",
+"structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeedPosition_01_4.html#a08d4e9d28c9f57c2658ad4650ec992c1",
+"structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV110_01_4.html#ad3e807b84fa99fc41e3c4337cc78e49f",
+"structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html#ab8bf7393fec27b41ad0c773c1a074010",
+"structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4.html#abf7802e757110437471e80ed08340c2c",
+"structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#acb75e58acb4dbca8ae618845d036669b",
+"structrm_1_1hal_1_1detail_1_1ThrottledCan_1_1TxStats.html"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';
 var SYNCOFFMSG = '点击 开启 面板同步';
+var LISTOFALLMEMBERS = '所有成员列表';

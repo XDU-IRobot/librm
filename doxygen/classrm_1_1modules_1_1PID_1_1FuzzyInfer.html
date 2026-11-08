@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: rm::modules::PID::FuzzyInfer类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classrm_1_1modules_1_1PID_1_1FuzzyInfer.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('classrm_1_1modules_1_1PID_1_1FuzzyInfer.html','','classrm_1_1modules_1_1PID_1_1FuzzyInfer-members'); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -91,71 +90,50 @@ $(document).ready(function(){initNavTree('classrm_1_1modules_1_1PID_1_1FuzzyInfe
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-types">Public 类型</a> &#124;
-<a href="#pub-methods">Public 成员函数</a> &#124;
-<a href="#pro-methods">Protected 成员函数</a> &#124;
-<a href="#pro-attribs">Protected 属性</a> &#124;
-<a href="#pro-static-attribs">静态 Protected 属性</a> &#124;
-<a href="classrm_1_1modules_1_1PID_1_1FuzzyInfer-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">rm::modules::PID::FuzzyInfer类 参考</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>模糊推理引擎  
- <a href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#details">更多...</a></p>
+ <a href="#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="pid_8hpp_source.html">pid.hpp</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public 类型</h2></td></tr>
-<tr class="memitem:ade19ee460809375f0ea11ed399bd6293" id="r_ade19ee460809375f0ea11ed399bd6293"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#ade19ee460809375f0ea11ed399bd6293">RuleTable</a> = std::array&lt; std::array&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">int</a>, 7 &gt;, 7 &gt;</td></tr>
-<tr class="separator:ade19ee460809375f0ea11ed399bd6293"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade19ee460809375f0ea11ed399bd6293" id="r_ade19ee460809375f0ea11ed399bd6293"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade19ee460809375f0ea11ed399bd6293">RuleTable</a> = std::array&lt;std::array&lt;int, 7&gt;, 7&gt;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a6d0b9ddd6096203e8d779355dae17c5e" id="r_a6d0b9ddd6096203e8d779355dae17c5e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#a6d0b9ddd6096203e8d779355dae17c5e">FuzzyInfer</a> ()=<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">delete</a></td></tr>
-<tr class="separator:a6d0b9ddd6096203e8d779355dae17c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac49bcfa4c08accf2f6d93fb8abb377c" id="r_aac49bcfa4c08accf2f6d93fb8abb377c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#aac49bcfa4c08accf2f6d93fb8abb377c">FuzzyInfer</a> (<a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#ade19ee460809375f0ea11ed399bd6293">RuleTable</a> <a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#a50dc68303321b3336e83e1b400658aa3">rule_table</a>)</td></tr>
-<tr class="separator:aac49bcfa4c08accf2f6d93fb8abb377c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dfea87bd9e3359db7426228e238f1c0" id="r_a8dfea87bd9e3359db7426228e238f1c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#a8dfea87bd9e3359db7426228e238f1c0">Infer</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="classrm_1_1modules_1_1PID.html#a565265f92018fdfe20688341669d3eb4">error</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">d_error</a>)</td></tr>
-<tr class="separator:a8dfea87bd9e3359db7426228e238f1c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a485a43b9e44bf893f2e6f0c6869b5689" id="r_a485a43b9e44bf893f2e6f0c6869b5689"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html">FuzzyInfer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#a485a43b9e44bf893f2e6f0c6869b5689">SetErrorScale</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> value)</td></tr>
-<tr class="separator:a485a43b9e44bf893f2e6f0c6869b5689"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5650fa2123e9eeed11408c841bcdeaa" id="r_aa5650fa2123e9eeed11408c841bcdeaa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html">FuzzyInfer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#aa5650fa2123e9eeed11408c841bcdeaa">SetDErrorScale</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> value)</td></tr>
-<tr class="separator:aa5650fa2123e9eeed11408c841bcdeaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50dc68303321b3336e83e1b400658aa3" id="r_a50dc68303321b3336e83e1b400658aa3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#ade19ee460809375f0ea11ed399bd6293">RuleTable</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#a50dc68303321b3336e83e1b400658aa3">rule_table</a> () <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a></td></tr>
-<tr class="separator:a50dc68303321b3336e83e1b400658aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5922dcca8d9431ef6bbdab2d05c0768" id="r_aa5922dcca8d9431ef6bbdab2d05c0768"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#aa5922dcca8d9431ef6bbdab2d05c0768">error_scale</a> () <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a></td></tr>
-<tr class="separator:aa5922dcca8d9431ef6bbdab2d05c0768"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a070f18ca92dbc512ec55eb0cac84cc69" id="r_a070f18ca92dbc512ec55eb0cac84cc69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#a070f18ca92dbc512ec55eb0cac84cc69">d_error_scale</a> () <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a></td></tr>
-<tr class="separator:a070f18ca92dbc512ec55eb0cac84cc69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d0b9ddd6096203e8d779355dae17c5e" id="r_a6d0b9ddd6096203e8d779355dae17c5e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d0b9ddd6096203e8d779355dae17c5e">FuzzyInfer</a> ()=delete</td></tr>
+<tr class="memitem:aac49bcfa4c08accf2f6d93fb8abb377c" id="r_aac49bcfa4c08accf2f6d93fb8abb377c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac49bcfa4c08accf2f6d93fb8abb377c">FuzzyInfer</a> (<a class="el" href="#ade19ee460809375f0ea11ed399bd6293">RuleTable</a> <a class="el" href="#a50dc68303321b3336e83e1b400658aa3">rule_table</a>)</td></tr>
+<tr class="memitem:a8dfea87bd9e3359db7426228e238f1c0" id="r_a8dfea87bd9e3359db7426228e238f1c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dfea87bd9e3359db7426228e238f1c0">Infer</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="classrm_1_1modules_1_1PID.html#a565265f92018fdfe20688341669d3eb4">error</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> d_error)</td></tr>
+<tr class="memitem:a485a43b9e44bf893f2e6f0c6869b5689" id="r_a485a43b9e44bf893f2e6f0c6869b5689"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a6d0b9ddd6096203e8d779355dae17c5e">FuzzyInfer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a485a43b9e44bf893f2e6f0c6869b5689">SetErrorScale</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> value)</td></tr>
+<tr class="memitem:aa5650fa2123e9eeed11408c841bcdeaa" id="r_aa5650fa2123e9eeed11408c841bcdeaa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a6d0b9ddd6096203e8d779355dae17c5e">FuzzyInfer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5650fa2123e9eeed11408c841bcdeaa">SetDErrorScale</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> value)</td></tr>
+<tr class="memitem:a50dc68303321b3336e83e1b400658aa3" id="r_a50dc68303321b3336e83e1b400658aa3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="#ade19ee460809375f0ea11ed399bd6293">RuleTable</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50dc68303321b3336e83e1b400658aa3">rule_table</a> () const</td></tr>
+<tr class="memitem:aa5922dcca8d9431ef6bbdab2d05c0768" id="r_aa5922dcca8d9431ef6bbdab2d05c0768"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5922dcca8d9431ef6bbdab2d05c0768">error_scale</a> () const</td></tr>
+<tr class="memitem:a070f18ca92dbc512ec55eb0cac84cc69" id="r_a070f18ca92dbc512ec55eb0cac84cc69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a070f18ca92dbc512ec55eb0cac84cc69">d_error_scale</a> () const</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected 成员函数</h2></td></tr>
-<tr class="memitem:af797eee0d98f54900a3196396b9e4778" id="r_af797eee0d98f54900a3196396b9e4778"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#af797eee0d98f54900a3196396b9e4778">CalcMembership</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> x, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">int</a> <a class="el" href="classrm_1_1modules_1_1PID.html#ac43bca3ae96e0bcc4fe7dfd851262302">set</a>)</td></tr>
-<tr class="separator:af797eee0d98f54900a3196396b9e4778"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af797eee0d98f54900a3196396b9e4778" id="r_af797eee0d98f54900a3196396b9e4778"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af797eee0d98f54900a3196396b9e4778">CalcMembership</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> x, int <a class="el" href="classrm_1_1modules_1_1PID.html#ac43bca3ae96e0bcc4fe7dfd851262302">set</a>)</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected 属性</h2></td></tr>
-<tr class="memitem:a0a1dd98542ba06143d4919683cf93ddd" id="r_a0a1dd98542ba06143d4919683cf93ddd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#ade19ee460809375f0ea11ed399bd6293">RuleTable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#a0a1dd98542ba06143d4919683cf93ddd">rule_table_</a></td></tr>
-<tr class="separator:a0a1dd98542ba06143d4919683cf93ddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ba0a3f344c652baa171370787e0153c" id="r_a6ba0a3f344c652baa171370787e0153c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#a6ba0a3f344c652baa171370787e0153c">error_scale_</a> {}</td></tr>
+<tr class="memitem:a0a1dd98542ba06143d4919683cf93ddd" id="r_a0a1dd98542ba06143d4919683cf93ddd"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="#ade19ee460809375f0ea11ed399bd6293">RuleTable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a1dd98542ba06143d4919683cf93ddd">rule_table_</a></td></tr>
+<tr class="memitem:a6ba0a3f344c652baa171370787e0153c" id="r_a6ba0a3f344c652baa171370787e0153c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ba0a3f344c652baa171370787e0153c">error_scale_</a> {}</td></tr>
 <tr class="memdesc:a6ba0a3f344c652baa171370787e0153c"><td class="mdescLeft">&#160;</td><td class="mdescRight">误差尺度因子  <br /></td></tr>
-<tr class="separator:a6ba0a3f344c652baa171370787e0153c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a572631b3f3258fc56d2b551aaee3dde6" id="r_a572631b3f3258fc56d2b551aaee3dde6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#a572631b3f3258fc56d2b551aaee3dde6">d_error_scale_</a> {}</td></tr>
+<tr class="memitem:a572631b3f3258fc56d2b551aaee3dde6" id="r_a572631b3f3258fc56d2b551aaee3dde6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a572631b3f3258fc56d2b551aaee3dde6">d_error_scale_</a> {}</td></tr>
 <tr class="memdesc:a572631b3f3258fc56d2b551aaee3dde6"><td class="mdescLeft">&#160;</td><td class="mdescRight">误差变化率尺度因子  <br /></td></tr>
-<tr class="separator:a572631b3f3258fc56d2b551aaee3dde6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-attribs" name="pro-static-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-attribs" class="groupheader"><a id="pro-static-attribs" name="pro-static-attribs"></a>
 静态 Protected 属性</h2></td></tr>
-<tr class="memitem:a24935d23ac10304f5c0f32a0c9648fc9" id="r_a24935d23ac10304f5c0f32a0c9648fc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">static</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">constexpr</a> <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#a24935d23ac10304f5c0f32a0c9648fc9">kMembershipParams</a> [7][3]</td></tr>
-<tr class="separator:a24935d23ac10304f5c0f32a0c9648fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24935d23ac10304f5c0f32a0c9648fc9" id="r_a24935d23ac10304f5c0f32a0c9648fc9"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24935d23ac10304f5c0f32a0c9648fc9">kMembershipParams</a> [7][3]</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
 <div class="textblock"><p>模糊推理引擎 </p>
 <p>source: <a href="https://github.com/TongjiSuperPower/sp_middleware/tree/main/tools/fuzzy_pid">https://github.com/TongjiSuperPower/sp_middleware/tree/main/tools/fuzzy_pid</a> </p>
-</div><h2 class="groupheader">成员类型定义说明</h2>
+</div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">成员类型定义说明</h2>
 <a id="ade19ee460809375f0ea11ed399bd6293" name="ade19ee460809375f0ea11ed399bd6293"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ade19ee460809375f0ea11ed399bd6293">&#9670;&#160;</a></span>RuleTable</h2>
 
@@ -163,14 +141,14 @@ Protected 属性</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a> <a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#ade19ee460809375f0ea11ed399bd6293">rm::modules::PID::FuzzyInfer::RuleTable</a> =  std::array&lt;std::array&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">int</a>, 7&gt;, 7&gt;</td>
+          <td class="memname">using <a class="el" href="#ade19ee460809375f0ea11ed399bd6293">rm::modules::PID::FuzzyInfer::RuleTable</a> = std::array&lt;std::array&lt;int, 7&gt;, 7&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<h2 class="groupheader">构造及析构函数说明</h2>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">构造及析构函数说明</h2>
 <a id="a6d0b9ddd6096203e8d779355dae17c5e" name="a6d0b9ddd6096203e8d779355dae17c5e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6d0b9ddd6096203e8d779355dae17c5e">&#9670;&#160;</a></span>FuzzyInfer() <span class="overload">[1/2]</span></h2>
 
@@ -183,13 +161,13 @@ Protected 属性</h2></td></tr>
         <tr>
           <td class="memname">rm::modules::PID::FuzzyInfer::FuzzyInfer </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -208,21 +186,20 @@ Protected 属性</h2></td></tr>
         <tr>
           <td class="memname">rm::modules::PID::FuzzyInfer::FuzzyInfer </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#ade19ee460809375f0ea11ed399bd6293">RuleTable</a>&#160;</td>
-          <td class="paramname"><em>rule_table</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#ade19ee460809375f0ea11ed399bd6293">RuleTable</a></td>          <td class="paramname"><span class="paramname"><em>rule_table</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<h2 class="groupheader">成员函数说明</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">成员函数说明</h2>
 <a id="af797eee0d98f54900a3196396b9e4778" name="af797eee0d98f54900a3196396b9e4778"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af797eee0d98f54900a3196396b9e4778">&#9670;&#160;</a></span>CalcMembership()</h2>
 
@@ -235,24 +212,17 @@ Protected 属性</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::modules::PID::FuzzyInfer::CalcMembership </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">int</a>&#160;</td>
-          <td class="paramname"><em>set</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>set</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -268,7 +238,7 @@ Protected 属性</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::modules::PID::FuzzyInfer::d_error_scale </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -285,7 +255,7 @@ Protected 属性</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::modules::PID::FuzzyInfer::error_scale </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -302,19 +272,12 @@ Protected 属性</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::modules::PID::FuzzyInfer::Infer </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
-          <td class="paramname"><em>error</em>, </td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a></td>          <td class="paramname"><span class="paramname"><em>error</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
-          <td class="paramname"><em>d_error</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a></td>          <td class="paramname"><span class="paramname"><em>d_error</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -328,9 +291,9 @@ Protected 属性</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#ade19ee460809375f0ea11ed399bd6293">PID::FuzzyInfer::RuleTable</a> &amp; rm::modules::PID::FuzzyInfer::rule_table </td>
+          <td class="memname">const <a class="el" href="#ade19ee460809375f0ea11ed399bd6293">PID::FuzzyInfer::RuleTable</a> &amp; rm::modules::PID::FuzzyInfer::rule_table </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -347,8 +310,7 @@ Protected 属性</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html">PID::FuzzyInfer</a> &amp; rm::modules::PID::FuzzyInfer::SetDErrorScale </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -365,8 +327,7 @@ Protected 属性</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html">PID::FuzzyInfer</a> &amp; rm::modules::PID::FuzzyInfer::SetErrorScale </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -374,7 +335,7 @@ Protected 属性</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">类成员变量说明</h2>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">类成员变量说明</h2>
 <a id="a572631b3f3258fc56d2b551aaee3dde6" name="a572631b3f3258fc56d2b551aaee3dde6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a572631b3f3258fc56d2b551aaee3dde6">&#9670;&#160;</a></span>d_error_scale_</h2>
 
@@ -390,7 +351,7 @@ Protected 属性</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -414,7 +375,7 @@ Protected 属性</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -433,12 +394,12 @@ Protected 属性</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">constexpr</a> <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::modules::PID::FuzzyInfer::kMembershipParams[7][3]</td>
+          <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::modules::PID::FuzzyInfer::kMembershipParams[7][3]</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -464,12 +425,12 @@ Protected 属性</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#ade19ee460809375f0ea11ed399bd6293">RuleTable</a> rm::modules::PID::FuzzyInfer::rule_table_</td>
+          <td class="memname">const <a class="el" href="#ade19ee460809375f0ea11ed399bd6293">RuleTable</a> rm::modules::PID::FuzzyInfer::rule_table_</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -482,11 +443,19 @@ Protected 属性</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1modules.html">modules</a></li><li class="navelem"><a class="el" href="classrm_1_1modules_1_1PID.html">PID</a></li><li class="navelem"><a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html">FuzzyInfer</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="namespacerm.html">rm</a></li><li class="navelem"><a href="namespacerm_1_1modules.html">modules</a></li><li class="navelem"><a href="classrm_1_1modules_1_1PID.html">PID</a></li><li class="navelem"><a href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html">FuzzyInfer</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

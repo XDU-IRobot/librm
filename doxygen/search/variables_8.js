@@ -1,7 +1,7 @@
 var searchData=
 [
   ['i_5fout_5f_0',['i_out_',['../classrm_1_1modules_1_1PID.html#a799e689ef7cfdff35e1fbb7ab80ba605',1,'rm::modules::PID']]],
-  ['id_1',['id',['../classrm_1_1device_1_1Go8010Motor.html#a47cff91e100ce1f42f8a6e0f1059234a',1,'rm::device::Go8010Motor']]],
+  ['id_1',['id',['../classrm_1_1device_1_1Go8010Motor.html#a47cff91e100ce1f42f8a6e0f1059234a',1,'rm::device::Go8010Motor::id'],['../structrm_1_1modules_1_1CanIdStats.html#a90be0b95808a8f2bf7f211d895c063c9',1,'rm::modules::CanIdStats::id']]],
   ['infantry_5f3_5fposition_5fx_2',['infantry_3_position_x',['../structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html#a0b1045e8136ac2a692dff1b4a89c40d5',1,'rm::device::RefereeProtocol&lt; RefereeRevision::kNewV120 &gt;']]],
   ['infantry_5f3_5fposition_5fy_3',['infantry_3_position_y',['../structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html#a0cde71b8a842323bb923b4fbe04e1b76',1,'rm::device::RefereeProtocol&lt; RefereeRevision::kNewV120 &gt;']]],
   ['infantry_5f4_5fposition_5fx_4',['infantry_4_position_x',['../structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html#add0d4a1a2a3eaa6d9b5a5f0cb866f32e',1,'rm::device::RefereeProtocol&lt; RefereeRevision::kNewV120 &gt;']]],
@@ -15,15 +15,15 @@ var searchData=
   ['input_5ftorque_5flimit_12',['input_torque_limit',['../classrm_1_1device_1_1LkMotor.html#a0c518c2ab36832e03ee4dfa2ecedb8f6',1,'rm::device::LkMotor']]],
   ['intention_13',['intention',['../structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html#afed11b3c8c662106fc7f34fb34e200da',1,'rm::device::RefereeProtocol&lt; RefereeRevision::kNewV120 &gt;']]],
   ['intg_14',['intg',['../structrm_1_1device_1_1STP23L_1_1PointData.html#ac7a6c34eede0e5a6dfae1d63d95fb9c0',1,'rm::device::STP23L::PointData']]],
-  ['inverse_5fresult_5f_15',['inverse_result_',['../classrm_1_1modules_1_1QuadOmniChassis.html#a8ee185828d868ec196be334a03e0abd7',1,'rm::modules::QuadOmniChassis']]],
+  ['inverse_5fresult_5f_15',['inverse_result_',['../classrm_1_1modules_1_1QuadOmniChassis.html#acfcdb59125cc46facc6a182bf897eed4',1,'rm::modules::QuadOmniChassis']]],
   ['iq_16',['iq',['../classrm_1_1device_1_1DirectDriveMotor.html#a904e5ac67c2d5a2a1321fa7bb8d10e7d',1,'rm::device::DirectDriveMotor::iq'],['../classrm_1_1device_1_1LkMotor.html#ac366ca217d967f8550d00db1e8e612a1',1,'rm::device::LkMotor::iq']]],
-  ['is_5ffd_5fframe_17',['is_fd_frame',['../structrm_1_1hal_1_1CanFrame.html#a825031bac625cba43e18bec8515e7caf',1,'rm::hal::CanFrame']]],
-  ['ist8310_5fcomm_5fwait_5ftime_5flong_18',['IST8310_COMM_WAIT_TIME_LONG',['../ist8310__const_8hpp.html#afa3b56684b2696dea3af076c9c074715',1,'ist8310_const.hpp']]],
-  ['ist8310_5fcomm_5fwait_5ftime_5fshort_19',['IST8310_COMM_WAIT_TIME_SHORT',['../ist8310__const_8hpp.html#a67dbbb45a6472518b45702b945845481',1,'ist8310_const.hpp']]],
-  ['ist8310_5fdata_5fout_5fx_5fl_20',['IST8310_DATA_OUT_X_L',['../ist8310__const_8hpp.html#a7b89f637c7131f2b21ae8edf6862114f',1,'ist8310_const.hpp']]],
-  ['ist8310_5fdata_5fready_5fbit_21',['IST8310_DATA_READY_BIT',['../ist8310__const_8hpp.html#aaf1638b5d8fd0a44667284c9b0a71679',1,'ist8310_const.hpp']]],
-  ['ist8310_5fi2c_5faddress_22',['IST8310_I2C_ADDRESS',['../ist8310__const_8hpp.html#acd53e27ddf2f51a3764e78efbd1229cb',1,'ist8310_const.hpp']]],
-  ['ist8310_5fsensitivity_23',['IST8310_SENSITIVITY',['../ist8310__const_8hpp.html#aa4cf801b890f7bd0f5ce3c502521a0e9',1,'ist8310_const.hpp']]],
-  ['ist8310_5fwho_5fam_5fi_24',['IST8310_WHO_AM_I',['../ist8310__const_8hpp.html#a9c12a82d393665eb2927e3674e442da4',1,'ist8310_const.hpp']]],
-  ['ist8310_5fwho_5fam_5fi_5fvalue_25',['IST8310_WHO_AM_I_VALUE',['../ist8310__const_8hpp.html#a148fffdc058f6df90ac304446b0021f3',1,'ist8310_const.hpp']]]
+  ['is_5ffd_5fframe_17',['is_fd_frame',['../structrm_1_1hal_1_1CanFrame.html#a825031bac625cba43e18bec8515e7caf',1,'rm::hal::CanFrame::is_fd_frame'],['../structrm_1_1modules_1_1CanIdStats.html#abf4bb739f32f9e72183b5693297942c2',1,'rm::modules::CanIdStats::is_fd_frame']]],
+  ['ist8310_5fcomm_5fwait_5ftime_5flong_18',['IST8310_COMM_WAIT_TIME_LONG',['../namespacerm_1_1device.html#afa32b1616751699662469ab51e33d997',1,'rm::device::IST8310_COMM_WAIT_TIME_LONG'],['../ist8310__const_8hpp.html#afa3b56684b2696dea3af076c9c074715',1,'IST8310_COMM_WAIT_TIME_LONG:&#160;ist8310_const.hpp']]],
+  ['ist8310_5fcomm_5fwait_5ftime_5fshort_19',['IST8310_COMM_WAIT_TIME_SHORT',['../namespacerm_1_1device.html#a6e21d586fb7702434809afd2c884fb44',1,'rm::device::IST8310_COMM_WAIT_TIME_SHORT'],['../ist8310__const_8hpp.html#a67dbbb45a6472518b45702b945845481',1,'IST8310_COMM_WAIT_TIME_SHORT:&#160;ist8310_const.hpp']]],
+  ['ist8310_5fdata_5fout_5fx_5fl_20',['IST8310_DATA_OUT_X_L',['../namespacerm_1_1device.html#af4c1ca76077b6529e76853c5321ab725',1,'rm::device::IST8310_DATA_OUT_X_L'],['../ist8310__const_8hpp.html#a7b89f637c7131f2b21ae8edf6862114f',1,'IST8310_DATA_OUT_X_L:&#160;ist8310_const.hpp']]],
+  ['ist8310_5fdata_5fready_5fbit_21',['IST8310_DATA_READY_BIT',['../namespacerm_1_1device.html#a24fe71fae7118c765bf1a6f1d87e0ff0',1,'rm::device::IST8310_DATA_READY_BIT'],['../ist8310__const_8hpp.html#aaf1638b5d8fd0a44667284c9b0a71679',1,'IST8310_DATA_READY_BIT:&#160;ist8310_const.hpp']]],
+  ['ist8310_5fi2c_5faddress_22',['IST8310_I2C_ADDRESS',['../namespacerm_1_1device.html#a8922cd5b18e1f20cb782bfb8a2759220',1,'rm::device::IST8310_I2C_ADDRESS'],['../ist8310__const_8hpp.html#acd53e27ddf2f51a3764e78efbd1229cb',1,'IST8310_I2C_ADDRESS:&#160;ist8310_const.hpp']]],
+  ['ist8310_5fsensitivity_23',['IST8310_SENSITIVITY',['../namespacerm_1_1device.html#a15ac41f25344455d40445aa9f966b4d7',1,'rm::device::IST8310_SENSITIVITY'],['../ist8310__const_8hpp.html#aa4cf801b890f7bd0f5ce3c502521a0e9',1,'IST8310_SENSITIVITY:&#160;ist8310_const.hpp']]],
+  ['ist8310_5fwho_5fam_5fi_24',['IST8310_WHO_AM_I',['../namespacerm_1_1device.html#a0fd7917f53b8e06d3191a5af7d19cdfa',1,'rm::device::IST8310_WHO_AM_I'],['../ist8310__const_8hpp.html#a9c12a82d393665eb2927e3674e442da4',1,'IST8310_WHO_AM_I:&#160;ist8310_const.hpp']]],
+  ['ist8310_5fwho_5fam_5fi_5fvalue_25',['IST8310_WHO_AM_I_VALUE',['../namespacerm_1_1device.html#aa519a24f3410316a4d78f18fe8c35aad',1,'rm::device::IST8310_WHO_AM_I_VALUE'],['../ist8310__const_8hpp.html#a148fffdc058f6df90ac304446b0021f3',1,'IST8310_WHO_AM_I_VALUE:&#160;ist8310_const.hpp']]]
 ];

@@ -14,6 +14,7 @@ var classrm_1_1hal_1_1detail_1_1ThrottledCan =
     [ "SetDefaultDeadlineOffset", "classrm_1_1hal_1_1detail_1_1ThrottledCan.html#ad3ef732de8e1cb8d6b16c7489b7ca00f", null ],
     [ "stats", "classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a9ad9824c2b57bdb8ea42675f4ce72ef3", null ],
     [ "Stop", "classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a0e78237bd0f6ff08ddfedc4fc278b292", null ],
+    [ "Write", "classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a0f2dc02d3f669b71d511ca464676da20", null ],
     [ "Write", "classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a7a8bba18becc547146257811fbb5597c", null ],
     [ "Write", "classrm_1_1hal_1_1detail_1_1ThrottledCan.html#adde715d6898d46de6377a55394b10983", null ],
     [ "drop_full_count", "classrm_1_1hal_1_1detail_1_1ThrottledCan.html#aeae124788729761bd09f774bb9aa3d57", null ],

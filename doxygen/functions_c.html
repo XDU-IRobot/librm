@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: 类成员</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('functions_c.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('functions_c.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -93,18 +92,19 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <div class="contents">
 <div class="textblock">这里列出了所有类成员，并附带类的详细说明:</div>
 
-<h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<h3 class="doxsection"><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>C&#160;:&#160;<a class="el" href="classrm_1_1modules_1_1SystemModel.html#a530ed6c1fded5e3ec72ff4544c6db0e6">rm::modules::SystemModel&lt; CovarianceBase &gt;</a></li>
 <li>CalcMembership()&#160;:&#160;<a class="el" href="classrm_1_1modules_1_1PID_1_1FuzzyInfer.html#af797eee0d98f54900a3196396b9e4778">rm::modules::PID::FuzzyInfer</a></li>
 <li>CalculateCtrlForPower()&#160;:&#160;<a class="el" href="classrm_1_1modules_1_1MotorPowerModel.html#ab2485a216af7d169c5ecabe3e0952722">rm::modules::MotorPowerModel</a></li>
 <li>CalculatePower()&#160;:&#160;<a class="el" href="classrm_1_1modules_1_1MotorPowerModel.html#ab9ee1aa6b5686a146278fef5d9fff0c1">rm::modules::MotorPowerModel</a></li>
 <li>CalibratedMaxPhaseCurrent&#160;:&#160;<a class="el" href="structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#aa44fc5d8eb4417f46e829f1d7ca8921c">rm::device::DirectDriveMotor::Parameters</a></li>
-<li>Callback&#160;:&#160;<a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html#aadefc1f30f9ebbafcf7305ee13069458">rm::modules::SparseValueWatcher&lt; T, UseStdFunction &gt;</a></li>
+<li>Callback&#160;:&#160;<a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html#ac89face76a52b71f9b62a2b3782964ef">rm::modules::SparseValueWatcher&lt; T, UseStdFunction &gt;</a></li>
 <li>can_&#160;:&#160;<a class="el" href="classrm_1_1device_1_1CanDevice.html#ad2f1fe1d83dd5901dce4c469c8c2efb1">rm::device::CanDevice</a></li>
 <li>CanBitrate&#160;:&#160;<a class="el" href="structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#aa96ae70d38493a365de2a35634f615ab">rm::device::DirectDriveMotor::Parameters</a></li>
 <li>CancelTare()&#160;:&#160;<a class="el" href="classrm_1_1device_1_1Znsv6T1.html#a30d621bd3d46b073938d76b7242f9a54">rm::device::Znsv6T1</a></li>
-<li>CanDevice()&#160;:&#160;<a class="el" href="classrm_1_1device_1_1CanDevice.html#a58bd02230756c0dd4a865284bbbe9650">rm::device::CanDevice</a></li>
+<li>CanDevice()&#160;:&#160;<a class="el" href="classrm_1_1device_1_1CanDevice.html#ad856d512f7463057200fc9dd09d0e59e">rm::device::CanDevice</a></li>
 <li>CanRxFifo0MsgPendingCallback&#160;:&#160;<a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html#a4312ef342693d10683d76df13e1005bf">rm::hal::stm32::BxCan</a></li>
+<li>CanSniffer()&#160;:&#160;<a class="el" href="classrm_1_1modules_1_1CanSniffer.html#a44a7941761a5b898af0db1e0d9758dac">rm::modules::CanSniffer&lt; MaxIds, WindowSize, MaxPendingFrames &gt;</a></li>
 <li>channel()&#160;:&#160;<a class="el" href="classrm_1_1device_1_1Sbus.html#a03fe35eb8ffc946ed88eb282a130b227">rm::device::Sbus</a></li>
 <li>chasiss_voltage&#160;:&#160;<a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4.html#a78476ea7ccb4358332a7e158529a6cb5">rm::device::RefereeProtocol&lt; RefereeRevision::kV164 &gt;</a></li>
 <li>chassis_current&#160;:&#160;<a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4.html#a51d578eb0a74822f761df5c35a5cdcda">rm::device::RefereeProtocol&lt; RefereeRevision::kV164 &gt;</a></li>
@@ -115,9 +115,8 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <li>circular_cycle_&#160;:&#160;<a class="el" href="classrm_1_1modules_1_1PID.html#a1715d69ad90cd2673b353ffd18c7e58e">rm::modules::PID</a></li>
 <li>Clear()&#160;:&#160;<a class="el" href="classrm_1_1modules_1_1PID.html#aa42d32e9ee39eee445866dbce3c67843">rm::modules::PID</a>, <a class="el" href="classrm_1_1modules_1_1ThrottledPrioQueue.html#a5e463c52ae32460b7d7176b7a14c6a35">rm::modules::ThrottledPrioQueue&lt; T, MaxQueueSize, Policy &gt;</a></li>
 <li>ClearBindings()&#160;:&#160;<a class="el" href="classrm_1_1modules_1_1KeyboardHandler.html#acea9f242bf2dc9ad6a8488e5e7cb9b46">rm::modules::KeyboardHandler&lt; MaxBindings, MaxConcurrentKeys, UseStdFunction &gt;</a></li>
-<li>clock&#160;:&#160;<a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a2d48283d8b29189856f29fd2843b0d0d">rm::hal::detail::ThrottledCan&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;</a></li>
 <li>Clock&#160;:&#160;<a class="el" href="classrm_1_1modules_1_1PollingTimer.html#a075e349d77112adace4759bd1baf6270">rm::modules::PollingTimer</a></li>
-<li>clock&#160;:&#160;<a class="el" href="classrm_1_1modules_1_1ThrottledPrioQueue.html#a3455d59abb9ea943dbadd23f20c5978e">rm::modules::ThrottledPrioQueue&lt; T, MaxQueueSize, Policy &gt;</a></li>
+<li>clock&#160;:&#160;<a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a2d48283d8b29189856f29fd2843b0d0d">rm::hal::detail::ThrottledCan&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;</a>, <a class="el" href="classrm_1_1modules_1_1CanSniffer.html#a07f6ebe7b5c9c40cb532a6376ffbcac0">rm::modules::CanSniffer&lt; MaxIds, WindowSize, MaxPendingFrames &gt;</a>, <a class="el" href="classrm_1_1modules_1_1ThrottledPrioQueue.html#a3455d59abb9ea943dbadd23f20c5978e">rm::modules::ThrottledPrioQueue&lt; T, MaxQueueSize, Policy &gt;</a></li>
 <li>CloseWriteProtect()&#160;:&#160;<a class="el" href="classrm_1_1device_1_1Znsv6T1.html#aa69840a8950b437705f4caf022c293dd">rm::device::Znsv6T1</a></li>
 <li>Cmd&#160;:&#160;<a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0a">rm::device::HiWonderServo</a></li>
 <li>cmd_keyboard&#160;:&#160;<a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV110_01_4.html#a600b942253c09cb0a3bdfb604b3d1800">rm::device::RefereeProtocol&lt; RefereeRevision::kNewV110 &gt;</a>, <a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html#a8fb48f0bf7ffc74442e7e44867ebc076">rm::device::RefereeProtocol&lt; RefereeRevision::kNewV120 &gt;</a>, <a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4.html#ad1a1dbad5c4f993fc7550ddfbfec84a1">rm::device::RefereeProtocol&lt; RefereeRevision::kV164 &gt;</a>, <a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#acb75e58acb4dbca8ae618845d036669b">rm::device::RefereeProtocol&lt; RefereeRevision::kV170 &gt;</a></li>
@@ -129,7 +128,7 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <li>confidence()&#160;:&#160;<a class="el" href="classrm_1_1device_1_1STP23L.html#a0970dc81a5f74eeb6183835c5827fd16">rm::device::STP23L</a>, <a class="el" href="structrm_1_1device_1_1STP23L_1_1PointData.html#acb19bdbd8f19682b9f8d769de3cf0a20">rm::device::STP23L::PointData</a></li>
 <li>Connected()&#160;:&#160;<a class="el" href="classrm_1_1modules_1_1FdCanTransport.html#acd81f48ef537048acf4f500ab0cbc0c5">rm::modules::FdCanTransport</a></li>
 <li>constant&#160;:&#160;<a class="el" href="structrm_1_1modules_1_1MotorPowerModel_1_1Params.html#aee5e17469f5c371d20b174df37e7ca87">rm::modules::MotorPowerModel::Params</a></li>
-<li>control_param&#160;:&#160;<a class="el" href="classrm_1_1device_1_1LkMotor.html#a9441b2f8ffe09e7c14eaa6e6e2644508">rm::device::LkMotor&lt; type, encoder_bits &gt;</a></li>
+<li>control_param&#160;:&#160;<a class="el" href="classrm_1_1device_1_1LkMotor.html#aa039e6007f3915f1fa80ace26082d755">rm::device::LkMotor&lt; type, encoder_bits &gt;</a></li>
 <li>ControlParamType&#160;:&#160;<a class="el" href="classrm_1_1device_1_1LkMotor.html#ade090e0d3d9a141f14739bc45a19490a">rm::device::LkMotor&lt; type, encoder_bits &gt;</a></li>
 <li>cooling_buff&#160;:&#160;<a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV110_01_4.html#a992c4fa2fd421368fc7a578d27c60ec6">rm::device::RefereeProtocol&lt; RefereeRevision::kNewV110 &gt;</a>, <a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html#a7e76bb8a2d35f5ca7a21dc1b5a60d36d">rm::device::RefereeProtocol&lt; RefereeRevision::kNewV120 &gt;</a>, <a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4.html#a662a4bcd7f39d4851800a99b1c248d57">rm::device::RefereeProtocol&lt; RefereeRevision::kV164 &gt;</a>, <a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#ac7e6b5dc9f35cbd2b817821adf32e38a">rm::device::RefereeProtocol&lt; RefereeRevision::kV170 &gt;</a></li>
 <li>correct&#160;:&#160;<a class="el" href="classrm_1_1device_1_1Go8010Motor.html#aeece0ea000b438232f71956e49363d07">rm::device::Go8010Motor</a></li>
@@ -153,16 +152,17 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <li>CurrentLoopFeedFwdCoeff&#160;:&#160;<a class="el" href="structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#adcf2b84576b3f81818d522550433cb45">rm::device::DirectDriveMotor::Parameters</a></li>
 <li>CurrentLoopKi&#160;:&#160;<a class="el" href="structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a4f55fea2e1f449cacc0354260ce29ea3">rm::device::DirectDriveMotor::Parameters</a></li>
 <li>CurrentLoopKp&#160;:&#160;<a class="el" href="structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a69d3aaba7b9d382b4ceafa7c062fbe51">rm::device::DirectDriveMotor::Parameters</a></li>
-<li>custom_client_data&#160;:&#160;<a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html#aa6ef57458686c39719bbefd861d9aae0">rm::device::RefereeProtocol&lt; RefereeRevision::kNewV120 &gt;</a></li>
-<li>custom_info&#160;:&#160;<a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html#afa95a3de53864aed05c56903b866713e">rm::device::RefereeProtocol&lt; RefereeRevision::kNewV120 &gt;</a></li>
-<li>custom_robot_data&#160;:&#160;<a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV110_01_4.html#ab668b2e2acdc6d9da7c103dcae2e6071">rm::device::RefereeProtocol&lt; RefereeRevision::kNewV110 &gt;</a>, <a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html#a4e8d4f2dbb286b78044e8c2a6754545b">rm::device::RefereeProtocol&lt; RefereeRevision::kNewV120 &gt;</a>, <a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4.html#a5910ffaa66e838df8c3b4d05fd1eab62">rm::device::RefereeProtocol&lt; RefereeRevision::kV164 &gt;</a>, <a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#ab2a371a2d1fb87c5348a4c28363948b1">rm::device::RefereeProtocol&lt; RefereeRevision::kV170 &gt;</a></li>
+<li>custom_client_data&#160;:&#160;<a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html#aab9c8f9ffe535caac090b6955e9769d2">rm::device::RefereeProtocol&lt; RefereeRevision::kNewV120 &gt;</a></li>
+<li>custom_info&#160;:&#160;<a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html#a67e1a3de74437f7a21b8f12aadbd6663">rm::device::RefereeProtocol&lt; RefereeRevision::kNewV120 &gt;</a></li>
+<li>custom_robot_data&#160;:&#160;<a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV110_01_4.html#a6ddea080fe67466876976db7f000ac0f">rm::device::RefereeProtocol&lt; RefereeRevision::kNewV110 &gt;</a>, <a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kNewV120_01_4.html#ae8d59132e7f877129a37674064210a1f">rm::device::RefereeProtocol&lt; RefereeRevision::kNewV120 &gt;</a>, <a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV164_01_4.html#a23109ee6e8b15e2d3b74e9725f94f58e">rm::device::RefereeProtocol&lt; RefereeRevision::kV164 &gt;</a>, <a class="el" href="structrm_1_1device_1_1RefereeProtocol_3_01RefereeRevision_1_1kV170_01_4.html#aefc1995fcf1b63e8f6091840e29614dc">rm::device::RefereeProtocol&lt; RefereeRevision::kV170 &gt;</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

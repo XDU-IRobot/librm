@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: rm::hal::CanFrame结构体 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('structrm_1_1hal_1_1CanFrame.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('structrm_1_1hal_1_1CanFrame.html','','structrm_1_1hal_1_1CanFrame-members'); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -91,31 +90,122 @@ $(document).ready(function(){initNavTree('structrm_1_1hal_1_1CanFrame.html','');
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-attribs">Public 属性</a> &#124;
-<a href="structrm_1_1hal_1_1CanFrame-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">rm::hal::CanFrame结构体 参考</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="can__interface_8hpp_source.html">can_interface.hpp</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:ae01f566bd78b30cb8452fba7b7b35e11" id="r_ae01f566bd78b30cb8452fba7b7b35e11"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11">Dlc</a> : u8 { <br />
+&#160;&#160;<a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11a7140596baee05747c29d15b3ade2414d">kDlc0</a> = 0
+, <a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11a17e8760369119944c135ffde937bc74c">kDlc1</a> = 1
+, <a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11af9e7b43c73e5a6440e4f38084fe4f349">kDlc2</a> = 2
+, <a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11aa8de1f2220684c724db1c14d105767cc">kDlc3</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11a7a5f2479ece4c3c32b2f3c3b3b25593f">kDlc4</a> = 4
+, <a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11a27f4af2e04f26f0b369e34cbe9dd3d1c">kDlc5</a> = 5
+, <a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11a8923011d67f7361fe37bef3286ddf768">kDlc6</a> = 6
+, <a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11a0deea75725696fface2466ff01cb3016">kDlc7</a> = 7
+, <br />
+&#160;&#160;<a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11a00d69312cbd738cfd01af2ff17d7aff6">kDlc8</a> = 8
+, <a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11af3d46507beeb8b4afde5bf81b0e794f2">kDlc12</a> = 12
+, <a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11ad0c26f3a4d1353ae76068adc3aba109e">kDlc16</a> = 16
+, <a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11ab4a9e93ac602d58c2788a6e842094085">kDlc20</a> = 20
+, <br />
+&#160;&#160;<a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11a8a54b77f5b2391c5ac0347fc971335c9">kDlc24</a> = 24
+, <a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11aa30921183f94d8f4f495eb6afc80aba7">kDlc32</a> = 32
+, <a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11a2e58a97608a937f3036ff0258add203c">kDlc48</a> = 48
+, <a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11a5d90a549df4368c5c4f2e02cd867d14d">kDlc64</a> = 64
+<br />
+ }</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a6b9eb932afe19eada6d0a8feec6ea736" id="r_a6b9eb932afe19eada6d0a8feec6ea736"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b9eb932afe19eada6d0a8feec6ea736">IsLegalLength</a> (<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> length)</td></tr>
+<tr class="memdesc:a6b9eb932afe19eada6d0a8feec6ea736"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断字节长度是否为 CAN FD 规范允许的 DLC 取值（0~8、12、16、20、24、32、48、64）  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public 属性</h2></td></tr>
-<tr class="memitem:a208bfdd2f30def936d92d3121b3486e7" id="r_a208bfdd2f30def936d92d3121b3486e7"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>, 64 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1hal_1_1CanFrame.html#a208bfdd2f30def936d92d3121b3486e7">data</a></td></tr>
+<tr class="memitem:a208bfdd2f30def936d92d3121b3486e7" id="r_a208bfdd2f30def936d92d3121b3486e7"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>, 64 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a208bfdd2f30def936d92d3121b3486e7">data</a></td></tr>
 <tr class="memdesc:a208bfdd2f30def936d92d3121b3486e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据  <br /></td></tr>
-<tr class="separator:a208bfdd2f30def936d92d3121b3486e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5dbb625f28c9648a0ba8f66258f7d2d" id="r_aa5dbb625f28c9648a0ba8f66258f7d2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1hal_1_1CanFrame.html#aa5dbb625f28c9648a0ba8f66258f7d2d">rx_std_id</a></td></tr>
-<tr class="memdesc:aa5dbb625f28c9648a0ba8f66258f7d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">标准ID  <br /></td></tr>
-<tr class="separator:aa5dbb625f28c9648a0ba8f66258f7d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63de58ccb68ea84e829ff65ea1f27ae8" id="r_a63de58ccb68ea84e829ff65ea1f27ae8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1hal_1_1CanFrame.html#a63de58ccb68ea84e829ff65ea1f27ae8">dlc</a></td></tr>
-<tr class="memdesc:a63de58ccb68ea84e829ff65ea1f27ae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据长度码  <br /></td></tr>
-<tr class="separator:a63de58ccb68ea84e829ff65ea1f27ae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a825031bac625cba43e18bec8515e7caf" id="r_a825031bac625cba43e18bec8515e7caf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1hal_1_1CanFrame.html#a825031bac625cba43e18bec8515e7caf">is_fd_frame</a> {false}</td></tr>
+<tr class="memitem:a963314dc8d1c3df29514e195ac2fbba1" id="r_a963314dc8d1c3df29514e195ac2fbba1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a963314dc8d1c3df29514e195ac2fbba1">std_id</a></td></tr>
+<tr class="memdesc:a963314dc8d1c3df29514e195ac2fbba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">标准帧ID（收时为帧的来源ID，发时为帧的目标ID）  <br /></td></tr>
+<tr class="memitem:a70b168f49270dfb4035d051aee6ad813" id="r_a70b168f49270dfb4035d051aee6ad813"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11">Dlc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70b168f49270dfb4035d051aee6ad813">dlc</a></td></tr>
+<tr class="memdesc:a70b168f49270dfb4035d051aee6ad813"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据长度码，取值限定为 <a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11">Dlc</a> 枚举中的值  <br /></td></tr>
+<tr class="memitem:a825031bac625cba43e18bec8515e7caf" id="r_a825031bac625cba43e18bec8515e7caf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a825031bac625cba43e18bec8515e7caf">is_fd_frame</a> {false}</td></tr>
 <tr class="memdesc:a825031bac625cba43e18bec8515e7caf"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否为FD帧  <br /></td></tr>
-<tr class="separator:a825031bac625cba43e18bec8515e7caf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">类成员变量说明</h2>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">成员枚举类型说明</h2>
+<a id="ae01f566bd78b30cb8452fba7b7b35e11" name="ae01f566bd78b30cb8452fba7b7b35e11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae01f566bd78b30cb8452fba7b7b35e11">&#9670;&#160;</a></span>Dlc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11">rm::hal::CanFrame::Dlc</a> : <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ae01f566bd78b30cb8452fba7b7b35e11a7140596baee05747c29d15b3ade2414d" name="ae01f566bd78b30cb8452fba7b7b35e11a7140596baee05747c29d15b3ade2414d"></a>kDlc0&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae01f566bd78b30cb8452fba7b7b35e11a17e8760369119944c135ffde937bc74c" name="ae01f566bd78b30cb8452fba7b7b35e11a17e8760369119944c135ffde937bc74c"></a>kDlc1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae01f566bd78b30cb8452fba7b7b35e11af9e7b43c73e5a6440e4f38084fe4f349" name="ae01f566bd78b30cb8452fba7b7b35e11af9e7b43c73e5a6440e4f38084fe4f349"></a>kDlc2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae01f566bd78b30cb8452fba7b7b35e11aa8de1f2220684c724db1c14d105767cc" name="ae01f566bd78b30cb8452fba7b7b35e11aa8de1f2220684c724db1c14d105767cc"></a>kDlc3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae01f566bd78b30cb8452fba7b7b35e11a7a5f2479ece4c3c32b2f3c3b3b25593f" name="ae01f566bd78b30cb8452fba7b7b35e11a7a5f2479ece4c3c32b2f3c3b3b25593f"></a>kDlc4&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae01f566bd78b30cb8452fba7b7b35e11a27f4af2e04f26f0b369e34cbe9dd3d1c" name="ae01f566bd78b30cb8452fba7b7b35e11a27f4af2e04f26f0b369e34cbe9dd3d1c"></a>kDlc5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae01f566bd78b30cb8452fba7b7b35e11a8923011d67f7361fe37bef3286ddf768" name="ae01f566bd78b30cb8452fba7b7b35e11a8923011d67f7361fe37bef3286ddf768"></a>kDlc6&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae01f566bd78b30cb8452fba7b7b35e11a0deea75725696fface2466ff01cb3016" name="ae01f566bd78b30cb8452fba7b7b35e11a0deea75725696fface2466ff01cb3016"></a>kDlc7&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae01f566bd78b30cb8452fba7b7b35e11a00d69312cbd738cfd01af2ff17d7aff6" name="ae01f566bd78b30cb8452fba7b7b35e11a00d69312cbd738cfd01af2ff17d7aff6"></a>kDlc8&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae01f566bd78b30cb8452fba7b7b35e11af3d46507beeb8b4afde5bf81b0e794f2" name="ae01f566bd78b30cb8452fba7b7b35e11af3d46507beeb8b4afde5bf81b0e794f2"></a>kDlc12&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae01f566bd78b30cb8452fba7b7b35e11ad0c26f3a4d1353ae76068adc3aba109e" name="ae01f566bd78b30cb8452fba7b7b35e11ad0c26f3a4d1353ae76068adc3aba109e"></a>kDlc16&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae01f566bd78b30cb8452fba7b7b35e11ab4a9e93ac602d58c2788a6e842094085" name="ae01f566bd78b30cb8452fba7b7b35e11ab4a9e93ac602d58c2788a6e842094085"></a>kDlc20&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae01f566bd78b30cb8452fba7b7b35e11a8a54b77f5b2391c5ac0347fc971335c9" name="ae01f566bd78b30cb8452fba7b7b35e11a8a54b77f5b2391c5ac0347fc971335c9"></a>kDlc24&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae01f566bd78b30cb8452fba7b7b35e11aa30921183f94d8f4f495eb6afc80aba7" name="ae01f566bd78b30cb8452fba7b7b35e11aa30921183f94d8f4f495eb6afc80aba7"></a>kDlc32&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae01f566bd78b30cb8452fba7b7b35e11a2e58a97608a937f3036ff0258add203c" name="ae01f566bd78b30cb8452fba7b7b35e11a2e58a97608a937f3036ff0258add203c"></a>kDlc48&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae01f566bd78b30cb8452fba7b7b35e11a5d90a549df4368c5c4f2e02cd867d14d" name="ae01f566bd78b30cb8452fba7b7b35e11a5d90a549df4368c5c4f2e02cd867d14d"></a>kDlc64&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">成员函数说明</h2>
+<a id="a6b9eb932afe19eada6d0a8feec6ea736" name="a6b9eb932afe19eada6d0a8feec6ea736"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b9eb932afe19eada6d0a8feec6ea736">&#9670;&#160;</a></span>IsLegalLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool rm::hal::CanFrame::IsLegalLength </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>判断字节长度是否为 CAN FD 规范允许的 DLC 取值（0~8、12、16、20、24、32、48、64） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length</td><td>数据长度（字节） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>经典CAN的合法长度（0~8）是本集合的子集，因此各后端可以统一用本函数做校验 </dd></dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">类成员变量说明</h2>
 <a id="a208bfdd2f30def936d92d3121b3486e7" name="a208bfdd2f30def936d92d3121b3486e7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a208bfdd2f30def936d92d3121b3486e7">&#9670;&#160;</a></span>data</h2>
 
@@ -132,19 +222,19 @@ Public 属性</h2></td></tr>
 
 </div>
 </div>
-<a id="a63de58ccb68ea84e829ff65ea1f27ae8" name="a63de58ccb68ea84e829ff65ea1f27ae8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63de58ccb68ea84e829ff65ea1f27ae8">&#9670;&#160;</a></span>dlc</h2>
+<a id="a70b168f49270dfb4035d051aee6ad813" name="a70b168f49270dfb4035d051aee6ad813"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70b168f49270dfb4035d051aee6ad813">&#9670;&#160;</a></span>dlc</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> rm::hal::CanFrame::dlc</td>
+          <td class="memname"><a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11">Dlc</a> rm::hal::CanFrame::dlc</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>数据长度码 </p>
+<p>数据长度码，取值限定为 <a class="el" href="#ae01f566bd78b30cb8452fba7b7b35e11">Dlc</a> 枚举中的值 </p>
 
 </div>
 </div>
@@ -164,19 +254,19 @@ Public 属性</h2></td></tr>
 
 </div>
 </div>
-<a id="aa5dbb625f28c9648a0ba8f66258f7d2d" name="aa5dbb625f28c9648a0ba8f66258f7d2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5dbb625f28c9648a0ba8f66258f7d2d">&#9670;&#160;</a></span>rx_std_id</h2>
+<a id="a963314dc8d1c3df29514e195ac2fbba1" name="a963314dc8d1c3df29514e195ac2fbba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a963314dc8d1c3df29514e195ac2fbba1">&#9670;&#160;</a></span>std_id</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> rm::hal::CanFrame::rx_std_id</td>
+          <td class="memname"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> rm::hal::CanFrame::std_id</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>标准ID </p>
+<p>标准帧ID（收时为帧的来源ID，发时为帧的目标ID） </p>
 
 </div>
 </div>
@@ -185,11 +275,19 @@ Public 属性</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1hal.html">hal</a></li><li class="navelem"><a class="el" href="structrm_1_1hal_1_1CanFrame.html">CanFrame</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="namespacerm.html">rm</a></li><li class="navelem"><a href="namespacerm_1_1hal.html">hal</a></li><li class="navelem"><a href="structrm_1_1hal_1_1CanFrame.html">CanFrame</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

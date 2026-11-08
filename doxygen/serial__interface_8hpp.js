@@ -8,5 +8,5 @@ var serial__interface_8hpp =
     [ "rm::hal::SerialInterface", "classrm_1_1hal_1_1SerialInterface.html", null ],
     [ "rm::hal::AsyncTxSyncRxSerialInterface", "classrm_1_1hal_1_1AsyncTxSyncRxSerialInterface.html", null ],
     [ "rm::hal::AsyncSerialInterface", "classrm_1_1hal_1_1AsyncSerialInterface.html", null ],
-    [ "SerialRxCallbackFunction", "serial__interface_8hpp.html#a4258f0687c3c78d6b7c2b2399ac3febd", null ]
+    [ "rm::hal::SerialRxCallbackFunction", "namespacerm_1_1hal.html#a16388d3b41d5334856e67bf9402618e2", null ]
 ];

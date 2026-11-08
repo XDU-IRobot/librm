@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: src/librm/modules/utils.hpp 文件参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('utils_8hpp.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('utils_8hpp.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -91,10 +90,6 @@ $(document).ready(function(){initNavTree('utils_8hpp.html',''); initResizable();
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#namespaces">命名空间</a> &#124;
-<a href="#func-members">函数</a> &#124;
-<a href="#var-members">变量</a>  </div>
   <div class="headertitle"><div class="title">utils.hpp 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
@@ -104,74 +99,65 @@ $(document).ready(function(){initNavTree('utils_8hpp.html',''); initResizable();
 <div class="textblock"><code>#include &quot;<a class="el" href="typedefs_8hpp_source.html">librm/core/typedefs.hpp</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 </div>
-<p><a href="utils_8hpp_source.html">浏览源代码.</a></p>
+<p><a href="utils_8hpp_source.html">浏览该文件的源代码.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 命名空间</h2></td></tr>
-<tr class="memitem:namespacerm" id="r_namespacerm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm.html">rm</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacerm_1_1modules" id="r_namespacerm_1_1modules"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html">rm::modules</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:rm" id="r_rm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm.html">rm</a></td></tr>
+<tr class="memitem:rm_3A_3Amodules" id="r_rm_3A_3Amodules"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html">rm::modules</a></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 函数</h2></td></tr>
 <tr class="memitem:a66277a3c6147831ea573519977117e82" id="r_a66277a3c6147831ea573519977117e82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a66277a3c6147831ea573519977117e82">rm::modules::InvSqrt</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> x)</td></tr>
 <tr class="memdesc:a66277a3c6147831ea573519977117e82"><td class="mdescLeft">&#160;</td><td class="mdescRight">快速求平方根的倒数  <br /></td></tr>
-<tr class="separator:a66277a3c6147831ea573519977117e82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8561ff24c85d2a4e31e320d32306858e" id="r_a8561ff24c85d2a4e31e320d32306858e"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &gt; </td></tr>
-<tr class="memitem:a8561ff24c85d2a4e31e320d32306858e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">int</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a8561ff24c85d2a4e31e320d32306858e">rm::modules::Sign</a> (<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> value)</td></tr>
+<tr class="memitem:a8561ff24c85d2a4e31e320d32306858e" id="r_a8561ff24c85d2a4e31e320d32306858e"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a8561ff24c85d2a4e31e320d32306858e template"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a8561ff24c85d2a4e31e320d32306858e">rm::modules::Sign</a> (const T value)</td></tr>
 <tr class="memdesc:a8561ff24c85d2a4e31e320d32306858e"><td class="mdescLeft">&#160;</td><td class="mdescRight">符号函数  <br /></td></tr>
-<tr class="separator:a8561ff24c85d2a4e31e320d32306858e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3aa4906b062bec00809a1a171e840647" id="r_a3aa4906b062bec00809a1a171e840647"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a3aa4906b062bec00809a1a171e840647">rm::modules::Deadline</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> value, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="namespacerm_1_1modules.html#a0c0739d0b71abdf1e9075d83224cc6f0">min_value</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="namespacerm_1_1modules.html#a3388cb33fcd0c0796f9e71edcaaed63f">max_value</a>)</td></tr>
 <tr class="memdesc:a3aa4906b062bec00809a1a171e840647"><td class="mdescLeft">&#160;</td><td class="mdescRight">deadband函数  <br /></td></tr>
-<tr class="separator:a3aa4906b062bec00809a1a171e840647"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae" id="r_a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae">rm::modules::Deadzone</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> value, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="namespacerm_1_1modules.html#a0c0739d0b71abdf1e9075d83224cc6f0">min_value</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="namespacerm_1_1modules.html#a3388cb33fcd0c0796f9e71edcaaed63f">max_value</a>)</td></tr>
 <tr class="memdesc:a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">死区函数  <br /></td></tr>
-<tr class="separator:a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fb2837b6117b9c5ca6123caacf82efb" id="r_a0fb2837b6117b9c5ca6123caacf82efb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a0fb2837b6117b9c5ca6123caacf82efb">rm::modules::AngleDelta</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> q1, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> q2)</td></tr>
 <tr class="memdesc:a0fb2837b6117b9c5ca6123caacf82efb"><td class="mdescLeft">&#160;</td><td class="mdescRight">角度差函数，计算两个角度之间的最小差值  <br /></td></tr>
-<tr class="separator:a0fb2837b6117b9c5ca6123caacf82efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7d4d0759cc6406efe21d811902fc3f7" id="r_aa7d4d0759cc6406efe21d811902fc3f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#aa7d4d0759cc6406efe21d811902fc3f7">rm::modules::__attribute__</a> ((<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">always_inline</a>)) <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">Clamp</a>(<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">input</a></td></tr>
+<tr class="memitem:aa7d4d0759cc6406efe21d811902fc3f7" id="r_aa7d4d0759cc6406efe21d811902fc3f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#aa7d4d0759cc6406efe21d811902fc3f7">rm::modules::__attribute__</a> ((always_inline)) <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> Clamp(<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> input</td></tr>
 <tr class="memdesc:aa7d4d0759cc6406efe21d811902fc3f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">限幅函数(std::clamp)  <br /></td></tr>
-<tr class="separator:aa7d4d0759cc6406efe21d811902fc3f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a100d87f5474f84209b6eec46491c85aa" id="r_a100d87f5474f84209b6eec46491c85aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a100d87f5474f84209b6eec46491c85aa">rm::modules::Wrap</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">input</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="namespacerm_1_1modules.html#a0c0739d0b71abdf1e9075d83224cc6f0">min_value</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="namespacerm_1_1modules.html#a3388cb33fcd0c0796f9e71edcaaed63f">max_value</a>)</td></tr>
+<tr class="memitem:a100d87f5474f84209b6eec46491c85aa" id="r_a100d87f5474f84209b6eec46491c85aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a100d87f5474f84209b6eec46491c85aa">rm::modules::Wrap</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> input, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="namespacerm_1_1modules.html#a0c0739d0b71abdf1e9075d83224cc6f0">min_value</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="namespacerm_1_1modules.html#a3388cb33fcd0c0796f9e71edcaaed63f">max_value</a>)</td></tr>
 <tr class="memdesc:a100d87f5474f84209b6eec46491c85aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">把输入值循环限制在区间 [min_value, max_value] 内  <br /></td></tr>
-<tr class="separator:a100d87f5474f84209b6eec46491c85aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1abcdc63fe24c52620c5895231de53c" id="r_ac1abcdc63fe24c52620c5895231de53c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#ac1abcdc63fe24c52620c5895231de53c">rm::modules::QuatToEuler</a> (<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">q</a>[4], <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">euler</a>[3])</td></tr>
+<tr class="memitem:ac1abcdc63fe24c52620c5895231de53c" id="r_ac1abcdc63fe24c52620c5895231de53c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#ac1abcdc63fe24c52620c5895231de53c">rm::modules::QuatToEuler</a> (const <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> q[4], <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> euler[3])</td></tr>
 <tr class="memdesc:ac1abcdc63fe24c52620c5895231de53c"><td class="mdescLeft">&#160;</td><td class="mdescRight">四元数转欧拉角  <br /></td></tr>
-<tr class="separator:ac1abcdc63fe24c52620c5895231de53c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96230949b340336eb705ecaaf30a6cb0" id="r_a96230949b340336eb705ecaaf30a6cb0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a96230949b340336eb705ecaaf30a6cb0">rm::modules::Map</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> value, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">from_min</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">from_max</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">to_min</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">to_max</a>)</td></tr>
+<tr class="memitem:a96230949b340336eb705ecaaf30a6cb0" id="r_a96230949b340336eb705ecaaf30a6cb0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a96230949b340336eb705ecaaf30a6cb0">rm::modules::Map</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> value, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> from_min, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> from_max, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> to_min, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> to_max)</td></tr>
 <tr class="memdesc:a96230949b340336eb705ecaaf30a6cb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">区间映射函数  <br /></td></tr>
-<tr class="separator:a96230949b340336eb705ecaaf30a6cb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1c8ace454cb97b65558feb94d5f9eaf" id="r_ae1c8ace454cb97b65558feb94d5f9eaf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#ae1c8ace454cb97b65558feb94d5f9eaf">rm::modules::IntToFloat</a> (<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">int</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">x_int</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">x_min</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">x_max</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">int</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bits</a>)</td></tr>
+<tr class="memitem:ae1c8ace454cb97b65558feb94d5f9eaf" id="r_ae1c8ace454cb97b65558feb94d5f9eaf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#ae1c8ace454cb97b65558feb94d5f9eaf">rm::modules::IntToFloat</a> (int x_int, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> x_min, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> x_max, int bits)</td></tr>
 <tr class="memdesc:ae1c8ace454cb97b65558feb94d5f9eaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">把给定位数的整数映射到浮点数的某个范围内  <br /></td></tr>
-<tr class="separator:ae1c8ace454cb97b65558feb94d5f9eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd7996d2a8e6184242c411f05a94cd65" id="r_afd7996d2a8e6184242c411f05a94cd65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#afd7996d2a8e6184242c411f05a94cd65">rm::modules::FloatToInt</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> x, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">x_min</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">x_max</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">int</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bits</a>)</td></tr>
+<tr class="memitem:afd7996d2a8e6184242c411f05a94cd65" id="r_afd7996d2a8e6184242c411f05a94cd65"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#afd7996d2a8e6184242c411f05a94cd65">rm::modules::FloatToInt</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> x, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> x_min, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> x_max, int bits)</td></tr>
 <tr class="memdesc:afd7996d2a8e6184242c411f05a94cd65"><td class="mdescLeft">&#160;</td><td class="mdescRight">把某个范围内的浮点数映射到给定位数的整数的整个范围内  <br /></td></tr>
-<tr class="separator:afd7996d2a8e6184242c411f05a94cd65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addf99a4d105398c0666e07b95e5b78d8" id="r_addf99a4d105398c0666e07b95e5b78d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#addf99a4d105398c0666e07b95e5b78d8">rm::modules::SafeDiv</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">dividend</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">divisor</a>)</td></tr>
+<tr class="memitem:addf99a4d105398c0666e07b95e5b78d8" id="r_addf99a4d105398c0666e07b95e5b78d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#addf99a4d105398c0666e07b95e5b78d8">rm::modules::SafeDiv</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> dividend, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> divisor)</td></tr>
 <tr class="memdesc:addf99a4d105398c0666e07b95e5b78d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">安全的浮点数除法，处理除零的情况  <br /></td></tr>
-<tr class="separator:addf99a4d105398c0666e07b95e5b78d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d06b64889d0ca5b83a1fd556ddb9af1" id="r_a5d06b64889d0ca5b83a1fd556ddb9af1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a5d06b64889d0ca5b83a1fd556ddb9af1">rm::modules::IsNear</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> value, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">target</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">threshold</a>)</td></tr>
+<tr class="memitem:a5d06b64889d0ca5b83a1fd556ddb9af1" id="r_a5d06b64889d0ca5b83a1fd556ddb9af1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a5d06b64889d0ca5b83a1fd556ddb9af1">rm::modules::IsNear</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> value, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> target, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> threshold)</td></tr>
 <tr class="memdesc:a5d06b64889d0ca5b83a1fd556ddb9af1"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断一个浮点数是否在目标值的某个阈值范围内  <br /></td></tr>
-<tr class="separator:a5d06b64889d0ca5b83a1fd556ddb9af1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 变量</h2></td></tr>
 <tr class="memitem:a0c0739d0b71abdf1e9075d83224cc6f0" id="r_a0c0739d0b71abdf1e9075d83224cc6f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a0c0739d0b71abdf1e9075d83224cc6f0">rm::modules::min_value</a></td></tr>
-<tr class="separator:a0c0739d0b71abdf1e9075d83224cc6f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3388cb33fcd0c0796f9e71edcaaed63f" id="r_a3388cb33fcd0c0796f9e71edcaaed63f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a3388cb33fcd0c0796f9e71edcaaed63f">rm::modules::max_value</a></td></tr>
-<tr class="separator:a3388cb33fcd0c0796f9e71edcaaed63f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
 <div class="textblock"><p>通用工具函数 </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_9bd6aa59caad6cbef13c0eefdd946af0.html">modules</a></li><li class="navelem"><a class="el" href="utils_8hpp.html">utils.hpp</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a href="dir_9bd6aa59caad6cbef13c0eefdd946af0.html">modules</a></li><li class="navelem"><a href="utils_8hpp.html">utils.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

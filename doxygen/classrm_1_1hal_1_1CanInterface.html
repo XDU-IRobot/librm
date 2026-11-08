@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: rm::hal::CanInterface类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classrm_1_1hal_1_1CanInterface.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('classrm_1_1hal_1_1CanInterface.html','','classrm_1_1hal_1_1CanInterface-members'); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -91,68 +90,44 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1CanInterface.html','
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public 成员函数</a> &#124;
-<a href="#pro-methods">Protected 成员函数</a> &#124;
-<a href="#friends">友元</a> &#124;
-<a href="classrm_1_1hal_1_1CanInterface-members.html">所有成员列表</a>  </div>
-  <div class="headertitle"><div class="title">rm::hal::CanInterface类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+  <div class="headertitle"><div class="title">rm::hal::CanInterface类 参考<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>CAN接口类  
- <a href="classrm_1_1hal_1_1CanInterface.html#details">更多...</a></p>
+ <a href="#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="can__interface_8hpp_source.html">can_interface.hpp</a>&gt;</code></p>
 <div class="dynheader">
 类 rm::hal::CanInterface 继承关系图:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classrm_1_1hal_1_1CanInterface.png" usemap="#rm::hal::CanInterface_map" alt=""/>
-  <map id="rm::hal::CanInterface_map" name="rm::hal::CanInterface_map">
-<area href="classrm_1_1hal_1_1linux___1_1SocketCan.html" alt="rm::hal::linux_::SocketCan" shape="rect" coords="0,56,155,80"/>
-<area href="classrm_1_1hal_1_1stm32_1_1BxCan.html" title="bxCAN类库" alt="rm::hal::stm32::BxCan" shape="rect" coords="165,56,320,80"/>
-<area href="classrm_1_1hal_1_1stm32_1_1Mcp2515.html" title="基于HAL SPI + EXTI中断的MCP2515 CAN控制器封装" alt="rm::hal::stm32::Mcp2515" shape="rect" coords="330,56,485,80"/>
+  <img src="classrm_1_1hal_1_1CanInterface.png" usemap="#rm_3A_3Ahal_3A_3ACanInterface_map" alt=""/>
+  <map id="rm_3A_3Ahal_3A_3ACanInterface_map" name="rm_3A_3Ahal_3A_3ACanInterface_map">
+<area href="classrm_1_1hal_1_1linux___1_1SocketCan.html" alt="rm::hal::linux_::SocketCan" shape="rect" coords="0,112,353,136"/>
+<area href="classrm_1_1hal_1_1stm32_1_1BxCan.html" title="bxCAN类库" alt="rm::hal::stm32::BxCan" shape="rect" coords="363,112,716,136"/>
+<area href="classrm_1_1hal_1_1stm32_1_1Mcp2515.html" title="基于HAL SPI + EXTI中断的MCP2515 CAN控制器封装" alt="rm::hal::stm32::Mcp2515" shape="rect" coords="726,112,1079,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a25b2c5d757a5abfd69c86d56c32a4e58" id="r_a25b2c5d757a5abfd69c86d56c32a4e58"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1CanInterface.html#a25b2c5d757a5abfd69c86d56c32a4e58">~CanInterface</a> ()=default</td></tr>
-<tr class="separator:a25b2c5d757a5abfd69c86d56c32a4e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5cfc29d748a66e6b0a7290beca694c0" id="r_af5cfc29d748a66e6b0a7290beca694c0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1CanInterface.html#af5cfc29d748a66e6b0a7290beca694c0">Write</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> id, const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *data, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size)=0</td></tr>
-<tr class="memdesc:af5cfc29d748a66e6b0a7290beca694c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">立即向总线上发送数据  <br /></td></tr>
-<tr class="separator:af5cfc29d748a66e6b0a7290beca694c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac91bfc026f2e2545b30371fd0d4ba9fb" id="r_ac91bfc026f2e2545b30371fd0d4ba9fb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1CanInterface.html#ac91bfc026f2e2545b30371fd0d4ba9fb">SetFilter</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> id, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> mask)=0</td></tr>
+<tr class="memitem:a25b2c5d757a5abfd69c86d56c32a4e58" id="r_a25b2c5d757a5abfd69c86d56c32a4e58"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25b2c5d757a5abfd69c86d56c32a4e58">~CanInterface</a> ()=default</td></tr>
+<tr class="memitem:af5cfc29d748a66e6b0a7290beca694c0" id="r_af5cfc29d748a66e6b0a7290beca694c0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5cfc29d748a66e6b0a7290beca694c0">Write</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> id, const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *data, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size)=0</td></tr>
+<tr class="memdesc:af5cfc29d748a66e6b0a7290beca694c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">立即向总线上发送数据。当数据长度大于8字节，且硬件支持时，发送FD帧；否则发送经典CAN 2.0帧  <br /></td></tr>
+<tr class="memitem:a3a3df5be0777fd6a2634dc2963034251" id="r_a3a3df5be0777fd6a2634dc2963034251"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a3df5be0777fd6a2634dc2963034251">Write</a> (const <a class="el" href="structrm_1_1hal_1_1CanFrame.html">CanFrame</a> &amp;frame)=0</td></tr>
+<tr class="memdesc:a3a3df5be0777fd6a2634dc2963034251"><td class="mdescLeft">&#160;</td><td class="mdescRight">立即向总线上发送数据。  <br /></td></tr>
+<tr class="memitem:ac91bfc026f2e2545b30371fd0d4ba9fb" id="r_ac91bfc026f2e2545b30371fd0d4ba9fb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac91bfc026f2e2545b30371fd0d4ba9fb">SetFilter</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> id, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> mask)=0</td></tr>
 <tr class="memdesc:ac91bfc026f2e2545b30371fd0d4ba9fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置过滤器  <br /></td></tr>
-<tr class="separator:ac91bfc026f2e2545b30371fd0d4ba9fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bae71da4ba4ee5bf9f21cc03f602498" id="r_a6bae71da4ba4ee5bf9f21cc03f602498"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1CanInterface.html#a6bae71da4ba4ee5bf9f21cc03f602498">Begin</a> ()=0</td></tr>
+<tr class="memitem:a6bae71da4ba4ee5bf9f21cc03f602498" id="r_a6bae71da4ba4ee5bf9f21cc03f602498"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bae71da4ba4ee5bf9f21cc03f602498">Begin</a> ()=0</td></tr>
 <tr class="memdesc:a6bae71da4ba4ee5bf9f21cc03f602498"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动CAN外设  <br /></td></tr>
-<tr class="separator:a6bae71da4ba4ee5bf9f21cc03f602498"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa80af0ccc4a34ee9623112d6838d5f7c" id="r_aa80af0ccc4a34ee9623112d6838d5f7c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1CanInterface.html#aa80af0ccc4a34ee9623112d6838d5f7c">Stop</a> ()=0</td></tr>
+<tr class="memitem:aa80af0ccc4a34ee9623112d6838d5f7c" id="r_aa80af0ccc4a34ee9623112d6838d5f7c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa80af0ccc4a34ee9623112d6838d5f7c">Stop</a> ()=0</td></tr>
 <tr class="memdesc:aa80af0ccc4a34ee9623112d6838d5f7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止CAN外设  <br /></td></tr>
-<tr class="separator:aa80af0ccc4a34ee9623112d6838d5f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
-Protected 成员函数</h2></td></tr>
-<tr class="memitem:a16f68916418f5917db4dcfedf39839dc" id="r_a16f68916418f5917db4dcfedf39839dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1CanInterface.html#a16f68916418f5917db4dcfedf39839dc">RegisterDevice</a> (<a class="el" href="classrm_1_1device_1_1CanDevice.html">device::CanDevice</a> &amp;device, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> rx_stdid)</td></tr>
-<tr class="memdesc:a16f68916418f5917db4dcfedf39839dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册CAN设备  <br /></td></tr>
-<tr class="separator:a16f68916418f5917db4dcfedf39839dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a287a91895e5e8db4ade610ef9508e611" id="r_a287a91895e5e8db4ade610ef9508e611"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1CanInterface.html#a287a91895e5e8db4ade610ef9508e611">UnregisterDevice</a> (<a class="el" href="classrm_1_1device_1_1CanDevice.html">device::CanDevice</a> &amp;device)</td></tr>
-<tr class="memdesc:a287a91895e5e8db4ade610ef9508e611"><td class="mdescLeft">&#160;</td><td class="mdescRight">取消注册CAN设备  <br /></td></tr>
-<tr class="separator:a287a91895e5e8db4ade610ef9508e611"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a960c5c8ab51c4bf361a5b2e7a4f00e85" id="r_a960c5c8ab51c4bf361a5b2e7a4f00e85"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classrm_1_1device_1_1CanDevice.html">device::CanDevice</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1CanInterface.html#a960c5c8ab51c4bf361a5b2e7a4f00e85">GetDeviceListByRxStdid</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> rx_stdid) const</td></tr>
-<tr class="memdesc:a960c5c8ab51c4bf361a5b2e7a4f00e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据接收ID获取已注册的设备列表  <br /></td></tr>
-<tr class="separator:a960c5c8ab51c4bf361a5b2e7a4f00e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
-友元</h2></td></tr>
-<tr class="memitem:a745146b251a28f11ca56c23b8ecdf76b" id="r_a745146b251a28f11ca56c23b8ecdf76b"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1CanInterface.html#a745146b251a28f11ca56c23b8ecdf76b">device::CanDevice</a></td></tr>
-<tr class="separator:a745146b251a28f11ca56c23b8ecdf76b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
 <div class="textblock"><p>CAN接口类 </p>
-</div><h2 class="groupheader">构造及析构函数说明</h2>
+<dl class="section note"><dt>注解</dt><dd>采用观察者模式：所有关心CAN报文的实体都向总线注册自己，注销时自动移除。 </dd></dl>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">构造及析构函数说明</h2>
 <a id="a25b2c5d757a5abfd69c86d56c32a4e58" name="a25b2c5d757a5abfd69c86d56c32a4e58"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a25b2c5d757a5abfd69c86d56c32a4e58">&#9670;&#160;</a></span>~CanInterface()</h2>
 
@@ -165,20 +140,20 @@ Protected 成员函数</h2></td></tr>
         <tr>
           <td class="memname">virtual rm::hal::CanInterface::~CanInterface </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<h2 class="groupheader">成员函数说明</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">成员函数说明</h2>
 <a id="a6bae71da4ba4ee5bf9f21cc03f602498" name="a6bae71da4ba4ee5bf9f21cc03f602498"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6bae71da4ba4ee5bf9f21cc03f602498">&#9670;&#160;</a></span>Begin()</h2>
 
@@ -191,13 +166,13 @@ Protected 成员函数</h2></td></tr>
         <tr>
           <td class="memname">virtual void rm::hal::CanInterface::Begin </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -205,80 +180,6 @@ Protected 成员函数</h2></td></tr>
 <p>启动CAN外设 </p>
 
 <p>在 <a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html#a1277a6601d0376946fe8e21835fad629">rm::hal::linux_::SocketCan</a>, <a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html#ab4ef81aaa906635c58a1f24e3c8f372d">rm::hal::stm32::BxCan</a> , 以及 <a class="el" href="classrm_1_1hal_1_1stm32_1_1Mcp2515.html#a196a7bedb23f1cdf952fdf835c0b02e4">rm::hal::stm32::Mcp2515</a> 内被实现.</p>
-
-</div>
-</div>
-<a id="a960c5c8ab51c4bf361a5b2e7a4f00e85" name="a960c5c8ab51c4bf361a5b2e7a4f00e85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a960c5c8ab51c4bf361a5b2e7a4f00e85">&#9670;&#160;</a></span>GetDeviceListByRxStdid()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::vector&lt; <a class="el" href="classrm_1_1device_1_1CanDevice.html">device::CanDevice</a> * &gt; &amp; rm::hal::CanInterface::GetDeviceListByRxStdid </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>rx_stdid</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>根据接收ID获取已注册的设备列表 </p>
-
-</div>
-</div>
-<a id="a16f68916418f5917db4dcfedf39839dc" name="a16f68916418f5917db4dcfedf39839dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16f68916418f5917db4dcfedf39839dc">&#9670;&#160;</a></span>RegisterDevice()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rm::hal::CanInterface::RegisterDevice </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classrm_1_1device_1_1CanDevice.html">device::CanDevice</a> &amp;&#160;</td>
-          <td class="paramname"><em>device</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>rx_stdid</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>注册CAN设备 </p>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">device</td><td>设备对象 </td></tr>
-    <tr><td class="paramname">rx_stdid</td><td>该设备要接收的标准帧ID </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>注解</dt><dd>同一设备在同一ID下只能注册一次（以UUID为准） </dd></dl>
 
 </div>
 </div>
@@ -294,24 +195,17 @@ Protected 成员函数</h2></td></tr>
         <tr>
           <td class="memname">virtual void rm::hal::CanInterface::SetFilter </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>mask</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a></td>          <td class="paramname"><span class="paramname"><em>mask</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -341,13 +235,13 @@ Protected 成员函数</h2></td></tr>
         <tr>
           <td class="memname">virtual void rm::hal::CanInterface::Stop </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -358,43 +252,8 @@ Protected 成员函数</h2></td></tr>
 
 </div>
 </div>
-<a id="a287a91895e5e8db4ade610ef9508e611" name="a287a91895e5e8db4ade610ef9508e611"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a287a91895e5e8db4ade610ef9508e611">&#9670;&#160;</a></span>UnregisterDevice()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rm::hal::CanInterface::UnregisterDevice </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classrm_1_1device_1_1CanDevice.html">device::CanDevice</a> &amp;&#160;</td>
-          <td class="paramname"><em>device</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>取消注册CAN设备 </p>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">device</td><td>要取消注册的设备对象 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>注解</dt><dd>以UUID为准查找并移除，与设备对象的内存地址无关 </dd></dl>
-
-</div>
-</div>
-<a id="af5cfc29d748a66e6b0a7290beca694c0" name="af5cfc29d748a66e6b0a7290beca694c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5cfc29d748a66e6b0a7290beca694c0">&#9670;&#160;</a></span>Write()</h2>
+<a id="a3a3df5be0777fd6a2634dc2963034251" name="a3a3df5be0777fd6a2634dc2963034251"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a3df5be0777fd6a2634dc2963034251">&#9670;&#160;</a></span>Write() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -405,51 +264,32 @@ Protected 成员函数</h2></td></tr>
         <tr>
           <td class="memname">virtual void rm::hal::CanInterface::Write </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">const <a class="el" href="structrm_1_1hal_1_1CanFrame.html">CanFrame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>立即向总线上发送数据 </p>
+<p>立即向总线上发送数据。 </p>
+<dl class="section warning"><dt>警告</dt><dd>frame.dlc 必须是合法的CAN帧长度（0~8、12、16、20、24、32、48、64），否则抛出异常； 若 frame.is_fd_frame 为 true 但硬件不支持（或被配置为）发送FD帧，同样抛出异常。 </dd></dl>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>数据帧ID </td></tr>
-    <tr><td class="paramname">data</td><td>数据指针 </td></tr>
-    <tr><td class="paramname">size</td><td>数据长度 </td></tr>
+    <tr><td class="paramname">frame</td><td>数据帧 </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>在 <a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html#a96dc866167dfe90d1e5250f797c3db56">rm::hal::linux_::SocketCan</a>, <a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html#a0b1950fdac0da23de0f609259af2aa48">rm::hal::stm32::BxCan</a> , 以及 <a class="el" href="classrm_1_1hal_1_1stm32_1_1Mcp2515.html#aa8317c7183940049b1d878fcb857ba24">rm::hal::stm32::Mcp2515</a> 内被实现.</p>
+<p>在 <a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html#a2ddcd90a247225a42cfe7b6ae12a90dc">rm::hal::linux_::SocketCan</a>, <a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html#a4eee772bc8bc9dea0ed9ae982ec9f0d0">rm::hal::stm32::BxCan</a> , 以及 <a class="el" href="classrm_1_1hal_1_1stm32_1_1Mcp2515.html#a58d2c815076e8e0af2d4be9524f21d12">rm::hal::stm32::Mcp2515</a> 内被实现.</p>
 
 </div>
 </div>
-<h2 class="groupheader">友元及相关函数文档</h2>
-<a id="a745146b251a28f11ca56c23b8ecdf76b" name="a745146b251a28f11ca56c23b8ecdf76b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a745146b251a28f11ca56c23b8ecdf76b">&#9670;&#160;</a></span>device::CanDevice</h2>
+<a id="af5cfc29d748a66e6b0a7290beca694c0" name="af5cfc29d748a66e6b0a7290beca694c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5cfc29d748a66e6b0a7290beca694c0">&#9670;&#160;</a></span>Write() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -458,29 +298,62 @@ Protected 成员函数</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">friend class <a class="el" href="classrm_1_1device_1_1CanDevice.html">device::CanDevice</a></td>
+          <td class="memname">virtual void rm::hal::CanInterface::Write </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>立即向总线上发送数据。当数据长度大于8字节，且硬件支持时，发送FD帧；否则发送经典CAN 2.0帧 </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">弃用</a></b></dt><dd>老接口，无法显式指定发送FD帧或经典CAN帧，未来将逐步废弃并删除，建议使用Write(const CanFrame &amp;) </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>数据帧ID </td></tr>
+    <tr><td class="paramname">data</td><td>数据指针 </td></tr>
+    <tr><td class="paramname">size</td><td>数据长度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>警告</dt><dd>长度必须是合法的CAN帧长度（0~8、12、16、20、24、32、48、64），否则抛出异常 </dd></dl>
+
+<p>在 <a class="el" href="classrm_1_1hal_1_1linux___1_1SocketCan.html#a96dc866167dfe90d1e5250f797c3db56">rm::hal::linux_::SocketCan</a>, <a class="el" href="classrm_1_1hal_1_1stm32_1_1BxCan.html#a0b1950fdac0da23de0f609259af2aa48">rm::hal::stm32::BxCan</a> , 以及 <a class="el" href="classrm_1_1hal_1_1stm32_1_1Mcp2515.html#aa8317c7183940049b1d878fcb857ba24">rm::hal::stm32::Mcp2515</a> 内被实现.</p>
 
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>src/librm/hal/<a class="el" href="can__interface_8hpp_source.html">can_interface.hpp</a></li>
-<li>src/librm/hal/<a class="el" href="can__interface_8cc.html">can_interface.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1hal.html">hal</a></li><li class="navelem"><a class="el" href="classrm_1_1hal_1_1CanInterface.html">CanInterface</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="namespacerm.html">rm</a></li><li class="navelem"><a href="namespacerm_1_1hal.html">hal</a></li><li class="navelem"><a href="classrm_1_1hal_1_1CanInterface.html">CanInterface</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

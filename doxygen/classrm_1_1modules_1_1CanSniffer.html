@@ -1,0 +1,557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>librm: rm::modules::CanSniffer&lt; MaxIds, WindowSize, MaxPendingFrames &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">librm
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classrm_1_1modules_1_1CanSniffer.html','','classrm_1_1modules_1_1CanSniffer-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rm::modules::CanSniffer&lt; MaxIds, WindowSize, MaxPendingFrames &gt; 模板类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>CAN总线报文嗅探器  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="cansniffer_8hpp_source.html">cansniffer.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 rm::modules::CanSniffer&lt; MaxIds, WindowSize, MaxPendingFrames &gt; 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classrm_1_1modules_1_1CanSniffer.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a07f6ebe7b5c9c40cb532a6376ffbcac0" id="r_a07f6ebe7b5c9c40cb532a6376ffbcac0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07f6ebe7b5c9c40cb532a6376ffbcac0">clock</a> = std::chrono::steady_clock</td></tr>
+<tr class="memitem:ad71fbdef63278675318679bf804202b2" id="r_ad71fbdef63278675318679bf804202b2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad71fbdef63278675318679bf804202b2">duration</a> = clock::duration</td></tr>
+<tr class="memitem:ae87ba28f5d6b08daaea7c6d6597c5b49" id="r_ae87ba28f5d6b08daaea7c6d6597c5b49"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae87ba28f5d6b08daaea7c6d6597c5b49">StatsList</a> = etl::vector&lt;<a class="el" href="structrm_1_1modules_1_1CanIdStats.html">CanIdStats</a>, MaxIds&gt;</td></tr>
+<tr class="memitem:a13abd496b2d9a3442674fc7bfb217818" id="r_a13abd496b2d9a3442674fc7bfb217818"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13abd496b2d9a3442674fc7bfb217818">IdList</a> = etl::vector&lt;<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>, MaxIds&gt;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a44a7941761a5b898af0db1e0d9758dac" id="r_a44a7941761a5b898af0db1e0d9758dac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44a7941761a5b898af0db1e0d9758dac">CanSniffer</a> (<a class="el" href="classrm_1_1hal_1_1CanInterface.html">hal::CanInterface</a> &amp;can)</td></tr>
+<tr class="memitem:a2a449028d8e5d5440467014b25a8b5a3" id="r_a2a449028d8e5d5440467014b25a8b5a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a449028d8e5d5440467014b25a8b5a3">~CanSniffer</a> () override</td></tr>
+<tr class="memitem:ac4fa21fb262ed64034fc4d7e75afd70d" id="r_ac4fa21fb262ed64034fc4d7e75afd70d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4fa21fb262ed64034fc4d7e75afd70d">CanSniffer</a> (const CanSniffer &amp;)=delete</td></tr>
+<tr class="memitem:a94dcabe353131e5999a4467a1c5394c5" id="r_a94dcabe353131e5999a4467a1c5394c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a44a7941761a5b898af0db1e0d9758dac">CanSniffer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94dcabe353131e5999a4467a1c5394c5">operator=</a> (const <a class="el" href="#a44a7941761a5b898af0db1e0d9758dac">CanSniffer</a> &amp;)=delete</td></tr>
+<tr class="memitem:a252eec2c09be4681d4a25ecc3c795bfd" id="r_a252eec2c09be4681d4a25ecc3c795bfd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a252eec2c09be4681d4a25ecc3c795bfd">Update</a> ()</td></tr>
+<tr class="memdesc:a252eec2c09be4681d4a25ecc3c795bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理总线回调缓冲的报文，更新统计数据  <br /></td></tr>
+<tr class="memitem:a9cedbf4914a0c40f4cfac17031b9f7f9" id="r_a9cedbf4914a0c40f4cfac17031b9f7f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ae87ba28f5d6b08daaea7c6d6597c5b49">StatsList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cedbf4914a0c40f4cfac17031b9f7f9">stats</a> () const</td></tr>
+<tr class="memdesc:a9cedbf4914a0c40f4cfac17031b9f7f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取所有已统计ID的数据  <br /></td></tr>
+<tr class="memitem:a14136636879e9133bc4b79e54c5a624f" id="r_a14136636879e9133bc4b79e54c5a624f"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structrm_1_1modules_1_1CanIdStats.html">CanIdStats</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14136636879e9133bc4b79e54c5a624f">stats</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> id) const</td></tr>
+<tr class="memdesc:a14136636879e9133bc4b79e54c5a624f"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取单个ID的统计数据  <br /></td></tr>
+<tr class="memitem:a3f13af18a1dcab29d518c9e5f088cc1b" id="r_a3f13af18a1dcab29d518c9e5f088cc1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13abd496b2d9a3442674fc7bfb217818">IdList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f13af18a1dcab29d518c9e5f088cc1b">active_ids</a> (<a class="el" href="#ad71fbdef63278675318679bf804202b2">duration</a> timeout=std::chrono::seconds(1)) const</td></tr>
+<tr class="memdesc:a3f13af18a1dcab29d518c9e5f088cc1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取最近一段时间内活跃的ID  <br /></td></tr>
+<tr class="memitem:ac180e7b9829d955cab4eb311a68ee5fc" id="r_ac180e7b9829d955cab4eb311a68ee5fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac180e7b9829d955cab4eb311a68ee5fc">dropped_frames</a> () const</td></tr>
+<tr class="memdesc:ac180e7b9829d955cab4eb311a68ee5fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取未能计入统计的帧数  <br /></td></tr>
+<tr class="memitem:aeccdea51aff3be7249f9e62d5f55fcbf" id="r_aeccdea51aff3be7249f9e62d5f55fcbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeccdea51aff3be7249f9e62d5f55fcbf">notification</a> (const <a class="el" href="structrm_1_1hal_1_1CanFrame.html">hal::CanFrame</a> &amp;msg) override</td></tr>
+<tr class="memdesc:aeccdea51aff3be7249f9e62d5f55fcbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">总线观察者入口，由CAN总线在接收上下文调用，不要手动调用  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxIds = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> WindowSize = 16, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxPendingFrames = 32&gt;<br />
+class rm::modules::CanSniffer&lt; MaxIds, WindowSize, MaxPendingFrames &gt;</div><p>CAN总线报文嗅探器 </p>
+<p>挂在CAN总线上统计各ID的活跃情况和出现频率，功能类似can-utils的cansniffer， 但不打印终端表格，而是提供查询接口供应用读取。 </p><dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">MaxIds</td><td>最多同时统计的ID数量 </td></tr>
+    <tr><td class="paramname">WindowSize</td><td>每个ID保留的时间戳样本数，越大统计越平稳 </td></tr>
+    <tr><td class="paramname">MaxPendingFrames</td><td>中断与任务之间缓冲的帧数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>用法： </dd>
+<dd>
+1. 构造时传入CAN总线对象，自动注册为总线观察者； </dd>
+<dd>
+2. 在任务上下文中周期调用Update()，把中断里收到的报文并入统计； </dd>
+<dd>
+3. 通过active_ids()查询最近活跃的ID，通过stats()查询频率统计。 </dd>
+<dd>
+总线回调只把报文压入无锁环形队列，统计全部在Update()里完成， 因此Update()的调用频率决定了队列是否会溢出（见dropped_frames()）。 </dd>
+<dd>
+时间戳在总线回调里取，CAN控制器一次中断批量取出多帧时，同批帧的时间差只是读寄存器的耗时， 不是总线上的真实间隔，这会让窗口内的平均频率略微偏高、标准差偏大。 </dd>
+<dd>
+CAN外设的硬件过滤器需要放行想观察的报文，否则统计不到。 </dd></dl>
+</div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">成员类型定义说明</h2>
+<a id="a07f6ebe7b5c9c40cb532a6376ffbcac0" name="a07f6ebe7b5c9c40cb532a6376ffbcac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07f6ebe7b5c9c40cb532a6376ffbcac0">&#9670;&#160;</a></span>clock</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxIds = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> WindowSize = 16, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxPendingFrames = 32&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrm_1_1modules_1_1CanSniffer.html">rm::modules::CanSniffer</a>&lt; MaxIds, WindowSize, MaxPendingFrames &gt;::clock = std::chrono::steady_clock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad71fbdef63278675318679bf804202b2" name="ad71fbdef63278675318679bf804202b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad71fbdef63278675318679bf804202b2">&#9670;&#160;</a></span>duration</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxIds = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> WindowSize = 16, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxPendingFrames = 32&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrm_1_1modules_1_1CanSniffer.html">rm::modules::CanSniffer</a>&lt; MaxIds, WindowSize, MaxPendingFrames &gt;::duration = clock::duration</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a13abd496b2d9a3442674fc7bfb217818" name="a13abd496b2d9a3442674fc7bfb217818"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13abd496b2d9a3442674fc7bfb217818">&#9670;&#160;</a></span>IdList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxIds = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> WindowSize = 16, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxPendingFrames = 32&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrm_1_1modules_1_1CanSniffer.html">rm::modules::CanSniffer</a>&lt; MaxIds, WindowSize, MaxPendingFrames &gt;::IdList = etl::vector&lt;<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>, MaxIds&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae87ba28f5d6b08daaea7c6d6597c5b49" name="ae87ba28f5d6b08daaea7c6d6597c5b49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae87ba28f5d6b08daaea7c6d6597c5b49">&#9670;&#160;</a></span>StatsList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxIds = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> WindowSize = 16, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxPendingFrames = 32&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrm_1_1modules_1_1CanSniffer.html">rm::modules::CanSniffer</a>&lt; MaxIds, WindowSize, MaxPendingFrames &gt;::StatsList = etl::vector&lt;<a class="el" href="structrm_1_1modules_1_1CanIdStats.html">CanIdStats</a>, MaxIds&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">构造及析构函数说明</h2>
+<a id="a44a7941761a5b898af0db1e0d9758dac" name="a44a7941761a5b898af0db1e0d9758dac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44a7941761a5b898af0db1e0d9758dac">&#9670;&#160;</a></span>CanSniffer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxIds = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> WindowSize = 16, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxPendingFrames = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrm_1_1modules_1_1CanSniffer.html">rm::modules::CanSniffer</a>&lt; MaxIds, WindowSize, MaxPendingFrames &gt;::CanSniffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrm_1_1hal_1_1CanInterface.html">hal::CanInterface</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>can</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">can</td><td>CAN外设对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2a449028d8e5d5440467014b25a8b5a3" name="a2a449028d8e5d5440467014b25a8b5a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a449028d8e5d5440467014b25a8b5a3">&#9670;&#160;</a></span>~CanSniffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxIds = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> WindowSize = 16, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxPendingFrames = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrm_1_1modules_1_1CanSniffer.html">rm::modules::CanSniffer</a>&lt; MaxIds, WindowSize, MaxPendingFrames &gt;::~<a class="el" href="#a44a7941761a5b898af0db1e0d9758dac">CanSniffer</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac4fa21fb262ed64034fc4d7e75afd70d" name="ac4fa21fb262ed64034fc4d7e75afd70d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4fa21fb262ed64034fc4d7e75afd70d">&#9670;&#160;</a></span>CanSniffer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxIds = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> WindowSize = 16, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxPendingFrames = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrm_1_1modules_1_1CanSniffer.html">rm::modules::CanSniffer</a>&lt; MaxIds, WindowSize, MaxPendingFrames &gt;::CanSniffer </td>
+          <td>(</td>
+          <td class="paramtype">const CanSniffer&lt; MaxIds, WindowSize, MaxPendingFrames &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">成员函数说明</h2>
+<a id="a3f13af18a1dcab29d518c9e5f088cc1b" name="a3f13af18a1dcab29d518c9e5f088cc1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f13af18a1dcab29d518c9e5f088cc1b">&#9670;&#160;</a></span>active_ids()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxIds = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> WindowSize = 16, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxPendingFrames = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a13abd496b2d9a3442674fc7bfb217818">IdList</a> <a class="el" href="classrm_1_1modules_1_1CanSniffer.html">rm::modules::CanSniffer</a>&lt; MaxIds, WindowSize, MaxPendingFrames &gt;::active_ids </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ad71fbdef63278675318679bf804202b2">duration</a></td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::chrono::seconds(1)</span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取最近一段时间内活跃的ID </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeout</td><td>判定活跃的时间窗口 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>按ID升序排列的活跃ID列表 </dd></dl>
+
+</div>
+</div>
+<a id="ac180e7b9829d955cab4eb311a68ee5fc" name="ac180e7b9829d955cab4eb311a68ee5fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac180e7b9829d955cab4eb311a68ee5fc">&#9670;&#160;</a></span>dropped_frames()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxIds = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> WindowSize = 16, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxPendingFrames = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> <a class="el" href="classrm_1_1modules_1_1CanSniffer.html">rm::modules::CanSniffer</a>&lt; MaxIds, WindowSize, MaxPendingFrames &gt;::dropped_frames </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取未能计入统计的帧数 </p>
+<dl class="section note"><dt>注解</dt><dd>包含两种情况：中断缓冲队列已满，或ID数量超过MaxIds </dd></dl>
+
+</div>
+</div>
+<a id="aeccdea51aff3be7249f9e62d5f55fcbf" name="aeccdea51aff3be7249f9e62d5f55fcbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeccdea51aff3be7249f9e62d5f55fcbf">&#9670;&#160;</a></span>notification()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxIds = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> WindowSize = 16, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxPendingFrames = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classrm_1_1modules_1_1CanSniffer.html">rm::modules::CanSniffer</a>&lt; MaxIds, WindowSize, MaxPendingFrames &gt;::notification </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structrm_1_1hal_1_1CanFrame.html">hal::CanFrame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>总线观察者入口，由CAN总线在接收上下文调用，不要手动调用 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>收到的报文 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a94dcabe353131e5999a4467a1c5394c5" name="a94dcabe353131e5999a4467a1c5394c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94dcabe353131e5999a4467a1c5394c5">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxIds = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> WindowSize = 16, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxPendingFrames = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a44a7941761a5b898af0db1e0d9758dac">CanSniffer</a> &amp; <a class="el" href="classrm_1_1modules_1_1CanSniffer.html">rm::modules::CanSniffer</a>&lt; MaxIds, WindowSize, MaxPendingFrames &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a44a7941761a5b898af0db1e0d9758dac">CanSniffer</a>&lt; MaxIds, WindowSize, MaxPendingFrames &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9cedbf4914a0c40f4cfac17031b9f7f9" name="a9cedbf4914a0c40f4cfac17031b9f7f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cedbf4914a0c40f4cfac17031b9f7f9">&#9670;&#160;</a></span>stats() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxIds = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> WindowSize = 16, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxPendingFrames = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ae87ba28f5d6b08daaea7c6d6597c5b49">StatsList</a> <a class="el" href="classrm_1_1modules_1_1CanSniffer.html">rm::modules::CanSniffer</a>&lt; MaxIds, WindowSize, MaxPendingFrames &gt;::stats </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取所有已统计ID的数据 </p>
+<dl class="section return"><dt>返回</dt><dd>按ID升序排列的统计结果 </dd></dl>
+
+</div>
+</div>
+<a id="a14136636879e9133bc4b79e54c5a624f" name="a14136636879e9133bc4b79e54c5a624f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14136636879e9133bc4b79e54c5a624f">&#9670;&#160;</a></span>stats() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxIds = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> WindowSize = 16, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxPendingFrames = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="structrm_1_1modules_1_1CanIdStats.html">CanIdStats</a> &gt; <a class="el" href="classrm_1_1modules_1_1CanSniffer.html">rm::modules::CanSniffer</a>&lt; MaxIds, WindowSize, MaxPendingFrames &gt;::stats </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取单个ID的统计数据 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>标准帧ID </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>该ID尚未被统计到时返回std::nullopt </dd></dl>
+
+</div>
+</div>
+<a id="a252eec2c09be4681d4a25ecc3c795bfd" name="a252eec2c09be4681d4a25ecc3c795bfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a252eec2c09be4681d4a25ecc3c795bfd">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxIds = 32, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> WindowSize = 16, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxPendingFrames = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classrm_1_1modules_1_1CanSniffer.html">rm::modules::CanSniffer</a>&lt; MaxIds, WindowSize, MaxPendingFrames &gt;::Update </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理总线回调缓冲的报文，更新统计数据 </p>
+<dl class="section note"><dt>注解</dt><dd>需要在任务上下文中周期调用，不要在中断里调用 </dd></dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/librm/modules/<a class="el" href="cansniffer_8hpp_source.html">cansniffer.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacerm.html">rm</a></li><li class="navelem"><a href="namespacerm_1_1modules.html">modules</a></li><li class="navelem"><a href="classrm_1_1modules_1_1CanSniffer.html">CanSniffer</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

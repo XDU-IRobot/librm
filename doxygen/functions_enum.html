@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: 类成员 - 枚举</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('functions_enum.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('functions_enum.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -91,12 +90,13 @@ $(document).ready(function(){initNavTree('functions_enum.html',''); initResizabl
 </div>
 
 <div class="contents">
-<div class="textblock">&#160;</div><ul>
+<div class="textblock">这里是所有枚举, 及指向其所属类的链接: </div><ul>
 <li>BaudRate&#160;:&#160;<a class="el" href="classrm_1_1device_1_1Znsv6T1.html#a80c34c9dae86fe18cf619f1c86f1ed11">rm::device::Znsv6T1</a></li>
 <li>Bitrate&#160;:&#160;<a class="el" href="classrm_1_1hal_1_1stm32_1_1Mcp2515.html#a239b16bb90cbb0f08a9814a947bb609d">rm::hal::stm32::Mcp2515</a></li>
 <li>Cmd&#160;:&#160;<a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0a">rm::device::HiWonderServo</a></li>
 <li>ControlParamType&#160;:&#160;<a class="el" href="classrm_1_1device_1_1LkMotor.html#ade090e0d3d9a141f14739bc45a19490a">rm::device::LkMotor&lt; type, encoder_bits &gt;</a></li>
 <li>Division&#160;:&#160;<a class="el" href="classrm_1_1device_1_1Znsv6T1.html#af6ccad22bfc2381dcca6ba971a8616a4">rm::device::Znsv6T1</a></li>
+<li>Dlc&#160;:&#160;<a class="el" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11">rm::hal::CanFrame</a></li>
 <li>ErrorCode&#160;:&#160;<a class="el" href="classrm_1_1device_1_1DirectDriveMotor.html#a2a0aff57c5d901626e72ccd9b3de81e0">rm::device::DirectDriveMotor</a></li>
 <li>ErrorFlag&#160;:&#160;<a class="el" href="classrm_1_1device_1_1GkSupercap.html#a92b9f7f96ac4dd2d6265814bbc04a5b6">rm::device::GkSupercap</a></li>
 <li>FuzzyDomain&#160;:&#160;<a class="el" href="classrm_1_1modules_1_1PID.html#a15fbbb71657b5c3ca8dbabd05d877a84">rm::modules::PID</a></li>
@@ -112,10 +112,11 @@ $(document).ready(function(){initNavTree('functions_enum.html',''); initResizabl
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

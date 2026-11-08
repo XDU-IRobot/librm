@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: src/librm/modules/utils.hpp 源文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,28 +36,22 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function() { init_codefold(0); });
-/* @license-end */
-</script>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -69,10 +64,9 @@ $(document).ready(function() { init_codefold(0); });
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('utils_8hpp_source.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('utils_8hpp_source.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -120,7 +114,8 @@ $(document).ready(function(){initNavTree('utils_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef LIBRM_MODULES_UTILS_HPP</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_MODULES_UTILS_HPP</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
@@ -129,12 +124,12 @@ $(document).ready(function(){initNavTree('utils_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1modules.html">rm::modules</a> {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_function" href="namespacerm_1_1modules.html#a66277a3c6147831ea573519977117e82">InvSqrt</a>(<a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> x);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="namespacerm_1_1modules.html#a8561ff24c85d2a4e31e320d32306858e">   51</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacerm_1_1modules.html#a8561ff24c85d2a4e31e320d32306858e">Sign</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">T</a> value) {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="namespacerm_1_1modules.html#a8561ff24c85d2a4e31e320d32306858e">   51</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacerm_1_1modules.html#a8561ff24c85d2a4e31e320d32306858e">Sign</a>(<span class="keyword">const</span> T value) {</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordflow">if</span> (value &gt; 0) {</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (value &lt; 0) {</div>
@@ -144,60 +139,60 @@ $(document).ready(function(){initNavTree('utils_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  }</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
 </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_function" href="namespacerm_1_1modules.html#a3aa4906b062bec00809a1a171e840647">Deadline</a>(<a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> value, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="namespacerm_1_1modules.html#a0c0739d0b71abdf1e9075d83224cc6f0">min_value</a>, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="namespacerm_1_1modules.html#a3388cb33fcd0c0796f9e71edcaaed63f">max_value</a>);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_function" href="namespacerm_1_1modules.html#a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae">Deadzone</a>(<a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> value, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="namespacerm_1_1modules.html#a0c0739d0b71abdf1e9075d83224cc6f0">min_value</a>, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="namespacerm_1_1modules.html#a3388cb33fcd0c0796f9e71edcaaed63f">max_value</a>);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_function" href="namespacerm_1_1modules.html#a0fb2837b6117b9c5ca6123caacf82efb">AngleDelta</a>(<a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> q1, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> q2);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="namespacerm_1_1modules.html#aa7d4d0759cc6406efe21d811902fc3f7">   94</a></span><span class="keyword">inline</span> <a class="code hl_function" href="namespacerm_1_1modules.html#aa7d4d0759cc6406efe21d811902fc3f7">__attribute__</a>((<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">always_inline</a>)) <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">Clamp</a>(<a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">input</a>, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="namespacerm_1_1modules.html#a0c0739d0b71abdf1e9075d83224cc6f0">min_value</a>, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="namespacerm_1_1modules.html#a3388cb33fcd0c0796f9e71edcaaed63f">max_value</a>) {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keywordflow">return</span> std::clamp(<a class="code hl_struct" href="structrm_1_1modules_1_1NoteFreq.html">input</a>, <a class="code hl_variable" href="namespacerm_1_1modules.html#a0c0739d0b71abdf1e9075d83224cc6f0">min_value</a>, <a class="code hl_variable" href="namespacerm_1_1modules.html#a3388cb33fcd0c0796f9e71edcaaed63f">max_value</a>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="namespacerm_1_1modules.html#aa7d4d0759cc6406efe21d811902fc3f7">   94</a></span><span class="keyword">inline</span> <a class="code hl_function" href="namespacerm_1_1modules.html#aa7d4d0759cc6406efe21d811902fc3f7">__attribute__</a>((always_inline)) <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> Clamp(<a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> input, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="namespacerm_1_1modules.html#a0c0739d0b71abdf1e9075d83224cc6f0">min_value</a>, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="namespacerm_1_1modules.html#a3388cb33fcd0c0796f9e71edcaaed63f">max_value</a>) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keywordflow">return</span> std::clamp(input, <a class="code hl_variable" href="namespacerm_1_1modules.html#a0c0739d0b71abdf1e9075d83224cc6f0">min_value</a>, <a class="code hl_variable" href="namespacerm_1_1modules.html#a3388cb33fcd0c0796f9e71edcaaed63f">max_value</a>);</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_function" href="namespacerm_1_1modules.html#a100d87f5474f84209b6eec46491c85aa">Wrap</a>(<a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> input, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="namespacerm_1_1modules.html#a0c0739d0b71abdf1e9075d83224cc6f0">min_value</a>, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_variable" href="namespacerm_1_1modules.html#a3388cb33fcd0c0796f9e71edcaaed63f">max_value</a>);</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span></div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacerm_1_1modules.html#ac1abcdc63fe24c52620c5895231de53c">QuatToEuler</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> q[4], <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> euler[3]);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_function" href="namespacerm_1_1modules.html#a96230949b340336eb705ecaaf30a6cb0">Map</a>(<a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> value, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> from_min, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> from_max, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> to_min, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> to_max);</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span></div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_function" href="namespacerm_1_1modules.html#ae1c8ace454cb97b65558feb94d5f9eaf">IntToFloat</a>(<span class="keywordtype">int</span> x_int, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> x_min, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> x_max, <span class="keywordtype">int</span> bits);</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span></div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacerm_1_1modules.html#afd7996d2a8e6184242c411f05a94cd65">FloatToInt</a>(<a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> x, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> x_min, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> x_max, <span class="keywordtype">int</span> bits);</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span></div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="code hl_function" href="namespacerm_1_1modules.html#addf99a4d105398c0666e07b95e5b78d8">SafeDiv</a>(<a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> dividend, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> divisor);</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span></div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacerm_1_1modules.html#a5d06b64889d0ca5b83a1fd556ddb9af1">IsNear</a>(<a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> value, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> target, <a class="code hl_typedef" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> threshold);</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>}  <span class="comment">// namespace rm::modules</span></div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_MODULES_UTILS_HPP</span></div>
-<div class="ttc" id="anamespacerm_1_1modules_html"><div class="ttname"><a href="namespacerm_1_1modules.html">rm::modules</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:33</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_html_a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae"><div class="ttname"><a href="namespacerm_1_1modules.html#a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae">rm::modules::Deadzone</a></div><div class="ttdeci">f32 Deadzone(f32 value, f32 min_value, f32 max_value)</div><div class="ttdoc">死区函数</div><div class="ttdef"><b>Definition</b> utils.cc:68</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_html_a0c0739d0b71abdf1e9075d83224cc6f0"><div class="ttname"><a href="namespacerm_1_1modules.html#a0c0739d0b71abdf1e9075d83224cc6f0">rm::modules::min_value</a></div><div class="ttdeci">f32 min_value</div><div class="ttdef"><b>Definition</b> utils.hpp:94</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_html_a0fb2837b6117b9c5ca6123caacf82efb"><div class="ttname"><a href="namespacerm_1_1modules.html#a0fb2837b6117b9c5ca6123caacf82efb">rm::modules::AngleDelta</a></div><div class="ttdeci">f32 AngleDelta(f32 q1, f32 q2)</div><div class="ttdoc">角度差函数，计算两个角度之间的最小差值</div><div class="ttdef"><b>Definition</b> utils.cc:76</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_html_a100d87f5474f84209b6eec46491c85aa"><div class="ttname"><a href="namespacerm_1_1modules.html#a100d87f5474f84209b6eec46491c85aa">rm::modules::Wrap</a></div><div class="ttdeci">f32 Wrap(f32 input, f32 min_value, f32 max_value)</div><div class="ttdoc">把输入值循环限制在区间 [min_value, max_value] 内</div><div class="ttdef"><b>Definition</b> utils.cc:87</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_html_a3388cb33fcd0c0796f9e71edcaaed63f"><div class="ttname"><a href="namespacerm_1_1modules.html#a3388cb33fcd0c0796f9e71edcaaed63f">rm::modules::max_value</a></div><div class="ttdeci">f32 f32 max_value</div><div class="ttdef"><b>Definition</b> utils.hpp:94</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_html_a3aa4906b062bec00809a1a171e840647"><div class="ttname"><a href="namespacerm_1_1modules.html#a3aa4906b062bec00809a1a171e840647">rm::modules::Deadline</a></div><div class="ttdeci">f32 Deadline(f32 value, f32 min_value, f32 max_value)</div><div class="ttdoc">deadband函数</div><div class="ttdef"><b>Definition</b> utils.cc:60</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_html_a5d06b64889d0ca5b83a1fd556ddb9af1"><div class="ttname"><a href="namespacerm_1_1modules.html#a5d06b64889d0ca5b83a1fd556ddb9af1">rm::modules::IsNear</a></div><div class="ttdeci">bool IsNear(f32 value, f32 target, f32 threshold)</div><div class="ttdoc">判断一个浮点数是否在目标值的某个阈值范围内</div><div class="ttdef"><b>Definition</b> utils.cc:122</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_html_a66277a3c6147831ea573519977117e82"><div class="ttname"><a href="namespacerm_1_1modules.html#a66277a3c6147831ea573519977117e82">rm::modules::InvSqrt</a></div><div class="ttdeci">f32 InvSqrt(f32 x)</div><div class="ttdoc">快速求平方根的倒数</div><div class="ttdef"><b>Definition</b> utils.cc:43</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_html_a8561ff24c85d2a4e31e320d32306858e"><div class="ttname"><a href="namespacerm_1_1modules.html#a8561ff24c85d2a4e31e320d32306858e">rm::modules::Sign</a></div><div class="ttdeci">int Sign(const T value)</div><div class="ttdoc">符号函数</div><div class="ttdef"><b>Definition</b> utils.hpp:51</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_html_a96230949b340336eb705ecaaf30a6cb0"><div class="ttname"><a href="namespacerm_1_1modules.html#a96230949b340336eb705ecaaf30a6cb0">rm::modules::Map</a></div><div class="ttdeci">f32 Map(f32 value, f32 from_min, f32 from_max, f32 to_min, f32 to_max)</div><div class="ttdoc">区间映射函数</div><div class="ttdef"><b>Definition</b> utils.cc:99</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html"><div class="ttname"><a href="namespacerm_1_1modules.html">rm::modules</a></div><div class="ttdef"><b>定义</b> ahrs_interface.hpp:33</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae"><div class="ttname"><a href="namespacerm_1_1modules.html#a0a2c2a9ebcc2e8bf3f3c2ed9acc337ae">rm::modules::Deadzone</a></div><div class="ttdeci">f32 Deadzone(f32 value, f32 min_value, f32 max_value)</div><div class="ttdoc">死区函数</div><div class="ttdef"><b>定义</b> utils.cc:68</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a0c0739d0b71abdf1e9075d83224cc6f0"><div class="ttname"><a href="namespacerm_1_1modules.html#a0c0739d0b71abdf1e9075d83224cc6f0">rm::modules::min_value</a></div><div class="ttdeci">f32 min_value</div><div class="ttdef"><b>定义</b> utils.hpp:94</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a0fb2837b6117b9c5ca6123caacf82efb"><div class="ttname"><a href="namespacerm_1_1modules.html#a0fb2837b6117b9c5ca6123caacf82efb">rm::modules::AngleDelta</a></div><div class="ttdeci">f32 AngleDelta(f32 q1, f32 q2)</div><div class="ttdoc">角度差函数，计算两个角度之间的最小差值</div><div class="ttdef"><b>定义</b> utils.cc:76</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a100d87f5474f84209b6eec46491c85aa"><div class="ttname"><a href="namespacerm_1_1modules.html#a100d87f5474f84209b6eec46491c85aa">rm::modules::Wrap</a></div><div class="ttdeci">f32 Wrap(f32 input, f32 min_value, f32 max_value)</div><div class="ttdoc">把输入值循环限制在区间 [min_value, max_value] 内</div><div class="ttdef"><b>定义</b> utils.cc:87</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a3388cb33fcd0c0796f9e71edcaaed63f"><div class="ttname"><a href="namespacerm_1_1modules.html#a3388cb33fcd0c0796f9e71edcaaed63f">rm::modules::max_value</a></div><div class="ttdeci">f32 f32 max_value</div><div class="ttdef"><b>定义</b> utils.hpp:94</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a3aa4906b062bec00809a1a171e840647"><div class="ttname"><a href="namespacerm_1_1modules.html#a3aa4906b062bec00809a1a171e840647">rm::modules::Deadline</a></div><div class="ttdeci">f32 Deadline(f32 value, f32 min_value, f32 max_value)</div><div class="ttdoc">deadband函数</div><div class="ttdef"><b>定义</b> utils.cc:60</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a5d06b64889d0ca5b83a1fd556ddb9af1"><div class="ttname"><a href="namespacerm_1_1modules.html#a5d06b64889d0ca5b83a1fd556ddb9af1">rm::modules::IsNear</a></div><div class="ttdeci">bool IsNear(f32 value, f32 target, f32 threshold)</div><div class="ttdoc">判断一个浮点数是否在目标值的某个阈值范围内</div><div class="ttdef"><b>定义</b> utils.cc:122</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a66277a3c6147831ea573519977117e82"><div class="ttname"><a href="namespacerm_1_1modules.html#a66277a3c6147831ea573519977117e82">rm::modules::InvSqrt</a></div><div class="ttdeci">f32 InvSqrt(f32 x)</div><div class="ttdoc">快速求平方根的倒数</div><div class="ttdef"><b>定义</b> utils.cc:43</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a8561ff24c85d2a4e31e320d32306858e"><div class="ttname"><a href="namespacerm_1_1modules.html#a8561ff24c85d2a4e31e320d32306858e">rm::modules::Sign</a></div><div class="ttdeci">int Sign(const T value)</div><div class="ttdoc">符号函数</div><div class="ttdef"><b>定义</b> utils.hpp:51</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_a96230949b340336eb705ecaaf30a6cb0"><div class="ttname"><a href="namespacerm_1_1modules.html#a96230949b340336eb705ecaaf30a6cb0">rm::modules::Map</a></div><div class="ttdeci">f32 Map(f32 value, f32 from_min, f32 from_max, f32 to_min, f32 to_max)</div><div class="ttdoc">区间映射函数</div><div class="ttdef"><b>定义</b> utils.cc:99</div></div>
 <div class="ttc" id="anamespacerm_1_1modules_html_aa7d4d0759cc6406efe21d811902fc3f7"><div class="ttname"><a href="namespacerm_1_1modules.html#aa7d4d0759cc6406efe21d811902fc3f7">rm::modules::__attribute__</a></div><div class="ttdeci">__attribute__((always_inline)) f32 Clamp(f32 input</div><div class="ttdoc">限幅函数(std::clamp)</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_html_ac1abcdc63fe24c52620c5895231de53c"><div class="ttname"><a href="namespacerm_1_1modules.html#ac1abcdc63fe24c52620c5895231de53c">rm::modules::QuatToEuler</a></div><div class="ttdeci">void QuatToEuler(const f32 q[4], f32 euler[3])</div><div class="ttdoc">四元数转欧拉角</div><div class="ttdef"><b>Definition</b> utils.cc:93</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_html_addf99a4d105398c0666e07b95e5b78d8"><div class="ttname"><a href="namespacerm_1_1modules.html#addf99a4d105398c0666e07b95e5b78d8">rm::modules::SafeDiv</a></div><div class="ttdeci">f32 SafeDiv(f32 dividend, f32 divisor)</div><div class="ttdoc">安全的浮点数除法，处理除零的情况</div><div class="ttdef"><b>Definition</b> utils.cc:115</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_html_ae1c8ace454cb97b65558feb94d5f9eaf"><div class="ttname"><a href="namespacerm_1_1modules.html#ae1c8ace454cb97b65558feb94d5f9eaf">rm::modules::IntToFloat</a></div><div class="ttdeci">f32 IntToFloat(int x_int, f32 x_min, f32 x_max, int bits)</div><div class="ttdoc">把给定位数的整数映射到浮点数的某个范围内</div><div class="ttdef"><b>Definition</b> utils.cc:103</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_html_afd7996d2a8e6184242c411f05a94cd65"><div class="ttname"><a href="namespacerm_1_1modules.html#afd7996d2a8e6184242c411f05a94cd65">rm::modules::FloatToInt</a></div><div class="ttdeci">int FloatToInt(f32 x, f32 x_min, f32 x_max, int bits)</div><div class="ttdoc">把某个范围内的浮点数映射到给定位数的整数的整个范围内</div><div class="ttdef"><b>Definition</b> utils.cc:109</div></div>
-<div class="ttc" id="anamespacerm_html_abe438454936420638776f339c29718b1"><div class="ttname"><a href="namespacerm.html#abe438454936420638776f339c29718b1">rm::f32</a></div><div class="ttdeci">float f32</div><div class="ttdef"><b>Definition</b> typedefs.hpp:52</div></div>
-<div class="ttc" id="astructrm_1_1modules_1_1NoteFreq_html"><div class="ttname"><a href="structrm_1_1modules_1_1NoteFreq.html">rm::modules::NoteFreq</a></div><div class="ttdef"><b>Definition</b> buzzer_controller.hpp:93</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_ac1abcdc63fe24c52620c5895231de53c"><div class="ttname"><a href="namespacerm_1_1modules.html#ac1abcdc63fe24c52620c5895231de53c">rm::modules::QuatToEuler</a></div><div class="ttdeci">void QuatToEuler(const f32 q[4], f32 euler[3])</div><div class="ttdoc">四元数转欧拉角</div><div class="ttdef"><b>定义</b> utils.cc:93</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_addf99a4d105398c0666e07b95e5b78d8"><div class="ttname"><a href="namespacerm_1_1modules.html#addf99a4d105398c0666e07b95e5b78d8">rm::modules::SafeDiv</a></div><div class="ttdeci">f32 SafeDiv(f32 dividend, f32 divisor)</div><div class="ttdoc">安全的浮点数除法，处理除零的情况</div><div class="ttdef"><b>定义</b> utils.cc:115</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_ae1c8ace454cb97b65558feb94d5f9eaf"><div class="ttname"><a href="namespacerm_1_1modules.html#ae1c8ace454cb97b65558feb94d5f9eaf">rm::modules::IntToFloat</a></div><div class="ttdeci">f32 IntToFloat(int x_int, f32 x_min, f32 x_max, int bits)</div><div class="ttdoc">把给定位数的整数映射到浮点数的某个范围内</div><div class="ttdef"><b>定义</b> utils.cc:103</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html_afd7996d2a8e6184242c411f05a94cd65"><div class="ttname"><a href="namespacerm_1_1modules.html#afd7996d2a8e6184242c411f05a94cd65">rm::modules::FloatToInt</a></div><div class="ttdeci">int FloatToInt(f32 x, f32 x_min, f32 x_max, int bits)</div><div class="ttdoc">把某个范围内的浮点数映射到给定位数的整数的整个范围内</div><div class="ttdef"><b>定义</b> utils.cc:109</div></div>
+<div class="ttc" id="anamespacerm_html_abe438454936420638776f339c29718b1"><div class="ttname"><a href="namespacerm.html#abe438454936420638776f339c29718b1">rm::f32</a></div><div class="ttdeci">float f32</div><div class="ttdef"><b>定义</b> typedefs.hpp:52</div></div>
 <div class="ttc" id="atypedefs_8hpp_html"><div class="ttname"><a href="typedefs_8hpp.html">typedefs.hpp</a></div><div class="ttdoc">全局数据类型定义</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_9bd6aa59caad6cbef13c0eefdd946af0.html">modules</a></li><li class="navelem"><a class="el" href="utils_8hpp.html">utils.hpp</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a href="dir_9bd6aa59caad6cbef13c0eefdd946af0.html">modules</a></li><li class="navelem"><a href="utils_8hpp.html">utils.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

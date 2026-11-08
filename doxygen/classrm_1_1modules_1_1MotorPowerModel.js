@@ -1,7 +1,7 @@
 var classrm_1_1modules_1_1MotorPowerModel =
 [
-    [ "MotorState", "structrm_1_1modules_1_1MotorPowerModel_1_1MotorState.html", "structrm_1_1modules_1_1MotorPowerModel_1_1MotorState" ],
     [ "Params", "structrm_1_1modules_1_1MotorPowerModel_1_1Params.html", "structrm_1_1modules_1_1MotorPowerModel_1_1Params" ],
+    [ "MotorState", "structrm_1_1modules_1_1MotorPowerModel_1_1MotorState.html", "structrm_1_1modules_1_1MotorPowerModel_1_1MotorState" ],
     [ "PowerInfo", "structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo.html", "structrm_1_1modules_1_1MotorPowerModel_1_1PowerInfo" ],
     [ "MotorType", "classrm_1_1modules_1_1MotorPowerModel.html#ad09c389849a7ae0fc0f977957074dc2c", [
       [ "kM3508", "classrm_1_1modules_1_1MotorPowerModel.html#ad09c389849a7ae0fc0f977957074dc2cafb9a79af9d860aefac8534523707923b", null ]

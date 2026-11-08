@@ -23,7 +23,7 @@ var structrm_1_1device_1_1DirectDriveMotor_1_1Parameters =
     [ "LadrB0", "structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a3d75d967c17a83468597a6f386a944c0", null ],
     [ "LadrOmega", "structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#af0ccd77b1413b40615c7dcad70708504", null ],
     [ "MaskFault", "structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a9732878995bfd222dab6efe0f4987057", null ],
-    [ "MasterOvercurrentThreshold", "structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#aef141bd986f0087246c3f901ccc6b919", null ],
+    [ "MasterOvercurrentThreshold", "structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a7e9516a4e0a9c329c2ede35099259bd6", null ],
     [ "MaxIq", "structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a6876e97191db3fbf0bd76106751b88a5", null ],
     [ "MaxPhaseCurrent", "structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a729644d5403315ebb465d3a480477508", null ],
     [ "MaxPhaseCurrentDelta", "structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a2c2ec9971dcd37b7c53b1f1bd6cc4b05", null ],

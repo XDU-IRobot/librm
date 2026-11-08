@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: src/librm/core/exception.hpp 源文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,28 +36,22 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function() { init_codefold(0); });
-/* @license-end */
-</script>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -69,10 +64,9 @@ $(document).ready(function() { init_codefold(0); });
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('core_2exception_8hpp_source.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('core_2exception_8hpp_source.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -120,49 +114,88 @@ $(document).ready(function(){initNavTree('core_2exception_8hpp_source.html','');
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef LIBRM_CORE_EXCEPTIONS_HPP</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_CORE_EXCEPTIONS_HPP</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;cstring&gt;</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="hal_2stm32_2exception_8hpp.html">librm/hal/stm32/exception.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="namespacerm.html">   38</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm.html">rm</a> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;etl/string.h&gt;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_STM32)</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="hal_2stm32_2exception_8hpp.html">librm/hal/stm32/exception.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="namespacerm.html#ac948acc594f27343ce59b3ac31c2cacd">   46</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacerm.html#ac948acc594f27343ce59b3ac31c2cacd">Throw</a>(<a class="code hl_function" href="posix__complement_8cc.html#a83e33830d13db492dab0ec9518cb8509">__attribute__</a>((__unused__)) <span class="keyword">const</span> T&amp; e) {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">static_assert</span>(std::is_base_of&lt;std::exception, T&gt;::value, <span class="stringliteral">&quot;Thrown type must be derived from std::exception&quot;</span>);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_LINUX)</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordflow">throw</span> e;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#elif defined(LIBRM_PLATFORM_STM32)</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">// stm32编译时一般会带-fno-exceptions参数，不能抛异常。所以不管是什么异常，都不处理，直接死机。</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespacerm.html">   40</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm.html">rm</a> {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="namespacerm.html#ae3a495a53adc0e2b5db5567b05af5092">   43</a></span><span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespacerm.html#ae3a495a53adc0e2b5db5567b05af5092">kExceptionMessageCapacity</a> = 128;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> Capacity = kExceptionMessageCapacity&gt;</div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="};">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classrm_1_1basic__runtime__error.html">   57</a></span><span class="keyword">class </span><a class="code hl_function" href="classrm_1_1basic__runtime__error.html#ab65b918fad13d772e9ab27d11d56e642">basic_runtime_error</a> : <span class="keyword">public</span> std::exception {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classrm_1_1basic__runtime__error.html#ab65b918fad13d772e9ab27d11d56e642">   59</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classrm_1_1basic__runtime__error.html#ab65b918fad13d772e9ab27d11d56e642">basic_runtime_error</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *message) { SetMessage(message); }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classrm_1_1basic__runtime__error.html#a5024aa92183d9b3bf2dc303e3c24d720">   61</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classrm_1_1basic__runtime__error.html#a5024aa92183d9b3bf2dc303e3c24d720">basic_runtime_error</a>(<span class="keyword">const</span> etl::istring &amp;message) { SetMessage(message.c_str()); }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classrm_1_1basic__runtime__error.html#a4475b6d89ed5e1ca1e87ebbd7226ae52">   63</a></span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="classrm_1_1basic__runtime__error.html#a4475b6d89ed5e1ca1e87ebbd7226ae52">what</a>() const noexcept<span class="keyword"> override </span>{ <span class="keywordflow">return</span> message_.c_str(); }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keywordtype">void</span> SetMessage(<span class="keyword">const</span> <span class="keywordtype">char</span> *message) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> (message == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      message_.clear();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">// 先自行限制长度，保证 assign 不会走到截断分支（截断检查可能被配置为断言）</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> length = std::strlen(message);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    message_.assign(message, (length &lt; Capacity) ? length : Capacity);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  etl::string&lt;Capacity&gt; message_;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>};</div>
 </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}  <span class="comment">// namespace rm</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="namespacerm.html#a4362f2aa836f8a98bffd41e06e712bfb">   80</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacerm.html#a4362f2aa836f8a98bffd41e06e712bfb">runtime_error</a> = <a class="code hl_class" href="classrm_1_1basic__runtime__error.html">basic_runtime_error&lt;&gt;</a>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="namespacerm.html#ac948acc594f27343ce59b3ac31c2cacd">   88</a></span>[[noreturn]] <span class="keywordtype">void</span> <a class="code hl_function" href="namespacerm.html#ac948acc594f27343ce59b3ac31c2cacd">Throw</a>(<a class="code hl_function" href="posix__complement_8cc.html#a83e33830d13db492dab0ec9518cb8509">__attribute__</a>((__unused__)) <span class="keyword">const</span> T &amp;e) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keyword">static_assert</span>(std::is_base_of&lt;std::exception, T&gt;::value, <span class="stringliteral">&quot;Thrown type must be derived from std::exception&quot;</span>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#if defined(LIBRM_PLATFORM_LINUX)</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordflow">throw</span> e;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#elif defined(LIBRM_PLATFORM_STM32)</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">// stm32编译时一般会带-fno-exceptions参数，不能抛异常。所以不管是什么异常，都不处理，直接死机。</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
 </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="ahal_2stm32_2exception_8hpp_html"><div class="ttname"><a href="hal_2stm32_2exception_8hpp.html">exception.hpp</a></div></div>
-<div class="ttc" id="anamespacerm_html"><div class="ttname"><a href="namespacerm.html">rm</a></div><div class="ttdef"><b>Definition</b> exception.hpp:38</div></div>
-<div class="ttc" id="anamespacerm_html_ac948acc594f27343ce59b3ac31c2cacd"><div class="ttname"><a href="namespacerm.html#ac948acc594f27343ce59b3ac31c2cacd">rm::Throw</a></div><div class="ttdeci">void Throw(__attribute__((__unused__)) const T &amp;e)</div><div class="ttdoc">抛出异常</div><div class="ttdef"><b>Definition</b> exception.hpp:46</div></div>
-<div class="ttc" id="aposix__complement_8cc_html_a83e33830d13db492dab0ec9518cb8509"><div class="ttname"><a href="posix__complement_8cc.html#a83e33830d13db492dab0ec9518cb8509">__attribute__</a></div><div class="ttdeci">__attribute__((weak)) int gettimeofday(struct timeval *tv</div><div class="ttdef"><b>Definition</b> posix_complement.cc:98</div></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}  <span class="comment">// namespace rm</span></div>
+</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassrm_1_1basic__runtime__error_html"><div class="ttname"><a href="classrm_1_1basic__runtime__error.html">rm::basic_runtime_error</a></div><div class="ttdoc">无堆分配的运行时错误异常，用于替代 std::runtime_error</div><div class="ttdef"><b>定义</b> exception.hpp:57</div></div>
+<div class="ttc" id="aclassrm_1_1basic__runtime__error_html_a4475b6d89ed5e1ca1e87ebbd7226ae52"><div class="ttname"><a href="classrm_1_1basic__runtime__error.html#a4475b6d89ed5e1ca1e87ebbd7226ae52">rm::basic_runtime_error::what</a></div><div class="ttdeci">const char * what() const noexcept override</div><div class="ttdef"><b>定义</b> exception.hpp:63</div></div>
+<div class="ttc" id="aclassrm_1_1basic__runtime__error_html_a5024aa92183d9b3bf2dc303e3c24d720"><div class="ttname"><a href="classrm_1_1basic__runtime__error.html#a5024aa92183d9b3bf2dc303e3c24d720">rm::basic_runtime_error::basic_runtime_error</a></div><div class="ttdeci">basic_runtime_error(const etl::istring &amp;message)</div><div class="ttdef"><b>定义</b> exception.hpp:61</div></div>
+<div class="ttc" id="aclassrm_1_1basic__runtime__error_html_ab65b918fad13d772e9ab27d11d56e642"><div class="ttname"><a href="classrm_1_1basic__runtime__error.html#ab65b918fad13d772e9ab27d11d56e642">rm::basic_runtime_error::basic_runtime_error</a></div><div class="ttdeci">basic_runtime_error(const char *message)</div><div class="ttdef"><b>定义</b> exception.hpp:59</div></div>
+<div class="ttc" id="ahal_2stm32_2exception_8hpp_html"><div class="ttname"><a href="hal_2stm32_2exception_8hpp.html">exception.hpp</a></div><div class="ttdoc">对STM32 HAL库里异常枚举的封装</div></div>
+<div class="ttc" id="anamespacerm_html"><div class="ttname"><a href="namespacerm.html">rm</a></div><div class="ttdef"><b>定义</b> exception.hpp:40</div></div>
+<div class="ttc" id="anamespacerm_html_a4362f2aa836f8a98bffd41e06e712bfb"><div class="ttname"><a href="namespacerm.html#a4362f2aa836f8a98bffd41e06e712bfb">rm::runtime_error</a></div><div class="ttdeci">basic_runtime_error&lt;&gt; runtime_error</div><div class="ttdoc">默认容量的无堆分配运行时错误，可直接替换 std::runtime_error</div><div class="ttdef"><b>定义</b> exception.hpp:80</div></div>
+<div class="ttc" id="anamespacerm_html_ac948acc594f27343ce59b3ac31c2cacd"><div class="ttname"><a href="namespacerm.html#ac948acc594f27343ce59b3ac31c2cacd">rm::Throw</a></div><div class="ttdeci">void Throw(__attribute__((__unused__)) const T &amp;e)</div><div class="ttdoc">抛出异常</div><div class="ttdef"><b>定义</b> exception.hpp:88</div></div>
+<div class="ttc" id="anamespacerm_html_ae3a495a53adc0e2b5db5567b05af5092"><div class="ttname"><a href="namespacerm.html#ae3a495a53adc0e2b5db5567b05af5092">rm::kExceptionMessageCapacity</a></div><div class="ttdeci">constexpr size_t kExceptionMessageCapacity</div><div class="ttdoc">rm::runtime_error 默认的消息缓冲区容量（字符数，不含结尾的 &#39;\0&#39;）</div><div class="ttdef"><b>定义</b> exception.hpp:43</div></div>
+<div class="ttc" id="aposix__complement_8cc_html_a83e33830d13db492dab0ec9518cb8509"><div class="ttname"><a href="posix__complement_8cc.html#a83e33830d13db492dab0ec9518cb8509">__attribute__</a></div><div class="ttdeci">__attribute__((weak)) int gettimeofday(struct timeval *tv</div><div class="ttdef"><b>定义</b> posix_complement.cc:98</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_fdc7a3afe1ef2b13aa78b4b14f7935a0.html">core</a></li><li class="navelem"><a class="el" href="core_2exception_8hpp.html">exception.hpp</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a href="dir_fdc7a3afe1ef2b13aa78b4b14f7935a0.html">core</a></li><li class="navelem"><a href="core_2exception_8hpp.html">exception.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

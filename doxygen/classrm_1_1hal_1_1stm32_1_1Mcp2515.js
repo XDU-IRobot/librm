@@ -15,5 +15,6 @@ var classrm_1_1hal_1_1stm32_1_1Mcp2515 =
     [ "operator=", "classrm_1_1hal_1_1stm32_1_1Mcp2515.html#a7de9e177337f2bf0470c4db86afdf7b5", null ],
     [ "SetFilter", "classrm_1_1hal_1_1stm32_1_1Mcp2515.html#a116bbe77d42242462c1a42d52638854a", null ],
     [ "Stop", "classrm_1_1hal_1_1stm32_1_1Mcp2515.html#a9dcf96df9b137dc313a573513867e47a", null ],
+    [ "Write", "classrm_1_1hal_1_1stm32_1_1Mcp2515.html#a58d2c815076e8e0af2d4be9524f21d12", null ],
     [ "Write", "classrm_1_1hal_1_1stm32_1_1Mcp2515.html#aa8317c7183940049b1d878fcb857ba24", null ]
 ];

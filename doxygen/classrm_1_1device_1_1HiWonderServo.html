@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: rm::device::HiWonderServo类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classrm_1_1device_1_1HiWonderServo.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('classrm_1_1device_1_1HiWonderServo.html','','classrm_1_1device_1_1HiWonderServo-members'); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -91,241 +90,183 @@ $(document).ready(function(){initNavTree('classrm_1_1device_1_1HiWonderServo.htm
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">类</a> &#124;
-<a href="#pub-types">Public 类型</a> &#124;
-<a href="#pub-methods">Public 成员函数</a> &#124;
-<a href="classrm_1_1device_1_1HiWonderServo-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">rm::device::HiWonderServo类 参考</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>幻尔串口总线舵机驱动类  
- <a href="classrm_1_1device_1_1HiWonderServo.html#details">更多...</a></p>
+ <a href="#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="hiwonder__servo_8hpp_source.html">hiwonder_servo.hpp</a>&gt;</code></p>
 <div class="dynheader">
 类 rm::device::HiWonderServo 继承关系图:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classrm_1_1device_1_1HiWonderServo.png" usemap="#rm::device::HiWonderServo_map" alt=""/>
-  <map id="rm::device::HiWonderServo_map" name="rm::device::HiWonderServo_map">
+  <img src="classrm_1_1device_1_1HiWonderServo.png" usemap="#rm_3A_3Adevice_3A_3AHiWonderServo_map" alt=""/>
+  <map id="rm_3A_3Adevice_3A_3AHiWonderServo_map" name="rm_3A_3Adevice_3A_3AHiWonderServo_map">
 <area href="classrm_1_1device_1_1Device.html" title="驱动框架的设备基类，功能为监视设备状态" alt="rm::device::Device" shape="rect" coords="0,0,166,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 类</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1HiWonderServo_1_1Feedback.html">Feedback</a></td></tr>
+<tr class="memitem:Feedback" id="r_Feedback"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1HiWonderServo_1_1Feedback.html">Feedback</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">舵机反馈数据  <a href="structrm_1_1device_1_1HiWonderServo_1_1Feedback.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public 类型</h2></td></tr>
-<tr class="memitem:a2b28033c1ef523d1c007d26fff95ac0a" id="r_a2b28033c1ef523d1c007d26fff95ac0a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0a">Cmd</a> : u8 { <br />
-&#160;&#160;<a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aaa7ef69be302e4420d8992d013c1bedf1">kMoveTimeWrite</a> = 1
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aa8adbb315cce61f1b2e02799c7ebd36c5">kMoveTimeRead</a> = 2
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aaf39ee0e1915939aa5073244bba7420da">kMoveTimeWaitWrite</a> = 7
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aa833f206aaef0b4566225dc287c9196b3">kMoveTimeWaitRead</a> = 8
+<tr class="memitem:a2b28033c1ef523d1c007d26fff95ac0a" id="r_a2b28033c1ef523d1c007d26fff95ac0a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0a">Cmd</a> : u8 { <br />
+&#160;&#160;<a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aaa7ef69be302e4420d8992d013c1bedf1">kMoveTimeWrite</a> = 1
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aa8adbb315cce61f1b2e02799c7ebd36c5">kMoveTimeRead</a> = 2
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aaf39ee0e1915939aa5073244bba7420da">kMoveTimeWaitWrite</a> = 7
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aa833f206aaef0b4566225dc287c9196b3">kMoveTimeWaitRead</a> = 8
 , <br />
-&#160;&#160;<a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aab9f6506fdcd7d01554872b9812712b23">kMoveStart</a> = 11
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aa7d9ed8f3211af0493f659a05ee6e9ff5">kMoveStop</a> = 12
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aa252b32c48c52625a0b6da30d3719c80c">kIdWrite</a> = 13
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aa717004f61cf80311646b74356a29e2eb">kIdRead</a> = 14
+&#160;&#160;<a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aab9f6506fdcd7d01554872b9812712b23">kMoveStart</a> = 11
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aa7d9ed8f3211af0493f659a05ee6e9ff5">kMoveStop</a> = 12
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aa252b32c48c52625a0b6da30d3719c80c">kIdWrite</a> = 13
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aa717004f61cf80311646b74356a29e2eb">kIdRead</a> = 14
 , <br />
-&#160;&#160;<a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aab29b160297ffc17caac1fdedfff1ce9c">kAngleOffsetAdjust</a> = 17
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aae3553c8425f86c2068fb90c7fd9b7137">kAngleOffsetWrite</a> = 18
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aa40ff94876a1a58221678ccd5932a4915">kAngleOffsetRead</a> = 19
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aa7326162da0fb6afa58ef5e3eeea59bf5">kAngleLimitWrite</a> = 20
+&#160;&#160;<a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aab29b160297ffc17caac1fdedfff1ce9c">kAngleOffsetAdjust</a> = 17
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aae3553c8425f86c2068fb90c7fd9b7137">kAngleOffsetWrite</a> = 18
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aa40ff94876a1a58221678ccd5932a4915">kAngleOffsetRead</a> = 19
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aa7326162da0fb6afa58ef5e3eeea59bf5">kAngleLimitWrite</a> = 20
 , <br />
-&#160;&#160;<a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aa3ec926fcf6a6c1de8fd3a6e6aa769196">kAngleLimitRead</a> = 21
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aa42a7c4f66755f213ebf05b9bfed18da2">kVinLimitWrite</a> = 22
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aaa0c0e6340cfe674b11014efcaa2f248e">kVinLimitRead</a> = 23
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aabc76672115fe4f8228cce0d3124b6f8d">kTempMaxLimitWrite</a> = 24
+&#160;&#160;<a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aa3ec926fcf6a6c1de8fd3a6e6aa769196">kAngleLimitRead</a> = 21
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aa42a7c4f66755f213ebf05b9bfed18da2">kVinLimitWrite</a> = 22
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aaa0c0e6340cfe674b11014efcaa2f248e">kVinLimitRead</a> = 23
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aabc76672115fe4f8228cce0d3124b6f8d">kTempMaxLimitWrite</a> = 24
 , <br />
-&#160;&#160;<a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aae27ac47b97d7f6a0eb8af658f7e9fd97">kTempMaxLimitRead</a> = 25
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aad254497352826ad08e70c159bd34b95d">kTempRead</a> = 26
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aac7b979cfd9b198edb0c4ef279de474fd">kVinRead</a> = 27
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aac648f96cdfc51eb2a5fe6e3257de40e6">kPosRead</a> = 28
+&#160;&#160;<a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aae27ac47b97d7f6a0eb8af658f7e9fd97">kTempMaxLimitRead</a> = 25
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aad254497352826ad08e70c159bd34b95d">kTempRead</a> = 26
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aac7b979cfd9b198edb0c4ef279de474fd">kVinRead</a> = 27
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aac648f96cdfc51eb2a5fe6e3257de40e6">kPosRead</a> = 28
 , <br />
-&#160;&#160;<a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aadde7dea942ffb14962901ec14318c480">kOrMotorModeWrite</a> = 29
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aa7f75465d0ecfc8329899a15783529695">kOrMotorModeRead</a> = 30
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aa6d3b8af610fa41f28580c69d24ba76a6">kLoadOrUnloadWrite</a> = 31
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aa2f4050677857bdf769a10d54160c1b80">kLoadOrUnloadRead</a> = 32
+&#160;&#160;<a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aadde7dea942ffb14962901ec14318c480">kOrMotorModeWrite</a> = 29
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aa7f75465d0ecfc8329899a15783529695">kOrMotorModeRead</a> = 30
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aa6d3b8af610fa41f28580c69d24ba76a6">kLoadOrUnloadWrite</a> = 31
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aa2f4050677857bdf769a10d54160c1b80">kLoadOrUnloadRead</a> = 32
 , <br />
-&#160;&#160;<a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aa11ab0c77ff5c39a7e115263e22bceccb">kLedCtrlWrite</a> = 33
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aaa86679170cd6994b59366708746e2606">kLedCtrlRead</a> = 34
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aa01c46c10e57220850790ceb4e28ad1e5">kLedErrorWrite</a> = 35
-, <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aaf2b1acbbf0724ab0078896f9ccc3621c">kLedErrorRead</a> = 36
+&#160;&#160;<a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aa11ab0c77ff5c39a7e115263e22bceccb">kLedCtrlWrite</a> = 33
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aaa86679170cd6994b59366708746e2606">kLedCtrlRead</a> = 34
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aa01c46c10e57220850790ceb4e28ad1e5">kLedErrorWrite</a> = 35
+, <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aaf2b1acbbf0724ab0078896f9ccc3621c">kLedErrorRead</a> = 36
 , <br />
-&#160;&#160;<a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0aa31e24344ec5624c073e241d0c3703d10">kDisRead</a> = 48
+&#160;&#160;<a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0aa31e24344ec5624c073e241d0c3703d10">kDisRead</a> = 48
 <br />
  }</td></tr>
-<tr class="memdesc:a2b28033c1ef523d1c007d26fff95ac0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">舵机指令值（协议表2）  <a href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0a">更多...</a><br /></td></tr>
-<tr class="separator:a2b28033c1ef523d1c007d26fff95ac0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_types_classrm_1_1device_1_1Device"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classrm_1_1device_1_1Device')"><img src="closed.png" alt="-"/>&#160;Public 类型 继承自 <a class="el" href="classrm_1_1device_1_1Device.html">rm::device::Device</a></td></tr>
+<tr class="memdesc:a2b28033c1ef523d1c007d26fff95ac0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">舵机指令值（协议表2）  <a href="#a2b28033c1ef523d1c007d26fff95ac0a">更多...</a><br /></td></tr>
+<tr class="inherit_header pub_types_classrm_1_1device_1_1Device"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_classrm_1_1device_1_1Device')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public 类型 继承自 <a class="el" href="classrm_1_1device_1_1Device.html">rm::device::Device</a></td></tr>
 <tr class="memitem:a16a7bedc3fb137033e1537713d3626bc inherit pub_types_classrm_1_1device_1_1Device" id="r_a16a7bedc3fb137033e1537713d3626bc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Status</a> { <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca2cf6355bab3eb1cb9e9a730e0345efe5">kUnknown</a> = -1
 , <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca49868fdd51a9c221b3b9c076adc6d64e">kOffline</a>
 , <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bca888af1cb59179c046f400d9fdd64dc0c">kFault</a>
 , <a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bcac2cdd693c07c8b2bad2e9ccb8e28cb21">kOk</a>
  }</td></tr>
 <tr class="memdesc:a16a7bedc3fb137033e1537713d3626bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">设备状态  <a href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">更多...</a><br /></td></tr>
-<tr class="separator:a16a7bedc3fb137033e1537713d3626bc inherit pub_types_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a33ed5869b452b02e4b78fcd8676c75b0" id="r_a33ed5869b452b02e4b78fcd8676c75b0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a33ed5869b452b02e4b78fcd8676c75b0">HiWonderServo</a> (<a class="el" href="classrm_1_1hal_1_1AsyncSerialInterface.html">hal::AsyncSerialInterface</a> &amp;serial, <a class="el" href="classrm_1_1hal_1_1PinInterface.html">hal::PinInterface</a> &amp;tx_en, <a class="el" href="classrm_1_1hal_1_1PinInterface.html">hal::PinInterface</a> &amp;rx_en, <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> servo_id=1)</td></tr>
+<tr class="memitem:a33ed5869b452b02e4b78fcd8676c75b0" id="r_a33ed5869b452b02e4b78fcd8676c75b0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33ed5869b452b02e4b78fcd8676c75b0">HiWonderServo</a> (<a class="el" href="classrm_1_1hal_1_1AsyncSerialInterface.html">hal::AsyncSerialInterface</a> &amp;serial, <a class="el" href="classrm_1_1hal_1_1PinInterface.html">hal::PinInterface</a> &amp;tx_en, <a class="el" href="classrm_1_1hal_1_1PinInterface.html">hal::PinInterface</a> &amp;rx_en, <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> servo_id=1)</td></tr>
 <tr class="memdesc:a33ed5869b452b02e4b78fcd8676c75b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
-<tr class="separator:a33ed5869b452b02e4b78fcd8676c75b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acaf92bd6b7556b50ce4916ec98f9c01b" id="r_acaf92bd6b7556b50ce4916ec98f9c01b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#acaf92bd6b7556b50ce4916ec98f9c01b">~HiWonderServo</a> () override=default</td></tr>
-<tr class="separator:acaf92bd6b7556b50ce4916ec98f9c01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5883e9a14cefb5b4c2ff9852f0e84239" id="r_a5883e9a14cefb5b4c2ff9852f0e84239"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a5883e9a14cefb5b4c2ff9852f0e84239">MoveTime</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> angle, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> time_ms)</td></tr>
+<tr class="memitem:acaf92bd6b7556b50ce4916ec98f9c01b" id="r_acaf92bd6b7556b50ce4916ec98f9c01b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acaf92bd6b7556b50ce4916ec98f9c01b">~HiWonderServo</a> () override=default</td></tr>
+<tr class="memitem:a5883e9a14cefb5b4c2ff9852f0e84239" id="r_a5883e9a14cefb5b4c2ff9852f0e84239"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5883e9a14cefb5b4c2ff9852f0e84239">MoveTime</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> angle, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> time_ms)</td></tr>
 <tr class="memdesc:a5883e9a14cefb5b4c2ff9852f0e84239"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置时间控制（立即执行）  <br /></td></tr>
-<tr class="separator:a5883e9a14cefb5b4c2ff9852f0e84239"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac73ea4325ffc1405121223d8ae13af12" id="r_ac73ea4325ffc1405121223d8ae13af12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#ac73ea4325ffc1405121223d8ae13af12">MoveTimeWait</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> angle, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> time_ms)</td></tr>
+<tr class="memitem:ac73ea4325ffc1405121223d8ae13af12" id="r_ac73ea4325ffc1405121223d8ae13af12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac73ea4325ffc1405121223d8ae13af12">MoveTimeWait</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> angle, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> time_ms)</td></tr>
 <tr class="memdesc:ac73ea4325ffc1405121223d8ae13af12"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置时间控制（等待 MoveStart 后执行）  <br /></td></tr>
-<tr class="separator:ac73ea4325ffc1405121223d8ae13af12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b742cc388122c072d8ec331048a2964" id="r_a7b742cc388122c072d8ec331048a2964"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a7b742cc388122c072d8ec331048a2964">MoveStart</a> ()</td></tr>
+<tr class="memitem:a7b742cc388122c072d8ec331048a2964" id="r_a7b742cc388122c072d8ec331048a2964"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b742cc388122c072d8ec331048a2964">MoveStart</a> ()</td></tr>
 <tr class="memdesc:a7b742cc388122c072d8ec331048a2964"><td class="mdescLeft">&#160;</td><td class="mdescRight">触发等待中的运动指令  <br /></td></tr>
-<tr class="separator:a7b742cc388122c072d8ec331048a2964"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd494094765da030257719eb85d0fd00" id="r_afd494094765da030257719eb85d0fd00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#afd494094765da030257719eb85d0fd00">MoveStop</a> ()</td></tr>
+<tr class="memitem:afd494094765da030257719eb85d0fd00" id="r_afd494094765da030257719eb85d0fd00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd494094765da030257719eb85d0fd00">MoveStop</a> ()</td></tr>
 <tr class="memdesc:afd494094765da030257719eb85d0fd00"><td class="mdescLeft">&#160;</td><td class="mdescRight">立即停止转动  <br /></td></tr>
-<tr class="separator:afd494094765da030257719eb85d0fd00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cdafba95aff0fcc7e57cb15c591cce1" id="r_a7cdafba95aff0fcc7e57cb15c591cce1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a7cdafba95aff0fcc7e57cb15c591cce1">SetId</a> (<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> new_id)</td></tr>
+<tr class="memitem:a7cdafba95aff0fcc7e57cb15c591cce1" id="r_a7cdafba95aff0fcc7e57cb15c591cce1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7cdafba95aff0fcc7e57cb15c591cce1">SetId</a> (<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> new_id)</td></tr>
 <tr class="memdesc:a7cdafba95aff0fcc7e57cb15c591cce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置舵机 ID（掉电保存）  <br /></td></tr>
-<tr class="separator:a7cdafba95aff0fcc7e57cb15c591cce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2d0879d4f9035260f773ddd0521fe33" id="r_af2d0879d4f9035260f773ddd0521fe33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#af2d0879d4f9035260f773ddd0521fe33">AngleOffsetAdjust</a> (<a class="el" href="namespacerm.html#a84a0841eb16500b4c863280974adffc8">i8</a> offset)</td></tr>
+<tr class="memitem:af2d0879d4f9035260f773ddd0521fe33" id="r_af2d0879d4f9035260f773ddd0521fe33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2d0879d4f9035260f773ddd0521fe33">AngleOffsetAdjust</a> (<a class="el" href="namespacerm.html#a84a0841eb16500b4c863280974adffc8">i8</a> offset)</td></tr>
 <tr class="memdesc:af2d0879d4f9035260f773ddd0521fe33"><td class="mdescLeft">&#160;</td><td class="mdescRight">调整角度偏差（不掉电保存）  <br /></td></tr>
-<tr class="separator:af2d0879d4f9035260f773ddd0521fe33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0622c6eee10993c563b032a11ec41f6a" id="r_a0622c6eee10993c563b032a11ec41f6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a0622c6eee10993c563b032a11ec41f6a">AngleOffsetSave</a> ()</td></tr>
+<tr class="memitem:a0622c6eee10993c563b032a11ec41f6a" id="r_a0622c6eee10993c563b032a11ec41f6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0622c6eee10993c563b032a11ec41f6a">AngleOffsetSave</a> ()</td></tr>
 <tr class="memdesc:a0622c6eee10993c563b032a11ec41f6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">保存当前偏差值（掉电保存）  <br /></td></tr>
-<tr class="separator:a0622c6eee10993c563b032a11ec41f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a3117804a845404def5d408e6fcb80b" id="r_a0a3117804a845404def5d408e6fcb80b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a0a3117804a845404def5d408e6fcb80b">SetAngleLimit</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> min_angle, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> max_angle)</td></tr>
+<tr class="memitem:a0a3117804a845404def5d408e6fcb80b" id="r_a0a3117804a845404def5d408e6fcb80b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a3117804a845404def5d408e6fcb80b">SetAngleLimit</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> min_angle, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> max_angle)</td></tr>
 <tr class="memdesc:a0a3117804a845404def5d408e6fcb80b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置角度限制（掉电保存）  <br /></td></tr>
-<tr class="separator:a0a3117804a845404def5d408e6fcb80b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf2f7f4cfa7c8313d83d265a0bb596c7" id="r_abf2f7f4cfa7c8313d83d265a0bb596c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#abf2f7f4cfa7c8313d83d265a0bb596c7">SetVinLimit</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> min_mv, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> max_mv)</td></tr>
+<tr class="memitem:abf2f7f4cfa7c8313d83d265a0bb596c7" id="r_abf2f7f4cfa7c8313d83d265a0bb596c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf2f7f4cfa7c8313d83d265a0bb596c7">SetVinLimit</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> min_mv, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> max_mv)</td></tr>
 <tr class="memdesc:abf2f7f4cfa7c8313d83d265a0bb596c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置输入电压限制（掉电保存）  <br /></td></tr>
-<tr class="separator:abf2f7f4cfa7c8313d83d265a0bb596c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ff5145af645c4383ca126154d8e0b87" id="r_a5ff5145af645c4383ca126154d8e0b87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a5ff5145af645c4383ca126154d8e0b87">SetTempMaxLimit</a> (<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> max_temp)</td></tr>
+<tr class="memitem:a5ff5145af645c4383ca126154d8e0b87" id="r_a5ff5145af645c4383ca126154d8e0b87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ff5145af645c4383ca126154d8e0b87">SetTempMaxLimit</a> (<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> max_temp)</td></tr>
 <tr class="memdesc:a5ff5145af645c4383ca126154d8e0b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置最高温度限制（掉电保存）  <br /></td></tr>
-<tr class="separator:a5ff5145af645c4383ca126154d8e0b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28875e043c730dd85e8ed06825df5c56" id="r_a28875e043c730dd85e8ed06825df5c56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a28875e043c730dd85e8ed06825df5c56">SetMotorMode</a> (<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> rotation_mode, <a class="el" href="namespacerm.html#ab0024293c4410554bd98c9bb792c8afb">i16</a> speed)</td></tr>
+<tr class="memitem:a28875e043c730dd85e8ed06825df5c56" id="r_a28875e043c730dd85e8ed06825df5c56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28875e043c730dd85e8ed06825df5c56">SetMotorMode</a> (<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> rotation_mode, <a class="el" href="namespacerm.html#ab0024293c4410554bd98c9bb792c8afb">i16</a> speed)</td></tr>
 <tr class="memdesc:a28875e043c730dd85e8ed06825df5c56"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置为电机控制模式  <br /></td></tr>
-<tr class="separator:a28875e043c730dd85e8ed06825df5c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac235b2ace1aba73d1fa09f5d918fefc2" id="r_ac235b2ace1aba73d1fa09f5d918fefc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#ac235b2ace1aba73d1fa09f5d918fefc2">SetServoMode</a> ()</td></tr>
+<tr class="memitem:ac235b2ace1aba73d1fa09f5d918fefc2" id="r_ac235b2ace1aba73d1fa09f5d918fefc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac235b2ace1aba73d1fa09f5d918fefc2">SetServoMode</a> ()</td></tr>
 <tr class="memdesc:ac235b2ace1aba73d1fa09f5d918fefc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置为位置(舵机)控制模式  <br /></td></tr>
-<tr class="separator:ac235b2ace1aba73d1fa09f5d918fefc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30d72569984d867dfc720c0de5739bda" id="r_a30d72569984d867dfc720c0de5739bda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a30d72569984d867dfc720c0de5739bda">SetLoad</a> (bool <a class="el" href="posix__complement_8cc.html#aad50f2b1e136fa0ed2ab2b90c42a80c5">load</a>)</td></tr>
+<tr class="memitem:a30d72569984d867dfc720c0de5739bda" id="r_a30d72569984d867dfc720c0de5739bda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30d72569984d867dfc720c0de5739bda">SetLoad</a> (bool <a class="el" href="posix__complement_8cc.html#aad50f2b1e136fa0ed2ab2b90c42a80c5">load</a>)</td></tr>
 <tr class="memdesc:a30d72569984d867dfc720c0de5739bda"><td class="mdescLeft">&#160;</td><td class="mdescRight">装载/卸载电机  <br /></td></tr>
-<tr class="separator:a30d72569984d867dfc720c0de5739bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21cc63403ee95001481ac14e4365ab6a" id="r_a21cc63403ee95001481ac14e4365ab6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a21cc63403ee95001481ac14e4365ab6a">SetLed</a> (bool on)</td></tr>
+<tr class="memitem:a21cc63403ee95001481ac14e4365ab6a" id="r_a21cc63403ee95001481ac14e4365ab6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21cc63403ee95001481ac14e4365ab6a">SetLed</a> (bool on)</td></tr>
 <tr class="memdesc:a21cc63403ee95001481ac14e4365ab6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 LED 灯状态（掉电保存）  <br /></td></tr>
-<tr class="separator:a21cc63403ee95001481ac14e4365ab6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92e970d47cc7973dec2c7df9249aed1f" id="r_a92e970d47cc7973dec2c7df9249aed1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a92e970d47cc7973dec2c7df9249aed1f">SetLedError</a> (<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> error_flags)</td></tr>
+<tr class="memitem:a92e970d47cc7973dec2c7df9249aed1f" id="r_a92e970d47cc7973dec2c7df9249aed1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92e970d47cc7973dec2c7df9249aed1f">SetLedError</a> (<a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> error_flags)</td></tr>
 <tr class="memdesc:a92e970d47cc7973dec2c7df9249aed1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 LED 故障报警值  <br /></td></tr>
-<tr class="separator:a92e970d47cc7973dec2c7df9249aed1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a007b8fef896dd932b0ec080cadc678a4" id="r_a007b8fef896dd932b0ec080cadc678a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a007b8fef896dd932b0ec080cadc678a4">ReadPosition</a> ()</td></tr>
-<tr class="memdesc:a007b8fef896dd932b0ec080cadc678a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取当前位置（结果通过 <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#aecb591eadb21250b65ae6dd79ee80c41" title="获取反馈数据">feedback()</a> 获取）  <br /></td></tr>
-<tr class="separator:a007b8fef896dd932b0ec080cadc678a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe480f2ede769bd908f32dfe02d06d73" id="r_abe480f2ede769bd908f32dfe02d06d73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#abe480f2ede769bd908f32dfe02d06d73">ReadTemperature</a> ()</td></tr>
+<tr class="memitem:a007b8fef896dd932b0ec080cadc678a4" id="r_a007b8fef896dd932b0ec080cadc678a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a007b8fef896dd932b0ec080cadc678a4">ReadPosition</a> ()</td></tr>
+<tr class="memdesc:a007b8fef896dd932b0ec080cadc678a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取当前位置（结果通过 <a class="el" href="#aecb591eadb21250b65ae6dd79ee80c41" title="获取反馈数据">feedback()</a> 获取）  <br /></td></tr>
+<tr class="memitem:abe480f2ede769bd908f32dfe02d06d73" id="r_abe480f2ede769bd908f32dfe02d06d73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe480f2ede769bd908f32dfe02d06d73">ReadTemperature</a> ()</td></tr>
 <tr class="memdesc:abe480f2ede769bd908f32dfe02d06d73"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取内部温度  <br /></td></tr>
-<tr class="separator:abe480f2ede769bd908f32dfe02d06d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad04527f143a02c138b3fc11d1c503ea3" id="r_ad04527f143a02c138b3fc11d1c503ea3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#ad04527f143a02c138b3fc11d1c503ea3">ReadVoltage</a> ()</td></tr>
+<tr class="memitem:ad04527f143a02c138b3fc11d1c503ea3" id="r_ad04527f143a02c138b3fc11d1c503ea3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad04527f143a02c138b3fc11d1c503ea3">ReadVoltage</a> ()</td></tr>
 <tr class="memdesc:ad04527f143a02c138b3fc11d1c503ea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取输入电压  <br /></td></tr>
-<tr class="separator:ad04527f143a02c138b3fc11d1c503ea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07591188eb0ea9417c030754b6b66813" id="r_a07591188eb0ea9417c030754b6b66813"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a07591188eb0ea9417c030754b6b66813">ReadMotorMode</a> ()</td></tr>
+<tr class="memitem:a07591188eb0ea9417c030754b6b66813" id="r_a07591188eb0ea9417c030754b6b66813"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07591188eb0ea9417c030754b6b66813">ReadMotorMode</a> ()</td></tr>
 <tr class="memdesc:a07591188eb0ea9417c030754b6b66813"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取舵机/电机模式参数  <br /></td></tr>
-<tr class="separator:a07591188eb0ea9417c030754b6b66813"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cb6a000bbc970d039baadaeb11a64a7" id="r_a8cb6a000bbc970d039baadaeb11a64a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a8cb6a000bbc970d039baadaeb11a64a7">ReadLoadStatus</a> ()</td></tr>
+<tr class="memitem:a8cb6a000bbc970d039baadaeb11a64a7" id="r_a8cb6a000bbc970d039baadaeb11a64a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cb6a000bbc970d039baadaeb11a64a7">ReadLoadStatus</a> ()</td></tr>
 <tr class="memdesc:a8cb6a000bbc970d039baadaeb11a64a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取装载/卸载状态  <br /></td></tr>
-<tr class="separator:a8cb6a000bbc970d039baadaeb11a64a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a005ca85e4a17d39a900c3fbd0fd7c89c" id="r_a005ca85e4a17d39a900c3fbd0fd7c89c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a005ca85e4a17d39a900c3fbd0fd7c89c">ReadDistance</a> ()</td></tr>
+<tr class="memitem:a005ca85e4a17d39a900c3fbd0fd7c89c" id="r_a005ca85e4a17d39a900c3fbd0fd7c89c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a005ca85e4a17d39a900c3fbd0fd7c89c">ReadDistance</a> ()</td></tr>
 <tr class="memdesc:a005ca85e4a17d39a900c3fbd0fd7c89c"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取转动距离（4096 脉冲/圈）  <br /></td></tr>
-<tr class="separator:a005ca85e4a17d39a900c3fbd0fd7c89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b7bcaa22c42a809dc21b7f1da32a027" id="r_a1b7bcaa22c42a809dc21b7f1da32a027"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a1b7bcaa22c42a809dc21b7f1da32a027">ReadId</a> ()</td></tr>
+<tr class="memitem:a1b7bcaa22c42a809dc21b7f1da32a027" id="r_a1b7bcaa22c42a809dc21b7f1da32a027"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b7bcaa22c42a809dc21b7f1da32a027">ReadId</a> ()</td></tr>
 <tr class="memdesc:a1b7bcaa22c42a809dc21b7f1da32a027"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取舵机 ID  <br /></td></tr>
-<tr class="separator:a1b7bcaa22c42a809dc21b7f1da32a027"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dc0b5ad85aef6cb17f7e3d312de9bb3" id="r_a1dc0b5ad85aef6cb17f7e3d312de9bb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a1dc0b5ad85aef6cb17f7e3d312de9bb3">ReadAngleOffset</a> ()</td></tr>
+<tr class="memitem:a1dc0b5ad85aef6cb17f7e3d312de9bb3" id="r_a1dc0b5ad85aef6cb17f7e3d312de9bb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dc0b5ad85aef6cb17f7e3d312de9bb3">ReadAngleOffset</a> ()</td></tr>
 <tr class="memdesc:a1dc0b5ad85aef6cb17f7e3d312de9bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取角度偏差  <br /></td></tr>
-<tr class="separator:a1dc0b5ad85aef6cb17f7e3d312de9bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0e8d39a385cdc3fb3ac9a4564316fd9" id="r_ab0e8d39a385cdc3fb3ac9a4564316fd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#ab0e8d39a385cdc3fb3ac9a4564316fd9">ReadAngleLimit</a> ()</td></tr>
+<tr class="memitem:ab0e8d39a385cdc3fb3ac9a4564316fd9" id="r_ab0e8d39a385cdc3fb3ac9a4564316fd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0e8d39a385cdc3fb3ac9a4564316fd9">ReadAngleLimit</a> ()</td></tr>
 <tr class="memdesc:ab0e8d39a385cdc3fb3ac9a4564316fd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取角度限制  <br /></td></tr>
-<tr class="separator:ab0e8d39a385cdc3fb3ac9a4564316fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a886a2612e7289fd9e225afab38b48b8f" id="r_a886a2612e7289fd9e225afab38b48b8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a886a2612e7289fd9e225afab38b48b8f">ReadVinLimit</a> ()</td></tr>
+<tr class="memitem:a886a2612e7289fd9e225afab38b48b8f" id="r_a886a2612e7289fd9e225afab38b48b8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a886a2612e7289fd9e225afab38b48b8f">ReadVinLimit</a> ()</td></tr>
 <tr class="memdesc:a886a2612e7289fd9e225afab38b48b8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取电压限制  <br /></td></tr>
-<tr class="separator:a886a2612e7289fd9e225afab38b48b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb0dea53266aeacb4f8646392f5f3e4b" id="r_adb0dea53266aeacb4f8646392f5f3e4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#adb0dea53266aeacb4f8646392f5f3e4b">ReadTempMaxLimit</a> ()</td></tr>
+<tr class="memitem:adb0dea53266aeacb4f8646392f5f3e4b" id="r_adb0dea53266aeacb4f8646392f5f3e4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb0dea53266aeacb4f8646392f5f3e4b">ReadTempMaxLimit</a> ()</td></tr>
 <tr class="memdesc:adb0dea53266aeacb4f8646392f5f3e4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取最高温度限制  <br /></td></tr>
-<tr class="separator:adb0dea53266aeacb4f8646392f5f3e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a036a86d9c97788fac0a3a688c7294751" id="r_a036a86d9c97788fac0a3a688c7294751"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a036a86d9c97788fac0a3a688c7294751">ReadMoveTime</a> ()</td></tr>
+<tr class="memitem:a036a86d9c97788fac0a3a688c7294751" id="r_a036a86d9c97788fac0a3a688c7294751"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a036a86d9c97788fac0a3a688c7294751">ReadMoveTime</a> ()</td></tr>
 <tr class="memdesc:a036a86d9c97788fac0a3a688c7294751"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取 MoveTime 写入的角度和时间  <br /></td></tr>
-<tr class="separator:a036a86d9c97788fac0a3a688c7294751"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2380ff56f8aa7d3ae323fbfc658c7b8d" id="r_a2380ff56f8aa7d3ae323fbfc658c7b8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2380ff56f8aa7d3ae323fbfc658c7b8d">ReadMoveTimeWait</a> ()</td></tr>
+<tr class="memitem:a2380ff56f8aa7d3ae323fbfc658c7b8d" id="r_a2380ff56f8aa7d3ae323fbfc658c7b8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2380ff56f8aa7d3ae323fbfc658c7b8d">ReadMoveTimeWait</a> ()</td></tr>
 <tr class="memdesc:a2380ff56f8aa7d3ae323fbfc658c7b8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取 MoveTimeWait 写入的角度和时间  <br /></td></tr>
-<tr class="separator:a2380ff56f8aa7d3ae323fbfc658c7b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacb2dea5b92ed11732d1dcb5b17d0d33" id="r_aacb2dea5b92ed11732d1dcb5b17d0d33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#aacb2dea5b92ed11732d1dcb5b17d0d33">ReadLedCtrl</a> ()</td></tr>
+<tr class="memitem:aacb2dea5b92ed11732d1dcb5b17d0d33" id="r_aacb2dea5b92ed11732d1dcb5b17d0d33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aacb2dea5b92ed11732d1dcb5b17d0d33">ReadLedCtrl</a> ()</td></tr>
 <tr class="memdesc:aacb2dea5b92ed11732d1dcb5b17d0d33"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取 LED 灯状态  <br /></td></tr>
-<tr class="separator:aacb2dea5b92ed11732d1dcb5b17d0d33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebb13800204b5893fa546ba83ccefcdd" id="r_aebb13800204b5893fa546ba83ccefcdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#aebb13800204b5893fa546ba83ccefcdd">ReadLedError</a> ()</td></tr>
+<tr class="memitem:aebb13800204b5893fa546ba83ccefcdd" id="r_aebb13800204b5893fa546ba83ccefcdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebb13800204b5893fa546ba83ccefcdd">ReadLedError</a> ()</td></tr>
 <tr class="memdesc:aebb13800204b5893fa546ba83ccefcdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取 LED 故障报警值  <br /></td></tr>
-<tr class="separator:aebb13800204b5893fa546ba83ccefcdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecb591eadb21250b65ae6dd79ee80c41" id="r_aecb591eadb21250b65ae6dd79ee80c41"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structrm_1_1device_1_1HiWonderServo_1_1Feedback.html">Feedback</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#aecb591eadb21250b65ae6dd79ee80c41">feedback</a> () const</td></tr>
+<tr class="memitem:aecb591eadb21250b65ae6dd79ee80c41" id="r_aecb591eadb21250b65ae6dd79ee80c41"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structrm_1_1device_1_1HiWonderServo_1_1Feedback.html">Feedback</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecb591eadb21250b65ae6dd79ee80c41">feedback</a> () const</td></tr>
 <tr class="memdesc:aecb591eadb21250b65ae6dd79ee80c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取反馈数据  <br /></td></tr>
-<tr class="separator:aecb591eadb21250b65ae6dd79ee80c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35442a7a19d5a36ef198b6442ee23cf5" id="r_a35442a7a19d5a36ef198b6442ee23cf5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a35442a7a19d5a36ef198b6442ee23cf5">angle_deg</a> () const</td></tr>
+<tr class="memitem:a35442a7a19d5a36ef198b6442ee23cf5" id="r_a35442a7a19d5a36ef198b6442ee23cf5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35442a7a19d5a36ef198b6442ee23cf5">angle_deg</a> () const</td></tr>
 <tr class="memdesc:a35442a7a19d5a36ef198b6442ee23cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前角度（度）  <br /></td></tr>
-<tr class="separator:a35442a7a19d5a36ef198b6442ee23cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a159c9a96db976188816dc254850eb3db" id="r_a159c9a96db976188816dc254850eb3db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a159c9a96db976188816dc254850eb3db">voltage_v</a> () const</td></tr>
+<tr class="memitem:a159c9a96db976188816dc254850eb3db" id="r_a159c9a96db976188816dc254850eb3db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a159c9a96db976188816dc254850eb3db">voltage_v</a> () const</td></tr>
 <tr class="memdesc:a159c9a96db976188816dc254850eb3db"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前输入电压（伏）  <br /></td></tr>
-<tr class="separator:a159c9a96db976188816dc254850eb3db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classrm_1_1device_1_1Device"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrm_1_1device_1_1Device')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classrm_1_1device_1_1Device.html">rm::device::Device</a></td></tr>
+<tr class="inherit_header pub_methods_classrm_1_1device_1_1Device"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classrm_1_1device_1_1Device')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public 成员函数 继承自 <a class="el" href="classrm_1_1device_1_1Device.html">rm::device::Device</a></td></tr>
 <tr class="memitem:a769d2371dac57ae08f5a17948bbdefd6 inherit pub_methods_classrm_1_1device_1_1Device" id="r_a769d2371dac57ae08f5a17948bbdefd6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a> ()</td></tr>
-<tr class="separator:a769d2371dac57ae08f5a17948bbdefd6 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc47f697e77010da09e8449f3d5a9094 inherit pub_methods_classrm_1_1device_1_1Device" id="r_abc47f697e77010da09e8449f3d5a9094"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#abc47f697e77010da09e8449f3d5a9094">~Device</a> ()=default</td></tr>
-<tr class="separator:abc47f697e77010da09e8449f3d5a9094 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22e0f01c25af7b2249c60764c190a60e inherit pub_methods_classrm_1_1device_1_1Device" id="r_a22e0f01c25af7b2249c60764c190a60e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a22e0f01c25af7b2249c60764c190a60e">Device</a> (const <a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;other)</td></tr>
+<tr class="memitem:a22e0f01c25af7b2249c60764c190a60e inherit pub_methods_classrm_1_1device_1_1Device" id="r_a22e0f01c25af7b2249c60764c190a60e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a22e0f01c25af7b2249c60764c190a60e">Device</a> (const Device &amp;other)</td></tr>
 <tr class="memdesc:a22e0f01c25af7b2249c60764c190a60e inherit pub_methods_classrm_1_1device_1_1Device"><td class="mdescLeft">&#160;</td><td class="mdescRight">拷贝构造：新设备获得全新UUID（拷贝产生独立设备），状态重置为未知  <br /></td></tr>
-<tr class="separator:a22e0f01c25af7b2249c60764c190a60e inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2e07a67e6895a52cd8fdc47230d8e26 inherit pub_methods_classrm_1_1device_1_1Device" id="r_af2e07a67e6895a52cd8fdc47230d8e26"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#af2e07a67e6895a52cd8fdc47230d8e26">operator=</a> (const <a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;other)</td></tr>
+<tr class="memitem:af2e07a67e6895a52cd8fdc47230d8e26 inherit pub_methods_classrm_1_1device_1_1Device" id="r_af2e07a67e6895a52cd8fdc47230d8e26"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#af2e07a67e6895a52cd8fdc47230d8e26">operator=</a> (const <a class="el" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a> &amp;other)</td></tr>
 <tr class="memdesc:af2e07a67e6895a52cd8fdc47230d8e26 inherit pub_methods_classrm_1_1device_1_1Device"><td class="mdescLeft">&#160;</td><td class="mdescRight">拷贝赋值：UUID不变（对象身份已确立），更新配置并重置运行状态  <br /></td></tr>
-<tr class="separator:af2e07a67e6895a52cd8fdc47230d8e26 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d145a85f46dee7d3c94d4a9066c869c inherit pub_methods_classrm_1_1device_1_1Device" id="r_a5d145a85f46dee7d3c94d4a9066c869c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a5d145a85f46dee7d3c94d4a9066c869c">Device</a> (<a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="memitem:a5d145a85f46dee7d3c94d4a9066c869c inherit pub_methods_classrm_1_1device_1_1Device" id="r_a5d145a85f46dee7d3c94d4a9066c869c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a5d145a85f46dee7d3c94d4a9066c869c">Device</a> (Device &amp;&amp;other) noexcept</td></tr>
 <tr class="memdesc:a5d145a85f46dee7d3c94d4a9066c869c inherit pub_methods_classrm_1_1device_1_1Device"><td class="mdescLeft">&#160;</td><td class="mdescRight">移动构造：新设备继承源的UUID（身份随对象转移），源UUID置0（无效）  <br /></td></tr>
-<tr class="separator:a5d145a85f46dee7d3c94d4a9066c869c inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6da81afd52002bc5b90e25599432951d inherit pub_methods_classrm_1_1device_1_1Device" id="r_a6da81afd52002bc5b90e25599432951d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a6da81afd52002bc5b90e25599432951d">operator=</a> (<a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="memitem:a6da81afd52002bc5b90e25599432951d inherit pub_methods_classrm_1_1device_1_1Device" id="r_a6da81afd52002bc5b90e25599432951d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a6da81afd52002bc5b90e25599432951d">operator=</a> (<a class="el" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a> &amp;&amp;other) noexcept</td></tr>
 <tr class="memdesc:a6da81afd52002bc5b90e25599432951d inherit pub_methods_classrm_1_1device_1_1Device"><td class="mdescLeft">&#160;</td><td class="mdescRight">移动赋值：UUID继承自源，源UUID置0（无效）  <br /></td></tr>
-<tr class="separator:a6da81afd52002bc5b90e25599432951d inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a227f58f357e464c7699866378a89b7dc inherit pub_methods_classrm_1_1device_1_1Device" id="r_a227f58f357e464c7699866378a89b7dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a227f58f357e464c7699866378a89b7dc">SetHeartbeatTimeout</a> (duration timeout)</td></tr>
 <tr class="memdesc:a227f58f357e464c7699866378a89b7dc inherit pub_methods_classrm_1_1device_1_1Device"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置心跳超时时间  <br /></td></tr>
-<tr class="separator:a227f58f357e464c7699866378a89b7dc inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f6f6615cf259068c236883523608332 inherit pub_methods_classrm_1_1device_1_1Device" id="r_a4f6f6615cf259068c236883523608332"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a4f6f6615cf259068c236883523608332">online_status</a> ()</td></tr>
-<tr class="separator:a4f6f6615cf259068c236883523608332 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f1b8eb171231fad7f23adac2879224b inherit pub_methods_classrm_1_1device_1_1Device" id="r_a0f1b8eb171231fad7f23adac2879224b"><td class="memItemLeft" align="right" valign="top">time_point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a0f1b8eb171231fad7f23adac2879224b">last_seen</a> () const</td></tr>
-<tr class="separator:a0f1b8eb171231fad7f23adac2879224b inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bbe2925440ed64a15987789a7cdca90 inherit pub_methods_classrm_1_1device_1_1Device" id="r_a8bbe2925440ed64a15987789a7cdca90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a8bbe2925440ed64a15987789a7cdca90">SetName</a> (etl::string&lt; kMaxNameLength &gt; <a class="el" href="classrm_1_1device_1_1Device.html#ada247da2f27c1e0c4862f526486c78f4">name</a>)</td></tr>
 <tr class="memdesc:a8bbe2925440ed64a15987789a7cdca90 inherit pub_methods_classrm_1_1device_1_1Device"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置设备名称  <br /></td></tr>
-<tr class="separator:a8bbe2925440ed64a15987789a7cdca90 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada247da2f27c1e0c4862f526486c78f4 inherit pub_methods_classrm_1_1device_1_1Device" id="r_ada247da2f27c1e0c4862f526486c78f4"><td class="memItemLeft" align="right" valign="top">etl::string&lt; kMaxNameLength &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#ada247da2f27c1e0c4862f526486c78f4">name</a> () const</td></tr>
 <tr class="memdesc:ada247da2f27c1e0c4862f526486c78f4 inherit pub_methods_classrm_1_1device_1_1Device"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备名称  <br /></td></tr>
-<tr class="separator:ada247da2f27c1e0c4862f526486c78f4 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afba35a1dcfa7345a26ace72fa058c379 inherit pub_methods_classrm_1_1device_1_1Device" id="r_afba35a1dcfa7345a26ace72fa058c379"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#a0863ccbdab2c54f662053f0496ed09f4">u64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#afba35a1dcfa7345a26ace72fa058c379">uuid</a> () const</td></tr>
 <tr class="memdesc:afba35a1dcfa7345a26ace72fa058c379 inherit pub_methods_classrm_1_1device_1_1Device"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取设备唯一标识符  <br /></td></tr>
-<tr class="separator:afba35a1dcfa7345a26ace72fa058c379 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabf4f42581be1e528ff795b4954d9a58 inherit pub_methods_classrm_1_1device_1_1Device" id="r_aabf4f42581be1e528ff795b4954d9a58"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#aabf4f42581be1e528ff795b4954d9a58">operator==</a> (const <a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;other) const</td></tr>
+<tr class="memitem:aabf4f42581be1e528ff795b4954d9a58 inherit pub_methods_classrm_1_1device_1_1Device" id="r_aabf4f42581be1e528ff795b4954d9a58"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#aabf4f42581be1e528ff795b4954d9a58">operator==</a> (const <a class="el" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a> &amp;other) const</td></tr>
 <tr class="memdesc:aabf4f42581be1e528ff795b4954d9a58 inherit pub_methods_classrm_1_1device_1_1Device"><td class="mdescLeft">&#160;</td><td class="mdescRight">相等比较：两个设备对象的UUID相同则视为同一设备  <br /></td></tr>
-<tr class="separator:aabf4f42581be1e528ff795b4954d9a58 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6762266bdd191a7f70f2a7e4d3a03412 inherit pub_methods_classrm_1_1device_1_1Device" id="r_a6762266bdd191a7f70f2a7e4d3a03412"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a6762266bdd191a7f70f2a7e4d3a03412">operator!=</a> (const <a class="el" href="classrm_1_1device_1_1Device.html">Device</a> &amp;other) const</td></tr>
+<tr class="memitem:a6762266bdd191a7f70f2a7e4d3a03412 inherit pub_methods_classrm_1_1device_1_1Device" id="r_a6762266bdd191a7f70f2a7e4d3a03412"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a6762266bdd191a7f70f2a7e4d3a03412">operator!=</a> (const <a class="el" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a> &amp;other) const</td></tr>
 <tr class="memdesc:a6762266bdd191a7f70f2a7e4d3a03412 inherit pub_methods_classrm_1_1device_1_1Device"><td class="mdescLeft">&#160;</td><td class="mdescRight">不等比较  <br /></td></tr>
-<tr class="separator:a6762266bdd191a7f70f2a7e4d3a03412 inherit pub_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 额外继承的成员函数</h2></td></tr>
-<tr class="inherit_header pro_methods_classrm_1_1device_1_1Device"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classrm_1_1device_1_1Device')"><img src="closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="classrm_1_1device_1_1Device.html">rm::device::Device</a></td></tr>
+<tr class="inherit_header pro_methods_classrm_1_1device_1_1Device"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classrm_1_1device_1_1Device')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected 成员函数 继承自 <a class="el" href="classrm_1_1device_1_1Device.html">rm::device::Device</a></td></tr>
 <tr class="memitem:a7cc99f092ea347a682754478b34e489a inherit pro_methods_classrm_1_1device_1_1Device" id="r_a7cc99f092ea347a682754478b34e489a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1Device.html#a7cc99f092ea347a682754478b34e489a">ReportStatus</a> (<a class="el" href="classrm_1_1device_1_1Device.html#a16a7bedc3fb137033e1537713d3626bc">Status</a> status)</td></tr>
 <tr class="memdesc:a7cc99f092ea347a682754478b34e489a inherit pro_methods_classrm_1_1device_1_1Device"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新设备状态  <br /></td></tr>
-<tr class="separator:a7cc99f092ea347a682754478b34e489a inherit pro_methods_classrm_1_1device_1_1Device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
 <div class="textblock"><p>幻尔串口总线舵机驱动类 </p>
 <dl class="section note"><dt>注解</dt><dd>已在LX-20S、HTS-35H两款舵机上测试过可用，其他型号理论上也适用</dd></dl>
 <p>硬件连接：MCU UART TX/RX 经 74HC126 三态缓冲器连接到舵机总线</p><ul>
@@ -333,7 +274,7 @@ Public 成员函数</h2></td></tr>
 <li>RX_EN GPIO：高电平使能接收通道</li>
 </ul>
 <dl class="section note"><dt>注解</dt><dd>收发互斥：发送时 TX_EN=1, RX_EN=0；发送完成后切回 TX_EN=0, RX_EN=1 </dd></dl>
-</div><h2 class="groupheader">成员枚举类型说明</h2>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">成员枚举类型说明</h2>
 <a id="a2b28033c1ef523d1c007d26fff95ac0a" name="a2b28033c1ef523d1c007d26fff95ac0a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b28033c1ef523d1c007d26fff95ac0a">&#9670;&#160;</a></span>Cmd</h2>
 
@@ -344,12 +285,12 @@ Public 成员函数</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum class <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#a2b28033c1ef523d1c007d26fff95ac0a">rm::device::HiWonderServo::Cmd</a> : <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a></td>
+          <td class="memname">enum class <a class="el" href="#a2b28033c1ef523d1c007d26fff95ac0a">rm::device::HiWonderServo::Cmd</a> : <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -389,7 +330,7 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">构造及析构函数说明</h2>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">构造及析构函数说明</h2>
 <a id="a33ed5869b452b02e4b78fcd8676c75b0" name="a33ed5869b452b02e4b78fcd8676c75b0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a33ed5869b452b02e4b78fcd8676c75b0">&#9670;&#160;</a></span>HiWonderServo()</h2>
 
@@ -399,31 +340,22 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">rm::device::HiWonderServo::HiWonderServo </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classrm_1_1hal_1_1AsyncSerialInterface.html">hal::AsyncSerialInterface</a> &amp;&#160;</td>
-          <td class="paramname"><em>serial</em>, </td>
+          <td class="paramtype"><a class="el" href="classrm_1_1hal_1_1AsyncSerialInterface.html">hal::AsyncSerialInterface</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>serial</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classrm_1_1hal_1_1PinInterface.html">hal::PinInterface</a> &amp;&#160;</td>
-          <td class="paramname"><em>tx_en</em>, </td>
+          <td class="paramtype"><a class="el" href="classrm_1_1hal_1_1PinInterface.html">hal::PinInterface</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>tx_en</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classrm_1_1hal_1_1PinInterface.html">hal::PinInterface</a> &amp;&#160;</td>
-          <td class="paramname"><em>rx_en</em>, </td>
+          <td class="paramtype"><a class="el" href="classrm_1_1hal_1_1PinInterface.html">hal::PinInterface</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>rx_en</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
-          <td class="paramname"><em>servo_id</em> = <code>1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a></td>          <td class="paramname"><span class="paramname"><em>servo_id</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -453,20 +385,20 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">rm::device::HiWonderServo::~HiWonderServo </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel default">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<h2 class="groupheader">成员函数说明</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">成员函数说明</h2>
 <a id="a35442a7a19d5a36ef198b6442ee23cf5" name="a35442a7a19d5a36ef198b6442ee23cf5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a35442a7a19d5a36ef198b6442ee23cf5">&#9670;&#160;</a></span>angle_deg()</h2>
 
@@ -479,13 +411,13 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::device::HiWonderServo::angle_deg </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -504,8 +436,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::AngleOffsetAdjust </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a84a0841eb16500b4c863280974adffc8">i8</a>&#160;</td>
-          <td class="paramname"><em>offset</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a84a0841eb16500b4c863280974adffc8">i8</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -530,7 +461,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::AngleOffsetSave </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -552,13 +483,13 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">const <a class="el" href="structrm_1_1device_1_1HiWonderServo_1_1Feedback.html">Feedback</a> &amp; rm::device::HiWonderServo::feedback </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -577,7 +508,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::MoveStart </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -596,7 +527,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::MoveStop </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -615,19 +546,12 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::MoveTime </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>angle</em>, </td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a></td>          <td class="paramname"><span class="paramname"><em>angle</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>time_ms</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a></td>          <td class="paramname"><span class="paramname"><em>time_ms</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -652,19 +576,12 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::MoveTimeWait </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>angle</em>, </td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a></td>          <td class="paramname"><span class="paramname"><em>angle</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>time_ms</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a></td>          <td class="paramname"><span class="paramname"><em>time_ms</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -689,7 +606,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::ReadAngleLimit </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -708,7 +625,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::ReadAngleOffset </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -727,7 +644,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::ReadDistance </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -746,7 +663,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::ReadId </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -765,7 +682,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::ReadLedCtrl </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -784,7 +701,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::ReadLedError </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -803,7 +720,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::ReadLoadStatus </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -822,7 +739,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::ReadMotorMode </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -841,7 +758,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::ReadMoveTime </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -860,7 +777,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::ReadMoveTimeWait </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -879,13 +796,13 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::ReadPosition </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>读取当前位置（结果通过 <a class="el" href="classrm_1_1device_1_1HiWonderServo.html#aecb591eadb21250b65ae6dd79ee80c41" title="获取反馈数据">feedback()</a> 获取） </p>
+<p>读取当前位置（结果通过 <a class="el" href="#aecb591eadb21250b65ae6dd79ee80c41" title="获取反馈数据">feedback()</a> 获取） </p>
 
 </div>
 </div>
@@ -898,7 +815,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::ReadTemperature </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -917,7 +834,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::ReadTempMaxLimit </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -936,7 +853,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::ReadVinLimit </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -955,7 +872,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::ReadVoltage </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -974,19 +891,12 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::SetAngleLimit </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>min_angle</em>, </td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a></td>          <td class="paramname"><span class="paramname"><em>min_angle</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>max_angle</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a></td>          <td class="paramname"><span class="paramname"><em>max_angle</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1011,8 +921,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::SetId </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
-          <td class="paramname"><em>new_id</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a></td>          <td class="paramname"><span class="paramname"><em>new_id</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1037,8 +946,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::SetLed </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>on</em></td><td>)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>on</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1063,8 +971,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::SetLedError </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
-          <td class="paramname"><em>error_flags</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a></td>          <td class="paramname"><span class="paramname"><em>error_flags</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1089,8 +996,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::SetLoad </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>load</em></td><td>)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>load</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1115,19 +1021,12 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::SetMotorMode </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
-          <td class="paramname"><em>rotation_mode</em>, </td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a></td>          <td class="paramname"><span class="paramname"><em>rotation_mode</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#ab0024293c4410554bd98c9bb792c8afb">i16</a>&#160;</td>
-          <td class="paramname"><em>speed</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#ab0024293c4410554bd98c9bb792c8afb">i16</a></td>          <td class="paramname"><span class="paramname"><em>speed</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1152,7 +1051,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::SetServoMode </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1171,8 +1070,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::SetTempMaxLimit </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
-          <td class="paramname"><em>max_temp</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a></td>          <td class="paramname"><span class="paramname"><em>max_temp</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1197,19 +1095,12 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::HiWonderServo::SetVinLimit </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>min_mv</em>, </td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a></td>          <td class="paramname"><span class="paramname"><em>min_mv</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>max_mv</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a></td>          <td class="paramname"><span class="paramname"><em>max_mv</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1237,13 +1128,13 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::device::HiWonderServo::voltage_v </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1258,11 +1149,19 @@ Public 成员函数</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1device.html">device</a></li><li class="navelem"><a class="el" href="classrm_1_1device_1_1HiWonderServo.html">HiWonderServo</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="namespacerm.html">rm</a></li><li class="navelem"><a href="namespacerm_1_1device.html">device</a></li><li class="navelem"><a href="classrm_1_1device_1_1HiWonderServo.html">HiWonderServo</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

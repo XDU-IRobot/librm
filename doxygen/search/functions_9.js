@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['i2cdevice_0',['i2cdevice',['../classrm_1_1hal_1_1stm32_1_1I2cDevice.html#af87a3d3066d6c9416b54a597e3f9c5cd',1,'rm::hal::stm32::I2cDevice::I2cDevice()=delete'],['../classrm_1_1hal_1_1stm32_1_1I2cDevice.html#a33f55aca7de345bb7f2decc7c6b7e715',1,'rm::hal::stm32::I2cDevice::I2cDevice(I2C_HandleTypeDef &amp;hi2c, u8 addr)']]],
+  ['i2cdevice_0',['I2cDevice',['../classrm_1_1hal_1_1stm32_1_1I2cDevice.html#a33f55aca7de345bb7f2decc7c6b7e715',1,'rm::hal::stm32::I2cDevice::I2cDevice(I2C_HandleTypeDef &amp;hi2c, u8 addr)'],['../classrm_1_1hal_1_1stm32_1_1I2cDevice.html#af87a3d3066d6c9416b54a597e3f9c5cd',1,'rm::hal::stm32::I2cDevice::I2cDevice()=delete']]],
   ['i_5fout_1',['i_out',['../classrm_1_1modules_1_1PID.html#a9e143ca727169c9f6acfbb7a574ae01d',1,'rm::modules::PID']]],
   ['if_2',['if',['../posix__complement_8cc.html#ac493246ec9093de1d549a98cf73436ad',1,'posix_complement.cc']]],
   ['ignorefirstupdate_3',['IgnoreFirstUpdate',['../classrm_1_1modules_1_1SparseValueWatcher.html#a985f1d11980b246a9bee0d61cddfb6ae',1,'rm::modules::SparseValueWatcher']]],
@@ -15,7 +15,8 @@ var searchData=
   ['iq_12',['iq',['../classrm_1_1device_1_1DirectDriveMotor.html#a557c8a3dd0258653e3f53d3f2ae7065e',1,'rm::device::DirectDriveMotor']]],
   ['is_5fplaying_13',['is_playing',['../classrm_1_1modules_1_1BuzzerController.html#ab7f99be1d4c21286925d45639083bdf7',1,'rm::modules::BuzzerController']]],
   ['isattarget_14',['IsAtTarget',['../classrm_1_1modules_1_1TrajectoryLimiter.html#abe897160321ce0eee11cfa3c4d56549d',1,'rm::modules::TrajectoryLimiter']]],
-  ['isnear_15',['IsNear',['../namespacerm_1_1modules.html#a5d06b64889d0ca5b83a1fd556ddb9af1',1,'rm::modules']]],
-  ['ist8310_16',['IST8310',['../classrm_1_1device_1_1IST8310.html#adc29189f5172661abd3e671cf2bf9ee0',1,'rm::device::IST8310']]],
-  ['istxbusy_17',['istxbusy',['../classrm_1_1hal_1_1linux___1_1Serial.html#a7828fa3a80db91737c4ad14aec808e93',1,'rm::hal::linux_::Serial::IsTxBusy()'],['../classrm_1_1hal_1_1AsyncWritable.html#ad07ab48c1b98a39a690fe95dedd21241',1,'rm::hal::AsyncWritable::IsTxBusy()'],['../classrm_1_1hal_1_1stm32_1_1Uart.html#ad9045c5281f44dcfaa75dd4d3a2250f3',1,'rm::hal::stm32::Uart::IsTxBusy()']]]
+  ['islegallength_15',['IsLegalLength',['../structrm_1_1hal_1_1CanFrame.html#a6b9eb932afe19eada6d0a8feec6ea736',1,'rm::hal::CanFrame']]],
+  ['isnear_16',['IsNear',['../namespacerm_1_1modules.html#a5d06b64889d0ca5b83a1fd556ddb9af1',1,'rm::modules']]],
+  ['ist8310_17',['IST8310',['../classrm_1_1device_1_1IST8310.html#adc29189f5172661abd3e671cf2bf9ee0',1,'rm::device::IST8310']]],
+  ['istxbusy_18',['IsTxBusy',['../classrm_1_1hal_1_1linux___1_1Serial.html#a7828fa3a80db91737c4ad14aec808e93',1,'rm::hal::linux_::Serial::IsTxBusy()'],['../classrm_1_1hal_1_1AsyncWritable.html#ad07ab48c1b98a39a690fe95dedd21241',1,'rm::hal::AsyncWritable::IsTxBusy()'],['../classrm_1_1hal_1_1stm32_1_1Uart.html#ad9045c5281f44dcfaa75dd4d3a2250f3',1,'rm::hal::stm32::Uart::IsTxBusy()']]]
 ];

@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: rm::hal::SyncWritable类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classrm_1_1hal_1_1SyncWritable.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('classrm_1_1hal_1_1SyncWritable.html','','classrm_1_1hal_1_1SyncWritable-members'); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -91,24 +90,20 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1SyncWritable.html','
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public 成员函数</a> &#124;
-<a href="#pub-static-attribs">静态 Public 属性</a> &#124;
-<a href="classrm_1_1hal_1_1SyncWritable-members.html">所有成员列表</a>  </div>
-  <div class="headertitle"><div class="title">rm::hal::SyncWritable类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+  <div class="headertitle"><div class="title">rm::hal::SyncWritable类 参考<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>同步写接口  
- <a href="classrm_1_1hal_1_1SyncWritable.html#details">更多...</a></p>
+ <a href="#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="serial__interface_8hpp_source.html">serial_interface.hpp</a>&gt;</code></p>
 <div class="dynheader">
 类 rm::hal::SyncWritable 继承关系图:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classrm_1_1hal_1_1SyncWritable.png" usemap="#rm::hal::SyncWritable_map" alt=""/>
-  <map id="rm::hal::SyncWritable_map" name="rm::hal::SyncWritable_map">
+  <img src="classrm_1_1hal_1_1SyncWritable.png" usemap="#rm_3A_3Ahal_3A_3ASyncWritable_map" alt=""/>
+  <map id="rm_3A_3Ahal_3A_3ASyncWritable_map" name="rm_3A_3Ahal_3A_3ASyncWritable_map">
 <area href="classrm_1_1hal_1_1SerialInterface.html" title="同步写 + 异步读（最常用的嵌入式串口组合）" alt="rm::hal::SerialInterface" shape="rect" coords="103,56,300,80"/>
 <area href="classrm_1_1hal_1_1SyncSerialInterface.html" title="同步写 + 同步读" alt="rm::hal::SyncSerialInterface" shape="rect" coords="414,56,611,80"/>
 <area href="classrm_1_1hal_1_1linux___1_1Serial.html" title="基于 boost::asio::serial_port 的串口封装" alt="rm::hal::linux_::Serial" shape="rect" coords="0,112,197,136"/>
@@ -117,27 +112,23 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1SyncWritable.html','
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a97637f6fcf8d1d40ae4ef41885875af8" id="r_a97637f6fcf8d1d40ae4ef41885875af8"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SyncWritable.html#a97637f6fcf8d1d40ae4ef41885875af8">~SyncWritable</a> ()=default</td></tr>
-<tr class="separator:a97637f6fcf8d1d40ae4ef41885875af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a051dfdc67553b3369f63e8f0fde79981" id="r_a051dfdc67553b3369f63e8f0fde79981"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SyncWritable.html#a051dfdc67553b3369f63e8f0fde79981">Write</a> (const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *data, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size, <a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> timeout_ms)=0</td></tr>
+<tr class="memitem:a97637f6fcf8d1d40ae4ef41885875af8" id="r_a97637f6fcf8d1d40ae4ef41885875af8"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97637f6fcf8d1d40ae4ef41885875af8">~SyncWritable</a> ()=default</td></tr>
+<tr class="memitem:a051dfdc67553b3369f63e8f0fde79981" id="r_a051dfdc67553b3369f63e8f0fde79981"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a051dfdc67553b3369f63e8f0fde79981">Write</a> (const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *data, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size, <a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> timeout_ms)=0</td></tr>
 <tr class="memdesc:a051dfdc67553b3369f63e8f0fde79981"><td class="mdescLeft">&#160;</td><td class="mdescRight">阻塞发送  <br /></td></tr>
-<tr class="separator:a051dfdc67553b3369f63e8f0fde79981"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a4601aaf55b12036a44590b4c71b4cd" id="r_a2a4601aaf55b12036a44590b4c71b4cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SyncWritable.html#a2a4601aaf55b12036a44590b4c71b4cd">Write</a> (const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *data, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size)</td></tr>
+<tr class="memitem:a2a4601aaf55b12036a44590b4c71b4cd" id="r_a2a4601aaf55b12036a44590b4c71b4cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a4601aaf55b12036a44590b4c71b4cd">Write</a> (const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *data, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size)</td></tr>
 <tr class="memdesc:a2a4601aaf55b12036a44590b4c71b4cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">无超时限制的便捷重载（不带 timeout_ms 的调用方无需修改）  <br /></td></tr>
-<tr class="separator:a2a4601aaf55b12036a44590b4c71b4cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 静态 Public 属性</h2></td></tr>
-<tr class="memitem:aefabda3e26272e2f1d233ed7c627489d" id="r_aefabda3e26272e2f1d233ed7c627489d"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1SyncWritable.html#aefabda3e26272e2f1d233ed7c627489d">kNoTimeout</a> = 0xFFFFFFFFU</td></tr>
+<tr class="memitem:aefabda3e26272e2f1d233ed7c627489d" id="r_aefabda3e26272e2f1d233ed7c627489d"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefabda3e26272e2f1d233ed7c627489d">kNoTimeout</a> = 0xFFFFFFFFU</td></tr>
 <tr class="memdesc:aefabda3e26272e2f1d233ed7c627489d"><td class="mdescLeft">&#160;</td><td class="mdescRight">无超时限制（等待到完成为止）  <br /></td></tr>
-<tr class="separator:aefabda3e26272e2f1d233ed7c627489d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
 <div class="textblock"><p>同步写接口 </p>
-<dl class="section note"><dt>注解</dt><dd><a class="el" href="classrm_1_1hal_1_1SyncWritable.html#a051dfdc67553b3369f63e8f0fde79981" title="阻塞发送">Write()</a> 保证在所有字节完全发出（或超时）后才返回，对半双工 GPIO 切换方向安全 </dd></dl>
-</div><h2 class="groupheader">构造及析构函数说明</h2>
+<dl class="section note"><dt>注解</dt><dd><a class="el" href="#a051dfdc67553b3369f63e8f0fde79981" title="阻塞发送">Write()</a> 保证在所有字节完全发出（或超时）后才返回，对半双工 GPIO 切换方向安全 </dd></dl>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">构造及析构函数说明</h2>
 <a id="a97637f6fcf8d1d40ae4ef41885875af8" name="a97637f6fcf8d1d40ae4ef41885875af8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a97637f6fcf8d1d40ae4ef41885875af8">&#9670;&#160;</a></span>~SyncWritable()</h2>
 
@@ -150,20 +141,20 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">virtual rm::hal::SyncWritable::~SyncWritable </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<h2 class="groupheader">成员函数说明</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">成员函数说明</h2>
 <a id="a2a4601aaf55b12036a44590b4c71b4cd" name="a2a4601aaf55b12036a44590b4c71b4cd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2a4601aaf55b12036a44590b4c71b4cd">&#9670;&#160;</a></span>Write() <span class="overload">[1/2]</span></h2>
 
@@ -176,24 +167,17 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::hal::SyncWritable::Write </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
+          <td class="paramtype">const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -214,30 +198,22 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">virtual void rm::hal::SyncWritable::Write </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
+          <td class="paramtype">const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td>
-          <td class="paramname"><em>timeout_ms</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a></td>          <td class="paramname"><span class="paramname"><em>timeout_ms</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -256,7 +232,7 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">类成员变量说明</h2>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">类成员变量说明</h2>
 <a id="aefabda3e26272e2f1d233ed7c627489d" name="aefabda3e26272e2f1d233ed7c627489d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aefabda3e26272e2f1d233ed7c627489d">&#9670;&#160;</a></span>kNoTimeout</h2>
 
@@ -267,12 +243,12 @@ Public 成员函数</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> rm::hal::SyncWritable::kNoTimeout = 0xFFFFFFFFU</td>
+          <td class="memname"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> rm::hal::SyncWritable::kNoTimeout = 0xFFFFFFFFU</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -286,11 +262,19 @@ Public 成员函数</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1hal.html">hal</a></li><li class="navelem"><a class="el" href="classrm_1_1hal_1_1SyncWritable.html">SyncWritable</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="namespacerm.html">rm</a></li><li class="navelem"><a href="namespacerm_1_1hal.html">hal</a></li><li class="navelem"><a href="classrm_1_1hal_1_1SyncWritable.html">SyncWritable</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

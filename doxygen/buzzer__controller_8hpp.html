@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: src/librm/modules/buzzer_controller.hpp 文件参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('buzzer__controller_8hpp.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('buzzer__controller_8hpp.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -91,11 +90,6 @@ $(document).ready(function(){initNavTree('buzzer__controller_8hpp.html',''); ini
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">类</a> &#124;
-<a href="#namespaces">命名空间</a> &#124;
-<a href="#typedef-members">类型定义</a> &#124;
-<a href="#func-members">函数</a>  </div>
   <div class="headertitle"><div class="title">buzzer_controller.hpp 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
@@ -106,108 +100,90 @@ $(document).ready(function(){initNavTree('buzzer__controller_8hpp.html',''); ini
 <code>#include &quot;<a class="el" href="typedefs_8hpp_source.html">librm/core/typedefs.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sequence__player_8hpp_source.html">librm/modules/sequence_player.hpp</a>&quot;</code><br />
 </div>
-<p><a href="buzzer__controller_8hpp_source.html">浏览源代码.</a></p>
+<p><a href="buzzer__controller_8hpp_source.html">浏览该文件的源代码.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 类</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1modules_1_1BuzzerNote.html">rm::modules::BuzzerNote</a></td></tr>
+<tr class="memitem:rm_3A_3Amodules_3A_3ABuzzerNote" id="r_rm_3A_3Amodules_3A_3ABuzzerNote"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1modules_1_1BuzzerNote.html">rm::modules::BuzzerNote</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">蜂鸣器音符数据结构  <a href="structrm_1_1modules_1_1BuzzerNote.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">rm::modules::NoteFreq&lt; A4Freq &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1modules_1_1NoteDuration.html">rm::modules::NoteDuration&lt; Bpm &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1BuzzerMelody.html">rm::modules::BuzzerMelody</a></td></tr>
+<tr class="memitem:rm_3A_3Amodules_3A_3ANoteFreq_3C_20A4Freq_20_3E" id="r_rm_3A_3Amodules_3A_3ANoteFreq_3C_20A4Freq_20_3E"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">rm::modules::NoteFreq&lt; A4Freq &gt;</a></td></tr>
+<tr class="memitem:rm_3A_3Amodules_3A_3ANoteDuration_3C_20Bpm_20_3E" id="r_rm_3A_3Amodules_3A_3ANoteDuration_3C_20Bpm_20_3E"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1modules_1_1NoteDuration.html">rm::modules::NoteDuration&lt; Bpm &gt;</a></td></tr>
+<tr class="memitem:rm_3A_3Amodules_3A_3ABuzzerMelody" id="r_rm_3A_3Amodules_3A_3ABuzzerMelody"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1BuzzerMelody.html">rm::modules::BuzzerMelody</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">蜂鸣器音乐序列的基类，继承自SequenceGenerator  <a href="classrm_1_1modules_1_1BuzzerMelody.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1buzzer__melody_1_1Silent.html">rm::modules::buzzer_melody::Silent</a></td></tr>
+<tr class="memitem:rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3ASilent" id="r_rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3ASilent"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1buzzer__melody_1_1Silent.html">rm::modules::buzzer_melody::Silent</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">静音  <a href="classrm_1_1modules_1_1buzzer__melody_1_1Silent.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1buzzer__melody_1_1Beeps.html">rm::modules::buzzer_melody::Beeps&lt; BeepsCount &gt;</a></td></tr>
+<tr class="memitem:rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3ABeeps_3C_20BeepsCount_20_3E" id="r_rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3ABeeps_3C_20BeepsCount_20_3E"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1buzzer__melody_1_1Beeps.html">rm::modules::buzzer_melody::Beeps&lt; BeepsCount &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">滴滴响几声  <a href="classrm_1_1modules_1_1buzzer__melody_1_1Beeps.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1buzzer__melody_1_1Startup.html">rm::modules::buzzer_melody::Startup</a></td></tr>
+<tr class="memitem:rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3AStartup" id="r_rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3AStartup"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1buzzer__melody_1_1Startup.html">rm::modules::buzzer_melody::Startup</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动提示音  <a href="classrm_1_1modules_1_1buzzer__melody_1_1Startup.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1buzzer__melody_1_1Error.html">rm::modules::buzzer_melody::Error</a></td></tr>
+<tr class="memitem:rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3AError" id="r_rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3AError"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1buzzer__melody_1_1Error.html">rm::modules::buzzer_melody::Error</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">错误提示音  <a href="classrm_1_1modules_1_1buzzer__melody_1_1Error.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1buzzer__melody_1_1Success.html">rm::modules::buzzer_melody::Success</a></td></tr>
+<tr class="memitem:rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3ASuccess" id="r_rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3ASuccess"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1buzzer__melody_1_1Success.html">rm::modules::buzzer_melody::Success</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">成功提示音  <a href="classrm_1_1modules_1_1buzzer__melody_1_1Success.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1buzzer__melody_1_1SuperMario.html">rm::modules::buzzer_melody::SuperMario</a></td></tr>
+<tr class="memitem:rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3ASuperMario" id="r_rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3ASuperMario"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1buzzer__melody_1_1SuperMario.html">rm::modules::buzzer_melody::SuperMario</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">超级马里奥主题曲（片段）  <a href="classrm_1_1modules_1_1buzzer__melody_1_1SuperMario.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1buzzer__melody_1_1TheLick.html">rm::modules::buzzer_melody::TheLick</a></td></tr>
+<tr class="memitem:rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3ATheLick" id="r_rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3ATheLick"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1buzzer__melody_1_1TheLick.html">rm::modules::buzzer_melody::TheLick</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">"The LICK" - <a href="https://en.wikipedia.org/wiki/The_Lick">https://en.wikipedia.org/wiki/The_Lick</a>  <a href="classrm_1_1modules_1_1buzzer__melody_1_1TheLick.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1buzzer__melody_1_1SeeUAgain.html">rm::modules::buzzer_melody::SeeUAgain</a></td></tr>
+<tr class="memitem:rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3ASeeUAgain" id="r_rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3ASeeUAgain"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1buzzer__melody_1_1SeeUAgain.html">rm::modules::buzzer_melody::SeeUAgain</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">man see u again  <a href="classrm_1_1modules_1_1buzzer__melody_1_1SeeUAgain.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1buzzer__melody_1_1Tone.html">rm::modules::buzzer_melody::Tone&lt; NoteFrequency &gt;</a></td></tr>
+<tr class="memitem:rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3AYou" id="r_rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3AYou"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1buzzer__melody_1_1You.html">rm::modules::buzzer_melody::You</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RoboMaster 主题曲《你》（GALA，动画《机甲大师》片尾曲）副歌片段  <a href="classrm_1_1modules_1_1buzzer__melody_1_1You.html#details">更多...</a><br /></td></tr>
+<tr class="memitem:rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3ATone_3C_20NoteFrequency_20_3E" id="r_rm_3A_3Amodules_3A_3Abuzzer_5Fmelody_3A_3ATone_3C_20NoteFrequency_20_3E"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1buzzer__melody_1_1Tone.html">rm::modules::buzzer_melody::Tone&lt; NoteFrequency &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">单音提示音，以指定音高响一声  <a href="classrm_1_1modules_1_1buzzer__melody_1_1Tone.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1BuzzerController.html">rm::modules::BuzzerController&lt; MelodyTypes &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:rm_3A_3Amodules_3A_3ABuzzerController_3C_20MelodyTypes_20_3E" id="r_rm_3A_3Amodules_3A_3ABuzzerController_3C_20MelodyTypes_20_3E"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1BuzzerController.html">rm::modules::BuzzerController&lt; MelodyTypes &gt;</a></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 命名空间</h2></td></tr>
-<tr class="memitem:namespacerm" id="r_namespacerm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm.html">rm</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacerm_1_1modules" id="r_namespacerm_1_1modules"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html">rm::modules</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacerm_1_1modules_1_1buzzer__melody" id="r_namespacerm_1_1modules_1_1buzzer__melody"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules_1_1buzzer__melody.html">rm::modules::buzzer_melody</a></td></tr>
+<tr class="memitem:rm" id="r_rm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm.html">rm</a></td></tr>
+<tr class="memitem:rm_3A_3Amodules" id="r_rm_3A_3Amodules"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html">rm::modules</a></td></tr>
+<tr class="memitem:rm_3A_3Amodules_3A_3Abuzzer_5Fmelody" id="r_rm_3A_3Amodules_3A_3Abuzzer_5Fmelody"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules_1_1buzzer__melody.html">rm::modules::buzzer_melody</a></td></tr>
 <tr class="memdesc:namespacerm_1_1modules_1_1buzzer__melody"><td class="mdescLeft">&#160;</td><td class="mdescRight">一些预定义的蜂鸣器音乐/提示音 <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 类型定义</h2></td></tr>
-<tr class="memitem:aaa060bd699023f8871ba2f797ec96966" id="r_aaa060bd699023f8871ba2f797ec96966"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#aaa060bd699023f8871ba2f797ec96966">rm::modules::NoteFreqStandard</a> = <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">NoteFreq</a>&lt; 440 &gt;</td></tr>
-<tr class="memdesc:aaa060bd699023f8871ba2f797ec96966"><td class="mdescLeft">&#160;</td><td class="mdescRight">国际标准音高 A4=440Hz  <br /></td></tr>
-<tr class="separator:aaa060bd699023f8871ba2f797ec96966"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20cc9cd70ea5d0292db4683628d6952f" id="r_a20cc9cd70ea5d0292db4683628d6952f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a20cc9cd70ea5d0292db4683628d6952f">rm::modules::NoteFreqBaroque</a> = <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">NoteFreq</a>&lt; 415 &gt;</td></tr>
-<tr class="memdesc:a20cc9cd70ea5d0292db4683628d6952f"><td class="mdescLeft">&#160;</td><td class="mdescRight">巴洛克音高 A4=415Hz  <br /></td></tr>
-<tr class="separator:a20cc9cd70ea5d0292db4683628d6952f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa36bc63e258a297251899f7921652630" id="r_aa36bc63e258a297251899f7921652630"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#aa36bc63e258a297251899f7921652630">rm::modules::NoteFreqChamber</a> = <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">NoteFreq</a>&lt; 432 &gt;</td></tr>
-<tr class="memdesc:aa36bc63e258a297251899f7921652630"><td class="mdescLeft">&#160;</td><td class="mdescRight">室内乐音高 A4=432Hz  <br /></td></tr>
-<tr class="separator:aa36bc63e258a297251899f7921652630"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcc1c2cfc3cb7eecfbf6f1f211dff4fa" id="r_abcc1c2cfc3cb7eecfbf6f1f211dff4fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#abcc1c2cfc3cb7eecfbf6f1f211dff4fa">rm::modules::NoteFreqHigh</a> = <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">NoteFreq</a>&lt; 442 &gt;</td></tr>
-<tr class="memdesc:abcc1c2cfc3cb7eecfbf6f1f211dff4fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">高音高 A4=442Hz  <br /></td></tr>
-<tr class="separator:abcc1c2cfc3cb7eecfbf6f1f211dff4fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1820b940892bb284b16cc60829ff41ff" id="r_a1820b940892bb284b16cc60829ff41ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a1820b940892bb284b16cc60829ff41ff">rm::modules::NoteDuration60</a> = <a class="el" href="structrm_1_1modules_1_1NoteDuration.html">NoteDuration</a>&lt; 60 &gt;</td></tr>
-<tr class="memdesc:a1820b940892bb284b16cc60829ff41ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">慢速 (60 BPM)  <br /></td></tr>
-<tr class="separator:a1820b940892bb284b16cc60829ff41ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e5fb4b4898ab1d4d965fa7209bb2ae7" id="r_a2e5fb4b4898ab1d4d965fa7209bb2ae7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a2e5fb4b4898ab1d4d965fa7209bb2ae7">rm::modules::NoteDuration80</a> = <a class="el" href="structrm_1_1modules_1_1NoteDuration.html">NoteDuration</a>&lt; 80 &gt;</td></tr>
-<tr class="memdesc:a2e5fb4b4898ab1d4d965fa7209bb2ae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">稍慢 (80 BPM)  <br /></td></tr>
-<tr class="separator:a2e5fb4b4898ab1d4d965fa7209bb2ae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21562849517d17620e3c1af08f6b53b8" id="r_a21562849517d17620e3c1af08f6b53b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a21562849517d17620e3c1af08f6b53b8">rm::modules::NoteDuration100</a> = <a class="el" href="structrm_1_1modules_1_1NoteDuration.html">NoteDuration</a>&lt; 100 &gt;</td></tr>
-<tr class="memdesc:a21562849517d17620e3c1af08f6b53b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">中速 (100 BPM)  <br /></td></tr>
-<tr class="separator:a21562849517d17620e3c1af08f6b53b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae66d390d4c6d646316961d77d586f887" id="r_ae66d390d4c6d646316961d77d586f887"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#ae66d390d4c6d646316961d77d586f887">rm::modules::NoteDuration120</a> = <a class="el" href="structrm_1_1modules_1_1NoteDuration.html">NoteDuration</a>&lt; 120 &gt;</td></tr>
-<tr class="memdesc:ae66d390d4c6d646316961d77d586f887"><td class="mdescLeft">&#160;</td><td class="mdescRight">标准速度 (120 BPM)  <br /></td></tr>
-<tr class="separator:ae66d390d4c6d646316961d77d586f887"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2abe6c853ae82b8399cb6c270617ff7d" id="r_a2abe6c853ae82b8399cb6c270617ff7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a2abe6c853ae82b8399cb6c270617ff7d">rm::modules::NoteDuration140</a> = <a class="el" href="structrm_1_1modules_1_1NoteDuration.html">NoteDuration</a>&lt; 140 &gt;</td></tr>
-<tr class="memdesc:a2abe6c853ae82b8399cb6c270617ff7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">稍快 (140 BPM)  <br /></td></tr>
-<tr class="separator:a2abe6c853ae82b8399cb6c270617ff7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e52a0756d49c45af89519a46ae9d4a2" id="r_a8e52a0756d49c45af89519a46ae9d4a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a8e52a0756d49c45af89519a46ae9d4a2">rm::modules::NoteDuration160</a> = <a class="el" href="structrm_1_1modules_1_1NoteDuration.html">NoteDuration</a>&lt; 160 &gt;</td></tr>
-<tr class="memdesc:a8e52a0756d49c45af89519a46ae9d4a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">快速 (160 BPM)  <br /></td></tr>
-<tr class="separator:a8e52a0756d49c45af89519a46ae9d4a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc6e88692bf94bed16d66ddd80dec579" id="r_afc6e88692bf94bed16d66ddd80dec579"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#afc6e88692bf94bed16d66ddd80dec579">rm::modules::NoteFreqStandard</a> = <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">NoteFreq</a>&lt;440&gt;</td></tr>
+<tr class="memdesc:afc6e88692bf94bed16d66ddd80dec579"><td class="mdescLeft">&#160;</td><td class="mdescRight">国际标准音高 A4=440Hz  <br /></td></tr>
+<tr class="memitem:a8f9fa8bbb6504a0d505d8ba9f8706006" id="r_a8f9fa8bbb6504a0d505d8ba9f8706006"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a8f9fa8bbb6504a0d505d8ba9f8706006">rm::modules::NoteFreqBaroque</a> = <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">NoteFreq</a>&lt;415&gt;</td></tr>
+<tr class="memdesc:a8f9fa8bbb6504a0d505d8ba9f8706006"><td class="mdescLeft">&#160;</td><td class="mdescRight">巴洛克音高 A4=415Hz  <br /></td></tr>
+<tr class="memitem:a1844b2fc5dddd9dd963f65aba9877c4c" id="r_a1844b2fc5dddd9dd963f65aba9877c4c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a1844b2fc5dddd9dd963f65aba9877c4c">rm::modules::NoteFreqChamber</a> = <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">NoteFreq</a>&lt;432&gt;</td></tr>
+<tr class="memdesc:a1844b2fc5dddd9dd963f65aba9877c4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">室内乐音高 A4=432Hz  <br /></td></tr>
+<tr class="memitem:aa9bf6f4249c7b017d14c34fa954be0f2" id="r_aa9bf6f4249c7b017d14c34fa954be0f2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#aa9bf6f4249c7b017d14c34fa954be0f2">rm::modules::NoteFreqHigh</a> = <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">NoteFreq</a>&lt;442&gt;</td></tr>
+<tr class="memdesc:aa9bf6f4249c7b017d14c34fa954be0f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">高音高 A4=442Hz  <br /></td></tr>
+<tr class="memitem:a9bf59c6301cb07fb7141511a56caff9c" id="r_a9bf59c6301cb07fb7141511a56caff9c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a9bf59c6301cb07fb7141511a56caff9c">rm::modules::NoteDuration60</a> = <a class="el" href="structrm_1_1modules_1_1NoteDuration.html">NoteDuration</a>&lt;60&gt;</td></tr>
+<tr class="memdesc:a9bf59c6301cb07fb7141511a56caff9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">慢速 (60 BPM)  <br /></td></tr>
+<tr class="memitem:a5ef04cb387ca6e817001475f390f5348" id="r_a5ef04cb387ca6e817001475f390f5348"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a5ef04cb387ca6e817001475f390f5348">rm::modules::NoteDuration80</a> = <a class="el" href="structrm_1_1modules_1_1NoteDuration.html">NoteDuration</a>&lt;80&gt;</td></tr>
+<tr class="memdesc:a5ef04cb387ca6e817001475f390f5348"><td class="mdescLeft">&#160;</td><td class="mdescRight">稍慢 (80 BPM)  <br /></td></tr>
+<tr class="memitem:ac6b9ef7cab2e9cbfbed1894ef2c25214" id="r_ac6b9ef7cab2e9cbfbed1894ef2c25214"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#ac6b9ef7cab2e9cbfbed1894ef2c25214">rm::modules::NoteDuration100</a> = <a class="el" href="structrm_1_1modules_1_1NoteDuration.html">NoteDuration</a>&lt;100&gt;</td></tr>
+<tr class="memdesc:ac6b9ef7cab2e9cbfbed1894ef2c25214"><td class="mdescLeft">&#160;</td><td class="mdescRight">中速 (100 BPM)  <br /></td></tr>
+<tr class="memitem:a6bc461238deb7cd9785eedbc74654bfb" id="r_a6bc461238deb7cd9785eedbc74654bfb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a6bc461238deb7cd9785eedbc74654bfb">rm::modules::NoteDuration120</a> = <a class="el" href="structrm_1_1modules_1_1NoteDuration.html">NoteDuration</a>&lt;120&gt;</td></tr>
+<tr class="memdesc:a6bc461238deb7cd9785eedbc74654bfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">标准速度 (120 BPM)  <br /></td></tr>
+<tr class="memitem:a20406bd734bef363d54df5917ca08adb" id="r_a20406bd734bef363d54df5917ca08adb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a20406bd734bef363d54df5917ca08adb">rm::modules::NoteDuration140</a> = <a class="el" href="structrm_1_1modules_1_1NoteDuration.html">NoteDuration</a>&lt;140&gt;</td></tr>
+<tr class="memdesc:a20406bd734bef363d54df5917ca08adb"><td class="mdescLeft">&#160;</td><td class="mdescRight">稍快 (140 BPM)  <br /></td></tr>
+<tr class="memitem:a73f45ab04a83dec0500f70f15a6022a6" id="r_a73f45ab04a83dec0500f70f15a6022a6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a73f45ab04a83dec0500f70f15a6022a6">rm::modules::NoteDuration160</a> = <a class="el" href="structrm_1_1modules_1_1NoteDuration.html">NoteDuration</a>&lt;160&gt;</td></tr>
+<tr class="memdesc:a73f45ab04a83dec0500f70f15a6022a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">快速 (160 BPM)  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 函数</h2></td></tr>
-<tr class="memitem:a5c36d51256a29d06abd3da9aaaddf582" id="r_a5c36d51256a29d06abd3da9aaaddf582"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">constexpr</a> <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">rm::modules::CalculateNoteFreq</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">a4_freq</a>, <a class="el" href="namespacerm.html#ab0024293c4410554bd98c9bb792c8afb">i16</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">semitones</a>)</td></tr>
+<tr class="memitem:a5c36d51256a29d06abd3da9aaaddf582" id="r_a5c36d51256a29d06abd3da9aaaddf582"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1modules.html#a5c36d51256a29d06abd3da9aaaddf582">rm::modules::CalculateNoteFreq</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> a4_freq, <a class="el" href="namespacerm.html#ab0024293c4410554bd98c9bb792c8afb">i16</a> semitones)</td></tr>
 <tr class="memdesc:a5c36d51256a29d06abd3da9aaaddf582"><td class="mdescLeft">&#160;</td><td class="mdescRight">音符频率计算辅助函数（编译期计算十二平均律频率）  <br /></td></tr>
-<tr class="separator:a5c36d51256a29d06abd3da9aaaddf582"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
 <div class="textblock"><p>蜂鸣器音乐控制器（基于通用序列播放器实现） </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_9bd6aa59caad6cbef13c0eefdd946af0.html">modules</a></li><li class="navelem"><a class="el" href="buzzer__controller_8hpp.html">buzzer_controller.hpp</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a href="dir_9bd6aa59caad6cbef13c0eefdd946af0.html">modules</a></li><li class="navelem"><a href="buzzer__controller_8hpp.html">buzzer_controller.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: rm::modules::TrajectoryLimiter类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classrm_1_1modules_1_1TrajectoryLimiter.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('classrm_1_1modules_1_1TrajectoryLimiter.html','','classrm_1_1modules_1_1TrajectoryLimiter-members'); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -91,52 +90,37 @@ $(document).ready(function(){initNavTree('classrm_1_1modules_1_1TrajectoryLimite
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public 成员函数</a> &#124;
-<a href="classrm_1_1modules_1_1TrajectoryLimiter-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">rm::modules::TrajectoryLimiter类 参考</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>轨迹限制器 给定最大速度和最大加速度，限制输入信号，使其不超过速度和加速度约束。 如果输入信号本身未超出约束，则输出与输入相同。  
- <a href="classrm_1_1modules_1_1TrajectoryLimiter.html#details">更多...</a></p>
+ <a href="#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="trajectory__limiter_8hpp_source.html">trajectory_limiter.hpp</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:aa70d6f06c8ea739cfba592c14b33bd8c" id="r_aa70d6f06c8ea739cfba592c14b33bd8c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#aa70d6f06c8ea739cfba592c14b33bd8c">TrajectoryLimiter</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a70e810b465308182138d49df6eb54ef0">max_vel</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a7242ce950fd7c68ba2b95436e420726c">max_accel</a>)</td></tr>
-<tr class="separator:aa70d6f06c8ea739cfba592c14b33bd8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a6c3be5e8263b3344435a659695f282" id="r_a6a6c3be5e8263b3344435a659695f282"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a6a6c3be5e8263b3344435a659695f282">SetTarget</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">target</a>)</td></tr>
+<tr class="memitem:aa70d6f06c8ea739cfba592c14b33bd8c" id="r_aa70d6f06c8ea739cfba592c14b33bd8c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa70d6f06c8ea739cfba592c14b33bd8c">TrajectoryLimiter</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="#a70e810b465308182138d49df6eb54ef0">max_vel</a>, <a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="#a7242ce950fd7c68ba2b95436e420726c">max_accel</a>)</td></tr>
+<tr class="memitem:a6a6c3be5e8263b3344435a659695f282" id="r_a6a6c3be5e8263b3344435a659695f282"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a6c3be5e8263b3344435a659695f282">SetTarget</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> target)</td></tr>
 <tr class="memdesc:a6a6c3be5e8263b3344435a659695f282"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置目标位置  <br /></td></tr>
-<tr class="separator:a6a6c3be5e8263b3344435a659695f282"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a591ae33f83362b4aa30d14e5970623c9" id="r_a591ae33f83362b4aa30d14e5970623c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a591ae33f83362b4aa30d14e5970623c9">ResetAt</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> position)</td></tr>
+<tr class="memitem:a591ae33f83362b4aa30d14e5970623c9" id="r_a591ae33f83362b4aa30d14e5970623c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a591ae33f83362b4aa30d14e5970623c9">ResetAt</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> position)</td></tr>
 <tr class="memdesc:a591ae33f83362b4aa30d14e5970623c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置限制器，并设置初始位置  <br /></td></tr>
-<tr class="separator:a591ae33f83362b4aa30d14e5970623c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fe5b9496274a07900a3697e78cdfae4" id="r_a3fe5b9496274a07900a3697e78cdfae4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a3fe5b9496274a07900a3697e78cdfae4">Update</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> dt)</td></tr>
+<tr class="memitem:a3fe5b9496274a07900a3697e78cdfae4" id="r_a3fe5b9496274a07900a3697e78cdfae4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fe5b9496274a07900a3697e78cdfae4">Update</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> dt)</td></tr>
 <tr class="memdesc:a3fe5b9496274a07900a3697e78cdfae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新位置和速度  <br /></td></tr>
-<tr class="separator:a3fe5b9496274a07900a3697e78cdfae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe897160321ce0eee11cfa3c4d56549d" id="r_abe897160321ce0eee11cfa3c4d56549d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#abe897160321ce0eee11cfa3c4d56549d">IsAtTarget</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">tolerance</a>=1<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">e</a>-6f) <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a></td></tr>
+<tr class="memitem:abe897160321ce0eee11cfa3c4d56549d" id="r_abe897160321ce0eee11cfa3c4d56549d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe897160321ce0eee11cfa3c4d56549d">IsAtTarget</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> tolerance=1e-6f) const</td></tr>
 <tr class="memdesc:abe897160321ce0eee11cfa3c4d56549d"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查是否到达目标位置  <br /></td></tr>
-<tr class="separator:abe897160321ce0eee11cfa3c4d56549d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d2ae5cfa182971db260565922471d68" id="r_a2d2ae5cfa182971db260565922471d68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a2d2ae5cfa182971db260565922471d68">current_position</a> () <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a></td></tr>
-<tr class="separator:a2d2ae5cfa182971db260565922471d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89d3e30d8d07076429a59cb51f53dcd3" id="r_a89d3e30d8d07076429a59cb51f53dcd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a89d3e30d8d07076429a59cb51f53dcd3">current_velocity</a> () <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a></td></tr>
-<tr class="separator:a89d3e30d8d07076429a59cb51f53dcd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3124a80033f46e7b71dd417a6cd8f075" id="r_a3124a80033f46e7b71dd417a6cd8f075"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a3124a80033f46e7b71dd417a6cd8f075">target_position</a> () <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a></td></tr>
-<tr class="separator:a3124a80033f46e7b71dd417a6cd8f075"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1eafcb1fbeaba6a12be181181579e17a" id="r_a1eafcb1fbeaba6a12be181181579e17a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a1eafcb1fbeaba6a12be181181579e17a">SetMaxVel</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a70e810b465308182138d49df6eb54ef0">max_vel</a>)</td></tr>
-<tr class="separator:a1eafcb1fbeaba6a12be181181579e17a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98a990cbd2306597daa562aeecaea9b1" id="r_a98a990cbd2306597daa562aeecaea9b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a98a990cbd2306597daa562aeecaea9b1">SetMaxAccel</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a7242ce950fd7c68ba2b95436e420726c">max_accel</a>)</td></tr>
-<tr class="separator:a98a990cbd2306597daa562aeecaea9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70e810b465308182138d49df6eb54ef0" id="r_a70e810b465308182138d49df6eb54ef0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a70e810b465308182138d49df6eb54ef0">max_vel</a> () <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a></td></tr>
-<tr class="separator:a70e810b465308182138d49df6eb54ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7242ce950fd7c68ba2b95436e420726c" id="r_a7242ce950fd7c68ba2b95436e420726c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html#a7242ce950fd7c68ba2b95436e420726c">max_accel</a> () <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a></td></tr>
-<tr class="separator:a7242ce950fd7c68ba2b95436e420726c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d2ae5cfa182971db260565922471d68" id="r_a2d2ae5cfa182971db260565922471d68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d2ae5cfa182971db260565922471d68">current_position</a> () const</td></tr>
+<tr class="memitem:a89d3e30d8d07076429a59cb51f53dcd3" id="r_a89d3e30d8d07076429a59cb51f53dcd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89d3e30d8d07076429a59cb51f53dcd3">current_velocity</a> () const</td></tr>
+<tr class="memitem:a3124a80033f46e7b71dd417a6cd8f075" id="r_a3124a80033f46e7b71dd417a6cd8f075"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3124a80033f46e7b71dd417a6cd8f075">target_position</a> () const</td></tr>
+<tr class="memitem:a1eafcb1fbeaba6a12be181181579e17a" id="r_a1eafcb1fbeaba6a12be181181579e17a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1eafcb1fbeaba6a12be181181579e17a">SetMaxVel</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="#a70e810b465308182138d49df6eb54ef0">max_vel</a>)</td></tr>
+<tr class="memitem:a98a990cbd2306597daa562aeecaea9b1" id="r_a98a990cbd2306597daa562aeecaea9b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98a990cbd2306597daa562aeecaea9b1">SetMaxAccel</a> (<a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> <a class="el" href="#a7242ce950fd7c68ba2b95436e420726c">max_accel</a>)</td></tr>
+<tr class="memitem:a70e810b465308182138d49df6eb54ef0" id="r_a70e810b465308182138d49df6eb54ef0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70e810b465308182138d49df6eb54ef0">max_vel</a> () const</td></tr>
+<tr class="memitem:a7242ce950fd7c68ba2b95436e420726c" id="r_a7242ce950fd7c68ba2b95436e420726c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7242ce950fd7c68ba2b95436e420726c">max_accel</a> () const</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
 <div class="textblock"><p>轨迹限制器 给定最大速度和最大加速度，限制输入信号，使其不超过速度和加速度约束。 如果输入信号本身未超出约束，则输出与输入相同。 </p>
-</div><h2 class="groupheader">构造及析构函数说明</h2>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">构造及析构函数说明</h2>
 <a id="aa70d6f06c8ea739cfba592c14b33bd8c" name="aa70d6f06c8ea739cfba592c14b33bd8c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa70d6f06c8ea739cfba592c14b33bd8c">&#9670;&#160;</a></span>TrajectoryLimiter()</h2>
 
@@ -146,19 +130,12 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">rm::modules::TrajectoryLimiter::TrajectoryLimiter </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
-          <td class="paramname"><em>max_vel</em>, </td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a></td>          <td class="paramname"><span class="paramname"><em>max_vel</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
-          <td class="paramname"><em>max_accel</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a></td>          <td class="paramname"><span class="paramname"><em>max_accel</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -172,7 +149,7 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">成员函数说明</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">成员函数说明</h2>
 <a id="a2d2ae5cfa182971db260565922471d68" name="a2d2ae5cfa182971db260565922471d68"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2d2ae5cfa182971db260565922471d68">&#9670;&#160;</a></span>current_position()</h2>
 
@@ -182,7 +159,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::modules::TrajectoryLimiter::current_position </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -200,7 +177,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::modules::TrajectoryLimiter::current_velocity </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -215,10 +192,9 @@ Public 成员函数</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> rm::modules::TrajectoryLimiter::IsAtTarget </td>
+          <td class="memname">bool rm::modules::TrajectoryLimiter::IsAtTarget </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
-          <td class="paramname"><em>tolerance</em> = <code>1<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">e</a>-6f</code></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a></td>          <td class="paramname"><span class="paramname"><em>tolerance</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1e-6f</span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -244,7 +220,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::modules::TrajectoryLimiter::max_accel </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -261,7 +237,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::modules::TrajectoryLimiter::max_vel </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -277,10 +253,9 @@ Public 成员函数</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a> rm::modules::TrajectoryLimiter::ResetAt </td>
+          <td class="memname">void rm::modules::TrajectoryLimiter::ResetAt </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
-          <td class="paramname"><em>position</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a></td>          <td class="paramname"><span class="paramname"><em>position</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -303,10 +278,9 @@ Public 成员函数</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a> rm::modules::TrajectoryLimiter::SetMaxAccel </td>
+          <td class="memname">void rm::modules::TrajectoryLimiter::SetMaxAccel </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
-          <td class="paramname"><em>max_accel</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a></td>          <td class="paramname"><span class="paramname"><em>max_accel</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -321,10 +295,9 @@ Public 成员函数</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a> rm::modules::TrajectoryLimiter::SetMaxVel </td>
+          <td class="memname">void rm::modules::TrajectoryLimiter::SetMaxVel </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
-          <td class="paramname"><em>max_vel</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a></td>          <td class="paramname"><span class="paramname"><em>max_vel</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -340,10 +313,9 @@ Public 成员函数</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a> rm::modules::TrajectoryLimiter::SetTarget </td>
+          <td class="memname">void rm::modules::TrajectoryLimiter::SetTarget </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
-          <td class="paramname"><em>target</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a></td>          <td class="paramname"><span class="paramname"><em>target</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -368,7 +340,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::modules::TrajectoryLimiter::target_position </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -385,8 +357,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::modules::TrajectoryLimiter::Update </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td>
-          <td class="paramname"><em>dt</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a></td>          <td class="paramname"><span class="paramname"><em>dt</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -409,11 +380,19 @@ Public 成员函数</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1modules.html">modules</a></li><li class="navelem"><a class="el" href="classrm_1_1modules_1_1TrajectoryLimiter.html">TrajectoryLimiter</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="namespacerm.html">rm</a></li><li class="navelem"><a href="namespacerm_1_1modules.html">modules</a></li><li class="navelem"><a href="classrm_1_1modules_1_1TrajectoryLimiter.html">TrajectoryLimiter</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

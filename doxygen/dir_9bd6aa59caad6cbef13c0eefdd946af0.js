@@ -4,6 +4,7 @@ var dir_9bd6aa59caad6cbef13c0eefdd946af0 =
     [ "rpc", "dir_a52d8477b6e5aa6652c637e1032e16fc.html", "dir_a52d8477b6e5aa6652c637e1032e16fc" ],
     [ "angle.hpp", "angle_8hpp.html", "angle_8hpp" ],
     [ "buzzer_controller.hpp", "buzzer__controller_8hpp.html", "buzzer__controller_8hpp" ],
+    [ "cansniffer.hpp", "cansniffer_8hpp.html", "cansniffer_8hpp" ],
     [ "chassis_fkik.hpp", "chassis__fkik_8hpp.html", "chassis__fkik_8hpp" ],
     [ "crc.cc", "crc_8cc.html", "crc_8cc" ],
     [ "crc.hpp", "crc_8hpp.html", "crc_8hpp" ],

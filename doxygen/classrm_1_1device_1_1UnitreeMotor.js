@@ -1,13 +1,13 @@
 var classrm_1_1device_1_1UnitreeMotor =
 [
     [ "ComData32", "unionrm_1_1device_1_1UnitreeMotor_1_1ComData32.html", "unionrm_1_1device_1_1UnitreeMotor_1_1ComData32" ],
-    [ "ComDataReceive", "structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html", "structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive" ],
-    [ "ComDataSend", "structrm_1_1device_1_1UnitreeMotor_1_1ComDataSend.html", "structrm_1_1device_1_1UnitreeMotor_1_1ComDataSend" ],
-    [ "ComHead", "structrm_1_1device_1_1UnitreeMotor_1_1ComHead.html", "structrm_1_1device_1_1UnitreeMotor_1_1ComHead" ],
     [ "ControlParam", "structrm_1_1device_1_1UnitreeMotor_1_1ControlParam.html", "structrm_1_1device_1_1UnitreeMotor_1_1ControlParam" ],
     [ "FeedbackParam", "structrm_1_1device_1_1UnitreeMotor_1_1FeedbackParam.html", "structrm_1_1device_1_1UnitreeMotor_1_1FeedbackParam" ],
-    [ "ReceiveData", "structrm_1_1device_1_1UnitreeMotor_1_1ReceiveData.html", "structrm_1_1device_1_1UnitreeMotor_1_1ReceiveData" ],
+    [ "ComHead", "structrm_1_1device_1_1UnitreeMotor_1_1ComHead.html", "structrm_1_1device_1_1UnitreeMotor_1_1ComHead" ],
+    [ "ComDataSend", "structrm_1_1device_1_1UnitreeMotor_1_1ComDataSend.html", "structrm_1_1device_1_1UnitreeMotor_1_1ComDataSend" ],
+    [ "ComDataReceive", "structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive.html", "structrm_1_1device_1_1UnitreeMotor_1_1ComDataReceive" ],
     [ "SendData", "structrm_1_1device_1_1UnitreeMotor_1_1SendData.html", "structrm_1_1device_1_1UnitreeMotor_1_1SendData" ],
+    [ "ReceiveData", "structrm_1_1device_1_1UnitreeMotor_1_1ReceiveData.html", "structrm_1_1device_1_1UnitreeMotor_1_1ReceiveData" ],
     [ "UnitreeMotor", "classrm_1_1device_1_1UnitreeMotor.html#aa2f1e0e39f8b2db7b1405e074625f760", null ],
     [ "~UnitreeMotor", "classrm_1_1device_1_1UnitreeMotor.html#a5456104a56c4443a587d92b01c1e2d04", null ],
     [ "acc", "classrm_1_1device_1_1UnitreeMotor.html#af48f9073b63b1af01fb3580b4c149942", null ],

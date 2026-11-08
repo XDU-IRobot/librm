@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: /home/runner/work/librm/librm/src/librm/modules/sequence_player.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('_2home_2runner_2work_2librm_2librm_2src_2librm_2modules_2sequence_player_8hpp-example.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('_2home_2runner_2work_2librm_2librm_2src_2librm_2modules_2sequence_player_8hpp-example.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -149,6 +148,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2librm_2librm_2sr
 <div class="line"><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
 <div class="line"><span class="comment">  SOFTWARE.</span></div>
 <div class="line"><span class="comment">*/</span></div>
+<div class="line"></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#ifndef LIBRM_MODULES_SEQUENCE_PLAYER_HPP</span></div>
 <div class="line"><span class="preprocessor">#define LIBRM_MODULES_SEQUENCE_PLAYER_HPP</span></div>
@@ -161,7 +161,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2librm_2librm_2sr
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="typedefs_8hpp.html">librm/core/typedefs.hpp</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1modules.html">rm::modules</a> {</div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> OutputType&gt;</div>
 <div class="line"><span class="keyword">class </span>SequenceGenerator {</div>
 <div class="line"> <span class="keyword">public</span>:</div>
@@ -169,9 +169,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2librm_2librm_2sr
 <div class="line">  <span class="keyword">using </span><a id="a1" name="a1"></a><a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a4af90e6484ede6dd935dc0d274f4d6e6">Output</a> = OutputType;</div>
 <div class="line">  <span class="keyword">using </span><a id="a2" name="a2"></a><a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> = std::chrono::steady_clock::time_point;</div>
 <div class="line">  <span class="keyword">using </span><a id="a3" name="a3"></a><a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a7ee8dbdddcd5c174cbfbac2346044380">Duration</a> = std::chrono::steady_clock::duration;</div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line">  <span class="keyword">virtual</span> <a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a4af90e6484ede6dd935dc0d274f4d6e6">Output</a> <a id="a4" name="a4"></a><a class="code hl_function" href="classrm_1_1modules_1_1SequenceGenerator.html#a8d233c68843108d60db31cbf2fdedd2b">Update</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> now) = 0;</div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line">  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a id="a5" name="a5"></a><a class="code hl_function" href="classrm_1_1modules_1_1SequenceGenerator.html#ad3a3e706171193c34880cbfe41328ec8">Reset</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> now) = 0;</div>
 <div class="line"> </div>
 <div class="line"> <span class="keyword">protected</span>:</div>
@@ -194,7 +194,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2librm_2librm_2sr
 <div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> value = 1 + tuple_element_index&lt;T, std::tuple&lt;Ts...&gt;&gt;::value;</div>
 <div class="line">};</div>
 <div class="line">}  <span class="comment">// namespace detail</span></div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> OutputType, <span class="keyword">typename</span>... SequenceTypes&gt;</div>
 <div class="line"><span class="keyword">class </span>SequencePlayer {</div>
 <div class="line">  <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>...(SequenceTypes) &gt; 0, <span class="stringliteral">&quot;At least one sequence type must be provided&quot;</span>);</div>
@@ -208,22 +208,22 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2librm_2librm_2sr
 <div class="line">    <span class="comment">// 初始化时设置当前更新函数指向第一个序列的Update方法</span></div>
 <div class="line">    SetSequenceByIndex&lt;0&gt;();</div>
 <div class="line">  }</div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Sequence&gt;</div>
 <div class="line">  <span class="keywordtype">void</span> <a id="a11" name="a11"></a><a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#acb59128f30e689c3cf02545697c10816">SetSequence</a>() {</div>
 <div class="line">    <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> sequence_id = detail::tuple_element_index&lt;Sequence, std::tuple&lt;SequenceTypes...&gt;&gt;::value;</div>
 <div class="line">    SetSequenceByIndex&lt;sequence_id&gt;();</div>
 <div class="line">  }</div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line">  <a class="code hl_typedef" href="classrm_1_1modules_1_1SequencePlayer.html#adac85e8b5afca2442219b3252b3a7f35">Output</a> <a id="a12" name="a12"></a><a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#a6e315a55b50db842a53a619b6d8ed1ba">Update</a>() {</div>
 <div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> now = std::chrono::steady_clock::now();</div>
 <div class="line">    <span class="comment">// 直接调用当前序列的Update方法，传入当前时间</span></div>
 <div class="line">    current_output_ = current_update_fn_(now);</div>
 <div class="line">    <span class="keywordflow">return</span> current_output_;</div>
 <div class="line">  }</div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line">  <span class="keyword">const</span> <a class="code hl_typedef" href="classrm_1_1modules_1_1SequencePlayer.html#adac85e8b5afca2442219b3252b3a7f35">Output</a> &amp;<a id="a13" name="a13"></a><a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#a4fa229a13ac0f1cdffdb91e763859a89">current_output</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> current_output_; }</div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line">  <span class="keywordtype">void</span> <a id="a14" name="a14"></a><a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#a120485fc17661e034718562ee5f7c6d8">Reset</a>() {</div>
 <div class="line">    <span class="keyword">auto</span> now = std::chrono::steady_clock::now();</div>
 <div class="line">    <span class="keywordflow">if</span> (current_reset_fn_) {</div>
@@ -244,12 +244,12 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2librm_2librm_2sr
 <div class="line">    current_reset_fn_ = etl::delegate&lt;void(std::chrono::steady_clock::time_point)&gt;::create&lt;</div>
 <div class="line">        <a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#a573f91fcce5c7c95916281de8e8bed95">SequencePlayer</a>, &amp;SequencePlayer::ResetSequence&lt;sequence_id&gt;&gt;(*this);</div>
 <div class="line">  }</div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line">  <span class="keyword">template</span> &lt;usize sequence_<span class="keywordtype">id</span>&gt;</div>
 <div class="line">  <a class="code hl_typedef" href="classrm_1_1modules_1_1SequencePlayer.html#adac85e8b5afca2442219b3252b3a7f35">Output</a> UpdateSequence(std::chrono::steady_clock::time_point now) {</div>
 <div class="line">    <span class="keywordflow">return</span> std::get&lt;sequence_id&gt;(sequences_).Update(now);</div>
 <div class="line">  }</div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line">  <span class="keyword">template</span> &lt;usize sequence_<span class="keywordtype">id</span>&gt;</div>
 <div class="line">  <span class="keywordtype">void</span> ResetSequence(std::chrono::steady_clock::time_point now) {</div>
 <div class="line">    std::get&lt;sequence_id&gt;(sequences_).Reset(now);</div>
@@ -265,29 +265,30 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2librm_2librm_2sr
 <div class="line">}  <span class="comment">// namespace rm::modules</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_MODULES_SEQUENCE_PLAYER_HPP</span></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a2e96a1993839f2ef43a599dd47ef96bf"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">rm::modules::SequenceGenerator::TimePoint</a></div><div class="ttdeci">std::chrono::steady_clock::time_point TimePoint</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:52</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a2e96a1993839f2ef43a599dd47ef96bf"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">rm::modules::SequenceGenerator::TimePoint</a></div><div class="ttdeci">std::chrono::steady_clock::time_point TimePoint</div><div class="ttdef"><b>定义</b> sequence_player.hpp:52</div></div>
 <div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a2f638e56652aed0bbc4c5c56c279e261"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a2f638e56652aed0bbc4c5c56c279e261">rm::modules::SequenceGenerator::~SequenceGenerator</a></div><div class="ttdeci">virtual ~SequenceGenerator()=default</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a3db32923ee92ecbdedd29ba8fb014862"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a3db32923ee92ecbdedd29ba8fb014862">rm::modules::SequenceGenerator::ElapsedMs</a></div><div class="ttdeci">static u32 ElapsedMs(TimePoint start, TimePoint now)</div><div class="ttdoc">计算从起始时间到现在经过的毫秒数</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:75</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a4af90e6484ede6dd935dc0d274f4d6e6"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a4af90e6484ede6dd935dc0d274f4d6e6">rm::modules::SequenceGenerator::Output</a></div><div class="ttdeci">OutputType Output</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:51</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a7ee8dbdddcd5c174cbfbac2346044380"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a7ee8dbdddcd5c174cbfbac2346044380">rm::modules::SequenceGenerator::Duration</a></div><div class="ttdeci">std::chrono::steady_clock::duration Duration</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:53</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a3db32923ee92ecbdedd29ba8fb014862"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a3db32923ee92ecbdedd29ba8fb014862">rm::modules::SequenceGenerator::ElapsedMs</a></div><div class="ttdeci">static u32 ElapsedMs(TimePoint start, TimePoint now)</div><div class="ttdoc">计算从起始时间到现在经过的毫秒数</div><div class="ttdef"><b>定义</b> sequence_player.hpp:75</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a4af90e6484ede6dd935dc0d274f4d6e6"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a4af90e6484ede6dd935dc0d274f4d6e6">rm::modules::SequenceGenerator::Output</a></div><div class="ttdeci">OutputType Output</div><div class="ttdef"><b>定义</b> sequence_player.hpp:51</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a7ee8dbdddcd5c174cbfbac2346044380"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a7ee8dbdddcd5c174cbfbac2346044380">rm::modules::SequenceGenerator::Duration</a></div><div class="ttdeci">std::chrono::steady_clock::duration Duration</div><div class="ttdef"><b>定义</b> sequence_player.hpp:53</div></div>
 <div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a8d233c68843108d60db31cbf2fdedd2b"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a8d233c68843108d60db31cbf2fdedd2b">rm::modules::SequenceGenerator::Update</a></div><div class="ttdeci">virtual Output Update(TimePoint now)=0</div><div class="ttdoc">更新序列状态并返回当前输出</div></div>
 <div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_ad3a3e706171193c34880cbfe41328ec8"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#ad3a3e706171193c34880cbfe41328ec8">rm::modules::SequenceGenerator::Reset</a></div><div class="ttdeci">virtual void Reset(TimePoint now)=0</div><div class="ttdoc">重置序列状态到初始状态</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_a120485fc17661e034718562ee5f7c6d8"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#a120485fc17661e034718562ee5f7c6d8">rm::modules::SequencePlayer::Reset</a></div><div class="ttdeci">void Reset()</div><div class="ttdoc">重置当前序列到初始状态</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:174</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_a4fa229a13ac0f1cdffdb91e763859a89"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#a4fa229a13ac0f1cdffdb91e763859a89">rm::modules::SequencePlayer::current_output</a></div><div class="ttdeci">const Output &amp; current_output() const</div><div class="ttdoc">获取当前输出值（不更新序列）</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:169</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_a573f91fcce5c7c95916281de8e8bed95"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#a573f91fcce5c7c95916281de8e8bed95">rm::modules::SequencePlayer::SequencePlayer</a></div><div class="ttdeci">SequencePlayer()</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:139</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_a6e315a55b50db842a53a619b6d8ed1ba"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#a6e315a55b50db842a53a619b6d8ed1ba">rm::modules::SequencePlayer::Update</a></div><div class="ttdeci">Output Update()</div><div class="ttdoc">更新当前序列并获取输出</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:158</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_acb59128f30e689c3cf02545697c10816"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#acb59128f30e689c3cf02545697c10816">rm::modules::SequencePlayer::SetSequence</a></div><div class="ttdeci">void SetSequence()</div><div class="ttdoc">切换当前的序列生成器</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:149</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_adac85e8b5afca2442219b3252b3a7f35"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#adac85e8b5afca2442219b3252b3a7f35">rm::modules::SequencePlayer::Output</a></div><div class="ttdeci">OutputType Output</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:137</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_html"><div class="ttname"><a href="namespacerm_1_1modules.html">rm::modules</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:33</div></div>
-<div class="ttc" id="anamespacerm_html_a1df35482f4a88e1fe1450c7eb4cf4630"><div class="ttname"><a href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">rm::usize</a></div><div class="ttdeci">size_t usize</div><div class="ttdef"><b>Definition</b> typedefs.hpp:51</div></div>
-<div class="ttc" id="anamespacerm_html_aae5bb39b0da6b1cf1b7ed1c03342ec66"><div class="ttname"><a href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">rm::u32</a></div><div class="ttdeci">uint32_t u32</div><div class="ttdef"><b>Definition</b> typedefs.hpp:45</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_a120485fc17661e034718562ee5f7c6d8"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#a120485fc17661e034718562ee5f7c6d8">rm::modules::SequencePlayer::Reset</a></div><div class="ttdeci">void Reset()</div><div class="ttdoc">重置当前序列到初始状态</div><div class="ttdef"><b>定义</b> sequence_player.hpp:174</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_a4fa229a13ac0f1cdffdb91e763859a89"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#a4fa229a13ac0f1cdffdb91e763859a89">rm::modules::SequencePlayer::current_output</a></div><div class="ttdeci">const Output &amp; current_output() const</div><div class="ttdoc">获取当前输出值（不更新序列）</div><div class="ttdef"><b>定义</b> sequence_player.hpp:169</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_a573f91fcce5c7c95916281de8e8bed95"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#a573f91fcce5c7c95916281de8e8bed95">rm::modules::SequencePlayer::SequencePlayer</a></div><div class="ttdeci">SequencePlayer()</div><div class="ttdef"><b>定义</b> sequence_player.hpp:139</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_a6e315a55b50db842a53a619b6d8ed1ba"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#a6e315a55b50db842a53a619b6d8ed1ba">rm::modules::SequencePlayer::Update</a></div><div class="ttdeci">Output Update()</div><div class="ttdoc">更新当前序列并获取输出</div><div class="ttdef"><b>定义</b> sequence_player.hpp:158</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_acb59128f30e689c3cf02545697c10816"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#acb59128f30e689c3cf02545697c10816">rm::modules::SequencePlayer::SetSequence</a></div><div class="ttdeci">void SetSequence()</div><div class="ttdoc">切换当前的序列生成器</div><div class="ttdef"><b>定义</b> sequence_player.hpp:149</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_adac85e8b5afca2442219b3252b3a7f35"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#adac85e8b5afca2442219b3252b3a7f35">rm::modules::SequencePlayer::Output</a></div><div class="ttdeci">OutputType Output</div><div class="ttdef"><b>定义</b> sequence_player.hpp:137</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html"><div class="ttname"><a href="namespacerm_1_1modules.html">rm::modules</a></div><div class="ttdef"><b>定义</b> ahrs_interface.hpp:33</div></div>
+<div class="ttc" id="anamespacerm_html_a1df35482f4a88e1fe1450c7eb4cf4630"><div class="ttname"><a href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">rm::usize</a></div><div class="ttdeci">size_t usize</div><div class="ttdef"><b>定义</b> typedefs.hpp:51</div></div>
+<div class="ttc" id="anamespacerm_html_aae5bb39b0da6b1cf1b7ed1c03342ec66"><div class="ttname"><a href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">rm::u32</a></div><div class="ttdeci">uint32_t u32</div><div class="ttdef"><b>定义</b> typedefs.hpp:45</div></div>
 <div class="ttc" id="atypedefs_8hpp_html"><div class="ttname"><a href="typedefs_8hpp.html">typedefs.hpp</a></div><div class="ttdoc">全局数据类型定义</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

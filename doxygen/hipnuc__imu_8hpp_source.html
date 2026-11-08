@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: src/librm/device/sensor/hipnuc_imu.hpp 源文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,28 +36,22 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function() { init_codefold(0); });
-/* @license-end */
-</script>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -69,10 +64,9 @@ $(document).ready(function() { init_codefold(0); });
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('hipnuc__imu_8hpp_source.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('hipnuc__imu_8hpp_source.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -120,7 +114,8 @@ $(document).ready(function(){initNavTree('hipnuc__imu_8hpp_source.html',''); ini
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef LIBRM_DEVICE_SENSOR_HIPNUC_IMU_HPP</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_DEVICE_SENSOR_HIPNUC_IMU_HPP</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
@@ -132,9 +127,9 @@ $(document).ready(function(){initNavTree('hipnuc__imu_8hpp_source.html',''); ini
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;<a class="code" href="device_8hpp.html">librm/device/device.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1device.html">rm::device</a> {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
 <div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1HipnucImu.html">   48</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1device_1_1HipnucImu.html">HipnucImu</a> : <span class="keyword">public</span> <a class="code hl_class" href="classrm_1_1device_1_1Device.html">Device</a> {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classrm_1_1device_1_1HipnucImu.html">   48</a></span><span class="keyword">class </span><a class="code hl_function" href="classrm_1_1device_1_1HipnucImu.html#afa101d2e593b3ef97e0b7524e8688eba">HipnucImu</a> : <span class="keyword">public</span> <a class="code hl_function" href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">Device</a> {</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keyword">enum</span> HipnucPacketType : <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> {</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    kNone = 0x00,</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    kHi91 = 0x91,  </div>
@@ -231,50 +226,50 @@ $(document).ready(function(){initNavTree('hipnuc__imu_8hpp_source.html',''); ini
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>}  <span class="comment">// namespace rm::device</span></div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_DEVICE_SENSOR_HIPNUC_IMU_HPP</span></div>
-<div class="ttc" id="aclassrm_1_1device_1_1Device_html"><div class="ttname"><a href="classrm_1_1device_1_1Device.html">rm::device::Device</a></div><div class="ttdoc">驱动框架的设备基类，功能为监视设备状态</div><div class="ttdef"><b>Definition</b> device.hpp:47</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html">rm::device::HipnucImu</a></div><div class="ttdoc">HiPNUC CH0x0 IMU模块</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:48</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a0f9712fccea146d01d0f26b3bda75902"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a0f9712fccea146d01d0f26b3bda75902">rm::device::HipnucImu::mag_y</a></div><div class="ttdeci">f32 mag_y() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:86</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a12d8d58625959a302a584787595906c2"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a12d8d58625959a302a584787595906c2">rm::device::HipnucImu::quat_x</a></div><div class="ttdeci">f32 quat_x() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:96</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a1c3f2618bc5a9ea70576cea1ba7b713a"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a1c3f2618bc5a9ea70576cea1ba7b713a">rm::device::HipnucImu::Begin</a></div><div class="ttdeci">void Begin()</div><div class="ttdoc">开始接收IMU数据</div><div class="ttdef"><b>Definition</b> hipnuc_imu.cc:50</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a301e3a505caaabc9cef426c74f78b6de"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a301e3a505caaabc9cef426c74f78b6de">rm::device::HipnucImu::yaw</a></div><div class="ttdeci">f32 yaw() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:92</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a3e88a6c574caeaf1b081fcc2de877a7e"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a3e88a6c574caeaf1b081fcc2de877a7e">rm::device::HipnucImu::mag_x</a></div><div class="ttdeci">f32 mag_x() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:85</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a5ef2aaa358e5e90e5bb979b6c5abfad5"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a5ef2aaa358e5e90e5bb979b6c5abfad5">rm::device::HipnucImu::acc_x</a></div><div class="ttdeci">f32 acc_x() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:75</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a5f8656c6130f131e5811e859f717e67b"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a5f8656c6130f131e5811e859f717e67b">rm::device::HipnucImu::quat_w</a></div><div class="ttdeci">f32 quat_w() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:95</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a625ed12df6cc348721ac02b235ec8a08"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a625ed12df6cc348721ac02b235ec8a08">rm::device::HipnucImu::gyro_y</a></div><div class="ttdeci">f32 gyro_y() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:81</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a686798d5f61e446344cbcd30c5d0e30b"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a686798d5f61e446344cbcd30c5d0e30b">rm::device::HipnucImu::pitch</a></div><div class="ttdeci">f32 pitch() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:91</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a7aa9041cb6513df8a5b13e7377777462"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a7aa9041cb6513df8a5b13e7377777462">rm::device::HipnucImu::main_status</a></div><div class="ttdeci">u16 main_status() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:70</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a838c38322eda07786a89aa6fb54cc5a3"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a838c38322eda07786a89aa6fb54cc5a3">rm::device::HipnucImu::acc_y</a></div><div class="ttdeci">f32 acc_y() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:76</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a93be18faf9c5335df74016b6c0aa3e9b"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a93be18faf9c5335df74016b6c0aa3e9b">rm::device::HipnucImu::quat_y</a></div><div class="ttdeci">f32 quat_y() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:97</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a97ea25c1abaadb756d8154fde939c69c"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a97ea25c1abaadb756d8154fde939c69c">rm::device::HipnucImu::roll</a></div><div class="ttdeci">f32 roll() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:90</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_aa38d993bdf1f4bec09366a26678a9547"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#aa38d993bdf1f4bec09366a26678a9547">rm::device::HipnucImu::gyro_x</a></div><div class="ttdeci">f32 gyro_x() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:80</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_aaa9169827bd3941991be4bac39f2b9e4"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#aaa9169827bd3941991be4bac39f2b9e4">rm::device::HipnucImu::RxCallback</a></div><div class="ttdeci">void RxCallback(etl::span&lt; const u8 &gt; data)</div><div class="ttdoc">串口接收完成中断回调函数</div><div class="ttdef"><b>Definition</b> hipnuc_imu.cc:56</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_aad19c719dc61a2c429f93535f66a196f"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#aad19c719dc61a2c429f93535f66a196f">rm::device::HipnucImu::gyro_z</a></div><div class="ttdeci">f32 gyro_z() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:82</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_aad4f1080788fa78995efe0bc169e443d"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#aad4f1080788fa78995efe0bc169e443d">rm::device::HipnucImu::temperature</a></div><div class="ttdeci">i8 temperature() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:71</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_aaf0c6cff774a3096ef605a0831f5f05c"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#aaf0c6cff774a3096ef605a0831f5f05c">rm::device::HipnucImu::quat_z</a></div><div class="ttdeci">f32 quat_z() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:98</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_ac8fb577ccdd4471f939be7abf498742c"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#ac8fb577ccdd4471f939be7abf498742c">rm::device::HipnucImu::raw_data</a></div><div class="ttdeci">const hipnuc_raw_t &amp; raw_data() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:104</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_adb1bb314a50e9691e97fed7b7bf4b665"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#adb1bb314a50e9691e97fed7b7bf4b665">rm::device::HipnucImu::system_time</a></div><div class="ttdeci">u32 system_time() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:72</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_ae9dae376dc3faaeceeeee247daad4dc6"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#ae9dae376dc3faaeceeeee247daad4dc6">rm::device::HipnucImu::air_pressure</a></div><div class="ttdeci">f32 air_pressure() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:101</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_aec7c08076788b0115ba2dce16f0f70ea"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#aec7c08076788b0115ba2dce16f0f70ea">rm::device::HipnucImu::last_packet_type</a></div><div class="ttdeci">HipnucPacketType last_packet_type() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:67</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_af5971eabfa61dd97638de9e4c7db9d2b"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#af5971eabfa61dd97638de9e4c7db9d2b">rm::device::HipnucImu::mag_z</a></div><div class="ttdeci">f32 mag_z() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:87</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1Device_html_a769d2371dac57ae08f5a17948bbdefd6"><div class="ttname"><a href="classrm_1_1device_1_1Device.html#a769d2371dac57ae08f5a17948bbdefd6">rm::device::Device::Device</a></div><div class="ttdeci">Device()</div><div class="ttdef"><b>定义</b> device.cc:42</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a0f9712fccea146d01d0f26b3bda75902"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a0f9712fccea146d01d0f26b3bda75902">rm::device::HipnucImu::mag_y</a></div><div class="ttdeci">f32 mag_y() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:86</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a12d8d58625959a302a584787595906c2"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a12d8d58625959a302a584787595906c2">rm::device::HipnucImu::quat_x</a></div><div class="ttdeci">f32 quat_x() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:96</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a1c3f2618bc5a9ea70576cea1ba7b713a"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a1c3f2618bc5a9ea70576cea1ba7b713a">rm::device::HipnucImu::Begin</a></div><div class="ttdeci">void Begin()</div><div class="ttdoc">开始接收IMU数据</div><div class="ttdef"><b>定义</b> hipnuc_imu.cc:50</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a301e3a505caaabc9cef426c74f78b6de"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a301e3a505caaabc9cef426c74f78b6de">rm::device::HipnucImu::yaw</a></div><div class="ttdeci">f32 yaw() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:92</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a3e88a6c574caeaf1b081fcc2de877a7e"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a3e88a6c574caeaf1b081fcc2de877a7e">rm::device::HipnucImu::mag_x</a></div><div class="ttdeci">f32 mag_x() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:85</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a5ef2aaa358e5e90e5bb979b6c5abfad5"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a5ef2aaa358e5e90e5bb979b6c5abfad5">rm::device::HipnucImu::acc_x</a></div><div class="ttdeci">f32 acc_x() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:75</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a5f8656c6130f131e5811e859f717e67b"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a5f8656c6130f131e5811e859f717e67b">rm::device::HipnucImu::quat_w</a></div><div class="ttdeci">f32 quat_w() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:95</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a625ed12df6cc348721ac02b235ec8a08"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a625ed12df6cc348721ac02b235ec8a08">rm::device::HipnucImu::gyro_y</a></div><div class="ttdeci">f32 gyro_y() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:81</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a686798d5f61e446344cbcd30c5d0e30b"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a686798d5f61e446344cbcd30c5d0e30b">rm::device::HipnucImu::pitch</a></div><div class="ttdeci">f32 pitch() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:91</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a7aa9041cb6513df8a5b13e7377777462"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a7aa9041cb6513df8a5b13e7377777462">rm::device::HipnucImu::main_status</a></div><div class="ttdeci">u16 main_status() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:70</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a838c38322eda07786a89aa6fb54cc5a3"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a838c38322eda07786a89aa6fb54cc5a3">rm::device::HipnucImu::acc_y</a></div><div class="ttdeci">f32 acc_y() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:76</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a93be18faf9c5335df74016b6c0aa3e9b"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a93be18faf9c5335df74016b6c0aa3e9b">rm::device::HipnucImu::quat_y</a></div><div class="ttdeci">f32 quat_y() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:97</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_a97ea25c1abaadb756d8154fde939c69c"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#a97ea25c1abaadb756d8154fde939c69c">rm::device::HipnucImu::roll</a></div><div class="ttdeci">f32 roll() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:90</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_aa38d993bdf1f4bec09366a26678a9547"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#aa38d993bdf1f4bec09366a26678a9547">rm::device::HipnucImu::gyro_x</a></div><div class="ttdeci">f32 gyro_x() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:80</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_aaa9169827bd3941991be4bac39f2b9e4"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#aaa9169827bd3941991be4bac39f2b9e4">rm::device::HipnucImu::RxCallback</a></div><div class="ttdeci">void RxCallback(etl::span&lt; const u8 &gt; data)</div><div class="ttdoc">串口接收完成中断回调函数</div><div class="ttdef"><b>定义</b> hipnuc_imu.cc:56</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_aad19c719dc61a2c429f93535f66a196f"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#aad19c719dc61a2c429f93535f66a196f">rm::device::HipnucImu::gyro_z</a></div><div class="ttdeci">f32 gyro_z() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:82</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_aad4f1080788fa78995efe0bc169e443d"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#aad4f1080788fa78995efe0bc169e443d">rm::device::HipnucImu::temperature</a></div><div class="ttdeci">i8 temperature() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:71</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_aaf0c6cff774a3096ef605a0831f5f05c"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#aaf0c6cff774a3096ef605a0831f5f05c">rm::device::HipnucImu::quat_z</a></div><div class="ttdeci">f32 quat_z() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:98</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_ac8fb577ccdd4471f939be7abf498742c"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#ac8fb577ccdd4471f939be7abf498742c">rm::device::HipnucImu::raw_data</a></div><div class="ttdeci">const hipnuc_raw_t &amp; raw_data() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:104</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_adb1bb314a50e9691e97fed7b7bf4b665"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#adb1bb314a50e9691e97fed7b7bf4b665">rm::device::HipnucImu::system_time</a></div><div class="ttdeci">u32 system_time() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:72</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_ae9dae376dc3faaeceeeee247daad4dc6"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#ae9dae376dc3faaeceeeee247daad4dc6">rm::device::HipnucImu::air_pressure</a></div><div class="ttdeci">f32 air_pressure() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:101</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_aec7c08076788b0115ba2dce16f0f70ea"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#aec7c08076788b0115ba2dce16f0f70ea">rm::device::HipnucImu::last_packet_type</a></div><div class="ttdeci">HipnucPacketType last_packet_type() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:67</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_af5971eabfa61dd97638de9e4c7db9d2b"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#af5971eabfa61dd97638de9e4c7db9d2b">rm::device::HipnucImu::mag_z</a></div><div class="ttdeci">f32 mag_z() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:87</div></div>
 <div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_afa101d2e593b3ef97e0b7524e8688eba"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#afa101d2e593b3ef97e0b7524e8688eba">rm::device::HipnucImu::HipnucImu</a></div><div class="ttdeci">HipnucImu()=delete</div></div>
-<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_afb8b1cacdbece367591d1455d62bf488"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#afb8b1cacdbece367591d1455d62bf488">rm::device::HipnucImu::acc_z</a></div><div class="ttdeci">f32 acc_z() const</div><div class="ttdef"><b>Definition</b> hipnuc_imu.hpp:77</div></div>
-<div class="ttc" id="aclassrm_1_1hal_1_1AsyncReadable_html"><div class="ttname"><a href="classrm_1_1hal_1_1AsyncReadable.html">rm::hal::AsyncReadable</a></div><div class="ttdoc">异步读接口</div><div class="ttdef"><b>Definition</b> serial_interface.hpp:118</div></div>
+<div class="ttc" id="aclassrm_1_1device_1_1HipnucImu_html_afb8b1cacdbece367591d1455d62bf488"><div class="ttname"><a href="classrm_1_1device_1_1HipnucImu.html#afb8b1cacdbece367591d1455d62bf488">rm::device::HipnucImu::acc_z</a></div><div class="ttdeci">f32 acc_z() const</div><div class="ttdef"><b>定义</b> hipnuc_imu.hpp:77</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1AsyncReadable_html"><div class="ttname"><a href="classrm_1_1hal_1_1AsyncReadable.html">rm::hal::AsyncReadable</a></div><div class="ttdoc">异步读接口</div><div class="ttdef"><b>定义</b> serial_interface.hpp:118</div></div>
 <div class="ttc" id="adevice_8hpp_html"><div class="ttname"><a href="device_8hpp.html">device.hpp</a></div><div class="ttdoc">驱动框架的设备基类，主要功能为监视设备在线状态</div></div>
-<div class="ttc" id="anamespacerm_1_1device_html"><div class="ttname"><a href="namespacerm_1_1device.html">rm::device</a></div><div class="ttdef"><b>Definition</b> directdrive_motor.cc:37</div></div>
-<div class="ttc" id="anamespacerm_html_a287a55f70760f2a0c8cfdacddd9b2d34"><div class="ttname"><a href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">rm::u8</a></div><div class="ttdeci">uint8_t u8</div><div class="ttdef"><b>Definition</b> typedefs.hpp:43</div></div>
-<div class="ttc" id="anamespacerm_html_a84a0841eb16500b4c863280974adffc8"><div class="ttname"><a href="namespacerm.html#a84a0841eb16500b4c863280974adffc8">rm::i8</a></div><div class="ttdeci">int8_t i8</div><div class="ttdef"><b>Definition</b> typedefs.hpp:47</div></div>
-<div class="ttc" id="anamespacerm_html_a8f3662a01c5fa99494989944ee6c6157"><div class="ttname"><a href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">rm::u16</a></div><div class="ttdeci">uint16_t u16</div><div class="ttdef"><b>Definition</b> typedefs.hpp:44</div></div>
-<div class="ttc" id="anamespacerm_html_aae5bb39b0da6b1cf1b7ed1c03342ec66"><div class="ttname"><a href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">rm::u32</a></div><div class="ttdeci">uint32_t u32</div><div class="ttdef"><b>Definition</b> typedefs.hpp:45</div></div>
-<div class="ttc" id="anamespacerm_html_abe438454936420638776f339c29718b1"><div class="ttname"><a href="namespacerm.html#abe438454936420638776f339c29718b1">rm::f32</a></div><div class="ttdeci">float f32</div><div class="ttdef"><b>Definition</b> typedefs.hpp:52</div></div>
+<div class="ttc" id="anamespacerm_1_1device_html"><div class="ttname"><a href="namespacerm_1_1device.html">rm::device</a></div><div class="ttdef"><b>定义</b> directdrive_motor.cc:37</div></div>
+<div class="ttc" id="anamespacerm_html_a287a55f70760f2a0c8cfdacddd9b2d34"><div class="ttname"><a href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">rm::u8</a></div><div class="ttdeci">uint8_t u8</div><div class="ttdef"><b>定义</b> typedefs.hpp:43</div></div>
+<div class="ttc" id="anamespacerm_html_a84a0841eb16500b4c863280974adffc8"><div class="ttname"><a href="namespacerm.html#a84a0841eb16500b4c863280974adffc8">rm::i8</a></div><div class="ttdeci">int8_t i8</div><div class="ttdef"><b>定义</b> typedefs.hpp:47</div></div>
+<div class="ttc" id="anamespacerm_html_a8f3662a01c5fa99494989944ee6c6157"><div class="ttname"><a href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">rm::u16</a></div><div class="ttdeci">uint16_t u16</div><div class="ttdef"><b>定义</b> typedefs.hpp:44</div></div>
+<div class="ttc" id="anamespacerm_html_aae5bb39b0da6b1cf1b7ed1c03342ec66"><div class="ttname"><a href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">rm::u32</a></div><div class="ttdeci">uint32_t u32</div><div class="ttdef"><b>定义</b> typedefs.hpp:45</div></div>
+<div class="ttc" id="anamespacerm_html_abe438454936420638776f339c29718b1"><div class="ttname"><a href="namespacerm.html#abe438454936420638776f339c29718b1">rm::f32</a></div><div class="ttdeci">float f32</div><div class="ttdef"><b>定义</b> typedefs.hpp:52</div></div>
 <div class="ttc" id="aserial_8hpp_html"><div class="ttname"><a href="serial_8hpp.html">serial.hpp</a></div><div class="ttdoc">根据平台宏决定具体实现</div></div>
 <div class="ttc" id="atypedefs_8hpp_html"><div class="ttname"><a href="typedefs_8hpp.html">typedefs.hpp</a></div><div class="ttdoc">全局数据类型定义</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_e8cded2b3f09657169024877e246b3be.html">device</a></li><li class="navelem"><a class="el" href="dir_9fcfdcb111b6ce4c5fa85a7697dddfab.html">sensor</a></li><li class="navelem"><a class="el" href="hipnuc__imu_8hpp.html">hipnuc_imu.hpp</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a href="dir_e8cded2b3f09657169024877e246b3be.html">device</a></li><li class="navelem"><a href="dir_9fcfdcb111b6ce4c5fa85a7697dddfab.html">sensor</a></li><li class="navelem"><a href="hipnuc__imu_8hpp.html">hipnuc_imu.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

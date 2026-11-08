@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: src/librm/device/actuator/dji_motor.hpp 文件参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('dji__motor_8hpp.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('dji__motor_8hpp.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -91,11 +90,6 @@ $(document).ready(function(){initNavTree('dji__motor_8hpp.html',''); initResizab
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">类</a> &#124;
-<a href="#namespaces">命名空间</a> &#124;
-<a href="#typedef-members">类型定义</a> &#124;
-<a href="#enum-members">枚举</a>  </div>
   <div class="headertitle"><div class="title">dji_motor.hpp 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
@@ -106,48 +100,38 @@ $(document).ready(function(){initNavTree('dji__motor_8hpp.html',''); initResizab
 <code>#include &quot;<a class="el" href="can__device_8hpp_source.html">librm/device/can_device.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="utils_8hpp_source.html">librm/modules/utils.hpp</a>&quot;</code><br />
 </div>
-<p><a href="dji__motor_8hpp_source.html">浏览源代码.</a></p>
+<p><a href="dji__motor_8hpp_source.html">浏览该文件的源代码.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 类</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DjiMotorBase.html">rm::device::DjiMotorBase</a></td></tr>
+<tr class="memitem:rm_3A_3Adevice_3A_3ADjiMotorBase" id="r_rm_3A_3Adevice_3A_3ADjiMotorBase"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DjiMotorBase.html">rm::device::DjiMotorBase</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">DjiMotor的非模板基类，用于存储所有DjiMotor实例共享的静态成员，以及提供发送控制消息的静态函数  <a href="classrm_1_1device_1_1DjiMotorBase.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DjiMotorBase_1_1TxBuffers.html">rm::device::DjiMotorBase::TxBuffers</a></td></tr>
+<tr class="memitem:rm_3A_3Adevice_3A_3ADjiMotorBase_3A_3ATxBuffers" id="r_rm_3A_3Adevice_3A_3ADjiMotorBase_3A_3ATxBuffers"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DjiMotorBase_1_1TxBuffers.html">rm::device::DjiMotorBase::TxBuffers</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">对DJI电机来说，一条CAN总线上可以用帧id区分三条Tx通道：0x200、0x1ff、0x2ff，这个结构体就用来表示这三条通道的缓冲区。  <a href="structrm_1_1device_1_1DjiMotorBase_1_1TxBuffers.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DjiMotor.html">rm::device::DjiMotor&lt; MotorType &gt;</a></td></tr>
+<tr class="memitem:rm_3A_3Adevice_3A_3ADjiMotor_3C_20MotorType_20_3E" id="r_rm_3A_3Adevice_3A_3ADjiMotor_3C_20MotorType_20_3E"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DjiMotor.html">rm::device::DjiMotor&lt; MotorType &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">大疆电机(GM6020, M3508, M2006)  <a href="classrm_1_1device_1_1DjiMotor.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 命名空间</h2></td></tr>
-<tr class="memitem:namespacerm" id="r_namespacerm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm.html">rm</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacerm_1_1device" id="r_namespacerm_1_1device"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html">rm::device</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:rm" id="r_rm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm.html">rm</a></td></tr>
+<tr class="memitem:rm_3A_3Adevice" id="r_rm_3A_3Adevice"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html">rm::device</a></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 类型定义</h2></td></tr>
-<tr class="memitem:a6cb7f3dec7aafdb9806d488a7b4820e1" id="r_a6cb7f3dec7aafdb9806d488a7b4820e1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a6cb7f3dec7aafdb9806d488a7b4820e1">rm::device::GM6020</a> = <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt; <a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a98d6242ecedc73c63a680ef118bed630">DjiMotorType::kGM6020</a> &gt;</td></tr>
-<tr class="separator:a6cb7f3dec7aafdb9806d488a7b4820e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af652c0a9781ff67ae0c79c72766e73f1" id="r_af652c0a9781ff67ae0c79c72766e73f1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#af652c0a9781ff67ae0c79c72766e73f1">rm::device::M3508</a> = <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt; <a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a93e36269eaeb796f969adca34b7957b6">DjiMotorType::kM3508</a> &gt;</td></tr>
-<tr class="separator:af652c0a9781ff67ae0c79c72766e73f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae32b6a67fff29752d1e35d50f699c5f3" id="r_ae32b6a67fff29752d1e35d50f699c5f3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#ae32b6a67fff29752d1e35d50f699c5f3">rm::device::M2006</a> = <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt; <a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57ac79f8fe34278ffdb418f6ee3b8316ed4">DjiMotorType::kM2006</a> &gt;</td></tr>
-<tr class="separator:ae32b6a67fff29752d1e35d50f699c5f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10f1c3bdb0cedf93dbc48e0f709515ef" id="r_a10f1c3bdb0cedf93dbc48e0f709515ef"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a10f1c3bdb0cedf93dbc48e0f709515ef">rm::device::GM6020Current</a> = <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt; <a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a268ca16eb22ce8e2283093d352f06aa2">DjiMotorType::kGM6020Current</a> &gt;</td></tr>
-<tr class="separator:a10f1c3bdb0cedf93dbc48e0f709515ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9c10e3c020fbccbc935c696749d0783" id="r_ad9c10e3c020fbccbc935c696749d0783"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#ad9c10e3c020fbccbc935c696749d0783">rm::device::GM6020</a> = <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt;<a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a98d6242ecedc73c63a680ef118bed630">DjiMotorType::kGM6020</a>&gt;</td></tr>
+<tr class="memitem:abfaec5d2a727e1c17162d773fa4957e7" id="r_abfaec5d2a727e1c17162d773fa4957e7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#abfaec5d2a727e1c17162d773fa4957e7">rm::device::M3508</a> = <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt;<a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a93e36269eaeb796f969adca34b7957b6">DjiMotorType::kM3508</a>&gt;</td></tr>
+<tr class="memitem:a83b62355e8470ed37d1b3ab349334b56" id="r_a83b62355e8470ed37d1b3ab349334b56"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a83b62355e8470ed37d1b3ab349334b56">rm::device::M2006</a> = <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt;<a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57ac79f8fe34278ffdb418f6ee3b8316ed4">DjiMotorType::kM2006</a>&gt;</td></tr>
+<tr class="memitem:a58d4d4eb3b67d26c6adec10434b16b50" id="r_a58d4d4eb3b67d26c6adec10434b16b50"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a58d4d4eb3b67d26c6adec10434b16b50">rm::device::GM6020Current</a> = <a class="el" href="classrm_1_1device_1_1DjiMotor.html">DjiMotor</a>&lt;<a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a268ca16eb22ce8e2283093d352f06aa2">DjiMotorType::kGM6020Current</a>&gt;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 枚举</h2></td></tr>
 <tr class="memitem:a896e2ecf76700ddd37a344204982af57" id="r_a896e2ecf76700ddd37a344204982af57"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57">rm::device::DjiMotorType</a> { <a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a98d6242ecedc73c63a680ef118bed630">rm::device::kGM6020</a>
 , <a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a93e36269eaeb796f969adca34b7957b6">rm::device::kM3508</a>
 , <a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57ac79f8fe34278ffdb418f6ee3b8316ed4">rm::device::kM2006</a>
 , <a class="el" href="namespacerm_1_1device.html#a896e2ecf76700ddd37a344204982af57a268ca16eb22ce8e2283093d352f06aa2">rm::device::kGM6020Current</a>
  }</td></tr>
-<tr class="separator:a896e2ecf76700ddd37a344204982af57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
 <div class="textblock"><p>大疆电机类库 </p>
 <dl class="section note"><dt>注解</dt><dd>DJI GM6020电机 </dd>
 <dd>
@@ -186,11 +170,19 @@ STD, DATA, DLC=8 </dd>
 <a href="https://www.robomaster.com/zh-CN/products/components/general/M2006">https://www.robomaster.com/zh-CN/products/components/general/M2006</a> </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_e8cded2b3f09657169024877e246b3be.html">device</a></li><li class="navelem"><a class="el" href="dir_a5828826e2414dc98d48f4718a622200.html">actuator</a></li><li class="navelem"><a class="el" href="dji__motor_8hpp.html">dji_motor.hpp</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a href="dir_e8cded2b3f09657169024877e246b3be.html">device</a></li><li class="navelem"><a href="dir_a5828826e2414dc98d48f4718a622200.html">actuator</a></li><li class="navelem"><a href="dji__motor_8hpp.html">dji_motor.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

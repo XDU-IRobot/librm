@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: src/librm/hal/can.hpp 源文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,28 +36,22 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function() { init_codefold(0); });
-/* @license-end */
-</script>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -69,10 +64,9 @@ $(document).ready(function() { init_codefold(0); });
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('can_8hpp_source.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('can_8hpp_source.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -120,7 +114,8 @@ $(document).ready(function(){initNavTree('can_8hpp_source.html',''); initResizab
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef LIBRM_HAL_CAN_HPP</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_HAL_CAN_HPP</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
@@ -164,21 +159,22 @@ $(document).ready(function(){initNavTree('can_8hpp_source.html',''); initResizab
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HAL_CAN_HPP</span></div>
 <div class="ttc" id="abxcan_8hpp_html"><div class="ttname"><a href="bxcan_8hpp.html">bxcan.hpp</a></div><div class="ttdoc">bxCAN类库</div></div>
 <div class="ttc" id="acan__interface_8hpp_html"><div class="ttname"><a href="can__interface_8hpp.html">can_interface.hpp</a></div><div class="ttdoc">CAN的接口类</div></div>
-<div class="ttc" id="aclassrm_1_1hal_1_1detail_1_1ThrottledCan_html"><div class="ttname"><a href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a></div><div class="ttdoc">基于限流优先级队列的通用CAN发送封装</div><div class="ttdef"><b>Definition</b> throttled_can.hpp:55</div></div>
-<div class="ttc" id="aclassrm_1_1hal_1_1linux___1_1SocketCan_html"><div class="ttname"><a href="classrm_1_1hal_1_1linux___1_1SocketCan.html">rm::hal::linux_::SocketCan</a></div><div class="ttdef"><b>Definition</b> socketcan.hpp:52</div></div>
-<div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1BxCan_html"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1BxCan.html">rm::hal::stm32::BxCan</a></div><div class="ttdoc">bxCAN类库</div><div class="ttdef"><b>Definition</b> bxcan.hpp:42</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1detail_1_1ThrottledCan_html"><div class="ttname"><a href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a></div><div class="ttdoc">基于限流优先级队列的通用CAN发送封装</div><div class="ttdef"><b>定义</b> throttled_can.hpp:57</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1linux___1_1SocketCan_html"><div class="ttname"><a href="classrm_1_1hal_1_1linux___1_1SocketCan.html">rm::hal::linux_::SocketCan</a></div><div class="ttdef"><b>定义</b> socketcan.hpp:52</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1stm32_1_1BxCan_html"><div class="ttname"><a href="classrm_1_1hal_1_1stm32_1_1BxCan.html">rm::hal::stm32::BxCan</a></div><div class="ttdoc">bxCAN类库</div><div class="ttdef"><b>定义</b> bxcan.hpp:42</div></div>
 <div class="ttc" id="afdcan_8hpp_html"><div class="ttname"><a href="fdcan_8hpp.html">fdcan.hpp</a></div></div>
 <div class="ttc" id="amcp2515_8hpp_html"><div class="ttname"><a href="mcp2515_8hpp.html">mcp2515.hpp</a></div><div class="ttdoc">MCP2515 CAN控制器封装</div></div>
-<div class="ttc" id="anamespacerm_1_1hal_html"><div class="ttname"><a href="namespacerm_1_1hal.html">rm::hal</a></div><div class="ttdef"><b>Definition</b> can.hpp:42</div></div>
+<div class="ttc" id="anamespacerm_1_1hal_html"><div class="ttname"><a href="namespacerm_1_1hal.html">rm::hal</a></div><div class="ttdef"><b>定义</b> can.hpp:42</div></div>
 <div class="ttc" id="asocketcan_8hpp_html"><div class="ttname"><a href="socketcan_8hpp.html">socketcan.hpp</a></div><div class="ttdoc">SocketCAN类库</div></div>
 <div class="ttc" id="athrottled__can_8hpp_html"><div class="ttname"><a href="throttled__can_8hpp.html">throttled_can.hpp</a></div><div class="ttdoc">基于限流优先级队列的通用CAN发送封装（平台无关）</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_12d4920679a1960aa4499f9d88e747a8.html">hal</a></li><li class="navelem"><a class="el" href="can_8hpp.html">can.hpp</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a href="dir_12d4920679a1960aa4499f9d88e747a8.html">hal</a></li><li class="navelem"><a href="can_8hpp.html">can.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

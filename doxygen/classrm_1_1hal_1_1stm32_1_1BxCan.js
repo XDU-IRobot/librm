@@ -7,6 +7,7 @@ var classrm_1_1hal_1_1stm32_1_1BxCan =
     [ "operator=", "classrm_1_1hal_1_1stm32_1_1BxCan.html#a2900c653f2f09562df8e2648d339a987", null ],
     [ "SetFilter", "classrm_1_1hal_1_1stm32_1_1BxCan.html#aa3535283d15434dd7643ee3f496d37df", null ],
     [ "Stop", "classrm_1_1hal_1_1stm32_1_1BxCan.html#a97058bdafef96341cb6f75c1fbcd7c35", null ],
+    [ "Write", "classrm_1_1hal_1_1stm32_1_1BxCan.html#a4eee772bc8bc9dea0ed9ae982ec9f0d0", null ],
     [ "Write", "classrm_1_1hal_1_1stm32_1_1BxCan.html#a0b1950fdac0da23de0f609259af2aa48", null ],
     [ "CanRxFifo0MsgPendingCallback", "classrm_1_1hal_1_1stm32_1_1BxCan.html#a4312ef342693d10683d76df13e1005bf", null ]
 ];

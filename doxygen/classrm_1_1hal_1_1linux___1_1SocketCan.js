@@ -6,5 +6,6 @@ var classrm_1_1hal_1_1linux___1_1SocketCan =
     [ "Begin", "classrm_1_1hal_1_1linux___1_1SocketCan.html#a1277a6601d0376946fe8e21835fad629", null ],
     [ "SetFilter", "classrm_1_1hal_1_1linux___1_1SocketCan.html#ac61dd347a1abbce44a45e7311c62c9ee", null ],
     [ "Stop", "classrm_1_1hal_1_1linux___1_1SocketCan.html#ad4698b9a4e9d7190119cd403defa85e8", null ],
+    [ "Write", "classrm_1_1hal_1_1linux___1_1SocketCan.html#a2ddcd90a247225a42cfe7b6ae12a90dc", null ],
     [ "Write", "classrm_1_1hal_1_1linux___1_1SocketCan.html#a96dc866167dfe90d1e5250f797c3db56", null ]
 ];

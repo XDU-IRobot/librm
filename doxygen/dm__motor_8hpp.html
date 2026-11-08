@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: src/librm/device/actuator/dm_motor.hpp 文件参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('dm__motor_8hpp.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('dm__motor_8hpp.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -91,11 +90,6 @@ $(document).ready(function(){initNavTree('dm__motor_8hpp.html',''); initResizabl
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">类</a> &#124;
-<a href="#namespaces">命名空间</a> &#124;
-<a href="#typedef-members">类型定义</a> &#124;
-<a href="#enum-members">枚举</a>  </div>
   <div class="headertitle"><div class="title">dm_motor.hpp 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
@@ -108,43 +102,33 @@ $(document).ready(function(){initNavTree('dm__motor_8hpp.html',''); initResizabl
 <code>#include &quot;<a class="el" href="typedefs_8hpp_source.html">librm/core/typedefs.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="utils_8hpp_source.html">librm/modules/utils.hpp</a>&quot;</code><br />
 </div>
-<p><a href="dm__motor_8hpp_source.html">浏览源代码.</a></p>
+<p><a href="dm__motor_8hpp_source.html">浏览该文件的源代码.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 类</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DmMotorSettings.html">rm::device::DmMotorSettings&lt; control_mode &gt;</a></td></tr>
+<tr class="memitem:rm_3A_3Adevice_3A_3ADmMotorSettings_3C_20control_5Fmode_20_3E" id="r_rm_3A_3Adevice_3A_3ADmMotorSettings_3C_20control_5Fmode_20_3E"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DmMotorSettings.html">rm::device::DmMotorSettings&lt; control_mode &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">在达妙电机的上位机软件里设置的一些会影响反馈信息的参数，需要填入这里传给类库  <a href="structrm_1_1device_1_1DmMotorSettings.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeed_01_4.html">rm::device::DmMotorSettings&lt; DmMotorControlMode::kSpeed &gt;</a></td></tr>
+<tr class="memitem:rm_3A_3Adevice_3A_3ADmMotorSettings_3C_20DmMotorControlMode_3A_3AkSpeed_20_3E" id="r_rm_3A_3Adevice_3A_3ADmMotorSettings_3C_20DmMotorControlMode_3A_3AkSpeed_20_3E"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeed_01_4.html">rm::device::DmMotorSettings&lt; DmMotorControlMode::kSpeed &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">在达妙电机的上位机软件里设置的一些会影响反馈信息的参数，需要填入这里传给类库  <a href="structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeed_01_4.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeedPosition_01_4.html">rm::device::DmMotorSettings&lt; DmMotorControlMode::kSpeedPosition &gt;</a></td></tr>
+<tr class="memitem:rm_3A_3Adevice_3A_3ADmMotorSettings_3C_20DmMotorControlMode_3A_3AkSpeedPosition_20_3E" id="r_rm_3A_3Adevice_3A_3ADmMotorSettings_3C_20DmMotorControlMode_3A_3AkSpeedPosition_20_3E"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeedPosition_01_4.html">rm::device::DmMotorSettings&lt; DmMotorControlMode::kSpeedPosition &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">在达妙电机的上位机软件里设置的一些会影响反馈信息的参数，需要填入这里传给类库  <a href="structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kSpeedPosition_01_4.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kMit_01_4.html">rm::device::DmMotorSettings&lt; DmMotorControlMode::kMit &gt;</a></td></tr>
+<tr class="memitem:rm_3A_3Adevice_3A_3ADmMotorSettings_3C_20DmMotorControlMode_3A_3AkMit_20_3E" id="r_rm_3A_3Adevice_3A_3ADmMotorSettings_3C_20DmMotorControlMode_3A_3AkMit_20_3E"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kMit_01_4.html">rm::device::DmMotorSettings&lt; DmMotorControlMode::kMit &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">在达妙电机的上位机软件里设置的一些会影响反馈信息的参数，需要填入这里传给类库  <a href="structrm_1_1device_1_1DmMotorSettings_3_01DmMotorControlMode_1_1kMit_01_4.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DmMotor.html">rm::device::DmMotor&lt; control_mode &gt;</a></td></tr>
+<tr class="memitem:rm_3A_3Adevice_3A_3ADmMotor_3C_20control_5Fmode_20_3E" id="r_rm_3A_3Adevice_3A_3ADmMotor_3C_20control_5Fmode_20_3E"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1DmMotor.html">rm::device::DmMotor&lt; control_mode &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">达妙电机类库  <a href="classrm_1_1device_1_1DmMotor.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 命名空间</h2></td></tr>
-<tr class="memitem:namespacerm" id="r_namespacerm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm.html">rm</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacerm_1_1device" id="r_namespacerm_1_1device"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html">rm::device</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:rm" id="r_rm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm.html">rm</a></td></tr>
+<tr class="memitem:rm_3A_3Adevice" id="r_rm_3A_3Adevice"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html">rm::device</a></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 类型定义</h2></td></tr>
-<tr class="memitem:afb7962cab98123f231295bc522d94199" id="r_afb7962cab98123f231295bc522d94199"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#afb7962cab98123f231295bc522d94199">rm::device::DmMotorMit</a> = <a class="el" href="classrm_1_1device_1_1DmMotor.html">DmMotor</a>&lt; <a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea671bf1301da9c5f5da9a08002e6f89c4">DmMotorControlMode::kMit</a> &gt;</td></tr>
-<tr class="separator:afb7962cab98123f231295bc522d94199"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bd90b66d9b191f86a3ed8890a23a144" id="r_a2bd90b66d9b191f86a3ed8890a23a144"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a2bd90b66d9b191f86a3ed8890a23a144">rm::device::DmMotorSpeedPosition</a> = <a class="el" href="classrm_1_1device_1_1DmMotor.html">DmMotor</a>&lt; <a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94eac423473711521422b9f206b311bca100">DmMotorControlMode::kSpeedPosition</a> &gt;</td></tr>
-<tr class="separator:a2bd90b66d9b191f86a3ed8890a23a144"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb6c3f9fa7319f4f5ab684a282a771b6" id="r_aeb6c3f9fa7319f4f5ab684a282a771b6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#aeb6c3f9fa7319f4f5ab684a282a771b6">rm::device::DmMotorSpeed</a> = <a class="el" href="classrm_1_1device_1_1DmMotor.html">DmMotor</a>&lt; <a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea22f7e05f35e7f25d5f24304feb24bee8">DmMotorControlMode::kSpeed</a> &gt;</td></tr>
-<tr class="separator:aeb6c3f9fa7319f4f5ab684a282a771b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae99f3d87fbd945765e3b9aa42ce186cb" id="r_ae99f3d87fbd945765e3b9aa42ce186cb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#ae99f3d87fbd945765e3b9aa42ce186cb">rm::device::DmMotorMit</a> = <a class="el" href="classrm_1_1device_1_1DmMotor.html">DmMotor</a>&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea671bf1301da9c5f5da9a08002e6f89c4">DmMotorControlMode::kMit</a>&gt;</td></tr>
+<tr class="memitem:aa5fd599fb9b1f15fee093036d694f9ee" id="r_aa5fd599fb9b1f15fee093036d694f9ee"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#aa5fd599fb9b1f15fee093036d694f9ee">rm::device::DmMotorSpeedPosition</a> = <a class="el" href="classrm_1_1device_1_1DmMotor.html">DmMotor</a>&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94eac423473711521422b9f206b311bca100">DmMotorControlMode::kSpeedPosition</a>&gt;</td></tr>
+<tr class="memitem:ada56034bc0605c90c5a3bb3c77ab57ad" id="r_ada56034bc0605c90c5a3bb3c77ab57ad"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#ada56034bc0605c90c5a3bb3c77ab57ad">rm::device::DmMotorSpeed</a> = <a class="el" href="classrm_1_1device_1_1DmMotor.html">DmMotor</a>&lt;<a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea22f7e05f35e7f25d5f24304feb24bee8">DmMotorControlMode::kSpeed</a>&gt;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 枚举</h2></td></tr>
 <tr class="memitem:a6658bb67dd98e3397c3d30c3bf3229c5" id="r_a6658bb67dd98e3397c3d30c3bf3229c5"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a6658bb67dd98e3397c3d30c3bf3229c5">rm::device::DmMotorStatus</a> { <br />
 &#160;&#160;<a class="el" href="namespacerm_1_1device.html#a6658bb67dd98e3397c3d30c3bf3229c5a229bc0c46e45e1688bdb842b616fd8d2">rm::device::kDisable</a> = 0x0
@@ -161,31 +145,36 @@ $(document).ready(function(){initNavTree('dm__motor_8hpp.html',''); initResizabl
 <br />
  }</td></tr>
 <tr class="memdesc:a6658bb67dd98e3397c3d30c3bf3229c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">达妙电机状态  <a href="namespacerm_1_1device.html#a6658bb67dd98e3397c3d30c3bf3229c5">更多...</a><br /></td></tr>
-<tr class="separator:a6658bb67dd98e3397c3d30c3bf3229c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09c7ea6c3cbe688e5936931e1665b94e" id="r_a09c7ea6c3cbe688e5936931e1665b94e"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e">rm::device::DmMotorControlMode</a> { <a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea671bf1301da9c5f5da9a08002e6f89c4">rm::device::kMit</a>
 , <a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94eac423473711521422b9f206b311bca100">rm::device::kSpeedPosition</a>
 , <a class="el" href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94ea22f7e05f35e7f25d5f24304feb24bee8">rm::device::kSpeed</a>
  }</td></tr>
 <tr class="memdesc:a09c7ea6c3cbe688e5936931e1665b94e"><td class="mdescLeft">&#160;</td><td class="mdescRight">达妙电机的三种控制模式  <a href="namespacerm_1_1device.html#a09c7ea6c3cbe688e5936931e1665b94e">更多...</a><br /></td></tr>
-<tr class="separator:a09c7ea6c3cbe688e5936931e1665b94e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac288c43db8b896c0643f9a4d299d0d65" id="r_ac288c43db8b896c0643f9a4d299d0d65"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerm_1_1device.html#ac288c43db8b896c0643f9a4d299d0d65">rm::device::DmMotorInstructions</a> { <a class="el" href="namespacerm_1_1device.html#ac288c43db8b896c0643f9a4d299d0d65a239d75756e4e52e4fff58dba82889b02">rm::device::kEnable</a> = 0xfc
 , <a class="el" href="namespacerm_1_1device.html#ac288c43db8b896c0643f9a4d299d0d65a229bc0c46e45e1688bdb842b616fd8d2">rm::device::kDisable</a> = 0xfd
 , <a class="el" href="namespacerm_1_1device.html#ac288c43db8b896c0643f9a4d299d0d65af858c8ebda9278d750e196a886b242a6">rm::device::kSetZeroPosition</a> = 0xfe
 , <a class="el" href="namespacerm_1_1device.html#ac288c43db8b896c0643f9a4d299d0d65a548850f5a9e00483fc14c43fb780562c">rm::device::kClearError</a> = 0xfb
  }</td></tr>
 <tr class="memdesc:ac288c43db8b896c0643f9a4d299d0d65"><td class="mdescLeft">&#160;</td><td class="mdescRight">达妙电机的功能指令和其对应的最后一个字节的值  <a href="namespacerm_1_1device.html#ac288c43db8b896c0643f9a4d299d0d65">更多...</a><br /></td></tr>
-<tr class="separator:ac288c43db8b896c0643f9a4d299d0d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
 <div class="textblock"><p>达妙电机类库 </p>
 <dl class="section note"><dt>注解</dt><dd><a href="https://gitee.com/kit-miao/damiao">https://gitee.com/kit-miao/damiao</a> </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_e8cded2b3f09657169024877e246b3be.html">device</a></li><li class="navelem"><a class="el" href="dir_a5828826e2414dc98d48f4718a622200.html">actuator</a></li><li class="navelem"><a class="el" href="dm__motor_8hpp.html">dm_motor.hpp</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a href="dir_e8cded2b3f09657169024877e246b3be.html">device</a></li><li class="navelem"><a href="dir_a5828826e2414dc98d48f4718a622200.html">actuator</a></li><li class="navelem"><a href="dm__motor_8hpp.html">dm_motor.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

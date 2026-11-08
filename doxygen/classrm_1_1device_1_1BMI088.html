@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: rm::device::BMI088类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classrm_1_1device_1_1BMI088.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('classrm_1_1device_1_1BMI088.html','','classrm_1_1device_1_1BMI088-members'); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -91,55 +90,38 @@ $(document).ready(function(){initNavTree('classrm_1_1device_1_1BMI088.html','');
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public 成员函数</a> &#124;
-<a href="classrm_1_1device_1_1BMI088-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">rm::device::BMI088类 参考</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><a class="el" href="classrm_1_1device_1_1BMI088.html" title="BMI088 IMU">BMI088</a> IMU  
- <a href="classrm_1_1device_1_1BMI088.html#details">更多...</a></p>
+ <a href="#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="bmi088_8hpp_source.html">bmi088.hpp</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a9bba179a63d19f94165abd4af4dec88b" id="r_a9bba179a63d19f94165abd4af4dec88b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1BMI088.html#a9bba179a63d19f94165abd4af4dec88b">BMI088</a> ()=delete</td></tr>
-<tr class="separator:a9bba179a63d19f94165abd4af4dec88b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba61add85d32d26d622f84cd632453b4" id="r_aba61add85d32d26d622f84cd632453b4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1BMI088.html#aba61add85d32d26d622f84cd632453b4">~BMI088</a> ()=default</td></tr>
-<tr class="separator:aba61add85d32d26d622f84cd632453b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad812411296784c7c6bc9e84b34c29041" id="r_ad812411296784c7c6bc9e84b34c29041"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1BMI088.html#ad812411296784c7c6bc9e84b34c29041">BMI088</a> (SPI_HandleTypeDef &amp;hspi, GPIO_TypeDef *cs1_accel_gpio_port, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> cs1_accel_pin, GPIO_TypeDef *cs1_gyro_gpio_port, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> cs1_gyro_pin)</td></tr>
-<tr class="separator:ad812411296784c7c6bc9e84b34c29041"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1fb8987359c0246d312240b420a1c2d" id="r_af1fb8987359c0246d312240b420a1c2d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1BMI088.html#af1fb8987359c0246d312240b420a1c2d">BMI088</a> (const <a class="el" href="classrm_1_1device_1_1BMI088.html">BMI088</a> &amp;)=delete</td></tr>
-<tr class="separator:af1fb8987359c0246d312240b420a1c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdd4e732934f5984a53b7302eceb108b" id="r_acdd4e732934f5984a53b7302eceb108b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1device_1_1BMI088.html">BMI088</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1BMI088.html#acdd4e732934f5984a53b7302eceb108b">operator=</a> (const <a class="el" href="classrm_1_1device_1_1BMI088.html">BMI088</a> &amp;)=delete</td></tr>
-<tr class="separator:acdd4e732934f5984a53b7302eceb108b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92fa63a89a51460b4d692258956865f4" id="r_a92fa63a89a51460b4d692258956865f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1BMI088.html#a92fa63a89a51460b4d692258956865f4">Update</a> ()</td></tr>
+<tr class="memitem:a9bba179a63d19f94165abd4af4dec88b" id="r_a9bba179a63d19f94165abd4af4dec88b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bba179a63d19f94165abd4af4dec88b">BMI088</a> ()=delete</td></tr>
+<tr class="memitem:aba61add85d32d26d622f84cd632453b4" id="r_aba61add85d32d26d622f84cd632453b4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba61add85d32d26d622f84cd632453b4">~BMI088</a> ()=default</td></tr>
+<tr class="memitem:ad812411296784c7c6bc9e84b34c29041" id="r_ad812411296784c7c6bc9e84b34c29041"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad812411296784c7c6bc9e84b34c29041">BMI088</a> (SPI_HandleTypeDef &amp;hspi, GPIO_TypeDef *cs1_accel_gpio_port, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> cs1_accel_pin, GPIO_TypeDef *cs1_gyro_gpio_port, <a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> cs1_gyro_pin)</td></tr>
+<tr class="memitem:af1fb8987359c0246d312240b420a1c2d" id="r_af1fb8987359c0246d312240b420a1c2d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1fb8987359c0246d312240b420a1c2d">BMI088</a> (const BMI088 &amp;)=delete</td></tr>
+<tr class="memitem:acdd4e732934f5984a53b7302eceb108b" id="r_acdd4e732934f5984a53b7302eceb108b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a9bba179a63d19f94165abd4af4dec88b">BMI088</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdd4e732934f5984a53b7302eceb108b">operator=</a> (const <a class="el" href="#a9bba179a63d19f94165abd4af4dec88b">BMI088</a> &amp;)=delete</td></tr>
+<tr class="memitem:a92fa63a89a51460b4d692258956865f4" id="r_a92fa63a89a51460b4d692258956865f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92fa63a89a51460b4d692258956865f4">Update</a> ()</td></tr>
 <tr class="memdesc:a92fa63a89a51460b4d692258956865f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新传感器数据  <br /></td></tr>
-<tr class="separator:a92fa63a89a51460b4d692258956865f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48c328f1dbda50ae439693f2aefa4c4b" id="r_a48c328f1dbda50ae439693f2aefa4c4b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1BMI088.html#a48c328f1dbda50ae439693f2aefa4c4b">temperature</a> () const</td></tr>
+<tr class="memitem:a48c328f1dbda50ae439693f2aefa4c4b" id="r_a48c328f1dbda50ae439693f2aefa4c4b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48c328f1dbda50ae439693f2aefa4c4b">temperature</a> () const</td></tr>
 <tr class="memdesc:a48c328f1dbda50ae439693f2aefa4c4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取传感器温度  <br /></td></tr>
-<tr class="separator:a48c328f1dbda50ae439693f2aefa4c4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54e19ac2fa05407f3c35bbd5e7a31218" id="r_a54e19ac2fa05407f3c35bbd5e7a31218"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdf">BMI088Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1BMI088.html#a54e19ac2fa05407f3c35bbd5e7a31218">status</a> () const</td></tr>
+<tr class="memitem:a54e19ac2fa05407f3c35bbd5e7a31218" id="r_a54e19ac2fa05407f3c35bbd5e7a31218"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdf">BMI088Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54e19ac2fa05407f3c35bbd5e7a31218">status</a> () const</td></tr>
 <tr class="memdesc:a54e19ac2fa05407f3c35bbd5e7a31218"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取传感器状态  <br /></td></tr>
-<tr class="separator:a54e19ac2fa05407f3c35bbd5e7a31218"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8faa7bd243b85f0fc23e74aab3d30007" id="r_a8faa7bd243b85f0fc23e74aab3d30007"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1BMI088.html#a8faa7bd243b85f0fc23e74aab3d30007">gyro_x</a> () const</td></tr>
-<tr class="separator:a8faa7bd243b85f0fc23e74aab3d30007"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55f23ccea571fd08d3aad172dad6107b" id="r_a55f23ccea571fd08d3aad172dad6107b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1BMI088.html#a55f23ccea571fd08d3aad172dad6107b">gyro_y</a> () const</td></tr>
-<tr class="separator:a55f23ccea571fd08d3aad172dad6107b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefcbef23954396adc47d42f50d754d94" id="r_aefcbef23954396adc47d42f50d754d94"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1BMI088.html#aefcbef23954396adc47d42f50d754d94">gyro_z</a> () const</td></tr>
-<tr class="separator:aefcbef23954396adc47d42f50d754d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a608b9b327ad36603fe0386ac5f769838" id="r_a608b9b327ad36603fe0386ac5f769838"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1BMI088.html#a608b9b327ad36603fe0386ac5f769838">accel_x</a> () const</td></tr>
-<tr class="separator:a608b9b327ad36603fe0386ac5f769838"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8863e25596c1a4f43cc025faf070753e" id="r_a8863e25596c1a4f43cc025faf070753e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1BMI088.html#a8863e25596c1a4f43cc025faf070753e">accel_y</a> () const</td></tr>
-<tr class="separator:a8863e25596c1a4f43cc025faf070753e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a910aa34b73466b1784896c6266192e69" id="r_a910aa34b73466b1784896c6266192e69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1device_1_1BMI088.html#a910aa34b73466b1784896c6266192e69">accel_z</a> () const</td></tr>
-<tr class="separator:a910aa34b73466b1784896c6266192e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8faa7bd243b85f0fc23e74aab3d30007" id="r_a8faa7bd243b85f0fc23e74aab3d30007"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8faa7bd243b85f0fc23e74aab3d30007">gyro_x</a> () const</td></tr>
+<tr class="memitem:a55f23ccea571fd08d3aad172dad6107b" id="r_a55f23ccea571fd08d3aad172dad6107b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55f23ccea571fd08d3aad172dad6107b">gyro_y</a> () const</td></tr>
+<tr class="memitem:aefcbef23954396adc47d42f50d754d94" id="r_aefcbef23954396adc47d42f50d754d94"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefcbef23954396adc47d42f50d754d94">gyro_z</a> () const</td></tr>
+<tr class="memitem:a608b9b327ad36603fe0386ac5f769838" id="r_a608b9b327ad36603fe0386ac5f769838"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a608b9b327ad36603fe0386ac5f769838">accel_x</a> () const</td></tr>
+<tr class="memitem:a8863e25596c1a4f43cc025faf070753e" id="r_a8863e25596c1a4f43cc025faf070753e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8863e25596c1a4f43cc025faf070753e">accel_y</a> () const</td></tr>
+<tr class="memitem:a910aa34b73466b1784896c6266192e69" id="r_a910aa34b73466b1784896c6266192e69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a910aa34b73466b1784896c6266192e69">accel_z</a> () const</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
 <div class="textblock"><p><a class="el" href="classrm_1_1device_1_1BMI088.html" title="BMI088 IMU">BMI088</a> IMU </p>
-</div><h2 class="groupheader">构造及析构函数说明</h2>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">构造及析构函数说明</h2>
 <a id="a9bba179a63d19f94165abd4af4dec88b" name="a9bba179a63d19f94165abd4af4dec88b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9bba179a63d19f94165abd4af4dec88b">&#9670;&#160;</a></span>BMI088() <span class="overload">[1/3]</span></h2>
 
@@ -152,13 +134,13 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">rm::device::BMI088::BMI088 </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -177,13 +159,13 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">rm::device::BMI088::~BMI088 </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -199,37 +181,27 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">rm::device::BMI088::BMI088 </td>
           <td>(</td>
-          <td class="paramtype">SPI_HandleTypeDef &amp;&#160;</td>
-          <td class="paramname"><em>hspi</em>, </td>
+          <td class="paramtype">SPI_HandleTypeDef &amp;</td>          <td class="paramname"><span class="paramname"><em>hspi</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">GPIO_TypeDef *&#160;</td>
-          <td class="paramname"><em>cs1_accel_gpio_port</em>, </td>
+          <td class="paramtype">GPIO_TypeDef *</td>          <td class="paramname"><span class="paramname"><em>cs1_accel_gpio_port</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>cs1_accel_pin</em>, </td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a></td>          <td class="paramname"><span class="paramname"><em>cs1_accel_pin</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">GPIO_TypeDef *&#160;</td>
-          <td class="paramname"><em>cs1_gyro_gpio_port</em>, </td>
+          <td class="paramtype">GPIO_TypeDef *</td>          <td class="paramname"><span class="paramname"><em>cs1_gyro_gpio_port</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>cs1_gyro_pin</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a></td>          <td class="paramname"><span class="paramname"><em>cs1_gyro_pin</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -258,34 +230,41 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">rm::device::BMI088::BMI088 </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classrm_1_1device_1_1BMI088.html">BMI088</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const BMI088 &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<h2 class="groupheader">成员函数说明</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">成员函数说明</h2>
 <a id="a608b9b327ad36603fe0386ac5f769838" name="a608b9b327ad36603fe0386ac5f769838"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a608b9b327ad36603fe0386ac5f769838">&#9670;&#160;</a></span>accel_x()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::device::BMI088::accel_x </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <dl class="section return"><dt>返回</dt><dd>加速度计X轴数据(m/s^2) </dd></dl>
 
@@ -296,14 +275,22 @@ Public 成员函数</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::device::BMI088::accel_y </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <dl class="section return"><dt>返回</dt><dd>加速度计Y轴数据(m/s^2) </dd></dl>
 
@@ -314,14 +301,22 @@ Public 成员函数</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::device::BMI088::accel_z </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <dl class="section return"><dt>返回</dt><dd>加速度计Z轴数据(m/s^2) </dd></dl>
 
@@ -332,14 +327,22 @@ Public 成员函数</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::device::BMI088::gyro_x </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <dl class="section return"><dt>返回</dt><dd>陀螺仪X轴数据(rad/s) </dd></dl>
 
@@ -350,14 +353,22 @@ Public 成员函数</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::device::BMI088::gyro_y </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <dl class="section return"><dt>返回</dt><dd>陀螺仪Y轴数据(rad/s) </dd></dl>
 
@@ -368,14 +379,22 @@ Public 成员函数</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::device::BMI088::gyro_z </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <dl class="section return"><dt>返回</dt><dd>陀螺仪Z轴数据(rad/s) </dd></dl>
 
@@ -391,16 +410,15 @@ Public 成员函数</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrm_1_1device_1_1BMI088.html">BMI088</a> &amp; rm::device::BMI088::operator= </td>
+          <td class="memname"><a class="el" href="#a9bba179a63d19f94165abd4af4dec88b">BMI088</a> &amp; rm::device::BMI088::operator= </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classrm_1_1device_1_1BMI088.html">BMI088</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="#a9bba179a63d19f94165abd4af4dec88b">BMI088</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -412,14 +430,22 @@ Public 成员函数</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacerm_1_1device.html#a944433672605ce55b326757ce86f9cdf">BMI088Status</a> rm::device::BMI088::status </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>获取传感器状态 </p>
@@ -432,14 +458,22 @@ Public 成员函数</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#abe438454936420638776f339c29718b1">f32</a> rm::device::BMI088::temperature </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>获取传感器温度 </p>
@@ -456,7 +490,7 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">void rm::device::BMI088::Update </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -472,11 +506,19 @@ Public 成员函数</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1device.html">device</a></li><li class="navelem"><a class="el" href="classrm_1_1device_1_1BMI088.html">BMI088</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="namespacerm.html">rm</a></li><li class="navelem"><a href="namespacerm_1_1device.html">device</a></li><li class="navelem"><a href="classrm_1_1device_1_1BMI088.html">BMI088</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

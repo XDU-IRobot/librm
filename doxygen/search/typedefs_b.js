@@ -1,21 +1,21 @@
 var searchData=
 [
   ['m_0',['M',['../classrm_1_1modules_1_1accelMeasurementModel.html#acb3a28682d805893b2e2ea852c795383',1,'rm::modules::accelMeasurementModel']]],
-  ['m2006_1',['M2006',['../namespacerm_1_1device.html#ae32b6a67fff29752d1e35d50f699c5f3',1,'rm::device']]],
-  ['m3508_2',['M3508',['../namespacerm_1_1device.html#af652c0a9781ff67ae0c79c72766e73f1',1,'rm::device']]],
+  ['m2006_1',['M2006',['../namespacerm_1_1device.html#a83b62355e8470ed37d1b3ab349334b56',1,'rm::device']]],
+  ['m3508_2',['M3508',['../namespacerm_1_1device.html#abfaec5d2a727e1c17162d773fa4957e7',1,'rm::device']]],
   ['maskfault_3',['MaskFault',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a9732878995bfd222dab6efe0f4987057',1,'rm::device::DirectDriveMotor::Parameters']]],
-  ['masterovercurrentthreshold_4',['MasterOvercurrentThreshold',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#aef141bd986f0087246c3f901ccc6b919',1,'rm::device::DirectDriveMotor::Parameters']]],
+  ['masterovercurrentthreshold_4',['MasterOvercurrentThreshold',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a7e9516a4e0a9c329c2ede35099259bd6',1,'rm::device::DirectDriveMotor::Parameters']]],
   ['maxiq_5',['MaxIq',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a6876e97191db3fbf0bd76106751b88a5',1,'rm::device::DirectDriveMotor::Parameters']]],
   ['maxphasecurrent_6',['MaxPhaseCurrent',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a729644d5403315ebb465d3a480477508',1,'rm::device::DirectDriveMotor::Parameters']]],
   ['maxphasecurrentdelta_7',['MaxPhaseCurrentDelta',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a2c2ec9971dcd37b7c53b1f1bd6cc4b05',1,'rm::device::DirectDriveMotor::Parameters']]],
   ['maxvoltage_8',['MaxVoltage',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a6f670635c7ce082d59cdd265d55e3007',1,'rm::device::DirectDriveMotor::Parameters']]],
   ['minvoltage_9',['MinVoltage',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a93fc49f71b253c4fc3fd2eefeb0b35d0',1,'rm::device::DirectDriveMotor::Parameters']]],
   ['mode_10',['Mode',['../structrm_1_1device_1_1DirectDriveMotor_1_1Parameters.html#a51dbb9bc34e8df311aae4db2371fdf09',1,'rm::device::DirectDriveMotor::Parameters']]],
-  ['modefilter_11',['ModeFilter',['../namespacerm_1_1modules.html#add0c77577d66450a23644e0f323a74a9',1,'rm::modules']]],
-  ['modefilterint16_5fsize3_12',['ModeFilterInt16_Size3',['../namespacerm_1_1modules.html#a39e3f9302a8199b2a81fa02796ce2781',1,'rm::modules']]],
-  ['modefilterint16_5fsize4_13',['ModeFilterInt16_Size4',['../namespacerm_1_1modules.html#ab66b0a049098ca5a2088fad570100243',1,'rm::modules']]],
-  ['modefilterint16_5fsize5_14',['ModeFilterInt16_Size5',['../namespacerm_1_1modules.html#a3ada756c8977ca01f514ad13d35ff244',1,'rm::modules']]],
-  ['modefilteruint16_5fsize3_15',['ModeFilterUInt16_Size3',['../namespacerm_1_1modules.html#a915e450f0e2feb3e8edf1e0a4a65bccb',1,'rm::modules']]],
-  ['modefilteruint16_5fsize4_16',['ModeFilterUInt16_Size4',['../namespacerm_1_1modules.html#ab102edf604fa5fa8f7b8bc1188b10e12',1,'rm::modules']]],
-  ['modefilteruint16_5fsize5_17',['ModeFilterUInt16_Size5',['../namespacerm_1_1modules.html#aa1ad81a80fbc8152fd8e97e93931f1e1',1,'rm::modules']]]
+  ['modefilter_11',['ModeFilter',['../namespacerm_1_1modules.html#ac156b31fb6f3a0009e18ebc0a861e470',1,'rm::modules']]],
+  ['modefilterint16_5fsize3_12',['ModeFilterInt16_Size3',['../namespacerm_1_1modules.html#a22539402a7f0061c3785d8c4c51e66c3',1,'rm::modules']]],
+  ['modefilterint16_5fsize4_13',['ModeFilterInt16_Size4',['../namespacerm_1_1modules.html#ad1de566eb1e9e8190f737b6101516da6',1,'rm::modules']]],
+  ['modefilterint16_5fsize5_14',['ModeFilterInt16_Size5',['../namespacerm_1_1modules.html#abccc498c0462de9a0c143c84b24812b8',1,'rm::modules']]],
+  ['modefilteruint16_5fsize3_15',['ModeFilterUInt16_Size3',['../namespacerm_1_1modules.html#a2bf6d86620b3f5acc13f3b60e7de0ed3',1,'rm::modules']]],
+  ['modefilteruint16_5fsize4_16',['ModeFilterUInt16_Size4',['../namespacerm_1_1modules.html#a7f7a616d00c52a27d0a3120de0063998',1,'rm::modules']]],
+  ['modefilteruint16_5fsize5_17',['ModeFilterUInt16_Size5',['../namespacerm_1_1modules.html#a2ff01c2f86c8bd70b90a42c65be66750',1,'rm::modules']]]
 ];

@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: /home/runner/work/librm/librm/src/librm/modules/rgb_led_controller.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('_2home_2runner_2work_2librm_2librm_2src_2librm_2modules_2rgb_led_controller_8hpp-example.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('_2home_2runner_2work_2librm_2librm_2src_2librm_2modules_2rgb_led_controller_8hpp-example.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -131,6 +130,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2librm_2librm_2sr
 <div class="line"><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
 <div class="line"><span class="comment">  SOFTWARE.</span></div>
 <div class="line"><span class="comment">*/</span></div>
+<div class="line"></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#ifndef LIBRM_MODULES_RGB_LED_CONTROLLER_HPP</span></div>
 <div class="line"><span class="preprocessor">#define LIBRM_MODULES_RGB_LED_CONTROLLER_HPP</span></div>
@@ -141,14 +141,14 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2librm_2librm_2sr
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="sequence__player_8hpp.html">librm/modules/sequence_player.hpp</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1modules.html">rm::modules</a> {</div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line"><span class="keyword">class </span>RgbLedPattern : <span class="keyword">public</span> SequenceGenerator&lt;std::tuple&lt;u8, u8, u8&gt;&gt; {</div>
 <div class="line"> <span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">using </span><a id="a0" name="a0"></a><a class="code hl_typedef" href="classrm_1_1modules_1_1RgbLedPattern.html#a50016e825ac2a63c662323c25aea1540">Rgb</a> = std::tuple&lt;u8, u8, u8&gt;;  </div>
 <div class="line">};</div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line"><span class="keyword">namespace </span>led_pattern {</div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line"><span class="keyword">class </span>Off : <span class="keyword">public</span> RgbLedPattern {</div>
 <div class="line"> <span class="keyword">public</span>:</div>
 <div class="line">  <a id="a1" name="a1"></a><a class="code hl_function" href="classrm_1_1modules_1_1led__pattern_1_1Off.html#a3a5cabf9b79d1e4c976dc2c0c76f523d">Off</a>() = <span class="keywordflow">default</span>;</div>
@@ -157,7 +157,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2librm_2librm_2sr
 <div class="line"> </div>
 <div class="line">  <span class="keywordtype">void</span> <a id="a4" name="a4"></a><a class="code hl_function" href="classrm_1_1modules_1_1led__pattern_1_1Off.html#afa0dbd708f5fdd0f858180bd0a0985e1">Reset</a>(<a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> now)<span class="keyword"> override </span>{}</div>
 <div class="line">};</div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line"><span class="keyword">class </span>GreenBreath : <span class="keyword">public</span> RgbLedPattern {</div>
 <div class="line"> <span class="keyword">public</span>:</div>
 <div class="line">  <a id="a5" name="a5"></a><a class="code hl_function" href="classrm_1_1modules_1_1led__pattern_1_1GreenBreath.html#a91c8c8038a0a52f9d19dee2408b75a20">GreenBreath</a>() = <span class="keywordflow">default</span>;</div>
@@ -185,7 +185,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2librm_2librm_2sr
 <div class="line"> <span class="keyword">private</span>:</div>
 <div class="line">  <a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> start_time_;</div>
 <div class="line">};</div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line"><span class="keyword">class </span>RedFlash : <span class="keyword">public</span> RgbLedPattern {</div>
 <div class="line"> <span class="keyword">public</span>:</div>
 <div class="line">  <a id="a12" name="a12"></a><a class="code hl_function" href="classrm_1_1modules_1_1led__pattern_1_1RedFlash.html#a8eaa4bc6ee83ae27e7f648b447f8f22c">RedFlash</a>() = <span class="keywordflow">default</span>;</div>
@@ -205,7 +205,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2librm_2librm_2sr
 <div class="line"> <span class="keyword">private</span>:</div>
 <div class="line">  <a class="code hl_typedef" href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">TimePoint</a> start_time_;</div>
 <div class="line">};</div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line"><span class="keyword">class </span>RgbFlow : <span class="keyword">public</span> RgbLedPattern {</div>
 <div class="line"> <span class="keyword">public</span>:</div>
 <div class="line">  <a id="a15" name="a15"></a><a class="code hl_function" href="classrm_1_1modules_1_1led__pattern_1_1RgbFlow.html#a353611ad3bfb0c79939d376195542d88">RgbFlow</a>() = <span class="keywordflow">default</span>;</div>
@@ -241,55 +241,56 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2librm_2librm_2sr
 <div class="line"><span class="comment">// NOTE: 你可以参照上面的三个Pattern，通过继承RgbLedPattern类来实现自己的LED灯效</span></div>
 <div class="line"> </div>
 <div class="line">}  <span class="comment">// namespace led_pattern</span></div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span>... PatternTypes&gt;</div>
 <div class="line"><span class="keyword">class </span>RgbLedController : <span class="keyword">public</span> SequencePlayer&lt;RgbLedPattern::Rgb, PatternTypes...&gt; {</div>
 <div class="line"> <span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">using </span><a id="a18" name="a18"></a><a class="code hl_typedef" href="classrm_1_1modules_1_1RgbLedController.html#a3f7317a2ae66cea0c623dc2521ba1843">Base</a> = <a id="a19" name="a19"></a><a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#a573f91fcce5c7c95916281de8e8bed95">SequencePlayer</a>&lt;<a class="code hl_typedef" href="classrm_1_1modules_1_1RgbLedPattern.html#a50016e825ac2a63c662323c25aea1540">RgbLedPattern::Rgb</a>, PatternTypes...&gt;;</div>
-<div class="line"> </div>
+<div class="line">  <span class="keyword">using </span>Base = <a id="a18" name="a18"></a><a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#a573f91fcce5c7c95916281de8e8bed95">SequencePlayer</a>&lt;<a class="code hl_typedef" href="classrm_1_1modules_1_1RgbLedPattern.html#a50016e825ac2a63c662323c25aea1540">RgbLedPattern::Rgb</a>, PatternTypes...&gt;;</div>
+<div class="line"></div>
 <div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Pattern&gt;</div>
-<div class="line">  <span class="keywordtype">void</span> <a id="a20" name="a20"></a><a class="code hl_function" href="classrm_1_1modules_1_1RgbLedController.html#a19fefbd2fec6647c40a157c684e7b482">SetPattern</a>() {</div>
-<div class="line">    Base::template SetSequence&lt;Pattern&gt;();</div>
+<div class="line">  <span class="keywordtype">void</span> <a id="a19" name="a19"></a><a class="code hl_function" href="classrm_1_1modules_1_1RgbLedController.html#a19fefbd2fec6647c40a157c684e7b482">SetPattern</a>() {</div>
+<div class="line">    Base::template <a id="a20" name="a20"></a><a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#acb59128f30e689c3cf02545697c10816">SetSequence&lt;Pattern&gt;</a>();</div>
 <div class="line">  }</div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a id="a21" name="a21"></a><a class="code hl_function" href="classrm_1_1modules_1_1RgbLedController.html#acdb3ce71b39bae8cb5c86edaa4dd758d">current_color</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a id="a22" name="a22"></a><a class="code hl_function" href="classrm_1_1modules_1_1SequencePlayer.html#a4fa229a13ac0f1cdffdb91e763859a89">Base::current_output</a>(); }</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line">}  <span class="comment">// namespace rm::modules</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1RgbLedController_html_a19fefbd2fec6647c40a157c684e7b482"><div class="ttname"><a href="classrm_1_1modules_1_1RgbLedController.html#a19fefbd2fec6647c40a157c684e7b482">rm::modules::RgbLedController::SetPattern</a></div><div class="ttdeci">void SetPattern()</div><div class="ttdoc">切换当前的灯效</div><div class="ttdef"><b>Definition</b> rgb_led_controller.hpp:186</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1RgbLedController_html_a3f7317a2ae66cea0c623dc2521ba1843"><div class="ttname"><a href="classrm_1_1modules_1_1RgbLedController.html#a3f7317a2ae66cea0c623dc2521ba1843">rm::modules::RgbLedController::Base</a></div><div class="ttdeci">SequencePlayer&lt; RgbLedPattern::Rgb, PatternTypes... &gt; Base</div><div class="ttdef"><b>Definition</b> rgb_led_controller.hpp:179</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1RgbLedController_html_acdb3ce71b39bae8cb5c86edaa4dd758d"><div class="ttname"><a href="classrm_1_1modules_1_1RgbLedController.html#acdb3ce71b39bae8cb5c86edaa4dd758d">rm::modules::RgbLedController::current_color</a></div><div class="ttdeci">const auto &amp; current_color() const</div><div class="ttdoc">获取当前颜色（Update方法继承自SequencePlayer）</div><div class="ttdef"><b>Definition</b> rgb_led_controller.hpp:194</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1RgbLedPattern_html_a50016e825ac2a63c662323c25aea1540"><div class="ttname"><a href="classrm_1_1modules_1_1RgbLedPattern.html#a50016e825ac2a63c662323c25aea1540">rm::modules::RgbLedPattern::Rgb</a></div><div class="ttdeci">std::tuple&lt; u8, u8, u8 &gt; Rgb</div><div class="ttdoc">(0, 0, 0) ~ (255, 255, 255)</div><div class="ttdef"><b>Definition</b> rgb_led_controller.hpp:43</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a2e96a1993839f2ef43a599dd47ef96bf"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">rm::modules::SequenceGenerator&lt; std::tuple&lt; u8, u8, u8 &gt; &gt;::TimePoint</a></div><div class="ttdeci">std::chrono::steady_clock::time_point TimePoint</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:52</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a3db32923ee92ecbdedd29ba8fb014862"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a3db32923ee92ecbdedd29ba8fb014862">rm::modules::SequenceGenerator&lt; std::tuple&lt; u8, u8, u8 &gt; &gt;::ElapsedMs</a></div><div class="ttdeci">static u32 ElapsedMs(TimePoint start, TimePoint now)</div><div class="ttdoc">计算从起始时间到现在经过的毫秒数</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:75</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_a4fa229a13ac0f1cdffdb91e763859a89"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#a4fa229a13ac0f1cdffdb91e763859a89">rm::modules::SequencePlayer&lt; RgbLedPattern::Rgb, PatternTypes... &gt;::current_output</a></div><div class="ttdeci">const Output &amp; current_output() const</div><div class="ttdoc">获取当前输出值（不更新序列）</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:169</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_a573f91fcce5c7c95916281de8e8bed95"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#a573f91fcce5c7c95916281de8e8bed95">rm::modules::SequencePlayer&lt; RgbLedPattern::Rgb, PatternTypes... &gt;::SequencePlayer</a></div><div class="ttdeci">SequencePlayer()</div><div class="ttdef"><b>Definition</b> sequence_player.hpp:139</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1GreenBreath_html_a3a6446bcde6574103e0404c024e18e79"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1GreenBreath.html#a3a6446bcde6574103e0404c024e18e79">rm::modules::led_pattern::GreenBreath::Reset</a></div><div class="ttdeci">void Reset(TimePoint now) override</div><div class="ttdoc">重置序列状态到初始状态</div><div class="ttdef"><b>Definition</b> rgb_led_controller.hpp:89</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1RgbLedController_html_a19fefbd2fec6647c40a157c684e7b482"><div class="ttname"><a href="classrm_1_1modules_1_1RgbLedController.html#a19fefbd2fec6647c40a157c684e7b482">rm::modules::RgbLedController::SetPattern</a></div><div class="ttdeci">void SetPattern()</div><div class="ttdoc">切换当前的灯效</div><div class="ttdef"><b>定义</b> rgb_led_controller.hpp:186</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1RgbLedController_html_acdb3ce71b39bae8cb5c86edaa4dd758d"><div class="ttname"><a href="classrm_1_1modules_1_1RgbLedController.html#acdb3ce71b39bae8cb5c86edaa4dd758d">rm::modules::RgbLedController::current_color</a></div><div class="ttdeci">const auto &amp; current_color() const</div><div class="ttdoc">获取当前颜色（Update方法继承自SequencePlayer）</div><div class="ttdef"><b>定义</b> rgb_led_controller.hpp:194</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1RgbLedPattern_html_a50016e825ac2a63c662323c25aea1540"><div class="ttname"><a href="classrm_1_1modules_1_1RgbLedPattern.html#a50016e825ac2a63c662323c25aea1540">rm::modules::RgbLedPattern::Rgb</a></div><div class="ttdeci">std::tuple&lt; u8, u8, u8 &gt; Rgb</div><div class="ttdoc">(0, 0, 0) ~ (255, 255, 255)</div><div class="ttdef"><b>定义</b> rgb_led_controller.hpp:43</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a2e96a1993839f2ef43a599dd47ef96bf"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a2e96a1993839f2ef43a599dd47ef96bf">rm::modules::SequenceGenerator&lt; std::tuple&lt; u8, u8, u8 &gt; &gt;::TimePoint</a></div><div class="ttdeci">std::chrono::steady_clock::time_point TimePoint</div><div class="ttdef"><b>定义</b> sequence_player.hpp:52</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequenceGenerator_html_a3db32923ee92ecbdedd29ba8fb014862"><div class="ttname"><a href="classrm_1_1modules_1_1SequenceGenerator.html#a3db32923ee92ecbdedd29ba8fb014862">rm::modules::SequenceGenerator&lt; std::tuple&lt; u8, u8, u8 &gt; &gt;::ElapsedMs</a></div><div class="ttdeci">static u32 ElapsedMs(TimePoint start, TimePoint now)</div><div class="ttdef"><b>定义</b> sequence_player.hpp:75</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_a4fa229a13ac0f1cdffdb91e763859a89"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#a4fa229a13ac0f1cdffdb91e763859a89">rm::modules::SequencePlayer&lt; RgbLedPattern::Rgb, PatternTypes... &gt;::current_output</a></div><div class="ttdeci">const Output &amp; current_output() const</div><div class="ttdef"><b>定义</b> sequence_player.hpp:169</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_a573f91fcce5c7c95916281de8e8bed95"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#a573f91fcce5c7c95916281de8e8bed95">rm::modules::SequencePlayer&lt; RgbLedPattern::Rgb, PatternTypes... &gt;::SequencePlayer</a></div><div class="ttdeci">SequencePlayer()</div><div class="ttdef"><b>定义</b> sequence_player.hpp:139</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1SequencePlayer_html_acb59128f30e689c3cf02545697c10816"><div class="ttname"><a href="classrm_1_1modules_1_1SequencePlayer.html#acb59128f30e689c3cf02545697c10816">rm::modules::SequencePlayer&lt; RgbLedPattern::Rgb, PatternTypes... &gt;::SetSequence</a></div><div class="ttdeci">void SetSequence()</div><div class="ttdef"><b>定义</b> sequence_player.hpp:149</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1GreenBreath_html_a3a6446bcde6574103e0404c024e18e79"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1GreenBreath.html#a3a6446bcde6574103e0404c024e18e79">rm::modules::led_pattern::GreenBreath::Reset</a></div><div class="ttdeci">void Reset(TimePoint now) override</div><div class="ttdoc">重置序列状态到初始状态</div><div class="ttdef"><b>定义</b> rgb_led_controller.hpp:89</div></div>
 <div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1GreenBreath_html_a91c8c8038a0a52f9d19dee2408b75a20"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1GreenBreath.html#a91c8c8038a0a52f9d19dee2408b75a20">rm::modules::led_pattern::GreenBreath::GreenBreath</a></div><div class="ttdeci">GreenBreath()=default</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1GreenBreath_html_a9cdf4e4fb4601a7a41120c76952120a6"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1GreenBreath.html#a9cdf4e4fb4601a7a41120c76952120a6">rm::modules::led_pattern::GreenBreath::Update</a></div><div class="ttdeci">Rgb Update(TimePoint now) override</div><div class="ttdoc">更新序列状态并返回当前输出</div><div class="ttdef"><b>Definition</b> rgb_led_controller.hpp:71</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1GreenBreath_html_a9cdf4e4fb4601a7a41120c76952120a6"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1GreenBreath.html#a9cdf4e4fb4601a7a41120c76952120a6">rm::modules::led_pattern::GreenBreath::Update</a></div><div class="ttdeci">Rgb Update(TimePoint now) override</div><div class="ttdoc">更新序列状态并返回当前输出</div><div class="ttdef"><b>定义</b> rgb_led_controller.hpp:71</div></div>
 <div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1Off_html_a3a5cabf9b79d1e4c976dc2c0c76f523d"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1Off.html#a3a5cabf9b79d1e4c976dc2c0c76f523d">rm::modules::led_pattern::Off::Off</a></div><div class="ttdeci">Off()=default</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1Off_html_aecf3f8a731e2466a130b0d1f50d9df84"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1Off.html#aecf3f8a731e2466a130b0d1f50d9df84">rm::modules::led_pattern::Off::Update</a></div><div class="ttdeci">Rgb Update(TimePoint now) override</div><div class="ttdoc">更新序列状态并返回当前输出</div><div class="ttdef"><b>Definition</b> rgb_led_controller.hpp:58</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1Off_html_afa0dbd708f5fdd0f858180bd0a0985e1"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1Off.html#afa0dbd708f5fdd0f858180bd0a0985e1">rm::modules::led_pattern::Off::Reset</a></div><div class="ttdeci">void Reset(TimePoint now) override</div><div class="ttdoc">重置序列状态到初始状态</div><div class="ttdef"><b>Definition</b> rgb_led_controller.hpp:60</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1RedFlash_html_a680793ef7428de71f8bae90d0d679ced"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1RedFlash.html#a680793ef7428de71f8bae90d0d679ced">rm::modules::led_pattern::RedFlash::Update</a></div><div class="ttdeci">Rgb Update(TimePoint now) override</div><div class="ttdoc">更新序列状态并返回当前输出</div><div class="ttdef"><b>Definition</b> rgb_led_controller.hpp:103</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1Off_html_aecf3f8a731e2466a130b0d1f50d9df84"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1Off.html#aecf3f8a731e2466a130b0d1f50d9df84">rm::modules::led_pattern::Off::Update</a></div><div class="ttdeci">Rgb Update(TimePoint now) override</div><div class="ttdoc">更新序列状态并返回当前输出</div><div class="ttdef"><b>定义</b> rgb_led_controller.hpp:58</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1Off_html_afa0dbd708f5fdd0f858180bd0a0985e1"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1Off.html#afa0dbd708f5fdd0f858180bd0a0985e1">rm::modules::led_pattern::Off::Reset</a></div><div class="ttdeci">void Reset(TimePoint now) override</div><div class="ttdoc">重置序列状态到初始状态</div><div class="ttdef"><b>定义</b> rgb_led_controller.hpp:60</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1RedFlash_html_a680793ef7428de71f8bae90d0d679ced"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1RedFlash.html#a680793ef7428de71f8bae90d0d679ced">rm::modules::led_pattern::RedFlash::Update</a></div><div class="ttdeci">Rgb Update(TimePoint now) override</div><div class="ttdoc">更新序列状态并返回当前输出</div><div class="ttdef"><b>定义</b> rgb_led_controller.hpp:103</div></div>
 <div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1RedFlash_html_a8eaa4bc6ee83ae27e7f648b447f8f22c"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1RedFlash.html#a8eaa4bc6ee83ae27e7f648b447f8f22c">rm::modules::led_pattern::RedFlash::RedFlash</a></div><div class="ttdeci">RedFlash()=default</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1RedFlash_html_aa0c717a02ed07cb062e68843b49f122b"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1RedFlash.html#aa0c717a02ed07cb062e68843b49f122b">rm::modules::led_pattern::RedFlash::Reset</a></div><div class="ttdeci">void Reset(TimePoint now) override</div><div class="ttdoc">重置序列状态到初始状态</div><div class="ttdef"><b>Definition</b> rgb_led_controller.hpp:113</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1RedFlash_html_aa0c717a02ed07cb062e68843b49f122b"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1RedFlash.html#aa0c717a02ed07cb062e68843b49f122b">rm::modules::led_pattern::RedFlash::Reset</a></div><div class="ttdeci">void Reset(TimePoint now) override</div><div class="ttdoc">重置序列状态到初始状态</div><div class="ttdef"><b>定义</b> rgb_led_controller.hpp:113</div></div>
 <div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1RgbFlow_html_a353611ad3bfb0c79939d376195542d88"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1RgbFlow.html#a353611ad3bfb0c79939d376195542d88">rm::modules::led_pattern::RgbFlow::RgbFlow</a></div><div class="ttdeci">RgbFlow()=default</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1RgbFlow_html_a4dc15868970958e9a25ed21cb08a759a"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1RgbFlow.html#a4dc15868970958e9a25ed21cb08a759a">rm::modules::led_pattern::RgbFlow::Update</a></div><div class="ttdeci">Rgb Update(TimePoint now) override</div><div class="ttdoc">更新序列状态并返回当前输出</div><div class="ttdef"><b>Definition</b> rgb_led_controller.hpp:127</div></div>
-<div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1RgbFlow_html_a6002ec7898450a9a2b2306dae698b670"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1RgbFlow.html#a6002ec7898450a9a2b2306dae698b670">rm::modules::led_pattern::RgbFlow::Reset</a></div><div class="ttdeci">void Reset(TimePoint now) override</div><div class="ttdoc">重置序列状态到初始状态</div><div class="ttdef"><b>Definition</b> rgb_led_controller.hpp:149</div></div>
-<div class="ttc" id="anamespacerm_1_1modules_html"><div class="ttname"><a href="namespacerm_1_1modules.html">rm::modules</a></div><div class="ttdef"><b>Definition</b> ahrs_interface.hpp:33</div></div>
-<div class="ttc" id="anamespacerm_html_a287a55f70760f2a0c8cfdacddd9b2d34"><div class="ttname"><a href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">rm::u8</a></div><div class="ttdeci">uint8_t u8</div><div class="ttdef"><b>Definition</b> typedefs.hpp:43</div></div>
-<div class="ttc" id="anamespacerm_html_aae5bb39b0da6b1cf1b7ed1c03342ec66"><div class="ttname"><a href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">rm::u32</a></div><div class="ttdeci">uint32_t u32</div><div class="ttdef"><b>Definition</b> typedefs.hpp:45</div></div>
-<div class="ttc" id="anamespacerm_html_abe438454936420638776f339c29718b1"><div class="ttname"><a href="namespacerm.html#abe438454936420638776f339c29718b1">rm::f32</a></div><div class="ttdeci">float f32</div><div class="ttdef"><b>Definition</b> typedefs.hpp:52</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1RgbFlow_html_a4dc15868970958e9a25ed21cb08a759a"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1RgbFlow.html#a4dc15868970958e9a25ed21cb08a759a">rm::modules::led_pattern::RgbFlow::Update</a></div><div class="ttdeci">Rgb Update(TimePoint now) override</div><div class="ttdoc">更新序列状态并返回当前输出</div><div class="ttdef"><b>定义</b> rgb_led_controller.hpp:127</div></div>
+<div class="ttc" id="aclassrm_1_1modules_1_1led__pattern_1_1RgbFlow_html_a6002ec7898450a9a2b2306dae698b670"><div class="ttname"><a href="classrm_1_1modules_1_1led__pattern_1_1RgbFlow.html#a6002ec7898450a9a2b2306dae698b670">rm::modules::led_pattern::RgbFlow::Reset</a></div><div class="ttdeci">void Reset(TimePoint now) override</div><div class="ttdoc">重置序列状态到初始状态</div><div class="ttdef"><b>定义</b> rgb_led_controller.hpp:149</div></div>
+<div class="ttc" id="anamespacerm_1_1modules_html"><div class="ttname"><a href="namespacerm_1_1modules.html">rm::modules</a></div><div class="ttdef"><b>定义</b> ahrs_interface.hpp:33</div></div>
+<div class="ttc" id="anamespacerm_html_a287a55f70760f2a0c8cfdacddd9b2d34"><div class="ttname"><a href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">rm::u8</a></div><div class="ttdeci">uint8_t u8</div><div class="ttdef"><b>定义</b> typedefs.hpp:43</div></div>
+<div class="ttc" id="anamespacerm_html_aae5bb39b0da6b1cf1b7ed1c03342ec66"><div class="ttname"><a href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">rm::u32</a></div><div class="ttdeci">uint32_t u32</div><div class="ttdef"><b>定义</b> typedefs.hpp:45</div></div>
+<div class="ttc" id="anamespacerm_html_abe438454936420638776f339c29718b1"><div class="ttname"><a href="namespacerm.html#abe438454936420638776f339c29718b1">rm::f32</a></div><div class="ttdeci">float f32</div><div class="ttdef"><b>定义</b> typedefs.hpp:52</div></div>
 <div class="ttc" id="asequence__player_8hpp_html"><div class="ttname"><a href="sequence__player_8hpp.html">sequence_player.hpp</a></div><div class="ttdoc">通用序列播放器，可以播放任意类型的数据序列</div></div>
 <div class="ttc" id="atypedefs_8hpp_html"><div class="ttname"><a href="typedefs_8hpp.html">typedefs.hpp</a></div><div class="ttdoc">全局数据类型定义</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

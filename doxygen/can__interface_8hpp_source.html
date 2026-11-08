@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: src/librm/hal/can_interface.hpp 源文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,28 +36,22 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function() { init_codefold(0); });
-/* @license-end */
-</script>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -69,10 +64,9 @@ $(document).ready(function() { init_codefold(0); });
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('can__interface_8hpp_source.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('can__interface_8hpp_source.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -120,93 +114,125 @@ $(document).ready(function(){initNavTree('can__interface_8hpp_source.html',''); 
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  SOFTWARE.</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef LIBRM_HAL_CAN_INTERFACE_HPP</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define LIBRM_HAL_CAN_INTERFACE_HPP</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;<a class="code" href="typedefs_8hpp.html">librm/core/typedefs.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;array&gt;</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1device.html">rm::device</a> {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">class </span>CanDevice;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1hal.html">rm::hal</a> {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &lt;etl/observer.h&gt;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacerm_1_1hal.html">rm::hal</a> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="};">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html">   40</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrm_1_1hal_1_1CanFrame.html">CanFrame</a> {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#a208bfdd2f30def936d92d3121b3486e7">   41</a></span>  std::array&lt;u8, 64&gt; <a class="code hl_variable" href="structrm_1_1hal_1_1CanFrame.html#a208bfdd2f30def936d92d3121b3486e7">data</a>;  </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#a963314dc8d1c3df29514e195ac2fbba1">   42</a></span>  <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a class="code hl_variable" href="structrm_1_1hal_1_1CanFrame.html#a963314dc8d1c3df29514e195ac2fbba1">std_id</a>;               </div>
 <div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html">   43</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrm_1_1hal_1_1CanFrame.html">CanFrame</a> {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#a208bfdd2f30def936d92d3121b3486e7">   44</a></span>  std::array&lt;u8, 64&gt; <a class="code hl_variable" href="structrm_1_1hal_1_1CanFrame.html#a208bfdd2f30def936d92d3121b3486e7">data</a>;  </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#aa5dbb625f28c9648a0ba8f66258f7d2d">   45</a></span>  <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <a class="code hl_variable" href="structrm_1_1hal_1_1CanFrame.html#aa5dbb625f28c9648a0ba8f66258f7d2d">rx_std_id</a>;            </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#a63de58ccb68ea84e829ff65ea1f27ae8">   46</a></span>  <a class="code hl_typedef" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> <a class="code hl_variable" href="structrm_1_1hal_1_1CanFrame.html#a63de58ccb68ea84e829ff65ea1f27ae8">dlc</a>;                  </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#a825031bac625cba43e18bec8515e7caf">   47</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="structrm_1_1hal_1_1CanFrame.html#a825031bac625cba43e18bec8515e7caf">is_fd_frame</a>{<span class="keyword">false</span>};  </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11">   43</a></span>  <span class="keyword">enum</span> <a class="code hl_enumeration" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11">Dlc</a> : <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a7140596baee05747c29d15b3ade2414d">   44</a></span>    <a class="code hl_enumvalue" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a7140596baee05747c29d15b3ade2414d">kDlc0</a> = 0,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a17e8760369119944c135ffde937bc74c">   45</a></span>    <a class="code hl_enumvalue" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a17e8760369119944c135ffde937bc74c">kDlc1</a> = 1,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11af9e7b43c73e5a6440e4f38084fe4f349">   46</a></span>    <a class="code hl_enumvalue" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11af9e7b43c73e5a6440e4f38084fe4f349">kDlc2</a> = 2,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11aa8de1f2220684c724db1c14d105767cc">   47</a></span>    <a class="code hl_enumvalue" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11aa8de1f2220684c724db1c14d105767cc">kDlc3</a> = 3,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a7a5f2479ece4c3c32b2f3c3b3b25593f">   48</a></span>    <a class="code hl_enumvalue" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a7a5f2479ece4c3c32b2f3c3b3b25593f">kDlc4</a> = 4,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a27f4af2e04f26f0b369e34cbe9dd3d1c">   49</a></span>    <a class="code hl_enumvalue" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a27f4af2e04f26f0b369e34cbe9dd3d1c">kDlc5</a> = 5,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a8923011d67f7361fe37bef3286ddf768">   50</a></span>    <a class="code hl_enumvalue" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a8923011d67f7361fe37bef3286ddf768">kDlc6</a> = 6,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a0deea75725696fface2466ff01cb3016">   51</a></span>    <a class="code hl_enumvalue" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a0deea75725696fface2466ff01cb3016">kDlc7</a> = 7,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a00d69312cbd738cfd01af2ff17d7aff6">   52</a></span>    <a class="code hl_enumvalue" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a00d69312cbd738cfd01af2ff17d7aff6">kDlc8</a> = 8,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11af3d46507beeb8b4afde5bf81b0e794f2">   53</a></span>    <a class="code hl_enumvalue" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11af3d46507beeb8b4afde5bf81b0e794f2">kDlc12</a> = 12,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11ad0c26f3a4d1353ae76068adc3aba109e">   54</a></span>    <a class="code hl_enumvalue" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11ad0c26f3a4d1353ae76068adc3aba109e">kDlc16</a> = 16,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11ab4a9e93ac602d58c2788a6e842094085">   55</a></span>    <a class="code hl_enumvalue" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11ab4a9e93ac602d58c2788a6e842094085">kDlc20</a> = 20,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a8a54b77f5b2391c5ac0347fc971335c9">   56</a></span>    <a class="code hl_enumvalue" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a8a54b77f5b2391c5ac0347fc971335c9">kDlc24</a> = 24,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11aa30921183f94d8f4f495eb6afc80aba7">   57</a></span>    <a class="code hl_enumvalue" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11aa30921183f94d8f4f495eb6afc80aba7">kDlc32</a> = 32,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a2e58a97608a937f3036ff0258add203c">   58</a></span>    <a class="code hl_enumvalue" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a2e58a97608a937f3036ff0258add203c">kDlc48</a> = 48,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a5d90a549df4368c5c4f2e02cd867d14d">   59</a></span>    <a class="code hl_enumvalue" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a5d90a549df4368c5c4f2e02cd867d14d">kDlc64</a> = 64,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  };</div>
 </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="foldopen" id="foldopen00053" data-start="{" data-end="};">
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1CanInterface.html">   53</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1hal_1_1CanInterface.html">CanInterface</a> {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1CanInterface.html#a745146b251a28f11ca56c23b8ecdf76b">   54</a></span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classrm_1_1device_1_1CanDevice.html">device::CanDevice</a>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1CanInterface.html#a25b2c5d757a5abfd69c86d56c32a4e58">   57</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="classrm_1_1hal_1_1CanInterface.html#a25b2c5d757a5abfd69c86d56c32a4e58">~CanInterface</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1CanInterface.html#af5cfc29d748a66e6b0a7290beca694c0">   65</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1hal_1_1CanInterface.html#af5cfc29d748a66e6b0a7290beca694c0">Write</a>(<a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <span class="keywordtype">id</span>, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *data, <a class="code hl_typedef" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size) = 0;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1CanInterface.html#ac91bfc026f2e2545b30371fd0d4ba9fb">   72</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1hal_1_1CanInterface.html#ac91bfc026f2e2545b30371fd0d4ba9fb">SetFilter</a>(<a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <span class="keywordtype">id</span>, <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> mask) = 0;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1CanInterface.html#a6bae71da4ba4ee5bf9f21cc03f602498">   77</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1hal_1_1CanInterface.html#a6bae71da4ba4ee5bf9f21cc03f602498">Begin</a>() = 0;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1CanInterface.html#aa80af0ccc4a34ee9623112d6838d5f7c">   82</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1hal_1_1CanInterface.html#aa80af0ccc4a34ee9623112d6838d5f7c">Stop</a>() = 0;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="comment">// 设备注册机制相关</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1hal_1_1CanInterface.html#a16f68916418f5917db4dcfedf39839dc">RegisterDevice</a>(<a class="code hl_class" href="classrm_1_1device_1_1CanDevice.html">device::CanDevice</a> &amp;device, <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> rx_stdid);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1hal_1_1CanInterface.html#a287a91895e5e8db4ade610ef9508e611">UnregisterDevice</a>(<a class="code hl_class" href="classrm_1_1device_1_1CanDevice.html">device::CanDevice</a> &amp;device);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <span class="keyword">const</span> std::vector&lt;device::CanDevice *&gt; &amp;<a class="code hl_function" href="classrm_1_1hal_1_1CanInterface.html#a960c5c8ab51c4bf361a5b2e7a4f00e85">GetDeviceListByRxStdid</a>(<a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> rx_stdid) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  std::vector&lt;device::CanDevice *&gt; empty_device_list_{};  </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  std::unordered_map&lt;u16, std::vector&lt;device::CanDevice *&gt;&gt;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      rx_id_to_device_list_map_{};  </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>};</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#a70b168f49270dfb4035d051aee6ad813">   61</a></span>  <a class="code hl_enumeration" href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11">Dlc</a> <a class="code hl_variable" href="structrm_1_1hal_1_1CanFrame.html#a70b168f49270dfb4035d051aee6ad813">dlc</a>;                  </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#a825031bac625cba43e18bec8515e7caf">   62</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="structrm_1_1hal_1_1CanFrame.html#a825031bac625cba43e18bec8515e7caf">is_fd_frame</a>{<span class="keyword">false</span>};  </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structrm_1_1hal_1_1CanFrame.html#a6b9eb932afe19eada6d0a8feec6ea736">   69</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="structrm_1_1hal_1_1CanFrame.html#a6b9eb932afe19eada6d0a8feec6ea736">IsLegalLength</a>(<a class="code hl_typedef" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> length) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">return</span> (length &lt;= 8u) || (length == 12u) || (length == 16u) || (length == 20u) || (length == 24u) ||</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>           (length == 32u) || (length == 48u) || (length == 64u);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  }</div>
 </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}  <span class="comment">// namespace rm::hal</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HAL_CAN_INTERFACE_HPP</span></div>
-<div class="ttc" id="aclassrm_1_1device_1_1CanDevice_html"><div class="ttname"><a href="classrm_1_1device_1_1CanDevice.html">rm::device::CanDevice</a></div><div class="ttdoc">CAN设备的基类</div><div class="ttdef"><b>Definition</b> can_device.hpp:49</div></div>
-<div class="ttc" id="aclassrm_1_1hal_1_1CanInterface_html"><div class="ttname"><a href="classrm_1_1hal_1_1CanInterface.html">rm::hal::CanInterface</a></div><div class="ttdoc">CAN接口类</div><div class="ttdef"><b>Definition</b> can_interface.hpp:53</div></div>
-<div class="ttc" id="aclassrm_1_1hal_1_1CanInterface_html_a16f68916418f5917db4dcfedf39839dc"><div class="ttname"><a href="classrm_1_1hal_1_1CanInterface.html#a16f68916418f5917db4dcfedf39839dc">rm::hal::CanInterface::RegisterDevice</a></div><div class="ttdeci">void RegisterDevice(device::CanDevice &amp;device, u16 rx_stdid)</div><div class="ttdoc">注册CAN设备</div><div class="ttdef"><b>Definition</b> can_interface.cc:34</div></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="namespacerm_1_1hal.html#a6590179e8329bc11dc15f79aad07bcb4">   79</a></span><span class="keyword">inline</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> <a class="code hl_variable" href="namespacerm_1_1hal.html#a6590179e8329bc11dc15f79aad07bcb4">kMaxCanObservers</a> = 64;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="namespacerm_1_1hal.html#a1e8b6d153695e59a727ec0961748d6a6">   85</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacerm_1_1hal.html#a1e8b6d153695e59a727ec0961748d6a6">CanFrameObserver</a> = etl::observer&lt;const CanFrame &amp;&gt;;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="};">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1CanInterface.html">   91</a></span><span class="keyword">class </span><a class="code hl_class" href="classrm_1_1hal_1_1CanInterface.html">CanInterface</a> : <span class="keyword">public</span> etl::observable&lt;CanFrameObserver, kMaxCanObservers&gt; {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1CanInterface.html#a25b2c5d757a5abfd69c86d56c32a4e58">   93</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="classrm_1_1hal_1_1CanInterface.html#a25b2c5d757a5abfd69c86d56c32a4e58">~CanInterface</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1CanInterface.html#af5cfc29d748a66e6b0a7290beca694c0">  103</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1hal_1_1CanInterface.html#af5cfc29d748a66e6b0a7290beca694c0">Write</a>(<a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <span class="keywordtype">id</span>, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *data, <a class="code hl_typedef" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size) = 0;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1CanInterface.html#a3a3df5be0777fd6a2634dc2963034251">  111</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1hal_1_1CanInterface.html#a3a3df5be0777fd6a2634dc2963034251">Write</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrm_1_1hal_1_1CanFrame.html">CanFrame</a> &amp;frame) = 0;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1CanInterface.html#ac91bfc026f2e2545b30371fd0d4ba9fb">  118</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1hal_1_1CanInterface.html#ac91bfc026f2e2545b30371fd0d4ba9fb">SetFilter</a>(<a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> <span class="keywordtype">id</span>, <a class="code hl_typedef" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> mask) = 0;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1CanInterface.html#a6bae71da4ba4ee5bf9f21cc03f602498">  123</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1hal_1_1CanInterface.html#a6bae71da4ba4ee5bf9f21cc03f602498">Begin</a>() = 0;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="classrm_1_1hal_1_1CanInterface.html#aa80af0ccc4a34ee9623112d6838d5f7c">  128</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classrm_1_1hal_1_1CanInterface.html#aa80af0ccc4a34ee9623112d6838d5f7c">Stop</a>() = 0;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>};</div>
+</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>}  <span class="comment">// namespace rm::hal</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="preprocessor">#endif  </span><span class="comment">// LIBRM_HAL_CAN_INTERFACE_HPP</span></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1CanInterface_html"><div class="ttname"><a href="classrm_1_1hal_1_1CanInterface.html">rm::hal::CanInterface</a></div><div class="ttdoc">CAN接口类</div><div class="ttdef"><b>定义</b> can_interface.hpp:91</div></div>
 <div class="ttc" id="aclassrm_1_1hal_1_1CanInterface_html_a25b2c5d757a5abfd69c86d56c32a4e58"><div class="ttname"><a href="classrm_1_1hal_1_1CanInterface.html#a25b2c5d757a5abfd69c86d56c32a4e58">rm::hal::CanInterface::~CanInterface</a></div><div class="ttdeci">virtual ~CanInterface()=default</div></div>
-<div class="ttc" id="aclassrm_1_1hal_1_1CanInterface_html_a287a91895e5e8db4ade610ef9508e611"><div class="ttname"><a href="classrm_1_1hal_1_1CanInterface.html#a287a91895e5e8db4ade610ef9508e611">rm::hal::CanInterface::UnregisterDevice</a></div><div class="ttdeci">void UnregisterDevice(device::CanDevice &amp;device)</div><div class="ttdoc">取消注册CAN设备</div><div class="ttdef"><b>Definition</b> can_interface.cc:51</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1CanInterface_html_a3a3df5be0777fd6a2634dc2963034251"><div class="ttname"><a href="classrm_1_1hal_1_1CanInterface.html#a3a3df5be0777fd6a2634dc2963034251">rm::hal::CanInterface::Write</a></div><div class="ttdeci">virtual void Write(const CanFrame &amp;frame)=0</div><div class="ttdoc">立即向总线上发送数据。</div></div>
 <div class="ttc" id="aclassrm_1_1hal_1_1CanInterface_html_a6bae71da4ba4ee5bf9f21cc03f602498"><div class="ttname"><a href="classrm_1_1hal_1_1CanInterface.html#a6bae71da4ba4ee5bf9f21cc03f602498">rm::hal::CanInterface::Begin</a></div><div class="ttdeci">virtual void Begin()=0</div><div class="ttdoc">启动CAN外设</div></div>
-<div class="ttc" id="aclassrm_1_1hal_1_1CanInterface_html_a960c5c8ab51c4bf361a5b2e7a4f00e85"><div class="ttname"><a href="classrm_1_1hal_1_1CanInterface.html#a960c5c8ab51c4bf361a5b2e7a4f00e85">rm::hal::CanInterface::GetDeviceListByRxStdid</a></div><div class="ttdeci">const std::vector&lt; device::CanDevice * &gt; &amp; GetDeviceListByRxStdid(u16 rx_stdid) const</div><div class="ttdoc">根据接收ID获取已注册的设备列表</div><div class="ttdef"><b>Definition</b> can_interface.cc:63</div></div>
 <div class="ttc" id="aclassrm_1_1hal_1_1CanInterface_html_aa80af0ccc4a34ee9623112d6838d5f7c"><div class="ttname"><a href="classrm_1_1hal_1_1CanInterface.html#aa80af0ccc4a34ee9623112d6838d5f7c">rm::hal::CanInterface::Stop</a></div><div class="ttdeci">virtual void Stop()=0</div><div class="ttdoc">停止CAN外设</div></div>
 <div class="ttc" id="aclassrm_1_1hal_1_1CanInterface_html_ac91bfc026f2e2545b30371fd0d4ba9fb"><div class="ttname"><a href="classrm_1_1hal_1_1CanInterface.html#ac91bfc026f2e2545b30371fd0d4ba9fb">rm::hal::CanInterface::SetFilter</a></div><div class="ttdeci">virtual void SetFilter(u16 id, u16 mask)=0</div><div class="ttdoc">设置过滤器</div></div>
-<div class="ttc" id="aclassrm_1_1hal_1_1CanInterface_html_af5cfc29d748a66e6b0a7290beca694c0"><div class="ttname"><a href="classrm_1_1hal_1_1CanInterface.html#af5cfc29d748a66e6b0a7290beca694c0">rm::hal::CanInterface::Write</a></div><div class="ttdeci">virtual void Write(u16 id, const u8 *data, usize size)=0</div><div class="ttdoc">立即向总线上发送数据</div></div>
-<div class="ttc" id="anamespacerm_1_1device_html"><div class="ttname"><a href="namespacerm_1_1device.html">rm::device</a></div><div class="ttdef"><b>Definition</b> directdrive_motor.cc:37</div></div>
-<div class="ttc" id="anamespacerm_1_1hal_html"><div class="ttname"><a href="namespacerm_1_1hal.html">rm::hal</a></div><div class="ttdef"><b>Definition</b> can.hpp:42</div></div>
-<div class="ttc" id="anamespacerm_html_a1df35482f4a88e1fe1450c7eb4cf4630"><div class="ttname"><a href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">rm::usize</a></div><div class="ttdeci">size_t usize</div><div class="ttdef"><b>Definition</b> typedefs.hpp:51</div></div>
-<div class="ttc" id="anamespacerm_html_a287a55f70760f2a0c8cfdacddd9b2d34"><div class="ttname"><a href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">rm::u8</a></div><div class="ttdeci">uint8_t u8</div><div class="ttdef"><b>Definition</b> typedefs.hpp:43</div></div>
-<div class="ttc" id="anamespacerm_html_a8f3662a01c5fa99494989944ee6c6157"><div class="ttname"><a href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">rm::u16</a></div><div class="ttdeci">uint16_t u16</div><div class="ttdef"><b>Definition</b> typedefs.hpp:44</div></div>
-<div class="ttc" id="anamespacerm_html_aae5bb39b0da6b1cf1b7ed1c03342ec66"><div class="ttname"><a href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">rm::u32</a></div><div class="ttdeci">uint32_t u32</div><div class="ttdef"><b>Definition</b> typedefs.hpp:45</div></div>
-<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html">rm::hal::CanFrame</a></div><div class="ttdef"><b>Definition</b> can_interface.hpp:43</div></div>
-<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_a208bfdd2f30def936d92d3121b3486e7"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#a208bfdd2f30def936d92d3121b3486e7">rm::hal::CanFrame::data</a></div><div class="ttdeci">std::array&lt; u8, 64 &gt; data</div><div class="ttdoc">数据</div><div class="ttdef"><b>Definition</b> can_interface.hpp:44</div></div>
-<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_a63de58ccb68ea84e829ff65ea1f27ae8"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#a63de58ccb68ea84e829ff65ea1f27ae8">rm::hal::CanFrame::dlc</a></div><div class="ttdeci">u32 dlc</div><div class="ttdoc">数据长度码</div><div class="ttdef"><b>Definition</b> can_interface.hpp:46</div></div>
-<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_a825031bac625cba43e18bec8515e7caf"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#a825031bac625cba43e18bec8515e7caf">rm::hal::CanFrame::is_fd_frame</a></div><div class="ttdeci">bool is_fd_frame</div><div class="ttdoc">是否为FD帧</div><div class="ttdef"><b>Definition</b> can_interface.hpp:47</div></div>
-<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_aa5dbb625f28c9648a0ba8f66258f7d2d"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#aa5dbb625f28c9648a0ba8f66258f7d2d">rm::hal::CanFrame::rx_std_id</a></div><div class="ttdeci">u16 rx_std_id</div><div class="ttdoc">标准ID</div><div class="ttdef"><b>Definition</b> can_interface.hpp:45</div></div>
+<div class="ttc" id="aclassrm_1_1hal_1_1CanInterface_html_af5cfc29d748a66e6b0a7290beca694c0"><div class="ttname"><a href="classrm_1_1hal_1_1CanInterface.html#af5cfc29d748a66e6b0a7290beca694c0">rm::hal::CanInterface::Write</a></div><div class="ttdeci">virtual void Write(u16 id, const u8 *data, usize size)=0</div><div class="ttdoc">立即向总线上发送数据。当数据长度大于8字节，且硬件支持时，发送FD帧；否则发送经典CAN 2.0帧</div></div>
+<div class="ttc" id="anamespacerm_1_1hal_html"><div class="ttname"><a href="namespacerm_1_1hal.html">rm::hal</a></div><div class="ttdef"><b>定义</b> can.hpp:42</div></div>
+<div class="ttc" id="anamespacerm_1_1hal_html_a1e8b6d153695e59a727ec0961748d6a6"><div class="ttname"><a href="namespacerm_1_1hal.html#a1e8b6d153695e59a727ec0961748d6a6">rm::hal::CanFrameObserver</a></div><div class="ttdeci">etl::observer&lt; const CanFrame &amp; &gt; CanFrameObserver</div><div class="ttdoc">CAN帧观察者接口</div><div class="ttdef"><b>定义</b> can_interface.hpp:85</div></div>
+<div class="ttc" id="anamespacerm_1_1hal_html_a6590179e8329bc11dc15f79aad07bcb4"><div class="ttname"><a href="namespacerm_1_1hal.html#a6590179e8329bc11dc15f79aad07bcb4">rm::hal::kMaxCanObservers</a></div><div class="ttdeci">constexpr usize kMaxCanObservers</div><div class="ttdoc">单条CAN总线上最多允许的观察者数量</div><div class="ttdef"><b>定义</b> can_interface.hpp:79</div></div>
+<div class="ttc" id="anamespacerm_html_a1df35482f4a88e1fe1450c7eb4cf4630"><div class="ttname"><a href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">rm::usize</a></div><div class="ttdeci">size_t usize</div><div class="ttdef"><b>定义</b> typedefs.hpp:51</div></div>
+<div class="ttc" id="anamespacerm_html_a287a55f70760f2a0c8cfdacddd9b2d34"><div class="ttname"><a href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">rm::u8</a></div><div class="ttdeci">uint8_t u8</div><div class="ttdef"><b>定义</b> typedefs.hpp:43</div></div>
+<div class="ttc" id="anamespacerm_html_a8f3662a01c5fa99494989944ee6c6157"><div class="ttname"><a href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">rm::u16</a></div><div class="ttdeci">uint16_t u16</div><div class="ttdef"><b>定义</b> typedefs.hpp:44</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html">rm::hal::CanFrame</a></div><div class="ttdef"><b>定义</b> can_interface.hpp:40</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_a208bfdd2f30def936d92d3121b3486e7"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#a208bfdd2f30def936d92d3121b3486e7">rm::hal::CanFrame::data</a></div><div class="ttdeci">std::array&lt; u8, 64 &gt; data</div><div class="ttdoc">数据</div><div class="ttdef"><b>定义</b> can_interface.hpp:41</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_a6b9eb932afe19eada6d0a8feec6ea736"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#a6b9eb932afe19eada6d0a8feec6ea736">rm::hal::CanFrame::IsLegalLength</a></div><div class="ttdeci">static constexpr bool IsLegalLength(usize length)</div><div class="ttdoc">判断字节长度是否为 CAN FD 规范允许的 DLC 取值（0~8、12、16、20、24、32、48、64）</div><div class="ttdef"><b>定义</b> can_interface.hpp:69</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_a70b168f49270dfb4035d051aee6ad813"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#a70b168f49270dfb4035d051aee6ad813">rm::hal::CanFrame::dlc</a></div><div class="ttdeci">Dlc dlc</div><div class="ttdoc">数据长度码，取值限定为 Dlc 枚举中的值</div><div class="ttdef"><b>定义</b> can_interface.hpp:61</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_a825031bac625cba43e18bec8515e7caf"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#a825031bac625cba43e18bec8515e7caf">rm::hal::CanFrame::is_fd_frame</a></div><div class="ttdeci">bool is_fd_frame</div><div class="ttdoc">是否为FD帧</div><div class="ttdef"><b>定义</b> can_interface.hpp:62</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_a963314dc8d1c3df29514e195ac2fbba1"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#a963314dc8d1c3df29514e195ac2fbba1">rm::hal::CanFrame::std_id</a></div><div class="ttdeci">u16 std_id</div><div class="ttdoc">标准帧ID（收时为帧的来源ID，发时为帧的目标ID）</div><div class="ttdef"><b>定义</b> can_interface.hpp:42</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_ae01f566bd78b30cb8452fba7b7b35e11"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11">rm::hal::CanFrame::Dlc</a></div><div class="ttdeci">Dlc</div><div class="ttdef"><b>定义</b> can_interface.hpp:43</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_ae01f566bd78b30cb8452fba7b7b35e11a00d69312cbd738cfd01af2ff17d7aff6"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a00d69312cbd738cfd01af2ff17d7aff6">rm::hal::CanFrame::kDlc8</a></div><div class="ttdeci">@ kDlc8</div><div class="ttdef"><b>定义</b> can_interface.hpp:52</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_ae01f566bd78b30cb8452fba7b7b35e11a0deea75725696fface2466ff01cb3016"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a0deea75725696fface2466ff01cb3016">rm::hal::CanFrame::kDlc7</a></div><div class="ttdeci">@ kDlc7</div><div class="ttdef"><b>定义</b> can_interface.hpp:51</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_ae01f566bd78b30cb8452fba7b7b35e11a17e8760369119944c135ffde937bc74c"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a17e8760369119944c135ffde937bc74c">rm::hal::CanFrame::kDlc1</a></div><div class="ttdeci">@ kDlc1</div><div class="ttdef"><b>定义</b> can_interface.hpp:45</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_ae01f566bd78b30cb8452fba7b7b35e11a27f4af2e04f26f0b369e34cbe9dd3d1c"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a27f4af2e04f26f0b369e34cbe9dd3d1c">rm::hal::CanFrame::kDlc5</a></div><div class="ttdeci">@ kDlc5</div><div class="ttdef"><b>定义</b> can_interface.hpp:49</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_ae01f566bd78b30cb8452fba7b7b35e11a2e58a97608a937f3036ff0258add203c"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a2e58a97608a937f3036ff0258add203c">rm::hal::CanFrame::kDlc48</a></div><div class="ttdeci">@ kDlc48</div><div class="ttdef"><b>定义</b> can_interface.hpp:58</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_ae01f566bd78b30cb8452fba7b7b35e11a5d90a549df4368c5c4f2e02cd867d14d"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a5d90a549df4368c5c4f2e02cd867d14d">rm::hal::CanFrame::kDlc64</a></div><div class="ttdeci">@ kDlc64</div><div class="ttdef"><b>定义</b> can_interface.hpp:59</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_ae01f566bd78b30cb8452fba7b7b35e11a7140596baee05747c29d15b3ade2414d"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a7140596baee05747c29d15b3ade2414d">rm::hal::CanFrame::kDlc0</a></div><div class="ttdeci">@ kDlc0</div><div class="ttdef"><b>定义</b> can_interface.hpp:44</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_ae01f566bd78b30cb8452fba7b7b35e11a7a5f2479ece4c3c32b2f3c3b3b25593f"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a7a5f2479ece4c3c32b2f3c3b3b25593f">rm::hal::CanFrame::kDlc4</a></div><div class="ttdeci">@ kDlc4</div><div class="ttdef"><b>定义</b> can_interface.hpp:48</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_ae01f566bd78b30cb8452fba7b7b35e11a8923011d67f7361fe37bef3286ddf768"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a8923011d67f7361fe37bef3286ddf768">rm::hal::CanFrame::kDlc6</a></div><div class="ttdeci">@ kDlc6</div><div class="ttdef"><b>定义</b> can_interface.hpp:50</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_ae01f566bd78b30cb8452fba7b7b35e11a8a54b77f5b2391c5ac0347fc971335c9"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11a8a54b77f5b2391c5ac0347fc971335c9">rm::hal::CanFrame::kDlc24</a></div><div class="ttdeci">@ kDlc24</div><div class="ttdef"><b>定义</b> can_interface.hpp:56</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_ae01f566bd78b30cb8452fba7b7b35e11aa30921183f94d8f4f495eb6afc80aba7"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11aa30921183f94d8f4f495eb6afc80aba7">rm::hal::CanFrame::kDlc32</a></div><div class="ttdeci">@ kDlc32</div><div class="ttdef"><b>定义</b> can_interface.hpp:57</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_ae01f566bd78b30cb8452fba7b7b35e11aa8de1f2220684c724db1c14d105767cc"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11aa8de1f2220684c724db1c14d105767cc">rm::hal::CanFrame::kDlc3</a></div><div class="ttdeci">@ kDlc3</div><div class="ttdef"><b>定义</b> can_interface.hpp:47</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_ae01f566bd78b30cb8452fba7b7b35e11ab4a9e93ac602d58c2788a6e842094085"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11ab4a9e93ac602d58c2788a6e842094085">rm::hal::CanFrame::kDlc20</a></div><div class="ttdeci">@ kDlc20</div><div class="ttdef"><b>定义</b> can_interface.hpp:55</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_ae01f566bd78b30cb8452fba7b7b35e11ad0c26f3a4d1353ae76068adc3aba109e"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11ad0c26f3a4d1353ae76068adc3aba109e">rm::hal::CanFrame::kDlc16</a></div><div class="ttdeci">@ kDlc16</div><div class="ttdef"><b>定义</b> can_interface.hpp:54</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_ae01f566bd78b30cb8452fba7b7b35e11af3d46507beeb8b4afde5bf81b0e794f2"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11af3d46507beeb8b4afde5bf81b0e794f2">rm::hal::CanFrame::kDlc12</a></div><div class="ttdeci">@ kDlc12</div><div class="ttdef"><b>定义</b> can_interface.hpp:53</div></div>
+<div class="ttc" id="astructrm_1_1hal_1_1CanFrame_html_ae01f566bd78b30cb8452fba7b7b35e11af9e7b43c73e5a6440e4f38084fe4f349"><div class="ttname"><a href="structrm_1_1hal_1_1CanFrame.html#ae01f566bd78b30cb8452fba7b7b35e11af9e7b43c73e5a6440e4f38084fe4f349">rm::hal::CanFrame::kDlc2</a></div><div class="ttdeci">@ kDlc2</div><div class="ttdef"><b>定义</b> can_interface.hpp:46</div></div>
 <div class="ttc" id="atypedefs_8hpp_html"><div class="ttname"><a href="typedefs_8hpp.html">typedefs.hpp</a></div><div class="ttdoc">全局数据类型定义</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a class="el" href="dir_12d4920679a1960aa4499f9d88e747a8.html">hal</a></li><li class="navelem"><a class="el" href="can__interface_8hpp.html">can_interface.hpp</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_88bd29c3a8086e73f60b54e5300eb9e2.html">librm</a></li><li class="navelem"><a href="dir_12d4920679a1960aa4499f9d88e747a8.html">hal</a></li><li class="navelem"><a href="can__interface_8hpp.html">can_interface.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

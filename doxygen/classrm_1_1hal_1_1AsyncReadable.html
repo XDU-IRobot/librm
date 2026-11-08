@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: rm::hal::AsyncReadable类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classrm_1_1hal_1_1AsyncReadable.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('classrm_1_1hal_1_1AsyncReadable.html','','classrm_1_1hal_1_1AsyncReadable-members'); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -91,23 +90,20 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1AsyncReadable.html',
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public 成员函数</a> &#124;
-<a href="classrm_1_1hal_1_1AsyncReadable-members.html">所有成员列表</a>  </div>
-  <div class="headertitle"><div class="title">rm::hal::AsyncReadable类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+  <div class="headertitle"><div class="title">rm::hal::AsyncReadable类 参考<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>异步读接口  
- <a href="classrm_1_1hal_1_1AsyncReadable.html#details">更多...</a></p>
+ <a href="#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="serial__interface_8hpp_source.html">serial_interface.hpp</a>&gt;</code></p>
 <div class="dynheader">
 类 rm::hal::AsyncReadable 继承关系图:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classrm_1_1hal_1_1AsyncReadable.png" usemap="#rm::hal::AsyncReadable_map" alt=""/>
-  <map id="rm::hal::AsyncReadable_map" name="rm::hal::AsyncReadable_map">
+  <img src="classrm_1_1hal_1_1AsyncReadable.png" usemap="#rm_3A_3Ahal_3A_3AAsyncReadable_map" alt=""/>
+  <map id="rm_3A_3Ahal_3A_3AAsyncReadable_map" name="rm_3A_3Ahal_3A_3AAsyncReadable_map">
 <area href="classrm_1_1hal_1_1AsyncSerialInterface.html" title="异步写 + 异步读" alt="rm::hal::AsyncSerialInterface" shape="rect" coords="0,56,197,80"/>
 <area href="classrm_1_1hal_1_1SerialInterface.html" title="同步写 + 异步读（最常用的嵌入式串口组合）" alt="rm::hal::SerialInterface" shape="rect" coords="310,56,507,80"/>
 <area href="classrm_1_1hal_1_1stm32_1_1Uart.html" title="UART 类（模板参数 RxBufSize 决定双缓冲每块的字节数）" alt="rm::hal::stm32::Uart&lt; RxBufSize &gt;" shape="rect" coords="0,112,197,136"/>
@@ -116,21 +112,17 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1AsyncReadable.html',
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a28c974d09cd69714bedf690e9c710a94" id="r_a28c974d09cd69714bedf690e9c710a94"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1AsyncReadable.html#a28c974d09cd69714bedf690e9c710a94">~AsyncReadable</a> ()=default</td></tr>
-<tr class="separator:a28c974d09cd69714bedf690e9c710a94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e3fd49530b625c1dc73d91b001f201f" id="r_a8e3fd49530b625c1dc73d91b001f201f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1AsyncReadable.html#a8e3fd49530b625c1dc73d91b001f201f">AttachRxCallback</a> (<a class="el" href="namespacerm_1_1hal.html#a4258f0687c3c78d6b7c2b2399ac3febd">SerialRxCallbackFunction</a> callback)=0</td></tr>
-<tr class="separator:a8e3fd49530b625c1dc73d91b001f201f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95f38f7146dc4dc56d32b41a093d45da" id="r_a95f38f7146dc4dc56d32b41a093d45da"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1AsyncReadable.html#a95f38f7146dc4dc56d32b41a093d45da">Start</a> ()=0</td></tr>
-<tr class="separator:a95f38f7146dc4dc56d32b41a093d45da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec322d4575336deedcd68a61d5291367" id="r_aec322d4575336deedcd68a61d5291367"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1AsyncReadable.html#aec322d4575336deedcd68a61d5291367">Stop</a> ()=0</td></tr>
-<tr class="separator:aec322d4575336deedcd68a61d5291367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28c974d09cd69714bedf690e9c710a94" id="r_a28c974d09cd69714bedf690e9c710a94"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28c974d09cd69714bedf690e9c710a94">~AsyncReadable</a> ()=default</td></tr>
+<tr class="memitem:a8e3fd49530b625c1dc73d91b001f201f" id="r_a8e3fd49530b625c1dc73d91b001f201f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e3fd49530b625c1dc73d91b001f201f">AttachRxCallback</a> (<a class="el" href="namespacerm_1_1hal.html#a16388d3b41d5334856e67bf9402618e2">SerialRxCallbackFunction</a> callback)=0</td></tr>
+<tr class="memitem:a95f38f7146dc4dc56d32b41a093d45da" id="r_a95f38f7146dc4dc56d32b41a093d45da"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95f38f7146dc4dc56d32b41a093d45da">Start</a> ()=0</td></tr>
+<tr class="memitem:aec322d4575336deedcd68a61d5291367" id="r_aec322d4575336deedcd68a61d5291367"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec322d4575336deedcd68a61d5291367">Stop</a> ()=0</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
 <div class="textblock"><p>异步读接口 </p>
-<dl class="section note"><dt>注解</dt><dd><a class="el" href="classrm_1_1hal_1_1AsyncReadable.html#a95f38f7146dc4dc56d32b41a093d45da">Start()</a> 后开始持续接收；每次收到数据触发所有已注册回调；Stop() 停止 </dd></dl>
-</div><h2 class="groupheader">构造及析构函数说明</h2>
+<dl class="section note"><dt>注解</dt><dd><a class="el" href="#a95f38f7146dc4dc56d32b41a093d45da">Start()</a> 后开始持续接收；每次收到数据触发所有已注册回调；Stop() 停止 </dd></dl>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">构造及析构函数说明</h2>
 <a id="a28c974d09cd69714bedf690e9c710a94" name="a28c974d09cd69714bedf690e9c710a94"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a28c974d09cd69714bedf690e9c710a94">&#9670;&#160;</a></span>~AsyncReadable()</h2>
 
@@ -143,20 +135,20 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">virtual rm::hal::AsyncReadable::~AsyncReadable </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<h2 class="groupheader">成员函数说明</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">成员函数说明</h2>
 <a id="a8e3fd49530b625c1dc73d91b001f201f" name="a8e3fd49530b625c1dc73d91b001f201f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8e3fd49530b625c1dc73d91b001f201f">&#9670;&#160;</a></span>AttachRxCallback()</h2>
 
@@ -169,14 +161,13 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">virtual void rm::hal::AsyncReadable::AttachRxCallback </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm_1_1hal.html#a4258f0687c3c78d6b7c2b2399ac3febd">SerialRxCallbackFunction</a>&#160;</td>
-          <td class="paramname"><em>callback</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespacerm_1_1hal.html#a16388d3b41d5334856e67bf9402618e2">SerialRxCallbackFunction</a></td>          <td class="paramname"><span class="paramname"><em>callback</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -197,13 +188,13 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">virtual void rm::hal::AsyncReadable::Start </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -224,13 +215,13 @@ Public 成员函数</h2></td></tr>
         <tr>
           <td class="memname">virtual void rm::hal::AsyncReadable::Stop </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -244,11 +235,19 @@ Public 成员函数</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1hal.html">hal</a></li><li class="navelem"><a class="el" href="classrm_1_1hal_1_1AsyncReadable.html">AsyncReadable</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="namespacerm.html">rm</a></li><li class="navelem"><a href="namespacerm_1_1hal.html">hal</a></li><li class="navelem"><a href="classrm_1_1hal_1_1AsyncReadable.html">AsyncReadable</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: rm::hal::detail::ThrottledCan&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt; 模板类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classrm_1_1hal_1_1detail_1_1ThrottledCan.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('classrm_1_1hal_1_1detail_1_1ThrottledCan.html','','classrm_1_1hal_1_1detail_1_1ThrottledCan-members'); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -91,17 +90,12 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1detail_1_1ThrottledC
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">类</a> &#124;
-<a href="#pub-types">Public 类型</a> &#124;
-<a href="#pub-methods">Public 成员函数</a> &#124;
-<a href="classrm_1_1hal_1_1detail_1_1ThrottledCan-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">rm::hal::detail::ThrottledCan&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt; 模板类 参考</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>基于限流优先级队列的通用CAN发送封装  
- <a href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#details">更多...</a></p>
+ <a href="#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="throttled__can_8hpp_source.html">throttled_can.hpp</a>&gt;</code></p>
 <div class="dynheader">
@@ -111,63 +105,49 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1detail_1_1ThrottledC
   <img src="classrm_1_1hal_1_1detail_1_1ThrottledCan.png" alt=""/>
  </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 类</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1hal_1_1detail_1_1ThrottledCan_1_1TxStats.html">TxStats</a></td></tr>
+<tr class="memitem:TxStats" id="r_TxStats"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrm_1_1hal_1_1detail_1_1ThrottledCan_1_1TxStats.html">TxStats</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">流量统计快照（每秒刷新一次）  <a href="structrm_1_1hal_1_1detail_1_1ThrottledCan_1_1TxStats.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public 类型</h2></td></tr>
-<tr class="memitem:a2d48283d8b29189856f29fd2843b0d0d" id="r_a2d48283d8b29189856f29fd2843b0d0d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a2d48283d8b29189856f29fd2843b0d0d">clock</a> = std::chrono::steady_clock</td></tr>
-<tr class="separator:a2d48283d8b29189856f29fd2843b0d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b757374c4c3b19fbc7fc4fff2ab613e" id="r_a2b757374c4c3b19fbc7fc4fff2ab613e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a2b757374c4c3b19fbc7fc4fff2ab613e">time_point</a> = clock::time_point</td></tr>
-<tr class="separator:a2b757374c4c3b19fbc7fc4fff2ab613e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65802cd850371c612f5af4dc907f2cc5" id="r_a65802cd850371c612f5af4dc907f2cc5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a65802cd850371c612f5af4dc907f2cc5">duration</a> = clock::duration</td></tr>
-<tr class="separator:a65802cd850371c612f5af4dc907f2cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d48283d8b29189856f29fd2843b0d0d" id="r_a2d48283d8b29189856f29fd2843b0d0d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d48283d8b29189856f29fd2843b0d0d">clock</a> = std::chrono::steady_clock</td></tr>
+<tr class="memitem:a2b757374c4c3b19fbc7fc4fff2ab613e" id="r_a2b757374c4c3b19fbc7fc4fff2ab613e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b757374c4c3b19fbc7fc4fff2ab613e">time_point</a> = clock::time_point</td></tr>
+<tr class="memitem:a65802cd850371c612f5af4dc907f2cc5" id="r_a65802cd850371c612f5af4dc907f2cc5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65802cd850371c612f5af4dc907f2cc5">duration</a> = clock::duration</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:a8ded774895a030b23d76fc40c7e3b0a4" id="r_a8ded774895a030b23d76fc40c7e3b0a4"><td class="memTemplParams" colspan="2">template&lt;typename... BaseArgs&gt; </td></tr>
-<tr class="memitem:a8ded774895a030b23d76fc40c7e3b0a4"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a8ded774895a030b23d76fc40c7e3b0a4">ThrottledCan</a> (double tx_frequency_hz, BaseArgs &amp;&amp;...base_args)</td></tr>
+<tr class="memitem:a8ded774895a030b23d76fc40c7e3b0a4 template"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ded774895a030b23d76fc40c7e3b0a4">ThrottledCan</a> (double tx_frequency_hz, BaseArgs &amp;&amp;...base_args)</td></tr>
 <tr class="memdesc:a8ded774895a030b23d76fc40c7e3b0a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数，将底层CAN构造参数透传给Base  <br /></td></tr>
-<tr class="separator:a8ded774895a030b23d76fc40c7e3b0a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb587d40d0ffc5efb8c1bab6b81ab217" id="r_adb587d40d0ffc5efb8c1bab6b81ab217"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#adb587d40d0ffc5efb8c1bab6b81ab217">~ThrottledCan</a> () override=default</td></tr>
-<tr class="separator:adb587d40d0ffc5efb8c1bab6b81ab217"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a8bba18becc547146257811fbb5597c" id="r_a7a8bba18becc547146257811fbb5597c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a7a8bba18becc547146257811fbb5597c">Write</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> id, const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *data, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size) override</td></tr>
+<tr class="memitem:adb587d40d0ffc5efb8c1bab6b81ab217" id="r_adb587d40d0ffc5efb8c1bab6b81ab217"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb587d40d0ffc5efb8c1bab6b81ab217">~ThrottledCan</a> () override=default</td></tr>
+<tr class="memitem:a7a8bba18becc547146257811fbb5597c" id="r_a7a8bba18becc547146257811fbb5597c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a8bba18becc547146257811fbb5597c">Write</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> id, const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *data, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size) override</td></tr>
 <tr class="memdesc:a7a8bba18becc547146257811fbb5597c"><td class="mdescLeft">&#160;</td><td class="mdescRight">将数据帧入队（使用默认优先级和默认截止时间）  <br /></td></tr>
-<tr class="separator:a7a8bba18becc547146257811fbb5597c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adde715d6898d46de6377a55394b10983" id="r_adde715d6898d46de6377a55394b10983"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#adde715d6898d46de6377a55394b10983">Write</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> id, const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *data, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size, <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> priority, <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a2b757374c4c3b19fbc7fc4fff2ab613e">time_point</a> deadline)</td></tr>
+<tr class="memitem:a0f2dc02d3f669b71d511ca464676da20" id="r_a0f2dc02d3f669b71d511ca464676da20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f2dc02d3f669b71d511ca464676da20">Write</a> (const <a class="el" href="structrm_1_1hal_1_1CanFrame.html">CanFrame</a> &amp;frame) override</td></tr>
+<tr class="memdesc:a0f2dc02d3f669b71d511ca464676da20"><td class="mdescLeft">&#160;</td><td class="mdescRight">将数据帧入队（帧类型由 frame.is_fd_frame 显式指定）  <br /></td></tr>
+<tr class="memitem:adde715d6898d46de6377a55394b10983" id="r_adde715d6898d46de6377a55394b10983"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adde715d6898d46de6377a55394b10983">Write</a> (<a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a> id, const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *data, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> size, <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> priority, <a class="el" href="#a2b757374c4c3b19fbc7fc4fff2ab613e">time_point</a> deadline)</td></tr>
 <tr class="memdesc:adde715d6898d46de6377a55394b10983"><td class="mdescLeft">&#160;</td><td class="mdescRight">将数据帧入队（指定优先级和截止时间点）  <br /></td></tr>
-<tr class="separator:adde715d6898d46de6377a55394b10983"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41ba6e7b71840c3aa2d9235eea04943f" id="r_a41ba6e7b71840c3aa2d9235eea04943f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a41ba6e7b71840c3aa2d9235eea04943f">Process</a> ()</td></tr>
+<tr class="memitem:a41ba6e7b71840c3aa2d9235eea04943f" id="r_a41ba6e7b71840c3aa2d9235eea04943f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41ba6e7b71840c3aa2d9235eea04943f">Process</a> ()</td></tr>
 <tr class="memdesc:a41ba6e7b71840c3aa2d9235eea04943f"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理发送队列，取出一帧并通过底层CAN实际发送（自动获取当前时间）  <br /></td></tr>
-<tr class="separator:a41ba6e7b71840c3aa2d9235eea04943f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bca6fab22a7e9f312def62764bd8cde" id="r_a8bca6fab22a7e9f312def62764bd8cde"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a8bca6fab22a7e9f312def62764bd8cde">Process</a> (<a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a2b757374c4c3b19fbc7fc4fff2ab613e">time_point</a> now)</td></tr>
+<tr class="memitem:a8bca6fab22a7e9f312def62764bd8cde" id="r_a8bca6fab22a7e9f312def62764bd8cde"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bca6fab22a7e9f312def62764bd8cde">Process</a> (<a class="el" href="#a2b757374c4c3b19fbc7fc4fff2ab613e">time_point</a> now)</td></tr>
 <tr class="memdesc:a8bca6fab22a7e9f312def62764bd8cde"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理发送队列，取出一帧并通过底层CAN实际发送（使用指定时间点）  <br /></td></tr>
-<tr class="separator:a8bca6fab22a7e9f312def62764bd8cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e78237bd0f6ff08ddfedc4fc278b292" id="r_a0e78237bd0f6ff08ddfedc4fc278b292"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a0e78237bd0f6ff08ddfedc4fc278b292">Stop</a> () override</td></tr>
+<tr class="memitem:a0e78237bd0f6ff08ddfedc4fc278b292" id="r_a0e78237bd0f6ff08ddfedc4fc278b292"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e78237bd0f6ff08ddfedc4fc278b292">Stop</a> () override</td></tr>
 <tr class="memdesc:a0e78237bd0f6ff08ddfedc4fc278b292"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止CAN外设并清空发送队列  <br /></td></tr>
-<tr class="separator:a0e78237bd0f6ff08ddfedc4fc278b292"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae302236c2df8922dbea2bcc703363dd1" id="r_ae302236c2df8922dbea2bcc703363dd1"><td class="memItemLeft" align="right" valign="top">auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#ae302236c2df8922dbea2bcc703363dd1">queue</a> ()</td></tr>
-<tr class="separator:ae302236c2df8922dbea2bcc703363dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ad9824c2b57bdb8ea42675f4ce72ef3" id="r_a9ad9824c2b57bdb8ea42675f4ce72ef3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structrm_1_1hal_1_1detail_1_1ThrottledCan_1_1TxStats.html">TxStats</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a9ad9824c2b57bdb8ea42675f4ce72ef3">stats</a> () const</td></tr>
+<tr class="memitem:ae302236c2df8922dbea2bcc703363dd1" id="r_ae302236c2df8922dbea2bcc703363dd1"><td class="memItemLeft" align="right" valign="top">auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae302236c2df8922dbea2bcc703363dd1">queue</a> ()</td></tr>
+<tr class="memitem:a9ad9824c2b57bdb8ea42675f4ce72ef3" id="r_a9ad9824c2b57bdb8ea42675f4ce72ef3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structrm_1_1hal_1_1detail_1_1ThrottledCan_1_1TxStats.html">TxStats</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ad9824c2b57bdb8ea42675f4ce72ef3">stats</a> () const</td></tr>
 <tr class="memdesc:a9ad9824c2b57bdb8ea42675f4ce72ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取最近一个统计周期（1 秒）的流量快照（Process() 驱动刷新）  <br /></td></tr>
-<tr class="separator:a9ad9824c2b57bdb8ea42675f4ce72ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab60107de4366ddb7847b950c64ecfbda" id="r_ab60107de4366ddb7847b950c64ecfbda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#ab60107de4366ddb7847b950c64ecfbda">SetDefaultDeadlineOffset</a> (<a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a65802cd850371c612f5af4dc907f2cc5">duration</a> offset)</td></tr>
+<tr class="memitem:ab60107de4366ddb7847b950c64ecfbda" id="r_ab60107de4366ddb7847b950c64ecfbda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab60107de4366ddb7847b950c64ecfbda">SetDefaultDeadlineOffset</a> (<a class="el" href="#a65802cd850371c612f5af4dc907f2cc5">duration</a> offset)</td></tr>
 <tr class="memdesc:ab60107de4366ddb7847b950c64ecfbda"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置默认截止时间偏移量  <br /></td></tr>
-<tr class="separator:ab60107de4366ddb7847b950c64ecfbda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3ef732de8e1cb8d6b16c7489b7ca00f" id="r_ad3ef732de8e1cb8d6b16c7489b7ca00f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#ad3ef732de8e1cb8d6b16c7489b7ca00f">SetDefaultDeadlineOffset</a> (<a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> ms)</td></tr>
+<tr class="memitem:ad3ef732de8e1cb8d6b16c7489b7ca00f" id="r_ad3ef732de8e1cb8d6b16c7489b7ca00f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3ef732de8e1cb8d6b16c7489b7ca00f">SetDefaultDeadlineOffset</a> (<a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a> ms)</td></tr>
 <tr class="memdesc:ad3ef732de8e1cb8d6b16c7489b7ca00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置默认截止时间偏移量（毫秒）  <br /></td></tr>
-<tr class="separator:ad3ef732de8e1cb8d6b16c7489b7ca00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a572b0b8e308473d6c57acc90a944d4d4" id="r_a572b0b8e308473d6c57acc90a944d4d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a65802cd850371c612f5af4dc907f2cc5">duration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a572b0b8e308473d6c57acc90a944d4d4">default_deadline_offset</a> () const</td></tr>
+<tr class="memitem:a572b0b8e308473d6c57acc90a944d4d4" id="r_a572b0b8e308473d6c57acc90a944d4d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a65802cd850371c612f5af4dc907f2cc5">duration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a572b0b8e308473d6c57acc90a944d4d4">default_deadline_offset</a> () const</td></tr>
 <tr class="memdesc:a572b0b8e308473d6c57acc90a944d4d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前默认截止时间偏移量  <br /></td></tr>
-<tr class="separator:a572b0b8e308473d6c57acc90a944d4d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt;<br />
 class rm::hal::detail::ThrottledCan&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;</div><p>基于限流优先级队列的通用CAN发送封装 </p>
-<p>继承自 Base（任意 <a class="el" href="classrm_1_1hal_1_1CanInterface.html" title="CAN接口类">CanInterface</a> 子类），override <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a7a8bba18becc547146257811fbb5597c" title="将数据帧入队（使用默认优先级和默认截止时间）">Write()</a> 将帧入队而非立即发送。 需要在主循环或定时器中尽量高频地调用 <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a41ba6e7b71840c3aa2d9235eea04943f" title="处理发送队列，取出一帧并通过底层CAN实际发送（自动获取当前时间）">Process()</a> 以按限频策略出队并实际发送。 </p><dl class="tparams"><dt>模板参数</dt><dd>
+<p>继承自 Base（任意 <a class="el" href="classrm_1_1hal_1_1CanInterface.html" title="CAN接口类">CanInterface</a> 子类），override <a class="el" href="#a7a8bba18becc547146257811fbb5597c" title="将数据帧入队（使用默认优先级和默认截止时间）">Write()</a> 将帧入队而非立即发送。 需要在主循环或定时器中尽量高频地调用 <a class="el" href="#a41ba6e7b71840c3aa2d9235eea04943f" title="处理发送队列，取出一帧并通过底层CAN实际发送（自动获取当前时间）">Process()</a> 以按限频策略出队并实际发送。 </p><dl class="tparams"><dt>模板参数</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Base</td><td>底层CAN实现类（BxCan / FdCan / Mcp2515 / SocketCan 等） </td></tr>
     <tr><td class="paramname">MaxDataSize</td><td>单帧最大数据长度（经典CAN=8, CAN FD=64） </td></tr>
@@ -176,17 +156,17 @@ class rm::hal::detail::ThrottledCan&lt; Base, MaxDataSize, MaxQueueSize, Policy 
   </table>
   </dd>
 </dl>
-</div><h2 class="groupheader">成员类型定义说明</h2>
+</div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">成员类型定义说明</h2>
 <a id="a2d48283d8b29189856f29fd2843b0d0d" name="a2d48283d8b29189856f29fd2843b0d0d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2d48283d8b29189856f29fd2843b0d0d">&#9670;&#160;</a></span>clock</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::clock =  std::chrono::steady_clock</td>
+          <td class="memname">using <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::clock = std::chrono::steady_clock</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -199,10 +179,10 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::duration =  clock::duration</td>
+          <td class="memname">using <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::duration = clock::duration</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -215,24 +195,24 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::time_point =  clock::time_point</td>
+          <td class="memname">using <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::time_point = clock::time_point</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<h2 class="groupheader">构造及析构函数说明</h2>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">构造及析构函数说明</h2>
 <a id="a8ded774895a030b23d76fc40c7e3b0a4" name="a8ded774895a030b23d76fc40c7e3b0a4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8ded774895a030b23d76fc40c7e3b0a4">&#9670;&#160;</a></span>ThrottledCan()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
 <div class="memtemplate">
 template&lt;typename... BaseArgs&gt; </div>
 <table class="mlabels">
@@ -242,24 +222,17 @@ template&lt;typename... BaseArgs&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::ThrottledCan </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>tx_frequency_hz</em>, </td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>tx_frequency_hz</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">BaseArgs &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>base_args</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">BaseArgs &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>base_args</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -281,49 +254,49 @@ template&lt;typename... BaseArgs&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::~<a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">ThrottledCan</a> </td>
+          <td class="memname"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::~<a class="el" href="#a8ded774895a030b23d76fc40c7e3b0a4">ThrottledCan</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel default">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<h2 class="groupheader">成员函数说明</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">成员函数说明</h2>
 <a id="a572b0b8e308473d6c57acc90a944d4d4" name="a572b0b8e308473d6c57acc90a944d4d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a572b0b8e308473d6c57acc90a944d4d4">&#9670;&#160;</a></span>default_deadline_offset()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a65802cd850371c612f5af4dc907f2cc5">duration</a> <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::default_deadline_offset </td>
+          <td class="memname"><a class="el" href="#a65802cd850371c612f5af4dc907f2cc5">duration</a> <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::default_deadline_offset </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -338,7 +311,7 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -346,13 +319,13 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
         <tr>
           <td class="memname">bool <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::Process </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -369,7 +342,7 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -377,14 +350,13 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
         <tr>
           <td class="memname">bool <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::Process </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a2b757374c4c3b19fbc7fc4fff2ab613e">time_point</a>&#160;</td>
-          <td class="paramname"><em>now</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#a2b757374c4c3b19fbc7fc4fff2ab613e">time_point</a></td>          <td class="paramname"><span class="paramname"><em>now</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -406,7 +378,7 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -414,13 +386,13 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
         <tr>
           <td class="memname">auto &amp; <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::queue </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -433,7 +405,7 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -441,14 +413,13 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
         <tr>
           <td class="memname">void <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::SetDefaultDeadlineOffset </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a65802cd850371c612f5af4dc907f2cc5">duration</a>&#160;</td>
-          <td class="paramname"><em>offset</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#a65802cd850371c612f5af4dc907f2cc5">duration</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -469,7 +440,7 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -477,14 +448,13 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
         <tr>
           <td class="memname">void <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::SetDefaultDeadlineOffset </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a>&#160;</td>
-          <td class="paramname"><em>ms</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#aae5bb39b0da6b1cf1b7ed1c03342ec66">u32</a></td>          <td class="paramname"><span class="paramname"><em>ms</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -505,7 +475,7 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -513,13 +483,13 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
         <tr>
           <td class="memname">const <a class="el" href="structrm_1_1hal_1_1detail_1_1ThrottledCan_1_1TxStats.html">TxStats</a> &amp; <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::stats </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -534,7 +504,7 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -542,13 +512,13 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
         <tr>
           <td class="memname">void <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::Stop </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -557,13 +527,13 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
 
 </div>
 </div>
-<a id="a7a8bba18becc547146257811fbb5597c" name="a7a8bba18becc547146257811fbb5597c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a8bba18becc547146257811fbb5597c">&#9670;&#160;</a></span>Write() <span class="overload">[1/2]</span></h2>
+<a id="a0f2dc02d3f669b71d511ca464676da20" name="a0f2dc02d3f669b71d511ca464676da20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f2dc02d3f669b71d511ca464676da20">&#9670;&#160;</a></span>Write() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -571,36 +541,64 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
         <tr>
           <td class="memname">void <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::Write </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">const <a class="el" href="structrm_1_1hal_1_1CanFrame.html">CanFrame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将数据帧入队（帧类型由 frame.is_fd_frame 显式指定） </p>
+<dl class="section note"><dt>注解</dt><dd>不会立即发送，需要定期调用 <a class="el" href="#a41ba6e7b71840c3aa2d9235eea04943f" title="处理发送队列，取出一帧并通过底层CAN实际发送（自动获取当前时间）">Process()</a> 以实际发送 </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>数据帧，std_id 为发送的目标ID </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7a8bba18becc547146257811fbb5597c" name="a7a8bba18becc547146257811fbb5597c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a8bba18becc547146257811fbb5597c">&#9670;&#160;</a></span>Write() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::Write </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>将数据帧入队（使用默认优先级和默认截止时间） </p>
-<dl class="section note"><dt>注解</dt><dd>不会立即发送，需要定期调用 <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a41ba6e7b71840c3aa2d9235eea04943f" title="处理发送队列，取出一帧并通过底层CAN实际发送（自动获取当前时间）">Process()</a> 以实际发送 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>不会立即发送，需要定期调用 <a class="el" href="#a41ba6e7b71840c3aa2d9235eea04943f" title="处理发送队列，取出一帧并通过底层CAN实际发送（自动获取当前时间）">Process()</a> 以实际发送。 帧类型沿用旧接口的隐式规则：大于 8 字节且底层支持 FD 时按 FD 帧发送 </dd></dl>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>标准帧ID </td></tr>
@@ -613,12 +611,12 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
 </div>
 </div>
 <a id="adde715d6898d46de6377a55394b10983" name="adde715d6898d46de6377a55394b10983"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adde715d6898d46de6377a55394b10983">&#9670;&#160;</a></span>Write() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adde715d6898d46de6377a55394b10983">&#9670;&#160;</a></span>Write() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -626,42 +624,32 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
         <tr>
           <td class="memname">bool <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::Write </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a>&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a8f3662a01c5fa99494989944ee6c6157">u16</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
+          <td class="paramtype">const <a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a>&#160;</td>
-          <td class="paramname"><em>priority</em>, </td>
+          <td class="paramtype"><a class="el" href="namespacerm.html#a287a55f70760f2a0c8cfdacddd9b2d34">u8</a></td>          <td class="paramname"><span class="paramname"><em>priority</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html#a2b757374c4c3b19fbc7fc4fff2ab613e">time_point</a>&#160;</td>
-          <td class="paramname"><em>deadline</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="#a2b757374c4c3b19fbc7fc4fff2ab613e">time_point</a></td>          <td class="paramname"><span class="paramname"><em>deadline</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -681,14 +669,14 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
 
 </div>
 </div>
-<h2 class="groupheader">类成员变量说明</h2>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">类成员变量说明</h2>
 <a id="aeae124788729761bd09f774bb9aa3d57" name="aeae124788729761bd09f774bb9aa3d57"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeae124788729761bd09f774bb9aa3d57">&#9670;&#160;</a></span>drop_full_count</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::drop_full_count {0}</td>
@@ -706,7 +694,7 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::enqueue_count {0}</td>
@@ -724,7 +712,7 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::expired_baseline {0}</td>
@@ -742,7 +730,7 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::peak_depth {0}</td>
@@ -760,7 +748,7 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
+template&lt;typename Base, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxDataSize = 8, <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> MaxQueueSize = 128, <a class="el" href="namespacerm_1_1modules.html#ac6c1e591979feaa4b5b310e6a14f4916">modules::SchedulingPolicy</a> Policy = modules::SchedulingPolicy::kPriorityFifo&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> <a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">rm::hal::detail::ThrottledCan</a>&lt; Base, MaxDataSize, MaxQueueSize, Policy &gt;::tx_count {0}</td>
@@ -777,11 +765,19 @@ template&lt;typename Base , <a class="el" href="namespacerm.html#a1df35482f4a88e
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1hal.html">hal</a></li><li class="navelem"><a class="el" href="namespacerm_1_1hal_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">ThrottledCan</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="namespacerm.html">rm</a></li><li class="navelem"><a href="namespacerm_1_1hal.html">hal</a></li><li class="navelem"><a href="namespacerm_1_1hal_1_1detail.html">detail</a></li><li class="navelem"><a href="classrm_1_1hal_1_1detail_1_1ThrottledCan.html">ThrottledCan</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

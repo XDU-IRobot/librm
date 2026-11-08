@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: rm::modules::SparseValueWatcher&lt; T, UseStdFunction &gt; 模板类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classrm_1_1modules_1_1SparseValueWatcher.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('classrm_1_1modules_1_1SparseValueWatcher.html','','classrm_1_1modules_1_1SparseValueWatcher-members'); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -91,55 +90,41 @@ $(document).ready(function(){initNavTree('classrm_1_1modules_1_1SparseValueWatch
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-types">Public 类型</a> &#124;
-<a href="#pub-methods">Public 成员函数</a> &#124;
-<a href="#pub-static-attribs">静态 Public 属性</a> &#124;
-<a href="classrm_1_1modules_1_1SparseValueWatcher-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">rm::modules::SparseValueWatcher&lt; T, UseStdFunction &gt; 模板类 参考</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>监视一个离散值的变化，当值发生变化时触发回调函数  
- <a href="classrm_1_1modules_1_1SparseValueWatcher.html#details">更多...</a></p>
+ <a href="#details">更多...</a></p>
 
 <p><code>#include &lt;<a class="el" href="sparse__value__watcher_8hpp_source.html">sparse_value_watcher.hpp</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public 类型</h2></td></tr>
-<tr class="memitem:aadefc1f30f9ebbafcf7305ee13069458" id="r_aadefc1f30f9ebbafcf7305ee13069458"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html#aadefc1f30f9ebbafcf7305ee13069458">Callback</a> = std::conditional_t&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a>, std::function&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>(<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &amp;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">old_value</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &amp;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">new_value</a>)&gt;, etl::delegate&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>(<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &amp;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">old_value</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &amp;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">new_value</a>)&gt; &gt;</td></tr>
-<tr class="memdesc:aadefc1f30f9ebbafcf7305ee13069458"><td class="mdescLeft">&#160;</td><td class="mdescRight">回调函数类型  <br /></td></tr>
-<tr class="separator:aadefc1f30f9ebbafcf7305ee13069458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac89face76a52b71f9b62a2b3782964ef" id="r_ac89face76a52b71f9b62a2b3782964ef"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac89face76a52b71f9b62a2b3782964ef">Callback</a></td></tr>
+<tr class="memdesc:ac89face76a52b71f9b62a2b3782964ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">回调函数类型  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a5a369aeb596e426bcdcbb3d4a2fb7867" id="r_a5a369aeb596e426bcdcbb3d4a2fb7867"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html#a5a369aeb596e426bcdcbb3d4a2fb7867">SparseValueWatcher</a> ()=<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">default</a></td></tr>
-<tr class="separator:a5a369aeb596e426bcdcbb3d4a2fb7867"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ff8d95a0622909369dcb8a7d5253fe8" id="r_a5ff8d95a0622909369dcb8a7d5253fe8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html#a5ff8d95a0622909369dcb8a7d5253fe8">SparseValueWatcher</a> (<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">initial_value</a>)</td></tr>
-<tr class="separator:a5ff8d95a0622909369dcb8a7d5253fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f276fabb6b29d789672097fc253172f" id="r_a9f276fabb6b29d789672097fc253172f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html#a9f276fabb6b29d789672097fc253172f">SparseValueWatcher</a> (<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">initial_value</a>, <a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html#aadefc1f30f9ebbafcf7305ee13069458">Callback</a> callback)</td></tr>
+<tr class="memitem:a5a369aeb596e426bcdcbb3d4a2fb7867" id="r_a5a369aeb596e426bcdcbb3d4a2fb7867"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a369aeb596e426bcdcbb3d4a2fb7867">SparseValueWatcher</a> ()=default</td></tr>
+<tr class="memitem:a5ff8d95a0622909369dcb8a7d5253fe8" id="r_a5ff8d95a0622909369dcb8a7d5253fe8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ff8d95a0622909369dcb8a7d5253fe8">SparseValueWatcher</a> (T initial_value)</td></tr>
+<tr class="memitem:a9f276fabb6b29d789672097fc253172f" id="r_a9f276fabb6b29d789672097fc253172f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f276fabb6b29d789672097fc253172f">SparseValueWatcher</a> (T initial_value, <a class="el" href="#ac89face76a52b71f9b62a2b3782964ef">Callback</a> callback)</td></tr>
 <tr class="memdesc:a9f276fabb6b29d789672097fc253172f"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
-<tr class="separator:a9f276fabb6b29d789672097fc253172f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40c3a3711402a43a0da8452c468f768f" id="r_a40c3a3711402a43a0da8452c468f768f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html#a40c3a3711402a43a0da8452c468f768f">OnValueChange</a> (<a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html#aadefc1f30f9ebbafcf7305ee13069458">Callback</a> callback)</td></tr>
+<tr class="memitem:a40c3a3711402a43a0da8452c468f768f" id="r_a40c3a3711402a43a0da8452c468f768f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40c3a3711402a43a0da8452c468f768f">OnValueChange</a> (<a class="el" href="#ac89face76a52b71f9b62a2b3782964ef">Callback</a> callback)</td></tr>
 <tr class="memdesc:a40c3a3711402a43a0da8452c468f768f"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置值变化时的回调函数  <br /></td></tr>
-<tr class="separator:a40c3a3711402a43a0da8452c468f768f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a985f1d11980b246a9bee0d61cddfb6ae" id="r_a985f1d11980b246a9bee0d61cddfb6ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html#a985f1d11980b246a9bee0d61cddfb6ae">IgnoreFirstUpdate</a> (<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">ignore</a>)</td></tr>
+<tr class="memitem:a985f1d11980b246a9bee0d61cddfb6ae" id="r_a985f1d11980b246a9bee0d61cddfb6ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a985f1d11980b246a9bee0d61cddfb6ae">IgnoreFirstUpdate</a> (bool ignore)</td></tr>
 <tr class="memdesc:a985f1d11980b246a9bee0d61cddfb6ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否忽略第一次更新（默认忽略）  <br /></td></tr>
-<tr class="separator:a985f1d11980b246a9bee0d61cddfb6ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80b2d43274cd986c8b96ea0ef394fe50" id="r_a80b2d43274cd986c8b96ea0ef394fe50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html#a80b2d43274cd986c8b96ea0ef394fe50">Update</a> (<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &amp;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">new_value</a>)</td></tr>
+<tr class="memitem:a80b2d43274cd986c8b96ea0ef394fe50" id="r_a80b2d43274cd986c8b96ea0ef394fe50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80b2d43274cd986c8b96ea0ef394fe50">Update</a> (const T &amp;new_value)</td></tr>
 <tr class="memdesc:a80b2d43274cd986c8b96ea0ef394fe50"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新值并检查是否发生变化  <br /></td></tr>
-<tr class="separator:a80b2d43274cd986c8b96ea0ef394fe50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89bcbc634f6301e2eedd786142e81d2b" id="r_a89bcbc634f6301e2eedd786142e81d2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html#a89bcbc634f6301e2eedd786142e81d2b">value</a> () <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a></td></tr>
+<tr class="memitem:a89bcbc634f6301e2eedd786142e81d2b" id="r_a89bcbc634f6301e2eedd786142e81d2b"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89bcbc634f6301e2eedd786142e81d2b">value</a> () const</td></tr>
 <tr class="memdesc:a89bcbc634f6301e2eedd786142e81d2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前值  <br /></td></tr>
-<tr class="separator:a89bcbc634f6301e2eedd786142e81d2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 静态 Public 属性</h2></td></tr>
-<tr class="memitem:ad5701a306f20b9daf8f33265f4dd2eae" id="r_ad5701a306f20b9daf8f33265f4dd2eae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">static</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">constexpr</a> <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html#ad5701a306f20b9daf8f33265f4dd2eae">kMaxCallbacks</a> = 5</td></tr>
-<tr class="separator:ad5701a306f20b9daf8f33265f4dd2eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5701a306f20b9daf8f33265f4dd2eae" id="r_ad5701a306f20b9daf8f33265f4dd2eae"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5701a306f20b9daf8f33265f4dd2eae">kMaxCallbacks</a> = 5</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = false&gt;<br />
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T, bool UseStdFunction = false&gt;<br />
 class rm::modules::SparseValueWatcher&lt; T, UseStdFunction &gt;</div><p>监视一个离散值的变化，当值发生变化时触发回调函数 </p>
 <dl class="tparams"><dt>模板参数</dt><dd>
   <table class="tparams">
@@ -147,21 +132,25 @@ class rm::modules::SparseValueWatcher&lt; T, UseStdFunction &gt;</div><p>监视�
   </table>
   </dd>
 </dl>
-</div><h2 class="groupheader">成员类型定义说明</h2>
-<a id="aadefc1f30f9ebbafcf7305ee13069458" name="aadefc1f30f9ebbafcf7305ee13069458"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadefc1f30f9ebbafcf7305ee13069458">&#9670;&#160;</a></span>Callback</h2>
+</div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">成员类型定义说明</h2>
+<a id="ac89face76a52b71f9b62a2b3782964ef" name="ac89face76a52b71f9b62a2b3782964ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac89face76a52b71f9b62a2b3782964ef">&#9670;&#160;</a></span>Callback</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = false&gt; </div>
+template&lt;typename T, bool UseStdFunction = false&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">using</a> <a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html">rm::modules::SparseValueWatcher</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::Callback =  std::conditional_t&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a>, std::function&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>(<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &amp;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">old_value</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &amp;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">new_value</a>)&gt;, etl::delegate&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a>(<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &amp;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">old_value</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &amp;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">new_value</a>)&gt; &gt;</td>
+          <td class="memname">using <a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html">rm::modules::SparseValueWatcher</a>&lt; T, UseStdFunction &gt;::Callback</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>初始值:</b><div class="fragment"><div class="line"> std::conditional_t&lt;                              </div>
+<div class="line">      UseStdFunction,                                               </div>
+<div class="line">      std::function&lt;void(<span class="keyword">const</span> T &amp;old_value, <span class="keyword">const</span> T &amp;new_value)&gt;,  </div>
+<div class="line">      etl::delegate&lt;void(<span class="keyword">const</span> T &amp;old_value, <span class="keyword">const</span> T &amp;new_value)&gt;&gt;</div>
+</div><!-- fragment -->
 <p>回调函数类型 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
@@ -173,28 +162,28 @@ template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</
 
 </div>
 </div>
-<h2 class="groupheader">构造及析构函数说明</h2>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">构造及析构函数说明</h2>
 <a id="a5a369aeb596e426bcdcbb3d4a2fb7867" name="a5a369aeb596e426bcdcbb3d4a2fb7867"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5a369aeb596e426bcdcbb3d4a2fb7867">&#9670;&#160;</a></span>SparseValueWatcher() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = false&gt; </div>
+template&lt;typename T, bool UseStdFunction = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html">rm::modules::SparseValueWatcher</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::SparseValueWatcher </td>
+          <td class="memname"><a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html">rm::modules::SparseValueWatcher</a>&lt; T, UseStdFunction &gt;::SparseValueWatcher </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -207,22 +196,21 @@ template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = false&gt; </div>
+template&lt;typename T, bool UseStdFunction = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html">rm::modules::SparseValueWatcher</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::SparseValueWatcher </td>
+          <td class="memname"><a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html">rm::modules::SparseValueWatcher</a>&lt; T, UseStdFunction &gt;::SparseValueWatcher </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>&#160;</td>
-          <td class="paramname"><em>initial_value</em></td><td>)</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>initial_value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -235,32 +223,25 @@ template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = false&gt; </div>
+template&lt;typename T, bool UseStdFunction = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html">rm::modules::SparseValueWatcher</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::SparseValueWatcher </td>
+          <td class="memname"><a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html">rm::modules::SparseValueWatcher</a>&lt; T, UseStdFunction &gt;::SparseValueWatcher </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>&#160;</td>
-          <td class="paramname"><em>initial_value</em>, </td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>initial_value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html#aadefc1f30f9ebbafcf7305ee13069458">Callback</a>&#160;</td>
-          <td class="paramname"><em>callback</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype"><a class="el" href="#ac89face76a52b71f9b62a2b3782964ef">Callback</a></td>          <td class="paramname"><span class="paramname"><em>callback</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -276,29 +257,28 @@ template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</
 
 </div>
 </div>
-<h2 class="groupheader">成员函数说明</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">成员函数说明</h2>
 <a id="a985f1d11980b246a9bee0d61cddfb6ae" name="a985f1d11980b246a9bee0d61cddfb6ae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a985f1d11980b246a9bee0d61cddfb6ae">&#9670;&#160;</a></span>IgnoreFirstUpdate()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = false&gt; </div>
+template&lt;typename T, bool UseStdFunction = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a> <a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html">rm::modules::SparseValueWatcher</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::IgnoreFirstUpdate </td>
+          <td class="memname">void <a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html">rm::modules::SparseValueWatcher</a>&lt; T, UseStdFunction &gt;::IgnoreFirstUpdate </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a>&#160;</td>
-          <td class="paramname"><em>ignore</em></td><td>)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>ignore</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -319,22 +299,21 @@ template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = false&gt; </div>
+template&lt;typename T, bool UseStdFunction = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a> <a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html">rm::modules::SparseValueWatcher</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::OnValueChange </td>
+          <td class="memname">void <a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html">rm::modules::SparseValueWatcher</a>&lt; T, UseStdFunction &gt;::OnValueChange </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html#aadefc1f30f9ebbafcf7305ee13069458">Callback</a>&#160;</td>
-          <td class="paramname"><em>callback</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#ac89face76a52b71f9b62a2b3782964ef">Callback</a></td>          <td class="paramname"><span class="paramname"><em>callback</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -355,22 +334,21 @@ template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = false&gt; </div>
+template&lt;typename T, bool UseStdFunction = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">void</a> <a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html">rm::modules::SparseValueWatcher</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::Update </td>
+          <td class="memname">void <a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html">rm::modules::SparseValueWatcher</a>&lt; T, UseStdFunction &gt;::Update </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &amp;&#160;</td>
-          <td class="paramname"><em>new_value</em></td><td>)</td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>new_value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -391,21 +369,21 @@ template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = false&gt; </div>
+template&lt;typename T, bool UseStdFunction = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">const</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> &amp; <a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html">rm::modules::SparseValueWatcher</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::value </td>
+          <td class="memname">const T &amp; <a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html">rm::modules::SparseValueWatcher</a>&lt; T, UseStdFunction &gt;::value </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -415,25 +393,25 @@ template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</
 
 </div>
 </div>
-<h2 class="groupheader">类成员变量说明</h2>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">类成员变量说明</h2>
 <a id="ad5701a306f20b9daf8f33265f4dd2eae" name="ad5701a306f20b9daf8f33265f4dd2eae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad5701a306f20b9daf8f33265f4dd2eae">&#9670;&#160;</a></span>kMaxCallbacks</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</a> <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a> , <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">bool</a> UseStdFunction = false&gt; </div>
+template&lt;typename T, bool UseStdFunction = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrm_1_1modules_1_1NoteFreq.html">constexpr</a> <a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> <a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html">rm::modules::SparseValueWatcher</a>&lt; <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">T</a>, <a class="el" href="structrm_1_1modules_1_1NoteFreq.html">UseStdFunction</a> &gt;::kMaxCallbacks = 5</td>
+          <td class="memname"><a class="el" href="namespacerm.html#a1df35482f4a88e1fe1450c7eb4cf4630">usize</a> <a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html">rm::modules::SparseValueWatcher</a>&lt; T, UseStdFunction &gt;::kMaxCallbacks = 5</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -445,11 +423,19 @@ template&lt;<a class="el" href="structrm_1_1modules_1_1NoteFreq.html">typename</
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacerm.html">rm</a></li><li class="navelem"><a class="el" href="namespacerm_1_1modules.html">modules</a></li><li class="navelem"><a class="el" href="classrm_1_1modules_1_1SparseValueWatcher.html">SparseValueWatcher</a></li>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a href="namespacerm.html">rm</a></li><li class="navelem"><a href="namespacerm_1_1modules.html">modules</a></li><li class="navelem"><a href="classrm_1_1modules_1_1SparseValueWatcher.html">SparseValueWatcher</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>

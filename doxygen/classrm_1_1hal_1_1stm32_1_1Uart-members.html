@@ -3,16 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>librm: 成员列表</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,21 +36,20 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.15.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
@@ -64,10 +64,9 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classrm_1_1hal_1_1stm32_1_1Uart.html',''); initResizable(); });
-/* @license-end */
+$(function(){initNavTree('classrm_1_1hal_1_1stm32_1_1Uart.html','',''); });
 </script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -100,7 +99,7 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1stm32_1_1Uart.html',
   <tr class="even"><td class="entry"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#aa267408fe1593233062da929152b1af9">AttachRxCallback</a>(SerialRxCallbackFunction callback) override</td><td class="entry"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html">rm::hal::stm32::Uart&lt; RxBufSize &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#ad9045c5281f44dcfaa75dd4d3a2250f3">IsTxBusy</a>() const override</td><td class="entry"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html">rm::hal::stm32::Uart&lt; RxBufSize &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classrm_1_1hal_1_1SyncWritable.html#aefabda3e26272e2f1d233ed7c627489d">rm::kNoTimeout</a></td><td class="entry"><a class="el" href="classrm_1_1hal_1_1SyncWritable.html">rm::hal::SyncWritable</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classrm_1_1hal_1_1SyncReadable.html#ad520280e1338808a049b97d11c8a5291">rm::hal::SyncReadable::kNoTimeout</a></td><td class="entry"><a class="el" href="classrm_1_1hal_1_1SyncReadable.html">rm::hal::SyncReadable</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classrm_1_1hal_1_1SyncReadable.html#ad520280e1338808a049b97d11c8a5291">rm::hal::SyncSerialInterface::rm::hal::SyncReadable::kNoTimeout</a></td><td class="entry"><a class="el" href="classrm_1_1hal_1_1SyncReadable.html">rm::hal::SyncReadable</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a1e419af8f1b525124e27f843835c27a5">Read</a>(u8 *buf, usize size, u32 timeout_ms) override</td><td class="entry"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html">rm::hal::stm32::Uart&lt; RxBufSize &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classrm_1_1hal_1_1SyncReadable.html#ab7267d43147bf608525a844610edc199">rm::hal::SyncSerialInterface::Read</a>(u8 *buf, usize size)</td><td class="entry"><a class="el" href="classrm_1_1hal_1_1SyncReadable.html">rm::hal::SyncReadable</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a7fc0623cc0697ef68b4691379cd7d7f0">Start</a>() override</td><td class="entry"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html">rm::hal::stm32::Uart&lt; RxBufSize &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
@@ -116,10 +115,11 @@ $(document).ready(function(){initNavTree('classrm_1_1hal_1_1stm32_1_1Uart.html',
   <tr class="even"><td class="entry"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html#a49bc10fe29c475a858f2fe31df1f9036">~Uart</a>() override</td><td class="entry"><a class="el" href="classrm_1_1hal_1_1stm32_1_1Uart.html">rm::hal::stm32::Uart&lt; RxBufSize &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
+</div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
 </body>
