@@ -33,18 +33,14 @@
 #if defined(LIBRM_PLATFORM_STM32)
 #include "librm/hal/stm32/spi.hpp"
 #elif defined(LIBRM_PLATFORM_LINUX)
-// TODO
+// TODO: Linux SPI
 #endif
 
 namespace rm::hal {
 #if defined(LIBRM_PLATFORM_STM32) && defined(HAL_SPI_MODULE_ENABLED)
 using Spi = stm32::Spi;
 #elif defined(LIBRM_PLATFORM_LINUX)
-#if defined(LIBRM_PLATFORM_LINUX_RASPI)
-// TODO: WiringPi GPIO wrapper
-#elif defined(LIBRM_PLATFORM_LINUX_JETSON)
-// TODO: JetsonGPIO GPIO wrapper
-#endif
+// TODO: Linux SPI
 #endif
 }  // namespace rm::hal
 

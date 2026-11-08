@@ -5,6 +5,9 @@ if(NOT LIBRM_PLATFORM STREQUAL "STM32")
     find_package(Boost REQUIRED COMPONENTS system)
     # pthread
     find_package(Threads REQUIRED)
+    # libgpiod（GPIO）
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(LIBGPIOD REQUIRED IMPORTED_TARGET libgpiod)
 endif()
 
 # kalman - https://github.com/mherb/kalman -  https://github.com/SF4cl/kalman.git
@@ -48,12 +51,11 @@ if(LIBRM_PLATFORM STREQUAL "LINUX")
     target_link_libraries(third_party INTERFACE
         Boost::system
         Threads::Threads
+        PkgConfig::LIBGPIOD
     )
-endif()
-
-if(LIBRM_PLATFORM_LINUX_TYPE STREQUAL "RASPI")
-    find_library(WIRINGPI_LIBRARIES NAMES wiringPi)
-    target_link_libraries(third_party INTERFACE ${WIRINGPI_LIBRARIES})
+    if (LIBGPIOD_VERSION VERSION_GREATER_EQUAL "2.0")
+        target_compile_definitions(third_party INTERFACE LIBRM_LIBGPIOD_API_V2)
+    endif ()
 endif()
 
 target_link_libraries(third_party INTERFACE

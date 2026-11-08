@@ -20,11 +20,6 @@
 # SOFTWARE.
 
 set(LIBRM_AVAIABLE_PLATFORMS "STM32" "LINUX")
-set(LIBRM_AVAILABLE_LINUX_TYPES "GENERAL" "JETSON" "RASPI")
-
-# 尝试通过查找和平台有关的库
-find_library(WIRINGPI_LIBRARIES NAMES wiringPi)      # raspberry pi/orange pi
-find_package(JetsonGPIO QUIET)                       # jetson
 
 get_directory_property(DEFS COMPILE_DEFINITIONS)
 
@@ -63,16 +58,4 @@ if (${LIBRM_PLATFORM} STREQUAL "STM32")
     endif ()
 endif ()
 
-# 如果顺利判断出平台是Linux，就根据找到的package进一步判断是哪一种嵌入式Linux
-if (${LIBRM_PLATFORM} STREQUAL "LINUX")
-    if (NOT ${WIRINGPI_LIBRARIES} STREQUAL "WIRINGPI_LIBRARIES-NOTFOUND")
-        message(STATUS "[librm]: Found WiringPi")
-        set(LIBRM_PLATFORM_LINUX_TYPE "RASPI")
-    elseif (JetsonGPIO_FOUND)
-        message(STATUS "[librm]: Found WiringPi")
-        set(LIBRM_PLATFORM_LINUX_TYPE "JETSON")
-    else ()
-        set(LIBRM_PLATFORM_LINUX_TYPE "GENERAL")             # 如果什么都没找到就fallback到general linux，不提供平台驱动
-    endif ()
-    message(STATUS "[librm]: Linux type: ${LIBRM_PLATFORM_LINUX_TYPE}")
-endif ()
+

@@ -21,60 +21,52 @@
 */
 
 /**
- * @file    librm/hal/raspi/gpio.hpp
- * @brief   wiringPi的gpio封装
+ * @file    librm/hal/linux/gpio_v1.hpp
+ * @brief   基于 libgpiod v1 API 的 GPIO 引脚封装
  */
 
-#ifndef LIBRM_HAL_RASPI_GPIO_HPP
-#define LIBRM_HAL_RASPI_GPIO_HPP
+#ifndef LIBRM_HAL_LINUX_GPIO_V1_HPP
+#define LIBRM_HAL_LINUX_GPIO_V1_HPP
 
-#if defined(LIBRM_PLATFORM_LINUX_RASPI)
+#if defined(LIBRM_PLATFORM_LINUX) && !defined(LIBRM_LIBGPIOD_API_V2)
 
-#include <wiringPi.h>
+#include <gpiod.h>
 
-#include "librm/core/typedefs.hpp"
 #include "librm/hal/gpio_interface.hpp"
-#include "librm/hal/raspi/wiringpi_init.hpp"
 
-namespace rm::hal::raspi {
+namespace rm::hal::linux_ {
 
 /**
- * @brief   GPIO引脚类
- * @tparam  mode INPUT/OUTPUT, other modes todo
+ * @brief 基于 libgpiod v1 API 的 GPIO 引脚
  */
-template <int mode>
-class Pin final : public PinInterface {
+class PinV1 final : public PinInterface {
  public:
-  Pin(usize pin) : pin_{pin} {
-    static_assert(mode == OUTPUT || mode == INPUT, "unsupported pin mode!");
-    InitWiringPi();
-    pinMode(pin, mode);
-  }
+  /**
+   * @param offset    引脚在 GPIO 控制器内的偏移
+   * @param direction 引脚方向，请求后不可更改
+   * @param chip      GPIO 控制器名称或设备路径
+   */
+  PinV1(unsigned int offset, PinDirection direction, const char *chip = "gpiochip0");
+  PinV1() = delete;
+  ~PinV1() override;
 
-  Pin() = delete;
-  ~Pin() override = default;
+  PinV1(const PinV1 &) = delete;
+  PinV1 &operator=(const PinV1 &) = delete;
 
-  void Write(bool state) override {
-    if constexpr (mode == OUTPUT) {
-      digitalWrite(pin_, state);
-      state_ = state;
-    }
-  }
+  void Write(bool state) override;
+  [[nodiscard]] bool Read() const override;
 
-  [[nodiscard]] bool Read() const override {
-    if constexpr (mode == OUTPUT) {
-      return state_;
-    } else if constexpr (mode == INPUT) {
-      return digitalRead(pin_);
-    }
-  }
-
- protected:
-  usize pin_;
+ private:
+  gpiod_chip *chip_;
+  gpiod_line *line_;
+  bool is_output_;
   bool state_{};
 };
 
-}  // namespace rm::hal::raspi
-#endif
+using Pin = PinV1;
 
-#endif  // LIBRM_HAL_RASPI_GPIO_HPP
+}  // namespace rm::hal::linux_
+
+#endif  // LIBRM_PLATFORM_LINUX && !LIBRM_LIBGPIOD_API_V2
+
+#endif  // LIBRM_HAL_LINUX_GPIO_V1_HPP

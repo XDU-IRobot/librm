@@ -21,21 +21,21 @@
 */
 
 /**
- * @file    librm/hal/raspi/gpio.hpp
- * @brief   wiringPi的gpio封装
+ * @file    librm/hal/linux/gpio.hpp
+ * @brief   根据 libgpiod 版本选择具体的 GPIO 实现
  */
 
-#ifndef LIBRM_HAL_RASPI_WIRINGPI_INIT_HPP
-#define LIBRM_HAL_RASPI_WIRINGPI_INIT_HPP
+#ifndef LIBRM_HAL_LINUX_GPIO_HPP
+#define LIBRM_HAL_LINUX_GPIO_HPP
 
-#if defined(LIBRM_PLATFORM_LINUX_RASPI)
+#if defined(LIBRM_PLATFORM_LINUX)
 
-namespace rm::hal::raspi {
-
-void InitWiringPi();
-
-}  // namespace rm::hal::raspi
-
+#if defined(LIBRM_LIBGPIOD_API_V2)
+#include "librm/hal/linux/gpio_v2.hpp"
+#else
+#include "librm/hal/linux/gpio_v1.hpp"
 #endif
 
-#endif  // LIBRM_HAL_RASPI_WIRINGPI_INIT_HPP
+#endif  // LIBRM_PLATFORM_LINUX
+
+#endif  // LIBRM_HAL_LINUX_GPIO_HPP

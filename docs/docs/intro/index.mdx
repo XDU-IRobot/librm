@@ -112,7 +112,7 @@ while (true) {
 
 - [x] STM32 HAL
 - [x] Linux PC (SocketCAN、boost::asio、timerfd后端)
-- [x] Raspberry Pi / Orange Pi (WiringPi GPIO后端)
+- [x] Raspberry Pi / Orange Pi (libgpiod GPIO后端)
 - [ ] Jetson
 
 ### 硬件抽象层 (HAL)
@@ -125,7 +125,7 @@ while (true) {
 - [x] ThrottledCAN：基于限流优先级队列的定频 CAN 发送封装
 - GPIO
   - [x] STM32 HAL GPIO
-  - [x] WiringPi
+  - [x] Linux libgpiod
   - [ ] Jetson
 - Serial (UART)
   - [x] 异步/同步接口

@@ -21,8 +21,8 @@
 */
 
 /**
- * @file  librm/hal/can.hpp
- * @brief 根据平台宏定义决定具体实现，并且在gpio_interface.h里提供一个接口类PinInterface实现多态
+ * @file  librm/hal/gpio.hpp
+ * @brief 根据平台宏定义决定具体实现，并且在gpio_interface.hpp里提供一个接口类PinInterface实现多态
  */
 
 #ifndef LIBRM_HAL_GPIO_HPP
@@ -33,21 +33,14 @@
 #if defined(LIBRM_PLATFORM_STM32)
 #include "librm/hal/stm32/gpio.hpp"
 #elif defined(LIBRM_PLATFORM_LINUX)
-#if defined(LIBRM_PLATFORM_LINUX_RASPI)
-#include "librm/hal/raspi/gpio.hpp"
-#endif
+#include "librm/hal/linux/gpio.hpp"
 #endif
 
 namespace rm::hal {
 #if defined(LIBRM_PLATFORM_STM32) && defined(HAL_GPIO_MODULE_ENABLED)
 using Pin = stm32::Pin;
 #elif defined(LIBRM_PLATFORM_LINUX)
-#if defined(LIBRM_PLATFORM_LINUX_RASPI)
-template <int mode>
-using Pin = raspi::Pin<mode>;
-#elif defined(LIBRM_PLATFORM_LINUX_JETSON)
-// TODO: JetsonGPIO GPIO wrapper
-#endif
+using Pin = linux_::Pin;
 #endif
 }  // namespace rm::hal
 

@@ -31,6 +31,11 @@
 namespace rm::hal {
 
 /**
+ * @brief GPIO引脚方向
+ */
+enum class PinDirection { kInput, kOutput };
+
+/**
  * @brief GPIO引脚接口类
  */
 class PinInterface {

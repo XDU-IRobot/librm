@@ -44,9 +44,6 @@ if (${LIBRM_PLATFORM} STREQUAL "STM32")
 endif ()
 
 target_compile_definitions(${PROJECT_NAME} PUBLIC -DLIBRM_PLATFORM_${LIBRM_PLATFORM})
-if (DEFINED LIBRM_PLATFORM_LINUX_TYPE)
-    target_compile_definitions(${PROJECT_NAME} PUBLIC -DLIBRM_PLATFORM_LINUX_${LIBRM_PLATFORM_LINUX_TYPE})
-endif ()
 
 if (BUILD_TESTS)
     enable_testing()
