@@ -14,9 +14,10 @@ set(WITH_TESTS OFF CACHE BOOL "Build eternal tests" FORCE)
 set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "Build benchmark tests" FORCE)
 set(BENCHMARK_ENABLE_GTEST_TESTS OFF CACHE BOOL "Build benchmark gtest tests" FORCE)
 
-# etl会include(GNUInstallDirs)，交叉编译时没有目标架构信息会报找不到 LIBDIR 的警告
+# etl 会 include(GNUInstallDirs)，交叉编译时探测不到目标架构会报找不到 LIBDIR 的警告，
+# 预先写进 cache 让它跳过默认值计算
 if (NOT DEFINED CMAKE_INSTALL_LIBDIR)
-    set(CMAKE_INSTALL_LIBDIR "lib")
+    set(CMAKE_INSTALL_LIBDIR "lib" CACHE PATH "Installation directory for libraries")
 endif ()
 
 if(NOT LIBRM_PLATFORM STREQUAL "STM32")
@@ -50,10 +51,19 @@ add_subdirectory(hipnuc_sdk)
 add_subdirectory(ardupilot_filter_lib)
 
 # rpc_core - https://github.com/shuai132/rpc_core
-# rpc_core声明cmake_minimum_required(3.5)，稍新的cmake会对它报警告，这里局部关闭
-set(CMAKE_WARN_DEPRECATED OFF)
-add_subdirectory(rpc_core)
-set(CMAKE_WARN_DEPRECATED ON)
+# rpc_core 声明的 CMake 版本过旧，会在配置时产生 deprecation 警告，这里只在引入它时临时抑制
+if (COMMAND cmake_diagnostic)
+    # CMake 4.4 起，内建 deprecation 警告由诊断系统控制，需要先把 CMP0218 设为 NEW
+    cmake_policy(SET CMP0218 NEW)
+    cmake_diagnostic(PUSH)
+    cmake_diagnostic(SET CMD_DEPRECATED IGNORE)
+    add_subdirectory(rpc_core)
+    cmake_diagnostic(POP)
+else ()
+    set(CMAKE_WARN_DEPRECATED OFF)
+    add_subdirectory(rpc_core)
+    set(CMAKE_WARN_DEPRECATED ON)
+endif ()
 
 # eternal - https://github.com/mapbox/eternal
 add_library(eternal INTERFACE)
