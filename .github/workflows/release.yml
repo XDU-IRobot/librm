@@ -21,8 +21,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Check tag against CMake version
         run: |
@@ -32,15 +30,7 @@ jobs:
             exit 1
           fi
 
-      - name: Generate release notes
-        uses: orhun/git-cliff-action@v4
-        with:
-          config: .github/cliff.toml
-          args: --latest --strip header
-        env:
-          OUTPUT: RELEASE_NOTES.md
-
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
-          body_path: RELEASE_NOTES.md
+          generate_release_notes: false
