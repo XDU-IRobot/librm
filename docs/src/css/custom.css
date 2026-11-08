@@ -28,3 +28,42 @@
   --ifm-color-primary-lightest: #85c7e6;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 } */
+
+/* 图片排版：等宽两栏，同比例图片并排后高度自然一致 */
+.librm-photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+  margin: 1rem 0;
+}
+
+.librm-photo-grid figure,
+.librm-photo-full figure {
+  margin: 0;
+}
+
+.librm-photo-grid img,
+.librm-photo-full img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.librm-photo-full {
+  margin: 1rem 0 0;
+}
+
+.librm-photo-caption {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .librm-photo-grid {
+    grid-template-columns: 1fr;
+  }
+}

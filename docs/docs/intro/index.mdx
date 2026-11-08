@@ -3,15 +3,32 @@ sidebar_position: 1
 slug: /
 ---
 
+import omni24 from "./assets/omni24.jpg";
+import aim2025 from "./assets/25d.jpg";
+import match25 from "./assets/25.jpg";
+import match26Alliance from "./assets/26_1.jpg";
+import match26Revival from "./assets/26.jpg";
+
 # 简介
 
-librm 是一个面向 Robomaster 机器人电控开发的嵌入式软件框架。它最大的价值概括位四个字就是：省事好用。
+librm 是西安电子科技大学 IRobot 战队开发的 Robomaster 嵌入式电控框架，提供 STM32 和 Linux 上的外设封装、设备驱动与控制算法。它把通信、协议解析和常用控制模块整理在一起，方便开发者把时间花在机器人的控制逻辑上。说得直接一点，就是省事好用。
 
 一台性能优异的机器人离不开大量花在尝试控制方案、调试算法、优化参数上的时间，但在此之前，开发者往往要花费大量时间在与控制逻辑无关的工作上：查手册、配外设、处理协议、移植驱动、写离线检测、等等。
 
-librm 把全部这些脏活用成体系且标准化的方式做好，提供稳定易用的底层能力，让开发者可以专注于算法和控制逻辑本身。librm 不能直接把一个队伍送到国赛八强，但坚实的基础让一个队伍有更多时间去做真正有价值的事情。
+librm 把这些反复用到的底层工作封装成完善且标准化的模块，减少不同机器人、不同项目之间的重复开发，让开发者有更多时间来做有意义的事情。
 
-本项目由西安电子科技大学 IRobot 战队在 2024 赛季启动开发，现以 MIT 协议开源。欢迎各参赛队和机器人开发者使用，如果有任何问题或建议，欢迎提交 issue 或 pull request。
+本项目由西安电子科技大学 IRobot 战队在 2024 赛季启动开发，以 MIT 协议开源。欢迎各参赛队和机器人开发者使用，如果觉得好用的话，star plz！如果有任何问题或建议，欢迎提 issue/pr!
+
+## 从这里开始
+
+librm 通过 CMake 接入已有工程：
+
+```cmake
+add_subdirectory(librm)
+target_link_libraries(${PROJECT_NAME} PRIVATE rm)
+```
+
+首次使用请先按平台完成配置：[STM32 / CubeMX](../integration/stm32_cubemx.mdx) 或 [Linux / CMake](../integration/linux_cmake.mdx)。之后可以从[电机驱动教程](../tutorials/motor-drivers.mdx)开始，也可以先查看[完整功能与支持状态](./features.mdx)，确认需要的设备和模块是否已有实现。
 
 ## 你可以用 librm 做什么
 
@@ -56,7 +73,7 @@ CubeMX 里选好外设和波特率，剩下的调用顺序和 corner case 由 li
 | RGB LED 灯效         | -                                                                                     | [教程：RGB LED](../tutorials/rgb-led.mdx)                    |
 | Vofa+ / 串口绘图     | -                                                                                     | `rm::modules::VofaPlotter`                                   |
 
-接进已有工程只需要在 CMakeLists 里加几行：
+接进已有工程只需要在 CMakeLists 里加两行：
 
 ```cmake
 add_subdirectory(librm)
@@ -67,7 +84,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE rm)
 
 ### 模块组合能力
 
-librm 的模块不是孤立的功能点，它们被设计为可以自由组合：
+librm 的模块共享统一的类型定义、CAN 抽象和错误处理方式，可以在业务代码中直接连接，减少重复适配。下面的片段大致展示了使用 librm 进行开发时数据如何流转。
 
 ```cpp
 // 组合示例：限功率底盘控制。将裁判系统、功率模型、PID、底盘运动学、CAN限流组合在一起
@@ -76,206 +93,108 @@ rm::device::Referee<rm::device::RefereeRevision::kV170> ref;
 rm::modules::MotorPowerModel power_model(rm::modules::MotorPowerModel::kM3508);
 rm::modules::MecanumChassis chassis(0.3f, 0.4f);
 
-auto power_limit = ref.data().robot_status.chassis_power_limit;  // 裁判系统 -> 功率上限
-auto [lf, rf, lr, rr] = chassis.Forward(vx, vy, w);              // 运动学 -> 四轮目标转速
+const auto power_limit = ref.data().robot_status.chassis_power_limit;  // 裁判系统 -> 功率上限
+const auto [v_lf, v_rf, v_lr, v_rr] = chassis.Forward(vx, vy, w);              // 运动学 -> 四轮目标转速
 power_model.DistributePower<4>(states, currents, power_limit, output); // 功率模型 -> 限幅
 ```
 
-这些模块之间的衔接是自然发生的。因为它们共享同一套类型定义、同一个CAN抽象、同一种错误处理方式。你不需要为每个组合写胶水代码。
-
 ### 跨平台能力
 
-外设接口统一之后，librm 顺带获得了跨平台能力。同一份上层代码可以同时编译到 STM32 和 Linux 上：
+STM32 和 Linux 使用相同的外设接口，但创建外设对象时需要传入各自的平台参数。例如，STM32 的 CAN 使用 HAL 句柄，Linux 使用 SocketCAN 接口名。完成这一步后，上层的设备驱动和控制算法都可以复用。
 
 ```cpp
-// 这段代码在 STM32、Linux PC、树莓派上完全一致
-rm::hal::Can can(&hcan1);                          // STM32: HAL CAN；Linux: SocketCAN
+// Linux: rm::hal::Can can{"can0"};
+/*STM32:*/ rm::hal::Can can(&hcan1);
 rm::device::M3508 motor(can, 1);                    // M3508 电机，ID=1
-rm::modules::PID pid(10, 0.5, 0, 16384, 5000);     // 速度环 PID
+rm::modules::PID pid(10, 0.5, 0, 16384, 5000);      // 速度环 PID
 
 can.Begin();
 while (true) {
     pid.Update(target_rpm, motor.rpm());            // 速度闭环
     motor.SetCurrent(pid.out());                    // 电流输出
-    rm::device::DjiMotorBase::SendCommand();        // 统一发送 CAN 帧
+    rm::device::DjiMotorBase::SendCommand();        // 发送 CAN 帧
     rm::core::SleepMs(1);
 }
 ```
 
-不管是[STM32上的CubeMX工程](../integration/stm32_cubemx.mdx)还是[Linux板子](../integration/linux_cmake.mdx)，配置好CMake后上面的例程就可以让一个3508电机转起来。
+这便于在 Linux 上调试设备驱动、测试算法，再接入 STM32 工程。同时，还有更多可以简化工作流的用法，比如：
 
-好处是可以利用电脑灵活的调试能力去写电机驱动、测试算法，调好之后直接搬到 STM32 上跑。
+- Linux上位机和STM32下位机用 `rm::device::CanDevice` 类进行相互通信，代码清晰可读：
 
-## Roadmap
+  ```cpp
+  /// STM32眼里的Jetson上位机，放在STM32端的代码
+  class Jetson : public rm::device::CanDevice {
+  public:
+    explicit Jetson(rm::hal::CanInterface &can, uint16_t host_frame_id = 0x200)
+        : CanDevice{can}, host_frame_id_(host_frame_id) {}
 
-### 跨平台支持
+    // 发送关节状态给上位机
+    void FeedbackJs(const JointState &js) const {
+      rm::hal::CanFrame tx{.std_id = 0x100, .dlc = rm::hal::CanFrame::kDlc64, .is_fd_frame = true};
+      std::memcpy(tx.data.data(), &js, sizeof(js));
+      can_->Write(tx);
+    }
 
-- [x] STM32 HAL
-- [x] Linux PC (SocketCAN、boost::asio、timerfd后端)
-- [x] Raspberry Pi / Orange Pi (libgpiod GPIO后端)
-- [ ] Jetson
+  private:
+    void RxCallback(const rm::hal::CanFrame *msg) override {
+      if (msg->std_id != host_frame_id_) return;
+      // ...
+      // 上报设备状态给rm::device::Device基类，由rm::device::DeviceManager处理设备的在线监测和离线保护
+      ReportStatus(kOk);  // Jetson在线！
+    }
 
-### 硬件抽象层 (HAL)
+    uint16_t host_frame_id_;
+  };
 
-- CAN
-  - [x] STM32 BXCAN
-  - [x] STM32 FDCAN
-  - [x] STM32 MCP2515 SPI-FDCAN
-  - [x] Linux SocketCAN
-- [x] ThrottledCAN：基于限流优先级队列的定频 CAN 发送封装
-- GPIO
-  - [x] STM32 HAL GPIO
-  - [x] Linux libgpiod
-  - [ ] Jetson
-- Serial (UART)
-  - [x] 异步/同步接口
-  - [x] STM32 HAL(阻塞/IT/DMA)
-  - [x] Linux boost::asio::serial_port
-- [ ] SPI
-- [ ] I2C
-- Timer
-  - [x] 轮询
-  - [x] Linux timerfd
-  - [x] STM32 TIM
-- [ ] 统一IO操作模型：类boost::asio io_context
+  /// Jetson上位机眼里的STM32，放在STM32端的代码
+  class STM32 : public rm::device::CanDevice {
+  // ...
+  private:
+    void RxCallback(const rm::hal::CanFrame *msg) override {
+      // 处理收到的JointState...
+      ReportStatus(kOk);  // STM32在线！
+    }
+  };
+  ```
 
-### 设备驱动
+- 裁判系统串口的TX线并联到Linux上位机上，上位机可以用 `rm::device::Referee` 类直接拿到裁判系统数据，不需要电控转发。
+- 无下位机控制。（虽然我强烈不推荐使用这种方案，控制效果和稳定性极差！）
 
-#### 电机
+:::warning
+实际应用中，由于Linux和STM32这种MCU平台存在实时性以及并行行为上的差异，仍然需要考虑线程、中断环境以及控制周期抖动问题。
+:::
 
-- [x] DJI 电机：GM6020 (电压控制+新固件电流控制) / M3508 + C620 / M2006 + C610
-- [x] 达妙电机：MIT模式、速度位置模式、速度模式
-- [x] HT04 电机：海泰 Cheetah MIT 开源关节模组
-- [x] Unitree 电机：宇树系列电机
-- [x] GO8010 电机：宇树 GO-M8010-6 电机
-- [x] LK 电机：瓴控系列电机（MS、MF、MG、MH）
-- [x] 本末电机：仅测试过p1010b_111，理论上协议通用
-- [x] 张大头步进驱动
-- [x] Hiwonder 幻尔总线舵机
+## 战绩可查
 
-#### 传感器
+从 2024 赛季启动开发起，librm 逐渐用到了 IRobot 战队越来越多的电控项目中，并变得越来越完善。到现在，队里几乎所有项目都在使用它。照片里的比赛机器人，以及平时用于测试的大符、前哨站和靶车，都由 librm 提供稳定的电控底层能力。
 
-- [x] BMI088 六轴 IMU
-- [x] IST8310 三轴磁力计
-- [x] Hipnuc IMU (串口 + CAN双协议)
-- [x] 维特智能 JY-ME02-CAN 角度编码器，CAN协议版本
-- [x] STP23L 激光测距模块
-- [x] ZNSV6T1 数字称重模块（Modbus-RTU over RS485）
+<div className="librm-photo-grid">
+  <figure>
+    <img src={omni24} alt="2024 赛季国赛的全向轮步兵" />
+    <figcaption className="librm-photo-caption">
+      librm 的第一次实战：2024 赛季国赛，未上场的全向轮步兵
+    </figcaption>
+  </figure>
+  <figure>
+    <img src={aim2025} alt="2025 电赛 E 题的自行瞄准装置" />
+    <figcaption className="librm-photo-caption">
+      bonus!：2025 电赛 E 题《简易自行瞄准装置》，国二 😄
+    </figcaption>
+  </figure>
+</div>
 
-#### 遥控
+<div className="librm-photo-grid">
+  <figure>
+    <img src={match25} alt="2025 区域赛的机器人" />
+    <figcaption className="librm-photo-caption">2025 区域赛 16 强</figcaption>
+  </figure>
+  <figure>
+    <img src={match26Alliance} alt="2026 联盟赛的机器人" />
+    <figcaption className="librm-photo-caption">2026 联盟赛 冠军</figcaption>
+  </figure>
+</div>
 
-- [x] DR16 接收机
-- [x] 通用 SBUS 协议遥控接收机
-- [x] VT03 图传链路遥控
-
-#### 其他
-
-- [x] 裁判系统 - 支持协议版本 v1.6.4 / v1.7.0 / 新v1.1.0 / 新v1.2.0，可切换
-- [x] 超级电容 - 2024 赛季超级电容 CAN 协议 + 港科开源超级电容 CAN 协议
-
-#### 设备框架
-
-- [x] 设备在线状态监控
-- [x] 心跳超时检测
-- [x] UUID 唯一标识
-- [x] 名称管理
-- [x] 设备失联/恢复回调
-- [x] CAN Device 基类：基于 CAN 的设备通用基类，封装 CAN 消息收发与设备绑定
-
-### 算法模块 (Modules)
-
-#### 控制算法
-
-- PID 控制器
-  - [x] 基础位置式 PID
-  - [x] 变速积分
-  - [x] 梯形积分
-  - [x] 微分先行
-  - [x] 模糊参数推理
-  - [x] 外部微分输入
-  - [ ] 防积分饱和
-- [x] 轨迹限制器：给定最大速度/加速度，对输入信号做运动学约束平滑
-- [x] 底盘运动学：麦轮、矩形四全向轮、矩形四舵轮、等腰三角形三舵轮正逆运动学
-- 电机功率模型（基于西交利物浦开源方案）
-  - [x] M3508+C620参数
-  - [x] 任意个数电机功率分配
-  - [ ] 电压模式GM6020参数
-  - [ ] 电流模式GM6020参数
-
-#### 信号处理
-
-- DSP 滤波器（移植自 ArduPilot filter 库）
-  - [x] LowPass
-  - [x] LowPass2p
-  - [x] Notch
-  - [x] HarmonicNotch
-  - [x] Derivative
-  - [x] Mode
-  - [x] SlewLimiter
-  - [x] Butter
-  - [x] AverageFilter
-- 姿态解算
-  - [x] 统一AHRS算法接口
-  - [x] Mahony 互补滤波
-  - [ ] EKF 扩展卡尔曼滤波 `TODO: 调参`
-- [x] 编码器圈数计数器：轮询单圈编码器累计真实多圈位置
-- [x] 电机校准器：电机零点偏移/反转校准，逻辑坐标与真实坐标互转
-
-#### 通用工具
-
-- [x] CRC 校验 - CRC8 / CRC16 / CRC32 / CRC-CCITT
-- [x] float16 与 float32 互转
-- [x] 角度工具类 - 弧度/角度互转、运算、字面量语法
-- [x] 阈值触发器 - 上升沿/下降沿回调
-- [x] 离散值监视器 - 监视变量变化并触发回调（std::function / etl::delegate）
-- [x] 限流优先级调度队列 - EDF / FIFO / PriorityFIFO 可切换策略
-- [x] 键盘输入处理器 - 键盘输入事件绑定 (KeyDown/KeyUp)，支持组合键、同时按键
-- [x] Vofa+ 绘图器 - FireWater 协议数据格式化，支持多种数值类型
-- [x] 通用序列播放器 - 基于时间的通用数据序列播放框架
-- [x] RGB LED 控制器 - 基于序列播放器的 RGB LED 灯效控制器
-- [x] 蜂鸣器音乐控制器 - 基于序列播放器的无源蜂鸣器音乐播放器
-- 通用工具函数
-  - [x] Sign
-  - [x] Deadline
-  - [x] Deadzone
-  - [x] AngleDelta
-  - [x] Clamp
-  - [x] Wrap
-  - [x] QuatToEuler
-  - [x] EulerToQuat
-  - [x] Map
-  - [x] IntToFloat
-  - [x] FloatToInt
-  - [x] SafeDiv
-  - [x] IsNear
-
-#### 通信中间件
-
-- [ ] RPC over FDCAN
-- [ ] RPC over Serial/USBCDC
-
-#### Core 核心层
-
-- [x] 跨平台类型定义 - u8/u16/u32/i8/f32/f64/usize 等统一别名
-- [x] 线程池 - Linux 平台线程池 (非 STM32)
-- [x] 跨平台异常处理 - STM32 平台异常禁用后的替代方案 + 标准异常
-- [x] 跨平台时间/延时 - SleepMs/SleepUs (裸机/STM32 DWT/FreeRTOS自动识别切换)
-- [x] 编译期平台检测 - 通过 cmake/detect_platform.cmake 自动识别目标平台并定义对应宏
-
-### 第三方库集成
-
-- [x] ETL (Embedded Template Library) - 无动态堆内存分配版本的STL
-- [x] Eigen3 - 线性代数库
-- [x] ArduPilot Filter - 滤波算法库
-- [x] Kalman - 卡尔曼滤波器库
-- [x] eternal - 编译期常量存储
-- [x] hipnuc_sdk - hipnuc IMU SDK
-- [x] rpc_core - 轻量 RPC 框架
-
-### 文档 & 教程
-
-- [x] 简介 / 快速开始
-- [x] 平台集成指南 (STM32 CubeMX, Linux CMake)
-- [x] 模块教程
-- [x] 滤波器模块的交互式 Bode 图
-- [ ] 实战案例
+<figure className="librm-photo-full">
+  <img src={match26Revival} alt="2026 复活赛的机器人" />
+  <figcaption className="librm-photo-caption">2026 复活赛</figcaption>
+</figure>
