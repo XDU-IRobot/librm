@@ -1,12 +1,32 @@
 cmake_minimum_required(VERSION 3.13)
 
-set(BUILD_TESTS OFF)
-set(BUILD_EXHAUSTIVE_TESTS OFF)
-set(BUILD_EXAMPLES OFF)
+if (POLICY CMP0167)
+    # cmake 3.30起移除了FindBoost模块，这里直接用boost的config文件
+    cmake_policy(SET CMP0167 NEW)
+endif ()
+
+# 第三方库的测试和示例一律不构建
+# 这些库有些用 option() 定义开关，CMP0077 OLD下普通变量会被option() 丢弃，必须写进cache才能覆盖。
+set(BUILD_TESTS OFF CACHE BOOL "Build third-party unit tests" FORCE)
+set(BUILD_EXHAUSTIVE_TESTS OFF CACHE BOOL "Build third-party exhaustive tests" FORCE)
+set(BUILD_EXAMPLES OFF CACHE BOOL "Build third-party examples" FORCE)
+set(WITH_TESTS OFF CACHE BOOL "Build eternal tests" FORCE)
+set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "Build benchmark tests" FORCE)
+set(BENCHMARK_ENABLE_GTEST_TESTS OFF CACHE BOOL "Build benchmark gtest tests" FORCE)
+
+# etl会include(GNUInstallDirs)，交叉编译时没有目标架构信息会报找不到 LIBDIR 的警告
+if (NOT DEFINED CMAKE_INSTALL_LIBDIR)
+    set(CMAKE_INSTALL_LIBDIR "lib")
+endif ()
 
 if(NOT LIBRM_PLATFORM STREQUAL "STM32")
     # boost::asio
-    find_package(Boost REQUIRED COMPONENTS system)
+    find_package(Boost REQUIRED)
+    if (TARGET Boost::headers)
+        set(BOOST_HEADERS_TARGET Boost::headers)
+    else ()
+        set(BOOST_HEADERS_TARGET Boost::boost)
+    endif ()
     # pthread
     find_package(Threads REQUIRED)
     # libgpiod（GPIO）
@@ -30,7 +50,10 @@ add_subdirectory(hipnuc_sdk)
 add_subdirectory(ardupilot_filter_lib)
 
 # rpc_core - https://github.com/shuai132/rpc_core
+# rpc_core声明cmake_minimum_required(3.5)，稍新的cmake会对它报警告，这里局部关闭
+set(CMAKE_WARN_DEPRECATED OFF)
 add_subdirectory(rpc_core)
+set(CMAKE_WARN_DEPRECATED ON)
 
 # eternal - https://github.com/mapbox/eternal
 add_library(eternal INTERFACE)
@@ -52,7 +75,7 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
 endif ()
 if(LIBRM_PLATFORM STREQUAL "LINUX")
     target_link_libraries(third_party INTERFACE
-        Boost::system
+        ${BOOST_HEADERS_TARGET}
         Threads::Threads
         PkgConfig::LIBGPIOD
     )

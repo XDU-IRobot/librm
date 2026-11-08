@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/orhun/git-cliff/main/config/cliff.schema.json
+
+[changelog]
+header = "# 更新日志\n\n本文件由`git-cliff`根据提交记录生成。\n\n"
+body = """
+{% if version -%}
+## {{ version }} - {{ timestamp | date(format="%Y-%m-%d") }}
+{% else -%}
+## Unreleased
+{% endif -%}
+{% for group, commits in commits | group_by(attribute="group") %}
+### {{ group }}
+{% for commit in commits -%}
+- {% if commit.scope %}**{{ commit.scope }}**: {% endif %}{{ commit.message | upper_first }}
+{% endfor %}
+{% endfor %}
+"""
+trim = true
+
+[git]
+conventional_commits = true
+filter_unconventional = false
+split_commits = false
+tag_pattern = "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+commit_parsers = [
+  { message = "^Merge", skip = true },
+  { message = "^Fix code style issues", skip = true },
+  { message = "^feat", group = "新增" },
+  { message = "^fix", group = "修复" },
+  { message = "^refactor", group = "重构" },
+  { message = "^perf", group = "性能" },
+  { message = "^docs|^doc", group = "文档" },
+  { message = "^style", group = "样式" },
+  { message = "^chore|^Bump|^Update", skip = true },
+  { message = ".*", group = "其他" },
+]

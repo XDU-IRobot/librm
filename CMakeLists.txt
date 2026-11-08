@@ -20,7 +20,7 @@
 # SOFTWARE.
 
 cmake_minimum_required(VERSION 3.13)
-project(rm C CXX)
+project(rm VERSION 2026.1.0 LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -44,8 +44,15 @@ if (${LIBRM_PLATFORM} STREQUAL "STM32")
 endif ()
 
 target_compile_definitions(${PROJECT_NAME} PUBLIC -DLIBRM_PLATFORM_${LIBRM_PLATFORM})
+target_compile_definitions(${PROJECT_NAME} PUBLIC
+        LIBRM_VERSION_MAJOR=${PROJECT_VERSION_MAJOR}
+        LIBRM_VERSION_MINOR=${PROJECT_VERSION_MINOR}
+        LIBRM_VERSION_PATCH=${PROJECT_VERSION_PATCH}
+)
 
-if (BUILD_TESTS)
+option(LIBRM_BUILD_TESTS "Build librm unit tests" OFF)
+
+if (LIBRM_BUILD_TESTS)
     enable_testing()
     add_subdirectory(test)
 endif ()

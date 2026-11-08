@@ -23,7 +23,7 @@ jobs:
           sudo apt install -y libboost-all-dev libgpiod-dev libgtest-dev pkg-config
 
       - name: Build
-        run: cmake . -Bbuild -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DBUILD_TESTS=ON && cmake --build build -j
+        run: cmake . -Bbuild -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DLIBRM_BUILD_TESTS=ON && cmake --build build -j
 
       - name: Test
-        run: ./build/librm/test/librm_tests
+        run: ./build/test/librm_tests

@@ -9,11 +9,17 @@ env:
   BUILD_TYPE: Release
 
 jobs:
-  build_STM32F407IGHx:
+  build_stm32:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        board: [ stm32f407ighx, stm32h723vgtx ]
     steps:
       - name: arm-none-eabi-gcc GNU Arm Embedded Toolchain
         uses: carlosperate/arm-none-eabi-gcc-action@v1
+
+      - name: Install ninja
+        run: sudo apt install -y ninja-build
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -21,57 +27,22 @@ jobs:
           path: './librm'
           submodules: 'recursive'
 
-      - name: Checkout empty project
+      - name: Checkout template project
         uses: actions/checkout@v4
         with:
           path: './stm32cube_template'
-          submodules: 'recursive'
-          repository: IRobot-EC-2024/stm32cube_template
+          repository: XDU-IRobot/stm32cube_template
 
-      - name: Move source to template project
-        run: mv librm stm32cube_template/stm32f407ighx
-
-      - name: Add library target/link library
+      - name: Add librm to ${{ matrix.board }}
         run: |
-          sed -i '42 a add_subdirectory(librm)' stm32cube_template/stm32f407ighx/CMakeLists.txt
-          sed -i '66 a rm' stm32cube_template/stm32f407ighx/CMakeLists.txt
+          mv librm stm32cube_template/${{ matrix.board }}
+          cd stm32cube_template/${{ matrix.board }}
+          sed -i '/add_subdirectory(cmake\/stm32cubemx)/a add_subdirectory(librm)' CMakeLists.txt
+          sed -i '/^    stm32cubemx$/a\    rm' CMakeLists.txt
 
-      - name: Build
-        run: |
-          cmake stm32cube_template/stm32f407ighx -DCMAKE_BUILD_TYPE=$BUILD_TYPE -Bstm32cube_template/stm32f407ighx/build -G "Unix Makefiles"
-          cmake --build stm32cube_template/stm32f407ighx/build
-
-  build_STM32H723VGTx:
-    runs-on: ubuntu-latest
-    steps:
-      - name: arm-none-eabi-gcc GNU Arm Embedded Toolchain
-        uses: carlosperate/arm-none-eabi-gcc-action@v1
-
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          path: './librm'
-          submodules: 'recursive'
-
-      - name: Checkout empty project
-        uses: actions/checkout@v4
-        with:
-          path: './stm32cube_template'
-          submodules: 'recursive'
-          repository: IRobot-EC-2024/stm32cube_template
-
-      - name: Move source to template project
-        run: mv librm stm32cube_template/stm32h723vgtx
-
-      - name: Add library target/link library
-        run: |
-          sed -i '42 a add_subdirectory(librm)' stm32cube_template/stm32h723vgtx/CMakeLists.txt
-          sed -i '66 a rm' stm32cube_template/stm32h723vgtx/CMakeLists.txt
-
-      - name: Build
-        run: |
-          cmake stm32cube_template/stm32h723vgtx -DCMAKE_BUILD_TYPE=$BUILD_TYPE -Bstm32cube_template/stm32h723vgtx/build -G "Unix Makefiles"
-          cmake --build stm32cube_template/stm32h723vgtx/build
+      - name: Build ${{ matrix.board }}
+        working-directory: ./stm32cube_template/${{ matrix.board }}
+        run: cmake --preset ${{ env.BUILD_TYPE }} && cmake --build --preset ${{ env.BUILD_TYPE }}
 
   build_general_linux:
     runs-on: ubuntu-latest

@@ -1,8 +1,8 @@
 name: Deploy docs
 on:
   push:
-    branches:
-      - main
+    tags:
+      - '[0-9]*'
 permissions:
   contents: write
 jobs:

@@ -9,7 +9,7 @@ sudo apt install -y libgtest-dev libgmock-dev
 编译并运行测试：
 
 ```bash
-cmake -Bbuild -DBUILD_TESTS=ON
+cmake -Bbuild -DLIBRM_BUILD_TESTS=ON
 cmake --build build -- -j$(nproc)
 build/test/librm_tests
 ```
