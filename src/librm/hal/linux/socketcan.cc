@@ -235,8 +235,9 @@ void SocketCan::WriteFrame(u16 id, const u8 *data, u8 dlc, bool is_fd_frame) {
 
   // 连续失败后抛出异常，交由上层处理
   int err = errno;
-  std::string error_msg = netdev_ + " write error: " + std::strerror(err) + " (errno=" + std::to_string(err) +
-                          ", id=0x" + std::to_string(id) + ", size=" + std::to_string(dlc) + ")";
+  char error_msg[128];
+  std::snprintf(error_msg, sizeof(error_msg), "%s write error: %s (errno=%d, id=0x%X, size=%u)", netdev_.c_str(),
+                std::strerror(err), err, static_cast<unsigned>(id), static_cast<unsigned>(dlc));
   rm::Throw(rm::runtime_error(error_msg));
 }
 
