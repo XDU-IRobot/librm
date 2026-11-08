@@ -1,6 +1,7 @@
 # librm
 
-[![build](https://github.com/IRobot-EC-2024/irobotEC/actions/workflows/build.yml/badge.svg)](https://github.com/IRobot-EC-2024/irobotEC/actions/workflows/build.yml)
+[![build](https://github.com/XDU-IRobot/librm/actions/workflows/build.yml/badge.svg)](https://github.com/XDU-IRobot/librm/actions/workflows/build.yml)
+[![test](https://github.com/XDU-IRobot/librm/actions/workflows/test.yml/badge.svg)](https://github.com/XDU-IRobot/librm/actions/workflows/test.yml)
 [![Deploy docs](https://github.com/XDU-IRobot/librm/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/XDU-IRobot/librm/actions/workflows/deploy-docs.yml)
 [![CodeFactor](https://www.codefactor.io/repository/github/xdu-irobot/librm/badge)](https://www.codefactor.io/repository/github/xdu-irobot/librm)
 

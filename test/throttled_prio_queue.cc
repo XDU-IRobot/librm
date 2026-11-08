@@ -32,11 +32,11 @@ struct TestPacket {
 
 // 测试限流优先级队列的基本功能，包括优先级调度、过期丢弃以及 std::optional 返回值
 TEST(ThrottledPrioQueueTest, ThrottlingAndOptionalReturn) {
-  ThrottledPrioQueue<TestPacket, 10> queue(10);  // 10ms 间隔
-  uint32_t now = 1000;
+  ThrottledPrioQueue<TestPacket, 10> queue(100.0);  // 100Hz，即 10ms 间隔
+  const auto now = std::chrono::steady_clock::now();
 
-  queue.Push({1}, 10, now + 100);
-  queue.Push({2}, 5, now + 100);
+  queue.Push({1}, 10, now + std::chrono::milliseconds(100));
+  queue.Push({2}, 5, now + std::chrono::milliseconds(100));
 
   // 第一次调用：应获取 ID 1 (高优先级)
   auto msg1 = queue.Process(now);
@@ -44,24 +44,24 @@ TEST(ThrottledPrioQueueTest, ThrottlingAndOptionalReturn) {
   EXPECT_EQ(msg1->id, 1);
 
   // 立即第二次调用：未到 10ms 间隔，应返回 nullopt
-  auto msg2 = queue.Process(now + 5);
+  auto msg2 = queue.Process(now + std::chrono::milliseconds(5));
   EXPECT_FALSE(msg2.has_value());
 
   // 时间推进后调用：应获取 ID 2
-  auto msg3 = queue.Process(now + 11);
+  auto msg3 = queue.Process(now + std::chrono::milliseconds(11));
   ASSERT_TRUE(msg3.has_value());
   EXPECT_EQ(msg3->id, 2);
 }
 
 // 测试过期消息在 std::optional 中被正确丢弃
 TEST(ThrottledPrioQueueTest, DeadlineDiscardInOptional) {
-  ThrottledPrioQueue<TestPacket, 10> queue(0);  // 0ms 间隔方便测试过期
-  uint32_t now = 1000;
+  ThrottledPrioQueue<TestPacket, 10> queue(1000.0);  // 1ms 间隔方便测试过期
+  const auto now = std::chrono::steady_clock::now();
 
-  queue.Push({99}, 10, now + 50);  // 50ms 后过期
+  queue.Push({99}, 10, now + std::chrono::milliseconds(50));  // 50ms 后过期
 
   // 模拟时间流逝到过期后
-  auto msg = queue.Process(now + 60);
+  auto msg = queue.Process(now + std::chrono::milliseconds(60));
   EXPECT_FALSE(msg.has_value());
   EXPECT_TRUE(queue.empty());
 }

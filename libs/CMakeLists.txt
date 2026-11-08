@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.13)
 
+set(BUILD_TESTS OFF)
+set(BUILD_EXHAUSTIVE_TESTS OFF)
+set(BUILD_EXAMPLES OFF)
+
 if(NOT LIBRM_PLATFORM STREQUAL "STM32")
     # boost::asio
     find_package(Boost REQUIRED COMPONENTS system)
@@ -17,7 +21,6 @@ add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/kalman)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/eigen)
 
 # etl - https://github.com/ETLCPP/etl
-unset(BUILD_TESTS) # suppress CMP0077 warning
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/etl)
 
 # hipnuc sdk
@@ -68,7 +71,3 @@ target_link_libraries(third_party INTERFACE
     eternal
     embedded_cli
 )
-
-set(BUILD_TESTS OFF)
-set(BUILD_EXHAUSTIVE_TESTS OFF)
-set(BUILD_EXAMPLES OFF)

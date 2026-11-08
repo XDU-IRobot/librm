@@ -1,6 +1,9 @@
 name: build
 
-on: [ push, pull_request ]
+on:
+  push:
+  pull_request:
+  workflow_call:
 
 env:
   BUILD_TYPE: Release
@@ -82,7 +85,8 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt update
-          sudo apt install -y libboost-all-dev
+          sudo apt install -y libboost-all-dev libgpiod-dev pkg-config
 
       - name: Build
         run: cmake . -Bbuild -DCMAKE_BUILD_TYPE=$BUILD_TYPE && cmake --build build -j
+
