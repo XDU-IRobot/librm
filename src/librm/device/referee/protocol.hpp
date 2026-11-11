@@ -33,7 +33,7 @@
 namespace rm::device {
 
 constexpr u8 kRefProtocolHeaderSof = 0xa5;
-constexpr int kRefProtocolFrameMaxLen = 128;
+constexpr int kRefProtocolFrameMaxLen = 512;
 constexpr int kRefProtocolHeaderLen = 5;
 constexpr int kRefProtocolCmdIdLen = 2;
 constexpr int kRefProtocolCrc16Len = 2;
@@ -47,6 +47,7 @@ enum class RefereeRevision {
   kV170,     ///< V1.7.0, 2024-12-25
   kNewV110,  ///< 新通信协议V1.1.0, 2025-12-17
   kNewV120,
+  kRm2027V100,  ///< 2027 高校系列赛通信协议 V1.0.0, 2026-10-29
 };
 
 /**
@@ -66,6 +67,12 @@ struct RefereeProtocol {};
  */
 template <RefereeRevision revision>
 struct RefereeProtocolMemoryMap {};
+
+/**
+ * @brief 固定长度命令码的数据段长度；变长命令由解码器单独校验
+ */
+template <RefereeRevision revision>
+struct RefereeProtocolPayloadLength {};
 
 }  // namespace rm::device
 
