@@ -340,6 +340,7 @@ struct RefereeProtocolMemoryMap<RefereeRevision::kRm2027V100> {
 
 template <>
 struct RefereeProtocolPayloadLength<RefereeRevision::kRm2027V100> {
+  // clang-format off
   static MAPBOX_ETERNAL_CONSTEXPR const auto map = mapbox::eternal::map<u16, usize>({
       {RefereeCmdId<RefereeRevision::kRm2027V100>::kGameStatus, 11},
       {RefereeCmdId<RefereeRevision::kRm2027V100>::kGameResult, 1},
@@ -367,6 +368,7 @@ struct RefereeProtocolPayloadLength<RefereeRevision::kRm2027V100> {
       {RefereeCmdId<RefereeRevision::kRm2027V100>::kRobotCustomData2, 300},
       {RefereeCmdId<RefereeRevision::kRm2027V100>::kCustomControl, 60}
   });
+  // clang-format on
 };
 
 }  // namespace rm::device
