@@ -10,11 +10,15 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
+          # fork 的 PR 在 base 仓库里取不到同名分支，需要显式到 head 仓库取
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: DoozyX/clang-format-lint-action@v0.18.1
         with:
           source: './src'
-          inplace: True
+          # fork PR 的 GITHUB_TOKEN 只读，即使修复了也推不回去，所以只检查
+          inplace: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }}
       - uses: stefanzweifel/git-auto-commit-action@v5
+        if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
         with:
           commit_message: Fix code style issues with clang-format

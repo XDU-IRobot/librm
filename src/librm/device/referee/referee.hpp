@@ -32,6 +32,7 @@
 #include "protocol_v170.hpp"
 #include "protocol_new_v110.hpp"
 #include "protocol_new_v120.hpp"
+#include "protocol_rm2027_v100.hpp"
 // implement and add more revisions here
 
 #include <cstring>
@@ -139,9 +140,31 @@ class Referee : public Device {
             // 裁判系统仍然在线
             ReportStatus(kOk);
             // 把数据拷贝到反序列化缓冲区对应的结构体中
-            const usize member_offset = referee_protocol_memory_map_.map.at(cmdid_this_time_);
+            const auto member_it = referee_protocol_memory_map_.map.find(cmdid_this_time_);
+            if (member_it == referee_protocol_memory_map_.map.end()) {
+              break;  // 未建模的命令码不应打断串口解码线程
+            }
+            if constexpr (revision == RefereeRevision::kRm2027V100) {
+              if (cmdid_this_time_ == RefereeCmdId<revision>::kRobotInteraction) {
+                if (data_len_this_time_ < 6 || data_len_this_time_ > 118) {
+                  break;
+                }
+              } else {
+                const auto length_it = RefereeProtocolPayloadLength<revision>::map.find(cmdid_this_time_);
+                if (length_it == RefereeProtocolPayloadLength<revision>::map.end() ||
+                    data_len_this_time_ != length_it->second) {
+                  break;
+                }
+              }
+            }
+            const usize member_offset = member_it->second;
             u8 *dest_ptr = reinterpret_cast<u8 *>(&deserialize_buffer_) + member_offset;
             u8 *src_ptr = valid_data_so_far_.data() + kRefProtocolHeaderLen + kRefProtocolCmdIdLen;
+            if constexpr (revision == RefereeRevision::kRm2027V100) {
+              if (cmdid_this_time_ == RefereeCmdId<revision>::kRobotInteraction) {
+                std::memset(dest_ptr, 0, sizeof(deserialize_buffer_.robot_interaction));
+              }
+            }
             std::memcpy(dest_ptr, src_ptr, data_len_this_time_);
 
             //  触发用户注册的回调函数
@@ -173,6 +196,9 @@ class Referee : public Device {
   void AttachCallback(const RxCallback &callback) { rx_callbacks_.push_back(callback); }
 
   const RefereeProtocol<revision> &data() const { return deserialize_buffer_; }
+
+  usize last_payload_length() const { return data_len_this_time_; }
+  u8 last_seq() const { return seq_this_time_; }
 
   f32 loss_rate() const { return loss_rate_smooth_.value(); }
 
