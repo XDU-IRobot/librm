@@ -28,8 +28,6 @@
 #ifndef LIBRM_MODULES_AHRS_MAHONY_HPP
 #define LIBRM_MODULES_AHRS_MAHONY_HPP
 
-#include <array>
-
 #include "librm/core/typedefs.hpp"
 #include "librm/modules/ahrs/ahrs_interface.hpp"
 
@@ -42,8 +40,8 @@ class MahonyAhrs : public AhrsInterface {
 
   void Update(const ImuData9Dof &data) override;
   void Update(const ImuData6Dof &data) override;
-  [[nodiscard]] const EulerAngle &euler_angle() const override;
-  [[nodiscard]] const Quaternion &quaternion() const override;
+  [[nodiscard]] const Eigen::Vector3f &euler_angle() const override;
+  [[nodiscard]] const Eigen::Quaternionf &quaternion() const override;
 
  private:
   f32 two_kp_, two_ki_;
@@ -54,13 +52,12 @@ class MahonyAhrs : public AhrsInterface {
   f32 halfvx_, halfvy_, halfvz_, halfwx_, halfwy_, halfwz_;
   f32 halfex_, halfey_, halfez_;
   f32 qa_, qb_, qc_;
-  Quaternion quaternion_;
-  EulerAngle euler_ypr_;
+  Eigen::Quaternionf quaternion_;
+  Eigen::Vector3f euler_ypr_;
   f32 sample_freq_;
   volatile f32 integral_fb_x_ = 0.0f, integral_fb_y_ = 0.0f,
                integral_fb_z_ = 0.0f;  // integral error terms scaled by Ki
 };
-
 }  // namespace rm::modules
 
 #endif  // LIBRM_MODULES_AHRS_MAHONY_H

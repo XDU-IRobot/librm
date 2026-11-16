@@ -72,7 +72,7 @@
 
 /******** MODULES ********/
 #include "librm/modules/ahrs/mahony.hpp"
-#include "librm/modules/ahrs/ekf.hpp"
+#include "librm/modules/ahrs/quaternion_ekf.hpp"
 #include "librm/modules/rpc/rpc_fdcan_transport.hpp"
 #include "librm/modules/angle.hpp"
 #include "librm/modules/buzzer_controller.hpp"

@@ -21,7 +21,8 @@
 
 cmake_minimum_required(VERSION 3.13)
 
-file(GLOB_RECURSE SOURCES "${CMAKE_CURRENT_LIST_DIR}/core/*.cc"
+file(GLOB_RECURSE SOURCES
+        "${CMAKE_CURRENT_LIST_DIR}/core/*.cc"
         "${CMAKE_CURRENT_LIST_DIR}/device/*.cc"
         "${CMAKE_CURRENT_LIST_DIR}/modules/*.cc")
 file(GLOB COMMON_HAL_SOURCES "${CMAKE_CURRENT_LIST_DIR}/hal/*.cc")
@@ -38,3 +39,14 @@ add_library(${PROJECT_NAME} STATIC
         ${PLATFORM_SOURCES}
 )
 set_property(TARGET ${PROJECT_NAME} PROPERTY POSITION_INDEPENDENT_CODE ON)
+
+# 一些O0和O3下性能差异过大，放到STM32上O0会直接跑不动的代码，强制设成O3
+# 主要是涉及到用Eigen做大量矩阵运算的代码，550mhz STM32H7下实测，O0和O3的速度差大约500倍
+file(GLOB FAST_SOURCES
+        ${CMAKE_CURRENT_LIST_DIR}/modules/ahrs/quaternion_ekf.cc
+        ${CMAKE_CURRENT_LIST_DIR}/modules/ahrs/mahony.cc
+        ${CMAKE_CURRENT_LIST_DIR}/modules/utils.cc
+)
+foreach (FAST_SOURCE ${FAST_SOURCES})
+    set_source_files_properties(${FAST_SOURCE} PROPERTIES COMPILE_OPTIONS "-O3")
+endforeach ()

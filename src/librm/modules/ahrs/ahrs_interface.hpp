@@ -23,47 +23,33 @@
 /**
  * @file  librm/modules/ahrs/ahrs_interface.hpp
  * @brief AHRS算法接口
+ *
+ * 坐标系为ROS REP-105的机体坐标系：x向前、y向左、z向上。世界坐标系为 ENU：x向东、y向北、z向上。
+ * 姿态四元数表示从机体坐标系到世界坐标系的旋转。
  */
 
 #ifndef LIBRM_MODULES_AHRS_AHRS_INTERFACE_HPP
 #define LIBRM_MODULES_AHRS_AHRS_INTERFACE_HPP
 
-#include "librm/core/typedefs.hpp"
+#include <Eigen/Geometry>
 
 namespace rm::modules {
 
+/**
+ * @brief 6轴IMU数据
+ */
 struct ImuData6Dof {
-  f32 gx;
-  f32 gy;
-  f32 gz;
-  f32 ax;
-  f32 ay;
-  f32 az;
+  Eigen::Vector3f gyro;   ///< 角速度，rad/s，机体系
+  Eigen::Vector3f accel;  ///< 加速度，m/s^2，机体系
 };
 
+/**
+ * @brief 9轴IMU数据
+ */
 struct ImuData9Dof {
-  f32 gx;
-  f32 gy;
-  f32 gz;
-  f32 ax;
-  f32 ay;
-  f32 az;
-  f32 mx;
-  f32 my;
-  f32 mz;
-};
-
-struct EulerAngle {
-  f32 roll;
-  f32 pitch;
-  f32 yaw;
-};
-
-struct Quaternion {
-  f32 w;
-  f32 x;
-  f32 y;
-  f32 z;
+  Eigen::Vector3f gyro;  ///< 角速度，rad/s，机体系
+  Eigen::Vector3f accel; ///< 加速度，m/s^2，机体系
+  Eigen::Vector3f mag;   ///< 磁场强度，任意单位，机体系
 };
 
 class AhrsInterface {
@@ -83,14 +69,14 @@ class AhrsInterface {
   virtual void Update(const ImuData9Dof &data) = 0;
 
   /**
-   * @return 姿态欧拉角
+   * @return 姿态欧拉角，单位为弧度，顺序为 roll(X) pitch(Y) yaw(Z)
    */
-  [[nodiscard]] virtual const EulerAngle &euler_angle() const = 0;
+  [[nodiscard]] virtual const Eigen::Vector3f &euler_angle() const = 0;
 
   /**
-   * @return 姿态四元数
+   * @return 姿态四元数，机体到世界的旋转
    */
-  [[nodiscard]] virtual const Quaternion &quaternion() const = 0;
+  [[nodiscard]] virtual const Eigen::Quaternionf &quaternion() const = 0;
 };
 
 }  // namespace rm::modules

@@ -90,10 +90,28 @@ f32 Wrap(f32 input, f32 min_value, f32 max_value) {
   return fmodf(fmodf(input - min_value, cycle) + cycle, cycle) + min_value;
 }
 
-void QuatToEuler(const f32 q[4], f32 euler[3]) {
-  euler[0] = atan2f(2 * (q[0] * q[1] + q[2] * q[3]), 1 - 2 * (q[1] * q[1] + q[2] * q[2]));
-  euler[1] = asinf(2 * (q[0] * q[2] - q[3] * q[1]));
-  euler[2] = atan2f(2 * (q[0] * q[3] + q[1] * q[2]), 1 - 2 * (q[2] * q[2] + q[3] * q[3]));
+Eigen::Vector3f QuatToEuler(const Eigen::Quaternionf &q) {
+  // R为机体到世界的旋转，其第三行是世界系z轴在机体系中的表示
+  const Eigen::Matrix3f r = q.toRotationMatrix();
+
+  Eigen::Vector3f euler;
+  euler.y() = std::asin(std::clamp(-r(2, 0), -1.0f, 1.0f));  // pitch
+  euler.x() = std::atan2(r(2, 1), r(2, 2));                  // roll
+  euler.z() = std::atan2(r(1, 0), r(0, 0));                  // yaw
+
+  // 万向锁时两轴耦合，把roll置零，全部旋转归到yaw
+  if (std::fabs(r(2, 0)) > 0.99999f) {
+    euler.x() = std::atan2(-r(1, 2), r(1, 1));
+    euler.z() = 0.0f;
+  }
+  return euler;
+}
+
+Eigen::Quaternionf EulerToQuat(const Eigen::Vector3f &euler) {
+  const Eigen::AngleAxisf roll(euler.x(), Eigen::Vector3f::UnitX());
+  const Eigen::AngleAxisf pitch(euler.y(), Eigen::Vector3f::UnitY());
+  const Eigen::AngleAxisf yaw(euler.z(), Eigen::Vector3f::UnitZ());
+  return yaw * pitch * roll;
 }
 
 f32 Map(f32 value, f32 from_min, f32 from_max, f32 to_min, f32 to_max) {

@@ -115,27 +115,27 @@ void ProcessEncoder() {
 }
 ```
 
-## 四元数转欧拉角
+## 四元数与欧拉角互转
 
-将四元数表示的姿态转换为欧拉角（roll, pitch, yaw）。
+在四元数与欧拉角之间转换。欧拉角的顺序为 roll(X) pitch(Y) yaw(Z)，单位为弧度，与 ROS 的 rpy 约定一致。
 
 ```cpp
 #include <librm.hpp>
 
 void ProcessIMU() {
-  // 从 IMU 获取四元数
-  float quaternion[4] = {q0, q1, q2, q3};  // w, x, y, z
+  Eigen::Quaternionf q(1.0f, 0.0f, 0.0f, 0.0f);  // 机体到世界的旋转
 
-  // 转换为欧拉角（弧度）
-  float euler[3];  // roll, pitch, yaw
-  rm::modules::QuatToEuler(quaternion, euler);
-
-  float roll = euler[0];   // 横滚角
-  float pitch = euler[1];  // 俯仰角
-  float yaw = euler[2];    // 偏航角
+  // 转换为欧拉角（弧度），xyz 依次对应 roll pitch yaw
+  Eigen::Vector3f euler = rm::modules::QuatToEuler(q);
+  float roll = euler.x();
+  float pitch = euler.y();
+  float yaw = euler.z();
 
   // 转换为度
   float yaw_deg = yaw * 180.0f / 3.14159f;
+
+  // 反向转换
+  Eigen::Quaternionf back = rm::modules::EulerToQuat(euler);
 }
 ```
 

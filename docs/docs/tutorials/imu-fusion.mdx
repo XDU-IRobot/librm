@@ -2,13 +2,15 @@
 
 本例程演示如何使用 librm 中的 BMI088 驱动和 Mahony 姿态解算算法实现姿态解算。
 
+坐标系统一采用 ROS REP-105 的约定：机体坐标系 x 向前、y 向左、z 向上，世界坐标系为 ENU。姿态四元数表示机体到世界的旋转。
+
 ## 代码
 
 ```cpp
 #include "cmsis_os.h"
 #include "spi.h"
 
-#include <librm.hpp">
+#include <librm.hpp>
 
 using rm::device::BMI088;
 using rm::modules::MahonyAhrs;
@@ -29,20 +31,41 @@ void ExampleAttitudeTask(const void *pv_arg) {
 
   for (;;) {
     bmi088.Update();
-    mahony.Update(rm::modules::ImuData6Dof{bmi088.gyro_x(), bmi088.gyro_y(), bmi088.gyro_z(), bmi088.accel_x(),
-                                           bmi088.accel_y(), bmi088.accel_z()});
+    mahony.Update(rm::modules::ImuData6Dof{
+        Eigen::Vector3f(bmi088.gyro_x(), bmi088.gyro_y(), bmi088.gyro_z()),
+        Eigen::Vector3f(bmi088.accel_x(), bmi088.accel_y(), bmi088.accel_z())});
 
-    // 获取姿态数据(欧拉角，弧度)
-    mahony.euler_angle().pitch;
-    mahony.euler_angle().roll;
-    mahony.euler_angle().yaw;
-    // 或者获取四元数
-    mahony.quaternion().w;
-    mahony.quaternion().x;
-    mahony.quaternion().y;
-    mahony.quaternion().z;
+    // 欧拉角，单位为弧度，xyz 依次对应 roll pitch yaw
+    const Eigen::Vector3f &euler = mahony.euler_angle();
+    float roll = euler.x();
+    float pitch = euler.y();
+    float yaw = euler.z();
+
+    // 四元数，机体到世界的旋转
+    const Eigen::Quaternionf &q = mahony.quaternion();
+    float w = q.w();
+    float x = q.x();
+    float y = q.y();
+    float z = q.z();
+
     osDelay(1);
   }
 }
 }
 ```
+
+## 换成 EKF
+
+`QuaternionEkfAhrs` 实现了同一个 `AhrsInterface`，调用方式一致，额外估计绕 x/y 轴的陀螺零偏：
+
+```cpp
+#include <librm.hpp>
+
+using rm::modules::QuaternionEkfAhrs;
+
+// 参数依次为采样频率、初始姿态、四元数过程噪声、零偏过程噪声、量测噪声、渐消因子、加速度低通时间常数
+QuaternionEkfAhrs ekf(1000.0f);
+ekf.Update(rm::modules::ImuData6Dof{Eigen::Vector3f(gx, gy, gz), Eigen::Vector3f(ax, ay, az)});
+```
+
+量测噪声决定加速度计对姿态的修正强度。取值小则跟随快但容易受平动加速度干扰，取值大则平稳但收敛慢，需要按实际工况调整。

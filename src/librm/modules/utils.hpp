@@ -30,7 +30,7 @@
 
 #include "librm/core/typedefs.hpp"
 
-#include <algorithm>
+#include <Eigen/Geometry>
 
 namespace rm::modules {
 
@@ -106,11 +106,18 @@ inline __attribute__((always_inline)) f32 Clamp(f32 input, f32 min_value, f32 ma
 f32 Wrap(f32 input, f32 min_value, f32 max_value);
 
 /**
- * @brief 四元数转欧拉角
- * @param q         四元数
- * @param euler     欧拉角
+ * @brief 四元数转欧拉角，顺序为 roll(X) pitch(Y) yaw(Z)，单位为弧度，与 ROS 的 rpy 约定一致
+ * @param q     四元数，机体到世界的旋转
+ * @return      欧拉角向量，xyz 依次对应 roll pitch yaw
  */
-void QuatToEuler(const f32 q[4], f32 euler[3]);
+Eigen::Vector3f QuatToEuler(const Eigen::Quaternionf &q);
+
+/**
+ * @brief 欧拉角转四元数，顺序为 roll(X) pitch(Y) yaw(Z)，单位为弧度
+ * @param euler 欧拉角向量，xyz 依次对应 roll pitch yaw
+ * @return      四元数，机体到世界的旋转
+ */
+Eigen::Quaternionf EulerToQuat(const Eigen::Vector3f &euler);
 
 /**
  * @brief 区间映射函数

@@ -35,9 +35,6 @@ if(NOT LIBRM_PLATFORM STREQUAL "STM32")
     pkg_check_modules(LIBGPIOD REQUIRED IMPORTED_TARGET libgpiod)
 endif()
 
-# kalman - https://github.com/mherb/kalman -  https://github.com/SF4cl/kalman.git
-add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/kalman)
-
 # eigen - https://eigen.tuxfamily.org
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/eigen)
 
@@ -95,7 +92,6 @@ if(LIBRM_PLATFORM STREQUAL "LINUX")
 endif()
 
 target_link_libraries(third_party INTERFACE
-    Kalman
     eigen
     etl::etl
     hipnuc_sdk

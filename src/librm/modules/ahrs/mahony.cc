@@ -21,7 +21,7 @@
 */
 
 /**
- * @file  librm/modules/mahony.cc
+ * @file  librm/modules/ahrs/mahony.cc
  * @brief Mahony姿态解算算法
  */
 
@@ -41,25 +41,26 @@ namespace rm::modules {
 MahonyAhrs::MahonyAhrs(f32 sample_freq, f32 kp, f32 ki)
     : two_kp_(2.f * kp),
       two_ki_(2.f * ki),
-
       q0_(1.0f),
       q1_(0.0f),
       q2_(0.0f),
       q3_(0.0f),
-      quaternion_{1.0f, 0.0f, 0.0f, 0.0f},
-      euler_ypr_{0.0f, 0.0f, 0.0f},
+      quaternion_(Eigen::Quaternionf::Identity()),
+      euler_ypr_(Eigen::Vector3f::Zero()),
       sample_freq_(sample_freq) {}
 
 /**
  * @brief       更新数据（无磁力计）
  * @param data  IMU数据
  */
-void MahonyAhrs::Update(const rm::modules::ImuData6Dof &data) {
+void MahonyAhrs::Update(const ImuData6Dof &data) {
   f32 recipNorm;
   f32 halfvx, halfvy, halfvz;
   f32 halfex, halfey, halfez;
   f32 qa, qb, qc;
-  f32 gx = data.gx, gy = data.gy, gz = data.gz, ax = data.ax, ay = data.ay, az = data.az;
+
+  f32 gx = data.gyro.x(), gy = data.gyro.y(), gz = data.gyro.z();
+  f32 ax = data.accel.x(), ay = data.accel.y(), az = data.accel.z();
 
   // Compute feedback only if accelerometer measurement valid (avoids NaN in accelerometer normalisation)
   if (!((ax == 0.0f) && (ay == 0.0f) && (az == 0.0f))) {
@@ -69,10 +70,10 @@ void MahonyAhrs::Update(const rm::modules::ImuData6Dof &data) {
     ay *= recipNorm;
     az *= recipNorm;
 
-    // Estimated direction of gravity and vector perpendicular to magnetic flux
-    halfvx = quaternion_.x * quaternion_.z - quaternion_.w * quaternion_.y;
-    halfvy = quaternion_.w * quaternion_.x + quaternion_.y * quaternion_.z;
-    halfvz = quaternion_.w * quaternion_.w - 0.5f + quaternion_.z * quaternion_.z;
+    // 估计的重力方向，取旋转矩阵第三行的一半
+    halfvx = quaternion_.x() * quaternion_.z() - quaternion_.w() * quaternion_.y();
+    halfvy = quaternion_.w() * quaternion_.x() + quaternion_.y() * quaternion_.z();
+    halfvz = quaternion_.w() * quaternion_.w() - 0.5f + quaternion_.z() * quaternion_.z();
 
     // Error is sum of cross product between estimated and measured direction of gravity
     halfex = (ay * halfvz - az * halfvy);
@@ -103,42 +104,39 @@ void MahonyAhrs::Update(const rm::modules::ImuData6Dof &data) {
   gx *= (0.5f * (1.0f / sample_freq_));  // pre-multiply common factors
   gy *= (0.5f * (1.0f / sample_freq_));
   gz *= (0.5f * (1.0f / sample_freq_));
-  qa = quaternion_.w;
-  qb = quaternion_.x;
-  qc = quaternion_.y;
-  quaternion_.w += (-qb * gx - qc * gy - quaternion_.z * gz);
-  quaternion_.x += (qa * gx + qc * gz - quaternion_.z * gy);
-  quaternion_.y += (qa * gy - qb * gz + quaternion_.z * gx);
-  quaternion_.z += (qa * gz + qb * gy - qc * gx);
+  qa = quaternion_.w();
+  qb = quaternion_.x();
+  qc = quaternion_.y();
+  quaternion_.w() += (-qb * gx - qc * gy - quaternion_.z() * gz);
+  quaternion_.x() += (qa * gx + qc * gz - quaternion_.z() * gy);
+  quaternion_.y() += (qa * gy - qb * gz + quaternion_.z() * gx);
+  quaternion_.z() += (qa * gz + qb * gy - qc * gx);
 
-  // Normalise quaternion
-  recipNorm = InvSqrt(quaternion_.w * quaternion_.w + quaternion_.x * quaternion_.x + quaternion_.y * quaternion_.y +
-                      quaternion_.z * quaternion_.z);
-  quaternion_.w *= recipNorm;
-  quaternion_.x *= recipNorm;
-  quaternion_.y *= recipNorm;
-  quaternion_.z *= recipNorm;
+  quaternion_.normalize();
 
-  // Convert quaternion to Euler angles
-  f32 euler_rpy_temp[3], quaternion_temp[4] = {quaternion_.w, quaternion_.x, quaternion_.y, quaternion_.z};
-  QuatToEuler(quaternion_temp, euler_rpy_temp);
-  euler_ypr_.yaw = euler_rpy_temp[2];
-  euler_ypr_.pitch = euler_rpy_temp[1];
-  euler_ypr_.roll = euler_rpy_temp[0];
+  euler_ypr_ = QuatToEuler(quaternion_);
 }
 
 /**
  * @brief       更新数据（有磁力计）
  * @param data  IMU+磁力计数据
  */
-void MahonyAhrs::Update(const rm::modules::ImuData9Dof &data) {
-  f32 gx = data.gx, gy = data.gy, gz = data.gz, ax = data.ax, ay = data.ay, az = data.az, mx = data.mx, my = data.my,
-      mz = data.mz;
+void MahonyAhrs::Update(const ImuData9Dof &data) {
+  f32 gx = data.gyro.x(), gy = data.gyro.y(), gz = data.gyro.z();
+  f32 ax = data.accel.x(), ay = data.accel.y(), az = data.accel.z();
+  f32 mx = data.mag.x(), my = data.mag.y(), mz = data.mag.z();
+
   // Use IMU algorithm if magnetometer measurement invalid (avoids NaN in magnetometer normalisation)
   if ((mx == 0.0f) && (my == 0.0f) && (mz == 0.0f)) {
-    Update(ImuData6Dof{gx, gy, gz, ax, ay, az});
+    Update(ImuData6Dof{data.gyro, data.accel});
     return;
   }
+
+  // 下面的公式按 q0..q3 展开，先从当前四元数同步一次
+  q0_ = quaternion_.w();
+  q1_ = quaternion_.x();
+  q2_ = quaternion_.y();
+  q3_ = quaternion_.z();
 
   // Compute feedback only if accelerometer measurement valid (avoids NaN in accelerometer normalisation)
   if (!((ax == 0.0f) && (ay == 0.0f) && (az == 0.0f))) {
@@ -209,38 +207,27 @@ void MahonyAhrs::Update(const rm::modules::ImuData9Dof &data) {
   gx *= (0.5f * (1.0f / sample_freq_));  // pre-multiply common factors
   gy *= (0.5f * (1.0f / sample_freq_));
   gz *= (0.5f * (1.0f / sample_freq_));
-  qa_ = quaternion_.w;
-  qb_ = quaternion_.x;
-  qc_ = quaternion_.y;
-  quaternion_.w += (-qb_ * gx - qc_ * gy - quaternion_.z * gz);
-  quaternion_.x += (qa_ * gx + qc_ * gz - quaternion_.z * gy);
-  quaternion_.y += (qa_ * gy - qb_ * gz + quaternion_.z * gx);
-  quaternion_.z += (qa_ * gz + qb_ * gy - qc_ * gx);
+  qa_ = quaternion_.w();
+  qb_ = quaternion_.x();
+  qc_ = quaternion_.y();
+  quaternion_.w() += (-qb_ * gx - qc_ * gy - quaternion_.z() * gz);
+  quaternion_.x() += (qa_ * gx + qc_ * gz - quaternion_.z() * gy);
+  quaternion_.y() += (qa_ * gy - qb_ * gz + quaternion_.z() * gx);
+  quaternion_.z() += (qa_ * gz + qb_ * gy - qc_ * gx);
 
-  // Normalise quaternion
-  recip_norm_ = InvSqrt(quaternion_.w * quaternion_.w + quaternion_.x * quaternion_.x + quaternion_.y * quaternion_.y +
-                        quaternion_.z * quaternion_.z);
-  quaternion_.w *= recip_norm_;
-  quaternion_.x *= recip_norm_;
-  quaternion_.y *= recip_norm_;
-  quaternion_.z *= recip_norm_;
+  quaternion_.normalize();
 
-  // Convert quaternion to Euler angles
-  f32 euler_ypr_temp[3], quaternion_temp[4] = {quaternion_.w, quaternion_.x, quaternion_.y, quaternion_.z};
-  QuatToEuler(quaternion_temp, euler_ypr_temp);
-  euler_ypr_.yaw = euler_ypr_temp[0];
-  euler_ypr_.pitch = euler_ypr_temp[1];
-  euler_ypr_.roll = euler_ypr_temp[2];
+  euler_ypr_ = QuatToEuler(quaternion_);
 }
 
 /**
  * @return 姿态欧拉角
  */
-[[nodiscard]] const EulerAngle &MahonyAhrs::euler_angle() const { return euler_ypr_; }
+[[nodiscard]] const Eigen::Vector3f &MahonyAhrs::euler_angle() const { return euler_ypr_; }
 
 /**
  * @return 姿态四元数
  */
-[[nodiscard]] const Quaternion &MahonyAhrs::quaternion() const { return quaternion_; }
+[[nodiscard]] const Eigen::Quaternionf &MahonyAhrs::quaternion() const { return quaternion_; }
 
 }  // namespace rm::modules
