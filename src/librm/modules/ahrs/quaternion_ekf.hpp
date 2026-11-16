@@ -56,7 +56,8 @@ class QuaternionEkfAhrs : public AhrsInterface {
    * @param fading         渐消因子，用于防止零偏协方差过度收敛
    * @param accel_lpf      加速度一阶低通的时间常数
    */
-  explicit QuaternionEkfAhrs(f32 sample_freq = 1000.0f, const Eigen::Quaternionf &initial = Eigen::Quaternionf::Identity(),
+  explicit QuaternionEkfAhrs(f32 sample_freq = 1000.0f,
+                             const Eigen::Quaternionf &initial = Eigen::Quaternionf::Identity(),
                              f32 attitude_noise = 1e-5f, f32 bias_noise = 1e-6f, f32 measurement_noise = 1e-3f,
                              f32 fading = 1.0f, f32 accel_lpf = 0.001f);
   ~QuaternionEkfAhrs() override = default;

@@ -47,9 +47,9 @@ struct ImuData6Dof {
  * @brief 9轴IMU数据
  */
 struct ImuData9Dof {
-  Eigen::Vector3f gyro;  ///< 角速度，rad/s，机体系
-  Eigen::Vector3f accel; ///< 加速度，m/s^2，机体系
-  Eigen::Vector3f mag;   ///< 磁场强度，任意单位，机体系
+  Eigen::Vector3f gyro;   ///< 角速度，rad/s，机体系
+  Eigen::Vector3f accel;  ///< 加速度，m/s^2，机体系
+  Eigen::Vector3f mag;    ///< 磁场强度，任意单位，机体系
 };
 
 class AhrsInterface {
