@@ -209,9 +209,11 @@ struct RefereeProtocol<RefereeRevision::kRm2027V100> {
     u16 fortify_center_y;
     u16 fortify_radius;
   } radar_info;
+  // 0x0301/0x0120 上行内容（表 1-33），发给服务器 0x8080；下行状态见 sentry_info。
   struct {
     u32 sentry_cmd;
   } sentry_cmd;
+  // 0x0301/0x0121 上行内容（表 1-34），发给服务器 0x8080；下行状态见 radar_info。
   struct {
     u8 radar_cmd;
     u8 password_cmd;
@@ -226,6 +228,7 @@ struct RefereeProtocol<RefereeRevision::kRm2027V100> {
   struct {
     u8 data[60];
   } custom_control;
+  // 0x0301 数据段为 6 字节交互头加 0～112 字节内容；上层按 data_cmd_id 解读内容。
   struct {
     u16 data_cmd_id;
     u16 sender_id;
