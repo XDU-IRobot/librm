@@ -33,7 +33,7 @@
 namespace rm::device {
 
 constexpr u8 kRefProtocolHeaderSof = 0xa5;
-constexpr int kRefProtocolFrameMaxLen = 512;
+constexpr int kRefProtocolFrameMaxLen = 128;
 constexpr int kRefProtocolHeaderLen = 5;
 constexpr int kRefProtocolCmdIdLen = 2;
 constexpr int kRefProtocolCrc16Len = 2;
@@ -67,12 +67,6 @@ struct RefereeProtocol {};
  */
 template <RefereeRevision revision>
 struct RefereeProtocolMemoryMap {};
-
-/**
- * @brief 固定长度命令码的数据段长度；变长命令由解码器单独校验
- */
-template <RefereeRevision revision>
-struct RefereeProtocolPayloadLength {};
 
 }  // namespace rm::device
 

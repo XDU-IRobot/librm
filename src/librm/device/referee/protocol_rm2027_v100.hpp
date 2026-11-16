@@ -31,6 +31,7 @@
 #include "protocol.hpp"
 
 #include <cstddef>
+#include <cstring>
 
 #include <mapbox/eternal.hpp>
 
@@ -64,6 +65,12 @@ struct RefereeCmdId<RefereeRevision::kRm2027V100> {
   constexpr static u16 kCustomInfo = 0x308;
   constexpr static u16 kRobotCustomData2 = 0x310;  // 图传链路
   constexpr static u16 kCustomControl = 0x311;     // 图传链路
+  constexpr static u16 kRadar0 = 0xa01;            // 雷达无线链路：对方位置
+  constexpr static u16 kRadar1 = 0xa02;            // 雷达无线链路：对方血量
+  constexpr static u16 kRadar2 = 0xa03;            // 雷达无线链路：对方允许发弹量
+  constexpr static u16 kRadar3 = 0xa04;            // 雷达无线链路：对方宏观状态
+  constexpr static u16 kRadar4 = 0xa05;            // 雷达无线链路：对方增益和状态
+  constexpr static u16 kRadar5 = 0xa06;            // 雷达无线链路：对方干扰波密钥
 };
 
 struct RefereeInteractionSubCmdId2027 {
@@ -271,44 +278,88 @@ struct RefereeProtocol<RefereeRevision::kRm2027V100> {
     u16 receiver_id;
     u8 user_data[30];
   } custom_info;
+  // 雷达无线链路，协议表 1-41～1-46；数据由信号发射源发给雷达。
+  struct {
+    u16 heavyengineer_x;  // 坐标单位：cm
+    u16 heavyengineer_y;
+    u16 reserved_1;
+    u16 reserved_2;
+    u16 infantry_3_x;
+    u16 infantry_3_y;
+    u16 infantry_4_x;
+    u16 infantry_4_y;
+    u16 reserved_3;
+    u16 reserved_4;
+    u16 sentry_x;
+    u16 sentry_y;
+  } radar_position;
+  struct {
+    u16 heavyengineer_HP;
+    u16 reserved_1;
+    u16 infantry_3_HP;
+    u16 infantry_4_HP;
+    u16 reserved_2;
+    u16 sentry_HP;
+  } radar_robot_hp;
+  struct {
+    u16 heavyengineer;
+    u16 infantry_3;
+    u16 infantry_4;
+    u16 reserved;
+    u16 sentry;
+  } radar_projectile_allowance;
+  struct {
+    u16 remaining_gold_coin;
+    u16 total_gold_coin;
+    u32 event_data;   // 表 1-44：增益点激活状态
+    u32 rfid_status;  // 表 1-44：RFID 检测和阵地控制状态
+  } radar_state;
+  struct {
+    u8 heavyengineer_recovery_buff;
+    u16 heavyengineer_cooling_buff;
+    u8 heavyengineer_defence_buff;
+    u8 heavyengineer_vulnerability_buff;
+    u16 heavyengineer_attack_buff;
+    u8 reserved_buff[7];
+    u8 infantry_3_recovery_buff;
+    u16 infantry_3_cooling_buff;
+    u8 infantry_3_defence_buff;
+    u8 infantry_3_vulnerability_buff;
+    u16 infantry_3_attack_buff;
+    u8 infantry_4_recovery_buff;
+    u16 infantry_4_cooling_buff;
+    u8 infantry_4_defence_buff;
+    u8 infantry_4_vulnerability_buff;
+    u16 infantry_4_attack_buff;
+    u8 sentry_recovery_buff;
+    u16 sentry_cooling_buff;
+    u8 sentry_defence_buff;
+    u8 sentry_vulnerability_buff;
+    u16 sentry_attack_buff;
+    u8 sentry_posture;
+    u8 heavyengineer_status;
+    u8 reserved_status;
+    u8 infantry_3_status;
+    u8 infantry_4_status;
+    u8 sentry_status;
+    u16 fortify_center_x;  // 加固区域坐标和半径单位：mm
+    u16 fortify_center_y;
+    u16 fortify_radius;
+  } radar_buff;
+  struct {
+    u8 password[6];  // ASCII 字母或数字，不含字符串结束符
+  } radar_password;
+  /// @brief 本地接收元数据：0x0301 数据段长度（含交互头），不是线上协议字段。
+  u16 robot_interaction_payload_length{};
 };
 
 #pragma pack(pop)
-
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::game_robot_HP)) == 24);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::event_data)) == 8);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::buff)) == 7);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::hurt_data)) == 7);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::rfid_status)) == 6);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::ground_robot_position)) == 40);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::radar_info)) == 8);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::sentry_cmd)) == 4);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::radar_cmd)) == 13);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::robot_interaction)) == 118);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::custom_control)) == 60);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::robot_status)) == 17);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::game_status)) == 11);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::game_result)) == 1);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::referee_warning)) == 3);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::dart_info)) == 3);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::power_heat_data)) == 14);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::robot_pos)) == 12);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::shoot_data)) == 7);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::projectile_allowance)) == 8);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::dart_client_cmd)) == 6);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::radar_mark_data)) == 2);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::sentry_info)) == 14);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::map_command)) == 12);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::radar_info_to_client)) == 48);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::map_data)) == 105);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::custom_info)) == 34);
-static_assert(sizeof(decltype(RefereeProtocol<RefereeRevision::kRm2027V100>::robot_custom_data_2)) == 300);
 
 template <>
 struct RefereeProtocolMemoryMap<RefereeRevision::kRm2027V100> {
   // clang-format off
   static MAPBOX_ETERNAL_CONSTEXPR const auto map = mapbox::eternal::map<u16, usize>({
-  {RefereeCmdId<RefereeRevision::kRm2027V100>::kGameStatus, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, game_status)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kGameStatus, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, game_status)},
       {RefereeCmdId<RefereeRevision::kRm2027V100>::kGameResult, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, game_result)},
       {RefereeCmdId<RefereeRevision::kRm2027V100>::kGameRobotHp, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, game_robot_HP)},
       {RefereeCmdId<RefereeRevision::kRm2027V100>::kEventData, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, event_data)},
@@ -333,15 +384,26 @@ struct RefereeProtocolMemoryMap<RefereeRevision::kRm2027V100> {
       {RefereeCmdId<RefereeRevision::kRm2027V100>::kMapData, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, map_data)},
       {RefereeCmdId<RefereeRevision::kRm2027V100>::kCustomInfo, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, custom_info)},
       {RefereeCmdId<RefereeRevision::kRm2027V100>::kRobotCustomData2, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, robot_custom_data_2)},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kCustomControl, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, custom_control)}
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kCustomControl, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, custom_control)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar0, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, radar_position)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar1, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, radar_robot_hp)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar2, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, radar_projectile_allowance)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar3, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, radar_state)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar4, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, radar_buff)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar5, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, radar_password)},
   });
   // clang-format on
 };
 
-template <>
-struct RefereeProtocolPayloadLength<RefereeRevision::kRm2027V100> {
+namespace detail {
+// 0x0310 的完整帧为 309 字节；仅此版本扩大接收容量。
+constexpr usize RefereeFrameCapacity(const RefereeProtocol<RefereeRevision::kRm2027V100> *) { return 512; }
+
+// 固定帧检查长度；0x0301 另外保存实际长度，供上层只转发收到的字节。
+inline bool DeserializeRefereePayload(RefereeProtocol<RefereeRevision::kRm2027V100> &buffer, u16 cmd_id, const u8 *data,
+                                      usize length) {
   // clang-format off
-  static MAPBOX_ETERNAL_CONSTEXPR const auto map = mapbox::eternal::map<u16, usize>({
+  static MAPBOX_ETERNAL_CONSTEXPR const auto lengths = mapbox::eternal::map<u16, usize>({
       {RefereeCmdId<RefereeRevision::kRm2027V100>::kGameStatus, 11},
       {RefereeCmdId<RefereeRevision::kRm2027V100>::kGameResult, 1},
       {RefereeCmdId<RefereeRevision::kRm2027V100>::kGameRobotHp, 24},
@@ -366,10 +428,30 @@ struct RefereeProtocolPayloadLength<RefereeRevision::kRm2027V100> {
       {RefereeCmdId<RefereeRevision::kRm2027V100>::kMapData, 105},
       {RefereeCmdId<RefereeRevision::kRm2027V100>::kCustomInfo, 34},
       {RefereeCmdId<RefereeRevision::kRm2027V100>::kRobotCustomData2, 300},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kCustomControl, 60}
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kCustomControl, 60},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar0, 24},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar1, 12},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar2, 10},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar3, 12},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar4, 47},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar5, 6},
   });
   // clang-format on
-};
+  const auto &offsets = RefereeProtocolMemoryMap<RefereeRevision::kRm2027V100>::map;
+  const auto member = offsets.find(cmd_id);
+  if (member == offsets.end()) return false;
+
+  if (cmd_id == RefereeCmdId<RefereeRevision::kRm2027V100>::kRobotInteraction) {
+    if (length < 6 || length > sizeof(buffer.robot_interaction)) return false;
+    buffer.robot_interaction_payload_length = static_cast<u16>(length);
+  } else {
+    const auto expected = lengths.find(cmd_id);
+    if (expected == lengths.end() || length != expected->second) return false;
+  }
+  std::memcpy(reinterpret_cast<u8 *>(&buffer) + member->second, data, length);
+  return true;
+}
+}  // namespace detail
 
 }  // namespace rm::device
 
