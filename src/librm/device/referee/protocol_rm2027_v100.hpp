@@ -62,8 +62,8 @@ struct RefereeCmdId<RefereeRevision::kRm2027V100> {
   constexpr static u16 kRadarInfoToClient = 0x305;
   constexpr static u16 kMapData = 0x307;
   constexpr static u16 kCustomInfo = 0x308;
-  constexpr static u16 kRobotCustomData2 = 0x310;  // 图传链路
-  constexpr static u16 kCustomControl = 0x311;     // 图传链路
+  constexpr static u16 kRobotCustomData2 = 0x310;  // 图传上行：机器人发给自定义终端
+  constexpr static u16 kCustomControl = 0x311;     // 图传下行：自定义终端发给机器人
   constexpr static u16 kRadar0 = 0xa01;            // 雷达无线链路：对方位置
   constexpr static u16 kRadar1 = 0xa02;            // 雷达无线链路：对方血量
   constexpr static u16 kRadar2 = 0xa03;            // 雷达无线链路：对方允许发弹量
@@ -221,6 +221,7 @@ struct RefereeProtocol<RefereeRevision::kRm2027V100> {
     u16 fortify_center_x;
     u16 fortify_center_y;
   } radar_cmd;
+  // 表 1-39：上行数据定义，供发送组包使用，不要求机器人接收解码器扩容。
   struct {
     u8 data[300];
   } robot_custom_data_2;
@@ -397,54 +398,13 @@ struct RefereeProtocolMemoryMap<RefereeRevision::kRm2027V100> {
   // clang-format on
 };
 
-// 0x0310 数据段为 300 字节，完整帧为 309 字节，原 128 字节缓冲区不足。
-// 仅扩大 2027 版本容量；512 是缓冲区配置，不是协议字段长度。
-template <>
-inline constexpr usize kRefereeFrameCapacity<RefereeRevision::kRm2027V100> = 512;
-
 namespace detail {
-// 固定帧检查长度；0x0301 另外保存实际长度，供上层只转发收到的字节。
+// 复用命令映射表过滤未知命令；0x0301 的实际长度供上层转发使用。
 inline bool ValidateRefereePayload(RefereeProtocol<RefereeRevision::kRm2027V100> &buffer, u16 cmd_id, usize length) {
-  // clang-format off
-  static MAPBOX_ETERNAL_CONSTEXPR const auto lengths = mapbox::eternal::map<u16, usize>({
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kGameStatus, 11},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kGameResult, 1},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kGameRobotHp, 24},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kEventData, 8},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRefereeWarning, 3},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kDartInformation, 3},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRobotStatus, 17},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kPowerHeatData, 14},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRobotPos, 12},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kBuff, 7},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kHurtData, 7},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kShootData, 7},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kProjectileAllowance, 8},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRfidStatus, 6},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kDartClientCmd, 6},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kGroundRobotPosition, 40},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadarMarkData, 2},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kSentryInfo, 14},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadarInfo, 8},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kMapCommand, 12},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadarInfoToClient, 48},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kMapData, 105},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kCustomInfo, 34},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRobotCustomData2, 300},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kCustomControl, 60},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar0, 24},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar1, 12},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar2, 10},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar3, 12},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar4, 47},
-      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar5, 6},
-  });
-  // clang-format on
+  if (RefereeProtocolMemoryMap<RefereeRevision::kRm2027V100>::map.count(cmd_id) == 0) return false;
   if (cmd_id == RefereeCmdId<RefereeRevision::kRm2027V100>::kRobotInteraction) {
     if (length < 6 || length > sizeof(buffer.robot_interaction)) return false;
     buffer.robot_interaction_payload_length = static_cast<u16>(length);
-  } else {
-    if (lengths.count(cmd_id) == 0 || length != lengths.at(cmd_id)) return false;
   }
   return true;
 }

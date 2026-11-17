@@ -46,7 +46,7 @@
 namespace rm::device {
 
 namespace detail {
-// 旧协议保持原有处理；新版协议可检查数据长度并记录接收元数据。
+// 旧协议保持原有处理；新版协议在自己的头文件中记录交互消息的实际长度。
 template <RefereeRevision revision>
 bool ValidateRefereePayload(RefereeProtocol<revision> &, u16, usize) {
   return true;
@@ -99,7 +99,7 @@ class Referee : public Device {
         data_len_this_time_ |= (data << 8);
         valid_data_so_far_[valid_data_so_far_idx_++] = data;
 
-        if (data_len_this_time_ < (valid_data_so_far_.size() - kRefProtocolAllMetadataLen)) {
+        if (data_len_this_time_ < (kRefProtocolFrameMaxLen - kRefProtocolAllMetadataLen)) {
           deserialize_fsm_state_ = DeserializeFsmState::kSeq;
         } else {
           deserialize_fsm_state_ = DeserializeFsmState::kSof;
@@ -198,7 +198,7 @@ class Referee : public Device {
   u8 last_seq_{0};          ///< 上一包的seq，用于检测256包周期边界
   u8 received_packets_{0};  ///< 本轮seq内正常接收到的数据包数量
   u16 crc16_this_time_{0};
-  std::array<u8, kRefereeFrameCapacity<revision>> valid_data_so_far_{};
+  std::array<u8, kRefProtocolFrameMaxLen> valid_data_so_far_{};
 
   etl::vector<RxCallback, MaxRxCallbacks> rx_callbacks_;       ///< 数据包接收回调列表
   etl::pseudo_moving_average<f32, 10> loss_rate_smooth_{0.f};  ///< 近10轮平均丢包率
