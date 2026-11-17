@@ -46,16 +46,9 @@
 namespace rm::device {
 
 namespace detail {
-// 旧协议使用默认容量和原有的偏移复制；新协议可提供对应的重载。
+// 旧协议保持原有处理；新版协议可检查数据长度并记录接收元数据。
 template <RefereeRevision revision>
-constexpr usize RefereeFrameCapacity(const RefereeProtocol<revision> *) {
-  return kRefProtocolFrameMaxLen;
-}
-
-template <RefereeRevision revision>
-bool DeserializeRefereePayload(RefereeProtocol<revision> &buffer, u16 cmd_id, const u8 *data, usize length) {
-  const auto offset = RefereeProtocolMemoryMap<revision>::map.at(cmd_id);
-  std::memcpy(reinterpret_cast<u8 *>(&buffer) + offset, data, length);
+bool ValidateRefereePayload(RefereeProtocol<revision> &, u16, usize) {
   return true;
 }
 }  // namespace detail
@@ -154,10 +147,14 @@ class Referee : public Device {
             // 整包接收完+CRC校验通过
             // 裁判系统仍然在线
             ReportStatus(kOk);
-            const u8 *payload = valid_data_so_far_.data() + kRefProtocolHeaderLen + kRefProtocolCmdIdLen;
-            if (!detail::DeserializeRefereePayload(deserialize_buffer_, cmdid_this_time_, payload, data_len_this_time_)) {
+            if (!detail::ValidateRefereePayload(deserialize_buffer_, cmdid_this_time_, data_len_this_time_)) {
               break;
             }
+            // 把数据拷贝到反序列化缓冲区对应的结构体中
+            const usize member_offset = referee_protocol_memory_map_.map.at(cmdid_this_time_);
+            u8 *dest_ptr = reinterpret_cast<u8 *>(&deserialize_buffer_) + member_offset;
+            u8 *src_ptr = valid_data_so_far_.data() + kRefProtocolHeaderLen + kRefProtocolCmdIdLen;
+            std::memcpy(dest_ptr, src_ptr, data_len_this_time_);
 
             //  触发用户注册的回调函数
             for (auto &cb : rx_callbacks_) {
@@ -193,6 +190,7 @@ class Referee : public Device {
 
  private:
   RefereeProtocol<revision> deserialize_buffer_{};
+  RefereeProtocolMemoryMap<revision> referee_protocol_memory_map_;
   usize valid_data_so_far_idx_{0};
   usize data_len_this_time_{0};
   usize cmdid_this_time_{0};
@@ -200,7 +198,7 @@ class Referee : public Device {
   u8 last_seq_{0};          ///< 上一包的seq，用于检测256包周期边界
   u8 received_packets_{0};  ///< 本轮seq内正常接收到的数据包数量
   u16 crc16_this_time_{0};
-  std::array<u8, detail::RefereeFrameCapacity(static_cast<RefereeProtocol<revision> *>(nullptr))> valid_data_so_far_{};
+  std::array<u8, kRefereeFrameCapacity<revision>> valid_data_so_far_{};
 
   etl::vector<RxCallback, MaxRxCallbacks> rx_callbacks_;       ///< 数据包接收回调列表
   etl::pseudo_moving_average<f32, 10> loss_rate_smooth_{0.f};  ///< 近10轮平均丢包率

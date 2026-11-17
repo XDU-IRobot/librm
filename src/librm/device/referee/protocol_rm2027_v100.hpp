@@ -31,7 +31,6 @@
 #include "protocol.hpp"
 
 #include <cstddef>
-#include <cstring>
 
 #include <mapbox/eternal.hpp>
 
@@ -398,13 +397,14 @@ struct RefereeProtocolMemoryMap<RefereeRevision::kRm2027V100> {
   // clang-format on
 };
 
-namespace detail {
-// 0x0310 的完整帧为 309 字节；仅此版本扩大接收容量。
-constexpr usize RefereeFrameCapacity(const RefereeProtocol<RefereeRevision::kRm2027V100> *) { return 512; }
+// 0x0310 数据段为 300 字节，完整帧为 309 字节，原 128 字节缓冲区不足。
+// 仅扩大 2027 版本容量；512 是缓冲区配置，不是协议字段长度。
+template <>
+inline constexpr usize kRefereeFrameCapacity<RefereeRevision::kRm2027V100> = 512;
 
+namespace detail {
 // 固定帧检查长度；0x0301 另外保存实际长度，供上层只转发收到的字节。
-inline bool DeserializeRefereePayload(RefereeProtocol<RefereeRevision::kRm2027V100> &buffer, u16 cmd_id, const u8 *data,
-                                      usize length) {
+inline bool ValidateRefereePayload(RefereeProtocol<RefereeRevision::kRm2027V100> &buffer, u16 cmd_id, usize length) {
   // clang-format off
   static MAPBOX_ETERNAL_CONSTEXPR const auto lengths = mapbox::eternal::map<u16, usize>({
       {RefereeCmdId<RefereeRevision::kRm2027V100>::kGameStatus, 11},
@@ -440,18 +440,12 @@ inline bool DeserializeRefereePayload(RefereeProtocol<RefereeRevision::kRm2027V1
       {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar5, 6},
   });
   // clang-format on
-  const auto &offsets = RefereeProtocolMemoryMap<RefereeRevision::kRm2027V100>::map;
-  const auto member = offsets.find(cmd_id);
-  if (member == offsets.end()) return false;
-
   if (cmd_id == RefereeCmdId<RefereeRevision::kRm2027V100>::kRobotInteraction) {
     if (length < 6 || length > sizeof(buffer.robot_interaction)) return false;
     buffer.robot_interaction_payload_length = static_cast<u16>(length);
   } else {
-    const auto expected = lengths.find(cmd_id);
-    if (expected == lengths.end() || length != expected->second) return false;
+    if (lengths.count(cmd_id) == 0 || length != lengths.at(cmd_id)) return false;
   }
-  std::memcpy(reinterpret_cast<u8 *>(&buffer) + member->second, data, length);
   return true;
 }
 }  // namespace detail

@@ -50,6 +50,10 @@ enum class RefereeRevision {
   kRm2027V100,  ///< 2027 高校系列赛通信协议 V1.0.0, 2026-10-29
 };
 
+// 接收缓冲区容量；新协议可在自己的头文件中覆盖，旧协议保持原值。
+template <RefereeRevision revision>
+inline constexpr usize kRefereeFrameCapacity = kRefProtocolFrameMaxLen;
+
 /**
  * @brief 裁判系统协议命令码
  */
