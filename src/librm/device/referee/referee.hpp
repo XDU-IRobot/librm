@@ -32,6 +32,7 @@
 #include "protocol_v170.hpp"
 #include "protocol_new_v110.hpp"
 #include "protocol_new_v120.hpp"
+#include "protocol_rm2027_v100.hpp"
 // implement and add more revisions here
 
 #include <cstring>
@@ -43,6 +44,14 @@
 #include "librm/modules/crc.hpp"
 
 namespace rm::device {
+
+namespace detail {
+// 旧协议保持原有处理；新版协议在自己的头文件中记录交互消息的实际长度。
+template <RefereeRevision revision>
+bool ValidateRefereePayload(RefereeProtocol<revision> &, u16, usize) {
+  return true;
+}
+}  // namespace detail
 
 /**
  * @brief   裁判系统
@@ -138,6 +147,9 @@ class Referee : public Device {
             // 整包接收完+CRC校验通过
             // 裁判系统仍然在线
             ReportStatus(kOk);
+            if (!detail::ValidateRefereePayload(deserialize_buffer_, cmdid_this_time_, data_len_this_time_)) {
+              break;
+            }
             // 把数据拷贝到反序列化缓冲区对应的结构体中
             const usize member_offset = referee_protocol_memory_map_.map.at(cmdid_this_time_);
             u8 *dest_ptr = reinterpret_cast<u8 *>(&deserialize_buffer_) + member_offset;

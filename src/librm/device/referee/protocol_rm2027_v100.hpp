@@ -1,0 +1,415 @@
+/*
+  Copyright (c) 2025 XDU-IRobot
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+*/
+
+/**
+ * @file  librm/device/referee/protocol_rm2027_v100.hpp
+ * @brief 裁判系统通信协议2027 V1.0.0（2026-10-29）
+ */
+
+#ifndef LIBRM_DEVICE_REFEREE_PROTOCOL_RM2027_V100_HPP
+#define LIBRM_DEVICE_REFEREE_PROTOCOL_RM2027_V100_HPP
+
+#include "protocol.hpp"
+
+#include <cstddef>
+
+#include <mapbox/eternal.hpp>
+
+namespace rm::device {
+
+template <>
+struct RefereeCmdId<RefereeRevision::kRm2027V100> {
+  constexpr static u16 kGameStatus = 0x1;
+  constexpr static u16 kGameResult = 0x2;
+  constexpr static u16 kGameRobotHp = 0x3;
+  constexpr static u16 kEventData = 0x101;
+  constexpr static u16 kRefereeWarning = 0x104;
+  constexpr static u16 kDartInformation = 0x105;
+  constexpr static u16 kRobotStatus = 0x201;
+  constexpr static u16 kPowerHeatData = 0x202;
+  constexpr static u16 kRobotPos = 0x203;
+  constexpr static u16 kBuff = 0x204;
+  constexpr static u16 kHurtData = 0x206;
+  constexpr static u16 kShootData = 0x207;
+  constexpr static u16 kProjectileAllowance = 0x208;
+  constexpr static u16 kRfidStatus = 0x209;
+  constexpr static u16 kDartClientCmd = 0x20a;
+  constexpr static u16 kGroundRobotPosition = 0x20b;
+  constexpr static u16 kRadarMarkData = 0x20c;
+  constexpr static u16 kSentryInfo = 0x20d;
+  constexpr static u16 kRadarInfo = 0x20e;
+  constexpr static u16 kRobotInteraction = 0x301;
+  constexpr static u16 kMapCommand = 0x303;
+  constexpr static u16 kRadarInfoToClient = 0x305;
+  constexpr static u16 kMapData = 0x307;
+  constexpr static u16 kCustomInfo = 0x308;
+  constexpr static u16 kRobotCustomData2 = 0x310;  // 图传上行：机器人发给自定义终端
+  constexpr static u16 kCustomControl = 0x311;     // 图传下行：自定义终端发给机器人
+  constexpr static u16 kRadar0 = 0xa01;            // 雷达无线链路：对方位置
+  constexpr static u16 kRadar1 = 0xa02;            // 雷达无线链路：对方血量
+  constexpr static u16 kRadar2 = 0xa03;            // 雷达无线链路：对方允许发弹量
+  constexpr static u16 kRadar3 = 0xa04;            // 雷达无线链路：对方宏观状态
+  constexpr static u16 kRadar4 = 0xa05;            // 雷达无线链路：对方增益和状态
+  constexpr static u16 kRadar5 = 0xa06;            // 雷达无线链路：对方干扰波密钥
+};
+
+struct RefereeInteractionSubCmdId2027 {
+  constexpr static u16 kSentryCmd = 0x0120;
+  constexpr static u16 kRadarCmd = 0x0121;
+  constexpr static u16 kRobotDataFirst = 0x0200;
+  constexpr static u16 kRobotDataLast = 0x02ff;
+};
+
+#pragma pack(push, 1)
+
+template <>
+struct RefereeProtocol<RefereeRevision::kRm2027V100> {
+  struct {
+    u8 game_type : 4;
+    u8 game_progress : 4;
+    u16 stage_remain_time;
+    u64 SyncTimeStamp;
+  } game_status;
+  struct {
+    u8 winner;
+  } game_result;
+  struct {
+    u16 ally_1_robot_HP;
+    u16 reserved_robot_HP;
+    u16 ally_3_robot_HP;
+    u16 ally_4_robot_HP;
+    i16 damage_difference;
+    u16 ally_7_robot_HP;
+    u16 outpost_R_HP;
+    u16 ally_base_HP;
+    u16 outpost_B_HP;
+    u16 enemy_base_HP;
+    u16 ally_control_degree;
+    u16 enemy_control_degree;
+  } game_robot_HP;
+  struct {
+    u32 event_data;
+    u32 event_data_2;
+  } event_data;
+  struct {
+    u8 level;
+    u8 offending_robot_id;
+    u8 count;
+  } referee_warning;
+  struct {
+    u8 dart_remaining_time;
+    u16 dart_info;
+  } dart_info;
+  struct {
+    u8 robot_id;
+    u8 robot_level;
+    u16 current_HP;
+    u16 maximum_HP;
+    u16 shooter_barrel_cooling_value;
+    u16 shooter_barrel_heat_limit;
+    u16 chassis_power_limit;
+    f32 bullet_speed_limit;
+    u8 power_management_gimbal_output : 1;
+    u8 power_management_chassis_output : 1;
+    u8 power_management_shooter_output : 1;
+  } robot_status;
+  struct {
+    u16 reserved;
+    u16 reserved_2;
+    f32 reserved_3;
+    u16 buffer_energy;
+    u16 shooter_17mm_1_barrel_heat;
+    u16 shooter_42mm_barrel_heat;
+  } power_heat_data;
+  struct {
+    f32 x;
+    f32 y;
+    f32 angle;
+  } robot_pos;
+  struct {
+    u8 recovery_buff;
+    u16 cooling_buff;
+    u8 defence_buff;
+    u8 vulnerability_buff;
+    u16 attack_buff;
+  } buff;
+  struct {
+    u8 armor_id : 4;
+    u8 HP_deduction_reason : 4;
+    u16 hit_sequence;
+    i16 hit_position_x;
+    i16 hit_position_y;
+  } hurt_data;
+  struct {
+    u8 bullet_type;
+    u8 shooter_number;
+    u8 launching_frequency;
+    f32 initial_speed;
+  } shoot_data;
+  struct {
+    u16 projectile_allowance_17mm;
+    u16 projectile_allowance_42mm;
+    u16 remaining_gold_coin;
+    u16 projectile_allowance_fortress;
+  } projectile_allowance;
+  struct {
+    u32 rfid_status;
+    u16 rfid_status_2;
+  } rfid_status;
+  struct {
+    u8 dart_launch_opening_status;
+    u8 reserved;
+    u16 target_change_time;
+    u16 latest_launch_cmd_time;
+  } dart_client_cmd;
+  struct {
+    f32 heavyengineer_x;
+    f32 heavyengineer_y;
+    f32 reserved_1;
+    f32 reserved_2;
+    f32 standard_3_x;
+    f32 standard_3_y;
+    f32 standard_4_x;
+    f32 standard_4_y;
+    f32 reserved_3;
+    f32 reserved_4;
+  } ground_robot_position;
+  struct {
+    u16 mark_progress;
+  } radar_mark_data;
+  struct {
+    u32 sentry_info;
+    u16 sentry_info_2;
+    u64 sentry_info_3;
+  } sentry_info;
+  struct {
+    u8 radar_info;
+    u8 radar_info_2;
+    u16 fortify_center_x;
+    u16 fortify_center_y;
+    u16 fortify_radius;
+  } radar_info;
+  // 0x0301/0x0120 上行内容（表 1-33），发给服务器 0x8080；下行状态见 sentry_info。
+  struct {
+    u32 sentry_cmd;
+  } sentry_cmd;
+  // 0x0301/0x0121 上行内容（表 1-34），发给服务器 0x8080；下行状态见 radar_info。
+  struct {
+    u8 radar_cmd;
+    u8 password_cmd;
+    u8 password[6];
+    u8 armor_fortify_cmd;
+    u16 fortify_center_x;
+    u16 fortify_center_y;
+  } radar_cmd;
+  // 表 1-39：上行数据定义，供发送组包使用，不要求机器人接收解码器扩容。
+  struct {
+    u8 data[300];
+  } robot_custom_data_2;
+  struct {
+    u8 data[60];
+  } custom_control;
+  // 0x0301 数据段为 6 字节交互头加 0～112 字节内容；上层按 data_cmd_id 解读内容。
+  struct {
+    u16 data_cmd_id;
+    u16 sender_id;
+    u16 receiver_id;
+    u8 user_data[112];
+  } robot_interaction;
+  struct {
+    f32 target_position_x;
+    f32 target_position_y;
+    u8 cmd_keyboard;
+    u8 target_robot_id;
+    u16 cmd_source;
+  } map_command;
+  struct {
+    u16 opponent_heavyengineer_position_x;
+    u16 opponent_heavyengineer_position_y;
+    u16 opponent_reserved_position_x;
+    u16 opponent_reserved_position_y;
+    u16 opponent_infantry_3_position_x;
+    u16 opponent_infantry_3_position_y;
+    u16 opponent_infantry_4_position_x;
+    u16 opponent_infantry_4_position_y;
+    u16 opponent_reserved_2_position_x;
+    u16 opponent_reserved_2_position_y;
+    u16 opponent_sentry_position_x;
+    u16 opponent_sentry_position_y;
+    u16 ally_heavyengineer_position_x;
+    u16 ally_heavyengineer_position_y;
+    u16 ally_reserved_position_x;
+    u16 ally_reserved_position_y;
+    u16 ally_infantry_3_position_x;
+    u16 ally_infantry_3_position_y;
+    u16 ally_infantry_4_position_x;
+    u16 ally_infantry_4_position_y;
+    u16 ally_reserved_2_position_x;
+    u16 ally_reserved_2_position_y;
+    u16 ally_sentry_position_x;
+    u16 ally_sentry_position_y;
+  } radar_info_to_client;
+  struct {
+    u8 intention;
+    u16 start_position_x;
+    u16 start_position_y;
+    i8 delta_x[49];
+    i8 delta_y[49];
+    u16 sender_id;
+  } map_data;
+  struct {
+    u16 sender_id;
+    u16 receiver_id;
+    u8 user_data[30];
+  } custom_info;
+  // 雷达无线链路，协议表 1-41～1-46；数据由信号发射源发给雷达。
+  struct {
+    u16 heavyengineer_x;  // 坐标单位：cm
+    u16 heavyengineer_y;
+    u16 reserved_1;
+    u16 reserved_2;
+    u16 infantry_3_x;
+    u16 infantry_3_y;
+    u16 infantry_4_x;
+    u16 infantry_4_y;
+    u16 reserved_3;
+    u16 reserved_4;
+    u16 sentry_x;
+    u16 sentry_y;
+  } radar_position;
+  struct {
+    u16 heavyengineer_HP;
+    u16 reserved_1;
+    u16 infantry_3_HP;
+    u16 infantry_4_HP;
+    u16 reserved_2;
+    u16 sentry_HP;
+  } radar_robot_hp;
+  struct {
+    u16 heavyengineer;
+    u16 infantry_3;
+    u16 infantry_4;
+    u16 reserved;
+    u16 sentry;
+  } radar_projectile_allowance;
+  struct {
+    u16 remaining_gold_coin;
+    u16 total_gold_coin;
+    u32 event_data;   // 表 1-44：增益点激活状态
+    u32 rfid_status;  // 表 1-44：RFID 检测和阵地控制状态
+  } radar_state;
+  struct {
+    u8 heavyengineer_recovery_buff;
+    u16 heavyengineer_cooling_buff;
+    u8 heavyengineer_defence_buff;
+    u8 heavyengineer_vulnerability_buff;
+    u16 heavyengineer_attack_buff;
+    u8 reserved_buff[7];
+    u8 infantry_3_recovery_buff;
+    u16 infantry_3_cooling_buff;
+    u8 infantry_3_defence_buff;
+    u8 infantry_3_vulnerability_buff;
+    u16 infantry_3_attack_buff;
+    u8 infantry_4_recovery_buff;
+    u16 infantry_4_cooling_buff;
+    u8 infantry_4_defence_buff;
+    u8 infantry_4_vulnerability_buff;
+    u16 infantry_4_attack_buff;
+    u8 sentry_recovery_buff;
+    u16 sentry_cooling_buff;
+    u8 sentry_defence_buff;
+    u8 sentry_vulnerability_buff;
+    u16 sentry_attack_buff;
+    u8 sentry_posture;
+    u8 heavyengineer_status;
+    u8 reserved_status;
+    u8 infantry_3_status;
+    u8 infantry_4_status;
+    u8 sentry_status;
+    u16 fortify_center_x;  // 加固区域坐标和半径单位：mm
+    u16 fortify_center_y;
+    u16 fortify_radius;
+  } radar_buff;
+  struct {
+    u8 password[6];  // ASCII 字母或数字，不含字符串结束符
+  } radar_password;
+  /// @brief 本地接收元数据：0x0301 数据段长度（含交互头），不是线上协议字段。
+  u16 robot_interaction_payload_length{};
+};
+
+#pragma pack(pop)
+
+template <>
+struct RefereeProtocolMemoryMap<RefereeRevision::kRm2027V100> {
+  // clang-format off
+  static MAPBOX_ETERNAL_CONSTEXPR const auto map = mapbox::eternal::map<u16, usize>({
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kGameStatus, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, game_status)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kGameResult, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, game_result)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kGameRobotHp, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, game_robot_HP)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kEventData, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, event_data)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRefereeWarning, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, referee_warning)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kDartInformation, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, dart_info)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRobotStatus, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, robot_status)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kPowerHeatData, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, power_heat_data)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRobotPos, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, robot_pos)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kBuff, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, buff)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kHurtData, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, hurt_data)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kShootData, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, shoot_data)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kProjectileAllowance, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, projectile_allowance)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRfidStatus, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, rfid_status)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kDartClientCmd, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, dart_client_cmd)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kGroundRobotPosition, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, ground_robot_position)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadarMarkData, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, radar_mark_data)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kSentryInfo, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, sentry_info)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadarInfo, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, radar_info)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRobotInteraction, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, robot_interaction)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kMapCommand, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, map_command)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadarInfoToClient, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, radar_info_to_client)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kMapData, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, map_data)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kCustomInfo, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, custom_info)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRobotCustomData2, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, robot_custom_data_2)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kCustomControl, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, custom_control)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar0, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, radar_position)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar1, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, radar_robot_hp)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar2, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, radar_projectile_allowance)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar3, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, radar_state)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar4, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, radar_buff)},
+      {RefereeCmdId<RefereeRevision::kRm2027V100>::kRadar5, offsetof(RefereeProtocol<RefereeRevision::kRm2027V100>, radar_password)},
+  });
+  // clang-format on
+};
+
+namespace detail {
+// 复用命令映射表过滤未知命令；0x0301 的实际长度供上层转发使用。
+inline bool ValidateRefereePayload(RefereeProtocol<RefereeRevision::kRm2027V100> &buffer, u16 cmd_id, usize length) {
+  if (RefereeProtocolMemoryMap<RefereeRevision::kRm2027V100>::map.count(cmd_id) == 0) return false;
+  if (cmd_id == RefereeCmdId<RefereeRevision::kRm2027V100>::kRobotInteraction) {
+    if (length < 6 || length > sizeof(buffer.robot_interaction)) return false;
+    buffer.robot_interaction_payload_length = static_cast<u16>(length);
+  }
+  return true;
+}
+}  // namespace detail
+
+}  // namespace rm::device
+
+#endif  // LIBRM_DEVICE_REFEREE_PROTOCOL_RM2027_V100_HPP
