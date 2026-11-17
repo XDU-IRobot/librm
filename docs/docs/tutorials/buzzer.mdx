@@ -8,7 +8,6 @@
 
 ```cpp
 #include "tim.h"
-#include "cmsis_os.h"
 
 #include <librm.hpp>
 
@@ -54,42 +53,40 @@ class TwoTigers : public rm::modules::BuzzerMelody {
   }
 };
 
-extern "C" void BuzzerTask(const void *pv_arg) {
-  // 创建蜂鸣器控制器，包含多种音乐
-  rm::modules::BuzzerController<
-      rm::modules::buzzer_melody::Silent,
-      rm::modules::buzzer_melody::Beeps<3>,
-      rm::modules::buzzer_melody::Startup,
-      rm::modules::buzzer_melody::Error,
-      rm::modules::buzzer_melody::Success,
-      rm::modules::buzzer_melody::SuperMario,
-      rm::modules::buzzer_melody::TheLick,
-      TwoTigers
-  > buzzer;
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+// 创建蜂鸣器控制器，包含多种音乐
+rm::modules::BuzzerController<
+    rm::modules::buzzer_melody::Silent,
+    rm::modules::buzzer_melody::Beeps<3>,
+    rm::modules::buzzer_melody::Startup,
+    rm::modules::buzzer_melody::Error,
+    rm::modules::buzzer_melody::Success,
+    rm::modules::buzzer_melody::SuperMario,
+    rm::modules::buzzer_melody::TheLick,
+    TwoTigers
+> buzzer;
 
-  // 启动 PWM
-  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
+// 启动 PWM
+HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
 
-  // 播放启动音
-  buzzer.Play<rm::modules::buzzer_melody::Startup>();
+// 播放启动音
+buzzer.Play<rm::modules::buzzer_melody::Startup>();
 
-  for (;;) {
-    // 更新并获取当前音符
-    auto note = buzzer.Update();
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+// 更新并获取当前音符
+auto note = buzzer.Update();
 
-    if (note.frequency > 0) {
-      // 设置频率：ARR = Timer_Clock / Frequency - 1
-      uint32_t arr = 1000000 / note.frequency - 1;
-      __HAL_TIM_SET_AUTORELOAD(&htim4, arr);
-      __HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, arr / 2);  // 50% 占空比
-    } else {
-      // 静音
-      __HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 0);
-    }
-
-    osDelay(1);  // 1kHz 更新频率
-  }
+if (note.frequency > 0) {
+  // 设置频率：ARR = Timer_Clock / Frequency - 1
+  uint32_t arr = 1000000 / note.frequency - 1;
+  __HAL_TIM_SET_AUTORELOAD(&htim4, arr);
+  __HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, arr / 2);  // 50% 占空比
+} else {
+  // 静音
+  __HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_3, 0);
 }
+
+
 ```
 
 :::tip

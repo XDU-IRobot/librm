@@ -51,16 +51,9 @@ class BasicCanDevice : public rm::device::CanDevice {
   uint16_t rx_std_id_;
 };
 
-int main() {
-  rm::hal::Can can0{"can0"};
-  BasicCanDevice device{can0};  // 注册到can0，之后在回调里筛选0x123
+rm::hal::Can can0{"can0"};
+BasicCanDevice device{can0};  // 注册到can0，之后在回调里筛选0x123
 
-  can0.Begin();
-
-  while (true) {
-    std::this_thread::sleep_for(std::chrono::seconds(1));
-  }
-
-  return 0;
-}
+// 初始化完成后调用 Begin()；接收由 CAN 回调异步处理
+can0.Begin();
 ```

@@ -11,54 +11,51 @@ librm 中的大部分设备驱动类都基于这套机制实现了状态上报�
 ### 基本用法
 
 ```cpp
-#include "cmsis_os.h"
 #include <librm.hpp>
 
-extern "C" void DeviceMonitorTask(const void *pv_arg) {
-  rm::hal::Can can1(hcan1);
-  rm::device::M3508 motor1(can1, 1);
-  rm::device::M3508 motor2(can1, 2);
-  rm::device::GM6020 motor3(can1, 3);
-  can1.Begin();
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+rm::hal::Can can1(hcan1);
+rm::device::M3508 motor1(can1, 1);
+rm::device::M3508 motor2(can1, 2);
+rm::device::GM6020 motor3(can1, 3);
+can1.Begin();
 
-  // 为设备设置易于识别的名称（可选）
-  motor1.SetName("chassis_fl");
-  motor2.SetName("chassis_fr");
-  motor3.SetName("gimbal_yaw");
+// 为设备设置易于识别的名称（可选）
+motor1.SetName("chassis_fl");
+motor2.SetName("chassis_fr");
+motor3.SetName("gimbal_yaw");
 
-  // 创建设备管理器，最多可以添加 10 个设备
-  rm::device::DeviceManager<10> device_manager;
+// 创建设备管理器，最多可以添加 10 个设备
+rm::device::DeviceManager<10> device_manager;
 
-  // 将设备添加到管理器
-  device_manager << &motor1 << &motor2 << &motor3;
+// 将设备添加到管理器
+device_manager << &motor1 << &motor2 << &motor3;
 
-  // 注册设备状态变化回调
-  device_manager.OnDeviceStatusChange([](rm::device::Device *device) {
-    // 设备状态变化时的处理逻辑
-    // 可以通过 device->online_status() 获取具体状态
-    // 可以通过 device->name() 获取设备名称，便于调试和日志记录
-    if (device->online_status() == rm::device::Device::kOk) {
-      // 设备恢复在线
-      // 例如：LOG_INFO("Device %s is back online", device->name().c_str());
-    } else {
-      // 设备故障或离线，例如：停止所有运动、触发蜂鸣器报警、LED 指示等
-      // 例如：LOG_ERROR("Device %s is offline/fault", device->name().c_str());
-    }
-  });
-
-  for (;;) {
-    // 更新所有设备状态并检查
-    bool all_ok = device_manager.Update();
-
-    if (all_ok) {
-      // 所有设备正常
-    } else {
-      // 存在故障或离线设备
-    }
-
-    osDelay(100);  // 100ms 检查一次
+// 注册设备状态变化回调
+device_manager.OnDeviceStatusChange([](rm::device::Device *device) {
+  // 设备状态变化时的处理逻辑
+  // 可以通过 device->online_status() 获取具体状态
+  // 可以通过 device->name() 获取设备名称，便于调试和日志记录
+  if (device->online_status() == rm::device::Device::kOk) {
+    // 设备恢复在线
+    // 例如：LOG_INFO("Device %s is back online", device->name().c_str());
+  } else {
+    // 设备故障或离线，例如：停止所有运动、触发蜂鸣器报警、LED 指示等
+    // 例如：LOG_ERROR("Device %s is offline/fault", device->name().c_str());
   }
+});
+
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+// 更新所有设备状态并检查
+bool all_ok = device_manager.Update();
+
+if (all_ok) {
+  // 所有设备正常
+} else {
+  // 存在故障或离线设备
 }
+
+
 ```
 
 ### 自定义设备类
@@ -104,20 +101,18 @@ imu_sensor.SetHeartbeatTimeout(std::chrono::milliseconds(500));  // 设置500ms�
 rm::device::DeviceManager<5> sensors;
 sensors << &imu_sensor;
 
-extern "C" void SensorTask(const void *pv_arg) {
-  for (;;) {
-    // 更新传感器数据
-    imu_sensor.Update();
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+// 更新传感器数据
+imu_sensor.Update();
 
-    // 检查传感器状态
-    if (imu_sensor.online_status() == rm::device::Device::kOk) {
-      float value = imu_sensor.GetValue();
-      // 使用传感器数据
-    }
-
-    osDelay(10);
-  }
+// 检查传感器状态
+if (imu_sensor.online_status() == rm::device::Device::kOk) {
+  float value = imu_sensor.GetValue();
+  // 使用传感器数据
 }
+
+
 ```
 
 ### 分组管理
@@ -127,32 +122,29 @@ extern "C" void SensorTask(const void *pv_arg) {
 :::
 
 ```cpp
-#include "cmsis_os.h"
 #include <librm.hpp>
 
 rm::device::DeviceManager<8> chassis_motors;
 rm::device::DeviceManager<4> gimbal_motors;
 
-extern "C" void SafetyMonitorTask(const void *pv_arg) {
-  chassis_motors.OnDeviceStatusChange([](rm::device::Device *device) {
-    if (device->online_status() != rm::device::Device::kOk) {
-      // 底盘电机故障或离线时停止所有底盘电机
-    }
-  });
-  gimbal_motors.OnDeviceStatusChange([](rm::device::Device *device) {
-    if (device->online_status() != rm::device::Device::kOk) {
-      // 云台电机故障或离线时停止云台运动
-    }
-  });
-
-  for (;;) {
-    bool chassis_ok = chassis_motors.Update();
-    bool gimbal_ok = gimbal_motors.Update();
-
-    // 根据状态执行保护逻辑
-    osDelay(50);
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+chassis_motors.OnDeviceStatusChange([](rm::device::Device *device) {
+  if (device->online_status() != rm::device::Device::kOk) {
+    // 底盘电机故障或离线时停止所有底盘电机
   }
-}
+});
+gimbal_motors.OnDeviceStatusChange([](rm::device::Device *device) {
+  if (device->online_status() != rm::device::Device::kOk) {
+    // 云台电机故障或离线时停止云台运动
+  }
+});
+
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+bool chassis_ok = chassis_motors.Update();
+bool gimbal_ok = gimbal_motors.Update();
+
+// 根据状态执行保护逻辑
+
 ```
 
 ### 获取设备状态列表
@@ -165,31 +157,29 @@ extern "C" void SafetyMonitorTask(const void *pv_arg) {
 rm::device::DeviceManager<10> device_manager;
 // ... 添加设备 ...
 
-extern "C" void MonitorTask(const void *pv_arg) {
-  for (;;) {
-    device_manager.Update();
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+device_manager.Update();
 
-    // 获取离线设备列表
-    const auto &offline_devices = device_manager.GetDeviceListByStatus(rm::device::Device::kOffline);
-    if (!offline_devices.empty()) {
-      // 处理离线设备
-      for (auto *device : offline_devices) {
-        printf("Device '%s' is offline\n", device->name().c_str());
-      }
-    }
-
-    // 获取故障设备列表
-    const auto &fault_devices = device_manager.GetDeviceListByStatus(rm::device::Device::kFault);
-    if (!fault_devices.empty()) {
-      // 处理故障设备
-      for (auto *device : fault_devices) {
-        printf("Device '%s' has fault\n", device->name().c_str());
-      }
-    }
-
-    osDelay(100);
+// 获取离线设备列表
+const auto &offline_devices = device_manager.GetDeviceListByStatus(rm::device::Device::kOffline);
+if (!offline_devices.empty()) {
+  // 处理离线设备
+  for (auto *device : offline_devices) {
+    printf("Device '%s' is offline\n", device->name().c_str());
   }
 }
+
+// 获取故障设备列表
+const auto &fault_devices = device_manager.GetDeviceListByStatus(rm::device::Device::kFault);
+if (!fault_devices.empty()) {
+  // 处理故障设备
+  for (auto *device : fault_devices) {
+    printf("Device '%s' has fault\n", device->name().c_str());
+  }
+}
+
+
 ```
 
 ### 获取状态摘要字符串
@@ -202,21 +192,18 @@ extern "C" void MonitorTask(const void *pv_arg) {
 rm::device::DeviceManager<10> device_manager;
 // ... 添加设备 ...
 
-extern "C" void StatusReportTask(const void *pv_arg) {
-  for (;;) {
-    device_manager.Update();
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+device_manager.Update();
 
-    // 获取状态摘要字符串
-    auto summary = device_manager.GetSummaryString();
-    // 如果所有设备正常，返回 "All devices OK."
-    // 否则返回类似 "Offline: motor1, rc; Fault: sensor1; " 的字符串
+// 获取状态摘要字符串
+auto summary = device_manager.GetSummaryString();
+// 如果所有设备正常，返回 "All devices OK."
+// 否则返回类似 "Offline: motor1, rc; Fault: sensor1; " 的字符串
 
-    printf("System Status: %s\n", summary.c_str());
+printf("System Status: %s\n", summary.c_str());
 
-    // 也可以在状态变化回调中使用
-    osDelay(1000);
-  }
-}
+// 也可以在状态变化回调中使用
 
 // 在状态变化回调中使用摘要字符串
 device_manager.OnDeviceStatusChange([&](rm::device::Device *device) {
@@ -224,6 +211,7 @@ device_manager.OnDeviceStatusChange([&](rm::device::Device *device) {
   // 将状态摘要发送给上位机或记录到日志
   SendToHost(status_summary);
 });
+
 ```
 
 :::tip 自定义摘要字符串长度

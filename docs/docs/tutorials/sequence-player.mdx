@@ -58,29 +58,19 @@ class SquareWave : public rm::modules::SequenceGenerator<float> {
   }
 };
 
-int main() {
-  // 创建序列播放器，包含三种序列
-  rm::modules::SequencePlayer<float, LinearRamp, SineWave, SquareWave> player;
+// 初始化一次：创建播放器并选择初始序列
+rm::modules::SequencePlayer<float, LinearRamp, SineWave, SquareWave> player;
+player.SetSequence<SineWave>();
 
-  // 切换到正弦波序列
-  player.SetSequence<SineWave>();
+// 放入循环中：每周期更新并使用输出值
+float output = player.Update();
 
-  // 更新并获取输出
-  for (int i = 0; i < 100; i++) {
-    float output = player.Update();
-    // 使用输出值...
+// 按需操作：切换序列，不要放在周期更新中反复执行
+player.SetSequence<SquareWave>();
 
-    osDelay(10);
-  }
+// 按需操作：重新开始当前序列
+player.Reset();
 
-  // 切换到方波序列
-  player.SetSequence<SquareWave>();
-
-  // 重置当前序列
-  player.Reset();
-
-  return 0;
-}
 ```
 
 :::tip

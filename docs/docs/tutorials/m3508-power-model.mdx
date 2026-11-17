@@ -78,65 +78,62 @@ void CalculateCurrentFromPower() {
 
 ```cpp
 #include "can.h"
-#include "cmsis_os.h"
 
 #include <librm.hpp>
 
-extern "C" void ChassisPowerControlTask(const void *pv_arg) {
-  rm::hal::Can can1(hcan1);
-  rm::device::M3508 motors[4] = {
-    {can1, 1}, {can1, 2}, {can1, 3}, {can1, 4}
-  };
-  can1.SetFilter(0, 0);
-  can1.Begin();
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+rm::hal::Can can1(hcan1);
+rm::device::M3508 motors[4] = {
+  {can1, 1}, {can1, 2}, {can1, 3}, {can1, 4}
+};
+can1.SetFilter(0, 0);
+can1.Begin();
 
-  // 创建功率模型和速度 PID
-  rm::modules::MotorPowerModel power_model{rm::modules::MotorPowerModel::kM3508};
-  rm::modules::PID velocity_pids[4] = {
-    {10, 0.5, 0, 16384, 5000},
-    {10, 0.5, 0, 16384, 5000},
-    {10, 0.5, 0, 16384, 5000},
-    {10, 0.5, 0, 16384, 5000}
-  };
+// 创建功率模型和速度 PID
+rm::modules::MotorPowerModel power_model{rm::modules::MotorPowerModel::kM3508};
+rm::modules::PID velocity_pids[4] = {
+  {10, 0.5, 0, 16384, 5000},
+  {10, 0.5, 0, 16384, 5000},
+  {10, 0.5, 0, 16384, 5000},
+  {10, 0.5, 0, 16384, 5000}
+};
 
-  // 最大功率限制（从裁判系统获取或预设）
-  float max_power = 80.0f;  // 80W
+// 最大功率限制（从裁判系统获取或预设）
+float max_power = 80.0f;  // 80W
 
-  for (;;) {
-    // 获取目标速度
-    float target_speeds[4] = {
-      GetTargetSpeed(0), GetTargetSpeed(1),
-      GetTargetSpeed(2), GetTargetSpeed(3)
-    };
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+// 获取目标速度
+float target_speeds[4] = {
+  GetTargetSpeed(0), GetTargetSpeed(1),
+  GetTargetSpeed(2), GetTargetSpeed(3)
+};
 
-    // PID 计算初始电流
-    float initial_currents[4];
-    std::array<rm::modules::MotorPowerModel::MotorState, 4> motor_states;
+// PID 计算初始电流
+float initial_currents[4];
+std::array<rm::modules::MotorPowerModel::MotorState, 4> motor_states;
 
-    for (int i = 0; i < 4; i++) {
-      velocity_pids[i].Update(target_speeds[i], motors[i].rpm());
-      initial_currents[i] = velocity_pids[i].out();
+for (int i = 0; i < 4; i++) {
+  velocity_pids[i].Update(target_speeds[i], motors[i].rpm());
+  initial_currents[i] = velocity_pids[i].out();
 
-      // 构建电机状态
-      motor_states[i].speed_rpm = motors[i].rpm();
-      motor_states[i].give_current = initial_currents[i];
-      motor_states[i].measured_current = motors[i].current();
-    }
-
-    // 功率分配：如果超过最大功率，按比例缩放
-    float output_currents[4];
-    power_model.DistributePower<4>(motor_states, initial_currents,
-                                    max_power, output_currents);
-
-    // 应用限制后的电流
-    for (int i = 0; i < 4; i++) {
-      motors[i].SetCurrent(static_cast<int16_t>(output_currents[i]));
-    }
-
-    rm::device::DjiMotorBase::SendCommand();
-    osDelay(1);
-  }
+  // 构建电机状态
+  motor_states[i].speed_rpm = motors[i].rpm();
+  motor_states[i].give_current = initial_currents[i];
+  motor_states[i].measured_current = motors[i].current();
 }
+
+// 功率分配：如果超过最大功率，按比例缩放
+float output_currents[4];
+power_model.DistributePower<4>(motor_states, initial_currents,
+                                max_power, output_currents);
+
+// 应用限制后的电流
+for (int i = 0; i < 4; i++) {
+  motors[i].SetCurrent(static_cast<int16_t>(output_currents[i]));
+}
+
+rm::device::DjiMotorBase::SendCommand();
+
 ```
 
 ### 结合裁判系统动态调整功率限制
@@ -146,34 +143,32 @@ extern "C" void ChassisPowerControlTask(const void *pv_arg) {
 
 rm::device::Referee<rm::device::RefereeRevision::kV170> referee;
 
-extern "C" void DynamicPowerControlTask(const void *pv_arg) {
-  rm::modules::MotorPowerModel power_model{rm::modules::MotorPowerModel::kM3508};
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+rm::modules::MotorPowerModel power_model{rm::modules::MotorPowerModel::kM3508};
 
-  // ... 电机初始化代码 ...
+// ... 电机初始化代码 ...
 
-  for (;;) {
-    // 从裁判系统获取底盘功率限制
-    float chassis_power_limit = referee.data().robot_status.chassis_power_limit;
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+// 从裁判系统获取底盘功率限制
+float chassis_power_limit = referee.data().robot_status.chassis_power_limit;
 
-    // 获取当前缓冲能量
-    float buffer_energy = referee.data().power_heat_data.buffer_energy;
+// 获取当前缓冲能量
+float buffer_energy = referee.data().power_heat_data.buffer_energy;
 
-    // 根据缓冲能量动态调整实际功率限制
-    float actual_power_limit = chassis_power_limit;
+// 根据缓冲能量动态调整实际功率限制
+float actual_power_limit = chassis_power_limit;
 
-    // 缓冲能量较低时降低功率限制，避免超功率
-    if (buffer_energy < 20.0f) {
-      actual_power_limit = chassis_power_limit * 0.6f;
-    } else if (buffer_energy < 40.0f) {
-      actual_power_limit = chassis_power_limit * 0.8f;
-    }
-
-    // 使用动态功率限制进行功率分配
-    // ... PID 计算和功率分配代码 ...
-
-    osDelay(1);
-  }
+// 缓冲能量较低时降低功率限制，避免超功率
+if (buffer_energy < 20.0f) {
+  actual_power_limit = chassis_power_limit * 0.6f;
+} else if (buffer_energy < 40.0f) {
+  actual_power_limit = chassis_power_limit * 0.8f;
 }
+
+// 使用动态功率限制进行功率分配
+// ... PID 计算和功率分配代码 ...
+
+
 ```
 
 ## API 参考

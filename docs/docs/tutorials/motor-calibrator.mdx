@@ -8,40 +8,37 @@
 
 ```cpp
 #include "can.h"
-#include "cmsis_os.h"
 
 #include <librm.hpp>
 
-extern "C" void GimbalTask(const void *pv_arg) {
-  rm::hal::Can can1(hcan1);
-  rm::device::GM6020 yaw_motor(can1, 1);
-  can1.SetFilter(0, 0);
-  can1.Begin();
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+rm::hal::Can can1(hcan1);
+rm::device::GM6020 yaw_motor(can1, 1);
+can1.SetFilter(0, 0);
+can1.Begin();
 
-  // 步骤 1：手动将云台转到正前方（逻辑零点位置），读取编码器值
-  // 假设读到 2048
-  // 步骤 2：确认电机转动方向，如果与预期相反则第一个参数设为 true
+// 步骤 1：手动将云台转到正前方（逻辑零点位置），读取编码器值
+// 假设读到 2048
+// 步骤 2：确认电机转动方向，如果与预期相反则第一个参数设为 true
 
-  // 创建校准器：参数为 (是否反转, 零点偏移)
-  rm::modules::MotorCalibrator calibrator(false, 2048.0f);
+// 创建校准器：参数为 (是否反转, 零点偏移)
+rm::modules::MotorCalibrator calibrator(false, 2048.0f);
 
-  // 创建 PID 控制器
-  rm::modules::PID pid(5, 0, 0, 30000, 0);
+// 创建 PID 控制器
+rm::modules::PID pid(5, 0, 0, 30000, 0);
 
-  for (;;) {
-    // 读取实际位置并转换为逻辑位置
-    float real_pos = yaw_motor.encoder();
-    float logical_pos = calibrator.RealToLogical(real_pos);
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+// 读取实际位置并转换为逻辑位置
+float real_pos = yaw_motor.encoder();
+float logical_pos = calibrator.RealToLogical(real_pos);
 
-    // 在逻辑坐标系下控制（0 表示正前方）
-    pid.Update(0.0f, logical_pos);
+// 在逻辑坐标系下控制（0 表示正前方）
+pid.Update(0.0f, logical_pos);
 
-    yaw_motor.SetCurrent(static_cast<int16_t>(pid.out()));
-    rm::device::DjiMotorBase::SendCommand();
+yaw_motor.SetCurrent(static_cast<int16_t>(pid.out()));
+rm::device::DjiMotorBase::SendCommand();
 
-    osDelay(1);
-  }
-}
+
 ```
 
 ## 坐标变换

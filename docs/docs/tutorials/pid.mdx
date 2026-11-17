@@ -10,31 +10,28 @@ import DiffFilterBodePlot from '@site/src/components/DiffFilterBodePlot';
 
 ```cpp
 #include "can.h"
-#include "cmsis_os.h"
 
 #include <librm.hpp>
 
-extern "C" void MotorControlTask(const void *pv_arg) {
-  rm::hal::Can can1(hcan1);
-  rm::device::GM6020 motor(can1, 1);
-  can1.SetFilter(0, 0);
-  can1.Begin();
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+rm::hal::Can can1(hcan1);
+rm::device::GM6020 motor(can1, 1);
+can1.SetFilter(0, 0);
+can1.Begin();
 
-  // 创建 PID 控制器
-  // 参数：kp, ki, kd, max_out, max_iout
-  rm::modules::PID pid(5, 0, 0, 30000, 0);
+// 创建 PID 控制器
+// 参数：kp, ki, kd, max_out, max_iout
+rm::modules::PID pid(5, 0, 0, 30000, 0);
 
-  for (;;) {
-    // 更新 PID：目标值 3000，反馈值为电机编码器值
-    pid.Update(3000, motor.encoder());
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+// 更新 PID：目标值 3000，反馈值为电机编码器值
+pid.Update(3000, motor.encoder());
 
-    // 输出到电机
-    motor.SetCurrent(static_cast<int16_t>(pid.out()));
-    rm::device::DjiMotorBase::SendCommand();
+// 输出到电机
+motor.SetCurrent(static_cast<int16_t>(pid.out()));
+rm::device::DjiMotorBase::SendCommand();
 
-    osDelay(1);
-  }
-}
+
 ```
 
 ## 角度控制（过零点处理）
@@ -45,13 +42,12 @@ extern "C" void MotorControlTask(const void *pv_arg) {
 rm::modules::PID pid(5, 0, 0, 30000, 0);
 pid.SetCircular(true).SetCircularCycle(8191);  // 启用循环模式，周期为 8191
 
-for (;;) {
-  // 目标 100，当前 8000 时，误差会被计算为 292 而不是 -7900
-  pid.Update(100, motor.encoder());
-  motor.SetCurrent(static_cast<int16_t>(pid.out()));
-  rm::device::DjiMotorBase::SendCommand();
-  osDelay(1);
-}
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+// 目标 100，当前 8000 时，误差会被计算为 292 而不是 -7900
+pid.Update(100, motor.encoder());
+motor.SetCurrent(static_cast<int16_t>(pid.out()));
+rm::device::DjiMotorBase::SendCommand();
+
 ```
 
 ## 速度控制（指定时间步长）
@@ -63,17 +59,16 @@ rm::modules::PID velocity_pid(10, 0.5, 0, 16384, 5000);
 
 const float dt = 0.001f;  // 1ms 控制周期
 
-for (;;) {
-  float target_vel = GetTargetVelocity();
-  float current_vel = motor.rpm();
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+float target_vel = GetTargetVelocity();
+float current_vel = motor.rpm();
 
-  // 传入 dt 参数
-  velocity_pid.Update(target_vel, current_vel, dt);
+// 传入 dt 参数
+velocity_pid.Update(target_vel, current_vel, dt);
 
-  motor.SetCurrent(static_cast<int16_t>(velocity_pid.out()));
-  rm::device::DjiMotorBase::SendCommand();
-  osDelay(1);
-}
+motor.SetCurrent(static_cast<int16_t>(velocity_pid.out()));
+rm::device::DjiMotorBase::SendCommand();
+
 ```
 
 ## 串级 PID
@@ -88,20 +83,19 @@ position_pid.SetCircular(true).SetCircularCycle(8191);
 
 const float dt = 0.001f;
 
-for (;;) {
-  float target_pos = GetTargetPosition();
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+float target_pos = GetTargetPosition();
 
-  // 外环输出作为内环目标
-  position_pid.Update(target_pos, motor.encoder(), dt);
-  float target_vel = position_pid.out();
+// 外环输出作为内环目标
+position_pid.Update(target_pos, motor.encoder(), dt);
+float target_vel = position_pid.out();
 
-  // 内环控制
-  velocity_pid.Update(target_vel, motor.rpm(), dt);
+// 内环控制
+velocity_pid.Update(target_vel, motor.rpm(), dt);
 
-  motor.SetCurrent(static_cast<int16_t>(velocity_pid.out()));
-  rm::device::DjiMotorBase::SendCommand();
-  osDelay(1);
-}
+motor.SetCurrent(static_cast<int16_t>(velocity_pid.out()));
+rm::device::DjiMotorBase::SendCommand();
+
 ```
 
 ## 微分先行
@@ -152,18 +146,17 @@ pid.SetDynamicKi(true);  // 启用变速积分
 ```cpp
 rm::modules::PID pid(5, 0.1, 0.5, 30000, 5000);
 
-for (;;) {
-  float target_angle = GetTargetAngle();
-  float current_angle = motor.pos_rad();
-  float angular_velocity = imu.gyro_z();  // 使用陀螺仪角速度
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+float target_angle = GetTargetAngle();
+float current_angle = motor.pos_rad();
+float angular_velocity = imu.gyro_z();  // 使用陀螺仪角速度
 
-  // 使用外部微分信号
-  pid.UpdateExtDiff(target_angle, current_angle, angular_velocity, dt);
+// 使用外部微分信号
+pid.UpdateExtDiff(target_angle, current_angle, angular_velocity, dt);
 
-  motor.SetCurrent(static_cast<int16_t>(pid.out()));
-  rm::device::DjiMotorBase::SendCommand();
-  osDelay(1);
-}
+motor.SetCurrent(static_cast<int16_t>(pid.out()));
+rm::device::DjiMotorBase::SendCommand();
+
 ```
 
 ## 模糊 PID
@@ -212,11 +205,8 @@ rm::modules::PID pid(5, 0.1, 0.5, 30000, 5000);
 // 清除所有历史状态（误差、积分、微分等）
 pid.Clear();
 
-// 重新开始控制
-for (;;) {
-  pid.Update(new_target, feedback, dt);
-  // ...
-}
+// 放入控制循环中：后续周期继续更新
+pid.Update(new_target, feedback, dt);
 ```
 
 ## 动态调整参数

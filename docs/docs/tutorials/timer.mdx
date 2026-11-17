@@ -83,31 +83,17 @@ if (!timer.Start()) {                                       // 4. 启动
 
 #include <librm.hpp>
 
-class MyTask {
- public:
-  MyTask() : timer_(htim2) {
-    // 设置超时时间并绑定回调（etl::delegate，无动态内存分配）
-    timer_.SetTimeout(std::chrono::milliseconds(100));
-    timer_.AttachCallback(etl::delegate<void()>::create<MyTask, &MyTask::OnTimeout>(*this));
-  }
+// 回调定义：STM32 上在中断上下文执行，不要做耗时操作
+volatile bool timeout_flag = false;
+void OnTimeout() {
+  timeout_flag = true;
+}
 
-  void Loop() {
-    timer_.Start();  // 之后每 100ms 触发一次 OnTimeout
-
-    for (;;) {
-      rm::Sleep(std::chrono::milliseconds(1));
-    }
-  }
-
- private:
-  void OnTimeout() {
-    // 这里在中断上下文中执行，不要做耗时操作
-    flag_ = true;
-  }
-
-  rm::hal::Timer timer_;
-  volatile bool flag_{false};
-};
+// 初始化一次：在平台外设初始化后创建并启动定时器
+rm::hal::Timer timer_(htim2);
+timer_.SetTimeout(std::chrono::milliseconds(100));
+timer_.AttachCallback(etl::delegate<void()>::create<OnTimeout>());
+timer_.Start();
 ```
 
 单次模式，超时一次后自动停止：

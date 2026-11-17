@@ -41,33 +41,30 @@ int main() {
 ### 监视按键状态
 
 ```cpp
-#include "cmsis_os.h"
 #include <librm.hpp>
 
-extern "C" void KeyMonitorTask(const void *pv_arg) {
-  // 监视按键状态（假设按键状态为 bool 类型）
-  rm::modules::SparseValueWatcher<bool> key_watcher(false);
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+// 监视按键状态（假设按键状态为 bool 类型）
+rm::modules::SparseValueWatcher<bool> key_watcher(false);
 
-  key_watcher.OnValueChange([](const bool &old_val, const bool &new_val) {
-    if (new_val) {
-      // 按键按下
-      HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-    } else {
-      // 按键释放
-      HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
-    }
-  });
-
-  for (;;) {
-    // 读取当前按键状态
-    bool current_state = HAL_GPIO_ReadPin(KEY_GPIO_Port, KEY_Pin) == GPIO_PIN_SET;
-
-    // 更新监视器（仅在状态变化时触发回调）
-    key_watcher.Update(current_state);
-
-    osDelay(10);
+key_watcher.OnValueChange([](const bool &old_val, const bool &new_val) {
+  if (new_val) {
+    // 按键按下
+    HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+  } else {
+    // 按键释放
+    HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
   }
-}
+});
+
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+// 读取当前按键状态
+bool current_state = HAL_GPIO_ReadPin(KEY_GPIO_Port, KEY_Pin) == GPIO_PIN_SET;
+
+// 更新监视器（仅在状态变化时触发回调）
+key_watcher.Update(current_state);
+
+
 ```
 
 ### 使用成员函数作为回调

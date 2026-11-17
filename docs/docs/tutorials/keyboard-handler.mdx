@@ -26,9 +26,8 @@ constexpr rm::u32 kShift = 1U << 17;
 constexpr rm::u32 kAllModifiers = kCtrl | kShift;
 }  // namespace KeyMask
 
-int main() {
-  // 创建 handler，传入 modifier 掩码
-  rm::modules::KeyboardHandler<> handler(KeyMask::kAllModifiers);
+// 初始化：创建 handler 并注册回调
+rm::modules::KeyboardHandler<> handler(KeyMask::kAllModifiers);
 
   // 注册单键回调
   handler.OnKeyDown(KeyMask::kW, [](const rm::modules::KeyEvent& e) {
@@ -39,12 +38,9 @@ int main() {
     std::cout << "W released\n";
   });
 
-  // 轮询更新
-  for (;;) {
-    rm::u32 keycode = GetCurrentKeycode();  // 从硬件获取当前按键状态
-    handler.Update(keycode);
-  }
-}
+// 周期执行：读取按键状态并更新 handler
+rm::u32 keycode = GetCurrentKeycode();
+handler.Update(keycode);
 ```
 
 ### 组合键回调
@@ -61,8 +57,8 @@ constexpr rm::u32 kShift = 1U << 17;
 constexpr rm::u32 kAllModifiers = kCtrl | kShift;
 }  // namespace KeyMask
 
-int main() {
-  rm::modules::KeyboardHandler<> handler(KeyMask::kAllModifiers);
+// 初始化：创建 handler 并注册单键、组合键回调
+rm::modules::KeyboardHandler<> handler(KeyMask::kAllModifiers);
 
   // 注册单键 A 的回调
   handler.OnKeyDown(KeyMask::kA, [](const rm::modules::KeyEvent& e) {
@@ -80,11 +76,9 @@ int main() {
     std::cout << "Ctrl+Shift+S pressed\n";
   });
 
-  for (;;) {
-    rm::u32 keycode = GetCurrentKeycode();
-    handler.Update(keycode);
-  }
-}
+// 周期执行
+rm::u32 keycode = GetCurrentKeycode();
+handler.Update(keycode);
 ```
 
 :::tip

@@ -25,14 +25,13 @@ limiter.ResetAt(0.0f);
 limiter.SetTarget(5.0f);
 
 // 在控制循环中更新（假设控制周期为 1ms）
-while (!limiter.IsAtTarget()) {
-  float current_pos = limiter.Update(0.001f);  // dt = 1ms
-  
-  // 使用 current_pos 控制电机或其他执行器
-  // ...
-  
-  osDelay(1);
-}
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+float current_pos = limiter.Update(0.001f);  // dt = 1ms
+
+// 使用 current_pos 控制电机或其他执行器
+// ...
+
+
 ```
 
 ### 云台角度平滑控制
@@ -41,51 +40,48 @@ while (!limiter.IsAtTarget()) {
 
 ```cpp
 #include "can.h"
-#include "cmsis_os.h"
 
 #include <librm.hpp>
 
-extern "C" void GimbalYawTask(const void *pv_arg) {
-  // 初始化 CAN 和电机
-  rm::hal::Can can1(hcan1);
-  rm::device::GM6020 yaw_motor(can1, 1);
-  can1.SetFilter(0, 0);
-  can1.Begin();
-  
-  // 创建轨迹限制器
-  // 最大速度: 360°/s (2π rad/s)
-  // 最大加速度: 1800°/s² (10π rad/s²)
-  rm::modules::TrajectoryLimiter limiter(6.28f, 31.4f);
-  
-  // 创建位置 PID 控制器
-  rm::modules::PID pid(5, 0, 0, 30000, 0);
-  pid.SetCircular(true).SetCircularCycle(8191);
-  
-  // 初始化限制器位置
-  limiter.ResetAt(yaw_motor.pos_rad());
-  
-  const float dt = 0.001f;  // 1ms 控制周期
-  
-  for (;;) {
-    // 从遥控器或其他来源获取目标角度
-    float target_angle = GetTargetAngleFromRC();
-    
-    // 设置目标位置
-    limiter.SetTarget(target_angle);
-    
-    // 更新轨迹限制器，获取平滑后的目标位置
-    float smooth_target = limiter.Update(dt);
-    
-    // PID 控制
-    pid.Update(smooth_target, yaw_motor.pos_rad());
-    yaw_motor.SetCurrent(static_cast<int16_t>(pid.out()));
-    
-    // 发送控制指令
-    rm::device::DjiMotorBase::SendCommand();
-    
-    osDelay(1);
-  }
-}
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+// 初始化 CAN 和电机
+rm::hal::Can can1(hcan1);
+rm::device::GM6020 yaw_motor(can1, 1);
+can1.SetFilter(0, 0);
+can1.Begin();
+
+// 创建轨迹限制器
+// 最大速度: 360°/s (2π rad/s)
+// 最大加速度: 1800°/s² (10π rad/s²)
+rm::modules::TrajectoryLimiter limiter(6.28f, 31.4f);
+
+// 创建位置 PID 控制器
+rm::modules::PID pid(5, 0, 0, 30000, 0);
+pid.SetCircular(true).SetCircularCycle(8191);
+
+// 初始化限制器位置
+limiter.ResetAt(yaw_motor.pos_rad());
+
+const float dt = 0.001f;  // 1ms 控制周期
+
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+// 从遥控器或其他来源获取目标角度
+float target_angle = GetTargetAngleFromRC();
+
+// 设置目标位置
+limiter.SetTarget(target_angle);
+
+// 更新轨迹限制器，获取平滑后的目标位置
+float smooth_target = limiter.Update(dt);
+
+// PID 控制
+pid.Update(smooth_target, yaw_motor.pos_rad());
+yaw_motor.SetCurrent(static_cast<int16_t>(pid.out()));
+
+// 发送控制指令
+rm::device::DjiMotorBase::SendCommand();
+
+
 ```
 
 ### 动态改变目标位置
@@ -99,17 +95,14 @@ limiter.ResetAt(0.0f);
 // 第一个目标
 limiter.SetTarget(5.0f);
 
-for (int i = 0; i < 1000; i++) {
-  // 在运动过程中改变目标
-  if (i == 500) {
-    limiter.SetTarget(-3.0f);  // 改变目标位置
-  }
-  
-  float current_pos = limiter.Update(0.001f);
-  // 使用 current_pos...
-  
-  osDelay(1);
-}
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+// 收到新目标时执行一次，不要在初始化后立即连续设置两个目标
+limiter.SetTarget(-3.0f);
+
+float current_pos = limiter.Update(0.001f);
+// 使用 current_pos...
+
+
 ```
 
 ### 检查是否到达目标
@@ -119,23 +112,20 @@ rm::modules::TrajectoryLimiter limiter(10.0f, 50.0f);
 limiter.ResetAt(0.0f);
 limiter.SetTarget(5.0f);
 
-while (true) {
-  float current_pos = limiter.Update(0.001f);
-  
-  // 检查是否到达目标（默认容差 1e-6）
-  if (limiter.IsAtTarget()) {
-    // 已到达目标，可以执行下一步操作
-    break;
-  }
-  
-  // 也可以自定义容差
-  if (limiter.IsAtTarget(0.01f)) {
-    // 在 0.01 的容差范围内
-    break;
-  }
-  
-  osDelay(1);
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+float current_pos = limiter.Update(0.001f);
+
+// 检查是否到达目标（默认容差 1e-6）
+if (limiter.IsAtTarget()) {
+  // 已到达目标，可以执行下一步操作
 }
+
+// 也可以自定义容差
+if (limiter.IsAtTarget(0.01f)) {
+  // 在 0.01 的容差范围内
+}
+
+
 ```
 
 ### 获取当前状态
@@ -145,22 +135,21 @@ rm::modules::TrajectoryLimiter limiter(10.0f, 50.0f);
 limiter.ResetAt(0.0f);
 limiter.SetTarget(5.0f);
 
-for (int i = 0; i < 100; i++) {
-  limiter.Update(0.001f);
-  
-  // 获取当前位置
-  float pos = limiter.current_position();
-  
-  // 获取当前速度
-  float vel = limiter.current_velocity();
-  
-  // 获取目标位置
-  float target = limiter.target_position();
-  
-  printf("pos=%.3f, vel=%.3f, target=%.3f\n", pos, vel, target);
-  
-  osDelay(1);
-}
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+limiter.Update(0.001f);
+
+// 获取当前位置
+float pos = limiter.current_position();
+
+// 获取当前速度
+float vel = limiter.current_velocity();
+
+// 获取目标位置
+float target = limiter.target_position();
+
+printf("pos=%.3f, vel=%.3f, target=%.3f\n", pos, vel, target);
+
+
 ```
 
 ## API 参考

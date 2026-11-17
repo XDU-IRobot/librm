@@ -17,16 +17,13 @@
 
 #include <iostream>
 
-int main() {
-  bool var;
-  auto tt = rm::modules::ThresholdTrigger<bool>(var)
-                .OnRising([]() { std::cout << "Rising edge\n"; })
-                .OnFalling([]() { std::cout << "Falling edge\n"; });
+bool var;
+auto tt = rm::modules::ThresholdTrigger<bool>(var)
+              .OnRising([]() { std::cout << "Rising edge\\n"; })
+              .OnFalling([]() { std::cout << "Falling edge\\n"; });
 
-  for (;;) {
-    tt.Update();
-  }
-}
+// 变量变化后调用；放在应用的周期更新逻辑中
+tt.Update();
 ```
 
 ```cpp
@@ -34,14 +31,11 @@ int main() {
 
 #include <iostream>
 
-int main() {
-  int var;
-  auto tt = rm::modules::ThresholdTrigger<int>(var, 10, 20)
-                .OnRising([]() { std::cout << "Rising edge\n"; })
-                .OnFalling([]() { std::cout << "Falling edge\n"; });
+int var;
+auto tt = rm::modules::ThresholdTrigger<int>(var, 10, 20)
+              .OnRising([]() { std::cout << "Rising edge\\n"; })
+              .OnFalling([]() { std::cout << "Falling edge\\n"; });
 
-  for (;;) {
-    tt.Update();
-  }
-}
+// 变量变化后调用
+tt.Update();
 ```

@@ -54,16 +54,12 @@ rm::device::M3508 motor{motor_can, 1};
 motor_can.SetFilter(0, 0);
 motor_can.Begin();
 
-// 主循环
-for (;;) {
-  // Write() 只入队，不立即发送
-  motor.SetCurrent(5000);
-  rm::device::DjiMotorBase::SendCommand(motor_can);
+// 周期执行：Write() 只入队，不立即发送
+motor.SetCurrent(5000);
+rm::device::DjiMotorBase::SendCommand(motor_can);
 
-  // Process() 按限频策略出队并实际发送，每次最多发一帧
-  // 通常放在一个尽量高频的裸循环中调用
-  motor_can.Process();
-}
+// Process() 按限频策略出队并实际发送，每次最多发一帧
+motor_can.Process();
 ```
 
 ## MCP2515 外挂 CAN 控制器
@@ -78,10 +74,9 @@ rm::hal::ThrottledMcp2515<64> ext_can{500.0, hspi1, GPIOA, GPIO_PIN_4};
 
 ext_can.Begin();
 
-for (;;) {
-  ext_can.Write(0x100, data, 8);
-  ext_can.Process();
-}
+// 周期执行
+ext_can.Write(0x100, data, 8);
+ext_can.Process();
 ```
 
 ## Linux SocketCAN
@@ -96,10 +91,9 @@ rm::hal::ThrottledCan<> motor_can{1000.0, "can0"};
 
 motor_can.Begin();
 
-for (;;) {
-  motor_can.Write(0x200, data, 8);
-  motor_can.Process();
-}
+// 周期执行
+motor_can.Write(0x200, data, 8);
+motor_can.Process();
 ```
 
 ## 自定义队列深度
@@ -242,8 +236,7 @@ lower_motor_can.Begin();
 upper_motor_can.Begin();
 ext_can.Begin();
 
-// 高频主循环
-for (;;) {
+// 放入高频循环中：每轮处理待发送帧，并按需读取统计
   lower_motor_can.Process();
   upper_motor_can.Process();
   ext_can.Process();
@@ -257,5 +250,4 @@ for (;;) {
   //        ls.tx_fps, ls.drop_expired_fps, ls.peak_queue_depth);
   // printf("upper: tx=%.0f fps, drop_exp=%.0f fps, q_peak=%u\n",
   //        us.tx_fps, us.drop_expired_fps, us.peak_queue_depth);
-}
 ```

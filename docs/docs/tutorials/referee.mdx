@@ -44,7 +44,6 @@ int main() {
 
 ```cpp
 #include "usart.h"
-#include "cmsis_os.h"
 
 #include <librm.hpp>
 
@@ -63,23 +62,21 @@ extern "C" void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t S
   }
 }
 
-extern "C" void RefereeTask(const void *pv_arg) {
-  // 启动 DMA 接收
-  HAL_UARTEx_ReceiveToIdle_DMA(&huart6, rx_buffer, sizeof(rx_buffer));
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+// 启动 DMA 接收
+HAL_UARTEx_ReceiveToIdle_DMA(&huart6, rx_buffer, sizeof(rx_buffer));
 
-  for (;;) {
-    // 读取底盘功率限制
-    uint16_t power_limit = referee.data().robot_status.chassis_power_limit;
-    
-    // 读取枪口热量
-    uint16_t heat = referee.data().power_heat_data.shooter_17mm_1_barrel_heat;
-    
-    // 读取缓冲能量
-    uint16_t buffer = referee.data().power_heat_data.buffer_energy;
-    
-    osDelay(10);
-  }
-}
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+// 读取底盘功率限制
+uint16_t power_limit = referee.data().robot_status.chassis_power_limit;
+
+// 读取枪口热量
+uint16_t heat = referee.data().power_heat_data.shooter_17mm_1_barrel_heat;
+
+// 读取缓冲能量
+uint16_t buffer = referee.data().power_heat_data.buffer_energy;
+
+
 ```
 
 ## 回调函数

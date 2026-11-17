@@ -10,53 +10,50 @@ librm 提供了多种底盘构型的运动学解算器，包括麦克纳姆轮�
 
 ```cpp
 #include "can.h"
-#include "cmsis_os.h"
 
 #include <librm.hpp>
 
-extern "C" void ChassisTask(const void *pv_arg) {
-  rm::hal::Can can1(hcan1);
-  rm::device::M3508 lf_motor(can1, 1);  // 左前
-  rm::device::M3508 rf_motor(can1, 2);  // 右前
-  rm::device::M3508 lr_motor(can1, 3);  // 左后
-  rm::device::M3508 rr_motor(can1, 4);  // 右后
-  can1.SetFilter(0, 0);
-  can1.Begin();
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+rm::hal::Can can1(hcan1);
+rm::device::M3508 lf_motor(can1, 1);  // 左前
+rm::device::M3508 rf_motor(can1, 2);  // 右前
+rm::device::M3508 lr_motor(can1, 3);  // 左后
+rm::device::M3508 rr_motor(can1, 4);  // 右后
+can1.SetFilter(0, 0);
+can1.Begin();
 
-  // 创建麦轮底盘运动学解算器
-  // 参数：wheel_base (轮子间距), wheel_track (轮子轴距)
-  rm::modules::MecanumChassis chassis(0.3f, 0.4f);
+// 创建麦轮底盘运动学解算器
+// 参数：wheel_base (轮子间距), wheel_track (轮子轴距)
+rm::modules::MecanumChassis chassis(0.3f, 0.4f);
 
-  // 速度环 PID（将目标轮速转换为电流指令）
-  rm::modules::PID lf_pid(10, 0.5f, 0, 16384, 5000);
-  rm::modules::PID rf_pid(10, 0.5f, 0, 16384, 5000);
-  rm::modules::PID lr_pid(10, 0.5f, 0, 16384, 5000);
-  rm::modules::PID rr_pid(10, 0.5f, 0, 16384, 5000);
+// 速度环 PID（将目标轮速转换为电流指令）
+rm::modules::PID lf_pid(10, 0.5f, 0, 16384, 5000);
+rm::modules::PID rf_pid(10, 0.5f, 0, 16384, 5000);
+rm::modules::PID lr_pid(10, 0.5f, 0, 16384, 5000);
+rm::modules::PID rr_pid(10, 0.5f, 0, 16384, 5000);
 
-  for (;;) {
-    // 获取目标速度（来自遥控器或自动控制）
-    float vx = GetTargetVx();  // 左右速度
-    float vy = GetTargetVy();  // 前后速度
-    float wz = GetTargetWz();  // 旋转角速度
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+// 获取目标速度（来自遥控器或自动控制）
+float vx = GetTargetVx();  // 左右速度
+float vy = GetTargetVy();  // 前后速度
+float wz = GetTargetWz();  // 旋转角速度
 
-    // 正运动学解算：将底盘速度分解到四个轮子
-    auto result = chassis.Forward(vx, vy, wz);
+// 正运动学解算：将底盘速度分解到四个轮子
+auto result = chassis.Forward(vx, vy, wz);
 
-    // 速度环 PID 控制，将目标轮速转换为电流指令
-    lf_pid.Update(result.lf_speed, lf_motor.rpm());
-    rf_pid.Update(result.rf_speed, rf_motor.rpm());
-    lr_pid.Update(result.lr_speed, lr_motor.rpm());
-    rr_pid.Update(result.rr_speed, rr_motor.rpm());
+// 速度环 PID 控制，将目标轮速转换为电流指令
+lf_pid.Update(result.lf_speed, lf_motor.rpm());
+rf_pid.Update(result.rf_speed, rf_motor.rpm());
+lr_pid.Update(result.lr_speed, lr_motor.rpm());
+rr_pid.Update(result.rr_speed, rr_motor.rpm());
 
-    lf_motor.SetCurrent(static_cast<int16_t>(lf_pid.out()));
-    rf_motor.SetCurrent(static_cast<int16_t>(rf_pid.out()));
-    lr_motor.SetCurrent(static_cast<int16_t>(lr_pid.out()));
-    rr_motor.SetCurrent(static_cast<int16_t>(rr_pid.out()));
+lf_motor.SetCurrent(static_cast<int16_t>(lf_pid.out()));
+rf_motor.SetCurrent(static_cast<int16_t>(rf_pid.out()));
+lr_motor.SetCurrent(static_cast<int16_t>(lr_pid.out()));
+rr_motor.SetCurrent(static_cast<int16_t>(rr_pid.out()));
 
-    rm::device::DjiMotorBase::SendCommand();
-    osDelay(1);
-  }
-}
+rm::device::DjiMotorBase::SendCommand();
+
 ```
 
 ### API 参考
@@ -95,33 +92,31 @@ struct {
 ```cpp
 #include <librm.hpp>
 
-extern "C" void SteeringChassisTask(const void *pv_arg) {
-  // 创建四舵轮底盘运动学解算器
-  // 参数：chassis_radius (底盘中心到轮子的距离)
-  rm::modules::SteeringChassis chassis(0.3f);
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+// 创建四舵轮底盘运动学解算器
+// 参数：chassis_radius (底盘中心到轮子的距离)
+rm::modules::SteeringChassis chassis(0.3f);
 
-  for (;;) {
-    float vx = GetTargetVx();
-    float vy = GetTargetVy();
-    float w = GetTargetW();
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+float vx = GetTargetVx();
+float vy = GetTargetVy();
+float w = GetTargetW();
 
-    // 360度模式：舵可以旋转360度
-    auto result = chassis.Forward(vx, vy, w);
+// 360度模式：舵可以旋转360度
+auto result = chassis.Forward(vx, vy, w);
 
-    // 设置舵角和轮速
-    SetSteerPosition(LF, result.lf_steer_position);
-    SetSteerPosition(RF, result.rf_steer_position);
-    SetSteerPosition(LR, result.lr_steer_position);
-    SetSteerPosition(RR, result.rr_steer_position);
+// 设置舵角和轮速
+SetSteerPosition(LF, result.lf_steer_position);
+SetSteerPosition(RF, result.rf_steer_position);
+SetSteerPosition(LR, result.lr_steer_position);
+SetSteerPosition(RR, result.rr_steer_position);
 
-    SetWheelSpeed(LF, result.lf_wheel_speed);
-    SetWheelSpeed(RF, result.rf_wheel_speed);
-    SetWheelSpeed(LR, result.lr_wheel_speed);
-    SetWheelSpeed(RR, result.rr_wheel_speed);
+SetWheelSpeed(LF, result.lf_wheel_speed);
+SetWheelSpeed(RF, result.rf_wheel_speed);
+SetWheelSpeed(LR, result.lr_wheel_speed);
+SetWheelSpeed(RR, result.rr_wheel_speed);
 
-    osDelay(1);
-  }
-}
+
 ```
 
 ### 180 度模式（推荐）
@@ -131,38 +126,36 @@ extern "C" void SteeringChassisTask(const void *pv_arg) {
 ```cpp
 #include <librm.hpp>
 
-extern "C" void SteeringChassis180Task(const void *pv_arg) {
-  rm::modules::SteeringChassis chassis(0.3f);
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+rm::modules::SteeringChassis chassis(0.3f);
 
-  for (;;) {
-    float vx = GetTargetVx();
-    float vy = GetTargetVy();
-    float w = GetTargetW();
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+float vx = GetTargetVx();
+float vy = GetTargetVy();
+float w = GetTargetW();
 
-    // 获取当前四个舵的角度（弧度制）
-    float current_lf = GetCurrentSteerAngle(LF);
-    float current_rf = GetCurrentSteerAngle(RF);
-    float current_lr = GetCurrentSteerAngle(LR);
-    float current_rr = GetCurrentSteerAngle(RR);
+// 获取当前四个舵的角度（弧度制）
+float current_lf = GetCurrentSteerAngle(LF);
+float current_rf = GetCurrentSteerAngle(RF);
+float current_lr = GetCurrentSteerAngle(LR);
+float current_rr = GetCurrentSteerAngle(RR);
 
-    // 180度模式：传入当前舵角，自动优化舵角变化
-    // 如果目标舵角与当前舵角差值大于90度，会自动将舵角加180度并反转轮速
-    auto result = chassis.Forward(vx, vy, w, current_lf, current_rf, current_lr, current_rr);
+// 180度模式：传入当前舵角，自动优化舵角变化
+// 如果目标舵角与当前舵角差值大于90度，会自动将舵角加180度并反转轮速
+auto result = chassis.Forward(vx, vy, w, current_lf, current_rf, current_lr, current_rr);
 
-    // 应用结果
-    SetSteerPosition(LF, result.lf_steer_position);
-    SetSteerPosition(RF, result.rf_steer_position);
-    SetSteerPosition(LR, result.lr_steer_position);
-    SetSteerPosition(RR, result.rr_steer_position);
+// 应用结果
+SetSteerPosition(LF, result.lf_steer_position);
+SetSteerPosition(RF, result.rf_steer_position);
+SetSteerPosition(LR, result.lr_steer_position);
+SetSteerPosition(RR, result.rr_steer_position);
 
-    SetWheelSpeed(LF, result.lf_wheel_speed);
-    SetWheelSpeed(RF, result.rf_wheel_speed);
-    SetWheelSpeed(LR, result.lr_wheel_speed);
-    SetWheelSpeed(RR, result.rr_wheel_speed);
+SetWheelSpeed(LF, result.lf_wheel_speed);
+SetWheelSpeed(RF, result.rf_wheel_speed);
+SetWheelSpeed(LR, result.lr_wheel_speed);
+SetWheelSpeed(RR, result.rr_wheel_speed);
 
-    osDelay(1);
-  }
-}
+
 ```
 
 ### API 参考
@@ -200,29 +193,27 @@ struct {
 ```cpp
 #include <librm.hpp>
 
-extern "C" void TriSteeringTask(const void *pv_arg) {
-  // 创建三舵轮底盘运动学解算器，传入底边长（两后轮间距）和高（前轮到两后轮连线的垂直距离）
-  rm::modules::TriSteeringChassis chassis(0.40f, 0.35f);
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+// 创建三舵轮底盘运动学解算器，传入底边长（两后轮间距）和高（前轮到两后轮连线的垂直距离）
+rm::modules::TriSteeringChassis chassis(0.40f, 0.35f);
 
-  for (;;) {
-    float vx = GetTargetVx();
-    float vy = GetTargetVy();
-    float w = GetTargetW();
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+float vx = GetTargetVx();
+float vy = GetTargetVy();
+float w = GetTargetW();
 
-    // 360度模式
-    auto result = chassis.Forward(vx, vy, w);
+// 360度模式
+auto result = chassis.Forward(vx, vy, w);
 
-    SetSteerPosition(FRONT, result.front_steer_position);
-    SetSteerPosition(LR, result.lr_steer_position);
-    SetSteerPosition(RR, result.rr_steer_position);
+SetSteerPosition(FRONT, result.front_steer_position);
+SetSteerPosition(LR, result.lr_steer_position);
+SetSteerPosition(RR, result.rr_steer_position);
 
-    SetWheelSpeed(FRONT, result.front_wheel_speed);
-    SetWheelSpeed(LR, result.lr_wheel_speed);
-    SetWheelSpeed(RR, result.rr_wheel_speed);
+SetWheelSpeed(FRONT, result.front_wheel_speed);
+SetWheelSpeed(LR, result.lr_wheel_speed);
+SetWheelSpeed(RR, result.rr_wheel_speed);
 
-    osDelay(1);
-  }
-}
+
 ```
 
 ### 180 度模式
@@ -230,33 +221,31 @@ extern "C" void TriSteeringTask(const void *pv_arg) {
 ```cpp
 #include <librm.hpp>
 
-extern "C" void TriSteering180Task(const void *pv_arg) {
-  rm::modules::TriSteeringChassis chassis(0.40f, 0.35f);
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+rm::modules::TriSteeringChassis chassis(0.40f, 0.35f);
 
-  for (;;) {
-    float vx = GetTargetVx();
-    float vy = GetTargetVy();
-    float w = GetTargetW();
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+float vx = GetTargetVx();
+float vy = GetTargetVy();
+float w = GetTargetW();
 
-    // 获取当前舵角
-    float current_front = GetCurrentSteerAngle(FRONT);
-    float current_lr = GetCurrentSteerAngle(LR);
-    float current_rr = GetCurrentSteerAngle(RR);
+// 获取当前舵角
+float current_front = GetCurrentSteerAngle(FRONT);
+float current_lr = GetCurrentSteerAngle(LR);
+float current_rr = GetCurrentSteerAngle(RR);
 
-    // 180度模式
-    auto result = chassis.Forward(vx, vy, w, current_front, current_lr, current_rr);
+// 180度模式
+auto result = chassis.Forward(vx, vy, w, current_front, current_lr, current_rr);
 
-    SetSteerPosition(FRONT, result.front_steer_position);
-    SetSteerPosition(LR, result.lr_steer_position);
-    SetSteerPosition(RR, result.rr_steer_position);
+SetSteerPosition(FRONT, result.front_steer_position);
+SetSteerPosition(LR, result.lr_steer_position);
+SetSteerPosition(RR, result.rr_steer_position);
 
-    SetWheelSpeed(FRONT, result.front_wheel_speed);
-    SetWheelSpeed(LR, result.lr_wheel_speed);
-    SetWheelSpeed(RR, result.rr_wheel_speed);
+SetWheelSpeed(FRONT, result.front_wheel_speed);
+SetWheelSpeed(LR, result.lr_wheel_speed);
+SetWheelSpeed(RR, result.rr_wheel_speed);
 
-    osDelay(1);
-  }
-}
+
 ```
 
 ### API 参考
@@ -302,26 +291,24 @@ struct {
 ```cpp
 #include <librm.hpp>
 
-extern "C" void OmniChassisTask(const void *pv_arg) {
-  rm::modules::QuadOmniChassis chassis;
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+rm::modules::QuadOmniChassis chassis;
 
-  for (;;) {
-    float vx = GetTargetVx();
-    float vy = GetTargetVy();
-    float wz = GetTargetWz();
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+float vx = GetTargetVx();
+float vy = GetTargetVy();
+float wz = GetTargetWz();
 
-    // 正运动学解算
-    // normalize = true: 当最大轮速超过1时，按比例缩放所有轮速
-    auto result = chassis.Forward(vx, vy, wz, true);
+// 正运动学解算
+// normalize = true: 当最大轮速超过1时，按比例缩放所有轮速
+auto result = chassis.Forward(vx, vy, wz, true);
 
-    SetWheelSpeed(LF, result.lf_speed);
-    SetWheelSpeed(RF, result.rf_speed);
-    SetWheelSpeed(LR, result.lr_speed);
-    SetWheelSpeed(RR, result.rr_speed);
+SetWheelSpeed(LF, result.lf_speed);
+SetWheelSpeed(RF, result.rf_speed);
+SetWheelSpeed(LR, result.lr_speed);
+SetWheelSpeed(RR, result.rr_speed);
 
-    osDelay(1);
-  }
-}
+
 ```
 
 ### 逆运动学解算

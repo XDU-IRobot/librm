@@ -11,30 +11,27 @@
 ## 基本用法
 
 ```cpp
-#include "cmsis_os.h"
 #include <librm.hpp>
 
-extern "C" void CanSnifferTask(const void *pv_arg) {
-  rm::hal::Can can(hfdcan1);
-  rm::modules::CanSniffer<> sniffer(can);  // 构造时自动注册为总线观察者
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+rm::hal::Can can(hfdcan1);
+rm::modules::CanSniffer<> sniffer(can);  // 构造时自动注册为总线观察者
 
-  can.SetFilter(0, 0);
-  can.Begin();
+can.SetFilter(0, 0);
+can.Begin();
 
-  for (;;) {
-    sniffer.Update();  // 把中断里收到的报文并入统计
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+sniffer.Update();  // 把中断里收到的报文并入统计
 
-    // 查询最近 500ms 内出现过的 ID
-    for (const rm::u16 id : sniffer.active_ids(std::chrono::milliseconds(500))) {
-      const auto stats = sniffer.stats(id);
-      if (stats) {
-        printf("%03X %.1f Hz\n", id, stats->average_hz);
-      }
-    }
-
-    osDelay(10);
+// 查询最近 500ms 内出现过的 ID
+for (const rm::u16 id : sniffer.active_ids(std::chrono::milliseconds(500))) {
+  const auto stats = sniffer.stats(id);
+  if (stats) {
+    printf("%03X %.1f Hz\n", id, stats->average_hz);
   }
 }
+
+
 ```
 
 `Update()` 只做搬运和累加，不涉及浮点运算；`stats()` 系列才计算频率，按需调用即可。
@@ -92,6 +89,6 @@ rm::modules::CanSniffer<32, 32> sniffer(can);  // 32 个 ID，每个 ID 32 个�
 
 - 默认配置下一个 `CanSniffer` 对象占用约 3KB RAM，对于资源紧张的 MCU，建议在调试时才挂上这个模块，平时注释掉。
 
-- `Update()` 必须在任务上下文周期调用，不要在中断里调用。总线回调只把报文压进无锁环形队列，队列深度由 `MaxPendingFrames`（默认 32）决定，溢出或 ID 数量超过 `MaxIds` 都会计入 `dropped_frames()`。
+- `Update()` 必须在非中断上下文周期调用，不要在中断里调用。总线回调只把报文压进无锁环形队列，队列深度由 `MaxPendingFrames`（默认 32）决定，溢出或 ID 数量超过 `MaxIds` 都会计入 `dropped_frames()`。
 
 - 硬件过滤器需要放行想观察的报文，否则统计不到。

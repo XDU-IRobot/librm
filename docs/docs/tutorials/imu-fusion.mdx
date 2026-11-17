@@ -7,7 +7,6 @@
 ## 代码
 
 ```cpp
-#include "cmsis_os.h"
 #include "spi.h"
 
 #include <librm.hpp>
@@ -16,42 +15,33 @@ using rm::device::BMI088;
 using rm::modules::MahonyAhrs;
 
 // 注意！！：不要在全局作用域中创建传感器对象，因为这样会导致对象的构造函数在main函数之前调用，而HAL库此时还未初始化
-// 如果需要全局访问，可以将对象指针声明为全局变量，然后在任务函数中new一个对象绑定到指针上
-// BMI088 *bmi088;
-// void task() {
-//   bmi088 = new BMI088(...);
-// }
 
-extern "C" {
 
-void ExampleAttitudeTask(const void *pv_arg) {
-  BMI088 bmi088(hspi1, CS1_ACCEL_GPIO_Port, CS1_ACCEL_Pin, CS1_GYRO_GPIO_Port, CS1_GYRO_Pin);
-  // 传入采样率
-  MahonyAhrs mahony(1000.0f);
+// 初始化一次：在平台外设初始化后执行，保留对象供后续周期使用
+BMI088 bmi088(hspi1, CS1_ACCEL_GPIO_Port, CS1_ACCEL_Pin, CS1_GYRO_GPIO_Port, CS1_GYRO_Pin);
+// 传入采样率
+MahonyAhrs mahony(1000.0f);
 
-  for (;;) {
-    bmi088.Update();
-    mahony.Update(rm::modules::ImuData6Dof{
-        Eigen::Vector3f(bmi088.gyro_x(), bmi088.gyro_y(), bmi088.gyro_z()),
-        Eigen::Vector3f(bmi088.accel_x(), bmi088.accel_y(), bmi088.accel_z())});
+// 放入循环中：每个周期执行一次，调用周期应与采样率及 dt 一致
+bmi088.Update();
+mahony.Update(rm::modules::ImuData6Dof{
+  Eigen::Vector3f(bmi088.gyro_x(), bmi088.gyro_y(), bmi088.gyro_z()),
+  Eigen::Vector3f(bmi088.accel_x(), bmi088.accel_y(), bmi088.accel_z())});
 
-    // 欧拉角，单位为弧度，xyz 依次对应 roll pitch yaw
-    const Eigen::Vector3f &euler = mahony.euler_angle();
-    float roll = euler.x();
-    float pitch = euler.y();
-    float yaw = euler.z();
+// 欧拉角，单位为弧度，xyz 依次对应 roll pitch yaw
+const Eigen::Vector3f &euler = mahony.euler_angle();
+float roll = euler.x();
+float pitch = euler.y();
+float yaw = euler.z();
 
-    // 四元数，机体到世界的旋转
-    const Eigen::Quaternionf &q = mahony.quaternion();
-    float w = q.w();
-    float x = q.x();
-    float y = q.y();
-    float z = q.z();
+// 四元数，机体到世界的旋转
+const Eigen::Quaternionf &q = mahony.quaternion();
+float w = q.w();
+float x = q.x();
+float y = q.y();
+float z = q.z();
 
-    osDelay(1);
-  }
-}
-}
+
 ```
 
 ## 换成 EKF
